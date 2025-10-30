@@ -1,0 +1,71 @@
+@startmindmap
+' top to bottom direction
+
++ data quality
+
+++ Inhaltlich
++++ Fallzahlen
+++++ aktuelles Lieferjahr
+++++[#LimeGreen] Lieferjahre im Vergleich
++++ missings
+++++ fehlende nodes
++++++_ relative Anteile z.B. OP / Tumor
+++++ fehlende Felder
++++++_ Ampelvergleiche
++++ Vollzähligkeit
+++++_ epi vs klin: für Abschätzung der Vollzähligkeit
++++ Verteilung von Variablen
+++++ Numerische Werte
++++++_ Boxplots
++++++_ Werteklassen
+++++ Kodierte Werte
++++++_ Relative Anteile
++++++_ evtl Besonderheiten
++++ Organspez. Auswertungen
+++++ Entitäten
++++++ C07
++++++ C18-C20
++++++ C25
++++++[#LimeGreen] C50 (therapien, leitlinien)
++++++ C61
+++++ relative Verteilungen
+++++ klinische Fragestellungen
++++ Themenspez. Auswertungen
+++++_ Rezidive
+++++_ Datumsabstände
+++++_ FM
+++++[#LimeGreen] Verlaufsereignisse
+++++[#LimeGreen] Referenzgruppen als Teilmenge -> erwartetete op
++++ Unstrukturierte Angaben
+++++ Weitere Klassifikationen
+++++ Freitexte (Substanzen, Protokolle)
++++[#IndianRed] Plausibilität
+++++_ Metriken (ABC)
+
+++ Technisch
++++[#Silver] missings
++++ ungültige Werte
+++++_ Auflistungen
++++ duplikate
+++++_ echt
+++++_ unecht
+++++_ verdacht
+
+' ++ Umsetzung
+' +++ Formate
+' ++++ Datenbericht (pdf)
+' ++++[#LightGrey] Öffentliches DQ Repository\n(geplant)
+' +++++_ für Register
+' +++++_ für Antragsteller
+' +++++_ für Fachöffentlichkeit
+' **** DQ Variablen im (epi) Datensatz\n(z.B. IARC, is_deleted)
+' +++ Prozesse
+' ++++ Standardisierung
+' +++++ Referenzlisten (in repo)
+' +++++ Zusatzvariablen (z_)
+' ++++++ Bereinigungen
+' ++++++ komplexe Berechnungen
+' ++++ Offene Weiterentwicklung
+' +++++_ Nutzung moderner Plattformen
+' +++++_ Daten, Code und Dokumentation an einem Ort
+@endmindmap

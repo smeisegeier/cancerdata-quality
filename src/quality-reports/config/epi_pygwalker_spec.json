@@ -1,0 +1,327 @@
+{
+  "config": [
+    {
+      "config": {
+        "defaultAggregated": true,
+        "geoms": [
+          "bar"
+        ],
+        "coordSystem": "generic",
+        "limit": -1,
+        "timezoneDisplayOffset": 0
+      },
+      "encodings": {
+        "dimensions": [
+          {
+            "fid": "GKZbl",
+            "name": "GKZbl",
+            "basename": "GKZbl",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "DJ",
+            "name": "DJ",
+            "basename": "DJ",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "is_deleted",
+            "name": "is_deleted",
+            "basename": "is_deleted",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "IARC",
+            "name": "IARC",
+            "basename": "IARC",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "DCO",
+            "name": "DCO",
+            "basename": "DCO",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "is_multiple",
+            "name": "is_multiple",
+            "basename": "is_multiple",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "has_wrong_icd10",
+            "name": "has_wrong_icd10",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "basename": "has_wrong_icd10",
+            "dragId": "GW_aS5MjO3f"
+          },
+          {
+            "fid": "gw_mea_key_fid",
+            "name": "Measure names",
+            "analyticType": "dimension",
+            "semanticType": "nominal"
+          }
+        ],
+        "measures": [
+          {
+            "fid": "cnt",
+            "name": "cnt",
+            "basename": "cnt",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "offset": 0
+          },
+          {
+            "analyticType": "measure",
+            "fid": "f88ffa1d46cc453d9140507aa00a4369",
+            "name": "cnt_tum",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "f88ffa1d46cc453d9140507aa00a4369",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "sum(cnt)"
+                }
+              ]
+            }
+          },
+          {
+            "fid": "gw_count_fid",
+            "name": "Row count",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "computed": true,
+            "expression": {
+              "op": "one",
+              "params": [],
+              "as": "gw_count_fid"
+            }
+          },
+          {
+            "fid": "gw_mea_val_fid",
+            "name": "Measure values",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum"
+          }
+        ],
+        "rows": [
+          {
+            "fid": "DJ",
+            "name": "DJ",
+            "basename": "DJ",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          }
+        ],
+        "columns": [
+          {
+            "analyticType": "measure",
+            "fid": "f88ffa1d46cc453d9140507aa00a4369",
+            "name": "cnt_tum",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "f88ffa1d46cc453d9140507aa00a4369",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "sum(cnt)"
+                }
+              ]
+            }
+          }
+        ],
+        "color": [
+          {
+            "fid": "is_multiple",
+            "name": "is_multiple",
+            "basename": "is_multiple",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          }
+        ],
+        "opacity": [],
+        "size": [],
+        "shape": [],
+        "radius": [],
+        "theta": [],
+        "longitude": [],
+        "latitude": [],
+        "geoId": [],
+        "details": [],
+        "filters": [
+          {
+            "fid": "is_deleted",
+            "name": "is_deleted",
+            "basename": "is_deleted",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0,
+            "rule": {
+              "type": "one of",
+              "value": [
+                true
+              ]
+            }
+          },
+          {
+            "fid": "GKZbl",
+            "name": "GKZbl",
+            "basename": "GKZbl",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0,
+            "rule": {
+              "type": "one of",
+              "value": [
+                "16",
+                "15",
+                "14",
+                "13",
+                "12",
+                "11"
+              ]
+            }
+          },
+          {
+            "fid": "DJ",
+            "name": "DJ",
+            "basename": "DJ",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0,
+            "rule": {
+              "type": "one of",
+              "value": [
+                "2023",
+                "2022",
+                "2021",
+                "2020",
+                "2019",
+                "2018"
+              ]
+            }
+          }
+        ],
+        "text": []
+      },
+      "layout": {
+        "showActions": false,
+        "showTableSummary": true,
+        "stack": "normalize",
+        "interactiveScale": false,
+        "zeroScale": true,
+        "size": {
+          "mode": "full",
+          "width": 30,
+          "height": 30
+        },
+        "format": {},
+        "geoKey": "name",
+        "resolve": {
+          "x": false,
+          "y": false,
+          "color": false,
+          "opacity": false,
+          "shape": false,
+          "size": false
+        }
+      },
+      "visId": "gw_DDMq",
+      "name": "Chart 1"
+    }
+  ],
+  "chart_map": {},
+  "version": "0.4.9.14",
+  "workflow_list": [
+    {
+      "workflow": [
+        {
+          "type": "filter",
+          "filters": [
+            {
+              "fid": "is_deleted",
+              "rule": {
+                "type": "one of",
+                "value": [
+                  true
+                ]
+              }
+            },
+            {
+              "fid": "GKZbl",
+              "rule": {
+                "type": "one of",
+                "value": [
+                  "16",
+                  "15",
+                  "14",
+                  "13",
+                  "12",
+                  "11"
+                ]
+              }
+            },
+            {
+              "fid": "DJ",
+              "rule": {
+                "type": "one of",
+                "value": [
+                  "2023",
+                  "2022",
+                  "2021",
+                  "2020",
+                  "2019",
+                  "2018"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "view",
+          "query": [
+            {
+              "op": "aggregate",
+              "groupBy": [
+                "DJ",
+                "is_multiple"
+              ],
+              "measures": [
+                {
+                  "field": "(sum (cnt) )",
+                  "agg": "expr",
+                  "asFieldKey": "f88ffa1d46cc453d9140507aa00a4369"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

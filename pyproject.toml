@@ -1,0 +1,25 @@
+[project]
+name = "cancerdata-quality"
+requires-python = ">= 3.10"
+version = "0.6.0"
+description = "repo for cancerdata quality"
+readme = "README.md"
+dependencies = [
+    "pip",
+    "pandas>=2.2.3",
+    "kaleido",
+    "numpy",
+    "duckdb",
+    "pandas-plots",
+    "connection-helper",
+    "pygwalker",
+    "appnope",
+    "debugpy",
+    "ipykernel",
+    "jupyter-client",
+    "nest-asyncio",
+    "pyzmq",
+    "tornado",
+    "jupyter",
+    "openpyxl>=3.1.5",
+]
