@@ -1,0 +1,554 @@
+{
+  "config": [
+    {
+      "config": {
+        "defaultAggregated": true,
+        "geoms": [
+          "auto"
+        ],
+        "coordSystem": "generic",
+        "limit": -1,
+        "timezoneDisplayOffset": 0
+      },
+      "encodings": {
+        "dimensions": [
+          {
+            "fid": "z_tum_id",
+            "name": "z_tum_id",
+            "basename": "z_tum_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_kkr_label",
+            "name": "z_kkr_label",
+            "basename": "z_kkr_label",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_icd10",
+            "name": "z_icd10",
+            "basename": "z_icd10",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_icd10_3d",
+            "name": "z_icd10_3d",
+            "basename": "z_icd10_3d",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_dy",
+            "name": "z_dy",
+            "basename": "z_dy",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_sex",
+            "name": "z_sex",
+            "basename": "z_sex",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_t_p_1",
+            "name": "z_t_p_1",
+            "basename": "z_t_p_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_t_c_1",
+            "name": "z_t_c_1",
+            "basename": "z_t_c_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_n_p_1",
+            "name": "z_n_p_1",
+            "basename": "z_n_p_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_m_pc_1",
+            "name": "z_m_pc_1",
+            "basename": "z_m_pc_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_first_treatment_after_days",
+            "name": "z_first_treatment_after_days",
+            "basename": "z_first_treatment_after_days",
+            "analyticType": "dimension",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "offset": 0
+          },
+          {
+            "fid": "z_m_p_0",
+            "name": "z_m_p_0",
+            "basename": "z_m_p_0",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_age",
+            "name": "z_age",
+            "basename": "z_age",
+            "analyticType": "dimension",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "offset": 0
+          },
+          {
+            "fid": "UICC_Stadium_p_1",
+            "name": "UICC_Stadium_p_1",
+            "basename": "UICC_Stadium_p_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_ag05",
+            "name": "z_ag05",
+            "basename": "z_ag05",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Diagnosesicherung",
+            "name": "Diagnosesicherung",
+            "basename": "Diagnosesicherung",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_pat_id",
+            "name": "z_pat_id",
+            "basename": "z_pat_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Verstorben",
+            "name": "Verstorben",
+            "basename": "Verstorben",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "op_id",
+            "name": "op_id",
+            "basename": "op_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Datum_OP",
+            "name": "Datum_OP",
+            "basename": "Datum_OP",
+            "semanticType": "temporal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_op_order",
+            "name": "z_op_order",
+            "basename": "z_op_order",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Intention_OP",
+            "name": "Intention_OP",
+            "basename": "Intention_OP",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "OP_Lokale_Beurteilung_Residualstatus",
+            "name": "OP_Lokale_Beurteilung_Residualstatus",
+            "basename": "OP_Lokale_Beurteilung_Residualstatus",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "syst_id",
+            "name": "syst_id",
+            "basename": "syst_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Datum_Beginn_SYST",
+            "name": "Datum_Beginn_SYST",
+            "basename": "Datum_Beginn_SYST",
+            "semanticType": "temporal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Intention_SYST",
+            "name": "Intention_SYST",
+            "basename": "Intention_SYST",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Therapieart",
+            "name": "Therapieart",
+            "basename": "Therapieart",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "st_id",
+            "name": "st_id",
+            "basename": "st_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Intention_ST",
+            "name": "Intention_ST",
+            "basename": "Intention_ST",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "ST_Stellung_OP",
+            "name": "ST_Stellung_OP",
+            "basename": "ST_Stellung_OP",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "bestr_id",
+            "name": "bestr_id",
+            "basename": "bestr_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Datum_Beginn_Bestrahlung",
+            "name": "Datum_Beginn_Bestrahlung",
+            "basename": "Datum_Beginn_Bestrahlung",
+            "semanticType": "temporal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "folge_id",
+            "name": "folge_id",
+            "basename": "folge_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Datum_Folgeereignis",
+            "name": "Datum_Folgeereignis",
+            "basename": "Datum_Folgeereignis",
+            "semanticType": "temporal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "Folge_Verlauf_Lokaler_Tumorstatus",
+            "name": "Folge_Verlauf_Lokaler_Tumorstatus",
+            "basename": "Folge_Verlauf_Lokaler_Tumorstatus",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "FM_Lokalisation",
+            "name": "FM_Lokalisation",
+            "basename": "FM_Lokalisation",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_first_treatment",
+            "name": "z_first_treatment",
+            "basename": "z_first_treatment",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_tum_st_count",
+            "name": "z_tum_st_count",
+            "basename": "z_tum_st_count",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_tum_op_count",
+            "name": "z_tum_op_count",
+            "basename": "z_tum_op_count",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_tum_sy_count",
+            "name": "z_tum_sy_count",
+            "basename": "z_tum_sy_count",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_tum_fo_count",
+            "name": "z_tum_fo_count",
+            "basename": "z_tum_fo_count",
+            "semanticType": "quantitative",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "treatment_first_co_li_sy_st",
+            "name": "treatment_first_co_li_sy_st",
+            "basename": "treatment_first_co_li_sy_st",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "liver_grps",
+            "name": "liver_grps",
+            "basename": "liver_grps",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_last_tum_status",
+            "name": "z_last_tum_status",
+            "basename": "z_last_tum_status",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "C18C20",
+            "name": "C18C20",
+            "basename": "C18C20",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "gw_mea_key_fid",
+            "name": "Measure names",
+            "analyticType": "dimension",
+            "semanticType": "nominal"
+          }
+        ],
+        "measures": [
+          {
+            "fid": "gw_count_fid",
+            "name": "Row count",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "computed": true,
+            "expression": {
+              "op": "one",
+              "params": [],
+              "as": "gw_count_fid"
+            }
+          },
+          {
+            "fid": "gw_mea_val_fid",
+            "name": "Measure values",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum"
+          },
+          {
+            "analyticType": "measure",
+            "fid": "6198d9f2e5834d159a4702dd9f47223b",
+            "name": "cnt_tum",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "6198d9f2e5834d159a4702dd9f47223b",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct z_tum_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "528055a0ec9e4fcf886a0a10abef4495",
+            "name": "cnt_pat",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "528055a0ec9e4fcf886a0a10abef4495",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct z_pat_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "db452868e23448a7bf976f53f0cb3668",
+            "name": "cnt_op",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "db452868e23448a7bf976f53f0cb3668",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct op_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "2319c8a863c449ed884eba6710402a9b",
+            "name": "cnt_st",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "2319c8a863c449ed884eba6710402a9b",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct st_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "49f7edac0b714ababd5e6efa17e59998",
+            "name": "cnt_syst",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "49f7edac0b714ababd5e6efa17e59998",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct syst_id)"
+                }
+              ]
+            }
+          }
+        ],
+        "rows": [],
+        "columns": [],
+        "color": [],
+        "opacity": [],
+        "size": [],
+        "shape": [],
+        "radius": [],
+        "theta": [],
+        "longitude": [],
+        "latitude": [],
+        "geoId": [],
+        "details": [],
+        "filters": [],
+        "text": []
+      },
+      "layout": {
+        "showActions": false,
+        "showTableSummary": false,
+        "stack": "stack",
+        "interactiveScale": false,
+        "zeroScale": true,
+        "size": {
+          "mode": "auto",
+          "width": 30,
+          "height": 30
+        },
+        "format": {},
+        "geoKey": "name",
+        "resolve": {
+          "x": false,
+          "y": false,
+          "color": false,
+          "opacity": false,
+          "shape": false,
+          "size": false
+        }
+      },
+      "visId": "gw_FIu8",
+      "name": "Chart 1"
+    }
+  ],
+  "chart_map": {},
+  "version": "0.4.9.13",
+  "workflow_list": [
+    {
+      "workflow": [
+        {
+          "type": "view",
+          "query": [
+            {
+              "op": "raw",
+              "fields": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

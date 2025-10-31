@@ -3,10 +3,102 @@
 
 + data quality
 
+++ Bericht
++++ Einführung
+++++_ Gesetz
+++++_ Umsetzung Konkretisierung
+++++_ Datensatz vs oBDS epi+klin
+++++_ Zusammenarbeit mit kkr
++++ Datenqualität
+++++ Begriffe
++++++_ Indikatoren
++++++_ eingeschlossene icd10
++++++_ Limitationen
+++++ Vollzähligkeitsschätzung
+++++ Aktualität
+++++ Vollständigkeit **Personenangaben**
+++++ Vollständigkeit **Tumorangaben** Anteile
++++++ Mehrfachtumore (epi vs klin)
++++++ Diagnosesicherung
++++++ DCO
++++++ missing TNM / UICC
++++++ Histo unspezifisch
++++++ Topo unspezifisch (PSU)
++++++ missing Grading
++++++ missing Organmodul
+++++++_ Gleason
+++++++_ Hormonrezeptor
+
+++++ Vollständigkeit **Therapie**
++++++ Vorbemerkung
+++++++_ nicht durchgeführt vs nicht erhalten
+++++++_ Einschluss
+++++++_ Ausschluss: Pat verstorben in 3/6m
++++++ Beschreibung systematischer Datenlücken
++++++ Anteil Fälle ohne Therapie D vs kkr
+++++++_ solide
+++++++_ in-situ
+++++++_ System
++++++ Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1)
+++++++_ Brust
+++++++_ Prostata
+++++++_ Schilddrüse
++++++ Anteil Fälle ohne OP wenn OP erwartbar ist
+++++++_ Brust
+++++++_ Darm
+++++++_ Hoden
+++++++_ Melanom
++++++ Anteil Fälle ohne ST wenn ST erwartbar ist
++++++ Anteil Fälle ohne SYST wenn SYST erwartbar ist
++++++ Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status
+++++++_ Mamma
++++++ Verlaufsangaben
+++++++ Vorbemerkung
++++++++_ nur deskriptiv
++++++++_ Vollständigkeit nicht beurteilbar
++++++++_ noch kein Goldstandard
+++++++ Systematische Datenlücken
+++++++ Anteil Lokalrezidive
++++++++_ bis Ende 2023 nach R0-Status\nDiagnose 2020-2021
+++++++ Anteil LK und FM
++++++++_ bis Ende 2023\nDiagnose 2020-2021
+
+++++ Qualität der Sterbeinformationen und Vitalstatus
++++++ Untererfassung Sterbeinformationen
+++++++_ Oberbayern
+++++++_ ST
+++++++_ TH
++++++ Zensierung der Fälle aus NBL bis 2019
+++++++_ Daten stammen aus GKR\nVitalstatus noch niocht aktualisiert
++++++ mögliche Überschätzung der Überlebensraten
+++++++_ Pankreas (außer NET)
+++++++_ Lunge UICC III/IV
+++++++_ Glioblastom
+++++++_ HCC (Leber)
+
++++ Antragsbearbeitung und Datenbereitstellung
+++++ Beschreibung der Verfahren
+++++ Statistiken zu Datenanträgen
++++++ Nach Jahr der Antragsstellung
++++++ Nach Themen
++++++ Nach Art des AS
+++++++_ Universität
+++++++_ sonstige öffentliche Einrichtungen
+++++++_ private Einrichtungen
+++++ Veröffentlichungen aus bewilligten Datennutzungsanträgen
++++ Diskussion, Einordnung, Ausblick
+++++ Einordnung im internationalen / europäischen Kontext
+++++ Zusammenfassung noch bestehender Limitationen und Diskussion möglicher Gründe
++++++_ Initiativen KKR + ZfKD
+++++ Ausblick
++++++_ Möglichkeit der Verlinkung mit Abrechnungsdaten nach GDNG
+
+'-------------------------------------
+
 ++ Inhaltlich
-+++ Fallzahlen
++++[#IndianRed] Fallzahlen
 ++++ aktuelles Lieferjahr
-++++[#LimeGreen] Lieferjahre im Vergleich
+++++ Lieferjahre im Vergleich
 +++ missings
 ++++ fehlende nodes
 +++++_ relative Anteile z.B. OP / Tumor
@@ -15,7 +107,8 @@
 +++ Vollzähligkeit
 ++++_ epi vs klin: für Abschätzung der Vollzähligkeit
 +++ Verteilung von Variablen
-++++ Numerische Werte
+++++[#IndianRed] Datumsangaben
+++++[#IndianRed] Numerische Werte
 +++++_ Boxplots
 +++++_ Werteklassen
 ++++ Kodierte Werte
@@ -26,7 +119,7 @@
 +++++ C07
 +++++ C18-C20
 +++++ C25
-+++++[#LimeGreen] C50 (therapien, leitlinien)
++++++ C50 (therapien, leitlinien)
 +++++ C61
 ++++ relative Verteilungen
 ++++ klinische Fragestellungen
@@ -34,16 +127,16 @@
 ++++_ Rezidive
 ++++_ Datumsabstände
 ++++_ FM
-++++[#LimeGreen] Verlaufsereignisse
-++++[#LimeGreen] Referenzgruppen als Teilmenge -> erwartetete op
-+++ Unstrukturierte Angaben
+++++ Verlaufsereignisse
+++++ Referenzgruppen als Teilmenge -> erwartetete op
++++[#IndianRed] Unstrukturierte Angaben
 ++++ Weitere Klassifikationen
 ++++ Freitexte (Substanzen, Protokolle)
-+++[#IndianRed] Plausibilität
++++ Plausibilität
 ++++_ Metriken (ABC)
 
-++ Technisch
-+++[#Silver] missings
+++[#IndianRed] Technisch
++++ missings
 +++ ungültige Werte
 ++++_ Auflistungen
 +++ duplikate
@@ -51,21 +144,22 @@
 ++++_ unecht
 ++++_ verdacht
 
-' ++ Umsetzung
-' +++ Formate
-' ++++ Datenbericht (pdf)
-' ++++[#LightGrey] Öffentliches DQ Repository\n(geplant)
-' +++++_ für Register
-' +++++_ für Antragsteller
-' +++++_ für Fachöffentlichkeit
-' **** DQ Variablen im (epi) Datensatz\n(z.B. IARC, is_deleted)
-' +++ Prozesse
-' ++++ Standardisierung
-' +++++ Referenzlisten (in repo)
-' +++++ Zusatzvariablen (z_)
-' ++++++ Bereinigungen
-' ++++++ komplexe Berechnungen
-' ++++ Offene Weiterentwicklung
-' +++++_ Nutzung moderner Plattformen
-' +++++_ Daten, Code und Dokumentation an einem Ort
+++ Umsetzung
++++ Formate
+++++ Datenbericht (pdf)
+++++ Öffentliches DQ Repository\n(geplant)
++++++_ für Register
++++++_ für Antragsteller
++++++_ für Fachöffentlichkeit
++++ Prozesse
+++++[#IndianRed] Standardisierung
++++++ Referenzlisten (in repo)
++++++ Zusatzvariablen (z_)
+++++++ Bereinigungen
+++++++ komplexe Berechnungen
++++++ Rückmeldung in Datenbereitstellung integriert
+++++ Offene Weiterentwicklung
++++++_ Nutzung moderner Plattformen
++++++_ Daten, Code und Dokumentation an einem Ort
+
 @endmindmap

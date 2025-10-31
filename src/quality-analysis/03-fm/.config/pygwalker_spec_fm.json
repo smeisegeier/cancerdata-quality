@@ -1,0 +1,229 @@
+{
+  "config": [
+    {
+      "config": {
+        "defaultAggregated": true,
+        "geoms": [
+          "auto"
+        ],
+        "coordSystem": "generic",
+        "limit": -1,
+        "timezoneDisplayOffset": 0
+      },
+      "encodings": {
+        "dimensions": [
+          {
+            "fid": "fm_localisation",
+            "name": "fm_localisation",
+            "basename": "fm_localisation",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_tum_id",
+            "name": "z_tum_id",
+            "basename": "z_tum_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_pat_id",
+            "name": "z_pat_id",
+            "basename": "z_pat_id",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_kkr_label",
+            "name": "z_kkr_label",
+            "basename": "z_kkr_label",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_icd10_3d",
+            "name": "z_icd10_3d",
+            "basename": "z_icd10_3d",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_m_pc_1",
+            "name": "z_m_pc_1",
+            "basename": "z_m_pc_1",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "z_dy",
+            "name": "z_dy",
+            "basename": "z_dy",
+            "analyticType": "dimension",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "offset": 0
+          },
+          {
+            "fid": "M_p",
+            "name": "M_p",
+            "basename": "M_p",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "FernmetastaseId",
+            "name": "FernmetastaseId",
+            "basename": "FernmetastaseId",
+            "semanticType": "nominal",
+            "analyticType": "dimension",
+            "offset": 0
+          },
+          {
+            "fid": "gw_mea_key_fid",
+            "name": "Measure names",
+            "analyticType": "dimension",
+            "semanticType": "nominal"
+          }
+        ],
+        "measures": [
+          {
+            "fid": "gw_count_fid",
+            "name": "Row count",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum",
+            "computed": true,
+            "expression": {
+              "op": "one",
+              "params": [],
+              "as": "gw_count_fid"
+            }
+          },
+          {
+            "fid": "gw_mea_val_fid",
+            "name": "Measure values",
+            "analyticType": "measure",
+            "semanticType": "quantitative",
+            "aggName": "sum"
+          },
+          {
+            "analyticType": "measure",
+            "fid": "cfdf1c8925674f388cd23b73c542fa32",
+            "name": "cnt_tum",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "cfdf1c8925674f388cd23b73c542fa32",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct z_tum_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "b72ec1bc64254a13b9a3fc5cc3c10d37",
+            "name": "cnt_pat",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "b72ec1bc64254a13b9a3fc5cc3c10d37",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct z_pat_id)"
+                }
+              ]
+            }
+          },
+          {
+            "analyticType": "measure",
+            "fid": "5e2327a176e44460ab3f2719384ef72f",
+            "name": "cnt_fm",
+            "semanticType": "quantitative",
+            "computed": true,
+            "aggName": "expr",
+            "expression": {
+              "op": "expr",
+              "as": "5e2327a176e44460ab3f2719384ef72f",
+              "params": [
+                {
+                  "type": "sql",
+                  "value": "count(distinct Fernmetastase_id)"
+                }
+              ]
+            }
+          }
+        ],
+        "rows": [],
+        "columns": [],
+        "color": [],
+        "opacity": [],
+        "size": [],
+        "shape": [],
+        "radius": [],
+        "theta": [],
+        "longitude": [],
+        "latitude": [],
+        "geoId": [],
+        "details": [],
+        "filters": [],
+        "text": []
+      },
+      "layout": {
+        "showActions": false,
+        "showTableSummary": false,
+        "stack": "stack",
+        "interactiveScale": false,
+        "zeroScale": true,
+        "size": {
+          "mode": "auto",
+          "width": 30,
+          "height": 30
+        },
+        "format": {},
+        "geoKey": "name",
+        "resolve": {
+          "x": false,
+          "y": false,
+          "color": false,
+          "opacity": false,
+          "shape": false,
+          "size": false
+        }
+      },
+      "visId": "gw_YHmo",
+      "name": "Chart 1"
+    }
+  ],
+  "chart_map": {},
+  "version": "0.4.9.13",
+  "workflow_list": [
+    {
+      "workflow": [
+        {
+          "type": "view",
+          "query": [
+            {
+              "op": "raw",
+              "fields": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
