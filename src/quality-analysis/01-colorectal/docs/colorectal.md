@@ -45,7 +45,7 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.3.1 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.20.4 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.4.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.20.7 | 📦 connection-helper: 0.13.1
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
@@ -55,7 +55,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-10-30 16:25:02
     doi:                     10.18444/5.03.01.0005.0021.0001
-    document created:        2025-10-31 13:50:04
+    document created:        2025-11-04 19:03:34
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -372,251 +372,251 @@ _"Wenn bei Erstdiagnose von Darmkrebs auch Lebermetastasen bekannt sind (synchro
 
 
 <style type="text/css">
-#T_b3c75 th {
+#T_00c7d th {
   text-align: right;
 }
-#T_b3c75 td {
+#T_00c7d td {
   text-align: right;
 }
-#T_b3c75_row0_col0, #T_b3c75_row0_col2 {
+#T_00c7d_row0_col0, #T_00c7d_row0_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.2%, transparent 0.2%);
   font-family: Courier;
 }
-#T_b3c75_row0_col1, #T_b3c75_row2_col1, #T_b3c75_row3_col1, #T_b3c75_row4_col1, #T_b3c75_row7_col1, #T_b3c75_row11_col1 {
+#T_00c7d_row0_col1, #T_00c7d_row2_col1, #T_00c7d_row3_col1, #T_00c7d_row4_col1, #T_00c7d_row7_col1, #T_00c7d_row11_col1 {
   width: 10em;
   font-family: Courier;
 }
-#T_b3c75_row0_col3, #T_b3c75_row6_col2 {
+#T_00c7d_row0_col3, #T_00c7d_row6_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 1.9%, transparent 1.9%);
   font-family: Courier;
 }
-#T_b3c75_row0_col4 {
+#T_00c7d_row0_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 2.3%, transparent 2.3%);
   font-family: Courier;
 }
-#T_b3c75_row1_col0, #T_b3c75_row4_col0, #T_b3c75_row5_col0, #T_b3c75_row11_col2 {
+#T_00c7d_row1_col0, #T_00c7d_row4_col0, #T_00c7d_row5_col0, #T_00c7d_row11_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 2.1%, transparent 2.1%);
   font-family: Courier;
 }
-#T_b3c75_row1_col1, #T_b3c75_row6_col1, #T_b3c75_row8_col1, #T_b3c75_row9_col1, #T_b3c75_row10_col1, #T_b3c75_row10_col3 {
+#T_00c7d_row1_col1, #T_00c7d_row6_col1, #T_00c7d_row8_col1, #T_00c7d_row9_col1, #T_00c7d_row10_col1, #T_00c7d_row10_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.0%, transparent 0.0%);
   font-family: Courier;
 }
-#T_b3c75_row1_col2 {
+#T_00c7d_row1_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 9.4%, transparent 9.4%);
   font-family: Courier;
 }
-#T_b3c75_row1_col3 {
+#T_00c7d_row1_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 10.4%, transparent 10.4%);
   font-family: Courier;
 }
-#T_b3c75_row1_col4 {
+#T_00c7d_row1_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 21.9%, transparent 21.9%);
   font-family: Courier;
 }
-#T_b3c75_row2_col0, #T_b3c75_row11_col3 {
+#T_00c7d_row2_col0, #T_00c7d_row11_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 1.0%, transparent 1.0%);
   font-family: Courier;
 }
-#T_b3c75_row2_col2 {
+#T_00c7d_row2_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 3.5%, transparent 3.5%);
   font-family: Courier;
 }
-#T_b3c75_row2_col3 {
+#T_00c7d_row2_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 3.1%, transparent 3.1%);
   font-family: Courier;
 }
-#T_b3c75_row2_col4, #T_b3c75_row4_col2 {
+#T_00c7d_row2_col4, #T_00c7d_row4_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 7.6%, transparent 7.6%);
   font-family: Courier;
 }
-#T_b3c75_row3_col0 {
+#T_00c7d_row3_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.3%, transparent 0.3%);
   font-family: Courier;
 }
-#T_b3c75_row3_col2 {
+#T_00c7d_row3_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 1.4%, transparent 1.4%);
   font-family: Courier;
 }
-#T_b3c75_row3_col3 {
+#T_00c7d_row3_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 4.2%, transparent 4.2%);
   font-family: Courier;
 }
-#T_b3c75_row3_col4 {
+#T_00c7d_row3_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 5.9%, transparent 5.9%);
   font-family: Courier;
 }
-#T_b3c75_row4_col3 {
+#T_00c7d_row4_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 5.3%, transparent 5.3%);
   font-family: Courier;
 }
-#T_b3c75_row4_col4 {
+#T_00c7d_row4_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 14.9%, transparent 14.9%);
   font-family: Courier;
 }
-#T_b3c75_row5_col1, #T_b3c75_row12_col1 {
+#T_00c7d_row5_col1, #T_00c7d_row12_col1 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.1%, transparent 0.1%);
   font-family: Courier;
 }
-#T_b3c75_row5_col2 {
+#T_00c7d_row5_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 6.1%, transparent 6.1%);
   font-family: Courier;
 }
-#T_b3c75_row5_col3 {
+#T_00c7d_row5_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 8.7%, transparent 8.7%);
   font-family: Courier;
 }
-#T_b3c75_row5_col4 {
+#T_00c7d_row5_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 17.0%, transparent 17.0%);
   font-family: Courier;
 }
-#T_b3c75_row6_col0, #T_b3c75_row10_col0 {
+#T_00c7d_row6_col0, #T_00c7d_row10_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.6%, transparent 0.6%);
   font-family: Courier;
 }
-#T_b3c75_row6_col3 {
+#T_00c7d_row6_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 2.6%, transparent 2.6%);
   font-family: Courier;
 }
-#T_b3c75_row6_col4 {
+#T_00c7d_row6_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 5.1%, transparent 5.1%);
   font-family: Courier;
 }
-#T_b3c75_row7_col0 {
+#T_00c7d_row7_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.7%, transparent 0.7%);
   font-family: Courier;
 }
-#T_b3c75_row7_col2 {
+#T_00c7d_row7_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 1.5%, transparent 1.5%);
   font-family: Courier;
 }
-#T_b3c75_row7_col3 {
+#T_00c7d_row7_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 2.8%, transparent 2.8%);
   font-family: Courier;
 }
-#T_b3c75_row7_col4 {
+#T_00c7d_row7_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 5.0%, transparent 5.0%);
   font-family: Courier;
 }
-#T_b3c75_row8_col0 {
+#T_00c7d_row8_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.4%, transparent 0.4%);
   font-family: Courier;
 }
-#T_b3c75_row8_col2 {
+#T_00c7d_row8_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 2.0%, transparent 2.0%);
   font-family: Courier;
 }
-#T_b3c75_row8_col3 {
+#T_00c7d_row8_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.9%, transparent 0.9%);
   font-family: Courier;
 }
-#T_b3c75_row8_col4 {
+#T_00c7d_row8_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 3.3%, transparent 3.3%);
   font-family: Courier;
 }
-#T_b3c75_row9_col0 {
+#T_00c7d_row9_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 1.3%, transparent 1.3%);
   font-family: Courier;
 }
-#T_b3c75_row9_col2 {
+#T_00c7d_row9_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 4.1%, transparent 4.1%);
   font-family: Courier;
 }
-#T_b3c75_row9_col3 {
+#T_00c7d_row9_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 3.2%, transparent 3.2%);
   font-family: Courier;
 }
-#T_b3c75_row9_col4 {
+#T_00c7d_row9_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 8.6%, transparent 8.6%);
   font-family: Courier;
 }
-#T_b3c75_row10_col2 {
+#T_00c7d_row10_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 4.0%, transparent 4.0%);
   font-family: Courier;
 }
-#T_b3c75_row10_col4 {
+#T_00c7d_row10_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 4.6%, transparent 4.6%);
   font-family: Courier;
 }
-#T_b3c75_row11_col0 {
+#T_00c7d_row11_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 0.5%, transparent 0.5%);
   font-family: Courier;
 }
-#T_b3c75_row11_col4 {
+#T_00c7d_row11_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 3.6%, transparent 3.6%);
   font-family: Courier;
 }
-#T_b3c75_row12_col0 {
+#T_00c7d_row12_col0 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 12.0%, transparent 12.0%);
   font-family: Courier;
 }
-#T_b3c75_row12_col2 {
+#T_00c7d_row12_col2 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 43.8%, transparent 43.8%);
   font-family: Courier;
 }
-#T_b3c75_row12_col3 {
+#T_00c7d_row12_col3 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 44.0%, transparent 44.0%);
   font-family: Courier;
 }
-#T_b3c75_row12_col4 {
+#T_00c7d_row12_col4 {
   width: 10em;
   background: linear-gradient(90deg, lightblue 100.0%, transparent 100.0%);
   font-family: Courier;
 }
 </style>
-<table id="T_b3c75">
+<table id="T_00c7d">
   <thead>
     <tr>
       <th class="index_name level0" >categ_relapse</th>
-      <th id="T_b3c75_level0_col0" class="col_heading level0 col0" >1_fo_relapse</th>
-      <th id="T_b3c75_level0_col1" class="col_heading level0 col1" >2_fo_relapse_tnm</th>
-      <th id="T_b3c75_level0_col2" class="col_heading level0 col2" >3_fo_no_relapse</th>
-      <th id="T_b3c75_level0_col3" class="col_heading level0 col3" >4_no_fo</th>
-      <th id="T_b3c75_level0_col4" class="col_heading level0 col4" >Total</th>
+      <th id="T_00c7d_level0_col0" class="col_heading level0 col0" >1_fo_relapse</th>
+      <th id="T_00c7d_level0_col1" class="col_heading level0 col1" >2_fo_relapse_tnm</th>
+      <th id="T_00c7d_level0_col2" class="col_heading level0 col2" >3_fo_no_relapse</th>
+      <th id="T_00c7d_level0_col3" class="col_heading level0 col3" >4_no_fo</th>
+      <th id="T_00c7d_level0_col4" class="col_heading level0 col4" >Total</th>
     </tr>
     <tr>
       <th class="index_name level0" >z_kkr_label</th>
@@ -629,108 +629,108 @@ _"Wenn bei Erstdiagnose von Darmkrebs auch Lebermetastasen bekannt sind (synchro
   </thead>
   <tbody>
     <tr>
-      <th id="T_b3c75_level0_row0" class="row_heading level0 row0" >02-HH</th>
-      <td id="T_b3c75_row0_col0" class="data row0 col0" >68 <span style="color: grey">(0.2%) </span></td>
-      <td id="T_b3c75_row0_col1" class="data row0 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row0_col2" class="data row0 col2" >72 <span style="color: grey">(0.2%) </span></td>
-      <td id="T_b3c75_row0_col3" class="data row0 col3" >540 <span style="color: grey">(1.9%) </span></td>
-      <td id="T_b3c75_row0_col4" class="data row0 col4" >680 <span style="color: grey">(2.3%) </span></td>
+      <th id="T_00c7d_level0_row0" class="row_heading level0 row0" >02-HH</th>
+      <td id="T_00c7d_row0_col0" class="data row0 col0" >68 <span style="color: grey">(0.2%) </span></td>
+      <td id="T_00c7d_row0_col1" class="data row0 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row0_col2" class="data row0 col2" >72 <span style="color: grey">(0.2%) </span></td>
+      <td id="T_00c7d_row0_col3" class="data row0 col3" >540 <span style="color: grey">(1.9%) </span></td>
+      <td id="T_00c7d_row0_col4" class="data row0 col4" >680 <span style="color: grey">(2.3%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row1" class="row_heading level0 row1" >05-NW</th>
-      <td id="T_b3c75_row1_col0" class="data row1 col0" >608 <span style="color: grey">(2.1%) </span></td>
-      <td id="T_b3c75_row1_col1" class="data row1 col1" >5 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row1_col2" class="data row1 col2" >2_720 <span style="color: grey">(9.4%) </span></td>
-      <td id="T_b3c75_row1_col3" class="data row1 col3" >3_019 <span style="color: grey">(10.4%) </span></td>
-      <td id="T_b3c75_row1_col4" class="data row1 col4" >6_352 <span style="color: grey">(21.9%) </span></td>
+      <th id="T_00c7d_level0_row1" class="row_heading level0 row1" >05-NW</th>
+      <td id="T_00c7d_row1_col0" class="data row1 col0" >608 <span style="color: grey">(2.1%) </span></td>
+      <td id="T_00c7d_row1_col1" class="data row1 col1" >5 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row1_col2" class="data row1 col2" >2_720 <span style="color: grey">(9.4%) </span></td>
+      <td id="T_00c7d_row1_col3" class="data row1 col3" >3_019 <span style="color: grey">(10.4%) </span></td>
+      <td id="T_00c7d_row1_col4" class="data row1 col4" >6_352 <span style="color: grey">(21.9%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row2" class="row_heading level0 row2" >06-HE</th>
-      <td id="T_b3c75_row2_col0" class="data row2 col0" >300 <span style="color: grey">(1.0%) </span></td>
-      <td id="T_b3c75_row2_col1" class="data row2 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row2_col2" class="data row2 col2" >1_018 <span style="color: grey">(3.5%) </span></td>
-      <td id="T_b3c75_row2_col3" class="data row2 col3" >897 <span style="color: grey">(3.1%) </span></td>
-      <td id="T_b3c75_row2_col4" class="data row2 col4" >2_215 <span style="color: grey">(7.6%) </span></td>
+      <th id="T_00c7d_level0_row2" class="row_heading level0 row2" >06-HE</th>
+      <td id="T_00c7d_row2_col0" class="data row2 col0" >300 <span style="color: grey">(1.0%) </span></td>
+      <td id="T_00c7d_row2_col1" class="data row2 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row2_col2" class="data row2 col2" >1_018 <span style="color: grey">(3.5%) </span></td>
+      <td id="T_00c7d_row2_col3" class="data row2 col3" >897 <span style="color: grey">(3.1%) </span></td>
+      <td id="T_00c7d_row2_col4" class="data row2 col4" >2_215 <span style="color: grey">(7.6%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row3" class="row_heading level0 row3" >07-RP</th>
-      <td id="T_b3c75_row3_col0" class="data row3 col0" >82 <span style="color: grey">(0.3%) </span></td>
-      <td id="T_b3c75_row3_col1" class="data row3 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row3_col2" class="data row3 col2" >399 <span style="color: grey">(1.4%) </span></td>
-      <td id="T_b3c75_row3_col3" class="data row3 col3" >1_228 <span style="color: grey">(4.2%) </span></td>
-      <td id="T_b3c75_row3_col4" class="data row3 col4" >1_709 <span style="color: grey">(5.9%) </span></td>
+      <th id="T_00c7d_level0_row3" class="row_heading level0 row3" >07-RP</th>
+      <td id="T_00c7d_row3_col0" class="data row3 col0" >82 <span style="color: grey">(0.3%) </span></td>
+      <td id="T_00c7d_row3_col1" class="data row3 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row3_col2" class="data row3 col2" >399 <span style="color: grey">(1.4%) </span></td>
+      <td id="T_00c7d_row3_col3" class="data row3 col3" >1_228 <span style="color: grey">(4.2%) </span></td>
+      <td id="T_00c7d_row3_col4" class="data row3 col4" >1_709 <span style="color: grey">(5.9%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row4" class="row_heading level0 row4" >08-BW</th>
-      <td id="T_b3c75_row4_col0" class="data row4 col0" >601 <span style="color: grey">(2.1%) </span></td>
-      <td id="T_b3c75_row4_col1" class="data row4 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row4_col2" class="data row4 col2" >2_203 <span style="color: grey">(7.6%) </span></td>
-      <td id="T_b3c75_row4_col3" class="data row4 col3" >1_521 <span style="color: grey">(5.3%) </span></td>
-      <td id="T_b3c75_row4_col4" class="data row4 col4" >4_325 <span style="color: grey">(14.9%) </span></td>
+      <th id="T_00c7d_level0_row4" class="row_heading level0 row4" >08-BW</th>
+      <td id="T_00c7d_row4_col0" class="data row4 col0" >601 <span style="color: grey">(2.1%) </span></td>
+      <td id="T_00c7d_row4_col1" class="data row4 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row4_col2" class="data row4 col2" >2_203 <span style="color: grey">(7.6%) </span></td>
+      <td id="T_00c7d_row4_col3" class="data row4 col3" >1_521 <span style="color: grey">(5.3%) </span></td>
+      <td id="T_00c7d_row4_col4" class="data row4 col4" >4_325 <span style="color: grey">(14.9%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row5" class="row_heading level0 row5" >09-BY</th>
-      <td id="T_b3c75_row5_col0" class="data row5 col0" >622 <span style="color: grey">(2.1%) </span></td>
-      <td id="T_b3c75_row5_col1" class="data row5 col1" >20 <span style="color: grey">(0.1%) </span></td>
-      <td id="T_b3c75_row5_col2" class="data row5 col2" >1_761 <span style="color: grey">(6.1%) </span></td>
-      <td id="T_b3c75_row5_col3" class="data row5 col3" >2_507 <span style="color: grey">(8.7%) </span></td>
-      <td id="T_b3c75_row5_col4" class="data row5 col4" >4_910 <span style="color: grey">(17.0%) </span></td>
+      <th id="T_00c7d_level0_row5" class="row_heading level0 row5" >09-BY</th>
+      <td id="T_00c7d_row5_col0" class="data row5 col0" >622 <span style="color: grey">(2.1%) </span></td>
+      <td id="T_00c7d_row5_col1" class="data row5 col1" >20 <span style="color: grey">(0.1%) </span></td>
+      <td id="T_00c7d_row5_col2" class="data row5 col2" >1_761 <span style="color: grey">(6.1%) </span></td>
+      <td id="T_00c7d_row5_col3" class="data row5 col3" >2_507 <span style="color: grey">(8.7%) </span></td>
+      <td id="T_00c7d_row5_col4" class="data row5 col4" >4_910 <span style="color: grey">(17.0%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row6" class="row_heading level0 row6" >11-BE</th>
-      <td id="T_b3c75_row6_col0" class="data row6 col0" >176 <span style="color: grey">(0.6%) </span></td>
-      <td id="T_b3c75_row6_col1" class="data row6 col1" >4 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row6_col2" class="data row6 col2" >554 <span style="color: grey">(1.9%) </span></td>
-      <td id="T_b3c75_row6_col3" class="data row6 col3" >755 <span style="color: grey">(2.6%) </span></td>
-      <td id="T_b3c75_row6_col4" class="data row6 col4" >1_489 <span style="color: grey">(5.1%) </span></td>
+      <th id="T_00c7d_level0_row6" class="row_heading level0 row6" >11-BE</th>
+      <td id="T_00c7d_row6_col0" class="data row6 col0" >176 <span style="color: grey">(0.6%) </span></td>
+      <td id="T_00c7d_row6_col1" class="data row6 col1" >4 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row6_col2" class="data row6 col2" >554 <span style="color: grey">(1.9%) </span></td>
+      <td id="T_00c7d_row6_col3" class="data row6 col3" >755 <span style="color: grey">(2.6%) </span></td>
+      <td id="T_00c7d_row6_col4" class="data row6 col4" >1_489 <span style="color: grey">(5.1%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row7" class="row_heading level0 row7" >12-BB</th>
-      <td id="T_b3c75_row7_col0" class="data row7 col0" >206 <span style="color: grey">(0.7%) </span></td>
-      <td id="T_b3c75_row7_col1" class="data row7 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row7_col2" class="data row7 col2" >446 <span style="color: grey">(1.5%) </span></td>
-      <td id="T_b3c75_row7_col3" class="data row7 col3" >798 <span style="color: grey">(2.8%) </span></td>
-      <td id="T_b3c75_row7_col4" class="data row7 col4" >1_450 <span style="color: grey">(5.0%) </span></td>
+      <th id="T_00c7d_level0_row7" class="row_heading level0 row7" >12-BB</th>
+      <td id="T_00c7d_row7_col0" class="data row7 col0" >206 <span style="color: grey">(0.7%) </span></td>
+      <td id="T_00c7d_row7_col1" class="data row7 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row7_col2" class="data row7 col2" >446 <span style="color: grey">(1.5%) </span></td>
+      <td id="T_00c7d_row7_col3" class="data row7 col3" >798 <span style="color: grey">(2.8%) </span></td>
+      <td id="T_00c7d_row7_col4" class="data row7 col4" >1_450 <span style="color: grey">(5.0%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row8" class="row_heading level0 row8" >13-MV</th>
-      <td id="T_b3c75_row8_col0" class="data row8 col0" >128 <span style="color: grey">(0.4%) </span></td>
-      <td id="T_b3c75_row8_col1" class="data row8 col1" >3 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row8_col2" class="data row8 col2" >579 <span style="color: grey">(2.0%) </span></td>
-      <td id="T_b3c75_row8_col3" class="data row8 col3" >252 <span style="color: grey">(0.9%) </span></td>
-      <td id="T_b3c75_row8_col4" class="data row8 col4" >962 <span style="color: grey">(3.3%) </span></td>
+      <th id="T_00c7d_level0_row8" class="row_heading level0 row8" >13-MV</th>
+      <td id="T_00c7d_row8_col0" class="data row8 col0" >128 <span style="color: grey">(0.4%) </span></td>
+      <td id="T_00c7d_row8_col1" class="data row8 col1" >3 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row8_col2" class="data row8 col2" >579 <span style="color: grey">(2.0%) </span></td>
+      <td id="T_00c7d_row8_col3" class="data row8 col3" >252 <span style="color: grey">(0.9%) </span></td>
+      <td id="T_00c7d_row8_col4" class="data row8 col4" >962 <span style="color: grey">(3.3%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row9" class="row_heading level0 row9" >14-SN</th>
-      <td id="T_b3c75_row9_col0" class="data row9 col0" >380 <span style="color: grey">(1.3%) </span></td>
-      <td id="T_b3c75_row9_col1" class="data row9 col1" >2 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row9_col2" class="data row9 col2" >1_180 <span style="color: grey">(4.1%) </span></td>
-      <td id="T_b3c75_row9_col3" class="data row9 col3" >929 <span style="color: grey">(3.2%) </span></td>
-      <td id="T_b3c75_row9_col4" class="data row9 col4" >2_491 <span style="color: grey">(8.6%) </span></td>
+      <th id="T_00c7d_level0_row9" class="row_heading level0 row9" >14-SN</th>
+      <td id="T_00c7d_row9_col0" class="data row9 col0" >380 <span style="color: grey">(1.3%) </span></td>
+      <td id="T_00c7d_row9_col1" class="data row9 col1" >2 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row9_col2" class="data row9 col2" >1_180 <span style="color: grey">(4.1%) </span></td>
+      <td id="T_00c7d_row9_col3" class="data row9 col3" >929 <span style="color: grey">(3.2%) </span></td>
+      <td id="T_00c7d_row9_col4" class="data row9 col4" >2_491 <span style="color: grey">(8.6%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row10" class="row_heading level0 row10" >15-ST</th>
-      <td id="T_b3c75_row10_col0" class="data row10 col0" >163 <span style="color: grey">(0.6%) </span></td>
-      <td id="T_b3c75_row10_col1" class="data row10 col1" >1 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row10_col2" class="data row10 col2" >1_160 <span style="color: grey">(4.0%) </span></td>
-      <td id="T_b3c75_row10_col3" class="data row10 col3" >8 <span style="color: grey">(0.0%) </span></td>
-      <td id="T_b3c75_row10_col4" class="data row10 col4" >1_332 <span style="color: grey">(4.6%) </span></td>
+      <th id="T_00c7d_level0_row10" class="row_heading level0 row10" >15-ST</th>
+      <td id="T_00c7d_row10_col0" class="data row10 col0" >163 <span style="color: grey">(0.6%) </span></td>
+      <td id="T_00c7d_row10_col1" class="data row10 col1" >1 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row10_col2" class="data row10 col2" >1_160 <span style="color: grey">(4.0%) </span></td>
+      <td id="T_00c7d_row10_col3" class="data row10 col3" >8 <span style="color: grey">(0.0%) </span></td>
+      <td id="T_00c7d_row10_col4" class="data row10 col4" >1_332 <span style="color: grey">(4.6%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row11" class="row_heading level0 row11" >16-TH</th>
-      <td id="T_b3c75_row11_col0" class="data row11 col0" >149 <span style="color: grey">(0.5%) </span></td>
-      <td id="T_b3c75_row11_col1" class="data row11 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_b3c75_row11_col2" class="data row11 col2" >609 <span style="color: grey">(2.1%) </span></td>
-      <td id="T_b3c75_row11_col3" class="data row11 col3" >294 <span style="color: grey">(1.0%) </span></td>
-      <td id="T_b3c75_row11_col4" class="data row11 col4" >1_052 <span style="color: grey">(3.6%) </span></td>
+      <th id="T_00c7d_level0_row11" class="row_heading level0 row11" >16-TH</th>
+      <td id="T_00c7d_row11_col0" class="data row11 col0" >149 <span style="color: grey">(0.5%) </span></td>
+      <td id="T_00c7d_row11_col1" class="data row11 col1" ><span style="color: grey">0 </span></td>
+      <td id="T_00c7d_row11_col2" class="data row11 col2" >609 <span style="color: grey">(2.1%) </span></td>
+      <td id="T_00c7d_row11_col3" class="data row11 col3" >294 <span style="color: grey">(1.0%) </span></td>
+      <td id="T_00c7d_row11_col4" class="data row11 col4" >1_052 <span style="color: grey">(3.6%) </span></td>
     </tr>
     <tr>
-      <th id="T_b3c75_level0_row12" class="row_heading level0 row12" >Total</th>
-      <td id="T_b3c75_row12_col0" class="data row12 col0" >3_483 <span style="color: grey">(12.0%) </span></td>
-      <td id="T_b3c75_row12_col1" class="data row12 col1" >35 <span style="color: grey">(0.1%) </span></td>
-      <td id="T_b3c75_row12_col2" class="data row12 col2" >12_701 <span style="color: grey">(43.8%) </span></td>
-      <td id="T_b3c75_row12_col3" class="data row12 col3" >12_748 <span style="color: grey">(44.0%) </span></td>
-      <td id="T_b3c75_row12_col4" class="data row12 col4" >28_967 <span style="color: grey">(100.0%) </span></td>
+      <th id="T_00c7d_level0_row12" class="row_heading level0 row12" >Total</th>
+      <td id="T_00c7d_row12_col0" class="data row12 col0" >3_483 <span style="color: grey">(12.0%) </span></td>
+      <td id="T_00c7d_row12_col1" class="data row12 col1" >35 <span style="color: grey">(0.1%) </span></td>
+      <td id="T_00c7d_row12_col2" class="data row12 col2" >12_701 <span style="color: grey">(43.8%) </span></td>
+      <td id="T_00c7d_row12_col3" class="data row12 col3" >12_748 <span style="color: grey">(44.0%) </span></td>
+      <td id="T_00c7d_row12_col4" class="data row12 col4" >28_967 <span style="color: grey">(100.0%) </span></td>
     </tr>
   </tbody>
 </table>
