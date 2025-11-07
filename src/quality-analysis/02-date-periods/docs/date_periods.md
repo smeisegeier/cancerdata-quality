@@ -67,17 +67,17 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.20.7 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.20.8 | 📦 connection-helper: 0.13.1
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
 
-    sqlite db file:          2025-10-20_data_clin.duckdb
+    sqlite db file:          2025-10-30_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
-    sql table created:       2025-10-20 18:49:45
+    sql table created:       2025-10-30 16:25:02
     doi:                     10.18444/5.03.01.0005.0021.0001
-    document created:        2025-11-06 15:05:39
+    document created:        2025-11-07 09:33:59
 
 
 ## <a id='toc1_2_'></a>[Diagnose -> Tod](#toc0_)
@@ -95,6 +95,10 @@
   - `4_noperiod_nodate` - kein Tagesabstand, keine Datumsangaben
 
 
+    
+![svg](date_periods_files/output_15_0.svg)
+    
+
 
 ### <a id='toc1_2_2_'></a>[Tagesabstand](#toc0_)
 - **Werte für Gruppierung nach Tagesabstand**
@@ -104,6 +108,10 @@
   - `D_1-10y` - Wert ist 1-10 Jahre
   - `E_>10y` - Wert ist > 10 Jahre
 
+
+    
+![svg](date_periods_files/output_17_0.svg)
+    
 
 
 
@@ -155,6 +163,10 @@
   - `52_month_ok` - Datumsabstand ist valide ➡️ Datumsabstand
 
 
+    
+![svg](date_periods_files/output_21_0.svg)
+    
+
 
 
     
@@ -174,6 +186,10 @@
   - `4_noperiod_nodate` - kein Tagesabstand, keine Datumsangaben
 
 
+    
+![svg](date_periods_files/output_25_0.svg)
+    
+
 
 ### <a id='toc1_3_2_'></a>[Tagesabstand](#toc0_)
 - **Werte für Gruppierung nach Tagesabstand**
@@ -183,6 +199,10 @@
   - `D_1-10y` - Wert ist 1-10 Jahre
   - `E_>10y` - Wert ist > 10 Jahre
 
+
+    
+![svg](date_periods_files/output_27_0.svg)
+    
 
 
 
@@ -234,6 +254,10 @@
   - `52_month_ok` - Datumsabstand ist valide ➡️ Datumsabstand
 
 
+    
+![svg](date_periods_files/output_31_0.svg)
+    
+
 
 
     
@@ -266,6 +290,10 @@
   - `4_noperiod_nodate` - kein Tagesabstand, keine Datumsangaben
 
 
+    
+![svg](date_periods_files/output_36_0.svg)
+    
+
 
 ### <a id='toc1_4_2_'></a>[Tagesabstand](#toc0_)
 - **Werte für Gruppierung nach Tagesabstand**
@@ -275,6 +303,10 @@
   - `D_1-10y` - Wert ist 1-10 Jahre
   - `E_>10y` - Wert ist > 10 Jahre
 
+
+    
+![svg](date_periods_files/output_38_0.svg)
+    
 
 
 
@@ -326,6 +358,10 @@
   - `52_month_ok` - Datumsabstand ist valide ➡️ Datumsabstand
 
 
+    
+![svg](date_periods_files/output_42_0.svg)
+    
+
 
 
     
@@ -358,6 +394,10 @@
   - `4_noperiod_nodate` - kein Tagesabstand, keine Datumsangaben
 
 
+    
+![svg](date_periods_files/output_47_0.svg)
+    
+
 
 ### <a id='toc1_5_2_'></a>[Tagesabstand](#toc0_)
 - **Werte für Gruppierung nach Tagesabstand**
@@ -367,6 +407,10 @@
   - `D_1-10y` - Wert ist 1-10 Jahre
   - `E_>10y` - Wert ist > 10 Jahre
 
+
+    
+![svg](date_periods_files/output_49_0.svg)
+    
 
 
 
@@ -418,6 +462,10 @@
   - `52_month_ok` - Datumsabstand ist valide ➡️ Datumsabstand
 
 
+    
+![svg](date_periods_files/output_53_0.svg)
+    
+
 
 
     
@@ -448,6 +496,10 @@
   - `4_month_ok` - Datumsabstand valide ➡️ Datumsabstand
 
 
+    
+![svg](date_periods_files/output_58_0.svg)
+    
+
 
 
     
@@ -475,6 +527,10 @@
   - `3_month_0` - Datumsabstand 0 ➡️ 0
   - `4_month_ok` - Datumsabstand valide ➡️ Datumsabstand
 
+
+    
+![svg](date_periods_files/output_63_0.svg)
+    
 
 
 
