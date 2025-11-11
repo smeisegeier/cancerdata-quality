@@ -33,34 +33,26 @@ R0 anteil: 95% ?
   - [Fallzahlen](#toc1_3_)    
     - [Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc1_3_1_)    
     - [Fallzahlen C18-C20 nach Viersteller](#toc1_3_2_)    
-  - [Verteilung T_p + T_c](#toc1_4_)    
-    - [nach Diagnose](#toc1_4_1_)    
-    - [T_p + T_c für operierte C18](#toc1_4_2_)    
-    - [operiert nach UICC und kkr für C18](#toc1_4_3_)    
-  - [Verteilung M_p](#toc1_5_)    
-  - [Verteilung UICC_p](#toc1_6_)    
-  - [OP](#toc1_7_)    
-    - [Operation erfolgt bei C18 mit T_p > 0](#toc1_7_1_)    
-    - [Operation erfolgt nach Jahren](#toc1_7_2_)    
-  - [OPS](#toc1_8_)    
-    - [OPS 5-4xx nach Diagnose](#toc1_8_1_)    
-    - [ Verteilung OPS 5-455 bei C18](#toc1_8_2_)    
-    - [ Verteilung OPS 5-484 bei C20](#toc1_8_3_)    
-    - [Details OPS 5-455.2](#toc1_8_4_)    
-      - [Ileozökalresektion](#toc1_8_4_1_)    
-      - [rechte Hemikolektomie](#toc1_8_4_2_)    
-      - [Sigmaresektion](#toc1_8_4_3_)    
-  - [Lokalisation (Fernmetastasen)](#toc1_9_)    
-    - [für M1](#toc1_9_1_)    
-    - [für M0](#toc1_9_2_)    
-    - [für M1a](#toc1_9_3_)    
-  - [Rezidive](#toc1_10_)    
-  - [Behandlung innerhalb von 6 Wochen](#toc1_11_)    
-  - [Erste Behandlung](#toc1_12_)    
-    - [Was wurde zuerst behandelt](#toc1_12_1_)    
-    - [Zeitlicher Abstand der Behandlungen](#toc1_12_2_)    
-  - [Behandlungsverlauf](#toc1_13_)    
-  - [🕹️ interaktiv](#toc1_14_)    
+  - [OP](#toc1_4_)    
+    - [Operation erfolgt bei C18 mit T_p > 0](#toc1_4_1_)    
+    - [Operation erfolgt nach Jahren](#toc1_4_2_)    
+  - [OPS](#toc1_5_)    
+    - [OPS 5-4xx nach Diagnose](#toc1_5_1_)    
+    - [ Verteilung OPS 5-455 bei C18](#toc1_5_2_)    
+    - [ Verteilung OPS 5-484 bei C20](#toc1_5_3_)    
+    - [Details OPS 5-455.2](#toc1_5_4_)    
+      - [Ileozökalresektion](#toc1_5_4_1_)    
+      - [rechte Hemikolektomie](#toc1_5_4_2_)    
+      - [Sigmaresektion](#toc1_5_4_3_)    
+  - [Lokalisation (Fernmetastasen)](#toc1_6_)    
+    - [für M1](#toc1_6_1_)    
+  - [Rezidive](#toc1_7_)    
+  - [Behandlung innerhalb von 6 Wochen](#toc1_8_)    
+  - [Erste Behandlung](#toc1_9_)    
+    - [Was wurde zuerst behandelt](#toc1_9_1_)    
+    - [Zeitlicher Abstand der Behandlungen](#toc1_9_2_)    
+  - [Behandlungsverlauf](#toc1_10_)    
+  - [🕹️ interaktiv](#toc1_11_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -71,7 +63,7 @@ R0 anteil: 95% ?
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.4.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.21.2 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.4.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.21.3 | 📦 connection-helper: 0.13.1
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
@@ -81,7 +73,7 @@ R0 anteil: 95% ?
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-11-11 16:01:47
+    document created:        2025-11-11 19:10:56
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -119,9 +111,9 @@ R0 anteil: 95% ?
     
 
 
-## <a id='toc1_7_'></a>[OP](#toc0_)
+## <a id='toc1_4_'></a>[OP](#toc0_)
 
-### <a id='toc1_7_1_'></a>[Operation erfolgt bei C18 mit T_p > 0](#toc0_)
+### <a id='toc1_4_1_'></a>[Operation erfolgt bei C18 mit T_p > 0](#toc0_)
 - Filter: `C18` und pathologisches T in 1-4
 > 💡 5% wäre realistisch. patho stadium müsste zwingend vorhanden sein nach OP
 
@@ -131,7 +123,7 @@ R0 anteil: 95% ?
     
 
 
-### <a id='toc1_7_2_'></a>[Operation erfolgt nach Jahren](#toc0_)
+### <a id='toc1_4_2_'></a>[Operation erfolgt nach Jahren](#toc0_)
 - Filter: `C18` und pathologisches T in 1-4
 - `categ_treat`
   - `1-op` - OP dokumentiert
@@ -144,9 +136,9 @@ R0 anteil: 95% ?
     
 
 
-## <a id='toc1_8_'></a>[OPS](#toc0_)
+## <a id='toc1_5_'></a>[OPS](#toc0_)
 
-### <a id='toc1_8_1_'></a>[OPS 5-4xx nach Diagnose](#toc0_)
+### <a id='toc1_5_1_'></a>[OPS 5-4xx nach Diagnose](#toc0_)
 - Filter: `C18-C20`
 - gezählt sind OPS Angaben, nicht Tumore
 
@@ -180,7 +172,7 @@ R0 anteil: 95% ?
     
 
 
-### <a id='toc1_8_2_'></a>[ Verteilung OPS 5-455 bei C18](#toc0_)
+### <a id='toc1_5_2_'></a>[ Verteilung OPS 5-455 bei C18](#toc0_)
 - Filter: `C18` und `M0`
 - gezählt sind Tumore
 - `has_5-455`: True wenn Tumor >= 1 OPS 5-455 hat
@@ -196,7 +188,7 @@ R0 anteil: 95% ?
     
 
 
-### <a id='toc1_8_3_'></a>[ Verteilung OPS 5-484 bei C20](#toc0_)
+### <a id='toc1_5_3_'></a>[ Verteilung OPS 5-484 bei C20](#toc0_)
 - Filter: `C18` und `M0`
 - `has_5-48x`: True wenn Tumor >= 1 OPS 5-484 oder 5-485 hat
 > 💡 ~40% haben True, weniger als erwartet 
@@ -207,7 +199,7 @@ R0 anteil: 95% ?
     
 
 
-### <a id='toc1_8_4_'></a>[Details OPS 5-455.2](#toc0_)
+### <a id='toc1_5_4_'></a>[Details OPS 5-455.2](#toc0_)
 - Filter: `C18-C20`, alle Tumore mit min 1 OP
 - gezählt sind Tumore
 - die Gruppen können überlappen
@@ -226,7 +218,7 @@ R0 anteil: 95% ?
     
 
 
-#### <a id='toc1_8_4_1_'></a>[Ileozökalresektion](#toc0_)
+#### <a id='toc1_5_4_1_'></a>[Ileozökalresektion](#toc0_)
 - Filter: alle Tumore, die einen OPS Code `5-455.2` aufweisen
 - gezählt sind Tumore
 - die Gruppen können überlappen
@@ -239,7 +231,7 @@ R0 anteil: 95% ?
     
 
 
-#### <a id='toc1_8_4_2_'></a>[rechte Hemikolektomie](#toc0_)
+#### <a id='toc1_5_4_2_'></a>[rechte Hemikolektomie](#toc0_)
 - Filter: alle Tumore, die einen OPS Code `5-455.4` aufweisen
 - gezählt sind Tumore
 - die Gruppen können überlappen
@@ -252,7 +244,7 @@ R0 anteil: 95% ?
     
 
 
-#### <a id='toc1_8_4_3_'></a>[Sigmaresektion](#toc0_)
+#### <a id='toc1_5_4_3_'></a>[Sigmaresektion](#toc0_)
 - Filter: alle Tumore, die einen OPS Code `5-455.7` aufweisen
 - gezählt sind Tumore
 - die Gruppen können überlappen
@@ -265,10 +257,10 @@ R0 anteil: 95% ?
     
 
 
-## <a id='toc1_9_'></a>[Lokalisation (Fernmetastasen)](#toc0_)
+## <a id='toc1_6_'></a>[Lokalisation (Fernmetastasen)](#toc0_)
 
 
-### <a id='toc1_9_1_'></a>[für M1](#toc0_)
+### <a id='toc1_6_1_'></a>[für M1](#toc0_)
 - Filter: `C18`-`C20`, nur `M1`
 - gezählt sind Tumore. Allerdings: Bei mehrfachen FM Angaben werden Tumore **mehrfach** gezählt
 
@@ -284,29 +276,7 @@ R0 anteil: 95% ?
     
 
 
-### <a id='toc1_9_2_'></a>[für M0](#toc0_)
-- Filter: `C18`-`C20`, nur `M0`
-- gezählt sind Tumore. Allerdings: Bei mehrfachen FM Angaben werden Tumore **mehrfach** gezählt
-
-> 💡 FM Angaben trotz M0 bleiben eine Randerscheinung
-
-
-    
-![svg](colorectal_files/output_49_0.svg)
-    
-
-
-### <a id='toc1_9_3_'></a>[für M1a](#toc0_)
-- Filter: `C18`-`C20`, nur `M1a`
-- gezählt sind Tumore. Allerdings: Bei mehrfachen FM Angaben werden Tumore **mehrfach** gezählt
-
-
-    
-![svg](colorectal_files/output_51_0.svg)
-    
-
-
-## <a id='toc1_10_'></a>[Rezidive](#toc0_)
+## <a id='toc1_7_'></a>[Rezidive](#toc0_)
 
 **enge Definition eines Rezidivs** 
 - Filter: lokaler Beurteilung Residualstatus = R0 (UND M <> 1)
@@ -335,19 +305,19 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_54_0.svg)
+![svg](colorectal_files/output_50_0.svg)
     
 
 
 
     
-![png](colorectal_files/output_54_1.png)
+![png](colorectal_files/output_50_1.png)
     
 
 
 <br>
 
-## <a id='toc1_11_'></a>[Behandlung innerhalb von 6 Wochen](#toc0_)
+## <a id='toc1_8_'></a>[Behandlung innerhalb von 6 Wochen](#toc0_)
 - Filter: `C18`-`C20`
 - `first_treatment_6w`
   - `<=6w`: erste Behandlung innerhalb von 6 Wochen
@@ -357,37 +327,37 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_56_0.svg)
+![svg](colorectal_files/output_52_0.svg)
     
 
 
-## <a id='toc1_12_'></a>[Erste Behandlung](#toc0_)
+## <a id='toc1_9_'></a>[Erste Behandlung](#toc0_)
 
-### <a id='toc1_12_1_'></a>[Was wurde zuerst behandelt](#toc0_)
+### <a id='toc1_9_1_'></a>[Was wurde zuerst behandelt](#toc0_)
 - Filter: `M1` und Tumor hat Lebermetastasen und `C18` oder `C20`
 - gezählt sind Tumore
 
 
     
-![svg](colorectal_files/output_59_0.svg)
+![svg](colorectal_files/output_55_0.svg)
     
 
 
-### <a id='toc1_12_2_'></a>[Zeitlicher Abstand der Behandlungen](#toc0_)
+### <a id='toc1_9_2_'></a>[Zeitlicher Abstand der Behandlungen](#toc0_)
 - Filter: `C18`-`C20`, Tumore mit Behandlung
 - gezählt sind Tumore
 - abgebildet sind Median Werte für den Abstand Diagnose bis erste Behandlung in Tagen (logarithmische Skala)
 
 
     
-![png](colorectal_files/output_61_0.png)
+![png](colorectal_files/output_57_0.png)
     
 
 
     
-    column (n = 164_334)         | missings | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
-    -----------------------------+----------+-----+-------+------+--------+-------+-------+-------+-------+-------+-----
-    z_first_treatment_after_days |   0 (0%) |   0 |     0 | 5.00 |  16.00 | 29.85 | 32.00 |    72 | 1_645 | 70.95 | 2.38
+    column (n = 164_334)         |    present     | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
+    -----------------------------+----------------+-----+-------+------+--------+-------+-------+-------+-------+-------+-----
+    z_first_treatment_after_days | 164_334 (100%) |   0 |     0 | 5.00 |  16.00 | 29.85 | 32.00 |    72 | 1_645 | 70.95 | 2.38
     
     
     item (n = 164_334) | count  | min  | lower | q25  | median | mean  |  q75  | upper |   max    |  std  |  cv 
@@ -411,7 +381,7 @@ R0 anteil: 95% ?
     
 
 
-## <a id='toc1_13_'></a>[Behandlungsverlauf](#toc0_)
+## <a id='toc1_10_'></a>[Behandlungsverlauf](#toc0_)
 - Filter: `C18`-`C20`, nur Tumore mit Therapie
 - gezählt sind Tumore
 - beschränkt auf die ersten 5 Therapien
@@ -423,8 +393,8 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_64_0.svg)
+![svg](colorectal_files/output_60_0.svg)
     
 
 
-## <a id='toc1_14_'></a>[🕹️ interaktiv](#toc0_)
+## <a id='toc1_11_'></a>[🕹️ interaktiv](#toc0_)
