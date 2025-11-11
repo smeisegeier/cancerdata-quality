@@ -1,16 +1,16 @@
 # further classifications
 
-    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.20.4 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.21.2 | 📦 connection-helper: 0.13.1
 
 
 ## <a id='toc1_1_'></a>[📆 data as of](#toc0_)
 
-    sqlite db file:          2025-10-30_data_clin.duckdb
+    sqlite db file:          2025-11-11_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
-    sql table created:       2025-10-30 16:25:02
-    doi:                     10.18444/5.03.01.0005.0021.0001
-    document created:        2025-10-31 14:58:19
+    sql table created:       2025-11-11 11:52:01
+    doi:                     10.18444/5.03.01.0005.0021.0002
+    document created:        2025-11-11 16:05:20
 
 
 
@@ -372,386 +372,25 @@
 
     🗄️ db_class	653_691, 6
     	("z_tum_id, Name, Stadium, z_kkr_label, source, class")
-    ┌──────────────────────────────────────┬───────────────────────┬─────────┬─────────────┬─────────┬─────────┐
-    │               z_tum_id               │         Name          │ Stadium │ z_kkr_label │ source  │  class  │
-    │               varchar                │        varchar        │ varchar │   varchar   │ varchar │ varchar │
-    ├──────────────────────────────────────┼───────────────────────┼─────────┼─────────────┼─────────┼─────────┤
-    │ 4911d242-6d97-48e7-b010-9961601b70a1 │ GLEASONSCORE          │ 7a      │ 02-HH       │ dia     │ gleason │
-    │ c559c8ed-13f4-476f-a6d9-b9acd57c80f4 │ WHO-Grad (Hirntumore) │ 4       │ 08-BW       │ dia     │ brain   │
-    │ 9c88ab93-a61c-454b-8a6a-df2b75c0e267 │ Binet                 │ A       │ 16-TH       │ dia     │ NULL    │
-    └──────────────────────────────────────┴───────────────────────┴─────────┴─────────────┴─────────┴─────────┘
-    
-
-
-
-    
-![svg](further_class_files/output_9_0.svg)
-    
-
-
-
-    
-![svg](further_class_files/output_10_0.svg)
-    
-
-
-
-    
-![svg](further_class_files/output_11_0.svg)
+    ┌──────────────────────────────────────┬────────────────────────┬─────────┬─────────────┬─────────┬─────────┐
+    │               z_tum_id               │          Name          │ Stadium │ z_kkr_label │ source  │  class  │
+    │               varchar                │        varchar         │ varchar │   varchar   │ varchar │ varchar │
+    ├──────────────────────────────────────┼────────────────────────┼─────────┼─────────────┼─────────┼─────────┤
+    │ 0e7ba901-8512-4346-933d-019da31093f7 │ PROSTATA.Gleason-Score │ 4+4=8   │ 09-BY       │ fol     │ gleason │
+    │ c5635830-7173-4786-9724-59eac004e346 │ Gleason-Score          │ 3+4=7a  │ 06-HE       │ fol     │ gleason │
+    │ a9b806d9-b1d7-468c-a3e8-7f30c6e0deb7 │ Gleason-Score          │ 4+4=8   │ 06-HE       │ fol     │ gleason │
+    └──────────────────────────────────────┴────────────────────────┴─────────┴─────────────┴─────────┴─────────┘
     
 
 
 
 
 
-<style type="text/css">
-#T_45f26 th {
-  text-align: right;
-}
-#T_45f26 td {
-  text-align: right;
-}
-#T_45f26_row0_col0, #T_45f26_row0_col14, #T_45f26_row1_col0, #T_45f26_row1_col2, #T_45f26_row1_col14, #T_45f26_row2_col10, #T_45f26_row3_col9, #T_45f26_row4_col1, #T_45f26_row4_col12, #T_45f26_row8_col14 {
-  font-family: Courier;
-  background-color: #f4f9fe;
-  color: #000000;
-}
-#T_45f26_row0_col1, #T_45f26_row0_col6, #T_45f26_row2_col8, #T_45f26_row2_col11, #T_45f26_row7_col7 {
-  font-family: Courier;
-  background-color: #f5fafe;
-  color: #000000;
-}
-#T_45f26_row0_col2, #T_45f26_row0_col12, #T_45f26_row3_col15, #T_45f26_row4_col2 {
-  font-family: Courier;
-  background-color: #f3f8fe;
-  color: #000000;
-}
-#T_45f26_row0_col3, #T_45f26_row0_col4, #T_45f26_row1_col3, #T_45f26_row1_col4, #T_45f26_row2_col0, #T_45f26_row2_col4, #T_45f26_row2_col6, #T_45f26_row2_col12, #T_45f26_row2_col13, #T_45f26_row3_col0, #T_45f26_row3_col1, #T_45f26_row3_col3, #T_45f26_row3_col4, #T_45f26_row4_col0, #T_45f26_row4_col4, #T_45f26_row4_col6, #T_45f26_row5_col0, #T_45f26_row5_col2, #T_45f26_row5_col3, #T_45f26_row5_col4, #T_45f26_row5_col6, #T_45f26_row5_col8, #T_45f26_row5_col9, #T_45f26_row5_col10, #T_45f26_row5_col11, #T_45f26_row5_col12, #T_45f26_row5_col13, #T_45f26_row5_col14, #T_45f26_row5_col15, #T_45f26_row6_col0, #T_45f26_row6_col1, #T_45f26_row6_col2, #T_45f26_row6_col3, #T_45f26_row6_col5, #T_45f26_row6_col6, #T_45f26_row6_col7, #T_45f26_row6_col8, #T_45f26_row6_col9, #T_45f26_row6_col10, #T_45f26_row6_col11, #T_45f26_row6_col12, #T_45f26_row6_col13, #T_45f26_row6_col14, #T_45f26_row6_col15, #T_45f26_row7_col0, #T_45f26_row7_col1, #T_45f26_row7_col2, #T_45f26_row7_col3, #T_45f26_row7_col5, #T_45f26_row7_col6, #T_45f26_row7_col8, #T_45f26_row7_col9, #T_45f26_row7_col10, #T_45f26_row7_col11, #T_45f26_row7_col12, #T_45f26_row7_col13, #T_45f26_row7_col14, #T_45f26_row7_col15, #T_45f26_row8_col3, #T_45f26_row8_col4, #T_45f26_row8_col15 {
-  font-family: Courier;
-  background-color: #f7fbff;
-  color: #000000;
-}
-#T_45f26_row0_col5, #T_45f26_row4_col10, #T_45f26_row8_col1 {
-  font-family: Courier;
-  background-color: #f1f7fd;
-  color: #000000;
-}
-#T_45f26_row0_col7 {
-  font-family: Courier;
-  background-color: #e9f2fa;
-  color: #000000;
-}
-#T_45f26_row0_col8, #T_45f26_row1_col8 {
-  font-family: Courier;
-  background-color: #eaf2fb;
-  color: #000000;
-}
-#T_45f26_row0_col9, #T_45f26_row1_col6, #T_45f26_row1_col9, #T_45f26_row2_col1, #T_45f26_row2_col2, #T_45f26_row2_col3, #T_45f26_row2_col9, #T_45f26_row3_col2, #T_45f26_row3_col6, #T_45f26_row3_col10, #T_45f26_row4_col3, #T_45f26_row4_col14, #T_45f26_row4_col15, #T_45f26_row8_col10, #T_45f26_row8_col11, #T_45f26_row8_col12 {
-  font-family: Courier;
-  background-color: #f6faff;
-  color: #000000;
-}
-#T_45f26_row0_col10, #T_45f26_row2_col7, #T_45f26_row2_col14, #T_45f26_row5_col1 {
-  font-family: Courier;
-  background-color: #f2f7fd;
-  color: #000000;
-}
-#T_45f26_row0_col11, #T_45f26_row1_col12, #T_45f26_row3_col5, #T_45f26_row3_col14, #T_45f26_row4_col11, #T_45f26_row4_col13 {
-  font-family: Courier;
-  background-color: #f2f8fd;
-  color: #000000;
-}
-#T_45f26_row0_col13, #T_45f26_row1_col5, #T_45f26_row4_col8, #T_45f26_row6_col4 {
-  font-family: Courier;
-  background-color: #eef5fc;
-  color: #000000;
-}
-#T_45f26_row0_col15, #T_45f26_row1_col1, #T_45f26_row1_col15, #T_45f26_row2_col5, #T_45f26_row2_col15, #T_45f26_row3_col11, #T_45f26_row3_col12, #T_45f26_row4_col9, #T_45f26_row5_col5, #T_45f26_row8_col6 {
-  font-family: Courier;
-  background-color: #f5f9fe;
-  color: #000000;
-}
-#T_45f26_row1_col7, #T_45f26_row8_col5 {
-  font-family: Courier;
-  background-color: #deebf7;
-  color: #000000;
-}
-#T_45f26_row1_col10, #T_45f26_row1_col11, #T_45f26_row1_col13, #T_45f26_row8_col9 {
-  font-family: Courier;
-  background-color: #eff6fc;
-  color: #000000;
-}
-#T_45f26_row3_col7 {
-  font-family: Courier;
-  background-color: #dceaf6;
-  color: #000000;
-}
-#T_45f26_row3_col8 {
-  font-family: Courier;
-  background-color: #e6f0f9;
-  color: #000000;
-}
-#T_45f26_row3_col13 {
-  font-family: Courier;
-  background-color: #edf4fc;
-  color: #000000;
-}
-#T_45f26_row4_col5, #T_45f26_row8_col0 {
-  font-family: Courier;
-  background-color: #f0f6fd;
-  color: #000000;
-}
-#T_45f26_row4_col7 {
-  font-family: Courier;
-  background-color: #e1edf8;
-  color: #000000;
-}
-#T_45f26_row5_col7 {
-  font-family: Courier;
-  background-color: #cfe1f2;
-  color: #000000;
-}
-#T_45f26_row7_col4 {
-  font-family: Courier;
-  background-color: #08306b;
-  color: #f1f1f1;
-}
-#T_45f26_row8_col2 {
-  font-family: Courier;
-  background-color: #bed8ec;
-  color: #000000;
-}
-#T_45f26_row8_col7 {
-  font-family: Courier;
-  background-color: #68acd5;
-  color: #f1f1f1;
-}
-#T_45f26_row8_col8 {
-  font-family: Courier;
-  background-color: #e3eef9;
-  color: #000000;
-}
-#T_45f26_row8_col13 {
-  font-family: Courier;
-  background-color: #ebf3fb;
-  color: #000000;
-}
-</style>
-<table id="T_45f26">
-  <thead>
-    <tr>
-      <th class="index_name level0" >z_kkr_label</th>
-      <th id="T_45f26_level0_col0" class="col_heading level0 col0" >01-SH</th>
-      <th id="T_45f26_level0_col1" class="col_heading level0 col1" >02-HH</th>
-      <th id="T_45f26_level0_col2" class="col_heading level0 col2" >03-NI</th>
-      <th id="T_45f26_level0_col3" class="col_heading level0 col3" >04-HB</th>
-      <th id="T_45f26_level0_col4" class="col_heading level0 col4" >05-NW</th>
-      <th id="T_45f26_level0_col5" class="col_heading level0 col5" >06-HE</th>
-      <th id="T_45f26_level0_col6" class="col_heading level0 col6" >07-RP</th>
-      <th id="T_45f26_level0_col7" class="col_heading level0 col7" >08-BW</th>
-      <th id="T_45f26_level0_col8" class="col_heading level0 col8" >09-BY</th>
-      <th id="T_45f26_level0_col9" class="col_heading level0 col9" >10-SL</th>
-      <th id="T_45f26_level0_col10" class="col_heading level0 col10" >11-BE</th>
-      <th id="T_45f26_level0_col11" class="col_heading level0 col11" >12-BB</th>
-      <th id="T_45f26_level0_col12" class="col_heading level0 col12" >13-MV</th>
-      <th id="T_45f26_level0_col13" class="col_heading level0 col13" >14-SN</th>
-      <th id="T_45f26_level0_col14" class="col_heading level0 col14" >15-ST</th>
-      <th id="T_45f26_level0_col15" class="col_heading level0 col15" >16-TH</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >class</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-      <th class="blank col8" >&nbsp;</th>
-      <th class="blank col9" >&nbsp;</th>
-      <th class="blank col10" >&nbsp;</th>
-      <th class="blank col11" >&nbsp;</th>
-      <th class="blank col12" >&nbsp;</th>
-      <th class="blank col13" >&nbsp;</th>
-      <th class="blank col14" >&nbsp;</th>
-      <th class="blank col15" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_45f26_level0_row0" class="row_heading level0 row0" >ann_arbor</th>
-      <td id="T_45f26_row0_col0" class="data row0 col0" >1_685 </td>
-      <td id="T_45f26_row0_col1" class="data row0 col1" >790 </td>
-      <td id="T_45f26_row0_col2" class="data row0 col2" >1_905 </td>
-      <td id="T_45f26_row0_col3" class="data row0 col3" >345 </td>
-      <td id="T_45f26_row0_col4" class="data row0 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row0_col5" class="data row0 col5" >3_154 </td>
-      <td id="T_45f26_row0_col6" class="data row0 col6" >1_032 </td>
-      <td id="T_45f26_row0_col7" class="data row0 col7" >7_001 </td>
-      <td id="T_45f26_row0_col8" class="data row0 col8" >6_426 </td>
-      <td id="T_45f26_row0_col9" class="data row0 col9" >465 </td>
-      <td id="T_45f26_row0_col10" class="data row0 col10" >2_855 </td>
-      <td id="T_45f26_row0_col11" class="data row0 col11" >2_344 </td>
-      <td id="T_45f26_row0_col12" class="data row0 col12" >1_985 </td>
-      <td id="T_45f26_row0_col13" class="data row0 col13" >4_793 </td>
-      <td id="T_45f26_row0_col14" class="data row0 col14" >1_584 </td>
-      <td id="T_45f26_row0_col15" class="data row0 col15" >1_293 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row1" class="row_heading level0 row1" >brain</th>
-      <td id="T_45f26_row1_col0" class="data row1 col0" >1_786 </td>
-      <td id="T_45f26_row1_col1" class="data row1 col1" >1_282 </td>
-      <td id="T_45f26_row1_col2" class="data row1 col2" >1_625 </td>
-      <td id="T_45f26_row1_col3" class="data row1 col3" >362 </td>
-      <td id="T_45f26_row1_col4" class="data row1 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row1_col5" class="data row1 col5" >4_150 </td>
-      <td id="T_45f26_row1_col6" class="data row1 col6" >685 </td>
-      <td id="T_45f26_row1_col7" class="data row1 col7" >12_360 </td>
-      <td id="T_45f26_row1_col8" class="data row1 col8" >6_643 </td>
-      <td id="T_45f26_row1_col9" class="data row1 col9" >746 </td>
-      <td id="T_45f26_row1_col10" class="data row1 col10" >3_888 </td>
-      <td id="T_45f26_row1_col11" class="data row1 col11" >3_940 </td>
-      <td id="T_45f26_row1_col12" class="data row1 col12" >2_446 </td>
-      <td id="T_45f26_row1_col13" class="data row1 col13" >3_966 </td>
-      <td id="T_45f26_row1_col14" class="data row1 col14" >1_678 </td>
-      <td id="T_45f26_row1_col15" class="data row1 col15" >1_420 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row2" class="row_heading level0 row2" >breslow</th>
-      <td id="T_45f26_row2_col0" class="data row2 col0" >13 </td>
-      <td id="T_45f26_row2_col1" class="data row2 col1" >403 </td>
-      <td id="T_45f26_row2_col2" class="data row2 col2" >639 </td>
-      <td id="T_45f26_row2_col3" class="data row2 col3" >400 </td>
-      <td id="T_45f26_row2_col4" class="data row2 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row2_col5" class="data row2 col5" >1_212 </td>
-      <td id="T_45f26_row2_col6" class="data row2 col6" >163 </td>
-      <td id="T_45f26_row2_col7" class="data row2 col7" >2_941 </td>
-      <td id="T_45f26_row2_col8" class="data row2 col8" >812 </td>
-      <td id="T_45f26_row2_col9" class="data row2 col9" >700 </td>
-      <td id="T_45f26_row2_col10" class="data row2 col10" >1_859 </td>
-      <td id="T_45f26_row2_col11" class="data row2 col11" >782 </td>
-      <td id="T_45f26_row2_col12" class="data row2 col12" >300 </td>
-      <td id="T_45f26_row2_col13" class="data row2 col13" >175 </td>
-      <td id="T_45f26_row2_col14" class="data row2 col14" >2_772 </td>
-      <td id="T_45f26_row2_col15" class="data row2 col15" >1_461 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row3" class="row_heading level0 row3" >gleason</th>
-      <td id="T_45f26_row3_col0" class="data row3 col0" >44 </td>
-      <td id="T_45f26_row3_col1" class="data row3 col1" >307 </td>
-      <td id="T_45f26_row3_col2" class="data row3 col2" >455 </td>
-      <td id="T_45f26_row3_col3" class="data row3 col3" >94 </td>
-      <td id="T_45f26_row3_col4" class="data row3 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row3_col5" class="data row3 col5" >2_413 </td>
-      <td id="T_45f26_row3_col6" class="data row3 col6" >710 </td>
-      <td id="T_45f26_row3_col7" class="data row3 col7" >12_979 </td>
-      <td id="T_45f26_row3_col8" class="data row3 col8" >8_585 </td>
-      <td id="T_45f26_row3_col9" class="data row3 col9" >1_578 </td>
-      <td id="T_45f26_row3_col10" class="data row3 col10" >599 </td>
-      <td id="T_45f26_row3_col11" class="data row3 col11" >1_279 </td>
-      <td id="T_45f26_row3_col12" class="data row3 col12" >1_451 </td>
-      <td id="T_45f26_row3_col13" class="data row3 col13" >4_991 </td>
-      <td id="T_45f26_row3_col14" class="data row3 col14" >2_306 </td>
-      <td id="T_45f26_row3_col15" class="data row3 col15" >1_926 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row4" class="row_heading level0 row4" >hpv</th>
-      <td id="T_45f26_row4_col0" class="data row4 col0" >286 </td>
-      <td id="T_45f26_row4_col1" class="data row4 col1" >1_688 </td>
-      <td id="T_45f26_row4_col2" class="data row4 col2" >1_923 </td>
-      <td id="T_45f26_row4_col3" class="data row4 col3" >530 </td>
-      <td id="T_45f26_row4_col4" class="data row4 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row4_col5" class="data row4 col5" >3_531 </td>
-      <td id="T_45f26_row4_col6" class="data row4 col6" >141 </td>
-      <td id="T_45f26_row4_col7" class="data row4 col7" >10_706 </td>
-      <td id="T_45f26_row4_col8" class="data row4 col8" >4_829 </td>
-      <td id="T_45f26_row4_col9" class="data row4 col9" >1_490 </td>
-      <td id="T_45f26_row4_col10" class="data row4 col10" >3_255 </td>
-      <td id="T_45f26_row4_col11" class="data row4 col11" >2_302 </td>
-      <td id="T_45f26_row4_col12" class="data row4 col12" >1_715 </td>
-      <td id="T_45f26_row4_col13" class="data row4 col13" >2_251 </td>
-      <td id="T_45f26_row4_col14" class="data row4 col14" >452 </td>
-      <td id="T_45f26_row4_col15" class="data row4 col15" >737 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row5" class="row_heading level0 row5" >ki67</th>
-      <td id="T_45f26_row5_col0" class="data row5 col0" >4 </td>
-      <td id="T_45f26_row5_col1" class="data row5 col1" >2_759 </td>
-      <td id="T_45f26_row5_col2" class="data row5 col2" >283 </td>
-      <td id="T_45f26_row5_col3" class="data row5 col3" >103 </td>
-      <td id="T_45f26_row5_col4" class="data row5 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row5_col5" class="data row5 col5" >1_426 </td>
-      <td id="T_45f26_row5_col6" class="data row5 col6" >63 </td>
-      <td id="T_45f26_row5_col7" class="data row5 col7" >19_643 </td>
-      <td id="T_45f26_row5_col8" class="data row5 col8" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row5_col9" class="data row5 col9" >29 </td>
-      <td id="T_45f26_row5_col10" class="data row5 col10" >3 </td>
-      <td id="T_45f26_row5_col11" class="data row5 col11" >1 </td>
-      <td id="T_45f26_row5_col12" class="data row5 col12" >1 </td>
-      <td id="T_45f26_row5_col13" class="data row5 col13" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row5_col14" class="data row5 col14" >2 </td>
-      <td id="T_45f26_row5_col15" class="data row5 col15" >3 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row6" class="row_heading level0 row6" >oestrogen</th>
-      <td id="T_45f26_row6_col0" class="data row6 col0" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col1" class="data row6 col1" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col2" class="data row6 col2" >3 </td>
-      <td id="T_45f26_row6_col3" class="data row6 col3" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col4" class="data row6 col4" >4_487 </td>
-      <td id="T_45f26_row6_col5" class="data row6 col5" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col6" class="data row6 col6" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col7" class="data row6 col7" >3 </td>
-      <td id="T_45f26_row6_col8" class="data row6 col8" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col9" class="data row6 col9" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col10" class="data row6 col10" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col11" class="data row6 col11" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col12" class="data row6 col12" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col13" class="data row6 col13" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col14" class="data row6 col14" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row6_col15" class="data row6 col15" >12 </td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row7" class="row_heading level0 row7" >psa</th>
-      <td id="T_45f26_row7_col0" class="data row7 col0" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col1" class="data row7 col1" >46 </td>
-      <td id="T_45f26_row7_col2" class="data row7 col2" >1 </td>
-      <td id="T_45f26_row7_col3" class="data row7 col3" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col4" class="data row7 col4" >95_924 </td>
-      <td id="T_45f26_row7_col5" class="data row7 col5" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col6" class="data row7 col6" >63 </td>
-      <td id="T_45f26_row7_col7" class="data row7 col7" >1_099 </td>
-      <td id="T_45f26_row7_col8" class="data row7 col8" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col9" class="data row7 col9" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col10" class="data row7 col10" >9 </td>
-      <td id="T_45f26_row7_col11" class="data row7 col11" >3 </td>
-      <td id="T_45f26_row7_col12" class="data row7 col12" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col13" class="data row7 col13" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col14" class="data row7 col14" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row7_col15" class="data row7 col15" ><span style="color: grey">0 </span></td>
-    </tr>
-    <tr>
-      <th id="T_45f26_level0_row8" class="row_heading level0 row8" >uicc</th>
-      <td id="T_45f26_row8_col0" class="data row8 col0" >3_622 </td>
-      <td id="T_45f26_row8_col1" class="data row8 col1" >3_014 </td>
-      <td id="T_45f26_row8_col2" class="data row8 col2" >26_431 </td>
-      <td id="T_45f26_row8_col3" class="data row8 col3" >35 </td>
-      <td id="T_45f26_row8_col4" class="data row8 col4" ><span style="color: grey">0 </span></td>
-      <td id="T_45f26_row8_col5" class="data row8 col5" >12_331 </td>
-      <td id="T_45f26_row8_col6" class="data row8 col6" >1_431 </td>
-      <td id="T_45f26_row8_col7" class="data row8 col7" >48_925 </td>
-      <td id="T_45f26_row8_col8" class="data row8 col8" >9_707 </td>
-      <td id="T_45f26_row8_col9" class="data row8 col9" >3_963 </td>
-      <td id="T_45f26_row8_col10" class="data row8 col10" >633 </td>
-      <td id="T_45f26_row8_col11" class="data row8 col11" >545 </td>
-      <td id="T_45f26_row8_col12" class="data row8 col12" >406 </td>
-      <td id="T_45f26_row8_col13" class="data row8 col13" >5_714 </td>
-      <td id="T_45f26_row8_col14" class="data row8 col14" >1_526 </td>
-      <td id="T_45f26_row8_col15" class="data row8 col15" >10 </td>
-    </tr>
-  </tbody>
-</table>
 
 
+
+
+    
+![png](further_class_files/output_12_0.png)
+    
 

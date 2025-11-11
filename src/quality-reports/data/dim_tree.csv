@@ -52,8 +52,8 @@ tablecolumn;tables;sel1_relevant;sel2_organ;sel3_TNM;sel4_datum;sel5_pflicht;sel
 [OP]Lokale_Beurteilung_Residualstatus;OP;;;;;;;;1;;
 [OPS]Code;OPS;1;;;;;;;1;;
 [OPS]Version;OPS;;;;;;;;;;
-[Patient]DatumVitalStatus;Patient;;;;1;1;;;;;
-[Patient]DatumVitalStatus_Genauigkeit;Patient;;;;1;;;;;;
+[Patient]Datum_Vitalstatus;Patient;;;;1;1;;;;;
+[Patient]Datum_Vitalstatus_Genauigkeit;Patient;;;;1;;;;;;
 [Patient]Geburtsdatum;Patient;;;;1;1;;;;;
 [Patient]Geburtsdatum_Genauigkeit;Patient;;;;1;;;;;;
 [Patient]Geschlecht;Patient;;;;;1;;;;;
