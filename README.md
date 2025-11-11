@@ -26,7 +26,7 @@ lore ipsum dolor est
 ### aktueller Bericht klinische Daten
 <a id="markdown-aktueller-bericht-klinische-daten" name="aktueller-bericht-klinische-daten"></a>
 
-Datenstand: 2020-10-30
+Datenstand: 2020-11-11
 - Datenqualität [[markdown]](./src/quality-reports/docs/clin/clin_2_analyze.md/) [[pdf]](./src/quality-reports/docs/clin/clin_2_analyze.pdf/)
 - Technischer Bericht [[markdown]](./src/quality-reports/docs/clin/clin_2_analyze.md/)
 
