@@ -39,13 +39,18 @@
   - [Missings / Unbekannt in den Daten](#toc1_8_)    
     - [Missings für verpflichtende Variablen in Tumor Element](#toc1_8_1_)    
     - [Missings für Therapieangaben](#toc1_8_2_)    
-    - [Missings für Tumorstadien](#toc1_8_3_)    
-    - [Missings für organspezifische Variablen (Mamma)](#toc1_8_4_)    
-    - [Missings für organspezifische Variablen (Prostata)](#toc1_8_5_)    
-    - [Missings für organspezifische Variablen (Darm)](#toc1_8_6_)    
-    - [Missings für organspezifische Variablen (Melanom)](#toc1_8_7_)    
-    - [Missings für Prio Variablen](#toc1_8_8_)    
-    - [Unbekannt für verpflichtende Variablen](#toc1_8_9_)    
+      - [Missings für alle Therapien](#toc1_8_2_1_)    
+      - [Missings für Operationen](#toc1_8_2_2_)    
+      - [Missings für Strahlentherapie](#toc1_8_2_3_)    
+      - [Missings für systemische Therapie](#toc1_8_2_4_)    
+    - [Missings für Folgeereignisse](#toc1_8_3_)    
+    - [Missings für Freitexte](#toc1_8_4_)    
+    - [Missings für Tumorstadien](#toc1_8_5_)    
+    - [Missings für organspezifische Variablen (Mamma)](#toc1_8_6_)    
+    - [Missings für organspezifische Variablen (Prostata)](#toc1_8_7_)    
+    - [Missings für organspezifische Variablen (Darm)](#toc1_8_8_)    
+    - [Missings für organspezifische Variablen (Melanom)](#toc1_8_9_)    
+    - [Unbekannt-Kodierungen für ausgewählte Variablen](#toc1_8_10_)    
   - [Verteilung Monat von Datum_Vitalstatus](#toc1_9_)    
   - [Numerische Variablen 🔢](#toc1_10_)    
     - [Diagnosealter](#toc1_10_1_)    
@@ -81,7 +86,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-11-11 17:15:33
+    document created:        2025-11-13 17:33:27
 
 
 <br>
@@ -117,7 +122,7 @@
   - `fm_diag_cnt` = Fernmetastasen im Elementknoten "Diagnose"
   - `tnm_folge_cnt` = TNM im Elementknoten "Folgeereignis"
 
-> 💡 `ZfKD`: _"die absoluten Werte lassen erkennen, dass inzwischen die meisten Elemente flächendeckend vorliegen. Ausnahmen: `Applikationsart`, `Folgeereignisse`, `Protokolle` / `Substanzen`"_
+> 💡 `ZfKD` _die absoluten Werte lassen erkennen, dass inzwischen die meisten Elemente flächendeckend vorliegen. Ausnahmen: `Applikationsart`, `Folgeereignisse`, `Protokolle` / `Substanzen`_
 
 
     
@@ -162,7 +167,7 @@
 - in der Darstellung sind die Max/Min Werte pro Kennzahl mit 🟥/🟩 markiert (kleiner ist besser)
 > 💡 `NI`: _"Die **Missings für Folgeereignis, Strahlentherapie und Systemische Therapie** sind Resultat der noch ausstehenden Implementierung in der Registersoftware Tristan zur Bildung der jeweiligen Best-Of-Informationen. Die Implementierung ist bereits beauftragt. Neben Niedersachsen nutzen die Bundesländer Schleswig-Holstein, Bremen und das Saarland dieselbe Tristan-Implementierung"_
 
-> 💡 `ZfKD`: _"aus `st_missing_per_tum` lässt sich ablesen, dass ~23% der Tumoren deutschlandweit mind. eine ST zugeordnet ist (Total: 1 - 0.77 = 0.23). Das entspricht in etwa der Annahme von 30% Anteil von Strahlentherapien an primären Diagnosen "_
+> 💡 `ZfKD`: _aus `st_missing_per_tum` lässt sich ablesen, dass ~23% der Tumoren deutschlandweit mind. eine ST zugeordnet ist (Total: 1 - 0.77 = 0.23). Das entspricht in etwa der Annahme von 30% Anteil von Strahlentherapien an primären Diagnosen_
 
 
     
@@ -185,7 +190,7 @@
 - Hinweis: Die Auswertung Daten basiert auf `Inzidenzort` anstatt `Lieferregister`, da in den epi Daten bislang die einzelnen Länder des GKR nicht aufgeschlüsselt waren, und ein matching auf EKRNR somit fehlschlägt
 > 💡 `NI`: _"Die **höhere Fallzahl** des epidemiologischen Registers im Vergleich zum klinischen Register ist vermutlich auf unterschiedliche Filterkriterien in den beiden Registern zurückzuführen. Im KKN werden neben den Kriterien die das Lieferschema vorgibt auch noch weitere Plausibilitätsprüfungen angewandt. Tumoren, welche diese Prüfungen nicht bestehen, werden vom Export ausgeschlossen"_  
 
-> 💡 `ZfKD`: _"Die quota in den anderen KKR entspricht der Erwartung, dass die Fallzahl bei klin. Daten höher sein sollte als bei epi Daten."_
+> 💡 `ZfKD`: _Die quota in den anderen KKR entspricht der Erwartung, dass die Fallzahl bei klin. Daten höher sein sollte als bei epi Daten._
 
 
     
@@ -229,7 +234,7 @@
 
 > 💡 `NI`: _"Die Ausprägung **DCO als Diagnosesicherung** kommt im KKN-Datensatz nicht vor. Diese Information liegt bisher nur dem EKN vor und wird gegebenenfalls zur Anreicherung von Datenexporten fallspezifisch vom KKN beim EKN angefragt. Der Prozess zur automatisierten Übermittlung dieser Informationen vom EKN zum KKN ist in Planung"_
 
-> 💡 `ZfKD`: _"aufgrund der verschiedenartigen Handhabung von DCO in den übermittelten Daten ist die Filterung nach DCO mit erheblicher Unschärfe verbunden"_
+> 💡 `ZfKD`: _Aufgrund der verschiedenartigen Handhabung von DCO in den übermittelten Daten ist die Filterung nach DCO mit erheblicher Unschärfe verbunden_
 
 
     
@@ -243,7 +248,7 @@
 - Grundgesamtheit: Menge aller **Patienten** 
 - **Filter: `DJ` = 2020-2023**
 
-> 💡 `ZfKD`: _"Angaben zu Geschlecht ungleich `M` oder `W` sind sehr selten, diese Fälle werden nicht gesondert verarbeitet"_
+> 💡 `ZfKD`: _Angaben zu Geschlecht ungleich `M` oder `W` sind sehr selten, diese Fälle werden nicht gesondert verarbeitet_
 
 
     
@@ -260,7 +265,7 @@
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2024 Fälle: {'13-MV': 2835, '08-BW': 679, '12-BB': 642, '15-ST': 1917, '06-HE': 844, '09-BY': 2233, '11-BE': 509}
+    Anzahl 2024 Fälle: {'13-MV': 2835, '08-BW': 679, '11-BE': 509, '12-BB': 642, '15-ST': 1917, '09-BY': 2233, '06-HE': 844}
 
 
 
@@ -275,7 +280,7 @@
 - **Filter: keiner, Grundgesamtheit sind alle Fälle**
 - vertikal: `Inzidenzort` (Zeile `00` bündelt alle Fälle mit ungültiger Ortsangabe). horizontal: `Lieferregister`
 - Beispiel: `03-NI` liefert zu 100% Fälle aus dem Inzidenzort `03`, `13-MV` liefert 159 Fälle aus `03`
-> 💡 `ZfKD`: _"angestrebt ist eine "Diagonale", möglichst nur noch Fallübermittlungen aus dem eigenen Einzugsgebiet, was inzwischen schon besser erreicht ist. Mindestens `99%` der Fälle stammen aus dem liefernden Register"_
+> 💡 `ZfKD`: _Angestrebt ist eine "Diagonale", möglichst nur noch Fallübermittlungen aus dem eigenen Einzugsgebiet, was inzwischen schon besser erreicht ist. ~ 99% der Fälle stammen aus dem liefernden Register_
 
 
     
@@ -334,8 +339,6 @@
 
 ### <a id='toc1_7_10_'></a>[TNM-M (p)](#toc0_)
 - **Filter: `DJ` = 2020-2023, `DCO` = N, `ICD10` nur solide Tumoren**
-
-> 💡 `ZfKD`: _"pM0 und pMX sind nach TNM Manual keine anwendbaren Kodierungen"_
 
 
     
@@ -403,7 +406,7 @@
 #### <a id='toc1_7_12_4_'></a>[nach ICD10 Dreistellern (TOP 5)](#toc0_)
 - Grundgesamtheit: alle **Todesursachen**, kein Filter
 
-> 💡 `ZfKD`: _"enthalten sind in einigen KKR auch `C79` (Metastasen), welche in offizieller Todesursachen-Statistik nicht kodiert sind"_
+> 💡 `ZfKD`: _Enthalten sind in einigen KKR auch `C79` (Metastasen), welche in offizieller Todesursachen-Statistik nicht kodiert sind_
 
 
     
@@ -455,7 +458,7 @@
 #### <a id='toc1_7_14_1_'></a>[nach OPS ICD Kapitel (Top 10)](#toc0_)
 - Grundgesamtheit: **alle OPS Codes**
 
-> 💡 `ZfKD`: _"lediglich `02-HH` und `05-NW` übermitteln ausschliesslich Kapitel 5. Der Anteil von Meldungen <> Kapitel 5 sind wahrscheinlich diagnostische Massnahmen oder nicht-operative Therapien. Vorschlag: nur noch Kapitel 5 übermitteln"_
+> 💡 `ZfKD`: _Lediglich `02-HH` und `05-NW` übermitteln ausschliesslich Kapitel 5. Der Anteil von Meldungen <> Kapitel 5 sind wahrscheinlich diagnostische Massnahmen oder nicht-operative Therapien. Vorschlag: nur noch Kapitel 5 übermitteln_
 
 
     
@@ -493,7 +496,6 @@
 #### <a id='toc1_7_15_1_'></a>[nach Stellung_OP](#toc0_)
 
 - Grundgesamtheit: **alle SYST Elemente**
-> 💡 `ZfKD`: _"einige KKR übermitteln de facto keine OP Stellung"_
 
 
     
@@ -519,7 +521,8 @@
 - Pflichtangaben aus anderen Elementknoten (z.B. Datum aus dem OP Knoten) sind nicht aufgeführt, da diese selbst optional sind
 - ganz überwiegend sind die Angaben vollständig, die wenigen Ausnahmen werden allerdings Stand heute nicht korrigiert
 
-> 💡 `ZfKD`: _"Die absoluten Fallzahlen für fehlende ICD10 oder Inzidenzort sind sehr gering, verursachen jedoch in Analysen einige Artefakte, wenn sie in Filtern nicht korrekt adressiert werden"_
+> 💡 `ZfKD`: _Pflichtfelder sind nahezu komplett vorhanden_
+
 
 
     
@@ -531,104 +534,142 @@
 
 ### <a id='toc1_8_2_'></a>[Missings für Therapieangaben](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` != C44**
-- Rechenbeispiel für `[Bestrahlung]Anzahl_Tage_Diagnose_ST` in 01-SH (Zahlen sind veraltet, aber Prinzip bleibt gleich):
-  - 5363 Bestrahlungen sind in den Daten unter Beachtung des Filters (DCO/DJ/ICD10) für den zugeordneten Tumor
+- fiktives Rechenbeispiel für `[Bestrahlung]Anzahl_Tage_Diagnose_ST`:
+  - 5363 Bestrahlungen sind in den 01-SH Daten unter Beachtung des Filters (DCO/DJ/ICD10) für den zugeordneten Tumor
   - davon enthalten 302 ein leeres Feld `Anzahl_Tage_Diagnose_ST` -> ~ 6%
 
-> 💡 `ZfKD`: _"Es gibt deutliche Unterschiede in der Nutzbarkeit von Therapieangaben. So weist etwa `Anzahl_Tage_Diagnose_OP` fast keine missings auf, `Anzahl_Tage_SYST_Dauer` jedoch (flächendeckend) sehr viele."_
+#### <a id='toc1_8_2_2_'></a>[Missings für Operationen](#toc0_)
+
+> 💡 `ZfKD`: _Für überlieferte OP liegen `Datum_OP` und `Intention` komplett vollständig vor. Der Tagesabstand hat wenige Lücken, während `Lokale_Beurteilung_Residualstatus` auch ausserhalb von Tristan erkennbar häufiger fehlt._
 
 
     
-![png](clin_2_analyze_files/output_81_0.png)
+![png](clin_2_analyze_files/output_82_0.png)
+    
+
+
+#### <a id='toc1_8_2_3_'></a>[Missings für Strahlentherapie](#toc0_)
+
+> 💡 `ZfKD`: _`Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_ST`._  
+> _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
+> _`Applikationsart` wird nicht von allen kkr übermittelt, davon abgesehen ist `Seite_Zielgebiet` zuverlässig angegeben, die CodeVersionen ergänzen sich, wobei `2014` deutlich häufiger angewendet wird als `2021`._
+
+
+    
+![png](clin_2_analyze_files/output_84_0.png)
+    
+
+
+#### <a id='toc1_8_2_4_'></a>[Missings für systemische Therapie](#toc0_)
+
+> 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
+
+
+    
+![png](clin_2_analyze_files/output_86_0.png)
+    
+
+
+### <a id='toc1_8_3_'></a>[Missings für Folgeereignisse](#toc0_)
+
+> 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
+
+
+    
+![png](clin_2_analyze_files/output_88_0.png)
+    
+
+
+### <a id='toc1_8_4_'></a>[Missings für Freitexte](#toc0_)
+
+> 💡 `ZfKD`: _Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext. Bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen._
+
+
+
+    
+![png](clin_2_analyze_files/output_90_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_3_'></a>[Missings für Tumorstadien](#toc0_)
+### <a id='toc1_8_5_'></a>[Missings für Tumorstadien](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` nur solide Tumoren**
 
-> 💡 `ZfKD`: _"0% missings ist bei diagnoseabhängigen Angaben wie den Tumorstadien nicht zu erreichen (`05-NW` hat die Auflage als Konstante im Datensatz hinterlegt). Hier kann nur der relative Vergleich als Maßstab dienen."_
+> 💡 `ZfKD`: _"`05-NW` hat die Auflage als Konstante im Datensatz hinterlegt"_
 
 
     
-![png](clin_2_analyze_files/output_83_0.png)
+![png](clin_2_analyze_files/output_92_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_4_'></a>[Missings für organspezifische Variablen (Mamma)](#toc0_)
+### <a id='toc1_8_6_'></a>[Missings für organspezifische Variablen (Mamma)](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C50**
 - die Prozentwerte sind bei allen Darstellungen gerundet, "100%" bei einer gelben Ampel kann interpretiert werden als knapp unter 100%
 > 💡 `HH` _"Fehlende Modul-Angaben (C50, C61) 2021. Sind bei uns noch nicht im xml enthalten."_
 
 
     
-![png](clin_2_analyze_files/output_85_0.png)
+![png](clin_2_analyze_files/output_94_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_5_'></a>[Missings für organspezifische Variablen (Prostata)](#toc0_)
+### <a id='toc1_8_7_'></a>[Missings für organspezifische Variablen (Prostata)](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C61**
 
-> 💡 `ZfKD` _"Auch innerhalb eines KKR gibt es deutliche Varianzen zwischen Variablen des organspezifischen Moduls, z.B. in 11-16"_
+> 💡 `ZfKD` _Auch innerhalb eines KKR gibt es deutliche Varianzen zwischen Variablen des organspezifischen Moduls, z.B. in 11-16_
 
 
     
-![png](clin_2_analyze_files/output_87_0.png)
+![png](clin_2_analyze_files/output_96_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_6_'></a>[Missings für organspezifische Variablen (Darm)](#toc0_)
+### <a id='toc1_8_8_'></a>[Missings für organspezifische Variablen (Darm)](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C18-C20**
 
 
     
-![png](clin_2_analyze_files/output_89_0.png)
+![png](clin_2_analyze_files/output_98_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_7_'></a>[Missings für organspezifische Variablen (Melanom)](#toc0_)
+### <a id='toc1_8_9_'></a>[Missings für organspezifische Variablen (Melanom)](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C43**
 
 
     
-![png](clin_2_analyze_files/output_91_0.png)
+![png](clin_2_analyze_files/output_100_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_8_'></a>[Missings für Prio Variablen](#toc0_)
-- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` != C44**
-- diese Variablen sind wesentlich für die Darstellung der Datenqualität ggü. Antragstellenden
-
-
-    
-![png](clin_2_analyze_files/output_93_0.png)
-    
-
-
-<br>
-
-### <a id='toc1_8_9_'></a>[Unbekannt für verpflichtende Variablen](#toc0_)
+### <a id='toc1_8_10_'></a>[Unbekannt-Kodierungen für ausgewählte Variablen](#toc0_)
 - kein Filter
 - die Darstellungen sind vorläufig, da die Definitionen für unbekannte Ausprägungen noch nicht ausgereift sind
-- einige gewertet Unbekannt-Kodierungen aus der Auflistung
-  - `Diagnosesicherung = 9`
-  - `Seitenlokalisation = U`
-  - _`Inzidenzort` ist bislang nicht berücksichtigt_
+- einige gewertete Unbekannt-Kodierungen aus der Auflistung
+  - `Diagnosesicherung` = 9
+  - `Seitenlokalisation` = U
+  - `Morphologie` 8000 - 8010
+  - `Datumsgenauigkeit` in ('M','V')
+  - `Diagnose_ICD10_Code` = C80
+
+> 💡 `ZfKD`: _`Gesamtbeurteilung_Tumorstatus`ist zwar vollständig geliefert (siehe vorherige Grafiken), aber häufig als Unbekannt kodiert. Viele Pflichtvariablen haben keine Unbekannt Kodes, etwas auffällig sind hier `Diagnosesicherung` und `Seitenlokalisation`. Ähnlich auch `Morphologie` (kein Pflichtfeld)._ 
+
 
 
     
-![png](clin_2_analyze_files/output_95_0.png)
+![png](clin_2_analyze_files/output_102_0.png)
     
 
 
@@ -643,7 +684,7 @@
 
 
     
-![png](clin_2_analyze_files/output_97_0.png)
+![png](clin_2_analyze_files/output_104_0.png)
     
 
 
@@ -662,13 +703,13 @@
 
 
     
-![png](clin_2_analyze_files/output_101_0.png)
+![png](clin_2_analyze_files/output_108_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_101_1.png)
+![png](clin_2_analyze_files/output_108_1.png)
     
 
 
@@ -703,18 +744,18 @@
 
 ### <a id='toc1_10_2_'></a>[Anzahl Tage zwischen Diagnose und Tod](#toc0_)
 
-> 💡 `ZfKD`: _"es treten Extremwerte auf, weit ausserhalb des Interquartilsabstandes. Grund dafür sind mutmasslich fehlende Datumsangaben, die auf 1900 kodiert werden"_  
-> 💡 `ZfKD`: _"in der KKR Verteilung sind die Extreme in den GTDS Ländern besonders ausgeprägt"_
+> 💡 `ZfKD`: _Es treten Extremwerte auf, weit ausserhalb des Interquartilsabstandes. Grund dafür sind mutmasslich fehlende Datumsangaben, die auf 1900 kodiert werden._  
+> _In der KKR Verteilung sind die Extreme in den GTDS Ländern besonders ausgeprägt_
 
 
     
-![png](clin_2_analyze_files/output_103_0.png)
+![png](clin_2_analyze_files/output_110_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_103_1.png)
+![png](clin_2_analyze_files/output_110_1.png)
     
 
 
@@ -751,7 +792,7 @@
 
 
     
-![png](clin_2_analyze_files/output_105_0.png)
+![png](clin_2_analyze_files/output_112_0.png)
     
 
 
@@ -764,7 +805,7 @@
 
 
     
-![png](clin_2_analyze_files/output_105_2.png)
+![png](clin_2_analyze_files/output_112_2.png)
     
 
 
@@ -772,7 +813,7 @@
 
 
     
-![png](clin_2_analyze_files/output_107_0.png)
+![png](clin_2_analyze_files/output_114_0.png)
     
 
 
@@ -785,7 +826,7 @@
 
 
     
-![png](clin_2_analyze_files/output_107_2.png)
+![png](clin_2_analyze_files/output_114_2.png)
     
 
 
@@ -793,7 +834,7 @@
 
 
     
-![png](clin_2_analyze_files/output_109_0.png)
+![png](clin_2_analyze_files/output_116_0.png)
     
 
 
@@ -806,7 +847,7 @@
 
 
     
-![png](clin_2_analyze_files/output_109_2.png)
+![png](clin_2_analyze_files/output_116_2.png)
     
 
 
@@ -814,7 +855,7 @@
 
 
     
-![png](clin_2_analyze_files/output_111_0.png)
+![png](clin_2_analyze_files/output_118_0.png)
     
 
 
@@ -827,7 +868,7 @@
 
 
     
-![png](clin_2_analyze_files/output_111_2.png)
+![png](clin_2_analyze_files/output_118_2.png)
     
 
 
@@ -835,7 +876,7 @@
 
 
     
-![png](clin_2_analyze_files/output_113_0.png)
+![png](clin_2_analyze_files/output_120_0.png)
     
 
 
@@ -848,7 +889,7 @@
 
 
     
-![png](clin_2_analyze_files/output_113_2.png)
+![png](clin_2_analyze_files/output_120_2.png)
     
 
 
@@ -856,7 +897,7 @@
 
 
     
-![png](clin_2_analyze_files/output_115_0.png)
+![png](clin_2_analyze_files/output_122_0.png)
     
 
 
@@ -869,6 +910,6 @@
 
 
     
-![png](clin_2_analyze_files/output_115_2.png)
+![png](clin_2_analyze_files/output_122_2.png)
     
 
