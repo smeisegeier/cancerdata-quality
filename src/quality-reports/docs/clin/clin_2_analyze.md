@@ -8,7 +8,7 @@
   - [Fallzahlen](#toc1_4_)    
     - [absolut](#toc1_4_1_)    
     - [relativ](#toc1_4_2_)    
-  - [missings](#toc1_5_)    
+  - [Fehlende Therapieangaben](#toc1_5_)    
   - [Fallzahlen epi vs clin](#toc1_6_)    
   - [Verteilung von Variablen](#toc1_7_)    
     - [UICC (p)](#toc1_7_1_)    
@@ -70,6 +70,8 @@
 	maxLevel=6
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+<div style="page-break-after: always;"></div>
 
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 - Neulieferung `08-BW`
@@ -161,7 +163,7 @@
 
 <br>
 
-## <a id='toc1_5_'></a>[missings](#toc0_)
+## <a id='toc1_5_'></a>[Fehlende Therapieangaben](#toc0_)
 - **Filter: `DJ` = 2020-2023, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
 - ein Wert von bspw. 0.68 ist zu interpretieren als: _"68% aller Tumorfälle im KKR haben keine zugeordneten OP Angaben, die restlichen 32% mindestens eine."_
 - `treat_missing_per_tum` stellt den Anteil Fälle dar, bei denen keinerlei Therapieangabe (OP, ST, SYST) vorliegt
