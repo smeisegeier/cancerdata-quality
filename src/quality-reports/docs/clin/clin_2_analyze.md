@@ -39,18 +39,18 @@
   - [Missings / Unbekannt in den Daten](#toc1_8_)    
     - [Missings für verpflichtende Variablen in Tumor Element](#toc1_8_1_)    
     - [Missings für Therapieangaben](#toc1_8_2_)    
-      - [Missings für alle Therapien](#toc1_8_2_1_)    
-      - [Missings für Operationen](#toc1_8_2_2_)    
-      - [Missings für Strahlentherapie](#toc1_8_2_3_)    
-      - [Missings für systemische Therapie](#toc1_8_2_4_)    
+      - [OP](#toc1_8_2_1_)    
+      - [ST](#toc1_8_2_2_)    
+      - [SYST](#toc1_8_2_3_)    
     - [Missings für Folgeereignisse](#toc1_8_3_)    
     - [Missings für Freitexte](#toc1_8_4_)    
     - [Missings für Tumorstadien](#toc1_8_5_)    
-    - [Missings für organspezifische Variablen (Mamma)](#toc1_8_6_)    
-    - [Missings für organspezifische Variablen (Prostata)](#toc1_8_7_)    
-    - [Missings für organspezifische Variablen (Darm)](#toc1_8_8_)    
-    - [Missings für organspezifische Variablen (Melanom)](#toc1_8_9_)    
-    - [Unbekannt-Kodierungen für ausgewählte Variablen](#toc1_8_10_)    
+    - [Missings für organspezifische Variablen](#toc1_8_6_)    
+      - [Mamma](#toc1_8_6_1_)    
+      - [Prostata](#toc1_8_6_2_)    
+      - [Darm](#toc1_8_6_3_)    
+      - [Melanom](#toc1_8_6_4_)    
+    - [Unbekannt-Kodierungen für ausgewählte Variablen](#toc1_8_7_)    
   - [Verteilung Monat von Datum_Vitalstatus](#toc1_9_)    
   - [Numerische Variablen 🔢](#toc1_10_)    
     - [Diagnosealter](#toc1_10_1_)    
@@ -73,6 +73,7 @@
 
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 - Neulieferung `08-BW`
+- Missings werden überarbeitet / geschärft
 
 <br>
 
@@ -538,7 +539,7 @@
   - 5363 Bestrahlungen sind in den 01-SH Daten unter Beachtung des Filters (DCO/DJ/ICD10) für den zugeordneten Tumor
   - davon enthalten 302 ein leeres Feld `Anzahl_Tage_Diagnose_ST` -> ~ 6%
 
-#### <a id='toc1_8_2_2_'></a>[Missings für Operationen](#toc0_)
+#### <a id='toc1_8_2_1_'></a>[OP](#toc0_)
 
 > 💡 `ZfKD`: _Für überlieferte OP liegen `Datum_OP` und `Intention` komplett vollständig vor. Der Tagesabstand hat wenige Lücken, während `Lokale_Beurteilung_Residualstatus` auch ausserhalb von Tristan erkennbar häufiger fehlt._
 
@@ -548,7 +549,7 @@
     
 
 
-#### <a id='toc1_8_2_3_'></a>[Missings für Strahlentherapie](#toc0_)
+#### <a id='toc1_8_2_2_'></a>[ST](#toc0_)
 
 > 💡 `ZfKD`: _`Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_ST`._  
 > _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
@@ -560,7 +561,7 @@
     
 
 
-#### <a id='toc1_8_2_4_'></a>[Missings für systemische Therapie](#toc0_)
+#### <a id='toc1_8_2_3_'></a>[SYST](#toc0_)
 
 > 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
 
@@ -606,55 +607,59 @@
 
 <br>
 
-### <a id='toc1_8_6_'></a>[Missings für organspezifische Variablen (Mamma)](#toc0_)
-- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C50**
+### <a id='toc1_8_6_'></a>[Missings für organspezifische Variablen](#toc0_)
 - die Prozentwerte sind bei allen Darstellungen gerundet, "100%" bei einer gelben Ampel kann interpretiert werden als knapp unter 100%
 > 💡 `HH` _"Fehlende Modul-Angaben (C50, C61) 2021. Sind bei uns noch nicht im xml enthalten."_
 
+<br>
+
+#### <a id='toc1_8_6_1_'></a>[Mamma](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C50**
+
 
     
-![png](clin_2_analyze_files/output_94_0.png)
+![png](clin_2_analyze_files/output_95_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_7_'></a>[Missings für organspezifische Variablen (Prostata)](#toc0_)
+#### <a id='toc1_8_6_2_'></a>[Prostata](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C61**
 
 > 💡 `ZfKD` _Auch innerhalb eines KKR gibt es deutliche Varianzen zwischen Variablen des organspezifischen Moduls, z.B. in 11-16_
 
 
     
-![png](clin_2_analyze_files/output_96_0.png)
+![png](clin_2_analyze_files/output_97_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_8_'></a>[Missings für organspezifische Variablen (Darm)](#toc0_)
+#### <a id='toc1_8_6_3_'></a>[Darm](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C18-C20**
 
 
     
-![png](clin_2_analyze_files/output_98_0.png)
+![png](clin_2_analyze_files/output_99_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_9_'></a>[Missings für organspezifische Variablen (Melanom)](#toc0_)
+#### <a id='toc1_8_6_4_'></a>[Melanom](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C43**
 
 
     
-![png](clin_2_analyze_files/output_100_0.png)
+![png](clin_2_analyze_files/output_101_0.png)
     
 
 
 <br>
 
-### <a id='toc1_8_10_'></a>[Unbekannt-Kodierungen für ausgewählte Variablen](#toc0_)
+### <a id='toc1_8_7_'></a>[Unbekannt-Kodierungen für ausgewählte Variablen](#toc0_)
 - kein Filter
 - die Darstellungen sind vorläufig, da die Definitionen für unbekannte Ausprägungen noch nicht ausgereift sind
 - einige gewertete Unbekannt-Kodierungen aus der Auflistung
@@ -669,7 +674,7 @@
 
 
     
-![png](clin_2_analyze_files/output_102_0.png)
+![png](clin_2_analyze_files/output_103_0.png)
     
 
 
@@ -684,7 +689,7 @@
 
 
     
-![png](clin_2_analyze_files/output_104_0.png)
+![png](clin_2_analyze_files/output_105_0.png)
     
 
 
@@ -703,13 +708,13 @@
 
 
     
-![png](clin_2_analyze_files/output_108_0.png)
+![png](clin_2_analyze_files/output_109_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_108_1.png)
+![png](clin_2_analyze_files/output_109_1.png)
     
 
 
@@ -749,13 +754,13 @@
 
 
     
-![png](clin_2_analyze_files/output_110_0.png)
+![png](clin_2_analyze_files/output_111_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_110_1.png)
+![png](clin_2_analyze_files/output_111_1.png)
     
 
 
@@ -792,7 +797,7 @@
 
 
     
-![png](clin_2_analyze_files/output_112_0.png)
+![png](clin_2_analyze_files/output_113_0.png)
     
 
 
@@ -805,7 +810,7 @@
 
 
     
-![png](clin_2_analyze_files/output_112_2.png)
+![png](clin_2_analyze_files/output_113_2.png)
     
 
 
@@ -813,7 +818,7 @@
 
 
     
-![png](clin_2_analyze_files/output_114_0.png)
+![png](clin_2_analyze_files/output_115_0.png)
     
 
 
@@ -826,7 +831,7 @@
 
 
     
-![png](clin_2_analyze_files/output_114_2.png)
+![png](clin_2_analyze_files/output_115_2.png)
     
 
 
@@ -834,7 +839,7 @@
 
 
     
-![png](clin_2_analyze_files/output_116_0.png)
+![png](clin_2_analyze_files/output_117_0.png)
     
 
 
@@ -847,7 +852,7 @@
 
 
     
-![png](clin_2_analyze_files/output_116_2.png)
+![png](clin_2_analyze_files/output_117_2.png)
     
 
 
@@ -855,7 +860,7 @@
 
 
     
-![png](clin_2_analyze_files/output_118_0.png)
+![png](clin_2_analyze_files/output_119_0.png)
     
 
 
@@ -868,7 +873,7 @@
 
 
     
-![png](clin_2_analyze_files/output_118_2.png)
+![png](clin_2_analyze_files/output_119_2.png)
     
 
 
@@ -876,7 +881,7 @@
 
 
     
-![png](clin_2_analyze_files/output_120_0.png)
+![png](clin_2_analyze_files/output_121_0.png)
     
 
 
@@ -889,7 +894,7 @@
 
 
     
-![png](clin_2_analyze_files/output_120_2.png)
+![png](clin_2_analyze_files/output_121_2.png)
     
 
 
@@ -897,7 +902,7 @@
 
 
     
-![png](clin_2_analyze_files/output_122_0.png)
+![png](clin_2_analyze_files/output_123_0.png)
     
 
 
@@ -910,6 +915,6 @@
 
 
     
-![png](clin_2_analyze_files/output_122_2.png)
+![png](clin_2_analyze_files/output_123_2.png)
     
 
