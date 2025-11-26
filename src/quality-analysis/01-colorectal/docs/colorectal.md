@@ -1,38 +1,13 @@
 # <a id='toc1_'></a>[Auswertungen: kolorektale Krebserkrankungen](#toc0_)
-R0 anteil: 95% ?
-
-- warum nur 20% in der Nachsorge
-- folgeereignis:
-- gruppierung
-	1 können nicht beantworten
-	2 könnten beantworten wenn daten ok
-	3 kann
-	
-- c50: rezidive:
-	- wenn keine op, sind pT angegeben? -> wenn pT da muss operiert werden (fo oder diag)
-	- blau: gab es andere therapien?
-	-
-	
-- wie wird behandelt? leitliniengerecht?
-- studoc register? einzelne kliniken? kk daten?
-- zeitlicher abstand
-- ops: offen? labroskopisch?
-
-- tumor: gestreut?
-
-- ops: -> pivot
-	- gruppen nochmal genau aufschlüsseln
-	- verteilung im jahr
-	- nach kkr
-	- inkl: 5-987.- -> 5-987
 
 **Table of contents**<a id='toc0_'></a>    
 - [Auswertungen: kolorektale Krebserkrankungen](#toc1_)    
   - [📆 Datenstand](#toc1_1_)    
   - [⚙️ Teildatensatz](#toc1_2_)    
   - [Fallzahlen](#toc1_3_)    
-    - [Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc1_3_1_)    
-    - [Fallzahlen C18-C20 nach Viersteller](#toc1_3_2_)    
+    - [Teildatensatz](#toc1_3_1_)    
+    - [Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc1_3_2_)    
+    - [Fallzahlen C18-C20 nach Viersteller](#toc1_3_3_)    
   - [OP](#toc1_4_)    
     - [Operation erfolgt bei C18 mit T_p > 0](#toc1_4_1_)    
     - [Operation erfolgt nach Jahren](#toc1_4_2_)    
@@ -47,6 +22,8 @@ R0 anteil: 95% ?
   - [Lokalisation (Fernmetastasen)](#toc1_6_)    
     - [für M1](#toc1_6_1_)    
   - [Rezidive](#toc1_7_)    
+    - [Verteilung OP in 2020](#toc1_7_1_)    
+      - [davon: Verteilung nur R0](#toc1_7_1_1_)    
   - [Behandlung innerhalb von 6 Wochen](#toc1_8_)    
   - [Erste Behandlung](#toc1_9_)    
     - [Was wurde zuerst behandelt](#toc1_9_1_)    
@@ -63,17 +40,17 @@ R0 anteil: 95% ?
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.4.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.21.3 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.5.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.22.4 | 📦 connection-helper: 0.13.2
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
 
-    sqlite db file:          2025-11-11_data_clin.duckdb
+    database file:           2025-11-11_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-11-11 19:10:56
+    document created:        2025-11-26 10:40:56
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -88,26 +65,36 @@ R0 anteil: 95% ?
 - aktuelle Fallzahlen mit diesen Filtern
   - Tumore: **226_006**
 
+```python
+    counts: rows
+    ---
+    n = 3_241_401                                        (100.0%) ██████████████████████████████
+    └ [z_dy between 2020 and 2023]:        n = 2_989_092  (92.2%) ░░░███████████████████████████
+    └ [z_kkr_label is not null]:           n = 2_989_092  (92.2%) ░░░███████████████████████████
+    └ [z_ag05 is not null]:                n = 2_989_091  (92.2%) ░░░███████████████████████████
+    └ [z_icd10_3d in ('C18','C19','C20')]:   n = 226_382   (7.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
 <!-- ### <a id='toc1_2_1_'></a>[Deskriptive Statistik](#toc0_) -->
 
 ## <a id='toc1_3_'></a>[Fallzahlen](#toc0_)
 
-### <a id='toc1_3_1_'></a>[Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc0_)
+### <a id='toc1_3_2_'></a>[Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc0_)
 - Filter: alle Diagnosen inkludiert (C,D)
 
 
     
-![svg](colorectal_files/output_20_0.svg)
+![svg](colorectal_files/output_21_0.svg)
     
 
 
-### <a id='toc1_3_2_'></a>[Fallzahlen C18-C20 nach Viersteller](#toc0_)
+### <a id='toc1_3_3_'></a>[Fallzahlen C18-C20 nach Viersteller](#toc0_)
 - Filter: `C18-20`
 > 💡 `C19` darf eigentlich nicht verwendet werden, wird von Krebsgesellschaft nicht akzeptiert
 
 
     
-![svg](colorectal_files/output_22_0.svg)
+![svg](colorectal_files/output_23_0.svg)
     
 
 
@@ -119,7 +106,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_25_0.svg)
+![svg](colorectal_files/output_26_0.svg)
     
 
 
@@ -132,11 +119,12 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_27_0.svg)
+![svg](colorectal_files/output_28_0.svg)
     
 
 
 ## <a id='toc1_5_'></a>[OPS](#toc0_)
+
 
 ### <a id='toc1_5_1_'></a>[OPS 5-4xx nach Diagnose](#toc0_)
 - Filter: `C18-C20`
@@ -168,7 +156,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_30_1.svg)
+![svg](colorectal_files/output_31_1.svg)
     
 
 
@@ -184,7 +172,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_32_1.svg)
+![svg](colorectal_files/output_33_1.svg)
     
 
 
@@ -195,39 +183,66 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_34_0.svg)
+![svg](colorectal_files/output_35_0.svg)
     
 
 
 ### <a id='toc1_5_4_'></a>[Details OPS 5-455.2](#toc0_)
 - Filter: `C18-C20`, alle Tumore mit min 1 OP
-- gezählt sind Tumore
-- die Gruppen können überlappen
+- gezählt sind Tumore / OPS
+- die Gruppen können überlappen bei der Tumordarstellung
   - `lleo` - Ileozökalresektion
   - `hemi` - rechte Hemikolektomie
   - `sigma` - Sigmaresektion
-  - `-` - keine der genannten OPS
+- in allen Darstellungen ist Robotik ebenfalls angegeben (`5-987`)
+ <!-- - `-` - keine der genannten OPS -->
 
-    FILTER: z_icd10_3d in ('C18','C19','C20') and z_tum_op_count > 0
+```python
+    counts: distinct z_tum_id
+    ---
+    n = 226_382                         (100.0%) ██████████████████████████████
+    └ [z_tum_op_count > 0]: n = 146_898  (64.9%) ░░░░░░░░░░░███████████████████
+    └ [ops]:                 n = 70_042  (30.9%) ░░░░░░░░░░░░░░░░░░░░░█████████
+
+```
+
+
+    
+![svg](colorectal_files/output_38_0.svg)
     
 
 
 
     
-![svg](colorectal_files/output_37_1.svg)
+![svg](colorectal_files/output_38_1.svg)
     
 
 
 #### <a id='toc1_5_4_1_'></a>[Ileozökalresektion](#toc0_)
 - Filter: alle Tumore, die einen OPS Code `5-455.2` aufweisen
-- gezählt sind Tumore
-- die Gruppen können überlappen
+- Gruppen
+  - `5-455.21` - offen
+  - `5-455.25` - laparoskopisch
+  - `5-455.27` - konversion
 
-> 💡 keine Robotik `5-987.1` geschlüsselt für diese Tumore
+```python
+    counts: distinct z_tum_id
+    ---
+    n = 226_382                         (100.0%) ██████████████████████████████
+    └ [z_tum_op_count > 0]: n = 146_898  (64.9%) ░░░░░░░░░░░███████████████████
+    └ [ops-lleo]:            n = 10_055   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+```
+
 
 
     
-![svg](colorectal_files/output_39_0.svg)
+![svg](colorectal_files/output_41_0.svg)
+    
+
+
+
+    
+![svg](colorectal_files/output_41_1.svg)
     
 
 
@@ -236,11 +251,23 @@ R0 anteil: 95% ?
 - gezählt sind Tumore
 - die Gruppen können überlappen
 
-> 💡 kaum Robotik `5-987.1` geschlüsselt für diese Tumore (n=4)
+```python
+    counts: distinct z_tum_id
+    ---
+    n = 226_382                         (100.0%) ██████████████████████████████
+    └ [z_tum_op_count > 0]: n = 146_898  (64.9%) ░░░░░░░░░░░███████████████████
+    └ [ops-hemi]:            n = 49_302  (21.8%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+```
 
 
     
-![svg](colorectal_files/output_41_0.svg)
+![svg](colorectal_files/output_44_0.svg)
+    
+
+
+
+    
+![svg](colorectal_files/output_44_1.svg)
     
 
 
@@ -249,11 +276,24 @@ R0 anteil: 95% ?
 - gezählt sind Tumore
 - die Gruppen können überlappen
 
-> 💡 kaum Robotik `5-987.1` geschlüsselt für diese Tumore (n=4)
+
+```python
+    counts: distinct z_tum_id
+    ---
+    n = 226_382                         (100.0%) ██████████████████████████████
+    └ [z_tum_op_count > 0]: n = 146_898  (64.9%) ░░░░░░░░░░░███████████████████
+    └ [ops-sigma]:           n = 20_571   (9.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
 
 
     
-![svg](colorectal_files/output_43_0.svg)
+![svg](colorectal_files/output_47_0.svg)
+    
+
+
+
+    
+![svg](colorectal_files/output_47_1.svg)
     
 
 
@@ -272,11 +312,37 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_47_0.svg)
+![svg](colorectal_files/output_51_0.svg)
     
 
 
 ## <a id='toc1_7_'></a>[Rezidive](#toc0_)
+
+### <a id='toc1_7_1_'></a>[Verteilung OP in 2020](#toc0_)
+- Filter: `C18`-`C20`, 2020
+- gezählt sind Tumore
+- Einteilung der Verteilung in eine Kategorie Tabelle
+  - `1_op_r0` - OP und R0 dokumentiert
+  - `2_op_no_r0` - OP, kein R0
+  - `3_no_op_but_pt` - keine OP, aber pT (Diagnose oder Verlauf)
+  - `4_no_op_pt_but_st_sy` - keine OP, keine pT, aber ST oder SYST
+  - `5_no_op_st_sy_pt` - keine Therapie oder pT
+
+
+```python
+    counts: rows
+    ---
+    n = 226_382                  (100.0%) ██████████████████████████████
+    └ [z_dy = 2020]:  n = 57_102  (25.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+```
+
+
+    
+![svg](colorectal_files/output_56_0.svg)
+    
+
+
+#### <a id='toc1_7_1_1_'></a>[davon: Verteilung nur R0](#toc0_)
 
 **enge Definition eines Rezidivs** 
 - Filter: lokaler Beurteilung Residualstatus = R0 (UND M <> 1)
@@ -292,7 +358,7 @@ R0 anteil: 95% ?
   - (Folgeereignis T>0 oder Folgeereignis N>0 oder Folgeereignis M>0)
 
 **Diagramm**
-- gezählt sind Tumore
+- gezählt sind Tumore mit R0
 - Kategorien
   - `1_fo_relapse` - Tumore mit Rezidiv nach enger Definition
   - `2_fo_relapse_tnm` - Tumore mit Rezidiv nach erweiterter Definition
@@ -300,18 +366,23 @@ R0 anteil: 95% ?
   - `4_no_fo` - Tumore ohne Folgeereignis
   - `9_unknown` - Unbekannt
 
-    FILTER: z_dy = 2020 and z_icd10_3d in ('C18','C19','C20') and upper(left(op.Lokale_Beurteilung_Residualstatus,2)) = 'R0' | darin 28_967 Tumore
+```python
+    counts: distinct z_tum_id
+    ---
+    n = 226_382                        (100.0%) ██████████████████████████████
+    └ [z_dy = 2020]:        n = 57_102  (25.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [Residualstatus R0]:  n = 28_967  (12.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+```
+
+
+    
+![svg](colorectal_files/output_60_0.svg)
+    
 
 
 
     
-![svg](colorectal_files/output_50_0.svg)
-    
-
-
-
-    
-![png](colorectal_files/output_50_1.png)
+![png](colorectal_files/output_60_1.png)
     
 
 
@@ -327,7 +398,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_52_0.svg)
+![svg](colorectal_files/output_62_0.svg)
     
 
 
@@ -339,7 +410,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_55_0.svg)
+![svg](colorectal_files/output_65_0.svg)
     
 
 
@@ -350,7 +421,7 @@ R0 anteil: 95% ?
 
 
     
-![png](colorectal_files/output_57_0.png)
+![png](colorectal_files/output_67_0.png)
     
 
 
@@ -393,7 +464,7 @@ R0 anteil: 95% ?
 
 
     
-![svg](colorectal_files/output_60_0.svg)
+![svg](colorectal_files/output_70_0.svg)
     
 
 
