@@ -1,6 +1,13 @@
 @startmindmap
 ' top to bottom direction
 
+' Aussschluss TNM / UICC
+'   - "no_stadium": (C80, C76, C70-C72, C81-96, C44) OR HIST >= 8800
+' - "in_situ": D00-D09 (ohne Haut: D04)
+' - "system": C81-C96, D45-D47
+' - "solid": C00-C80, ohne C44 (C77-C79 sollten nicht drin sein)
+' - "BET": 5-870, 5-877
+
 + data quality
 
 ++ Bericht
@@ -18,16 +25,19 @@
 ++++ Aktualität
 ++++ Vollständigkeit **Personenangaben**
 ++++ Vollständigkeit **Tumorangaben** Anteile
-+++++ Mehrfachtumore (epi vs klin)
++++++[#Gray] Mehrfachtumore (epi vs klin)
 +++++ Diagnosesicherung
 +++++ DCO
 +++++ missing TNM / UICC
+++++++_ UICC nur epi
+
 +++++ Histo unspezifisch
 +++++ Topo unspezifisch (PSU)
 +++++ missing Grading
 +++++ missing Organmodul
 ++++++_ Gleason
 ++++++_ Hormonrezeptor
++++++ missing OPS wenn OP vorhanden
 
 ++++ Vollständigkeit **Therapie**
 +++++ Vorbemerkung
@@ -39,17 +49,19 @@
 ++++++_ solide
 ++++++_ in-situ
 ++++++_ System
-+++++ Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1)
-++++++_ Brust
-++++++_ Prostata
-++++++_ Schilddrüse
++++++ Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1 und nicht verstorben < 6m)
+++++++_ in situ
+++++++_ system
+++++++_ solid
 +++++ Anteil Fälle ohne OP wenn OP erwartbar ist
 ++++++_ Brust
 ++++++_ Darm
 ++++++_ Hoden
 ++++++_ Melanom
 +++++ Anteil Fälle ohne ST wenn ST erwartbar ist
+++++++_ Brust (ops=BET, no M1)
 +++++ Anteil Fälle ohne SYST wenn SYST erwartbar ist
++++++_ (C91.0, C92.0...) Akute Leuk. + Lyphome
 +++++ Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status
 ++++++_ Mamma
 +++++ Verlaufsangaben
@@ -58,9 +70,10 @@
 +++++++_ Vollständigkeit nicht beurteilbar
 +++++++_ noch kein Goldstandard
 ++++++ Systematische Datenlücken
-++++++ Anteil Lokalrezidive
+++++++ Anteil Lokalrezidive (erstmal breite Definition)
++++++++_ Brust, Harnblase, Prostata, Darm
 +++++++_ bis Ende 2023 nach R0-Status\nDiagnose 2020-2021
-++++++ Anteil LK und FM
+++++++[#Gray] Anteil LK und FM
 +++++++_ bis Ende 2023\nDiagnose 2020-2021
 
 ++++ Qualität der Sterbeinformationen und Vitalstatus
@@ -108,6 +121,8 @@
 ++++_ epi vs klin: für Abschätzung der Vollzähligkeit
 +++ Verteilung von Variablen
 ++++[#IndianRed] Datumsangaben
++++++_ Abstand 0 Tage gruppiert
++++++_ Vergleich Gesamt vs einzelne Entitäten
 ++++[#IndianRed] Numerische Werte
 +++++_ Boxplots
 +++++_ Werteklassen
