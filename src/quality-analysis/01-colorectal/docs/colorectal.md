@@ -40,7 +40,7 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.5.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.22.4 | 📦 connection-helper: 0.13.2
+    🐍 3.12.8 | 📦 pygwalker: 0.4.9.15 | 📦 plotly: 6.5.0 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.23.0 | 📦 connection-helper: 0.13.2
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
@@ -50,7 +50,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-11-26 10:40:56
+    document created:        2025-11-27 13:11:14
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -64,6 +64,8 @@
   - `z_icd10` (Primärdiagnose) in `C18`-`C20`
 - aktuelle Fallzahlen mit diesen Filtern
   - Tumore: **226_006**
+
+
 
 ```python
     counts: rows
@@ -134,6 +136,8 @@
 
     FILTER: z_icd10_3d in ('C18','C19','C20') and left(ops.Code,3) in ('5-4')
     
+
+```python
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
     │                                                                 ops                                                                 │ cnt_ops │
     │                                                               varchar                                                               │  int32  │
@@ -151,11 +155,8 @@
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
     │ 10 rows                                                                                                                             2 columns │
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-    
+```
 
-
-
-    
 ![svg](colorectal_files/output_31_1.svg)
     
 
@@ -195,7 +196,9 @@
   - `hemi` - rechte Hemikolektomie
   - `sigma` - Sigmaresektion
 - in allen Darstellungen ist Robotik ebenfalls angegeben (`5-987`)
- <!-- - `-` - keine der genannten OPS -->
+  <!-- - `-` - keine der genannten OPS -->
+
+
 
 ```python
     counts: distinct z_tum_id
@@ -203,11 +206,8 @@
     n = 226_382                         (100.0%) ██████████████████████████████
     └ [z_tum_op_count > 0]: n = 146_898  (64.9%) ░░░░░░░░░░░███████████████████
     └ [ops]:                 n = 70_042  (30.9%) ░░░░░░░░░░░░░░░░░░░░░█████████
-
 ```
 
-
-    
 ![svg](colorectal_files/output_38_0.svg)
     
 
@@ -225,6 +225,10 @@
   - `5-455.25` - laparoskopisch
   - `5-455.27` - konversion
 
+> 💡 keine Robotik `5-987.1` geschlüsselt für diese Tumore
+
+
+
 ```python
     counts: distinct z_tum_id
     ---
@@ -233,9 +237,6 @@
     └ [ops-lleo]:            n = 10_055   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-
-
-    
 ![svg](colorectal_files/output_41_0.svg)
     
 
@@ -251,6 +252,10 @@
 - gezählt sind Tumore
 - die Gruppen können überlappen
 
+> 💡 kaum Robotik `5-987.1` geschlüsselt für diese Tumore (n=4)
+
+
+
 ```python
     counts: distinct z_tum_id
     ---
@@ -259,8 +264,6 @@
     └ [ops-hemi]:            n = 49_302  (21.8%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
-
-    
 ![svg](colorectal_files/output_44_0.svg)
     
 
@@ -276,6 +279,9 @@
 - gezählt sind Tumore
 - die Gruppen können überlappen
 
+> 💡 kaum Robotik `5-987.1` geschlüsselt für diese Tumore (n=4)
+
+
 
 ```python
     counts: distinct z_tum_id
@@ -285,8 +291,6 @@
     └ [ops-sigma]:           n = 20_571   (9.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-
-    
 ![svg](colorectal_files/output_47_0.svg)
     
 
@@ -329,6 +333,8 @@
   - `5_no_op_st_sy_pt` - keine Therapie oder pT
 
 
+
+
 ```python
     counts: rows
     ---
@@ -336,8 +342,6 @@
     └ [z_dy = 2020]:  n = 57_102  (25.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
 ```
 
-
-    
 ![svg](colorectal_files/output_56_0.svg)
     
 
@@ -366,6 +370,8 @@
   - `4_no_fo` - Tumore ohne Folgeereignis
   - `9_unknown` - Unbekannt
 
+
+
 ```python
     counts: distinct z_tum_id
     ---
@@ -374,8 +380,6 @@
     └ [Residualstatus R0]:  n = 28_967  (12.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
 ```
 
-
-    
 ![svg](colorectal_files/output_60_0.svg)
     
 
