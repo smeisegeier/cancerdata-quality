@@ -2343,7 +2343,7 @@ wheels = [
 
 [[package]]
 name = "pandas-plots"
-version = "0.23.0"
+version = "0.23.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "connection-helper" },
@@ -2362,9 +2362,9 @@ dependencies = [
     { name = "requests" },
     { name = "seaborn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/51/1c/6e62bdeb54418ebac5eee3f6f2b42690e5078c51ecd8ffe0b5d956aeff54/pandas_plots-0.23.0.tar.gz", hash = "sha256:c0a3d7795d0270caec521109dea1226ccf72e66d3f06e10453d844c81755aa07", size = 98923, upload-time = "2025-11-27T11:59:16.383Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/80/c7a274f2b9c62283d8aa75054133f2db65d258e9a8f8d505ecadfe15c56b/pandas_plots-0.23.1.tar.gz", hash = "sha256:b45b0acf0aa2ddb1aafb4e17a2d440c8fbc4ed15aac92991146f25afca906eab", size = 99189, upload-time = "2025-11-28T12:42:47.874Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1e/b2/dd9dbbc1daed1bf85d20f318a42ab7957fccb1470b25022c650b7498ca92/pandas_plots-0.23.0-py3-none-any.whl", hash = "sha256:aabf9e5727f5ec3a56a236bc87ffabee913dc4d9ad4e1f5c4755cea7b183dfaf", size = 124671, upload-time = "2025-11-27T11:59:14.711Z" },
+    { url = "https://files.pythonhosted.org/packages/10/e8/50d6b26a36ff4babfc535fe44e60ad32a40476a9104d626e27160bebc9c3/pandas_plots-0.23.1-py3-none-any.whl", hash = "sha256:00bde97e1242cf8b887cebe8fd613f925b5213864ca47823fe0f189c51de2bf6", size = 124899, upload-time = "2025-11-28T12:42:46.785Z" },
 ]
 
 [[package]]
