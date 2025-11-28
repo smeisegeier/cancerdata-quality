@@ -22,22 +22,20 @@
 +++++_ eingeschlossene icd10
 +++++_ Limitationen
 ++++ Vollzähligkeitsschätzung
-++++ Aktualität
-++++ Vollständigkeit **Personenangaben**
-++++ Vollständigkeit **Tumorangaben** Anteile
+++++ ✅🔲 Aktualität
+++++ ✅🔲 Vollständigkeit **Personenangaben**
+++++ 🔲🔲 Vollständigkeit **Tumorangaben** Anteile
 +++++[#Gray] Mehrfachtumore (epi vs klin)
 +++++ Diagnosesicherung
 +++++ DCO
 +++++ missing TNM / UICC
 ++++++_ UICC nur epi
-
-+++++ Histo unspezifisch
-+++++ Topo unspezifisch (PSU)
-+++++ missing Grading
-+++++ missing Organmodul
++++++ ✅🔲 Histo unspezifisch
++++++ ✅🔲 Topo unspezifisch (PSU)
++++++ ✅🔲 Grading
++++++ ✅🔲 Organmodul
 ++++++_ Gleason
 ++++++_ Hormonrezeptor
-+++++ missing OPS wenn OP vorhanden
 
 ++++ Vollständigkeit **Therapie**
 +++++ Vorbemerkung
@@ -49,6 +47,7 @@
 ++++++_ solide
 ++++++_ in-situ
 ++++++_ System
++++++ missing OPS wenn OP vorhanden
 +++++ Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1 und nicht verstorben < 6m)
 ++++++_ in situ
 ++++++_ system
