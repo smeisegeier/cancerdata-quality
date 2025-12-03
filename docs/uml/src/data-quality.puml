@@ -43,25 +43,25 @@
 ++++++_ Einschluss
 ++++++_ Ausschluss: Pat verstorben in 3/6m
 +++++ Beschreibung systematischer Datenlücken
-+++++ Anteil Fälle ohne Therapie D vs kkr
++++++ ✅🔲 Anteil Fälle ohne Therapie D vs kkr
 ++++++_ solide
 ++++++_ in-situ
 ++++++_ System
-+++++ missing OPS wenn OP vorhanden
-+++++ Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1 und nicht verstorben < 6m)
++++++ ✅🔲 missing OPS wenn OP vorhanden
++++++ ✅🔲 Anteil Fälle ohne Therapie wenn Therapie erwartbar ist\n(jeweils kein M1 und nicht verstorben < 6m)
 ++++++_ in situ
 ++++++_ system
 ++++++_ solid
-+++++ Anteil Fälle ohne OP wenn OP erwartbar ist
++++++ ✅🔲 Anteil Fälle ohne OP wenn OP erwartbar ist
 ++++++_ Brust
 ++++++_ Darm
 ++++++_ Hoden
 ++++++_ Melanom
-+++++ Anteil Fälle ohne ST wenn ST erwartbar ist
++++++ ✅🔲 Anteil Fälle ohne ST wenn ST erwartbar ist
 ++++++_ Brust (ops=BET, no M1)
-+++++ Anteil Fälle ohne SYST wenn SYST erwartbar ist
-+++++_ (C91.0, C92.0...) Akute Leuk. + Lyphome
-+++++ Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status
++++++ ✅🔲 Anteil Fälle ohne SYST wenn SYST erwartbar ist
+++++++_ (C91.0, C92.0...) Akute Leuk. + Lyphome
++++++ ✅🔲 Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status
 ++++++_ Mamma
 +++++ Verlaufsangaben
 ++++++ Vorbemerkung
@@ -69,11 +69,16 @@
 +++++++_ Vollständigkeit nicht beurteilbar
 +++++++_ noch kein Goldstandard
 ++++++ Systematische Datenlücken
-++++++ Anteil Lokalrezidive (erstmal breite Definition)
+++++++ ✅🔲 Anteil Lokalrezidive (erstmal breite Definition)
 +++++++_ Brust, Harnblase, Prostata, Darm
 +++++++_ bis Ende 2023 nach R0-Status\nDiagnose 2020-2021
 ++++++[#Gray] Anteil LK und FM
 +++++++_ bis Ende 2023\nDiagnose 2020-2021
+
+++++ Verteilung von Variablen
++++++ Datumsangaben
++++++ Numerische Werte
+
 
 ++++ Qualität der Sterbeinformationen und Vitalstatus
 +++++ Untererfassung Sterbeinformationen
@@ -111,48 +116,13 @@
 +++[#IndianRed] Fallzahlen
 ++++ aktuelles Lieferjahr
 ++++ Lieferjahre im Vergleich
-+++ missings
-++++ fehlende nodes
-+++++_ relative Anteile z.B. OP / Tumor
-++++ fehlende Felder
-+++++_ Ampelvergleiche
-+++ Vollzähligkeit
-++++_ epi vs klin: für Abschätzung der Vollzähligkeit
-+++ Verteilung von Variablen
-++++[#IndianRed] Datumsangaben
-+++++_ Abstand 0 Tage gruppiert
-+++++_ Vergleich Gesamt vs einzelne Entitäten
-++++[#IndianRed] Numerische Werte
-+++++_ Boxplots
-+++++_ Werteklassen
-++++ Kodierte Werte
-+++++_ Relative Anteile
-+++++_ evtl Besonderheiten
-+++ Organspez. Auswertungen
-++++ Entitäten
-+++++ C07
-+++++ C18-C20
-+++++ C25
-+++++ C50 (therapien, leitlinien)
-+++++ C61
-++++ relative Verteilungen
-++++ klinische Fragestellungen
-+++ Themenspez. Auswertungen
-++++_ Rezidive
-++++_ Datumsabstände
-++++_ FM
-++++ Verlaufsereignisse
-++++ Referenzgruppen als Teilmenge -> erwartetete op
 +++[#IndianRed] Unstrukturierte Angaben
 ++++ Weitere Klassifikationen
 ++++ Freitexte (Substanzen, Protokolle)
 +++ Plausibilität
-++++_ Metriken (ABC)
+++++ Metriken (ABC)
 
 ++[#IndianRed] Technisch
-+++ missings
-+++ ungültige Werte
-++++_ Auflistungen
 +++ duplikate
 ++++_ echt
 ++++_ unecht
