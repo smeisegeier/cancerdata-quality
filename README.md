@@ -7,6 +7,7 @@
 - [cancerdata-quality](#cancerdata-quality)
     - [Hintergrund](#hintergrund)
     - [Bericht zur Datenqualität](#bericht-zur-datenqualit%C3%A4t)
+        - [BMG Bericht](#bmg-bericht)
         - [aktueller Bericht klinische Daten](#aktueller-bericht-klinische-daten)
         - [aktueller Bericht epidemiologische Daten](#aktueller-bericht-epidemiologische-daten)
     - [Analysen klinischer Daten](#analysen-klinischer-daten)
@@ -22,6 +23,11 @@ lore ipsum dolor est
 <a id="markdown-bericht-zur-datenqualit%C3%A4t" name="bericht-zur-datenqualit%C3%A4t"></a>
 
 <!-- - [Archiv für ältere Berichte (pdf)](./src/quality-reports/docs/archive/) -->
+
+### BMG Bericht
+<a id="markdown-bmg-bericht" name="bmg-bericht"></a>
+
+- §12 Bericht 🚧 [[markdown]](./src/section-12-report/docs/report.md) [[source]](./src/section-12-report/report.ipynb)
 
 ### aktueller Bericht klinische Daten
 <a id="markdown-aktueller-bericht-klinische-daten" name="aktueller-bericht-klinische-daten"></a>

@@ -6,20 +6,31 @@
   - [⚙️ settings](#toc1_2_)    
   - [Bericht](#toc1_3_)    
     - [Aktualität](#toc1_3_1_)    
-    - [Vollständigkeit](#toc1_3_2_)    
-      - [Personenangaben](#toc1_3_2_1_)    
-      - [Tumorangaben](#toc1_3_2_2_)    
-      - [Organmodule - Mamma](#toc1_3_2_3_)    
-        - [Organmodule - Prostata](#toc1_3_2_3_1_)    
-        - [Organmodule - Melanom](#toc1_3_2_3_2_)    
-    - [Therapie](#toc1_3_3_)    
-      - [Anteil Fälle ohne Therapie](#toc1_3_3_1_)    
-      - [ops wenn op](#toc1_3_3_2_)    
-      - [OP wenn OP erwartet](#toc1_3_3_3_)    
-      - [st wenn st erwartet](#toc1_3_3_4_)    
-      - [sy wenn sy erwartet](#toc1_3_3_5_)    
-      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_3_6_)    
-      - [Anteil Lokalrezidive (erstmal breite Definition)](#toc1_3_3_7_)    
+    - [Fallzahlen](#toc1_3_2_)    
+    - [Vollständigkeit](#toc1_3_3_)    
+      - [Personenangaben](#toc1_3_3_1_)    
+      - [Grading](#toc1_3_3_2_)    
+      - [TNM-T](#toc1_3_3_3_)    
+      - [weitere Tumorangaben](#toc1_3_3_4_)    
+      - [Organmodule - Mamma](#toc1_3_3_5_)    
+        - [Organmodule - Prostata](#toc1_3_3_5_1_)    
+        - [Organmodule - Melanom](#toc1_3_3_5_2_)    
+      - [Organmodule - Darm](#toc1_3_3_6_)    
+      - [Verteilung Diagnosesicherung](#toc1_3_3_7_)    
+      - [T Stadium](#toc1_3_3_8_)    
+    - [Therapie](#toc1_3_4_)    
+      - [Anteil Fälle ohne Therapie](#toc1_3_4_1_)    
+      - [ops wenn op](#toc1_3_4_2_)    
+      - [OP wenn OP erwartet](#toc1_3_4_3_)    
+      - [st wenn st erwartet](#toc1_3_4_4_)    
+      - [sy wenn sy erwartet](#toc1_3_4_5_)    
+      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_6_)    
+      - [Anteil Rezidive](#toc1_3_4_7_)    
+        - [C50](#toc1_3_4_7_1_)    
+        - [C18-C20](#toc1_3_4_7_2_)    
+    - [date periods](#toc1_3_5_)    
+      - [Anzahl Tage Diagnose Tod](#toc1_3_5_1_)    
+      - [Anzahl Tage Diagnose OP](#toc1_3_5_2_)    
   - [debug](#toc1_4_)    
 
 <!-- vscode-jupyter-toc-config
@@ -31,7 +42,7 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.23.1 | 📦 connection-helper: 0.13.2
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.24.0 | 📦 connection-helper: 0.13.2
 
 
 ## <a id='toc1_1_'></a>[Datenstand](#toc0_)
@@ -41,28 +52,20 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-02 11:01:22
+    document created:        2025-12-05 18:31:33
 
-
-    🗄️ db_clin_all	3_241_401, 31
-    	("tum_id, pat_id, kkr, system, z_dy, z_icd10, z_icd10_3d, dsich, bl, z_is_dco, op_cnt, ops_cnt, st_cnt, syst_cnt, bestr_cnt, folge_cnt, app_cnt, weitere_diag_cnt, weitere_folge_cnt, fm_folge_cnt, fm_diag_cnt, proto_cnt, subst_cnt, tnm_folge_cnt, op_missing, st_missing, syst_missing, folge_missing, thera_missing, is_solid, code_kid")
-
-```python
-    ┌──────────────────────────────────────┬──────────────────────────────────────┬─────────┬─────────┬───────┬─────────┬────────────┬─────────┬──────┬──────────┬────────┬─────────┬────────┬──────────┬───────────┬───────────┬─────────┬──────────────────┬───────────────────┬──────────────┬─────────────┬───────────┬───────────┬───────────────┬────────────┬────────────┬──────────────┬───────────────┬───────────────┬──────────┬──────────┐
-    │                tum_id                │                pat_id                │   kkr   │ system  │ z_dy  │ z_icd10 │ z_icd10_3d │  dsich  │  bl  │ z_is_dco │ op_cnt │ ops_cnt │ st_cnt │ syst_cnt │ bestr_cnt │ folge_cnt │ app_cnt │ weitere_diag_cnt │ weitere_folge_cnt │ fm_folge_cnt │ fm_diag_cnt │ proto_cnt │ subst_cnt │ tnm_folge_cnt │ op_missing │ st_missing │ syst_missing │ folge_missing │ thera_missing │ is_solid │ code_kid │
-    │               varchar                │               varchar                │ varchar │ varchar │ int16 │ varchar │  varchar   │ varchar │ int8 │ boolean  │ int16  │  int64  │ int16  │  int16   │   int64   │   int16   │  int64  │      int64       │       int64       │    int64     │    int64    │   int64   │   int64   │     int64     │   int32    │   int32    │    int32     │     int32     │     int32     │ boolean  │ varchar  │
-    ├──────────────────────────────────────┼──────────────────────────────────────┼─────────┼─────────┼───────┼─────────┼────────────┼─────────┼──────┼──────────┼────────┼─────────┼────────┼──────────┼───────────┼───────────┼─────────┼──────────────────┼───────────────────┼──────────────┼─────────────┼───────────┼───────────┼───────────────┼────────────┼────────────┼──────────────┼───────────────┼───────────────┼──────────┼──────────┤
-    │ 9330094e-3ef6-4eb5-84d1-0985b3e0412a │ 8bb78cf7-b1cd-4a82-84fd-fb699e81ccad │ 09-BY   │ gtds    │  2020 │ C61     │ C61        │ 7       │    9 │ false    │      2 │       2 │      0 │        0 │         0 │         3 │       0 │                0 │                 0 │            0 │           0 │         0 │         0 │             3 │          0 │          1 │            1 │             0 │             0 │ true     │ C61      │
-    │ 05f84a5f-2214-41ad-8a39-f0925813448a │ 9a67d26b-7093-42f0-be9b-e30e7dac191c │ 09-BY   │ gtds    │  2020 │ C61     │ C61        │ 7       │    9 │ false    │      2 │       3 │      0 │        0 │         0 │         3 │       0 │                0 │                 0 │            0 │           0 │         0 │         0 │             3 │          0 │          1 │            1 │             0 │             0 │ true     │ C61      │
-    │ 4bafc7f6-f7b9-4f79-9250-424f7bdbad2d │ ebdcae78-0e45-443e-a99f-e655613f169e │ 14-SN   │ gtds    │  2022 │ C61     │ C61        │ 7       │   14 │ false    │      1 │       2 │      0 │        0 │         0 │         2 │       0 │                0 │                 0 │            0 │           0 │         0 │         0 │             2 │          0 │          1 │            1 │             0 │             0 │ true     │ C61      │
-    └──────────────────────────────────────┴──────────────────────────────────────┴─────────┴─────────┴───────┴─────────┴────────────┴─────────┴──────┴──────────┴────────┴─────────┴────────┴──────────┴───────────┴───────────┴─────────┴──────────────────┴───────────────────┴──────────────┴─────────────┴───────────┴───────────┴───────────────┴────────────┴────────────┴──────────────┴───────────────┴───────────────┴──────────┴──────────┘
-```
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
 
 ## <a id='toc1_3_'></a>[Bericht](#toc0_)
 
 ### <a id='toc1_3_1_'></a>[Aktualität](#toc0_)
+- `kkr` = Klinisches Krebsregister
+- `Lieferdatum` = Datum der letzten Übermittlung durch die KKR
+- `Diagnosemonat` = letzter Diagnosemonat in den Daten
+- `Lieferdatum` ist über das Jahr 2025 verteilt, Grund sind Nachlieferungen von einigen KKR
+
+> einige KKR haben bereits (wenige) aktuelle Fälle in der Lieferung (z.B. `06-HE` mit Fällen aus `2025-04`)
 
 
     
@@ -70,42 +73,69 @@
     
 
 
-### <a id='toc1_3_2_'></a>[Vollständigkeit](#toc0_)
+### <a id='toc1_3_2_'></a>[Fallzahlen](#toc0_)
+- in den Darstellungen sind keine Filter angewendet, solange nicht explizit angegeben
+- aufgespannt sind die Fallzahlen für Lieferregister und Elementknoten
+- kein Filter, "Altfälle" (DJ < 2020) sind also enthalten
+- die `%` Werte sowie die farbigen Datenbalken zeigen das relative Gewicht jedes KKR an "D gesamt" (`Total` Zeile)
+- Erklärung für einige Elementknoten: (_cnt = count/Fallzahl)
+  - `weitere_diag_cnt` = Weitere Klassifikation im Elementknoten "Diagnose"
+  - `weitere_folge_cnt` = Weitere Klassifikation im Elementknoten "Folgeereignis"
+  - `fm_folge_cnt`= Fernmetastasen im Elementknoten "Folgeereignis"
+  - `fm_diag_cnt` = Fernmetastasen im Elementknoten "Diagnose"
+  - `tnm_folge_cnt` = TNM im Elementknoten "Folgeereignis"
+
+> inzwischen liegen fast alle Elemente flächendeckend vor. Ausnahmen sind `Applikationsart`, `Folgeereignisse`, `Protokolle` / `Substanzen`
+>
+> an den 3,2 Mio Tumorfällen in der Lieferung hat `05-NW` den höchsten Anteil
+>
+> an der Verteilung bei den Tumorfällen können andere Anteile gemessen werden: so ist `08-BW` bei den Folgeereignissen deutlich überrepräsentiert (30% bei Folgeereignissen ggü. 11% bei Tumoren)
+>
+> einige KKR liefern pro Strahlentherapie genau eine Teilbestrahlung (erkennbar an den gleichen Werten bei diesen Elementen)
+
+
+    
+![png](report_files/output_15_0.png)
+    
+
+
+
+    
+![png](report_files/output_16_0.png)
+    
+
+
+### <a id='toc1_3_3_'></a>[Vollständigkeit](#toc0_)
 
 - es sind folgende Schwellwerte angezeigt:
-  - 🟩 0 bis <5%
-  - 🟨 5 bis <100%
+  - 🟩 0% bis <5%
+  - 🟨 5% bis <100%
   - 🟥 bei 100%
 - **Filter: `DJ` 2020-2023** Weitere Filter sind extra aufgeführt
 - dargestellt sind Variablen aus dem Schema in folgender Notation: `[Elementknoten]Variablenname`
 - **Missings**
   - die graumelierte `0` kennzeichnet einen leeren Wert (=keine missings), 0% entsteht durch Rundung von kleinen Werten
-- **Unbekannt**
-    -  ('U', 'X', 'VX', 'SX', 'okk')
+- **Unbekannt** Kodierungen
     -  Grading: (U, T)
     -  Morphologie_Code: 8000-8011, 9590, 9591, 9800, 9801, 8050
     -  Lokalisation_Code: C26, C39, C76, C80,  C14.0, C57.9, C63.9, C68.9, C72.9, C75.9
     -  Diagnose_ICD10_Code: ('C80','C80.0', 'C80.1', 'C80.9', 'C79.9')
     -  Diagnosesicherung: 9
     -  Intention, Seite_Zielgebiet, Seitenlokalisation: U
-    -  Datum_Genauigkeit: ('M','V') 
+    -  Datum_Genauigkeit: ('M','V')
+    -  alles anderen: ('U', 'X', 'VX', 'SX', 'okk')
 
+#### <a id='toc1_3_3_1_'></a>[Personenangaben](#toc0_)
 
-#### <a id='toc1_3_2_1_'></a>[Personenangaben](#toc0_)
+> Personenangaben liegen komplett vollständig vor
+>
+> `Datum_Vitalstatus` ist in einigen Fällen geschätzt (bis zu 4% on `16-TH`), Geburtsdatum hingegen sehr selten (Datum 1900 ist nicht berücksichtigt)
 
 
     
-![png](report_files/output_17_0.png)
+![png](report_files/output_20_0.png)
     
 
-
-
-    
-![png](report_files/output_18_0.png)
-    
-
-
-#### <a id='toc1_3_2_2_'></a>[Tumorangaben](#toc0_)
 
 
     
@@ -113,57 +143,131 @@
     
 
 
-
-    
-![png](report_files/output_22_0.png)
-    
-
-
-#### <a id='toc1_3_2_3_'></a>[Organmodule - Mamma](#toc0_)
+#### <a id='toc1_3_3_2_'></a>[Grading](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10`: C00-C33, C50-C57, C60-C68, `Morphologie`: 8010-8576**
 
 
     
-![png](report_files/output_24_0.png)
+![svg](report_files/output_23_0.svg)
     
 
 
-
-    
-![png](report_files/output_24_1.png)
-    
-
-
-##### <a id='toc1_3_2_3_1_'></a>[Organmodule - Prostata](#toc0_)
+#### <a id='toc1_3_3_3_'></a>[TNM-T](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10`: C00-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C68.9, `Morphologie`: 8010-8790**
 
 
     
-![png](report_files/output_26_0.png)
+![svg](report_files/output_25_0.svg)
     
 
 
-
-    
-![png](report_files/output_26_1.png)
-    
-
-
-##### <a id='toc1_3_2_3_2_'></a>[Organmodule - Melanom](#toc0_)
+#### <a id='toc1_3_3_4_'></a>[weitere Tumorangaben](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` kein C44**
+> `Diagnosesicherung` ist komplett bzw. überwiegend vollständig, weist jedoch viele Unbekannt Kodierungen auf
 
 
     
-![png](report_files/output_28_0.png)
+![png](report_files/output_27_0.png)
     
 
 
 
     
-![png](report_files/output_28_1.png)
+![png](report_files/output_27_1.png)
     
 
 
-### <a id='toc1_3_3_'></a>[Therapie](#toc0_)
+#### <a id='toc1_3_3_5_'></a>[Organmodule - Mamma](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C50**
+> keine Angaben aus `02-HH` übermittelt (gilt für alle Organmodule)
 
-#### <a id='toc1_3_3_1_'></a>[Anteil Fälle ohne Therapie](#toc0_)
+
+    
+![png](report_files/output_29_0.png)
+    
+
+
+
+    
+![png](report_files/output_29_1.png)
+    
+
+
+##### <a id='toc1_3_3_5_1_'></a>[Organmodule - Prostata](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C61**
+
+
+    
+![png](report_files/output_31_0.png)
+    
+
+
+
+    
+![png](report_files/output_31_1.png)
+    
+
+
+##### <a id='toc1_3_3_5_2_'></a>[Organmodule - Melanom](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C43**
+
+
+    
+![png](report_files/output_33_0.png)
+    
+
+
+
+    
+![png](report_files/output_33_1.png)
+    
+
+
+#### <a id='toc1_3_3_6_'></a>[Organmodule - Darm](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C18, C19, C20**
+
+
+    
+![png](report_files/output_35_0.png)
+    
+
+
+
+    
+![png](report_files/output_35_1.png)
+    
+
+
+#### <a id='toc1_3_3_7_'></a>[Verteilung Diagnosesicherung](#toc0_)
+- **Filter: `DJ` 2020-2023**
+
+> keine DCO Kodierungen in `03-NI`, `13-MV`, `15-ST`, `16-TH`  
+>
+> `>20%` Unbekannt in `10-SL`
+
+
+    
+![svg](report_files/output_37_0.svg)
+    
+
+
+#### <a id='toc1_3_3_8_'></a>[T Stadium](#toc0_)
+- **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10`: C00-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C68.9, `Morphologie`: 8010-8790**
+- Kategorien
+  - `1_t_cp` - cT und pT sind vorhanden und nicht `X`
+  - `2_t_c`- cT ist vorhanden und nicht `X`, pT ist leer
+  - `3_t_p`- pT ist vorhanden und nicht `X`, cT ist leer
+  - `4_no_t`- beide leer
+
+
+    
+![svg](report_files/output_39_0.svg)
+    
+
+
+### <a id='toc1_3_4_'></a>[Therapie](#toc0_)
+
+#### <a id='toc1_3_4_1_'></a>[Anteil Fälle ohne Therapie](#toc0_)
 
 - **Filter: `DJ` = 2020-2023, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
 - ein Wert von bspw. 0.68 ist zu interpretieren als: _"68% aller Tumorfälle im KKR haben keine zugeordneten OP Angaben, die restlichen 32% mindestens eine."_
@@ -173,15 +277,20 @@
 
 
     
-![png](report_files/output_32_0.png)
+![png](report_files/output_42_0.png)
     
 
 
-#### <a id='toc1_3_3_2_'></a>[ops wenn op](#toc0_)
+#### <a id='toc1_3_4_2_'></a>[ops wenn op](#toc0_)
+- **Filter: `DJ` = 2020-2023**
 
 
+    
+![svg](report_files/output_44_0.svg)
+    
 
-#### <a id='toc1_3_3_3_'></a>[OP wenn OP erwartet](#toc0_)
+
+#### <a id='toc1_3_4_3_'></a>[OP wenn OP erwartet](#toc0_)
 
 
 
@@ -195,7 +304,29 @@
     └ [C50]:                             n = 283_195   (8.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-#### <a id='toc1_3_3_4_'></a>[st wenn st erwartet](#toc0_)
+![svg](report_files/output_47_0.svg)
+    
+
+
+
+    
+![svg](report_files/output_47_1.svg)
+    
+
+
+
+    
+![svg](report_files/output_47_2.svg)
+    
+
+
+
+    
+![svg](report_files/output_47_3.svg)
+    
+
+
+#### <a id='toc1_3_4_4_'></a>[st wenn st erwartet](#toc0_)
 
 
 
@@ -210,56 +341,186 @@
     └ [OPS: BET]:                        n = 160_759   (5.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-#### <a id='toc1_3_3_5_'></a>[sy wenn sy erwartet](#toc0_)
+![svg](report_files/output_50_0.svg)
+    
+
+
+#### <a id='toc1_3_4_5_'></a>[sy wenn sy erwartet](#toc0_)
 
 
 
-#### <a id='toc1_3_3_6_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
+```python
+    counts: rows
+    ---
+    n = 3_241_401                                                      (100.0%) ██████████████████████████████
+    └ [2020-2023]:                                       n = 2_989_092  (92.2%) ░░░███████████████████████████
+    └ [not z_is_dco]:                                    n = 2_890_167  (89.2%) ░░░░██████████████████████████
+    └ [keine M1]:                                        n = 2_617_996  (80.8%) ░░░░░░████████████████████████
+    └ [keine Verstorbenen < 180 Tage]:                   n = 2_422_757  (74.7%) ░░░░░░░░██████████████████████
+    └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 31_436   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+```
+
+![svg](report_files/output_53_0.svg)
+    
+
+
+#### <a id='toc1_3_4_6_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
+
+
+    z_dy = 2020 and z_icd10_3d = 'C50'
 
 
 
-#### <a id='toc1_3_3_7_'></a>[Anteil Lokalrezidive (erstmal breite Definition)](#toc0_)
-- ❗ neue vs alte definition
+    
+![svg](report_files/output_56_0.svg)
+    
+
+
+#### <a id='toc1_3_4_7_'></a>[Anteil Rezidive](#toc0_)
+
+##### <a id='toc1_3_4_7_1_'></a>[C50](#toc0_)
 
 
 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 3_241_401                (100.0%) ██████████████████████████████
-    └ [2020-2021]: n = 1_495_715  (46.1%) ░░░░░░░░░░░░░░░░░█████████████
-    └ [keine M1]:  n = 1_355_097  (41.8%) ░░░░░░░░░░░░░░░░░░████████████
-    └ [C50]:         n = 146_979   (4.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [R0]:           n = 89_812   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) ██████████████████████████████
+    └ [2020-2021]:                     n = 1_495_715  (46.1%) ░░░░░░░░░░░░░░░░░█████████████
+    └ [keine M1]:                      n = 1_355_097  (41.8%) ░░░░░░░░░░░░░░░░░░████████████
+    └ [C50]:                             n = 146_979   (4.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [R0]:                               n = 89_812   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-    🗄️ relapse	89_812, 14
-    	("z_tum_id, z_pat_id, z_m_pc_1, z_kkr_label, has_fo, has_r_symbol, has_t2plus, has_n2plus, has_m2plus, has_rel3, has_rel1, has_rel2, Verstorben, categ_relapse")
+![svg](report_files/output_61_0.svg)
+    
 
-```python
-    ┌──────────────────────────────────────┬──────────────────────────────────────┬──────────┬─────────────┬─────────┬──────────────┬────────────┬────────────┬────────────┬──────────┬──────────┬──────────┬────────────┬───────────────┐
-    │               z_tum_id               │               z_pat_id               │ z_m_pc_1 │ z_kkr_label │ has_fo  │ has_r_symbol │ has_t2plus │ has_n2plus │ has_m2plus │ has_rel3 │ has_rel1 │ has_rel2 │ Verstorben │ categ_relapse │
-    │               varchar                │               varchar                │ varchar  │   varchar   │ boolean │   varchar    │  varchar   │  varchar   │  varchar   │ varchar  │ boolean  │ boolean  │  varchar   │    varchar    │
-    ├──────────────────────────────────────┼──────────────────────────────────────┼──────────┼─────────────┼─────────┼──────────────┼────────────┼────────────┼────────────┼──────────┼──────────┼──────────┼────────────┼───────────────┤
-    │ f74dbc1d-da5e-412d-8c46-7a708107890c │ d9a7106b-80c3-449f-a4d8-231202a78167 │ 0        │ 05-NW       │ true    │ false        │ NULL       │ NULL       │ NULL       │ false    │ false    │ false    │ N          │ 4_no_relapse  │
-    │ a47a7fda-3ea4-4bbb-a749-24345c71dcdd │ 6315be11-f704-40c4-8b97-63c4c293780c │ 0        │ 08-BW       │ true    │ false        │ NULL       │ NULL       │ NULL       │ false    │ false    │ false    │ N          │ 4_no_relapse  │
-    │ 9d3942da-df8d-4bb8-9da5-f53a5ed89f23 │ 9a346d5e-6720-4de6-8405-2114a23f5221 │ 0        │ 08-BW       │ true    │ false        │ NULL       │ NULL       │ NULL       │ false    │ false    │ false    │ N          │ 4_no_relapse  │
-    └──────────────────────────────────────┴──────────────────────────────────────┴──────────┴─────────────┴─────────┴──────────────┴────────────┴────────────┴────────────┴──────────┴──────────┴──────────┴────────────┴───────────────┘
-```
 
-### date periods
-[analysis](../quality-analysis/02-date-periods/docs/date_periods.md)
+    n = 89_461 | n(true) = 4_521
+
+
+
+    
+![png](report_files/output_62_1.png)
+    
+
+
+##### <a id='toc1_3_4_7_2_'></a>[C18-C20](#toc0_)
+
+
+    
+![svg](report_files/output_64_0.svg)
+    
+
+
+    n = 46_861 | n(true) = 4_778
+
+
+
+    
+![png](report_files/output_65_1.png)
+    
+
+
+### <a id='toc1_3_5_'></a>[date periods](#toc0_)
+
+#### <a id='toc1_3_5_1_'></a>[Anzahl Tage Diagnose Tod](#toc0_)
+
+
+    
+![png](report_files/output_68_0.png)
+    
+
+
+
+    
+![png](report_files/output_68_1.png)
+    
+
+
+    
+    column (n = 2_989_092)   |    present    |   min   | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv 
+    -------------------------+---------------+---------+-------+-------+--------+--------+--------+-------+-------+--------+-----
+    Anzahl_Tage_Diagnose_Tod | 807_950 (27%) | -27_320 |  -212 | 41.00 | 198.00 | 330.51 | 509.00 | 1_211 | 2_043 | 368.03 | 1.11
+    
+    
+    item (n = 2_989_092) |  count  |   min   | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv 
+    ---------------------+---------+---------+-------+-------+--------+--------+--------+-------+-------+--------+-----
+    01-SH                |  40_150 |       0 |     0 | 29.00 | 193.00 | 336.30 | 527.00 | 1_274 | 1_783 | 381.00 | 1.13
+    02-HH                |  17_898 |       0 |     0 | 34.00 | 163.00 | 301.57 | 456.00 | 1_089 | 1_784 | 350.78 | 1.16
+    03-NI                |  62_000 |       0 |     0 | 72.00 | 238.00 | 354.04 | 529.00 | 1_214 | 1_752 | 352.65 | 1.00
+    04-HB                |   7_806 |       0 |     0 | 25.00 | 145.00 | 287.97 | 451.00 | 1_089 | 1_688 | 339.30 | 1.18
+    05-NW                | 230_941 |       0 |     0 | 28.00 | 187.00 | 333.87 | 523.00 | 1_265 | 1_847 | 383.06 | 1.15
+    06-HE                |  47_132 |       0 |     0 | 74.00 | 244.00 | 361.28 | 542.00 | 1_244 | 1_885 | 358.23 | 0.99
+    07-RP                |  25_580 |       0 |     0 | 57.00 | 197.00 | 309.62 | 463.00 | 1_072 | 1_857 | 324.37 | 1.05
+    08-BW                | 112_990 |       0 |     0 | 57.00 | 245.00 | 375.67 | 579.00 | 1_362 | 2_043 | 391.48 | 1.04
+    09-BY                |  98_333 |       0 |     0 | 22.00 | 162.00 | 289.89 | 453.00 | 1_099 | 1_751 | 334.38 | 1.15
+    10-SL                |   2_724 |       0 |     0 |  0.00 |   0.00 |  36.19 |   8.00 |    20 | 1_309 | 120.67 | 3.33
+    11-BE                |  34_190 |       0 |     0 | 19.00 | 132.00 | 267.95 | 410.00 |   996 | 1_790 | 326.35 | 1.22
+    12-BB                |  29_755 |       0 |     0 | 26.00 | 145.00 | 275.85 | 414.00 |   996 | 1_819 | 330.76 | 1.20
+    13-MV                |  19_682 | -27_320 |  -212 | 77.00 | 244.00 | 357.95 | 540.00 | 1_234 | 1_729 | 454.01 | 1.27
+    14-SN                |  52_785 |       0 |     0 | 78.00 | 257.00 | 380.17 | 580.00 | 1_333 | 1_765 | 370.31 | 0.97
+    15-ST                |  16_602 |       0 |     0 | 14.00 |  95.00 | 208.39 | 306.00 |   744 | 1_756 | 270.35 | 1.30
+    16-TH                |   9_382 |       0 |     0 | 52.00 | 188.00 | 308.18 | 449.00 | 1_043 | 1_756 | 332.87 | 1.08
+    
+
 
 
 
 
     
-![svg](report_files/output_51_0.svg)
+![svg](report_files/output_69_0.svg)
     
 
 
 
-### Numerische Werte
-[analyis](../quality-reports/docs/clin/clin_2_analyze.md#numerische-variablen-)
+#### <a id='toc1_3_5_2_'></a>[Anzahl Tage Diagnose OP](#toc0_)
 
-## <a id='toc1_4_'></a>[debug](#toc0_)
+
+    
+![png](report_files/output_71_0.png)
+    
+
+
+
+    
+![png](report_files/output_71_1.png)
+    
+
+
+    
+    column (n = 1_654_671)  |     present     | min  | lower | q25  | median | mean  |  q75  | upper |  max  |  std   |  cv 
+    ------------------------+-----------------+------+-------+------+--------+-------+-------+-------+-------+--------+-----
+    Anzahl_Tage_Diagnose_OP | 1_632_658 (98%) | -304 |   -56 | 0.00 |  26.00 | 74.88 | 65.00 |   162 | 4_835 | 163.28 | 2.18
+    
+    
+    item (n = 1_654_671) |  count  | min  | lower | q25  | median | mean  |  q75  | upper |  max  |  std   |  cv 
+    ---------------------+---------+------+-------+------+--------+-------+-------+-------+-------+--------+-----
+    01                   |  44_153 |    0 |     0 | 0.00 |  20.00 | 39.21 | 46.00 |   115 | 1_498 |  59.89 | 1.53
+    02                   |  33_147 |    0 |     0 | 0.00 |  22.00 | 77.09 | 61.00 |   152 | 2_204 | 169.17 | 2.19
+    03                   |  92_380 |    0 |     0 | 0.00 |  22.00 | 47.08 | 55.00 |   137 | 1_635 |  76.37 | 1.62
+    04                   |   9_001 |    0 |     0 | 3.00 |  25.00 | 42.04 | 49.00 |   118 |   384 |  57.03 | 1.36
+    05                   | 344_903 |    0 |     0 | 8.00 |  31.00 | 92.92 | 81.00 |   190 | 1_812 | 183.44 | 1.97
+    06                   |  92_019 |    0 |     0 | 3.00 |  26.00 | 70.56 | 61.00 |   148 | 3_448 | 166.10 | 2.35
+    07                   |  55_139 |    0 |     0 | 0.00 |  23.00 | 50.58 | 51.00 |   127 | 1_649 |  98.22 | 1.94
+    08                   | 223_074 |    0 |     0 | 2.00 |  31.00 | 91.13 | 78.00 |   192 | 1_996 | 187.00 | 2.05
+    09                   | 226_364 |    0 |     0 | 0.00 |  25.00 | 65.13 | 61.00 |   152 | 4_835 | 134.19 | 2.06
+    10                   |  15_891 |    0 |     0 | 0.00 |  13.00 | 35.94 | 38.00 |    95 | 1_080 |  65.85 | 1.83
+    11                   |  73_421 |    0 |     0 | 1.00 |  29.00 | 74.31 | 71.00 |   176 | 1_619 | 143.70 | 1.93
+    12                   |  64_795 |    0 |     0 | 1.00 |  28.00 | 75.85 | 71.00 |   176 | 1_724 | 149.43 | 1.97
+    13                   |  73_292 | -304 |   -56 | 0.00 |  15.00 | 70.74 | 53.00 |   132 | 2_702 | 186.60 | 2.64
+    14                   | 127_756 |    0 |     0 | 0.00 |  28.00 | 81.02 | 72.00 |   180 | 1_799 | 167.22 | 2.06
+    15                   |  88_209 |    0 |     0 | 0.00 |  15.00 | 64.46 | 52.00 |   130 | 3_656 | 179.19 | 2.78
+    16                   |  69_114 |    0 |     0 | 0.00 |   7.00 | 67.64 | 45.00 |   112 | 3_770 | 204.89 | 3.03
+    
+
+
+
+
+
+    
+![svg](report_files/output_72_0.svg)
+    
+
+

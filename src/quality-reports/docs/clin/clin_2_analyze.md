@@ -81,15 +81,15 @@
 
 ## <a id='toc1_2_'></a>[Datenstand ⏱️](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.1 | 📦 pandas-plots: 0.21.3 | 📦 connection-helper: 0.13.1
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.23.1 | 📦 connection-helper: 0.13.2
 
 
-    sqlite db file:          2025-11-11_data_clin.duckdb
+    database file:           2025-11-11_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-11-13 17:33:27
+    document created:        2025-12-03 16:14:54
 
 
 <br>
@@ -268,7 +268,7 @@
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2024 Fälle: {'13-MV': 2835, '08-BW': 679, '11-BE': 509, '12-BB': 642, '15-ST': 1917, '09-BY': 2233, '06-HE': 844}
+    Anzahl 2024 Fälle: {'13-MV': 2835, '06-HE': 844, '09-BY': 2233, '12-BB': 642, '11-BE': 509, '08-BW': 679, '15-ST': 1917}
 
 
 
@@ -474,13 +474,14 @@
 #### <a id='toc1_7_14_2_'></a>[nach OPS Einzelcodes (Top 5)](#toc0_)
 - Grundgesamtheit: **alle OPS Codes**
 
-<br>
 
     
 ![png](clin_2_analyze_files/output_71_0.png)
     
 
 
+
+```python
     ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────┐
     │   code   │                                                           name                                                            │  cnt   │
     │ varchar  │                                                          varchar                                                          │ int32  │
@@ -491,8 +492,7 @@
     │ 5-870.a1 │ Partielle (brusterhaltende) Exzision der Mamma und Destruktion von Mammagewebe: Partielle Resektion: Defektdeckung durc…  │  65040 │
     │ 5-870.a2 │ Partielle (brusterhaltende) Exzision der Mamma und Destruktion von Mammagewebe: Partielle Resektion: Defektdeckung durc…  │  52410 │
     └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴────────┘
-    
-
+```
 
 ### <a id='toc1_7_15_'></a>[SYST](#toc0_)
 
