@@ -11,6 +11,8 @@
       - [Personenangaben](#toc1_3_3_1_)    
       - [Grading](#toc1_3_3_2_)    
       - [TNM-T](#toc1_3_3_3_)    
+        - [alle](#toc1_3_3_3_1_)    
+        - [nur op](#toc1_3_3_3_2_)    
       - [weitere Tumorangaben](#toc1_3_3_4_)    
       - [Organmodule - Mamma](#toc1_3_3_5_)    
         - [Organmodule - Prostata](#toc1_3_3_5_1_)    
@@ -21,7 +23,11 @@
     - [Therapie](#toc1_3_4_)    
       - [Anteil Fälle ohne Therapie](#toc1_3_4_1_)    
       - [ops wenn op](#toc1_3_4_2_)    
-      - [OP wenn OP erwartet](#toc1_3_4_3_)    
+      - [op wenn op erwartet](#toc1_3_4_3_)    
+        - [C50](#toc1_3_4_3_1_)    
+        - [C43](#toc1_3_4_3_2_)    
+        - [C18-C20](#toc1_3_4_3_3_)    
+        - [C62](#toc1_3_4_3_4_)    
       - [st wenn st erwartet](#toc1_3_4_4_)    
       - [sy wenn sy erwartet](#toc1_3_4_5_)    
       - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_6_)    
@@ -31,7 +37,6 @@
     - [date periods](#toc1_3_5_)    
       - [Anzahl Tage Diagnose Tod](#toc1_3_5_1_)    
       - [Anzahl Tage Diagnose OP](#toc1_3_5_2_)    
-  - [debug](#toc1_4_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -52,7 +57,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-05 18:31:33
+    document created:        2025-12-18 18:29:52
 
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
@@ -153,11 +158,22 @@
 
 
 #### <a id='toc1_3_3_3_'></a>[TNM-T](#toc0_)
+
+##### <a id='toc1_3_3_3_1_'></a>[alle](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10`: C00-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C68.9, `Morphologie`: 8010-8790**
 
 
     
-![svg](report_files/output_25_0.svg)
+![svg](report_files/output_26_0.svg)
+    
+
+
+##### <a id='toc1_3_3_3_2_'></a>[nur op](#toc0_)
+- **Filter: wie oben, aber nur mit dokumentiertem OPS aus Kapitel 5**
+
+
+    
+![svg](report_files/output_28_0.svg)
     
 
 
@@ -167,13 +183,13 @@
 
 
     
-![png](report_files/output_27_0.png)
+![png](report_files/output_30_0.png)
     
 
 
 
     
-![png](report_files/output_27_1.png)
+![png](report_files/output_30_1.png)
     
 
 
@@ -183,13 +199,13 @@
 
 
     
-![png](report_files/output_29_0.png)
+![png](report_files/output_32_0.png)
     
 
 
 
     
-![png](report_files/output_29_1.png)
+![png](report_files/output_32_1.png)
     
 
 
@@ -198,13 +214,13 @@
 
 
     
-![png](report_files/output_31_0.png)
+![png](report_files/output_34_0.png)
     
 
 
 
     
-![png](report_files/output_31_1.png)
+![png](report_files/output_34_1.png)
     
 
 
@@ -213,13 +229,13 @@
 
 
     
-![png](report_files/output_33_0.png)
+![png](report_files/output_36_0.png)
     
 
 
 
     
-![png](report_files/output_33_1.png)
+![png](report_files/output_36_1.png)
     
 
 
@@ -228,13 +244,13 @@
 
 
     
-![png](report_files/output_35_0.png)
+![png](report_files/output_38_0.png)
     
 
 
 
     
-![png](report_files/output_35_1.png)
+![png](report_files/output_38_1.png)
     
 
 
@@ -247,7 +263,7 @@
 
 
     
-![svg](report_files/output_37_0.svg)
+![svg](report_files/output_40_0.svg)
     
 
 
@@ -261,13 +277,13 @@
 
 
     
-![svg](report_files/output_39_0.svg)
+![svg](report_files/output_42_0.svg)
     
 
 
 ### <a id='toc1_3_4_'></a>[Therapie](#toc0_)
 
-#### <a id='toc1_3_4_1_'></a>[Anteil Fälle ohne Therapie](#toc0_)
+#### <a id='toc1_3_4_1_'></a>[Anteil Fälle ohne Therapie 1](#toc0_)
 
 - **Filter: `DJ` = 2020-2023, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
 - ein Wert von bspw. 0.68 ist zu interpretieren als: _"68% aller Tumorfälle im KKR haben keine zugeordneten OP Angaben, die restlichen 32% mindestens eine."_
@@ -277,7 +293,17 @@
 
 
     
-![png](report_files/output_42_0.png)
+![png](report_files/output_45_0.png)
+    
+
+
+#### <a id='toc1_3_4_1_'></a>[Anteil Fälle ohne Therapie 2](#toc0_)
+
+- **Filter: `DJ` = 2020-2023 (1. Halbjahr), `DCO` = N, nur C Diagnosen**
+
+
+    
+![svg](report_files/output_47_0.svg)
     
 
 
@@ -286,11 +312,16 @@
 
 
     
-![svg](report_files/output_44_0.svg)
+![svg](report_files/output_49_0.svg)
     
 
 
-#### <a id='toc1_3_4_3_'></a>[OP wenn OP erwartet](#toc0_)
+#### <a id='toc1_3_4_3_'></a>[op wenn op erwartet](#toc0_)
+- kategorien
+  - `1_op`: ops im definierten Bereich (3Steller) ist dokumentiert
+  - `2_no_op_but_tp`: keine ops, aber pT 0-4 ist dokumentiert
+  - `3_no_op_tp_but_other`: weder noch, aber ST oder SYST mit OP Stellung `O` ist dokumentiert
+  - `4_no_treat`: keines der genannten trifft zu
 
 
 
@@ -302,27 +333,44 @@
     └ [keine M1]:                      n = 2_715_663  (83.8%) ░░░░░█████████████████████████
     └ [keine Verstorbenen < 180 Tage]: n = 2_423_924  (74.8%) ░░░░░░░░██████████████████████
     └ [C50]:                             n = 283_195   (8.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [unter 80 Jahre]:                  n = 237_448   (7.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-![svg](report_files/output_47_0.svg)
+##### <a id='toc1_3_4_3_1_'></a>[C50](#toc0_)
+
+
+    
+![svg](report_files/output_53_0.svg)
     
 
 
 
     
-![svg](report_files/output_47_1.svg)
+![svg](report_files/output_54_0.svg)
     
 
 
-
-    
-![svg](report_files/output_47_2.svg)
-    
-
+##### <a id='toc1_3_4_3_2_'></a>[C43](#toc0_)
 
 
     
-![svg](report_files/output_47_3.svg)
+![svg](report_files/output_56_0.svg)
+    
+
+
+##### <a id='toc1_3_4_3_3_'></a>[C18-C20](#toc0_)
+
+
+    
+![svg](report_files/output_58_0.svg)
+    
+
+
+##### <a id='toc1_3_4_3_4_'></a>[C62](#toc0_)
+
+
+    
+![svg](report_files/output_60_0.svg)
     
 
 
@@ -341,7 +389,7 @@
     └ [OPS: BET]:                        n = 160_759   (5.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-![svg](report_files/output_50_0.svg)
+![svg](report_files/output_63_0.svg)
     
 
 
@@ -360,19 +408,35 @@
     └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 31_436   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_53_0.svg)
+![svg](report_files/output_66_0.svg)
+    
+
+
+
+    
+![svg](report_files/output_67_0.svg)
     
 
 
 #### <a id='toc1_3_4_6_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
+- gezählt sind nun Tumore, nicht mehr OP
+- `r_status`
+  - `1_R0`: wenn >= 1 OP zum Tumor dokumentiert is mit `R0`
+  - `2_R1_R2`: wenn kein `R0` dokumentiert, aber >= 1 OP mit `R1` oder `R2`
+  - `3_NA_U_RX`: wenn beides nicht zutrifft (Feld ist leer, `U` oder `RX`)
 
-
-    z_dy = 2020 and z_icd10_3d = 'C50'
+    z_dy between 2020 and 2023 and z_icd10_3d = 'C50' and z_tum_op_count > 0
 
 
 
     
-![svg](report_files/output_56_0.svg)
+![svg](report_files/output_70_0.svg)
+    
+
+
+
+    
+![png](report_files/output_70_1.png)
     
 
 
@@ -393,7 +457,7 @@
     └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_61_0.svg)
+![svg](report_files/output_75_0.svg)
     
 
 
@@ -402,7 +466,7 @@
 
 
     
-![png](report_files/output_62_1.png)
+![png](report_files/output_76_1.png)
     
 
 
@@ -410,7 +474,7 @@
 
 
     
-![svg](report_files/output_64_0.svg)
+![svg](report_files/output_78_0.svg)
     
 
 
@@ -419,7 +483,7 @@
 
 
     
-![png](report_files/output_65_1.png)
+![png](report_files/output_79_1.png)
     
 
 
@@ -429,13 +493,13 @@
 
 
     
-![png](report_files/output_68_0.png)
+![png](report_files/output_82_0.png)
     
 
 
 
     
-![png](report_files/output_68_1.png)
+![png](report_files/output_82_1.png)
     
 
 
@@ -470,7 +534,7 @@
 
 
     
-![svg](report_files/output_69_0.svg)
+![svg](report_files/output_83_0.svg)
     
 
 
@@ -479,13 +543,13 @@
 
 
     
-![png](report_files/output_71_0.png)
+![png](report_files/output_85_0.png)
     
 
 
 
     
-![png](report_files/output_71_1.png)
+![png](report_files/output_85_1.png)
     
 
 
@@ -520,7 +584,7 @@
 
 
     
-![svg](report_files/output_72_0.svg)
+![svg](report_files/output_86_0.svg)
     
 
 
