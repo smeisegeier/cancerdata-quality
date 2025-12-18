@@ -1,0 +1,45 @@
+@startuml
+skinparam ActivityBackgroundColor white
+skinparam ActivityBorderColor #4682B4
+skinparam ArrowColor #4682B4
+skinparam NoteBorderColor Blue
+
+title Tumore (TNM-relevante Diagnose)
+
+start
+
+split
+    :Histologisch gesichert (Primärtumor) (h);
+    
+    split
+        :pT liegt vor (a);
+        
+        if (Relevante OP?) then (b)
+            :Gültiger R-Status\nJa (d)/nein;
+        else (keine)
+            :Keine relevante OP;
+        endif
+
+        split again
+            :pT liegt nicht vor;
+            
+            if (Relevante OP?) then (c)
+                :Gültiger R-Status\nJa (e)/nein;
+            else (keine)
+                :Keine relevante OP;
+            endif
+
+        split again
+            :Grading liegt vor (g);
+            detach
+
+end split
+
+
+split again
+    :Andere Diagnosesicherung;
+    detach
+end split
+
+stop
+@enduml
