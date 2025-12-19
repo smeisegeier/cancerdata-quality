@@ -23,18 +23,19 @@
     - [Therapie](#toc1_3_4_)    
       - [Anteil Fälle ohne Therapie 1](#toc1_3_4_1_)    
       - [Anteil Fälle ohne Therapie 2](#toc1_3_4_2_)    
-      - [ops wenn op](#toc1_3_4_3_)    
-      - [op wenn op erwartet](#toc1_3_4_4_)    
-        - [C50](#toc1_3_4_4_1_)    
-        - [C43](#toc1_3_4_4_2_)    
-        - [C18-C20](#toc1_3_4_4_3_)    
-        - [C62](#toc1_3_4_4_4_)    
-      - [st wenn st erwartet](#toc1_3_4_5_)    
-      - [sy wenn sy erwartet](#toc1_3_4_6_)    
-      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_7_)    
-      - [Anteil Rezidive](#toc1_3_4_8_)    
-        - [C50](#toc1_3_4_8_1_)    
-        - [C18-C20](#toc1_3_4_8_2_)    
+      - [Anteil Fälle ohne Therapie 3](#toc1_3_4_3_)    
+      - [ops wenn op](#toc1_3_4_4_)    
+      - [op wenn op erwartet](#toc1_3_4_5_)    
+        - [C50](#toc1_3_4_5_1_)    
+        - [C43](#toc1_3_4_5_2_)    
+        - [C18-C20](#toc1_3_4_5_3_)    
+        - [C62](#toc1_3_4_5_4_)    
+      - [st wenn st erwartet](#toc1_3_4_6_)    
+      - [sy wenn sy erwartet](#toc1_3_4_7_)    
+      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_8_)    
+      - [Anteil Rezidive](#toc1_3_4_9_)    
+        - [C50](#toc1_3_4_9_1_)    
+        - [C18-C20](#toc1_3_4_9_2_)    
     - [date periods](#toc1_3_5_)    
       - [Anzahl Tage Diagnose Tod](#toc1_3_5_1_)    
       - [Anzahl Tage Diagnose OP](#toc1_3_5_2_)    
@@ -58,7 +59,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-19 13:29:11
+    document created:        2025-12-19 16:21:46
 
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
@@ -194,19 +195,32 @@
     
 
 
+    Filter: 
+        z_dy between 2020 and 2023
+        and not z_is_dco
+        and z_icd10_3d not in ('C44','D04')
+    
+
+
+
+    
+![svg](report_files/output_31_1.svg)
+    
+
+
 #### <a id='toc1_3_3_5_'></a>[Organmodule - Mamma](#toc0_)
 - **Filter: `DJ` 2020-2023, `DCO` = N, `ICD10` = C50**
 > keine Angaben aus `02-HH` übermittelt (gilt für alle Organmodule)
 
 
     
-![png](report_files/output_32_0.png)
+![png](report_files/output_33_0.png)
     
 
 
 
     
-![png](report_files/output_32_1.png)
+![png](report_files/output_33_1.png)
     
 
 
@@ -215,13 +229,13 @@
 
 
     
-![png](report_files/output_34_0.png)
+![png](report_files/output_35_0.png)
     
 
 
 
     
-![png](report_files/output_34_1.png)
+![png](report_files/output_35_1.png)
     
 
 
@@ -230,13 +244,13 @@
 
 
     
-![png](report_files/output_36_0.png)
+![png](report_files/output_37_0.png)
     
 
 
 
     
-![png](report_files/output_36_1.png)
+![png](report_files/output_37_1.png)
     
 
 
@@ -245,13 +259,13 @@
 
 
     
-![png](report_files/output_38_0.png)
+![png](report_files/output_39_0.png)
     
 
 
 
     
-![png](report_files/output_38_1.png)
+![png](report_files/output_39_1.png)
     
 
 
@@ -264,7 +278,7 @@
 
 
     
-![svg](report_files/output_40_0.svg)
+![svg](report_files/output_41_0.svg)
     
 
 
@@ -278,7 +292,7 @@
 
 
     
-![svg](report_files/output_42_0.svg)
+![svg](report_files/output_43_0.svg)
     
 
 
@@ -294,7 +308,7 @@
 
 
     
-![png](report_files/output_45_0.png)
+![png](report_files/output_46_0.png)
     
 
 
@@ -302,22 +316,49 @@
 
 - **Filter: `DJ` = 2020-2023 (1. Halbjahr), `DCO` = N, kein `C44` / `D04`, keine D Diagnosen**
 
+    Filter: 
+        not z_is_dco
+        and z_icd10_3d not in ('C44','D04')
+        and Diagnosedatum between '2020-01-01' and '2023-06-30'
+        and left(z_icd10_3d,1) in ('C')
+    
+
+
 
     
-![svg](report_files/output_47_0.svg)
+![svg](report_files/output_48_1.svg)
     
 
 
-#### <a id='toc1_3_4_3_'></a>[ops wenn op](#toc0_)
+#### <a id='toc1_3_4_3_'></a>[Anteil Fälle ohne Therapie 3](#toc0_)
+
+    Filter: 
+        not z_is_dco
+        and z_icd10_3d not in ('C44','D04')
+        and Diagnosedatum between '2020-01-01' and '2023-06-30'
+        and left(z_icd10_3d,1) in ('C')
+        and ifnull(z_m_pc_1,'') <> '1'
+        and ifnull(z_period_diag_death_day,181) >= 180
+        and z_age < 80
+    
+
+
+
+    
+![svg](report_files/output_50_1.svg)
+    
+
+
+#### <a id='toc1_3_4_4_'></a>[ops wenn op](#toc0_)
 - **Filter: `DJ` = 2020-2023**
 
 
     
-![svg](report_files/output_49_0.svg)
+![svg](report_files/output_52_0.svg)
     
 
 
-#### <a id='toc1_3_4_4_'></a>[op wenn op erwartet](#toc0_)
+#### <a id='toc1_3_4_5_'></a>[op wenn op erwartet](#toc0_)
 - kategorien
   - `1_op`: ops im definierten Bereich (3Steller) ist dokumentiert
   - `2_no_op_but_tp`: keine ops, aber pT 0-4 ist dokumentiert
@@ -337,29 +378,9 @@
     └ [unter 80 Jahre]:                  n = 237_448   (7.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-##### <a id='toc1_3_4_4_1_'></a>[C50](#toc0_)
+##### <a id='toc1_3_4_5_1_'></a>[C50](#toc0_)
 
     Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50'
-
-
-
-    
-![svg](report_files/output_53_1.svg)
-    
-
-
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50' and z_age < 80
-
-
-
-    
-![svg](report_files/output_54_1.svg)
-    
-
-
-##### <a id='toc1_3_4_4_2_'></a>[C43](#toc0_)
-
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43'
 
 
 
@@ -368,7 +389,7 @@
     
 
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43' and z_age < 80
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50' and z_age < 80
 
 
 
@@ -377,9 +398,9 @@
     
 
 
-##### <a id='toc1_3_4_4_3_'></a>[C18-C20](#toc0_)
+##### <a id='toc1_3_4_5_2_'></a>[C43](#toc0_)
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20')
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43'
 
 
 
@@ -388,7 +409,7 @@
     
 
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20') and z_age < 80
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43' and z_age < 80
 
 
 
@@ -397,9 +418,9 @@
     
 
 
-##### <a id='toc1_3_4_4_4_'></a>[C62](#toc0_)
+##### <a id='toc1_3_4_5_3_'></a>[C18-C20](#toc0_)
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62')
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20')
 
 
 
@@ -408,7 +429,7 @@
     
 
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62') and z_age < 80
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20') and z_age < 80
 
 
 
@@ -417,7 +438,27 @@
     
 
 
-#### <a id='toc1_3_4_5_'></a>[st wenn st erwartet](#toc0_)
+##### <a id='toc1_3_4_5_4_'></a>[C62](#toc0_)
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62')
+
+
+
+    
+![svg](report_files/output_65_1.svg)
+    
+
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62') and z_age < 80
+
+
+
+    
+![svg](report_files/output_66_1.svg)
+    
+
+
+#### <a id='toc1_3_4_6_'></a>[st wenn st erwartet](#toc0_)
 
 
 
@@ -437,11 +478,11 @@
 
 
     
-![svg](report_files/output_66_1.svg)
+![svg](report_files/output_69_1.svg)
     
 
 
-#### <a id='toc1_3_4_6_'></a>[sy wenn sy erwartet](#toc0_)
+#### <a id='toc1_3_4_7_'></a>[sy wenn sy erwartet](#toc0_)
 
 
 
@@ -461,7 +502,7 @@
 
 
     
-![svg](report_files/output_69_1.svg)
+![svg](report_files/output_72_1.svg)
     
 
 
@@ -470,11 +511,11 @@
 
 
     
-![svg](report_files/output_70_1.svg)
+![svg](report_files/output_73_1.svg)
     
 
 
-#### <a id='toc1_3_4_7_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
+#### <a id='toc1_3_4_8_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
 - gezählt sind nun Tumore, nicht mehr OP
 - `r_status`
   - `1_R0`: wenn >= 1 OP zum Tumor dokumentiert is mit `R0`
@@ -486,19 +527,19 @@
 
 
     
-![svg](report_files/output_73_0.svg)
+![svg](report_files/output_76_0.svg)
     
 
 
 
     
-![png](report_files/output_73_1.png)
+![png](report_files/output_76_1.png)
     
 
 
-#### <a id='toc1_3_4_8_'></a>[Anteil Rezidive](#toc0_)
+#### <a id='toc1_3_4_9_'></a>[Anteil Rezidive](#toc0_)
 
-##### <a id='toc1_3_4_8_1_'></a>[C50](#toc0_)
+##### <a id='toc1_3_4_9_1_'></a>[C50](#toc0_)
 
 
 
@@ -518,7 +559,7 @@
 
 
     
-![svg](report_files/output_78_1.svg)
+![svg](report_files/output_81_1.svg)
     
 
 
@@ -527,18 +568,18 @@
 
 
     
-![png](report_files/output_79_1.png)
+![png](report_files/output_82_1.png)
     
 
 
-##### <a id='toc1_3_4_8_2_'></a>[C18-C20](#toc0_)
+##### <a id='toc1_3_4_9_2_'></a>[C18-C20](#toc0_)
 
     Filter: z_dy between 2020 and 2021 and ifnull(z_m_pc_1,'') <> '1' and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0' and ifnull(z_period_diag_death_day,181) >= 180 and z_icd10_3d in ('C18','C19','C20')
 
 
 
     
-![svg](report_files/output_81_1.svg)
+![svg](report_files/output_84_1.svg)
     
 
 
@@ -547,7 +588,7 @@
 
 
     
-![png](report_files/output_82_1.png)
+![png](report_files/output_85_1.png)
     
 
 
@@ -557,13 +598,13 @@
 
 
     
-![png](report_files/output_85_0.png)
+![png](report_files/output_88_0.png)
     
 
 
 
     
-![png](report_files/output_85_1.png)
+![png](report_files/output_88_1.png)
     
 
 
@@ -598,7 +639,7 @@
 
 
     
-![svg](report_files/output_86_0.svg)
+![svg](report_files/output_89_0.svg)
     
 
 
@@ -607,13 +648,13 @@
 
 
     
-![png](report_files/output_88_0.png)
+![png](report_files/output_91_0.png)
     
 
 
 
     
-![png](report_files/output_88_1.png)
+![png](report_files/output_91_1.png)
     
 
 
@@ -648,7 +689,7 @@
 
 
     
-![svg](report_files/output_89_0.svg)
+![svg](report_files/output_92_0.svg)
     
 
 
