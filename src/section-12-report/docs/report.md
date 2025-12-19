@@ -58,7 +58,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-19 09:33:52
+    document created:        2025-12-19 13:29:11
 
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
@@ -425,14 +425,19 @@
     counts: distinct z_tum_id
     ---
     n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [2020-2023]:                     n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [keine M1]:                      n = 2_715_663  (83.8%) ░░░░░█████████████████████████
-    └ [keine Verstorbenen < 180 Tage]: n = 2_423_924  (74.8%) ░░░░░░░░██████████████████████
-    └ [C50]:                             n = 283_195   (8.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [OPS: BET]:                        n = 160_759   (5.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [2020-2023.07]:                  n = 2_633_644  (81.3%) ░░░░░░████████████████████████
+    └ [keine M1]:                      n = 2_390_195  (73.7%) ░░░░░░░░██████████████████████
+    └ [keine Verstorbenen < 180 Tage]: n = 2_133_196  (65.8%) ░░░░░░░░░░░███████████████████
+    └ [C50]:                             n = 248_991   (7.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [OPS: BET]:                        n = 143_832   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-![svg](report_files/output_66_0.svg)
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
+
+
+
+    
+![svg](report_files/output_66_1.svg)
     
 
 
@@ -444,20 +449,28 @@
     counts: rows
     ---
     n = 3_241_401                                                      (100.0%) ██████████████████████████████
-    └ [2020-2023]:                                       n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [not z_is_dco]:                                    n = 2_890_167  (89.2%) ░░░░██████████████████████████
-    └ [keine M1]:                                        n = 2_617_996  (80.8%) ░░░░░░████████████████████████
-    └ [keine Verstorbenen < 180 Tage]:                   n = 2_422_757  (74.7%) ░░░░░░░░██████████████████████
-    └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 31_436   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [2020-2023.07]:                                    n = 2_633_644  (81.3%) ░░░░░░████████████████████████
+    └ [not z_is_dco]:                                    n = 2_547_636  (78.6%) ░░░░░░░███████████████████████
+    └ [keine M1]:                                        n = 2_305_215  (71.1%) ░░░░░░░░░█████████████████████
+    └ [keine Verstorbenen < 180 Tage]:                   n = 2_132_064  (65.8%) ░░░░░░░░░░░███████████████████
+    └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 27_653   (0.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_69_0.svg)
-    
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
 
 
 
     
-![svg](report_files/output_70_0.svg)
+![svg](report_files/output_69_1.svg)
+    
+
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
+
+
+
+    
+![svg](report_files/output_70_1.svg)
     
 
 
@@ -500,7 +513,12 @@
     └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_78_0.svg)
+    Filter: z_dy between 2020 and 2021 and ifnull(z_m_pc_1,'') <> '1' and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0' and ifnull(z_period_diag_death_day,181) >= 180 and z_icd10_3d = 'C50'
+
+
+
+    
+![svg](report_files/output_78_1.svg)
     
 
 
@@ -515,9 +533,12 @@
 
 ##### <a id='toc1_3_4_8_2_'></a>[C18-C20](#toc0_)
 
+    Filter: z_dy between 2020 and 2021 and ifnull(z_m_pc_1,'') <> '1' and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0' and ifnull(z_period_diag_death_day,181) >= 180 and z_icd10_3d in ('C18','C19','C20')
+
+
 
     
-![svg](report_files/output_81_0.svg)
+![svg](report_files/output_81_1.svg)
     
 
 
