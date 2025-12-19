@@ -21,19 +21,20 @@
       - [Verteilung Diagnosesicherung](#toc1_3_3_7_)    
       - [T Stadium](#toc1_3_3_8_)    
     - [Therapie](#toc1_3_4_)    
-      - [Anteil Fälle ohne Therapie](#toc1_3_4_1_)    
-      - [ops wenn op](#toc1_3_4_2_)    
-      - [op wenn op erwartet](#toc1_3_4_3_)    
-        - [C50](#toc1_3_4_3_1_)    
-        - [C43](#toc1_3_4_3_2_)    
-        - [C18-C20](#toc1_3_4_3_3_)    
-        - [C62](#toc1_3_4_3_4_)    
-      - [st wenn st erwartet](#toc1_3_4_4_)    
-      - [sy wenn sy erwartet](#toc1_3_4_5_)    
-      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_6_)    
-      - [Anteil Rezidive](#toc1_3_4_7_)    
-        - [C50](#toc1_3_4_7_1_)    
-        - [C18-C20](#toc1_3_4_7_2_)    
+      - [Anteil Fälle ohne Therapie 1](#toc1_3_4_1_)    
+      - [Anteil Fälle ohne Therapie 2](#toc1_3_4_2_)    
+      - [ops wenn op](#toc1_3_4_3_)    
+      - [op wenn op erwartet](#toc1_3_4_4_)    
+        - [C50](#toc1_3_4_4_1_)    
+        - [C43](#toc1_3_4_4_2_)    
+        - [C18-C20](#toc1_3_4_4_3_)    
+        - [C62](#toc1_3_4_4_4_)    
+      - [st wenn st erwartet](#toc1_3_4_5_)    
+      - [sy wenn sy erwartet](#toc1_3_4_6_)    
+      - [Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc1_3_4_7_)    
+      - [Anteil Rezidive](#toc1_3_4_8_)    
+        - [C50](#toc1_3_4_8_1_)    
+        - [C18-C20](#toc1_3_4_8_2_)    
     - [date periods](#toc1_3_5_)    
       - [Anzahl Tage Diagnose Tod](#toc1_3_5_1_)    
       - [Anzahl Tage Diagnose OP](#toc1_3_5_2_)    
@@ -57,7 +58,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-18 18:29:52
+    document created:        2025-12-19 09:33:52
 
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
@@ -297,9 +298,9 @@
     
 
 
-#### <a id='toc1_3_4_1_'></a>[Anteil Fälle ohne Therapie 2](#toc0_)
+#### <a id='toc1_3_4_2_'></a>[Anteil Fälle ohne Therapie 2](#toc0_)
 
-- **Filter: `DJ` = 2020-2023 (1. Halbjahr), `DCO` = N, nur C Diagnosen**
+- **Filter: `DJ` = 2020-2023 (1. Halbjahr), `DCO` = N, kein `C44` / `D04`, keine D Diagnosen**
 
 
     
@@ -307,7 +308,7 @@
     
 
 
-#### <a id='toc1_3_4_2_'></a>[ops wenn op](#toc0_)
+#### <a id='toc1_3_4_3_'></a>[ops wenn op](#toc0_)
 - **Filter: `DJ` = 2020-2023**
 
 
@@ -316,7 +317,7 @@
     
 
 
-#### <a id='toc1_3_4_3_'></a>[op wenn op erwartet](#toc0_)
+#### <a id='toc1_3_4_4_'></a>[op wenn op erwartet](#toc0_)
 - kategorien
   - `1_op`: ops im definierten Bereich (3Steller) ist dokumentiert
   - `2_no_op_but_tp`: keine ops, aber pT 0-4 ist dokumentiert
@@ -336,45 +337,87 @@
     └ [unter 80 Jahre]:                  n = 237_448   (7.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-##### <a id='toc1_3_4_3_1_'></a>[C50](#toc0_)
+##### <a id='toc1_3_4_4_1_'></a>[C50](#toc0_)
 
-
-    
-![svg](report_files/output_53_0.svg)
-    
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50'
 
 
 
     
-![svg](report_files/output_54_0.svg)
+![svg](report_files/output_53_1.svg)
     
 
 
-##### <a id='toc1_3_4_3_2_'></a>[C43](#toc0_)
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50' and z_age < 80
 
-
-    
-![svg](report_files/output_56_0.svg)
-    
-
-
-##### <a id='toc1_3_4_3_3_'></a>[C18-C20](#toc0_)
 
 
     
-![svg](report_files/output_58_0.svg)
+![svg](report_files/output_54_1.svg)
     
 
 
-##### <a id='toc1_3_4_3_4_'></a>[C62](#toc0_)
+##### <a id='toc1_3_4_4_2_'></a>[C43](#toc0_)
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43'
+
 
 
     
-![svg](report_files/output_60_0.svg)
+![svg](report_files/output_56_1.svg)
     
 
 
-#### <a id='toc1_3_4_4_'></a>[st wenn st erwartet](#toc0_)
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43' and z_age < 80
+
+
+
+    
+![svg](report_files/output_57_1.svg)
+    
+
+
+##### <a id='toc1_3_4_4_3_'></a>[C18-C20](#toc0_)
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20')
+
+
+
+    
+![svg](report_files/output_59_1.svg)
+    
+
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C18', 'C19', 'C20') and z_age < 80
+
+
+
+    
+![svg](report_files/output_60_1.svg)
+    
+
+
+##### <a id='toc1_3_4_4_4_'></a>[C62](#toc0_)
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62')
+
+
+
+    
+![svg](report_files/output_62_1.svg)
+    
+
+
+    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d in ('C62') and z_age < 80
+
+
+
+    
+![svg](report_files/output_63_1.svg)
+    
+
+
+#### <a id='toc1_3_4_5_'></a>[st wenn st erwartet](#toc0_)
 
 
 
@@ -389,11 +432,11 @@
     └ [OPS: BET]:                        n = 160_759   (5.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-![svg](report_files/output_63_0.svg)
+![svg](report_files/output_66_0.svg)
     
 
 
-#### <a id='toc1_3_4_5_'></a>[sy wenn sy erwartet](#toc0_)
+#### <a id='toc1_3_4_6_'></a>[sy wenn sy erwartet](#toc0_)
 
 
 
@@ -408,17 +451,17 @@
     └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 31_436   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_66_0.svg)
+![svg](report_files/output_69_0.svg)
     
 
 
 
     
-![svg](report_files/output_67_0.svg)
+![svg](report_files/output_70_0.svg)
     
 
 
-#### <a id='toc1_3_4_6_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
+#### <a id='toc1_3_4_7_'></a>[Anteil Fälle ohne R-Status nach OP wenn hohe Relevanz des R-Status](#toc0_)
 - gezählt sind nun Tumore, nicht mehr OP
 - `r_status`
   - `1_R0`: wenn >= 1 OP zum Tumor dokumentiert is mit `R0`
@@ -430,19 +473,19 @@
 
 
     
-![svg](report_files/output_70_0.svg)
+![svg](report_files/output_73_0.svg)
     
 
 
 
     
-![png](report_files/output_70_1.png)
+![png](report_files/output_73_1.png)
     
 
 
-#### <a id='toc1_3_4_7_'></a>[Anteil Rezidive](#toc0_)
+#### <a id='toc1_3_4_8_'></a>[Anteil Rezidive](#toc0_)
 
-##### <a id='toc1_3_4_7_1_'></a>[C50](#toc0_)
+##### <a id='toc1_3_4_8_1_'></a>[C50](#toc0_)
 
 
 
@@ -457,7 +500,7 @@
     └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](report_files/output_75_0.svg)
+![svg](report_files/output_78_0.svg)
     
 
 
@@ -466,15 +509,15 @@
 
 
     
-![png](report_files/output_76_1.png)
+![png](report_files/output_79_1.png)
     
 
 
-##### <a id='toc1_3_4_7_2_'></a>[C18-C20](#toc0_)
+##### <a id='toc1_3_4_8_2_'></a>[C18-C20](#toc0_)
 
 
     
-![svg](report_files/output_78_0.svg)
+![svg](report_files/output_81_0.svg)
     
 
 
@@ -483,7 +526,7 @@
 
 
     
-![png](report_files/output_79_1.png)
+![png](report_files/output_82_1.png)
     
 
 
@@ -493,13 +536,13 @@
 
 
     
-![png](report_files/output_82_0.png)
+![png](report_files/output_85_0.png)
     
 
 
 
     
-![png](report_files/output_82_1.png)
+![png](report_files/output_85_1.png)
     
 
 
@@ -534,7 +577,7 @@
 
 
     
-![svg](report_files/output_83_0.svg)
+![svg](report_files/output_86_0.svg)
     
 
 
@@ -543,13 +586,13 @@
 
 
     
-![png](report_files/output_85_0.png)
+![png](report_files/output_88_0.png)
     
 
 
 
     
-![png](report_files/output_85_1.png)
+![png](report_files/output_88_1.png)
     
 
 
@@ -584,7 +627,7 @@
 
 
     
-![svg](report_files/output_86_0.svg)
+![svg](report_files/output_89_0.svg)
     
 
 
