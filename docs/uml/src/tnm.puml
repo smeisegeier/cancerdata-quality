@@ -1,4 +1,8 @@
 @startwbs tnm
+'   toggle comment for lvl 4+ (as example)
+'   collapse:   ^([\*\+]{4}).*$     ->      '$1
+'   expand:     ^'([\*\+]{4}).*$    ->      $1
+
 
 ' <style>
 ' wbsDiagram {
