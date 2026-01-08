@@ -14,22 +14,22 @@
 ' }
 ' </style>
 
-* Tumore\n(TNM-relevante Diagnose)
-** Histologisch gesichert (Primärtumor) (h)
-*** Grading liegt vor* (g)
-*** pT liegt vor (a)
-**** pN liegt vor (f)
-**** Relevante OP (b)
-***** Gültiger R-Status
-******_ ja (d)
-******_ nein
-**** Keine relevante OP
-*** pT liegt nicht vor
-**** Relevante OP (c)
-***** Gültiger R-Status
-******_ ja (e)
-******_ nein
-**** Keine relevante OP
-** Andere Diagnosesicherung
++ Tumore\n(TNM-relevante Diagnose)
+++ Histologisch gesichert (Primärtumor) (h)
++++ Grading liegt vor* (g)
++++ pT liegt vor (a)
+++++ pN liegt vor (f)
+++++ Relevante OP (b)
++++++ Gültiger R-Status
+++++++_ ja (d)
+++++++_ nein
+++++ Keine relevante OP
++++ pT liegt nicht vor
+++++ Relevante OP (c)
++++++ Gültiger R-Status
+++++++_ ja (e)
+++++++_ nein
+++++ Keine relevante OP
+++ Andere Diagnosesicherung
 
 @endwbs

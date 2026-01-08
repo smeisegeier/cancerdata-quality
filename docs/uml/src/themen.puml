@@ -1,0 +1,40 @@
+@startmindmap
+
++ it-invest
+
+++ berichte
++++[#IndianRed] wob
+++++_ kid darstellung
+
+++ antragsprozess
++++ optionale Konsultation mit AS einführen
++++ sharing von datenrelevanten aussagen
+
+++ open-data
++++[#IndianRed] datenqualität
+++++ struktur abstimmen
+++++ verbindlichen prozess mit kkr etablieren
+++++ zusammenarbeit testen
+
+++ ki
++++ neues projekt mit zki
++++ offis synkreda
++++ hamburg
++++ eigene tests
+++++ stichworte aus anträgen
+++++ ai-care
+++++ hamburg docker
+++++ fdz gesundheit
+
+++ daten-infrastruktur
++++ schema 3.0.4
++++ duckdb ausweiten
++++ dev rki docker
+++++ postgres, evtl mondian
+
+++ visuals
++++ treemap
++++ sankey
++++ upset
+
+@endmindmap

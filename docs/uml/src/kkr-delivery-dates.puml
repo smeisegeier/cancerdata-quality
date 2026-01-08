@@ -1,0 +1,19 @@
+@startchronology kkr-delivery-dates
+title Chronology Diagram
+' [start] happens on 2025-01-01 00:00:00
+[01-SH 2025-01-06] happens on 2025-01-06 00:00:00
+[02-HH 2025-01-29] happens on 2025-01-29 00:00:00
+[03-NI 2025-01-08] happens on 2025-01-08 00:00:00
+[04-HB 2025-02-04] happens on 2025-02-04 00:00:00
+[05-NW 2025-02-23] happens on 2025-02-23 00:00:00
+[06-HE 2025-01-24] happens on 2025-01-24 00:00:00
+[07-RP 2025-02-24] happens on 2025-02-24 00:00:00
+[08-BW 2025-01-31] happens on 2025-01-31 00:00:00
+[09-BY 2025-01-13] happens on 2025-01-13 00:00:00
+[10-SL 2025-02-13] happens on 2025-02-13 00:00:00
+[13-MV 2025-01-31] happens on 2025-01-31 00:00:00
+[14-SN 2025-01-16] happens on 2025-01-16 00:00:00
+[15-ST 2025-02-05] happens on 2025-02-05 00:00:00
+[16-TH 2025-02-28] happens on 2025-02-28 00:00:00
+[17-BE_BB 2025-01-16] happens on 2025-01-16 00:00:00
+@endchronology

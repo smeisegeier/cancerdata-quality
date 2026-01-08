@@ -10,7 +10,7 @@ dependencies = [
     "kaleido",
     "numpy",
     "duckdb",
-    "pandas-plots>=0.21.3",
+    "pandas-plots>=1.0.0",
     "connection-helper",
     "pygwalker",
     "appnope",
