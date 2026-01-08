@@ -49,7 +49,7 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.24.0 | 📦 connection-helper: 0.13.2
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.3 | 📦 pandas-plots: 0.25.0 | 📦 connection-helper: 0.13.2
 
 
 ## <a id='toc1_1_'></a>[Datenstand](#toc0_)
@@ -59,7 +59,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2025-12-19 16:21:46
+    document created:        2025-12-21 12:04:30
 
 
 ## <a id='toc1_2_'></a>[⚙️ settings](#toc0_)
@@ -307,8 +307,18 @@
 > 💡 `ZfKD`: _aus `st_missing_per_tum` lässt sich ablesen, dass ~23% der Tumoren deutschlandweit mind. eine ST zugeordnet ist (Total: 1 - 0.77 = 0.23). Das entspricht in etwa der Annahme von 30% Anteil von Strahlentherapien an primären Diagnosen_
 
 
-    
-![png](report_files/output_46_0.png)
+
+```python
+    # filter
+    z_dy between 2020 and 2023
+    and not z_is_dco
+    and --sql
+    z_icd10_3d not in ('C44', 'C76', 'C77', 'C78', 'C79')
+    and left(z_icd10_3d,1) = 'C'
+    and right(z_icd10_3d, 2)::int8 <= 80
+```
+
+![png](report_files/output_46_3.png)
     
 
 
@@ -316,36 +326,36 @@
 
 - **Filter: `DJ` = 2020-2023 (1. Halbjahr), `DCO` = N, kein `C44` / `D04`, keine D Diagnosen**
 
-    Filter: 
-        not z_is_dco
-        and z_icd10_3d not in ('C44','D04')
-        and Diagnosedatum between '2020-01-01' and '2023-06-30'
-        and left(z_icd10_3d,1) in ('C')
-    
 
 
+```python
+    # filter
+    not z_is_dco
+    and z_icd10_3d not in ('C44','D04')
+    and Diagnosedatum between '2020-01-01' and '2023-06-30'
+    and left(z_icd10_3d,1) in ('C')
+```
 
-    
-![svg](report_files/output_48_1.svg)
+![svg](report_files/output_48_3.svg)
     
 
 
 #### <a id='toc1_3_4_3_'></a>[Anteil Fälle ohne Therapie 3](#toc0_)
 
-    Filter: 
-        not z_is_dco
-        and z_icd10_3d not in ('C44','D04')
-        and Diagnosedatum between '2020-01-01' and '2023-06-30'
-        and left(z_icd10_3d,1) in ('C')
-        and ifnull(z_m_pc_1,'') <> '1'
-        and ifnull(z_period_diag_death_day,181) >= 180
-        and z_age < 80
-    
 
 
+```python
+    # filter
+    not z_is_dco
+    and z_icd10_3d not in ('C44','D04')
+    and Diagnosedatum between '2020-01-01' and '2023-06-30'
+    and left(z_icd10_3d,1) in ('C')
+    and ifnull(z_m_pc_1,'') <> '1'
+    and ifnull(z_period_diag_death_day,181) >= 180
+    and z_age < 80
+```
 
-    
-![svg](report_files/output_50_1.svg)
+![svg](report_files/output_50_3.svg)
     
 
 
@@ -380,32 +390,48 @@
 
 ##### <a id='toc1_3_4_5_1_'></a>[C50](#toc0_)
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50'
 
 
+```python
+    # filter
+    ifnull(z_period_diag_death_day,181) >= 180
+    and ifnull(z_m_pc_1,'') <> '1'
+    and z_dy between 2020 and 2023
+    and z_icd10_3d = 'C50'
+```
 
+![svg](report_files/output_56_3.svg)
     
-![svg](report_files/output_56_1.svg)
-    
-
-
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C50' and z_age < 80
 
 
 
-    
-![svg](report_files/output_57_1.svg)
+
+```python
+    # filter
+    ifnull(z_period_diag_death_day,181) >= 180
+    and ifnull(z_m_pc_1,'') <> '1'
+    and z_dy between 2020 and 2023
+    and z_icd10_3d = 'C50'
+    and z_age < 80
+```
+
+![svg](report_files/output_57_3.svg)
     
 
 
 ##### <a id='toc1_3_4_5_2_'></a>[C43](#toc0_)
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and z_dy between 2020 and 2023 and z_icd10_3d = 'C43'
 
 
+```python
+    # filter
+    ifnull(z_period_diag_death_day,181) >= 180
+    and ifnull(z_m_pc_1,'') <> '1'
+    and z_dy between 2020 and 2023
+    and z_icd10_3d = 'C43'
+```
 
-    
-![svg](report_files/output_59_1.svg)
+![svg](report_files/output_59_3.svg)
     
 
 
@@ -473,12 +499,7 @@
     └ [OPS: BET]:                        n = 143_832   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
-
-
-
-    
-![svg](report_files/output_69_1.svg)
+![svg](report_files/output_68_3.svg)
     
 
 
@@ -497,21 +518,23 @@
     └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 27_653   (0.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
-
-
-
-    
-![svg](report_files/output_72_1.svg)
+![svg](report_files/output_70_3.svg)
     
 
 
-    Filter: ifnull(z_period_diag_death_day,181) >= 180 and ifnull(z_m_pc_1,'') <> '1' and Diagnosedatum between '2020-01-01' and '2023-06-30' and left(Code,5) in ('5-870') and z_icd10_3d = 'C50'
 
 
+```python
+    # filter
+    Diagnosedatum between '2020-01-01' and '2023-06-30'
+    and not z_is_dco
+    and ifnull(z_period_diag_death_day,181) >= 180
+    and ifnull(z_m_pc_1,'') <> '1'
+    and z_icd10_3d in ('C18')
+    and z_n_p_1 in ('1','2','3','4')
+```
 
-    
-![svg](report_files/output_73_1.svg)
+![svg](report_files/output_71_3.svg)
     
 
 
@@ -527,13 +550,13 @@
 
 
     
-![svg](report_files/output_76_0.svg)
+![svg](report_files/output_74_0.svg)
     
 
 
 
     
-![png](report_files/output_76_1.png)
+![png](report_files/output_74_1.png)
     
 
 
@@ -554,12 +577,16 @@
     └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
+    "z_dy between 2020 and 2021\nand ifnull(z_m_pc_1,'') <> '1'\nand z_icd10_3d = 'C50'\nand upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0'\nand ifnull(z_period_diag_death_day,181) >= 180"
+
+
+
     Filter: z_dy between 2020 and 2021 and ifnull(z_m_pc_1,'') <> '1' and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0' and ifnull(z_period_diag_death_day,181) >= 180 and z_icd10_3d = 'C50'
 
 
 
     
-![svg](report_files/output_81_1.svg)
+![svg](report_files/output_79_1.svg)
     
 
 
@@ -568,7 +595,7 @@
 
 
     
-![png](report_files/output_82_1.png)
+![png](report_files/output_80_1.png)
     
 
 
@@ -579,7 +606,7 @@
 
 
     
-![svg](report_files/output_84_1.svg)
+![svg](report_files/output_82_1.svg)
     
 
 
@@ -588,7 +615,7 @@
 
 
     
-![png](report_files/output_85_1.png)
+![png](report_files/output_83_1.png)
     
 
 
@@ -598,13 +625,13 @@
 
 
     
-![png](report_files/output_88_0.png)
+![png](report_files/output_86_0.png)
     
 
 
 
     
-![png](report_files/output_88_1.png)
+![png](report_files/output_86_1.png)
     
 
 
@@ -639,7 +666,7 @@
 
 
     
-![svg](report_files/output_89_0.svg)
+![svg](report_files/output_87_0.svg)
     
 
 
@@ -648,13 +675,13 @@
 
 
     
-![png](report_files/output_91_0.png)
+![png](report_files/output_89_0.png)
     
 
 
 
     
-![png](report_files/output_91_1.png)
+![png](report_files/output_89_1.png)
     
 
 
@@ -689,7 +716,7 @@
 
 
     
-![svg](report_files/output_92_0.svg)
+![svg](report_files/output_90_0.svg)
     
 
 
