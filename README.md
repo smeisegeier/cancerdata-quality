@@ -59,4 +59,4 @@ Datenstand: 2020-06-20
 ## test
 <a id="markdown-test" name="test"></a>
 
-![svg](./docs/html/themen.svg)
+[svg](./docs/themen.svg)

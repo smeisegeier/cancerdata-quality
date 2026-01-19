@@ -18,10 +18,6 @@ markmap:
 
 ### ✅🔲 Aktualität
 
-- quite ok
-
-text is here
-
 ### ✅🔲 Vollständigkeit **Personenangaben**
 
 ### 🔲🔲 Vollständigkeit **Tumorangaben** Anteile
