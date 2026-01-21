@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="mindmap" class="markmap mindmap"><style>.markmap {
+  --markmap-max-width: 9999px;
+  --markmap-a-color: #0097e6;
+  --markmap-a-hover-color: #00a8ff;
+  --markmap-code-bg: #f0f0f0;
+  --markmap-code-color: #555;
+  --markmap-highlight-bg: #ffeaa7;
+  --markmap-table-border: 1px solid currentColor;
+  --markmap-font: 300 16px/20px sans-serif;
+  --markmap-circle-open-bg: #fff;
+  --markmap-text-color: #333;
+  --markmap-highlight-node-bg: #ff02;
+
+  font: var(--markmap-font);
+  color: var(--markmap-text-color);
+}
+
+  .markmap-link {
+    fill: none;
+  }
+
+  .markmap-node &gt; circle {
+      cursor: pointer;
+    }
+
+  .markmap-foreign {
+    display: inline-block;
+  }
+
+  .markmap-foreign p {
+      margin: 0;
+    }
+
+  .markmap-foreign a {
+      color: var(--markmap-a-color);
+    }
+
+  .markmap-foreign a:hover {
+        color: var(--markmap-a-hover-color);
+      }
+
+  .markmap-foreign code {
+      padding: 0.25em;
+      font-size: calc(1em - 2px);
+      color: var(--markmap-code-color);
+      background-color: var(--markmap-code-bg);
+      border-radius: 2px;
+    }
+
+  .markmap-foreign pre {
+      margin: 0;
+    }
+
+  .markmap-foreign pre &gt; code {
+        display: block;
+      }
+
+  .markmap-foreign del {
+      text-decoration: line-through;
+    }
+
+  .markmap-foreign em {
+      font-style: italic;
+    }
+
+  .markmap-foreign strong {
+      font-weight: bold;
+    }
+
+  .markmap-foreign mark {
+      background: var(--markmap-highlight-bg);
+    }
+
+  .markmap-foreign table,
+    .markmap-foreign th,
+    .markmap-foreign td {
+      border-collapse: collapse;
+      border: var(--markmap-table-border);
+    }
+
+  .markmap-foreign img {
+      display: inline-block;
+    }
+
+  .markmap-foreign svg {
+      fill: currentColor;
+    }
+
+  .markmap-foreign &gt; div {
+      width: var(--markmap-max-width);
+      text-align: left;
+    }
+
+  .markmap-foreign &gt; div &gt; div {
+        display: inline-block;
+      }
+
+  .markmap-highlight rect {
+    fill: var(--markmap-highlight-node-bg);
+  }
+
+.markmap-dark .markmap {
+  --markmap-code-bg: #1a1b26;
+  --markmap-code-color: #ddd;
+  --markmap-circle-open-bg: #444;
+  --markmap-text-color: #eee;
+}
+</style><g transform="translate(46.479165649414085,206.9083980028428) scale(1.713102128688394)"><path class="markmap-link" data-depth="3" data-path="1.2.3" d="M188,-31.187C228,-31.187,228,-57.75,268,-57.75" stroke-width="1.375" stroke="rgb(44, 160, 44)"/><path class="markmap-link" data-depth="3" data-path="1.2.4" d="M188,-31.187C228,-31.187,228,-31.375,268,-31.375" stroke-width="1.375" stroke="rgb(214, 39, 40)"/><path class="markmap-link" data-depth="3" data-path="1.2.5" d="M188,-31.187C228,-31.187,228,-5,268,-5" stroke-width="1.375" stroke="rgb(148, 103, 189)"/><path class="markmap-link" data-depth="3" data-path="1.6.7" d="M307,52.938C347,52.938,347,26.375,387,26.375" stroke-width="1.375" stroke="rgb(227, 119, 194)"/><path class="markmap-link" data-depth="3" data-path="1.6.8" d="M307,52.938C347,52.938,347,52.75,387,52.75" stroke-width="1.375" stroke="rgb(127, 127, 127)"/><path class="markmap-link" data-depth="3" data-path="1.6.9" d="M307,52.938C347,52.938,347,79.125,387,79.125" stroke-width="1.375" stroke="rgb(188, 189, 34)"/><path class="markmap-link" data-depth="2" data-path="1.2" d="M36,11.25C76,11.25,76,-31.187,116,-31.187" stroke-width="1.75" stroke="rgb(255, 127, 14)"/><path class="markmap-link" data-depth="2" data-path="1.6" d="M36,11.25C76,11.25,76,52.938,116,52.938" stroke-width="1.75" stroke="rgb(140, 86, 75)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.10" d="M719,79.125C759,79.125,759,-12.625,799,-12.625" stroke-width="1.1875" stroke="rgb(23, 190, 207)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.11" d="M719,79.125C759,79.125,759,13.563,799,13.563" stroke-width="1.1875" stroke="rgb(31, 119, 180)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.12" d="M719,79.125C759,79.125,759,39.75,799,39.75" stroke-width="1.1875" stroke="rgb(255, 127, 14)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.13" d="M719,79.125C759,79.125,759,65.938,799,65.938" stroke-width="1.1875" stroke="rgb(44, 160, 44)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.15" d="M719,79.125C759,79.125,759,92.125,799,92.125" stroke-width="1.1875" stroke="rgb(148, 103, 189)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.16" d="M719,79.125C759,79.125,759,118.313,799,118.313" stroke-width="1.1875" stroke="rgb(140, 86, 75)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.17" d="M719,79.125C759,79.125,759,144.5,799,144.5" stroke-width="1.1875" stroke="rgb(227, 119, 194)"/><path class="markmap-link" data-depth="4" data-path="1.6.9.18" d="M719,79.125C759,79.125,759,170.688,799,170.688" stroke-width="1.1875" stroke="rgb(127, 127, 127)"/><g class="markmap-highlight"/><g data-depth="3" data-path="1.2.3" class="markmap-node markmap-fold" transform="translate(268, -78.4375)"><line stroke="#2ca02c" stroke-width="1.375" x1="-1" x2="97" y1="20.6875" y2="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="79" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Indikatoren</div></div></foreignObject></g><g data-depth="3" data-path="1.2.4" class="markmap-node markmap-fold" transform="translate(268, -52.0625)"><line stroke="#d62728" stroke-width="1.375" x1="-1" x2="183" y1="20.6875" y2="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="165" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">eingeschlossene icd10</div></div></foreignObject></g><g data-depth="3" data-path="1.2.5" class="markmap-node markmap-fold" transform="translate(268, -25.6875)"><line stroke="#9467bd" stroke-width="1.375" x1="-1" x2="104" y1="20.6875" y2="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="86" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Limitationen</div></div></foreignObject></g><g data-depth="2" data-path="1.2" class="markmap-node" transform="translate(116, -52.0625)"><line stroke="#ff7f0e" stroke-width="1.75" x1="-1" x2="74" y1="20.875" y2="20.875"/><circle stroke-width="1.5" r="6" stroke="#ff7f0e" fill="var(--markmap-circle-open-bg)" cx="72" cy="20.875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="56" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Begriffe</div></div></foreignObject></g><g data-depth="3" data-path="1.6.7" class="markmap-node markmap-fold" transform="translate(387, 5.6875)"><line stroke="#e377c2" stroke-width="1.375" x1="-1" x2="125" y1="20.6875" y2="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="107" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Aktualität</div></div></foreignObject></g><g data-depth="3" data-path="1.6.8" class="markmap-node markmap-fold" transform="translate(387, 32.0625)"><line stroke="#7f7f7f" stroke-width="1.375" x1="-1" x2="305" y1="20.6875" y2="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="287" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Vollständigkeit <strong>Personenangaben</strong></div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.10" class="markmap-node markmap-fold" transform="translate(799, -33.21875)"><line stroke="#17becf" stroke-width="1.1875" x1="-1" x2="221" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="203" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Mehrfachtumore (epi vs klin)</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.11" class="markmap-node markmap-fold" transform="translate(799, -7.03125)"><line stroke="#1f77b4" stroke-width="1.1875" x1="-1" x2="157" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="139" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Diagnosesicherung</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.12" class="markmap-node markmap-fold" transform="translate(799, 19.15625)"><line stroke="#ff7f0e" stroke-width="1.1875" x1="-1" x2="54" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="36" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">DCO</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.13" class="markmap-node markmap-fold" transform="translate(799, 45.34375)"><line stroke="#2ca02c" stroke-width="1.1875" x1="-1" x2="163" y1="20.59375" y2="20.59375"/><circle stroke-width="1.5" r="6" stroke="#2ca02c" fill="#2ca02c" cx="161" cy="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="145" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">missing TNM / UICC</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.15" class="markmap-node markmap-fold" transform="translate(799, 71.53125)"><line stroke="#9467bd" stroke-width="1.1875" x1="-1" x2="189" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="171" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Histo unspezifisch</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.16" class="markmap-node markmap-fold" transform="translate(799, 97.71875)"><line stroke="#8c564b" stroke-width="1.1875" x1="-1" x2="234" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="216" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Topo unspezifisch (PSU)</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.17" class="markmap-node markmap-fold" transform="translate(799, 123.90625)"><line stroke="#e377c2" stroke-width="1.1875" x1="-1" x2="118" y1="20.59375" y2="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="100" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Grading</div></div></foreignObject></g><g data-depth="4" data-path="1.6.9.18" class="markmap-node markmap-fold" transform="translate(799, 150.09375)"><line stroke="#7f7f7f" stroke-width="1.1875" x1="-1" x2="149" y1="20.59375" y2="20.59375"/><circle stroke-width="1.5" r="6" stroke="#7f7f7f" fill="#7f7f7f" cx="147" cy="20.59375"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="131" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">✅🔲 Organmodul</div></div></foreignObject></g><g data-depth="3" data-path="1.6.9" class="markmap-node" transform="translate(387, 58.4375)"><line stroke="#bcbd22" stroke-width="1.375" x1="-1" x2="334" y1="20.6875" y2="20.6875"/><circle stroke-width="1.5" r="6" stroke="#bcbd22" fill="var(--markmap-circle-open-bg)" cx="332" cy="20.6875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="316" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">🔲🔲 Vollständigkeit <strong>Tumorangaben</strong> Anteile</div></div></foreignObject></g><g data-depth="2" data-path="1.6" class="markmap-node" transform="translate(116, 32.0625)"><line stroke="#8c564b" stroke-width="1.75" x1="-1" x2="193" y1="20.875" y2="20.875"/><circle stroke-width="1.5" r="6" stroke="#8c564b" fill="var(--markmap-circle-open-bg)" cx="191" cy="20.875"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="175" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Vollzähligkeitsschätzung</div></div></foreignObject></g><g data-depth="1" data-path="1" class="markmap-node" transform="translate(0, -10)"><line stroke="#1f77b4" stroke-width="2.5" x1="-1" x2="38" y1="21.25" y2="21.25"/><circle stroke-width="1.5" r="6" stroke="#1f77b4" fill="var(--markmap-circle-open-bg)" cx="36" cy="21.25"/><foreignObject class="markmap-foreign" x="8" y="0" style="opacity: 1;" width="20" height="20"><div xmlns="http://www.w3.org/1999/xhtml"><div xmlns="http://www.w3.org/1999/xhtml">dq</div></div></foreignObject></g></g></svg>
