@@ -6,11 +6,11 @@ description = "repo for cancerdata quality"
 readme = "README.md"
 dependencies = [
     "pip",
-    "pandas>=2.2.3",
+    "pandas==2.3.3",
     "kaleido",
     "numpy",
-    "duckdb",
-    "pandas-plots>=1.0.0",
+    "duckdb>=1.4.4",
+    "pandas-plots>=1.2.2",
     "connection-helper",
     "pygwalker",
     "appnope",
