@@ -1,7 +1,7 @@
-# <a id='toc1_'></a>[Bericht zur Datenqualität (epi2024_2) 📉](#toc0_)
+# <a id='toc1_'></a>[Bericht zur Datenqualität (epi2025_beta) 📉](#toc0_)
 
 **Table of contents**<a id='toc0_'></a>    
-- [Bericht zur Datenqualität (epi2024_2) 📉](#toc1_)    
+- [Bericht zur Datenqualität (epi2025_beta) 📉](#toc1_)    
   - [Änderungen seit der letzten Version](#toc1_1_)    
   - [Hinweise](#toc1_2_)    
   - [Datenstand 🕥](#toc1_3_)    
@@ -15,7 +15,8 @@
     - [DCO Diagramm](#toc1_5_4_)    
     - [DCO Tabelle](#toc1_5_5_)    
     - [Dignität](#toc1_5_6_)    
-    - [Grading](#toc1_5_7_)    
+    - [Grading 1](#toc1_5_7_)    
+      - [Grading 2](#toc1_5_7_1_)    
     - [Altersgruppen](#toc1_5_8_)    
     - [TNM](#toc1_5_9_)    
     - [UICC](#toc1_5_10_)    
@@ -25,16 +26,16 @@
       - [Verteilung der Variable TOD in den original gelieferten Daten](#toc1_5_12_2_)    
     - [Verteilung Todesursachen nach ICDT10](#toc1_5_13_)    
   - [Plausibilitätsprüfungen](#toc1_6_)    
-    - [ ✅ 01-SH](#toc1_6_1_)    
+    - [ ⚠️ 01-SH](#toc1_6_1_)    
     - [✅ 02-HH](#toc1_6_2_)    
     - [✅ 03-NI](#toc1_6_3_)    
     - [✅ 04-HB](#toc1_6_4_)    
-    - [✅ 05-NW](#toc1_6_5_)    
-    - [✅ 06-HE](#toc1_6_6_)    
+    - [⚠️ 05-NW](#toc1_6_5_)    
+    - [🚨 06-HE](#toc1_6_6_)    
     - [✅ 07-RP](#toc1_6_7_)    
     - [✅ 08-BW](#toc1_6_8_)    
     - [✅ 09-BY](#toc1_6_9_)    
-    - [✅ 10-SL](#toc1_6_10_)    
+    - [⚠️ 10-SL](#toc1_6_10_)    
     - [✅ 11-GKR (ehemals)](#toc1_6_11_)    
 
 <!-- vscode-jupyter-toc-config
@@ -50,9 +51,7 @@
 
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 <!-- - bisher wurden folgende Angaben in einer umfangreichen Verarbeitung im workflow umkodiert: `ICDGM10`, `HISC`, `ICDO3`, `DIG`. Diese Umformung wurde deaktiviert, es finden nun nur noch punktuelle Korrekturen statt -->
-- bei dem Kombinieren von klinischen Daten und dem GKR-Archiv wurden im letzten Datenstand filterbedingt Altfälle übernommen, die im workflow als DCO deklariert wurden und somit für `DJ` > 2020 gezählt sind. Diese Artefakte wurden entfernt
-- seit `epi2023` wurde `DIG` 6 auf 3 gesetzt, diese Korrektur ist nun entfernt
-- Neulieferung `06-HE` Daten
+- Lieferung Daten mit DJ=2024
 
 <br>
 
@@ -64,18 +63,19 @@
 
 ## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.2 | 📦 pandas-plots: 0.24.0 | 📦 connection-helper: 0.13.2
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.3 | 📦 connection-helper: 0.13.3
 
 
-    database file:           2025-06-20_data_epi.duckdb
-    data tag:                epi2024_2
-    sql table created:       2025-06-20 15:31:26
-    document created:        2025-12-05 16:12:33
+    database file:           2026-02-20_data_epi.duckdb
+    data tag:                epi2025_beta
+    sql table created:       2026-02-20 08:20:43
+    doi:                     -
+    document created:        2026-02-23 11:33:50
 
 
     
-    latest batch:            418
-    Berücksichtigt werden folgende Diagnosejahre 📆: (2023)
+    latest batch:                                      422
+    Berücksichtigt werden folgende Diagnosejahre 📆:    (2024)
 
 
 <div style="page-break-after: always;"></div>
@@ -126,16 +126,14 @@
 ### <a id='toc1_5_1_'></a>[Diagnosejahr](#toc0_)
 - **Filter: DJ > 2018, C44 und D-Diagnosen sind ausgeschlossen**
 
-> 💡 `ZfKD`: _"Insbesondere aus `06-HE`, `15-ST` und `16-TH` fehlt für 2023 noch ein spürbarer Anteil an Fällen"_
-
 
     
-![png](epi_2_analyze_files/output_22_0.png)
+![png](epi_2_analyze_files/output_23_0.png)
     
 
 
 ### <a id='toc1_5_2_'></a>[Diagnosegruppen](#toc0_)
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind eingeschlossen**
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind eingeschlossen**
 
 > 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
 
@@ -146,36 +144,33 @@
 ### <a id='toc1_5_3_'></a>[Diagnosesicherung](#toc0_)
 - **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
 
-> 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_
-> 
-> 💡 `ZfKD`: _"ebenfalls auffällig: Anzahl dokumentierter Obduktionen in `02-HH`. Da gleichzeitig auch DCO Fälle markiert sind ist ein Skriptfehler rund um die DCO Kodierung 0 vs 3 unwahrscheinlich"_
+> 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_  
+> 💡 `ZfKD`: _"keine DCO Markierungen für Fälle aus `05-NW`"_
 
 
 
 <br>
 
 ### <a id='toc1_5_4_'></a>[DCO Diagramm](#toc0_)
-- **Filter: DJ = 2020-2023, C44 und D-Diagnosen sind ausgeschlossen, GKZbl 01-16**
+- **Filter: DJ = 2020-2024, C44 und D-Diagnosen sind ausgeschlossen, GKZbl 01-16**
 - die epi Variable `DCO` wird wie folgt gebildet:
   - 1 wenn Diagnosesicherung = 3
   - sonst 2 (auch für Diagnosesicherung missing) 
 
-> 💡 `ZfKD`: _"für DJ 2023 sind keine DCO Fälle markiert aus den KKR 13-16"_
-
 
     
-![png](epi_2_analyze_files/output_29_0.png)
+![png](epi_2_analyze_files/output_30_0.png)
     
 
 
 ### <a id='toc1_5_5_'></a>[DCO Tabelle](#toc0_)
-- **Filter: DJ = 2010-2023, GKZbl 01-16**
+- **Filter: DJ = 2010-2024, GKZbl 01-16**
 - Metrik: Anteil DCO an Gesamtfallzahl in %
 <!-- > 💡 für 09-BY sind in dieser Lieferung erheblich weniger DCO Fälle festzustellen -->
 
 
     
-![png](epi_2_analyze_files/output_33_0.png)
+![png](epi_2_analyze_files/output_34_0.png)
     
 
 
@@ -187,38 +182,76 @@
 
 
     
-![png](epi_2_analyze_files/output_36_0.png)
+![png](epi_2_analyze_files/output_37_0.png)
     
 
 
 <br>
 
-### <a id='toc1_5_7_'></a>[Grading](#toc0_)
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
+### <a id='toc1_5_7_'></a>[Grading 1](#toc0_)
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
+
+#### <a id='toc1_5_7_1_'></a>[Grading 2](#toc0_)
+- **Filter: DJ = 2020-2024, kein DCO, gradingrelevante ICD10+HISC**
+
+
+
+
+```python
+    # filter
+            DJ between 2020 and 2024
+            and DCO = 2
+            and (
+            left(ICDGM10, 1) ='C' 
+            and
+                (
+                    right(left(ICDGM10,3), 2)::int8 between 00 and 33
+                    or right(left(ICDGM10,3), 2)::int8 between 50 and 57
+                    or right(left(ICDGM10,3), 2)::int8 between 63 and 68
+                    or right(left(ICDGM10,3), 2)::int8 = 60
+                )
+            and left(HISC,4)::int between 8010 and 8576
+            and GKZbl::int between 1 and 16
+            )
+```
 
 <br>
 
 ### <a id='toc1_5_8_'></a>[Altersgruppen](#toc0_)
 
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
-
-
-
-#### Grading
 
 
 
 ### <a id='toc1_5_9_'></a>[TNM](#toc0_)
+
+    Filter: --sql
+            DJ between 2020 and 2024
+            and DCO = 2
+            and (
+            left(ICDGM10, 1) ='C' and
+                (
+                    right(left(ICDGM10,3), 2)::int8 between 00 and 43
+                    or right(left(ICDGM10,3), 2)::int8 between 45 and 69
+                    or right(left(ICDGM10,3), 2)::int8 between 73 and 75
+                )
+                and left(HISC,4)::int between 8010 and 8790
+                and left(ICDGM10,3) not in ('C26', 'C39', 'C55')
+                and ICDGM10 not in ('C140', 'C579', 'C639', 'C759')
+            )
+            and GKZbl::int between 1 and 16
+    
+
 
 
 
 <br>
 
 ### <a id='toc1_5_10_'></a>[UICC](#toc0_)
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - die Variable `UICC` wird vom ZfKD gebildet
 
 
@@ -226,7 +259,7 @@
 <br>
 
 ### <a id='toc1_5_11_'></a>[TNM-Auflage](#toc0_)
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings
 
 > 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
@@ -238,8 +271,7 @@
 ### <a id='toc1_5_12_'></a>[Tod](#toc0_)
 
 #### <a id='toc1_5_12_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
-- **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
-
+- **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
 
@@ -250,11 +282,10 @@
 - neben `J` und `N` sind diverse Formen von Leerkodierungen unterschieden (`NULL`, `''`, `' '` etc.)
 - die Daten den Registern ohne missings enthalten eine eindeutige Information zu `TOD`
 - bei allen sonstigen EKR wird angenommen: Todesangabe leer -> lebend
-> 💡 `08-NW`: _"Die Umkodierung von missing auf `N` können wir gerne vornehmen"_
 
 
     
-![png](epi_2_analyze_files/output_57_0.png)
+![png](epi_2_analyze_files/output_58_0.png)
     
 
 
@@ -266,7 +297,7 @@
 
 
     
-![png](epi_2_analyze_files/output_59_0.png)
+![png](epi_2_analyze_files/output_60_0.png)
     
 
 
@@ -274,37 +305,39 @@
 
 ## <a id='toc1_6_'></a>[Plausibilitätsprüfungen](#toc0_)
 - **Filter**
-  - **es ist jeweils nur das aktuellste DJ berücksichtigt (2023 vs 2022 aus letzter Lieferung)**
+  - **es ist jeweils nur das aktuellste DJ berücksichtigt (aktuell: 2024, ins letzter Lieferung: 2023)**
 - Die Tabellen sind zur besseren Lesbarkeit nun aufgeteilt nach den Plausibilitätsprüfungen ([pdf](https://www.krebsregisterverbund.de/attachments/download/8743/Plausibilit%C3%A4tspr%C3%BCfungen_details.pdf))
   - `A`: Fälle ausgeschlossen
   - `B`: Fälle markiert
-  - `C`: Fälle korrigiert 
+  - `C`: Fälle korrigiert
 - Spalten
-  - `cnt_epi2022`: Absolute Fallzahl der checks für das in diesem Datensatz höchste DJ (2021) [batch385]
-  - `cnt_now`: Absolute Fallzahl der checks für das im aktuellen Datensatz höchsten DJ (2022)
-  - `pct_epi2022`: Anteil Fallzahl der checks an allen Fällen für das in diesem Datensatz höchste DJ (2021) [batch385]
-  - `pct_now`: Anteil Fallzahl der checks an allen Fällen für das im aktuellen Datensatz höchste DJ (2022)
+  - `cnt_epi2024`: Absolute Fallzahl der checks für das in diesem Datensatz höchste DJ (2023)
+  - `cnt_now`: Absolute Fallzahl der checks für das im aktuellen Datensatz höchsten DJ (2024)
+  - `pct_epi2024`: Anteil Fallzahl der checks an allen Fällen für das in diesem Datensatz höchste DJ (2023)
+  - `pct_now`: Anteil Fallzahl der checks an allen Fällen für das im aktuellen Datensatz höchste DJ (2024)
   - _(Absolute Fallzahlen = nach Abzug der A-Prüfungen)_
 
 <br>
 
-### <a id='toc1_6_1_'></a>[ ✅ 01-SH](#toc0_)
+### <a id='toc1_6_1_'></a>[ ⚠️ 01-SH](#toc0_)
+- `B_TOD_Ja_Aber_Kein_SJ`: 0 -> 4%
+- alle Fälle wurden korrigiert laut `C_TOD=1_korrigiert_aufgrund_Sterbeangaben`
 
 
     
-![png](epi_2_analyze_files/output_64_0.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_64_1.png)
+![png](epi_2_analyze_files/output_65_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_64_2.png)
+![png](epi_2_analyze_files/output_65_1.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_65_2.png)
     
 
 
@@ -314,19 +347,19 @@
 
 
     
-![png](epi_2_analyze_files/output_66_0.png)
+![png](epi_2_analyze_files/output_67_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_66_1.png)
+![png](epi_2_analyze_files/output_67_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_66_2.png)
+![png](epi_2_analyze_files/output_67_2.png)
     
 
 
@@ -336,19 +369,19 @@
 
 
     
-![png](epi_2_analyze_files/output_68_0.png)
+![png](epi_2_analyze_files/output_69_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_68_1.png)
+![png](epi_2_analyze_files/output_69_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_68_2.png)
+![png](epi_2_analyze_files/output_69_2.png)
     
 
 
@@ -358,63 +391,66 @@
 
 
     
-![png](epi_2_analyze_files/output_70_0.png)
+![png](epi_2_analyze_files/output_71_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_70_1.png)
+![png](epi_2_analyze_files/output_71_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_70_2.png)
-    
-
-
-<div style="page-break-after: always;"></div>
-
-### <a id='toc1_6_5_'></a>[✅ 05-NW](#toc0_)
-
-
-    
-![png](epi_2_analyze_files/output_73_0.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_73_1.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_73_2.png)
+![png](epi_2_analyze_files/output_71_2.png)
     
 
 
 <div style="page-break-after: always;"></div>
 
-### <a id='toc1_6_6_'></a>[✅ 06-HE](#toc0_)
+### <a id='toc1_6_5_'></a>[⚠️ 05-NW](#toc0_)
+- unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
+- Fallzahl DJ=2024 geringer
 
 
     
-![png](epi_2_analyze_files/output_75_0.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_75_1.png)
+![png](epi_2_analyze_files/output_74_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_75_2.png)
+![png](epi_2_analyze_files/output_74_1.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_74_2.png)
+    
+
+
+<div style="page-break-after: always;"></div>
+
+### <a id='toc1_6_6_'></a>[🚨 06-HE](#toc0_)
+- Fallzahl DJ=2024 deutlich geringer
+
+
+    
+![png](epi_2_analyze_files/output_76_0.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_76_1.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_76_2.png)
     
 
 
@@ -424,19 +460,19 @@
 
 
     
-![png](epi_2_analyze_files/output_77_0.png)
+![png](epi_2_analyze_files/output_78_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_77_1.png)
+![png](epi_2_analyze_files/output_78_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_77_2.png)
+![png](epi_2_analyze_files/output_78_2.png)
     
 
 
@@ -446,19 +482,19 @@
 
 
     
-![png](epi_2_analyze_files/output_79_0.png)
+![png](epi_2_analyze_files/output_80_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_79_1.png)
+![png](epi_2_analyze_files/output_80_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_79_2.png)
+![png](epi_2_analyze_files/output_80_2.png)
     
 
 
@@ -468,41 +504,42 @@
 
 
     
-![png](epi_2_analyze_files/output_81_0.png)
+![png](epi_2_analyze_files/output_82_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_81_1.png)
+![png](epi_2_analyze_files/output_82_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_81_2.png)
+![png](epi_2_analyze_files/output_82_2.png)
     
 
 
 <div style="page-break-after: always;"></div>
 
-### <a id='toc1_6_10_'></a>[✅ 10-SL](#toc0_)
+### <a id='toc1_6_10_'></a>[⚠️ 10-SL](#toc0_)
+- `A_Mehrfachmeldung` leicht erhöht mit 4%
 
 
     
-![png](epi_2_analyze_files/output_83_0.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_83_1.png)
+![png](epi_2_analyze_files/output_84_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_83_2.png)
+![png](epi_2_analyze_files/output_84_1.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_84_2.png)
     
 
 
@@ -510,20 +547,5 @@
 
 ### <a id='toc1_6_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
 
-
-    
-![png](epi_2_analyze_files/output_85_0.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_85_1.png)
-    
-
-
-
-    
-![png](epi_2_analyze_files/output_85_2.png)
-    
+    ❌
 

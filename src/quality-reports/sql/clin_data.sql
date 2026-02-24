@@ -1,4 +1,4 @@
--- -- SQLite
+
 select
     *,
     case when op_cnt > 0 then 0 else 1 end as op_missing,
@@ -68,5 +68,4 @@ select
         left join (SELECT z_tum_id, count(*) as weitere_diag_cnt FROM Diagnose_WeitereKlassifikation GROUP BY z_tum_id) weitere_diag on weitere_diag.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as weitere_folge_cnt FROM Folgeereignis_WeitereKlassifikation GROUP BY z_tum_id) weitere_folge on weitere_folge.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as tnm_folge_cnt FROM Folgeereignis_TNM GROUP BY z_tum_id) tnm_folge on tnm_folge.z_tum_id = t.oBDS_RKIPatientTumorId
-        -- limit 1000
     )
