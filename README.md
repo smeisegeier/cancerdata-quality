@@ -28,20 +28,20 @@ lore ipsum dolor est
 ### BMG Bericht
 <a id="markdown-bmg-bericht" name="bmg-bericht"></a>
 
-- §12 Bericht 🚧 [[markdown]](./src/section-12-report/docs/report.md) [[source]](./src/section-12-report/report.ipynb)
+- §12 Bericht 🚧 [[markdown]](./src/section-12-report/docs/report.md)
 
 ### aktueller Bericht klinische Daten
 <a id="markdown-aktueller-bericht-klinische-daten" name="aktueller-bericht-klinische-daten"></a>
 
-Datenstand: 2020-11-11
-- Datenqualität [[markdown]](./src/quality-reports/docs/clin/clin_2_analyze.md/) [[pdf]](./src/quality-reports/docs/clin/clin_2_analyze.pdf/)
-- Technischer Bericht [[markdown]](./src/quality-reports/docs/clin/clin_2_analyze.md/)
+Datenstand: 2026-02-19
+- Datenqualität [[markdown]](./src/quality-reports/docs/clin/clin_2_analyze.md/) 
+- Technischer Bericht [[markdown]](./src/quality-reports/docs/clin/clin_3_check.md)
 
 ### aktueller Bericht epidemiologische Daten
 <a id="markdown-aktueller-bericht-epidemiologische-daten" name="aktueller-bericht-epidemiologische-daten"></a>
 
-Datenstand: 2020-06-20
-- Datenqualität [[markdown]](./src/quality-reports/docs/epi/epi_2_analyze.md) [[pdf]](./src/quality-reports/docs/clin/clin_2_analyze.pdf/)
+Datenstand: 2026-02-20
+- Datenqualität [[markdown]](./src/quality-reports/docs/epi/epi_2_analyze.md) 
 
 ## Analysen klinischer Daten
 <a id="markdown-analysen-klinischer-daten" name="analysen-klinischer-daten"></a>
