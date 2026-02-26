@@ -9,8 +9,8 @@ tablecolumn;tables;sel3_TNM;sel4_datum;sel5_pflicht;sel6_mamma;sel7_prostata;sel
 [Applikationsart]Seite_Zielgebiet;Applikationsart;;;;;;;;;;;
 [Applikationsart]Stereotaktisch;Applikationsart;;;;;;;;;;;
 [Applikationsart]TypeOfST_TypBestrahlungApplikationsart;Applikationsart;;;;;;;;;;;
-[Bestrahlung]Anzahl_Tage_Diagnose_ST;Bestrahlung;;1;;;;;;;;;
-[Bestrahlung]Anzahl_Tage_ST_Dauer;Bestrahlung;;1;;;;;;;;;
+[Bestrahlung]Anzahl_Tage_Diagnose_Bestrahlung;Bestrahlung;;1;;;;;;;;;
+[Bestrahlung]Anzahl_Tage_Bestrahlung_Dauer;Bestrahlung;;1;;;;;;;;;
 [Bestrahlung]Datum_Beginn_Bestrahlung;Bestrahlung;;1;;;;;;;;;
 [Bestrahlung]Datum_Beginn_Bestrahlung_Genauigkeit;Bestrahlung;;1;;;;;;;;;
 [Diagnose_Fernmetastase]Lokalisation;Diagnose_Fernmetastase;;;;;;;;;;;

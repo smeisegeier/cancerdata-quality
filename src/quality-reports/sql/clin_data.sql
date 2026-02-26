@@ -20,27 +20,27 @@ select
 
     from
     (select 
-        -- cast(t.z_kkr as int) as kkr_int,
-        t.z_tum_id as tum_id,
-        p.oBDS_RKIPatientId as pat_id,
+        t.z_tum_id,
+        z_pat_id,
+        t.z_kkr,
         t.z_kkr_label as kkr,
         l.system,
         t.z_dy,
-        t.Diagnose_ICD10_Code as icd10,
-        SUBSTR(t.Diagnose_ICD10_Code,1,3) as icd10_3d,
-        t.Diagnosesicherung as dsich,
-        SUBSTR(t.Inzidenzort,1,2)as bl,
-        -- case when ifnull(t.Diagnosesicherung,'') = 0 then 1 else 0 end as dco,
+        t.z_icd10,
+        t.z_icd10_3d,
+        t.Diagnosesicherung,
+        left(t.Inzidenzort,2)::tinyint as bl,
+        Diagnosedatum,
+        z_period_diag_death_day,
+        z_m_pc_1,
+        z_age,
+
         z_is_dco,
-        -- case when op_cnt is null then 0 else op_cnt end as op_cnt,
         z_tum_op_count as op_cnt,
         case when ops_cnt is null then 0 else ops_cnt end as ops_cnt,
-        -- case when st_cnt is null then 0 else st_cnt end as st_cnt,
         z_tum_st_count as st_cnt,
-        -- case when syst_cnt is null then 0 else syst_cnt end as syst_cnt,
         z_tum_sy_count as syst_cnt,
         case when bestr_cnt is null then 0 else bestr_cnt end as bestr_cnt,
-        -- case when folge_cnt is null then 0 else folge_cnt end as folge_cnt,
         z_tum_fo_count as folge_cnt,
         case when app_cnt is null then 0 else app_cnt end as app_cnt,
         case when weitere_diag_cnt is null then 0 else weitere_diag_cnt end as weitere_diag_cnt,
@@ -54,6 +54,7 @@ select
         from Tumor t
         join Patient p on p.oBDS_RKIPatientId = t.oBDS_RKIPatientId
         left join dim_lieferregister l on cast(l.code as int) = cast(t.z_kkr as int)
+        left join dim_icd10_3d icd on icd.code = t.z_icd10_3d
         -- left join (SELECT z_tum_id, count(*) as op_cnt FROM OP GROUP BY z_tum_id) op on op.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as ops_cnt FROM OPS GROUP BY z_tum_id) ops on ops.z_tum_id = t.oBDS_RKIPatientTumorId
         -- left join (SELECT z_tum_id, count(*) as folge_cnt FROM Folgeereignis GROUP BY z_tum_id) folge on folge.z_tum_id = t.oBDS_RKIPatientTumorId
