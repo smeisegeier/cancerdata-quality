@@ -21,47 +21,50 @@
     - [TNM-T (p)](#toc1_7_8_)    
     - [TNM-N (p)](#toc1_7_9_)    
     - [TNM-M (p)](#toc1_7_10_)    
-    - [TNM-Auflage (p)](#toc1_7_11_)    
-    - [Todesursachen (TU)](#toc1_7_12_)    
-      - [nach ICD10 Einstellern](#toc1_7_12_1_)    
-      - [nach Sterbejahr und Todesursachen](#toc1_7_12_2_)    
-      - [nach hat_todesursache bei Nicht-Verstorbenen](#toc1_7_12_3_)    
-      - [nach ICD10 Dreistellern (TOP 5)](#toc1_7_12_4_)    
-      - [nach IsGrundleiden](#toc1_7_12_5_)    
-    - [OP](#toc1_7_13_)    
-      - [nach ICD10](#toc1_7_13_1_)    
-      - [nach Intention](#toc1_7_13_2_)    
-    - [OPS](#toc1_7_14_)    
-      - [nach OPS ICD Kapitel (Top 10)](#toc1_7_14_1_)    
-      - [nach OPS Einzelcodes (Top 5)](#toc1_7_14_2_)    
-    - [SYST](#toc1_7_15_)    
-      - [nach Stellung_OP](#toc1_7_15_1_)    
-  - [Vollständigkeit](#toc1_8_)    
-    - [Verpflichtende Tumorvariablen](#toc1_8_1_)    
-    - [Weitere Tumorangaben](#toc1_8_2_)    
-    - [Tumorstadien](#toc1_8_3_)    
-    - [Therapieangaben](#toc1_8_4_)    
-      - [OP](#toc1_8_4_1_)    
-      - [ST](#toc1_8_4_2_)    
-      - [SYST](#toc1_8_4_3_)    
-    - [Folgeereignisse](#toc1_8_5_)    
-    - [Freitexte](#toc1_8_6_)    
-    - [Organspezifische Variablen](#toc1_8_7_)    
-      - [Mamma](#toc1_8_7_1_)    
-      - [Prostata](#toc1_8_7_2_)    
-      - [Darm](#toc1_8_7_3_)    
-      - [Melanom](#toc1_8_7_4_)    
-  - [⚠️ Weitere Klassifikationen](#toc1_9_)    
-  - [Verteilung Monat von Datum_Vitalstatus](#toc1_10_)    
-  - [Numerische Variablen 🔢](#toc1_11_)    
-    - [Diagnosealter](#toc1_11_1_)    
-    - [Anzahl Tage zwischen Diagnose und Tod](#toc1_11_2_)    
-    - [Tumordicke](#toc1_11_3_)    
-    - [PSA](#toc1_11_4_)    
-    - [LK_befallen](#toc1_11_5_)    
-    - [LK_untersucht](#toc1_11_6_)    
-    - [RektumAbstandAnokutanlinie](#toc1_11_7_)    
-    - [LDH](#toc1_11_8_)    
+  - [Todesursachen (TU)](#toc1_8_)    
+    - [nach ICD10 Einstellern](#toc1_8_1_)    
+    - [nach Sterbejahr und Todesursachen](#toc1_8_2_)    
+    - [nach hat_todesursache bei Nicht-Verstorbenen](#toc1_8_3_)    
+    - [nach ICD10 Dreistellern (TOP 5)](#toc1_8_4_)    
+    - [nach IsGrundleiden](#toc1_8_5_)    
+  - [Therapien](#toc1_9_)    
+    - [OP](#toc1_9_1_)    
+      - [nach ICD10](#toc1_9_1_1_)    
+      - [nach Intention](#toc1_9_1_2_)    
+    - [OP wenn OP erwartet](#toc1_9_2_)    
+      - [C50](#toc1_9_2_1_)    
+      - [C18 - C20](#toc1_9_2_2_)    
+    - [OPS](#toc1_9_3_)    
+      - [nach OPS ICD Kapitel (Top 10)](#toc1_9_3_1_)    
+    - [SYST](#toc1_9_4_)    
+      - [nach Stellung_OP](#toc1_9_4_1_)    
+  - [Missings- und Unbekannt-Kodierungen](#toc1_10_)    
+    - [Verpflichtende Tumorvariablen](#toc1_10_1_)    
+    - [Weitere Tumorangaben](#toc1_10_2_)    
+    - [Tumorstadien](#toc1_10_3_)    
+    - [Therapieangaben](#toc1_10_4_)    
+      - [OP](#toc1_10_4_1_)    
+      - [ST](#toc1_10_4_2_)    
+      - [SYST](#toc1_10_4_3_)    
+    - [Folgeereignisse](#toc1_10_5_)    
+    - [Freitexte](#toc1_10_6_)    
+    - [Organspezifische Variablen](#toc1_10_7_)    
+      - [Mamma](#toc1_10_7_1_)    
+      - [Prostata](#toc1_10_7_2_)    
+      - [Darm](#toc1_10_7_3_)    
+      - [Melanom](#toc1_10_7_4_)    
+  - [⚠️ Weitere Klassifikationen](#toc1_11_)    
+  - [Verteilung Monat von Datum_Vitalstatus](#toc1_12_)    
+    - [Vitalstatus Jahr](#toc1_12_1_)    
+  - [Numerische Variablen 🔢](#toc1_13_)    
+    - [Diagnosealter](#toc1_13_1_)    
+    - [Anzahl Tage zwischen Diagnose und Tod](#toc1_13_2_)    
+    - [Tumordicke](#toc1_13_3_)    
+    - [PSA](#toc1_13_4_)    
+    - [LK_befallen](#toc1_13_5_)    
+    - [LK_untersucht](#toc1_13_6_)    
+    - [RektumAbstandAnokutanlinie](#toc1_13_7_)    
+    - [LDH](#toc1_13_8_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -77,19 +80,18 @@
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 - Neulieferung für Daten mit max DJ=2024
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.3 | 📦 connection-helper: 0.13.3
-
-
 <br>
 
 ## <a id='toc1_2_'></a>[Datenstand ⏱️](#toc0_)
 
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.4 | 📦 connection-helper: 0.13.3
+    
     database file:           2026-02-26_data_clin.duckdb
     data tag:                v2.4
     last kkr data import:    2026-02-24
     sql table created:       2026-02-26 16:43:32
     doi:                     -
-    document created:        2026-02-26 16:58:45
+    document created:        2026-02-27 10:15:41
 
 
 <br>
@@ -167,7 +169,7 @@
 <br>
 
 ## <a id='toc1_5_'></a>[Fehlende Therapieangaben](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C76-C97, alle D)
 - ein Wert von bspw. 0.68 ist zu interpretieren als: _"68% aller Tumorfälle im KKR haben keine zugeordneten OP Angaben, die restlichen 32% mindestens eine."_
 - `treat_missing_per_tum` stellt den Anteil Fälle dar, bei denen keinerlei Therapieangabe (OP, ST, SYST) vorliegt
 - in der Darstellung sind die Max/Min Werte pro Kennzahl mit 🟥/🟩 markiert (kleiner ist besser)
@@ -179,11 +181,9 @@
 
 ```python
     # filter
-    --sql
-        --z_dy = 2020
         z_dy between 2020 and 2024
         and not z_is_dco
-        and --sql
+        and 
         z_icd10_3d not in ('C44')
         and left(z_icd10_3d,1) = 'C'
         and right(z_icd10_3d, 2)::int8 <= 75
@@ -208,7 +208,6 @@
 
 ```python
     # filter
-    --sql
         z_icd10_3d not in ('C44','D04')
         and not z_is_dco
         and z_dy in (2024)
@@ -245,13 +244,13 @@
 
 
     
-![svg](clin_2_analyze_files/output_28_0.svg)
+![svg](clin_2_analyze_files/output_27_0.svg)
     
 
 
 
     
-![svg](clin_2_analyze_files/output_28_1.svg)
+![svg](clin_2_analyze_files/output_27_1.svg)
     
 
 
@@ -266,7 +265,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_30_0.svg)
+![svg](clin_2_analyze_files/output_29_0.svg)
     
 
 
@@ -280,7 +279,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_32_0.svg)
+![svg](clin_2_analyze_files/output_31_0.svg)
     
 
 
@@ -293,12 +292,12 @@
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2025 Fälle: {'11-BE': 322, '13-MV': 10, '09-BY': 3102, '06-HE': 443, '12-BB': 351, '15-ST': 2769, '14-SN': 5}
+    Anzahl 2025 Fälle: {'11-BE': 322, '13-MV': 10, '12-BB': 351, '09-BY': 3102, '06-HE': 443, '15-ST': 2769, '14-SN': 5}
 
 
 
     
-![svg](clin_2_analyze_files/output_34_1.svg)
+![svg](clin_2_analyze_files/output_33_1.svg)
     
 
 
@@ -312,7 +311,7 @@
 
 
     
-![png](clin_2_analyze_files/output_36_0.png)
+![png](clin_2_analyze_files/output_35_0.png)
     
 
 
@@ -325,7 +324,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_38_0.svg)
+![svg](clin_2_analyze_files/output_37_0.svg)
     
 
 
@@ -338,18 +337,18 @@
 
 
     
-![svg](clin_2_analyze_files/output_40_0.svg)
+![svg](clin_2_analyze_files/output_39_0.svg)
     
 
 
 <br>
 
 ### <a id='toc1_7_8_'></a>[TNM-T (p)](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
 
 
     
-![svg](clin_2_analyze_files/output_42_0.svg)
+![svg](clin_2_analyze_files/output_41_0.svg)
     
 
 
@@ -361,26 +360,27 @@
 
 
     
-![svg](clin_2_analyze_files/output_44_0.svg)
+![svg](clin_2_analyze_files/output_43_0.svg)
     
 
 
 <br>
 
 ### <a id='toc1_7_10_'></a>[TNM-M (p)](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur TNM relevante**
 
 
     
-![svg](clin_2_analyze_files/output_46_0.svg)
+![svg](clin_2_analyze_files/output_45_0.svg)
     
 
 
 <br>
 
-### <a id='toc1_7_11_'></a>[TNM-Auflage (p)](#toc0_)
+## <a id='toc1_8_'></a>[Todesursachen (TU)](#toc0_)
 
-- **Filter: `DJ` = 2020-2024**
+### <a id='toc1_8_1_'></a>[nach ICD10 Einstellern](#toc0_)
+- gezählt sind die ersten Stellen aller TU Codes ohne jeglichen Filter
 
 
     
@@ -388,38 +388,32 @@
     
 
 
-<br>
-
-### <a id='toc1_7_12_'></a>[Todesursachen (TU)](#toc0_)
-
-#### <a id='toc1_7_12_1_'></a>[nach ICD10 Einstellern](#toc0_)
-- gezählt sind die ersten Stellen aller TU Codes ohne jeglichen Filter
-
-
-    
-![svg](clin_2_analyze_files/output_51_0.svg)
-    
-
-
-#### <a id='toc1_7_12_2_'></a>[nach Sterbejahr und Todesursachen](#toc0_)
+### <a id='toc1_8_2_'></a>[nach Sterbejahr und Todesursachen](#toc0_)
 - gezählt werden **Personen**
 - **Filter: `SJ`= 2020-2024, `Verstorben` = J**
 - `tu_type` Art der TU pro Patient
-  - `<NA>` keine Todesursache
-  - `C` Todesursache Cxx
-  - `<other>` andere Todesursache
+  - `<NA>` keine Todesursache zugeordnet
+  - `c_only` nur Todesursachen Cxx
+  - `other_only` nur Todesursachen <> Cxx
+  - `c_and_other` Cxx und andere Todesursachen
 
-> 💡 `ZfKD`: _"`03-NI` und `06-HE` übermitteln deutlich weniger Todesursachen asl in den epi Daten, für `07-RP` ist der Anteil in beiden Datenräumen gering. Für `15-ST` sind auffällig wenige Todesfälle in 2023 übermittelt."_
+<!-- > 💡 `ZfKD`: _"`03-NI` und `06-HE` übermitteln deutlich weniger Todesursachen asl in den epi Daten, für `07-RP` ist der Anteil in beiden Datenräumen gering. Für `15-ST` sind auffällig wenige Todesfälle in 2023 übermittelt."_ -->
 
 
-    
-![png](clin_2_analyze_files/output_55_0.png)
+
+```python
+    # filter
+        year(Datum_Vitalstatus::date) between 2020 and 2024
+        and Verstorben='J'
+```
+
+![svg](clin_2_analyze_files/output_50_3.svg)
     
 
 
 <br>
 
-#### <a id='toc1_7_12_3_'></a>[nach hat_todesursache bei Nicht-Verstorbenen](#toc0_)
+### <a id='toc1_8_3_'></a>[nach hat_todesursache bei Nicht-Verstorbenen](#toc0_)
 - gezählt werden **Personen**
 - **Filter: `Verstorben` = N**
 
@@ -435,109 +429,134 @@
 
 <br>
 
-#### <a id='toc1_7_12_4_'></a>[nach ICD10 Dreistellern (TOP 5)](#toc0_)
+### <a id='toc1_8_4_'></a>[nach ICD10 Dreistellern (TOP 5)](#toc0_)
 - Grundgesamtheit: alle **Todesursachen**, kein Filter
 
 > 💡 `ZfKD`: _Enthalten sind in einigen KKR auch `C79` (Metastasen), welche in offizieller Todesursachen-Statistik nicht kodiert sind_
 
 
     
-![png](clin_2_analyze_files/output_59_0.png)
+![png](clin_2_analyze_files/output_55_0.png)
     
 
 
 <br>
 
-#### <a id='toc1_7_12_5_'></a>[nach IsGrundleiden](#toc0_)
+### <a id='toc1_8_5_'></a>[nach IsGrundleiden](#toc0_)
 - Grundgesamtheit: **alle Todesursachen**
 
 
     
-![svg](clin_2_analyze_files/output_61_0.svg)
+![svg](clin_2_analyze_files/output_57_0.svg)
+    
+
+
+## <a id='toc1_9_'></a>[Therapien](#toc0_)
+
+<br>
+
+### <a id='toc1_9_1_'></a>[OP](#toc0_)
+
+
+#### <a id='toc1_9_1_1_'></a>[nach ICD10](#toc0_)
+- Grundgesamtheit: alle **OP Meldungen**
+
+
+
+```python
+    # filter
+        z_dy between 2020 and 2024
+        and z_op_order = 1
+```
+
+![svg](clin_2_analyze_files/output_61_3.svg)
     
 
 
 <br>
 
-### <a id='toc1_7_13_'></a>[OP](#toc0_)
-
-
-#### <a id='toc1_7_13_1_'></a>[nach ICD10](#toc0_)
+#### <a id='toc1_9_1_2_'></a>[nach Intention](#toc0_)
 - Grundgesamtheit: alle **OP Meldungen**
 
 
     
-![svg](clin_2_analyze_files/output_64_0.svg)
+![svg](clin_2_analyze_files/output_63_0.svg)
+    
+
+
+### <a id='toc1_9_2_'></a>[OP wenn OP erwartet](#toc0_)
+- kategorien
+  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
+  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
+  - `3_rest`: keine der zuvor genannten Merkmale trifft
+
+#### <a id='toc1_9_2_1_'></a>[C50](#toc0_)
+
+
+
+```python
+    counts: rows
+    ---
+    n = 4_000_795                                    (100.0%) ██████████████████████████████
+    └ [C50]:                             n = 425_064  (10.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+    └ [2020-2024]:                       n = 398_846  (10.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [keine M1]:                        n = 371_246   (9.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [keine Verstorbenen < 180 Tage]:   n = 355_711   (8.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+![svg](clin_2_analyze_files/output_66_3.svg)
+    
+
+
+#### <a id='toc1_9_2_2_'></a>[C18 - C20](#toc0_)
+
+
+
+```python
+    counts: rows
+    ---
+    n = 4_000_795                                    (100.0%) ██████████████████████████████
+    └ [C18-C20]:                         n = 301_337   (7.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [2020-2024]:                       n = 284_137   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [keine M1]:                        n = 235_120   (5.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine Verstorbenen < 180 Tage]:   n = 203_219   (5.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+```
+
+![svg](clin_2_analyze_files/output_68_3.svg)
     
 
 
 <br>
 
-#### <a id='toc1_7_13_2_'></a>[nach Intention](#toc0_)
-- Grundgesamtheit: alle **OP Meldungen**
+### <a id='toc1_9_3_'></a>[OPS](#toc0_)
 
 
-    
-![svg](clin_2_analyze_files/output_66_0.svg)
-    
-
-
-<br>
-
-### <a id='toc1_7_14_'></a>[OPS](#toc0_)
-
-
-#### <a id='toc1_7_14_1_'></a>[nach OPS ICD Kapitel (Top 10)](#toc0_)
+#### <a id='toc1_9_3_1_'></a>[nach OPS ICD Kapitel (Top 10)](#toc0_)
 - Grundgesamtheit: **alle OPS Codes**
 
 > 💡 `ZfKD`: _Lediglich `02-HH` und `05-NW` übermitteln ausschliesslich Kapitel 5. Der Anteil von Meldungen <> Kapitel 5 sind wahrscheinlich diagnostische Massnahmen oder nicht-operative Therapien. Vorschlag: nur noch Kapitel 5 übermitteln_
 
 
     
-![svg](clin_2_analyze_files/output_69_0.svg)
+![svg](clin_2_analyze_files/output_71_0.svg)
     
 
 
-<br>
+### <a id='toc1_9_4_'></a>[SYST](#toc0_)
 
-#### <a id='toc1_7_14_2_'></a>[nach OPS Einzelcodes (Top 5)](#toc0_)
-- Grundgesamtheit: **alle OPS Codes**
-
-
-    
-![png](clin_2_analyze_files/output_71_0.png)
-    
-
-
-
-```python
-    ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────┐
-    │   code   │                                                           name                                                            │  cnt   │
-    │ varchar  │                                                          varchar                                                          │ int32  │
-    ├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────┤
-    │ 5-401.11 │ Exzision einzelner Lymphknoten und Lymphgefäße: Axillär: Mit Radionuklidmarkierung (Sentinel-Lymphonodektomie)            │ 171807 │
-    │ 5-573.40 │ Transurethrale Inzision, Exzision, Destruktion und Resektion von (erkranktem) Gewebe der Harnblase: Resektion: Nicht fl…  │ 124190 │
-    │ 5-987.0  │ Anwendung eines OP-Roboters: Komplexer OP-Roboter                                                                         │ 114398 │
-    │ 5-870.a1 │ Partielle (brusterhaltende) Exzision der Mamma und Destruktion von Mammagewebe: Partielle Resektion: Defektdeckung durc…  │  84207 │
-    │ 5-870.a2 │ Partielle (brusterhaltende) Exzision der Mamma und Destruktion von Mammagewebe: Partielle Resektion: Defektdeckung durc…  │  67971 │
-    └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴────────┘
-```
-
-### <a id='toc1_7_15_'></a>[SYST](#toc0_)
-
-#### <a id='toc1_7_15_1_'></a>[nach Stellung_OP](#toc0_)
+#### <a id='toc1_9_4_1_'></a>[nach Stellung_OP](#toc0_)
 
 - Grundgesamtheit: **alle SYST Elemente**
 
 
     
-![svg](clin_2_analyze_files/output_75_0.svg)
+![svg](clin_2_analyze_files/output_74_0.svg)
     
 
 
 <div style="page-break-after: always;"></div>
 
-## <a id='toc1_8_'></a>[Missings- und Unbekannt-Kodierungen](#toc0_)
+## <a id='toc1_10_'></a>[Missings- und Unbekannt-Kodierungen](#toc0_)
 - es sind folgende Schwellwerte angezeigt:
   - 🟩 0 bis <5%
   - 🟨 **missings**: 5% bis <100% | **unbekannt**: 5% bis <35%>
@@ -558,7 +577,7 @@
 
 <br>
 
-### <a id='toc1_8_1_'></a>[Verpflichtende Tumorvariablen](#toc0_)
+### <a id='toc1_10_1_'></a>[Verpflichtende Tumorvariablen](#toc0_)
 - kein Filter
 - Pflichtangaben aus anderen Elementknoten (z.B. Datum aus dem OP Knoten) sind nicht aufgeführt, da diese selbst optional sind
 
@@ -579,7 +598,7 @@
 
 
     
-![png](clin_2_analyze_files/output_80_4.png)
+![png](clin_2_analyze_files/output_79_4.png)
     
 
 
@@ -588,17 +607,16 @@
 
 
     
-![png](clin_2_analyze_files/output_80_6.png)
+![png](clin_2_analyze_files/output_79_6.png)
     
 
 
-### <a id='toc1_8_2_'></a>[Weitere Tumorangaben](#toc0_)
+### <a id='toc1_10_2_'></a>[Weitere Tumorangaben](#toc0_)
 
 
 
 ```python
     # filter
-    --sql
         z_dy between 2020 and 2024
         and not z_is_dco
         and z_icd10_3d not in ('C44','D04')
@@ -609,7 +627,7 @@
 
 
     
-![png](clin_2_analyze_files/output_82_4.png)
+![png](clin_2_analyze_files/output_81_4.png)
     
 
 
@@ -618,13 +636,13 @@
 
 
     
-![png](clin_2_analyze_files/output_82_6.png)
+![png](clin_2_analyze_files/output_81_6.png)
     
 
 
 <br>
 
-### <a id='toc1_8_3_'></a>[Tumorstadien](#toc0_)
+### <a id='toc1_10_3_'></a>[Tumorstadien](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
 
 > 💡 `ZfKD`: _"`05-NW` hat die Auflage als Konstante im Datensatz hinterlegt"_
@@ -635,10 +653,18 @@
     # filter
         z_dy between 2020 and 2024
         and not z_is_dco
-        and --sql
-        z_icd10_3d not in ('C44')
-        and left(z_icd10_3d,1) = 'C'
-        and right(z_icd10_3d, 2)::int8 <= 75
+        and 
+        (
+            left(z_icd10_3d, 1) ='C' and
+            (
+                right(z_icd10_3d, 2)::int8 between 00 and 43
+                or right(z_icd10_3d, 2)::int8 between 45 and 69
+                or right(z_icd10_3d, 2)::int8 between 73 and 74
+            )
+            and left(Morphologie_Code,4)::int between 8010 and 8790
+            and z_icd10_3d not in ('C26', 'C39', 'C55')
+            and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+        )
 ```
 
     🟠 missings
@@ -646,7 +672,7 @@
 
 
     
-![png](clin_2_analyze_files/output_84_4.png)
+![png](clin_2_analyze_files/output_83_4.png)
     
 
 
@@ -655,19 +681,19 @@
 
 
     
-![png](clin_2_analyze_files/output_84_6.png)
+![png](clin_2_analyze_files/output_83_6.png)
     
 
 
 <br>
 
-### <a id='toc1_8_4_'></a>[Therapieangaben](#toc0_)
+### <a id='toc1_10_4_'></a>[Therapieangaben](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` != C44**
 - fiktives Rechenbeispiel für `[Bestrahlung]Anzahl_Tage_Diagnose_ST`:
   - 5363 Bestrahlungen sind in den 01-SH Daten unter Beachtung des Filters (DCO/DJ/ICD10) für den zugeordneten Tumor
   - davon enthalten 302 ein leeres Feld `Anzahl_Tage_Diagnose_ST` -> ~ 6%
 
-#### <a id='toc1_8_4_1_'></a>[OP](#toc0_)
+#### <a id='toc1_10_4_1_'></a>[OP](#toc0_)
 
 > 💡 `ZfKD`: _Für überlieferte OP liegen `Datum_OP` und `Intention` komplett vollständig vor. Der Tagesabstand hat wenige Lücken, während `Lokale_Beurteilung_Residualstatus` auch ausserhalb von Tristan erkennbar häufiger fehlt._
 
@@ -676,7 +702,7 @@
 
 
     
-![png](clin_2_analyze_files/output_87_1.png)
+![png](clin_2_analyze_files/output_86_1.png)
     
 
 
@@ -685,11 +711,11 @@
 
 
     
-![png](clin_2_analyze_files/output_87_3.png)
+![png](clin_2_analyze_files/output_86_3.png)
     
 
 
-#### <a id='toc1_8_4_2_'></a>[ST](#toc0_)
+#### <a id='toc1_10_4_2_'></a>[ST](#toc0_)
 
 > 💡 `ZfKD`: _`Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_ST`._  
 > _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
@@ -700,7 +726,7 @@
 
 
     
-![png](clin_2_analyze_files/output_89_1.png)
+![png](clin_2_analyze_files/output_88_1.png)
     
 
 
@@ -709,11 +735,11 @@
 
 
     
-![png](clin_2_analyze_files/output_89_3.png)
+![png](clin_2_analyze_files/output_88_3.png)
     
 
 
-#### <a id='toc1_8_4_3_'></a>[SYST](#toc0_)
+#### <a id='toc1_10_4_3_'></a>[SYST](#toc0_)
 
 > 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
 
@@ -722,7 +748,7 @@
 
 
     
-![png](clin_2_analyze_files/output_91_1.png)
+![png](clin_2_analyze_files/output_90_1.png)
     
 
 
@@ -731,11 +757,11 @@
 
 
     
-![png](clin_2_analyze_files/output_91_3.png)
+![png](clin_2_analyze_files/output_90_3.png)
     
 
 
-### <a id='toc1_8_5_'></a>[Folgeereignisse](#toc0_)
+### <a id='toc1_10_5_'></a>[Folgeereignisse](#toc0_)
 
 > 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
 
@@ -744,7 +770,7 @@
 
 
     
-![png](clin_2_analyze_files/output_93_1.png)
+![png](clin_2_analyze_files/output_92_1.png)
     
 
 
@@ -753,11 +779,11 @@
 
 
     
-![png](clin_2_analyze_files/output_93_3.png)
+![png](clin_2_analyze_files/output_92_3.png)
     
 
 
-### <a id='toc1_8_6_'></a>[Freitexte](#toc0_)
+### <a id='toc1_10_6_'></a>[Freitexte](#toc0_)
 
 > 💡 `ZfKD`: _Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext. Bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen._
 
@@ -767,7 +793,7 @@
 
 
     
-![png](clin_2_analyze_files/output_95_1.png)
+![png](clin_2_analyze_files/output_94_1.png)
     
 
 
@@ -776,26 +802,25 @@
 
 
     
-![png](clin_2_analyze_files/output_95_3.png)
+![png](clin_2_analyze_files/output_94_3.png)
     
 
 
 <br>
 
-### <a id='toc1_8_7_'></a>[Organspezifische Variablen](#toc0_)
+### <a id='toc1_10_7_'></a>[Organspezifische Variablen](#toc0_)
 - die Prozentwerte sind bei allen Darstellungen gerundet, "100%" bei einer gelben Ampel kann interpretiert werden als knapp unter 100%
 > 💡 `HH` _"Fehlende Modul-Angaben (C50, C61) 2021. Sind bei uns noch nicht im xml enthalten."_
 
 <br>
 
-#### <a id='toc1_8_7_1_'></a>[Mamma](#toc0_)
+#### <a id='toc1_10_7_1_'></a>[Mamma](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` = C50**
 
 
 
 ```python
     # filter
-    --sql
         z_dy between 2020 and 2024
         and not z_is_dco
         and z_icd10_3d = 'C50'
@@ -806,7 +831,7 @@
 
 
     
-![png](clin_2_analyze_files/output_98_4.png)
+![png](clin_2_analyze_files/output_97_4.png)
     
 
 
@@ -815,13 +840,13 @@
 
 
     
-![png](clin_2_analyze_files/output_98_6.png)
+![png](clin_2_analyze_files/output_97_6.png)
     
 
 
 <br>
 
-#### <a id='toc1_8_7_2_'></a>[Prostata](#toc0_)
+#### <a id='toc1_10_7_2_'></a>[Prostata](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` = C61**
 
 > 💡 `ZfKD` _Auch innerhalb eines KKR gibt es deutliche Varianzen zwischen Variablen des organspezifischen Moduls, z.B. in 11-16_
@@ -830,7 +855,6 @@
 
 ```python
     # filter
-    --sql
         z_dy between 2020 and 2024
         and not z_is_dco
         and z_icd10_3d = 'C61'
@@ -841,7 +865,7 @@
 
 
     
-![png](clin_2_analyze_files/output_100_4.png)
+![png](clin_2_analyze_files/output_99_4.png)
     
 
 
@@ -850,20 +874,19 @@
 
 
     
-![png](clin_2_analyze_files/output_100_6.png)
+![png](clin_2_analyze_files/output_99_6.png)
     
 
 
 <br>
 
-#### <a id='toc1_8_7_3_'></a>[Darm](#toc0_)
+#### <a id='toc1_10_7_3_'></a>[Darm](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` = C18-C20**
 
 
 
 ```python
     # filter
-    --sql
         z_dy between 2020 and 2024
         and not z_is_dco
         and z_icd10_3d in ('C18','C19','C20')
@@ -874,7 +897,7 @@
 
 
     
-![png](clin_2_analyze_files/output_102_4.png)
+![png](clin_2_analyze_files/output_101_4.png)
     
 
 
@@ -883,13 +906,13 @@
 
 
     
-![png](clin_2_analyze_files/output_102_6.png)
+![png](clin_2_analyze_files/output_101_6.png)
     
 
 
 <br>
 
-#### <a id='toc1_8_7_4_'></a>[Melanom](#toc0_)
+#### <a id='toc1_10_7_4_'></a>[Melanom](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` = C43**
 
     🟠 missings
@@ -897,7 +920,7 @@
 
 
     
-![png](clin_2_analyze_files/output_104_1.png)
+![png](clin_2_analyze_files/output_103_1.png)
     
 
 
@@ -906,15 +929,44 @@
 
 
     
-![png](clin_2_analyze_files/output_104_3.png)
+![png](clin_2_analyze_files/output_103_3.png)
     
 
 
-## <a id='toc1_9_'></a>[⚠️ Weitere Klassifikationen](#toc0_)
+## <a id='toc1_11_'></a>[🆕 Weitere Klassifikationen](#toc0_)
+
+
+
+```python
+    🗄️ db_class	845_730, 6
+    	("z_tum_id, Name, Stadium, z_kkr_label, source, class")
+```
+
+
+```python
+    ┌──────────────────────────────────────┬────────────────────────┬─────────┬─────────────┬─────────┬─────────┐
+    │               z_tum_id               │          Name          │ Stadium │ z_kkr_label │ source  │  class  │
+    │               varchar                │        varchar         │ varchar │   varchar   │ varchar │ varchar │
+    ├──────────────────────────────────────┼────────────────────────┼─────────┼─────────────┼─────────┼─────────┤
+    │ 65c9a8ee-3442-455b-b273-8ac20332a656 │ PROSTATA.Gleason-Score │ 3+3=6   │ 09-BY       │ diag    │ gleason │
+    │ d7cd3e4d-d0e8-4dcc-aea0-c40054b62324 │ p16                    │ P       │ 08-BW       │ diag    │ hpv     │
+    │ 311bcf8e-9ed6-41ed-8ffc-d03a57cd83f9 │ UICC                   │ IVB     │ 08-BW       │ diag    │ uicc    │
+    └──────────────────────────────────────┴────────────────────────┴─────────┴─────────────┴─────────┴─────────┘
+```
+
+![svg](clin_2_analyze_files/output_107_4.svg)
+    
+
+
+
+    
+![png](clin_2_analyze_files/output_107_5.png)
+    
+
 
 <br>
 
-## <a id='toc1_10_'></a>[Verteilung Monat von Datum_Vitalstatus](#toc0_)
+## <a id='toc1_12_'></a>[Verteilung Monat von Datum_Vitalstatus](#toc0_)
 - **Filter: alle Patienten mit `Verstorben`=N, `DJ` und `SJ` 2020-2024**
 
 > 💡 `HH`: _"Das liegt an unserer Darstellung des Vitalstatus-Datum. Nach Abschluss der DC-Recherche, die nach Abschluss des 'Todesjahres' durchgeführt wird, wird bei allen Patienten bei denen wir keine weiteren Meldungen bzw Informationen zum Vitalstatus bekommen haben der 31.12. des abgeschlossenen 'Todesjahres' gesetzt. In diesem Fall ist dies das aktuelle Jahr - 2 -> 31.12.2022, da die DC-Recherche zum Zeitpunkt der Datenlieferung noch nicht abgeschlossen war. Wenn jetzt ein Patient die letzte Meldung mit einem Leistungsdatum in 2019 hatte, wir aber keine weiteren Informationen bekommen haben, gehen wir also nach Abschluss der Recherche davon aus, dass der Patient am 31.12.2022 noch gelebt hat. Dadurch 'verbessert' sich tatsächlich der Vitalstatus in unseren Daten, ansonsten wäre dieser nämlich irgendwann in 2019."_
@@ -922,14 +974,15 @@
 > 💡 `ZfKD`: angestrebt ist die Verwendung eines einzelnen Erhebungszeitpunkts (z.B. Dezember)
 
 
-    
-![png](clin_2_analyze_files/output_108_0.png)
-    
 
+```python
+    # filter
+        Verstorben = 'N'
+        and year(cast(Datum_Vitalstatus as date)) >= 2020
+        and z_dy between 2020 and 2024
+```
 
-
-    
-![png](clin_2_analyze_files/output_109_0.png)
+![png](clin_2_analyze_files/output_109_3.png)
     
 
 
@@ -939,13 +992,27 @@
     
 
 
+
+    
+![png](clin_2_analyze_files/output_111_0.png)
+    
+
+
+### <a id='toc1_12_1_'></a>[Vitalstatus Jahr](#toc0_)
+
+
+    
+![svg](clin_2_analyze_files/output_113_0.svg)
+    
+
+
 <div style="page-break-after: always;"></div>
 
-## <a id='toc1_11_'></a>[Numerische Variablen 🔢](#toc0_)
+## <a id='toc1_13_'></a>[Numerische Variablen 🔢](#toc0_)
 
 <br>
 
-### <a id='toc1_11_1_'></a>[Diagnosealter](#toc0_)
+### <a id='toc1_13_1_'></a>[Diagnosealter](#toc0_)
 - berechnet aus `Diagnosejahr` - `Geburtsjahr`
 - negative Werte entstehen aus falscher Datumsreihenfolge von Ereignissen
 - die Datumsangaben sind **nicht bereinigt**, um strukturelle Effekte sichtbar zu machen
@@ -954,13 +1021,13 @@
 
 
     
-![png](clin_2_analyze_files/output_114_0.png)
+![png](clin_2_analyze_files/output_117_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_114_1.png)
+![png](clin_2_analyze_files/output_117_1.png)
     
 
 
@@ -969,6 +1036,8 @@
     -----------------------+------------------+---------+-------+-------+--------+-------+-------+--------+--------+-------+-----
     z_age                  | 4_000_795 (100%) | -122.00 | 30.25 | 59.67 |  70.00 | 68.01 | 79.33 | 108.50 | 125.25 | 15.27 | 0.22
     
+
+
     
     item (n = 4_000_795) |   count   |   min   | lower |  q25  | median | mean  |  q75  | upper  |  max   |  std  |  cv 
     ---------------------+-----------+---------+-------+-------+--------+-------+-------+--------+--------+-------+-----
@@ -993,20 +1062,20 @@
 
 <br>
 
-### <a id='toc1_11_2_'></a>[Anzahl Tage zwischen Diagnose und Tod](#toc0_)
+### <a id='toc1_13_2_'></a>[Anzahl Tage zwischen Diagnose und Tod](#toc0_)
 
 > 💡 `ZfKD`: _Es treten Extremwerte auf, weit ausserhalb des Interquartilsabstandes. Grund dafür sind mutmasslich fehlende Datumsangaben, die auf 1900 kodiert werden._  
 > _In der KKR Verteilung sind die Extreme in den GTDS Ländern besonders ausgeprägt_
 
 
     
-![png](clin_2_analyze_files/output_116_0.png)
+![png](clin_2_analyze_files/output_119_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_116_1.png)
+![png](clin_2_analyze_files/output_119_1.png)
     
 
 
@@ -1039,11 +1108,11 @@
 
 <br>
 
-### <a id='toc1_11_3_'></a>[Tumordicke](#toc0_)
+### <a id='toc1_13_3_'></a>[Tumordicke](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_118_0.png)
+![png](clin_2_analyze_files/output_121_0.png)
     
 
 
@@ -1056,15 +1125,15 @@
 
 
     
-![png](clin_2_analyze_files/output_118_2.png)
+![png](clin_2_analyze_files/output_121_2.png)
     
 
 
-### <a id='toc1_11_4_'></a>[PSA](#toc0_)
+### <a id='toc1_13_4_'></a>[PSA](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_120_0.png)
+![png](clin_2_analyze_files/output_123_0.png)
     
 
 
@@ -1077,15 +1146,15 @@
 
 
     
-![png](clin_2_analyze_files/output_120_2.png)
+![png](clin_2_analyze_files/output_123_2.png)
     
 
 
-### <a id='toc1_11_5_'></a>[LK_befallen](#toc0_)
+### <a id='toc1_13_5_'></a>[LK_befallen](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_122_0.png)
+![png](clin_2_analyze_files/output_125_0.png)
     
 
 
@@ -1098,15 +1167,15 @@
 
 
     
-![png](clin_2_analyze_files/output_122_2.png)
+![png](clin_2_analyze_files/output_125_2.png)
     
 
 
-### <a id='toc1_11_6_'></a>[LK_untersucht](#toc0_)
+### <a id='toc1_13_6_'></a>[LK_untersucht](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_124_0.png)
+![png](clin_2_analyze_files/output_127_0.png)
     
 
 
@@ -1119,15 +1188,15 @@
 
 
     
-![png](clin_2_analyze_files/output_124_2.png)
+![png](clin_2_analyze_files/output_127_2.png)
     
 
 
-### <a id='toc1_11_7_'></a>[RektumAbstandAnokutanlinie](#toc0_)
+### <a id='toc1_13_7_'></a>[RektumAbstandAnokutanlinie](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_126_0.png)
+![png](clin_2_analyze_files/output_129_0.png)
     
 
 
@@ -1140,15 +1209,15 @@
 
 
     
-![png](clin_2_analyze_files/output_126_2.png)
+![png](clin_2_analyze_files/output_129_2.png)
     
 
 
-### <a id='toc1_11_8_'></a>[LDH](#toc0_)
+### <a id='toc1_13_8_'></a>[LDH](#toc0_)
 
 
     
-![png](clin_2_analyze_files/output_128_0.png)
+![png](clin_2_analyze_files/output_131_0.png)
     
 
 
@@ -1161,6 +1230,6 @@
 
 
     
-![png](clin_2_analyze_files/output_128_2.png)
+![png](clin_2_analyze_files/output_131_2.png)
     
 

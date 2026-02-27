@@ -14,17 +14,18 @@
     - [Diagnosesicherung](#toc1_5_3_)    
     - [DCO Diagramm](#toc1_5_4_)    
     - [DCO Tabelle](#toc1_5_5_)    
-    - [Dignität](#toc1_5_6_)    
-    - [Grading 1](#toc1_5_7_)    
-      - [Grading 2](#toc1_5_7_1_)    
-    - [Altersgruppen](#toc1_5_8_)    
-    - [TNM](#toc1_5_9_)    
-    - [UICC](#toc1_5_10_)    
-    - [TNM-Auflage](#toc1_5_11_)    
-    - [Tod](#toc1_5_12_)    
-      - [Verteilung der Variable TOD im verarbeiteten Datensatz](#toc1_5_12_1_)    
-      - [Verteilung der Variable TOD in den original gelieferten Daten](#toc1_5_12_2_)    
-    - [Verteilung Todesursachen nach ICDT10](#toc1_5_13_)    
+    - [Anteil Mehrfachtumore](#toc1_5_6_)    
+    - [Dignität](#toc1_5_7_)    
+    - [Grading 1](#toc1_5_8_)    
+    - [Grading 2](#toc1_5_9_)    
+    - [Altersgruppen](#toc1_5_10_)    
+    - [TNM](#toc1_5_11_)    
+    - [UICC](#toc1_5_12_)    
+    - [TNM-Auflage](#toc1_5_13_)    
+    - [Tod](#toc1_5_14_)    
+      - [Verteilung der Variable TOD im verarbeiteten Datensatz](#toc1_5_14_1_)    
+      - [Verteilung der Variable TOD in den original gelieferten Daten](#toc1_5_14_2_)    
+    - [Verteilung Todesursachen nach ICDT10](#toc1_5_15_)    
   - [Plausibilitätsprüfungen](#toc1_6_)    
     - [ ⚠️ 01-SH](#toc1_6_1_)    
     - [✅ 02-HH](#toc1_6_2_)    
@@ -63,19 +64,19 @@
 
 ## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.3 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.4 | 📦 connection-helper: 0.13.3
 
 
     database file:           2026-02-20_data_epi.duckdb
     data tag:                epi2025_beta
     sql table created:       2026-02-20 08:20:43
     doi:                     -
-    document created:        2026-02-23 11:33:50
+    document created:        2026-02-27 12:22:15
 
 
     
-    latest batch:                                      422
-    Berücksichtigt werden folgende Diagnosejahre 📆:    (2024)
+    letzter batch                   422
+    inkludierte Diagnosejahre 📆    (2024)
 
 
 <div style="page-break-after: always;"></div>
@@ -138,6 +139,10 @@
 > 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
 
 
+    
+![svg](epi_2_analyze_files/output_26_0.svg)
+    
+
 
 <br>
 
@@ -148,52 +153,70 @@
 > 💡 `ZfKD`: _"keine DCO Markierungen für Fälle aus `05-NW`"_
 
 
+    
+![svg](epi_2_analyze_files/output_28_0.svg)
+    
 
-<br>
+
+<!-- <br>
 
 ### <a id='toc1_5_4_'></a>[DCO Diagramm](#toc0_)
 - **Filter: DJ = 2020-2024, C44 und D-Diagnosen sind ausgeschlossen, GKZbl 01-16**
 - die epi Variable `DCO` wird wie folgt gebildet:
   - 1 wenn Diagnosesicherung = 3
-  - sonst 2 (auch für Diagnosesicherung missing) 
+  - sonst 2 (auch für Diagnosesicherung missing)  -->
 
-
-    
-![png](epi_2_analyze_files/output_30_0.png)
-    
-
-
-### <a id='toc1_5_5_'></a>[DCO Tabelle](#toc0_)
+### <a id='toc1_5_5_'></a>[DCO](#toc0_)
 - **Filter: DJ = 2010-2024, GKZbl 01-16**
 - Metrik: Anteil DCO an Gesamtfallzahl in %
 <!-- > 💡 für 09-BY sind in dieser Lieferung erheblich weniger DCO Fälle festzustellen -->
 
 
+
+```python
+    # filter
+        bl::int between 1 and 16
+        and z_dy::int between 2010 and 2024
+        and z_icd10_3d not in ('C44','D04')
+        and left(z_icd10_3d,1) = 'C'
+```
+
+![png](epi_2_analyze_files/output_33_3.png)
     
-![png](epi_2_analyze_files/output_34_0.png)
+
+
+### <a id='toc1_5_6_'></a>[Anteil Mehrfachtumore](#toc0_)
+
+
+    
+![png](epi_2_analyze_files/output_35_0.png)
     
 
 
 <br>
 
-### <a id='toc1_5_6_'></a>[Dignität](#toc0_)
+### <a id='toc1_5_7_'></a>[Dignität](#toc0_)
 - **Filter: DJ = 2020-2023, C44 und D-Diagnosen sind eingeschlossen**
 
 
 
     
-![png](epi_2_analyze_files/output_37_0.png)
+![png](epi_2_analyze_files/output_38_0.png)
     
 
 
 <br>
 
-### <a id='toc1_5_7_'></a>[Grading 1](#toc0_)
+### <a id='toc1_5_8_'></a>[Grading 1](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
+    
+![svg](epi_2_analyze_files/output_40_0.svg)
+    
 
-#### <a id='toc1_5_7_1_'></a>[Grading 2](#toc0_)
+
+### <a id='toc1_5_9_'></a>[Grading 2](#toc0_)
 - **Filter: DJ = 2020-2024, kein DCO, gradingrelevante ICD10+HISC**
 
 
@@ -217,18 +240,29 @@
             )
 ```
 
+![svg](epi_2_analyze_files/output_42_3.svg)
+    
+
+
 <br>
 
-### <a id='toc1_5_8_'></a>[Altersgruppen](#toc0_)
+### <a id='toc1_5_10_'></a>[Altersgruppen](#toc0_)
 
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
 
+    
+![svg](epi_2_analyze_files/output_45_0.svg)
+    
 
-### <a id='toc1_5_9_'></a>[TNM](#toc0_)
 
-    Filter: --sql
+### <a id='toc1_5_11_'></a>[TNM](#toc0_)
+
+
+
+```python
+    # filter
             DJ between 2020 and 2024
             and DCO = 2
             and (
@@ -243,41 +277,54 @@
                 and ICDGM10 not in ('C140', 'C579', 'C639', 'C759')
             )
             and GKZbl::int between 1 and 16
+```
+
+![svg](epi_2_analyze_files/output_47_3.svg)
     
-
-
 
 
 <br>
 
-### <a id='toc1_5_10_'></a>[UICC](#toc0_)
+### <a id='toc1_5_12_'></a>[UICC](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - die Variable `UICC` wird vom ZfKD gebildet
 
 
+    
+![svg](epi_2_analyze_files/output_50_0.svg)
+    
+
 
 <br>
 
-### <a id='toc1_5_11_'></a>[TNM-Auflage](#toc0_)
+### <a id='toc1_5_13_'></a>[TNM-Auflage](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings
 
 > 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
 
 
+    
+![svg](epi_2_analyze_files/output_53_0.svg)
+    
+
 
 <br>
 
-### <a id='toc1_5_12_'></a>[Tod](#toc0_)
+### <a id='toc1_5_14_'></a>[Tod](#toc0_)
 
-#### <a id='toc1_5_12_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
+#### <a id='toc1_5_14_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
+    
+![svg](epi_2_analyze_files/output_57_0.svg)
+    
+
 
 <br>
 
-#### <a id='toc1_5_12_2_'></a>[Verteilung der Variable TOD in den original gelieferten Daten](#toc0_)
+#### <a id='toc1_5_14_2_'></a>[Verteilung der Variable TOD in den original gelieferten Daten](#toc0_)
 - Grundgesamtheit: alle Daten mit DJ > 1970
 - neben `J` und `N` sind diverse Formen von Leerkodierungen unterschieden (`NULL`, `''`, `' '` etc.)
 - die Daten den Registern ohne missings enthalten eine eindeutige Information zu `TOD`
@@ -285,11 +332,11 @@
 
 
     
-![png](epi_2_analyze_files/output_58_0.png)
+![png](epi_2_analyze_files/output_59_0.png)
     
 
 
-### <a id='toc1_5_13_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
+### <a id='toc1_5_15_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
 - gezählt sind **Personen**
 - **Filter: `SJ` >= 2010**
 - `icdt10_1d` gibt die erste Stelle der Todesursache an
@@ -297,7 +344,7 @@
 
 
     
-![png](epi_2_analyze_files/output_60_0.png)
+![png](epi_2_analyze_files/output_61_0.png)
     
 
 
@@ -325,19 +372,19 @@
 
 
     
-![png](epi_2_analyze_files/output_65_0.png)
+![png](epi_2_analyze_files/output_66_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_65_1.png)
+![png](epi_2_analyze_files/output_66_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_65_2.png)
+![png](epi_2_analyze_files/output_66_2.png)
     
 
 
@@ -347,19 +394,19 @@
 
 
     
-![png](epi_2_analyze_files/output_67_0.png)
+![png](epi_2_analyze_files/output_68_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_67_1.png)
+![png](epi_2_analyze_files/output_68_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_67_2.png)
+![png](epi_2_analyze_files/output_68_2.png)
     
 
 
@@ -369,19 +416,19 @@
 
 
     
-![png](epi_2_analyze_files/output_69_0.png)
+![png](epi_2_analyze_files/output_70_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_69_1.png)
+![png](epi_2_analyze_files/output_70_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_69_2.png)
+![png](epi_2_analyze_files/output_70_2.png)
     
 
 
@@ -391,19 +438,19 @@
 
 
     
-![png](epi_2_analyze_files/output_71_0.png)
+![png](epi_2_analyze_files/output_72_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_71_1.png)
+![png](epi_2_analyze_files/output_72_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_71_2.png)
+![png](epi_2_analyze_files/output_72_2.png)
     
 
 
@@ -415,19 +462,19 @@
 
 
     
-![png](epi_2_analyze_files/output_74_0.png)
+![png](epi_2_analyze_files/output_75_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_74_1.png)
+![png](epi_2_analyze_files/output_75_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_74_2.png)
+![png](epi_2_analyze_files/output_75_2.png)
     
 
 
@@ -438,19 +485,19 @@
 
 
     
-![png](epi_2_analyze_files/output_76_0.png)
+![png](epi_2_analyze_files/output_77_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_76_1.png)
+![png](epi_2_analyze_files/output_77_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_76_2.png)
+![png](epi_2_analyze_files/output_77_2.png)
     
 
 
@@ -460,19 +507,19 @@
 
 
     
-![png](epi_2_analyze_files/output_78_0.png)
+![png](epi_2_analyze_files/output_79_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_78_1.png)
+![png](epi_2_analyze_files/output_79_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_78_2.png)
+![png](epi_2_analyze_files/output_79_2.png)
     
 
 
@@ -482,19 +529,19 @@
 
 
     
-![png](epi_2_analyze_files/output_80_0.png)
+![png](epi_2_analyze_files/output_81_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_80_1.png)
+![png](epi_2_analyze_files/output_81_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_80_2.png)
+![png](epi_2_analyze_files/output_81_2.png)
     
 
 
@@ -504,19 +551,19 @@
 
 
     
-![png](epi_2_analyze_files/output_82_0.png)
+![png](epi_2_analyze_files/output_83_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_82_1.png)
+![png](epi_2_analyze_files/output_83_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_82_2.png)
+![png](epi_2_analyze_files/output_83_2.png)
     
 
 
@@ -527,19 +574,19 @@
 
 
     
-![png](epi_2_analyze_files/output_84_0.png)
+![png](epi_2_analyze_files/output_85_0.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_84_1.png)
+![png](epi_2_analyze_files/output_85_1.png)
     
 
 
 
     
-![png](epi_2_analyze_files/output_84_2.png)
+![png](epi_2_analyze_files/output_85_2.png)
     
 
 
