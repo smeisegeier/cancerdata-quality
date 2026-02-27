@@ -14,13 +14,14 @@
     - [UICC (p)](#toc1_7_1_)    
     - [Diagnosesicherung](#toc1_7_2_)    
     - [Geschlecht](#toc1_7_3_)    
-    - [Diagnosejahr](#toc1_7_4_)    
-    - [Inzidenzort vs Lieferregister](#toc1_7_5_)    
-    - [ICD10 Gruppen](#toc1_7_6_)    
-    - [Verstorben](#toc1_7_7_)    
-    - [TNM-T (p)](#toc1_7_8_)    
-    - [TNM-N (p)](#toc1_7_9_)    
-    - [TNM-M (p)](#toc1_7_10_)    
+    - [🆕 Grading](#toc1_7_4_)    
+    - [Diagnosejahr](#toc1_7_5_)    
+    - [Inzidenzort vs Lieferregister](#toc1_7_6_)    
+    - [ICD10 Gruppen](#toc1_7_7_)    
+    - [Verstorben](#toc1_7_8_)    
+    - [TNM-T (p)](#toc1_7_9_)    
+    - [TNM-N (p)](#toc1_7_10_)    
+    - [TNM-M (p)](#toc1_7_11_)    
   - [Todesursachen (TU)](#toc1_8_)    
     - [nach ICD10 Einstellern](#toc1_8_1_)    
     - [nach Sterbejahr und Todesursachen](#toc1_8_2_)    
@@ -53,7 +54,7 @@
       - [Prostata](#toc1_10_7_2_)    
       - [Darm](#toc1_10_7_3_)    
       - [Melanom](#toc1_10_7_4_)    
-  - [⚠️ Weitere Klassifikationen](#toc1_11_)    
+  - [🆕 Weitere Klassifikationen](#toc1_11_)    
   - [Verteilung Monat von Datum_Vitalstatus](#toc1_12_)    
     - [Vitalstatus Jahr](#toc1_12_1_)    
   - [Numerische Variablen 🔢](#toc1_13_)    
@@ -286,9 +287,17 @@
     Anzahl Ausprägungen <> M oder W im Gesamtdatensatz: {'D': 43, 'U': 244, 'X': 31}
 
 
+### <a id='toc1_7_4_'></a>[🆕 Grading](#toc0_)
+
+
+    
+![svg](clin_2_analyze_files/output_33_0.svg)
+    
+
+
 <br>
 
-### <a id='toc1_7_4_'></a>[Diagnosejahr](#toc0_)
+### <a id='toc1_7_5_'></a>[Diagnosejahr](#toc0_)
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
@@ -297,13 +306,13 @@
 
 
     
-![svg](clin_2_analyze_files/output_33_1.svg)
+![svg](clin_2_analyze_files/output_35_1.svg)
     
 
 
 <br>
 
-### <a id='toc1_7_5_'></a>[Inzidenzort vs Lieferregister](#toc0_)
+### <a id='toc1_7_6_'></a>[Inzidenzort vs Lieferregister](#toc0_)
 - **Filter: keiner**
 - vertikal: `Inzidenzort` (Zeile `00` bündelt alle Fälle mit ungültiger Ortsangabe). horizontal: `Lieferregister`
 - Beispiel: `03-NI` liefert zu 100% Fälle aus dem Inzidenzort `03`, `13-MV` liefert 159 Fälle aus `03`
@@ -311,29 +320,16 @@
 
 
     
-![png](clin_2_analyze_files/output_35_0.png)
+![png](clin_2_analyze_files/output_37_0.png)
     
 
 
 <br>
 
-### <a id='toc1_7_6_'></a>[ICD10 Gruppen](#toc0_)
+### <a id='toc1_7_7_'></a>[ICD10 Gruppen](#toc0_)
 - **Filter: `DJ` =  2020 - 2024**
 - die verwendete ICD10 Skala entspricht der Darstellung aus *"Krebs in Deutschland"*
 > 💡 `NI`: _"Für nicht-melanozytäre Hautkrebsarten bestimmter Histologien sowie fortgeschrittene Plattenepithelkarzinome gilt ab dem 20. September 2023 eine geänderte Meldepflicht. Erst seit diesem Zeitpunkt sind die prognostisch ungünstigen Hauttumore **(C44)** an das KKN zu melden und kommen daher im gelieferten Datensatz bisher nicht vor. In den nächsten Lieferungen werden diese Daten enthalten sein"_
-
-
-    
-![svg](clin_2_analyze_files/output_37_0.svg)
-    
-
-
-<br>
-
-### <a id='toc1_7_7_'></a>[Verstorben](#toc0_)
-
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` != C44**
-- gezählt sind **Personen**
 
 
     
@@ -343,8 +339,10 @@
 
 <br>
 
-### <a id='toc1_7_8_'></a>[TNM-T (p)](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
+### <a id='toc1_7_8_'></a>[Verstorben](#toc0_)
+
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` != C44**
+- gezählt sind **Personen**
 
 
     
@@ -354,9 +352,8 @@
 
 <br>
 
-### <a id='toc1_7_9_'></a>[TNM-N (p)](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
-
+### <a id='toc1_7_9_'></a>[TNM-T (p)](#toc0_)
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
 
 
     
@@ -366,12 +363,24 @@
 
 <br>
 
-### <a id='toc1_7_10_'></a>[TNM-M (p)](#toc0_)
-- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur TNM relevante**
+### <a id='toc1_7_10_'></a>[TNM-N (p)](#toc0_)
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren** (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D)
+
 
 
     
 ![svg](clin_2_analyze_files/output_45_0.svg)
+    
+
+
+<br>
+
+### <a id='toc1_7_11_'></a>[TNM-M (p)](#toc0_)
+- **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur TNM relevante**
+
+
+    
+![svg](clin_2_analyze_files/output_47_0.svg)
     
 
 
@@ -384,7 +393,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_48_0.svg)
+![svg](clin_2_analyze_files/output_50_0.svg)
     
 
 
@@ -407,7 +416,7 @@
         and Verstorben='J'
 ```
 
-![svg](clin_2_analyze_files/output_50_3.svg)
+![svg](clin_2_analyze_files/output_52_3.svg)
     
 
 
@@ -436,7 +445,7 @@
 
 
     
-![png](clin_2_analyze_files/output_55_0.png)
+![png](clin_2_analyze_files/output_57_0.png)
     
 
 
@@ -447,7 +456,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_57_0.svg)
+![svg](clin_2_analyze_files/output_59_0.svg)
     
 
 
@@ -469,7 +478,7 @@
         and z_op_order = 1
 ```
 
-![svg](clin_2_analyze_files/output_61_3.svg)
+![svg](clin_2_analyze_files/output_63_3.svg)
     
 
 
@@ -480,7 +489,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_63_0.svg)
+![svg](clin_2_analyze_files/output_65_0.svg)
     
 
 
@@ -504,7 +513,7 @@
     └ [keine Verstorbenen < 180 Tage]:   n = 355_711   (8.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
-![svg](clin_2_analyze_files/output_66_3.svg)
+![svg](clin_2_analyze_files/output_68_3.svg)
     
 
 
@@ -522,7 +531,7 @@
     └ [keine Verstorbenen < 180 Tage]:   n = 203_219   (5.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-![svg](clin_2_analyze_files/output_68_3.svg)
+![svg](clin_2_analyze_files/output_70_3.svg)
     
 
 
@@ -538,7 +547,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_71_0.svg)
+![svg](clin_2_analyze_files/output_73_0.svg)
     
 
 
@@ -550,7 +559,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_74_0.svg)
+![svg](clin_2_analyze_files/output_76_0.svg)
     
 
 
@@ -598,7 +607,7 @@
 
 
     
-![png](clin_2_analyze_files/output_79_4.png)
+![png](clin_2_analyze_files/output_81_4.png)
     
 
 
@@ -607,7 +616,7 @@
 
 
     
-![png](clin_2_analyze_files/output_79_6.png)
+![png](clin_2_analyze_files/output_81_6.png)
     
 
 
@@ -627,7 +636,7 @@
 
 
     
-![png](clin_2_analyze_files/output_81_4.png)
+![png](clin_2_analyze_files/output_83_4.png)
     
 
 
@@ -636,7 +645,7 @@
 
 
     
-![png](clin_2_analyze_files/output_81_6.png)
+![png](clin_2_analyze_files/output_83_6.png)
     
 
 
@@ -672,7 +681,7 @@
 
 
     
-![png](clin_2_analyze_files/output_83_4.png)
+![png](clin_2_analyze_files/output_85_4.png)
     
 
 
@@ -681,7 +690,7 @@
 
 
     
-![png](clin_2_analyze_files/output_83_6.png)
+![png](clin_2_analyze_files/output_85_6.png)
     
 
 
@@ -702,30 +711,6 @@
 
 
     
-![png](clin_2_analyze_files/output_86_1.png)
-    
-
-
-    🟠 unknowns
-
-
-
-    
-![png](clin_2_analyze_files/output_86_3.png)
-    
-
-
-#### <a id='toc1_10_4_2_'></a>[ST](#toc0_)
-
-> 💡 `ZfKD`: _`Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_ST`._  
-> _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
-> _`Applikationsart` wird nicht von allen kkr übermittelt, davon abgesehen ist `Seite_Zielgebiet` zuverlässig angegeben, die CodeVersionen ergänzen sich, wobei `2014` deutlich häufiger angewendet wird als `2021`._
-
-    🟠 missings
-
-
-
-    
 ![png](clin_2_analyze_files/output_88_1.png)
     
 
@@ -739,9 +724,11 @@
     
 
 
-#### <a id='toc1_10_4_3_'></a>[SYST](#toc0_)
+#### <a id='toc1_10_4_2_'></a>[ST](#toc0_)
 
-> 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
+> 💡 `ZfKD`: _`Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_ST`._  
+> _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
+> _`Applikationsart` wird nicht von allen kkr übermittelt, davon abgesehen ist `Seite_Zielgebiet` zuverlässig angegeben, die CodeVersionen ergänzen sich, wobei `2014` deutlich häufiger angewendet wird als `2021`._
 
     🟠 missings
 
@@ -761,9 +748,9 @@
     
 
 
-### <a id='toc1_10_5_'></a>[Folgeereignisse](#toc0_)
+#### <a id='toc1_10_4_3_'></a>[SYST](#toc0_)
 
-> 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
+> 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
 
     🟠 missings
 
@@ -783,10 +770,9 @@
     
 
 
-### <a id='toc1_10_6_'></a>[Freitexte](#toc0_)
+### <a id='toc1_10_5_'></a>[Folgeereignisse](#toc0_)
 
-> 💡 `ZfKD`: _Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext. Bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen._
-
+> 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
 
     🟠 missings
 
@@ -803,6 +789,29 @@
 
     
 ![png](clin_2_analyze_files/output_94_3.png)
+    
+
+
+### <a id='toc1_10_6_'></a>[Freitexte](#toc0_)
+
+> 💡 `ZfKD`: _Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext. Bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen._
+
+
+    🟠 missings
+
+
+
+    
+![png](clin_2_analyze_files/output_96_1.png)
+    
+
+
+    🟠 unknowns
+
+
+
+    
+![png](clin_2_analyze_files/output_96_3.png)
     
 
 
@@ -831,7 +840,7 @@
 
 
     
-![png](clin_2_analyze_files/output_97_4.png)
+![png](clin_2_analyze_files/output_99_4.png)
     
 
 
@@ -840,7 +849,7 @@
 
 
     
-![png](clin_2_analyze_files/output_97_6.png)
+![png](clin_2_analyze_files/output_99_6.png)
     
 
 
@@ -865,7 +874,7 @@
 
 
     
-![png](clin_2_analyze_files/output_99_4.png)
+![png](clin_2_analyze_files/output_101_4.png)
     
 
 
@@ -874,7 +883,7 @@
 
 
     
-![png](clin_2_analyze_files/output_99_6.png)
+![png](clin_2_analyze_files/output_101_6.png)
     
 
 
@@ -897,7 +906,7 @@
 
 
     
-![png](clin_2_analyze_files/output_101_4.png)
+![png](clin_2_analyze_files/output_103_4.png)
     
 
 
@@ -906,7 +915,7 @@
 
 
     
-![png](clin_2_analyze_files/output_101_6.png)
+![png](clin_2_analyze_files/output_103_6.png)
     
 
 
@@ -920,7 +929,7 @@
 
 
     
-![png](clin_2_analyze_files/output_103_1.png)
+![png](clin_2_analyze_files/output_105_1.png)
     
 
 
@@ -929,38 +938,23 @@
 
 
     
-![png](clin_2_analyze_files/output_103_3.png)
+![png](clin_2_analyze_files/output_105_3.png)
     
 
 
 ## <a id='toc1_11_'></a>[🆕 Weitere Klassifikationen](#toc0_)
 
+- Freitexte werden per regex in diesem [sql script](../sql/check_if_class.sql) zugeordnet
 
 
-```python
-    🗄️ db_class	845_730, 6
-    	("z_tum_id, Name, Stadium, z_kkr_label, source, class")
-```
-
-
-```python
-    ┌──────────────────────────────────────┬────────────────────────┬─────────┬─────────────┬─────────┬─────────┐
-    │               z_tum_id               │          Name          │ Stadium │ z_kkr_label │ source  │  class  │
-    │               varchar                │        varchar         │ varchar │   varchar   │ varchar │ varchar │
-    ├──────────────────────────────────────┼────────────────────────┼─────────┼─────────────┼─────────┼─────────┤
-    │ 65c9a8ee-3442-455b-b273-8ac20332a656 │ PROSTATA.Gleason-Score │ 3+3=6   │ 09-BY       │ diag    │ gleason │
-    │ d7cd3e4d-d0e8-4dcc-aea0-c40054b62324 │ p16                    │ P       │ 08-BW       │ diag    │ hpv     │
-    │ 311bcf8e-9ed6-41ed-8ffc-d03a57cd83f9 │ UICC                   │ IVB     │ 08-BW       │ diag    │ uicc    │
-    └──────────────────────────────────────┴────────────────────────┴─────────┴─────────────┴─────────┴─────────┘
-```
-
-![svg](clin_2_analyze_files/output_107_4.svg)
+    
+![svg](clin_2_analyze_files/output_109_0.svg)
     
 
 
 
     
-![png](clin_2_analyze_files/output_107_5.png)
+![png](clin_2_analyze_files/output_109_1.png)
     
 
 
@@ -982,19 +976,7 @@
         and z_dy between 2020 and 2024
 ```
 
-![png](clin_2_analyze_files/output_109_3.png)
-    
-
-
-
-    
-![png](clin_2_analyze_files/output_110_0.png)
-    
-
-
-
-    
-![png](clin_2_analyze_files/output_111_0.png)
+![png](clin_2_analyze_files/output_113_0.png)
     
 
 
@@ -1002,7 +984,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_113_0.svg)
+![svg](clin_2_analyze_files/output_115_0.svg)
     
 
 
@@ -1021,13 +1003,13 @@
 
 
     
-![png](clin_2_analyze_files/output_117_0.png)
+![png](clin_2_analyze_files/output_119_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_117_1.png)
+![png](clin_2_analyze_files/output_119_1.png)
     
 
 
@@ -1069,13 +1051,13 @@
 
 
     
-![png](clin_2_analyze_files/output_119_0.png)
+![png](clin_2_analyze_files/output_121_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_119_1.png)
+![png](clin_2_analyze_files/output_121_1.png)
     
 
 
@@ -1112,7 +1094,7 @@
 
 
     
-![png](clin_2_analyze_files/output_121_0.png)
+![png](clin_2_analyze_files/output_123_0.png)
     
 
 
@@ -1125,7 +1107,7 @@
 
 
     
-![png](clin_2_analyze_files/output_121_2.png)
+![png](clin_2_analyze_files/output_123_2.png)
     
 
 
@@ -1133,7 +1115,7 @@
 
 
     
-![png](clin_2_analyze_files/output_123_0.png)
+![png](clin_2_analyze_files/output_125_0.png)
     
 
 
@@ -1146,7 +1128,7 @@
 
 
     
-![png](clin_2_analyze_files/output_123_2.png)
+![png](clin_2_analyze_files/output_125_2.png)
     
 
 
@@ -1154,7 +1136,7 @@
 
 
     
-![png](clin_2_analyze_files/output_125_0.png)
+![png](clin_2_analyze_files/output_127_0.png)
     
 
 
@@ -1167,7 +1149,7 @@
 
 
     
-![png](clin_2_analyze_files/output_125_2.png)
+![png](clin_2_analyze_files/output_127_2.png)
     
 
 
@@ -1175,7 +1157,7 @@
 
 
     
-![png](clin_2_analyze_files/output_127_0.png)
+![png](clin_2_analyze_files/output_129_0.png)
     
 
 
@@ -1188,7 +1170,7 @@
 
 
     
-![png](clin_2_analyze_files/output_127_2.png)
+![png](clin_2_analyze_files/output_129_2.png)
     
 
 
@@ -1196,7 +1178,7 @@
 
 
     
-![png](clin_2_analyze_files/output_129_0.png)
+![png](clin_2_analyze_files/output_131_0.png)
     
 
 
@@ -1209,7 +1191,7 @@
 
 
     
-![png](clin_2_analyze_files/output_129_2.png)
+![png](clin_2_analyze_files/output_131_2.png)
     
 
 
@@ -1217,7 +1199,7 @@
 
 
     
-![png](clin_2_analyze_files/output_131_0.png)
+![png](clin_2_analyze_files/output_133_0.png)
     
 
 
@@ -1230,6 +1212,6 @@
 
 
     
-![png](clin_2_analyze_files/output_131_2.png)
+![png](clin_2_analyze_files/output_133_2.png)
     
 
