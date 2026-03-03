@@ -11,9 +11,9 @@
   - [Variablenverteilung](#toc1_5_)    
     - [Diagnosejahr](#toc1_5_1_)    
     - [Diagnosegruppen](#toc1_5_2_)    
-    - [Diagnosesicherung](#toc1_5_3_)    
+    - [☣️ Diagnosesicherung](#toc1_5_3_)    
     - [DCO Diagramm](#toc1_5_4_)    
-    - [DCO Tabelle](#toc1_5_5_)    
+    - [DCO](#toc1_5_5_)    
     - [Anteil Mehrfachtumore](#toc1_5_6_)    
     - [Dignität](#toc1_5_7_)    
     - [Grading 1](#toc1_5_8_)    
@@ -53,6 +53,7 @@
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 <!-- - bisher wurden folgende Angaben in einer umfangreichen Verarbeitung im workflow umkodiert: `ICDGM10`, `HISC`, `ICDO3`, `DIG`. Diese Umformung wurde deaktiviert, es finden nun nur noch punktuelle Korrekturen statt -->
 - Lieferung Daten mit DJ=2024
+- ausstehend: `13-MV`
 
 <br>
 
@@ -67,15 +68,15 @@
     🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.4 | 📦 connection-helper: 0.13.3
 
 
-    database file:           2026-02-20_data_epi.duckdb
+    database file:           2026-02-27_data_epi.duckdb
     data tag:                epi2025_beta
-    sql table created:       2026-02-20 08:20:43
+    sql table created:       2026-02-27 17:40:06
     doi:                     -
-    document created:        2026-02-27 12:22:15
+    document created:        2026-03-02 09:36:16
 
 
     
-    letzter batch                   422
+    letzter batch                   423
     inkludierte Diagnosejahre 📆    (2024)
 
 
@@ -139,23 +140,15 @@
 > 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
 
 
-    
-![svg](epi_2_analyze_files/output_26_0.svg)
-    
-
 
 <br>
 
-### <a id='toc1_5_3_'></a>[Diagnosesicherung](#toc0_)
+### <a id='toc1_5_3_'></a>[☣️ Diagnosesicherung](#toc0_)
 - **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
 
 > 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_  
 > 💡 `ZfKD`: _"keine DCO Markierungen für Fälle aus `05-NW`"_
 
-
-    
-![svg](epi_2_analyze_files/output_28_0.svg)
-    
 
 
 <!-- <br>
@@ -211,10 +204,6 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
-    
-![svg](epi_2_analyze_files/output_40_0.svg)
-    
-
 
 ### <a id='toc1_5_9_'></a>[Grading 2](#toc0_)
 - **Filter: DJ = 2020-2024, kein DCO, gradingrelevante ICD10+HISC**
@@ -240,10 +229,6 @@
             )
 ```
 
-![svg](epi_2_analyze_files/output_42_3.svg)
-    
-
-
 <br>
 
 ### <a id='toc1_5_10_'></a>[Altersgruppen](#toc0_)
@@ -251,10 +236,6 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
-
-    
-![svg](epi_2_analyze_files/output_45_0.svg)
-    
 
 
 ### <a id='toc1_5_11_'></a>[TNM](#toc0_)
@@ -279,20 +260,12 @@
             and GKZbl::int between 1 and 16
 ```
 
-![svg](epi_2_analyze_files/output_47_3.svg)
-    
-
-
 <br>
 
 ### <a id='toc1_5_12_'></a>[UICC](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - die Variable `UICC` wird vom ZfKD gebildet
 
-
-    
-![svg](epi_2_analyze_files/output_50_0.svg)
-    
 
 
 <br>
@@ -304,10 +277,6 @@
 > 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
 
 
-    
-![svg](epi_2_analyze_files/output_53_0.svg)
-    
-
 
 <br>
 
@@ -316,10 +285,6 @@
 #### <a id='toc1_5_14_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
-
-    
-![svg](epi_2_analyze_files/output_57_0.svg)
-    
 
 
 <br>
@@ -594,5 +559,20 @@
 
 ### <a id='toc1_6_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
 
-    ❌
+
+    
+![png](epi_2_analyze_files/output_87_0.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_87_1.png)
+    
+
+
+
+    
+![png](epi_2_analyze_files/output_87_2.png)
+    
 

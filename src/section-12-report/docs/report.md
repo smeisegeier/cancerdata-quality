@@ -83,11 +83,11 @@
 - kein Filter, "Altfälle" (DJ < 2020) sind also enthalten
 - die `%` Werte sowie die farbigen Datenbalken zeigen das relative Gewicht jedes KKR an "D gesamt" (`Total` Zeile)
 - Erklärung für einige Elementknoten: (_cnt = count/Fallzahl)
-  - `weitere_diag_cnt` = Weitere Klassifikation im Elementknoten "Diagnose"
-  - `weitere_folge_cnt` = Weitere Klassifikation im Elementknoten "Folgeereignis"
-  - `fm_folge_cnt`= Fernmetastasen im Elementknoten "Folgeereignis"
-  - `fm_diag_cnt` = Fernmetastasen im Elementknoten "Diagnose"
-  - `tnm_folge_cnt` = TNM im Elementknoten "Folgeereignis"
+  - `diag_weitere_cnt` = Weitere Klassifikation im Elementknoten "Diagnose"
+  - `folge_weitere_cnt` = Weitere Klassifikation im Elementknoten "Folgeereignis"
+  - `folge_fm_cnt`= Fernmetastasen im Elementknoten "Folgeereignis"
+  - `diag_fm_cnt` = Fernmetastasen im Elementknoten "Diagnose"
+  - `folge_tnm_cnt` = TNM im Elementknoten "Folgeereignis"
 
 > inzwischen liegen fast alle Elemente flächendeckend vor. Ausnahmen sind `Applikationsart`, `Folgeereignisse`, `Protokolle` / `Substanzen`
 >

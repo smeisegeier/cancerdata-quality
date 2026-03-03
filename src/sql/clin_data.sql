@@ -10,12 +10,12 @@ select
     -- case when app_cnt > 0 then 0 else 1 end as app_missing,
     -- case when subst_cnt > 0 then 0 else 1 end as subst_missing,
     -- case when proto_cnt > 0 then 0 else 1 end as proto_missing,
-    -- case when fm_diag_cnt > 0 then 0 else 1 end as fm_diag_missing,
-    -- case when fm_folge_cnt > 0 then 0 else 1 end as fm_folge_missing,
-    -- case when fm_diag_cnt > 0 then 0 else 1 end as fm_diag_missing,
-    -- case when weitere_diag_cnt > 0 then 0 else 1 end as weitere_diag_missing,
-    -- case when weitere_folge_cnt > 0 then 0 else 1 end as weitere_folge_missing,
-    -- case when tnm_folge_cnt > 0 then 0 else 1 end as tnm_folge_missing,
+    -- case when diag_fm_cnt > 0 then 0 else 1 end as fm_diag_missing,
+    -- case when folge_fm_cnt > 0 then 0 else 1 end as fm_folge_missing,
+    -- case when diag_fm_cnt > 0 then 0 else 1 end as fm_diag_missing,
+    -- case when diag_weitere_cnt > 0 then 0 else 1 end as weitere_diag_missing,
+    -- case when folge_weitere_cnt > 0 then 0 else 1 end as weitere_folge_missing,
+    -- case when folge_tnm_cnt > 0 then 0 else 1 end as tnm_folge_missing,
     case when (op_cnt = 0 and st_cnt = 0 and syst_cnt = 0) then 1 else 0 end as thera_missing
 
     from
@@ -43,13 +43,13 @@ select
         case when bestr_cnt is null then 0 else bestr_cnt end as bestr_cnt,
         z_tum_fo_count as folge_cnt,
         case when app_cnt is null then 0 else app_cnt end as app_cnt,
-        case when weitere_diag_cnt is null then 0 else weitere_diag_cnt end as weitere_diag_cnt,
-        case when weitere_folge_cnt is null then 0 else weitere_folge_cnt end as weitere_folge_cnt,
-        case when fm_folge_cnt is null then 0 else fm_folge_cnt end as fm_folge_cnt,
-        case when fm_diag_cnt is null then 0 else fm_diag_cnt end as fm_diag_cnt,
+        case when diag_weitere_cnt is null then 0 else diag_weitere_cnt end as diag_weitere_cnt,
+        case when folge_weitere_cnt is null then 0 else folge_weitere_cnt end as folge_weitere_cnt,
+        case when folge_fm_cnt is null then 0 else folge_fm_cnt end as folge_fm_cnt,
+        case when diag_fm_cnt is null then 0 else diag_fm_cnt end as diag_fm_cnt,
         case when proto_cnt is null then 0 else proto_cnt end as proto_cnt,
         case when subst_cnt is null then 0 else subst_cnt end as subst_cnt,
-        case when tnm_folge_cnt is null then 0 else tnm_folge_cnt end as tnm_folge_cnt
+        case when folge_tnm_cnt is null then 0 else folge_tnm_cnt end as folge_tnm_cnt
 
         from Tumor t
         join Patient p on p.oBDS_RKIPatientId = t.oBDS_RKIPatientId
@@ -64,9 +64,9 @@ select
         left join (SELECT z_tum_id, count(*) as app_cnt FROM Applikationsart GROUP BY z_tum_id) app on app.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as subst_cnt FROM Substanz GROUP BY z_tum_id) subst on subst.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as proto_cnt FROM Protokoll GROUP BY z_tum_id) proto on proto.z_tum_id = t.oBDS_RKIPatientTumorId
-        left join (SELECT z_tum_id, count(*) as fm_diag_cnt FROM Diagnose_Fernmetastase GROUP BY z_tum_id) fm_diag on fm_diag.z_tum_id = t.oBDS_RKIPatientTumorId
-        left join (SELECT z_tum_id, count(*) as fm_folge_cnt FROM Folgeereignis_Fernmetastase GROUP BY z_tum_id) fm_folge on fm_folge.z_tum_id = t.oBDS_RKIPatientTumorId
-        left join (SELECT z_tum_id, count(*) as weitere_diag_cnt FROM Diagnose_WeitereKlassifikation GROUP BY z_tum_id) weitere_diag on weitere_diag.z_tum_id = t.oBDS_RKIPatientTumorId
-        left join (SELECT z_tum_id, count(*) as weitere_folge_cnt FROM Folgeereignis_WeitereKlassifikation GROUP BY z_tum_id) weitere_folge on weitere_folge.z_tum_id = t.oBDS_RKIPatientTumorId
-        left join (SELECT z_tum_id, count(*) as tnm_folge_cnt FROM Folgeereignis_TNM GROUP BY z_tum_id) tnm_folge on tnm_folge.z_tum_id = t.oBDS_RKIPatientTumorId
+        left join (SELECT z_tum_id, count(*) as diag_fm_cnt FROM Diagnose_Fernmetastase GROUP BY z_tum_id) fm_diag on fm_diag.z_tum_id = t.oBDS_RKIPatientTumorId
+        left join (SELECT z_tum_id, count(*) as folge_fm_cnt FROM Folgeereignis_Fernmetastase GROUP BY z_tum_id) fm_folge on fm_folge.z_tum_id = t.oBDS_RKIPatientTumorId
+        left join (SELECT z_tum_id, count(*) as diag_weitere_cnt FROM Diagnose_WeitereKlassifikation GROUP BY z_tum_id) weitere_diag on weitere_diag.z_tum_id = t.oBDS_RKIPatientTumorId
+        left join (SELECT z_tum_id, count(*) as folge_weitere_cnt FROM Folgeereignis_WeitereKlassifikation GROUP BY z_tum_id) weitere_folge on weitere_folge.z_tum_id = t.oBDS_RKIPatientTumorId
+        left join (SELECT z_tum_id, count(*) as folge_tnm_cnt FROM Folgeereignis_TNM GROUP BY z_tum_id) tnm_folge on tnm_folge.z_tum_id = t.oBDS_RKIPatientTumorId
     )

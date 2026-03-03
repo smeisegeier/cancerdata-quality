@@ -2355,7 +2355,7 @@ wheels = [
 
 [[package]]
 name = "pandas-plots"
-version = "1.2.6"
+version = "1.2.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "connection-helper" },
@@ -2379,9 +2379,9 @@ dependencies = [
     { name = "upsetplot" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/38/2d/d73c27de39b3b34aa2f16886275c56bf1e1966dbaa7bc826c8f5cc435bd0/pandas_plots-1.2.6.tar.gz", hash = "sha256:5b5290e6eb08c145b52df80682a4ac98391af6b613fe5e7358961762373f8747", size = 107273, upload-time = "2026-03-02T18:00:49.774Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a4/41/28559cf841e0815fc2bf5a5c2c1675a503288d20f6cb2f997d1aac35d3aa/pandas_plots-1.2.8.tar.gz", hash = "sha256:e27be44e99be041197b389d638ae00a7ea6826dadb448da9bd3005f193ecbcef", size = 107630, upload-time = "2026-03-03T19:09:24.833Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4f/f2/01a4f40163cb6ebd6f2878e6282521b3ba34fa9af83ac64e1103c8c4c193/pandas_plots-1.2.6-py3-none-any.whl", hash = "sha256:3f702be1691c3d3b9f205134d9d98a6866e1b1a726e2721b1f16b2581333345b", size = 134634, upload-time = "2026-03-02T18:00:48.305Z" },
+    { url = "https://files.pythonhosted.org/packages/a0/98/03cc1f7a63d490dfbed5ae80c3c78fc54f79ba2e4e9ac6fafef69653e3e6/pandas_plots-1.2.8-py3-none-any.whl", hash = "sha256:f5372116c5c9021ef595d2608a58417ffa9658db903adff806affb27750418dc", size = 135009, upload-time = "2026-03-03T19:09:23.286Z" },
 ]
 
 [[package]]

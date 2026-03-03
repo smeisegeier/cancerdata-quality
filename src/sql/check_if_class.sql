@@ -2,30 +2,40 @@
         case
             when regexp_matches(in_column::text, 'arbor', 'i') then 'ann_arbor'
             when regexp_matches(in_column::text, 'uicc', 'i') then 'uicc'
-            --when regexp_matches(in_column::text, 'who|gehirn|brain', 'i') then 'brain' # 60k
             when regexp_matches(in_column::text, 'tnm', 'i') then 'tnm'
             when regexp_matches(in_column::text, 'psa', 'i') then 'psa'
             when regexp_matches(in_column::text, 'breslow', 'i') then 'breslow'
             when regexp_matches(in_column::text, 'clark', 'i') then 'clark'
             when regexp_matches(in_column::text, 'gleason', 'i') then 'gleason'
+            --when regexp_matches(in_column::text, 'who|gehirn|brain', 'i') then 'brain'
             when regexp_matches(in_column::text, 'gehirn|brain|zns|gliom|id-h|1p19q|astrocytoma|glioblastoma|meningioma|koos|knosp|who.*(gehirn|brain|zns|hirn)', 'i') then 'brain'
             when regexp_matches(in_column::text, 'p16|hpv|pap', 'i') then 'hpv'
-            when regexp_matches(in_column::text, 'epstein|isup|grade group', 'i') then 'isup_grade_group'
-            when regexp_matches(in_column::text, 'hep', 'i') then 'hep' -- M+(HEP) for colorectal cancer
+            when regexp_matches(in_column::text, 'hep', 'i') then 'hep'
             when regexp_matches(in_column::text, 'ki67|ki-67', 'i') then 'ki67'
-            -- 1. Hormone Receptor Label (ER/PR)
+            when regexp_matches(in_column::text, 'bclc|barcelona', 'i') then 'bclc'
+            when regexp_matches(in_column::text, 'ebv', 'i') then 'ebv'
+            when regexp_matches(in_column::text, 'ELN\b', 's') then 'eln'
+            when regexp_matches(in_column::text, 'figo', 'i') then 'figo'
+            when regexp_matches(in_column::text, 'GHSG', 'i') then 'gshg'
+            when regexp_matches(in_column::text, 'IMDC', 'i') then 'imdc'
+            when regexp_matches(in_column::text, '\bipi\b', 'i') then 'ipi'
+            when regexp_matches(in_column::text, '\biss\b', 'i') then 'iss'
+            when regexp_matches(in_column::text, '\bipss\b', 'i') then 'ipss'
+            when regexp_matches(in_column::text, 'ISSWM', 'i') then 'isswm'
+            when regexp_matches(in_column::text, 'mitose|gist', 'i') then 'gist'
+            when regexp_matches(in_column::text, 'mskcc|motz', 'i') then 'mskcc'
+            when regexp_matches(in_column::text, '\bsanz', 'i') then 'sanz'
+            when regexp_matches(in_column::text, 'ruptur', 'i') then 'ruptur'
             when regexp_matches(in_column::text, 'pgr|strogen|rezeptor|receptor|er %', 'i') then 'hormone_receptor'
-            -- 2. HER2 Label
             when regexp_matches(in_column::text, 'her-2|her2|erbb2', 'i') then 'her2'
-
-            when regexp_matches(in_column::text, 'siewert|aeg', 'i') then 'siewert_aeg_type'
-            when regexp_matches(in_column::text, 'dukes', 'i') then 'dukes_stage'
-            when regexp_matches(in_column::text, 'lauren', 'i') then 'lauren_histotype'
-
-            when regexp_matches(in_column::text, 'binet|rai', 'i') then 'cll_staging'
-            when regexp_matches(in_column::text, 'durie|salmon|iss|myeloma', 'i') then 'myeloma_staging'
-            when regexp_matches(in_column::text, 'eln|fab|leukämie|leukemia', 'i') then 'leukemia_grading'
+            when regexp_matches(in_column::text, 'siewert|aeg', 'i') then 'siewert'
+            when regexp_matches(in_column::text, 'dukes', 'i') then 'dukes'
+            when regexp_matches(in_column::text, 'lauren', 'i') then 'lauren'
+            when regexp_matches(in_column::text, 'binet|rai', 'i') then 'binet'
+            when regexp_matches(in_column::text, 'isup', 'i') then 'isup'
             when regexp_matches(in_column::text, 'who', 'i') then 'who'
+            when regexp_matches(in_column::text, '\bER\b', 's') then 'er'
+            when regexp_matches(in_column::text, '\bPR\b', 's') then 'pr'
 
             else null
         end;
