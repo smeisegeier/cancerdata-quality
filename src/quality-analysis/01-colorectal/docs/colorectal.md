@@ -40,48 +40,17 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-
-1. Kohortenstruktur (ICD-Differenzierung)
-Ich würde im ersten Schritt die Kohorte C18–C20 noch aufteilen in:
-•              C18
-•              C19
-•              C20
-
-und die Fallzahlen separat ausweisen. Auf dieser Basis könnten wir dann getrennt weiterarbeiten. Vermutlich werden die C19-Zahlen eher klein sein, sodass man diese ggf. in den weiteren Analysen aus methodischen Gründen ausklammern kann.
-
-2. OPS-Analyse getrennt nach Lokalisation
-Bei den OPS würde ich nicht mehr mit dem Sammelfilter C18–C20 arbeiten, sondern drei getrennte Analysen fahren:
-•              einmal nur C18
-•              einmal nur C19
-•              einmal nur C20
-
-Idealerweise jeweils als vollständige Liste (6-stellige OPS-Codes) mit absoluter Anzahl – ggf. als Excel-Export.
-Hier wäre auch wichtig zu klären, wie wir Doppelnennungen (mehrere OPS pro Tumor) sauber behandeln oder identifizieren können.
-
-3. Zeitverlauf statt nur regionale Darstellung
-Die übliche Darstellung ist ja stark register- bzw. bundeslandbezogen. Zusätzlich fände ich sehr spannend, das Ganze auch im Zeitverlauf darzustellen:
-•              2020
-•              2021
-•              2022
-•              2023
-
-und zu sehen, ob sich OP-Techniken oder Dokumentationsqualität verändern.
-
-4. Robotik-Kodierung
-Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 5-987.01 generiert wird. Das wäre wichtig, um Robotik korrekt zu identifizieren.
-
-
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.8 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.12 | 📦 connection-helper: 0.13.3
 
 
 ## <a id='toc1_1_'></a>[📆 Datenstand](#toc0_)
 
-    database file:           2026-02-26_data_clin.duckdb
+    database file:           2026-03-04_data_clin.duckdb
     data tag:                v2.4
-    last kkr data import:    2026-02-24
-    sql table created:       2026-02-26 16:43:32
+    last kkr data import:    2026-02-26
+    sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-04 08:14:25
+    document created:        2026-03-04 19:31:11
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -96,19 +65,30 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
 ```python
-    counts: rows
+    counts: all rows (no grouping)
     ---
-    n = 4_000_795                (100.0%) ██████████████████████████████
-    └ [2020-2024]: n = 3_743_336  (93.6%) ░░████████████████████████████
-    └ [C18-C20]:     n = 284_137   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [ICD10 C18-C20]:   n = 284_931   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+```
+
+</details>
+
 
 ### <a id='toc1_3_2_'></a>[Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc0_)
 - Filter: alle Diagnosen inkludiert (C,D)
 
 
     
-![svg](colorectal_files/output_21_0.svg)
+![svg](colorectal_files/output_17_0.svg)
     
 
 
@@ -117,20 +97,14 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 > 💡 `C19` darf eigentlich nicht verwendet werden, wird von Krebsgesellschaft nicht akzeptiert
 
 
-
-```python
-    # filter
-    z_dy between 2020 and 2024
-    and z_icd10_3d in ('C18','C19','C20')
-```
-
-![svg](colorectal_files/output_23_3.svg)
+    
+![svg](colorectal_files/output_19_0.svg)
     
 
 
 
     
-![svg](colorectal_files/output_23_4.svg)
+![svg](colorectal_files/output_19_1.svg)
     
 
 
@@ -143,14 +117,31 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
 ```python
-    counts: rows
+    counts: all rows (no grouping)
     ---
-    n = 284_137                                        (100.0%) ██████████████████████████████
-    └ [z_icd10_3d in ('C18')]:             n = 192_963  (67.9%) ░░░░░░░░░░████████████████████
-    └ [z_t_p_1 in ('1','2','3','4')]:      n = 150_524  (53.0%) ░░░░░░░░░░░░░░░███████████████
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [nur C18]:       n = 193_488  (67.9%) ░░░░░░░░░░████████████████████
+    └ [t_p = 1-4]:     n = 150_961  (53.0%) ░░░░░░░░░░░░░░░███████████████
 ```
 
-![svg](colorectal_files/output_26_3.svg)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C18')
+and z_t_p_1 in ('1','2','3','4')
+```
+
+</details>
+
+
+
+    
+![svg](colorectal_files/output_22_4.svg)
     
 
 
@@ -162,8 +153,33 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
   - `3-noop-nosy-nost` - keine Behandlung dokumentiert
 
 
+
+```python
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [nur C18]:       n = 193_488  (67.9%) ░░░░░░░░░░████████████████████
+    └ [t_p = 1-4]:     n = 150_961  (53.0%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C18')
+and z_t_p_1 in ('1','2','3','4')
+```
+
+</details>
+
+
+
     
-![svg](colorectal_files/output_28_0.svg)
+![svg](colorectal_files/output_24_4.svg)
     
 
 
@@ -179,140 +195,171 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
 ```python
-    counts: rows
+    counts: distinct OPSId
     ---
-    n = 600_790                                        (100.0%) ██████████████████████████████
-    └ [z_icd10_3d in ('C18')]:             n = 389_721  (64.9%) ░░░░░░░░░░░███████████████████
-    └ [left(Code,3) in ('5-4')]:           n = 217_886  (36.3%) ░░░░░░░░░░░░░░░░░░░░██████████
+    n = 4_039_783                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_990_198  (98.8%) ░█████████████████████████████
+    └ [ICD10 C18-C20]:   n = 499_943  (12.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+    └ [nur C18]:         n = 324_504   (8.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [OPS 5-4]:         n = 218_360   (5.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
-    Anzahl verschiedene ops_codes:  17787
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C18')
+and left(Code,3) in ('5-4')
+```
+
+</details>
+
+
+    Anzahl verschiedene ops_codes:  17902
 
 ```python
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
     │                                                                 ops                                                                 │ cnt_ops │
     │                                                               varchar                                                               │  int32  │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
-    │ 5-455.41 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   30558 │
-    │ 5-455.45 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   21279 │
-    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │   10308 │
-    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                        │    9859 │
+    │ 5-455.41 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   30629 │
+    │ 5-455.45 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   21351 │
+    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │   10319 │
+    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                        │    9885 │
     │ 5-406.9 - Regionale Lymphadenektomie (Ausräumung mehrerer Lymphknoten einer Region) im Rahmen einer anderen Operation: Mesenterial  │    7681 │
-    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    5526 │
-    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                             │    4770 │
-    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                     │    4418 │
-    │ 5-455.65 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Laparosko…  │    4152 │
-    │ 5-455.61 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Offen chi…  │    4115 │
+    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    5539 │
+    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                             │    4779 │
+    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                     │    4438 │
+    │ 5-455.65 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Laparosko…  │    4161 │
+    │ 5-455.61 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Offen chi…  │    4125 │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
     │ 10 rows                                                                                                                             2 columns │
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-```python
-    # filter
-    z_dy between 2020 and 2024
-    and z_icd10_3d in ('C18','C19','C20')
-    and z_icd10_3d in ('C18')
-    and left(Code,3) in ('5-4')
-```
-
-![svg](colorectal_files/output_32_7.svg)
+![svg](colorectal_files/output_28_5.svg)
     
 
 
 
     
-![svg](colorectal_files/output_32_8.svg)
+![svg](colorectal_files/output_28_6.svg)
     
 
 
 
 
 ```python
-    counts: rows
+    counts: distinct OPSId
     ---
-    n = 600_790                                        (100.0%) ██████████████████████████████
-    └ [z_icd10_3d in ('C19')]:               n = 6_176   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [left(Code,3) in ('5-4')]:             n = 2_818   (0.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 4_039_783
+    └ [DJ 2020-2024]:  n = 3_990_198 (100.0%) ██████████████████████████████
+    └ [ICD10 C18-C20]:   n = 499_943  (12.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+    └ [ICD10 C19]:         n = 4_223   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [OPS 5-4]:           n = 2_847   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-    Anzahl verschiedene ops_codes:  1473
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C19')
+and left(Code,3) in ('5-4')
+```
+
+</details>
+
+
+    Anzahl verschiedene ops_codes:  1489
 
 ```python
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
     │                                                               ops                                                               │ cnt_ops │
     │                                                             varchar                                                             │  int32  │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
-    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                         │     423 │
-    │ 5-484.31 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Anastomose                      │     160 │
-    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                   │     137 │
-    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                     │     124 │
-    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                    │      98 │
-    │ 5-484.32 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Enterostoma und Blindverschluss │      91 │
-    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                           │      77 │
-    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                              │      72 │
-    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                 │      50 │
+    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                         │     427 │
+    │ 5-484.31 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Anastomose                      │     162 │
+    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                   │     140 │
+    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                     │     128 │
+    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                    │      97 │
+    │ 5-484.32 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Enterostoma und Blindverschluss │      93 │
+    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                           │      76 │
+    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                              │      74 │
+    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                 │      51 │
     │ 5-484.51 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Offen chirurgisch mit Anastomose                │      44 │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
     │ 10 rows                                                                                                                         2 columns │
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+![svg](colorectal_files/output_29_5.svg)
+    
+
+
+
+    
+![svg](colorectal_files/output_29_6.svg)
+    
+
+
+
+
 ```python
-    # filter
-    z_dy between 2020 and 2024
-    and z_icd10_3d in ('C18','C19','C20')
-    and z_icd10_3d in ('C19')
-    and left(Code,3) in ('5-4')
+    counts: distinct OPSId
+    ---
+    n = 4_039_783                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_990_198  (98.8%) ░█████████████████████████████
+    └ [ICD10 C18-C20]:   n = 499_943  (12.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+    └ [ICD10 C20]:       n = 171_216   (4.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [OPS 5-4]:         n = 111_428   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](colorectal_files/output_33_7.svg)
-    
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C20')
+and left(Code,3) in ('5-4')
+```
+
+</details>
 
 
-
-    
-![svg](colorectal_files/output_33_8.svg)
-    
-
-
-    Anzahl verschiedene ops_codes:  13127
+    Anzahl verschiedene ops_codes:  13205
 
 ```python
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
     │                                                                 ops                                                                 │ cnt_ops │
     │                                                               varchar                                                               │  int32  │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
-    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                       │   12538 │
-    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                         │   12045 │
-    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                             │    5599 │
-    │ 5-485.02 - Rektumresektion ohne Sphinktererhaltung: Abdominoperineal: Kombiniert offen chirurgisch-laparoskopisch                   │    4465 │
-    │ 5-484.51 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Offen chirurgisch mit Anastomose                    │    3493 │
-    │ 5-465.1 - Rückverlagerung eines doppelläufigen Enterostomas: Ileostoma                                                              │    3223 │
-    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    3132 │
-    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │    3043 │
-    │ 5-484.65 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion mit peranaler Anastomose: Laparoskopisch mit Anast…  │    2846 │
+    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                       │   12559 │
+    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                         │   12076 │
+    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                             │    5611 │
+    │ 5-485.02 - Rektumresektion ohne Sphinktererhaltung: Abdominoperineal: Kombiniert offen chirurgisch-laparoskopisch                   │    4477 │
+    │ 5-484.51 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Offen chirurgisch mit Anastomose                    │    3502 │
+    │ 5-465.1 - Rückverlagerung eines doppelläufigen Enterostomas: Ileostoma                                                              │    3224 │
+    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    3133 │
+    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │    3045 │
+    │ 5-484.65 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion mit peranaler Anastomose: Laparoskopisch mit Anast…  │    2852 │
     │ 5-406.9 - Regionale Lymphadenektomie (Ausräumung mehrerer Lymphknoten einer Region) im Rahmen einer anderen Operation: Mesenterial  │    2508 │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
     │ 10 rows                                                                                                                             2 columns │
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-```python
-    # filter
-        z_icd10_3d in ('C20')
-        and left(ops.Code,3) in ('5-4')
-        and 
-        z_dy between 2020 and 2024
-```
-
-![svg](colorectal_files/output_34_4.svg)
+![svg](colorectal_files/output_30_5.svg)
     
 
 
 
     
-![svg](colorectal_files/output_34_5.svg)
+![svg](colorectal_files/output_30_6.svg)
     
 
 
@@ -322,13 +369,34 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 - `has_5-455`: True wenn Tumor >= 1 OPS 5-455 hat
 > 💡 Erwartet sind ~95% Anteil für True, tatsächlich sind es für D ~75%
 
-    FILTER: z_icd10_3d = 'C18' and z_m_pc_1 = '0'
-    
+
+
+```python
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [nur C18]:       n = 193_488  (67.9%) ░░░░░░░░░░████████████████████
+    └ [nur M0]:        n = 113_713  (39.9%) ░░░░░░░░░░░░░░░░░░░███████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C18')
+and z_m_pc_1 = '0'
+```
+
+</details>
 
 
 
     
-![svg](colorectal_files/output_36_1.svg)
+![svg](colorectal_files/output_32_4.svg)
     
 
 
@@ -338,8 +406,33 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 > 💡 ~40% haben True, weniger als erwartet 
 
 
+
+```python
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [ICD10 C20]:      n = 87_862  (30.8%) ░░░░░░░░░░░░░░░░░░░░░█████████
+    └ [nur M0]:         n = 52_446  (18.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_icd10_3d in ('C20')
+and z_m_pc_1 = '0'
+```
+
+</details>
+
+
+
     
-![svg](colorectal_files/output_38_0.svg)
+![svg](colorectal_files/output_34_4.svg)
     
 
 
@@ -358,30 +451,36 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 284_137                                        (100.0%) ██████████████████████████████
-    └ [z_tum_op_count > 0]:                n = 185_057  (65.1%) ░░░░░░░░░░░███████████████████
-    └ [ops]:                                n = 89_983  (31.7%) ░░░░░░░░░░░░░░░░░░░░░█████████
+    n = 4_015_983
+    └ [DJ 2020-2024]:      n = 3_758_513
+    └ [ICD10 C18-C20]:     n = 284_931 (100.0%) ██████████████████████████████
+    └ [> 0 OPS]:           n = 185_576  (65.1%) ░░░░░░░░░░░███████████████████
+    └ [OPS 5-4xx | 5-987]:  n = 90_227  (31.7%) ░░░░░░░░░░░░░░░░░░░░░█████████
 ```
 
+<details>
+<summary>filter-sql</summary>
 
-```python
-    # filter
-    z_dy between 2020 and 2024
-    and z_icd10_3d in ('C18','C19','C20')
-    and z_tum_op_count > 0
-    and 
-        (
-            left(Code,7) in ('5-455.2', '5-455.4', '5-455.7')
-            OR left(Code,5) in ('5-987')
-        )
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_tum_op_count > 0
+and 
+    (
+        left(Code,7) in ('5-455.2', '5-455.4', '5-455.7')
+        OR left(Code,5) in ('5-987')
+    )
 ```
 
-    n = 89_983 | n(true) = 89_983
+</details>
+
+
+    n = 90_227 | n(true) = 90_227
 
 
 
     
-![png](colorectal_files/output_41_4.png)
+![png](colorectal_files/output_36_5.png)
     
 
 
@@ -399,25 +498,32 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 284_137                         (100.0%) ██████████████████████████████
-    └ [z_tum_op_count > 0]: n = 185_057  (65.1%) ░░░░░░░░░░░███████████████████
-    └ [ops-lleo]:            n = 15_269   (5.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [> 0 OPS]:       n = 185_576  (65.1%) ░░░░░░░░░░░███████████████████
+    └ [OPS ileo]:       n = 15_273   (5.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
+<details>
+<summary>filter-sql</summary>
 
-```python
-    # filter
-        z_dy between 2020 and 2024
-        and z_icd10_3d in ('C18','C19','C20')
-        and (left(Code,8) in ('5-455.21', '5-455.25', '5-455.27') OR left(Code,5) in ('5-987'))
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_tum_op_count > 0
+and (left(Code,8) in ('5-455.21', '5-455.25', '5-455.27') OR left(Code,5) in ('5-987'))
 ```
 
-    n = 15_269 | n(true) = 15_269
+</details>
+
+
+    n = 15_273 | n(true) = 15_273
 
 
 
     
-![png](colorectal_files/output_44_4.png)
+![png](colorectal_files/output_38_5.png)
     
 
 
@@ -433,29 +539,36 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 284_137                         (100.0%) ██████████████████████████████
-    └ [z_tum_op_count > 0]: n = 185_057  (65.1%) ░░░░░░░░░░░███████████████████
-    └ [ops-hemi]:            n = 64_476  (22.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [> 0 OPS]:       n = 185_576  (65.1%) ░░░░░░░░░░░███████████████████
+    └ [OPS hemi]:       n = 64_632  (22.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
+<details>
+<summary>filter-sql</summary>
 
-```python
-    # filter
-        z_dy between 2020 and 2024
-        and z_icd10_3d in ('C18','C19','C20')
-        and 
-        (
-            left(Code,8) in ('5-455.41', '5-455.45', '5-455.47')
-            OR left(Code,5) in ('5-987')
-        )
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_tum_op_count > 0
+and 
+    (
+        left(Code,8) in ('5-455.41', '5-455.45', '5-455.47')
+        OR left(Code,5) in ('5-987')
+    )
 ```
 
-    n = 64_476 | n(true) = 64_476
+</details>
+
+
+    n = 64_632 | n(true) = 64_632
 
 
 
     
-![png](colorectal_files/output_47_4.png)
+![png](colorectal_files/output_40_5.png)
     
 
 
@@ -471,29 +584,36 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 284_137                         (100.0%) ██████████████████████████████
-    └ [z_tum_op_count > 0]: n = 185_057  (65.1%) ░░░░░░░░░░░███████████████████
-    └ [ops-sigma]:           n = 28_290  (10.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [> 0 OPS]:       n = 185_576  (65.1%) ░░░░░░░░░░░███████████████████
+    └ [OPS sigma]:      n = 28_345   (9.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
+<details>
+<summary>filter-sql</summary>
 
-```python
-    # filter
-        z_dy between 2020 and 2024
-        and z_icd10_3d in ('C18','C19','C20')
-        and 
-        (
-            left(Code,8) in ('5-455.71', '5-455.75', '5-455.77')
-            OR left(Code,5) in ('5-987')
-        )
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_tum_op_count > 0
+and 
+    (
+        left(Code,8) in ('5-455.71', '5-455.75', '5-455.77')
+        OR left(Code,5) in ('5-987')
+    )
 ```
 
-    n = 28_290 | n(true) = 28_290
+</details>
+
+
+    n = 28_345 | n(true) = 28_345
 
 
 
     
-![png](colorectal_files/output_50_4.png)
+![png](colorectal_files/output_42_5.png)
     
 
 
@@ -506,12 +626,12 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 > 💡 45% von M1 haben Leber FM
 
-    599_413 Tumore im Filter haben M1, 590_364 haben M0
+    599_875 Tumore im Filter haben M1, 590_898 haben M0
 
 
 
     
-![svg](colorectal_files/output_54_0.svg)
+![svg](colorectal_files/output_46_0.svg)
     
 
 
@@ -531,14 +651,27 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
 ```python
-    counts: rows
+    counts: all rows (no grouping)
     ---
-    n = 284_137                            (100.0%) ██████████████████████████████
-    └ [z_dy = 2020]:            n = 57_996  (20.4%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [z_icd10_3d in ('C18')]:  n = 39_316  (13.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░████
+    n = 4_015_983              (100.0%) ██████████████████████████████
+    └ [DJ 2020]:   n = 749_493  (18.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    └ [nur C18]:    n = 39_315   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-![svg](colorectal_files/output_58_0.svg)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy = 2020
+and z_icd10_3d in ('C18')
+```
+
+</details>
+
+
+
+    
+![svg](colorectal_files/output_49_4.svg)
     
 
 
@@ -549,13 +682,13 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
     
-![svg](colorectal_files/output_60_0.svg)
+![svg](colorectal_files/output_51_0.svg)
     
 
 
 
     
-![png](colorectal_files/output_60_1.png)
+![png](colorectal_files/output_51_1.png)
     
 
 
@@ -587,19 +720,33 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 ```python
     counts: distinct z_tum_id
     ---
-    n = 284_137                            (100.0%) ██████████████████████████████
-    └ [z_dy = 2020]:            n = 57_996  (20.4%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [Residualstatus R0]:      n = 29_567  (10.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
-    └ [z_icd10_3d in ('C18')]:  n = 20_605   (7.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 4_015_983
+    └ [DJ 2020]:           n = 749_493
+    └ [nur C18]:           n = 39_315 (100.0%) ██████████████████████████████
+    └ [Residualstatus R0]: n = 20_605  (52.4%) ░░░░░░░░░░░░░░░███████████████
 ```
 
-![svg](colorectal_files/output_63_0.svg)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy = 2020
+and z_icd10_3d in ('C18')
+and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0'
+```
+
+</details>
+
+
+
+    
+![svg](colorectal_files/output_53_4.svg)
     
 
 
 
     
-![png](colorectal_files/output_63_1.png)
+![png](colorectal_files/output_53_5.png)
     
 
 
@@ -613,14 +760,35 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
   - `-`: keine Behandlung dokumentiert
 
 
+
+```python
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [ICD10 C18-C20]:   n = 284_931   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+```
+
+</details>
+
+
+
     
-![svg](colorectal_files/output_65_0.svg)
+![svg](colorectal_files/output_55_4.svg)
     
 
 
 
     
-![svg](colorectal_files/output_65_1.svg)
+![svg](colorectal_files/output_55_5.svg)
     
 
 
@@ -632,7 +800,7 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
     
-![svg](colorectal_files/output_68_0.svg)
+![svg](colorectal_files/output_58_0.svg)
     
 
 
@@ -642,18 +810,44 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 - abgebildet sind Median Werte für den Abstand Diagnose bis erste Behandlung in Tagen (logarithmische Skala)
 
 
+
+```python
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983
+    └ [DJ 2020-2024]:          n = 3_758_513
+    └ [nur C18]:               n = 193_488 (100.0%) ██████████████████████████████
+    └ [Tumore mit Behandlung]: n = 139_477  (72.1%) ░░░░░░░░░█████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18')
+and 
+    ifnull(z_first_treatment,'') <> ''
+    and z_first_treatment_after_days >= 0
     
-![png](colorectal_files/output_70_0.png)
+```
+
+</details>
+
+
+
+    
+![png](colorectal_files/output_60_4.png)
     
 
 
     
-    column (n = 139_071)         |    notnull     | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
+    column (n = 139_477)         |    notnull     | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
     -----------------------------+----------------+-----+-------+------+--------+-------+-------+-------+-------+-------+-----
-    z_first_treatment_after_days | 139_071 (100%) |   0 |     0 | 2.00 |  12.00 | 24.94 | 25.00 |    59 | 2_092 | 73.63 | 2.95
+    z_first_treatment_after_days | 139_477 (100%) |   0 |     0 | 2.00 |  12.00 | 24.94 | 25.00 |    59 | 2_092 | 73.57 | 2.95
     
     
-    item (n = 139_071) | count  | min  | lower | q25  | median | mean  |  q75  | upper |   max    |  std  |  cv 
+    item (n = 139_477) | count  | min  | lower | q25  | median | mean  |  q75  | upper |   max    |  std  |  cv 
     -------------------+--------+------+-------+------+--------+-------+-------+-------+----------+-------+-----
     01-SH              |  5_899 | 0.00 |  0.00 | 3.00 |  14.00 | 22.26 | 27.00 | 63.00 | 1_520.00 | 56.66 | 2.54
     02-HH              |  2_962 | 0.00 |  0.00 | 1.00 |   9.00 | 21.21 | 21.00 | 51.00 | 1_413.00 | 65.26 | 3.08
@@ -664,7 +858,7 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
     07-RP              |  6_888 | 0.00 |  0.00 | 0.00 |  10.00 | 24.73 | 24.00 | 60.00 | 1_743.00 | 77.67 | 3.14
     08-BW              | 17_655 | 0.00 |  0.00 | 2.00 |  13.00 | 28.43 | 28.00 | 67.00 | 1_573.00 | 79.71 | 2.80
     09-BY              | 21_126 | 0.00 |  0.00 | 2.00 |  13.00 | 26.55 | 28.00 | 67.00 | 2_092.00 | 74.38 | 2.80
-    10-SL              |  1_496 | 0.00 |  0.00 | 2.00 |  10.00 | 19.18 | 24.00 | 57.00 |   387.00 | 35.64 | 1.86
+    10-SL              |  1_902 | 0.00 |  0.00 | 2.00 |  11.00 | 19.88 | 25.00 | 59.00 |   804.00 | 38.51 | 1.94
     11-BE              |  6_033 | 0.00 |  0.00 | 2.00 |  10.00 | 20.27 | 21.00 | 49.00 | 1_289.00 | 57.73 | 2.85
     12-BB              |  5_221 | 0.00 |  0.00 | 3.00 |  11.00 | 20.79 | 23.00 | 53.00 | 1_098.00 | 48.08 | 2.31
     13-MV              |  2_891 | 0.00 |  0.00 | 0.00 |  10.00 | 18.68 | 25.00 | 62.00 |   898.00 | 39.47 | 2.11
@@ -684,17 +878,35 @@ Ergänzend sollten wir berücksichtigen, dass der „echte“ Roboter über OPS 
 
 
 ```python
-    # filter
-        z_dy between 2020 and 2024
-        and z_icd10_3d in ('C18')
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983
+    └ [DJ 2020-2024]:          n = 3_758_513
+    └ [nur C18]:               n = 193_488 (100.0%) ██████████████████████████████
+    └ [Tumore mit Behandlung]: n = 139_477  (72.1%) ░░░░░░░░░█████████████████████
 ```
 
-    darin 192_963 Tumore, 617_495 deduplizierte Therapien | darin mit Datum: 139_260 Tumore, 212_397 Therapien
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18')
+and 
+    ifnull(z_first_treatment,'') <> ''
+    and z_first_treatment_after_days >= 0
+    
+```
+
+</details>
+
+
+    darin 139_477 Tumore, 457_292 deduplizierte Therapien | darin mit Datum: 139_477 Tumore, 213_025 Therapien
 
 
 
     
-![svg](colorectal_files/output_73_0.svg)
+![svg](colorectal_files/output_62_5.svg)
     
 
 

@@ -72,7 +72,7 @@
     data tag:                epi2024_2
     sql table created:       2026-03-03 09:47:44
     doi:                     10.18444/5.03.01.0005.0020.0002
-    document created:        2026-03-04 08:13:00
+    document created:        2026-03-04 11:15:22
 
 
     
@@ -140,10 +140,6 @@
 > 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
 
 
-    
-![svg](epi_2_analyze_files/output_26_0.svg)
-    
-
 
 <br>
 
@@ -153,10 +149,6 @@
 > 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_  
 > 💡 `ZfKD`: _"keine DCO Markierungen für Fälle aus `05-NW`"_
 
-
-    
-![svg](epi_2_analyze_files/output_28_0.svg)
-    
 
 
 <!-- <br>
@@ -212,10 +204,6 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
-    
-![svg](epi_2_analyze_files/output_40_0.svg)
-    
-
 
 ### <a id='toc1_5_9_'></a>[Grading 2](#toc0_)
 - **Filter: DJ = 2020-2024, kein DCO, gradingrelevante ICD10+HISC**
@@ -241,10 +229,6 @@
             )
 ```
 
-![svg](epi_2_analyze_files/output_42_3.svg)
-    
-
-
 <br>
 
 ### <a id='toc1_5_10_'></a>[Altersgruppen](#toc0_)
@@ -252,10 +236,6 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
-
-    
-![svg](epi_2_analyze_files/output_45_0.svg)
-    
 
 
 ### <a id='toc1_5_11_'></a>[TNM](#toc0_)
@@ -280,20 +260,12 @@
             and GKZbl::int between 1 and 16
 ```
 
-![svg](epi_2_analyze_files/output_47_3.svg)
-    
-
-
 <br>
 
 ### <a id='toc1_5_12_'></a>[UICC](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - die Variable `UICC` wird vom ZfKD gebildet
 
-
-    
-![svg](epi_2_analyze_files/output_50_0.svg)
-    
 
 
 <br>
@@ -305,10 +277,6 @@
 > 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
 
 
-    
-![svg](epi_2_analyze_files/output_53_0.svg)
-    
-
 
 <br>
 
@@ -317,10 +285,6 @@
 #### <a id='toc1_5_14_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
-
-    
-![svg](epi_2_analyze_files/output_57_0.svg)
-    
 
 
 <br>

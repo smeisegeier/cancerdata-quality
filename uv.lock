@@ -336,7 +336,7 @@ wheels = [
 
 [[package]]
 name = "cancerdata-quality"
-version = "0.6.0"
+version = "0.7.2"
 source = { virtual = "." }
 dependencies = [
     { name = "appnope" },
@@ -344,6 +344,7 @@ dependencies = [
     { name = "debugpy" },
     { name = "duckdb" },
     { name = "ipykernel" },
+    { name = "ipylab" },
     { name = "jupyter" },
     { name = "jupyter-client" },
     { name = "kaleido" },
@@ -367,6 +368,7 @@ requires-dist = [
     { name = "debugpy" },
     { name = "duckdb", specifier = ">=1.4.4" },
     { name = "ipykernel" },
+    { name = "ipylab", specifier = ">=1.0.0" },
     { name = "jupyter" },
     { name = "jupyter-client" },
     { name = "kaleido" },
@@ -374,7 +376,7 @@ requires-dist = [
     { name = "numpy" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pandas", specifier = "==2.3.3" },
-    { name = "pandas-plots", specifier = ">=1.2.2" },
+    { name = "pandas-plots", specifier = ">=1.2.12" },
     { name = "pip" },
     { name = "pygwalker" },
     { name = "pyzmq" },
@@ -2355,12 +2357,14 @@ wheels = [
 
 [[package]]
 name = "pandas-plots"
-version = "1.2.8"
+version = "1.2.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "aiohttp" },
     { name = "connection-helper" },
     { name = "dataframe-image" },
     { name = "duckdb" },
+    { name = "fonttools" },
     { name = "ipynbname" },
     { name = "jinja2" },
     { name = "kaleido" },
@@ -2371,6 +2375,7 @@ dependencies = [
     { name = "nbconvert" },
     { name = "nbformat" },
     { name = "numpy" },
+    { name = "orjson" },
     { name = "pandas" },
     { name = "pillow" },
     { name = "plotly" },
@@ -2379,9 +2384,9 @@ dependencies = [
     { name = "upsetplot" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a4/41/28559cf841e0815fc2bf5a5c2c1675a503288d20f6cb2f997d1aac35d3aa/pandas_plots-1.2.8.tar.gz", hash = "sha256:e27be44e99be041197b389d638ae00a7ea6826dadb448da9bd3005f193ecbcef", size = 107630, upload-time = "2026-03-03T19:09:24.833Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/39/41/f1fe83937a5bd02dcd12b683f14c4ed3cc53e1d80d76539c72c6e00624b8/pandas_plots-1.2.12.tar.gz", hash = "sha256:289d1398bdbd2e59fb8a555afd6bb7098dfe3e010bfe8a32ddca8dbb92d7dcd8", size = 108364, upload-time = "2026-03-04T18:12:39.231Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a0/98/03cc1f7a63d490dfbed5ae80c3c78fc54f79ba2e4e9ac6fafef69653e3e6/pandas_plots-1.2.8-py3-none-any.whl", hash = "sha256:f5372116c5c9021ef595d2608a58417ffa9658db903adff806affb27750418dc", size = 135009, upload-time = "2026-03-03T19:09:23.286Z" },
+    { url = "https://files.pythonhosted.org/packages/e4/21/35acf66e770c8a87994f6f29210fa615e85ed460ae4ec42d4026fbaf18a5/pandas_plots-1.2.12-py3-none-any.whl", hash = "sha256:55ea7cf8e7bb7d8f0af73b12fb7d3da19a0066ca7ab75c68e53c6487b6b0b2ac", size = 135869, upload-time = "2026-03-04T18:12:37.769Z" },
 ]
 
 [[package]]
