@@ -3,8 +3,8 @@
 > Qualitätssicherung und Analyse von Krebsregisterdaten
 
 ![Status](https://img.shields.io/badge/status-in_Arbeit-yellow)
-![Daten](https://img.shields.io/badge/daten-klinisch%20%26%20epidemiologisch-blue)
-![Bericht](https://img.shields.io/badge/bericht-2026-green)
+<!-- ![Daten](https://img.shields.io/badge/daten-klinisch%20%26%20epidemiologisch-blue)
+![Bericht](https://img.shields.io/badge/bericht-2026-green) -->
 
 ---
 
@@ -73,11 +73,11 @@ Umfassende Analysen der klinischen Krebsregisterdaten:
 | 08 | [C50 FM Gehirn](./src/quality-analysis/08-c50-brain/docs/c50_brain.md) | Gehirnmetastasen bei Brustkrebs |
 | 09 | [C61 Gleason](./src/quality-analysis/09-c61-gleason/docs/c61_gleason.md) | Gleason-Score bei Prostatakrebs |
 
----
+<!-- ---
 
 ## 📈 Visualisierungen
 
-- **[Themen Übersicht](./docs/themen.svg)** — Themenvisualisierung
+- **[Themen Übersicht](./docs/themen.svg)** — Themenvisualisierung -->
 
 ---
 

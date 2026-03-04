@@ -11,7 +11,7 @@
   - [Variablenverteilung](#toc1_5_)    
     - [Diagnosejahr](#toc1_5_1_)    
     - [Diagnosegruppen](#toc1_5_2_)    
-    - [☣️ Diagnosesicherung](#toc1_5_3_)    
+    - [Diagnosesicherung](#toc1_5_3_)    
     - [DCO Diagramm](#toc1_5_4_)    
     - [DCO](#toc1_5_5_)    
     - [Anteil Mehrfachtumore](#toc1_5_6_)    
@@ -27,7 +27,7 @@
       - [Verteilung der Variable TOD in den original gelieferten Daten](#toc1_5_14_2_)    
     - [Verteilung Todesursachen nach ICDT10](#toc1_5_15_)    
   - [Plausibilitätsprüfungen](#toc1_6_)    
-    - [ ⚠️ 01-SH](#toc1_6_1_)    
+    - [ℹ️ 01-SH](#toc1_6_1_)    
     - [✅ 02-HH](#toc1_6_2_)    
     - [✅ 03-NI](#toc1_6_3_)    
     - [✅ 04-HB](#toc1_6_4_)    
@@ -36,7 +36,7 @@
     - [✅ 07-RP](#toc1_6_7_)    
     - [✅ 08-BW](#toc1_6_8_)    
     - [✅ 09-BY](#toc1_6_9_)    
-    - [⚠️ 10-SL](#toc1_6_10_)    
+    - [✅ 10-SL](#toc1_6_10_)    
     - [✅ 11-GKR (ehemals)](#toc1_6_11_)    
 
 <!-- vscode-jupyter-toc-config
@@ -65,19 +65,19 @@
 
 ## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.4 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.8 | 📦 connection-helper: 0.13.3
 
 
-    database file:           2026-02-27_data_epi.duckdb
-    data tag:                epi2025_beta
-    sql table created:       2026-02-27 17:40:06
-    doi:                     -
-    document created:        2026-03-02 09:36:16
+    database file:           2026-03-03_data_epi.duckdb
+    data tag:                epi2024_2
+    sql table created:       2026-03-03 09:47:44
+    doi:                     10.18444/5.03.01.0005.0020.0002
+    document created:        2026-03-04 08:13:00
 
 
     
-    letzter batch                   423
-    inkludierte Diagnosejahre 📆    (2024)
+    aktuellster batch               425
+    aktuellstes Diagnosejahr 📆     (2024)
 
 
 <div style="page-break-after: always;"></div>
@@ -140,15 +140,23 @@
 > 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
 
 
+    
+![svg](epi_2_analyze_files/output_26_0.svg)
+    
+
 
 <br>
 
-### <a id='toc1_5_3_'></a>[☣️ Diagnosesicherung](#toc0_)
+### <a id='toc1_5_3_'></a>[Diagnosesicherung](#toc0_)
 - **Filter: DJ = 2023, C44 und D-Diagnosen sind ausgeschlossen**
 
 > 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_  
 > 💡 `ZfKD`: _"keine DCO Markierungen für Fälle aus `05-NW`"_
 
+
+    
+![svg](epi_2_analyze_files/output_28_0.svg)
+    
 
 
 <!-- <br>
@@ -204,6 +212,10 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
+    
+![svg](epi_2_analyze_files/output_40_0.svg)
+    
+
 
 ### <a id='toc1_5_9_'></a>[Grading 2](#toc0_)
 - **Filter: DJ = 2020-2024, kein DCO, gradingrelevante ICD10+HISC**
@@ -229,6 +241,10 @@
             )
 ```
 
+![svg](epi_2_analyze_files/output_42_3.svg)
+    
+
+
 <br>
 
 ### <a id='toc1_5_10_'></a>[Altersgruppen](#toc0_)
@@ -236,6 +252,10 @@
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
 
+
+    
+![svg](epi_2_analyze_files/output_45_0.svg)
+    
 
 
 ### <a id='toc1_5_11_'></a>[TNM](#toc0_)
@@ -260,12 +280,20 @@
             and GKZbl::int between 1 and 16
 ```
 
+![svg](epi_2_analyze_files/output_47_3.svg)
+    
+
+
 <br>
 
 ### <a id='toc1_5_12_'></a>[UICC](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 - die Variable `UICC` wird vom ZfKD gebildet
 
+
+    
+![svg](epi_2_analyze_files/output_50_0.svg)
+    
 
 
 <br>
@@ -277,6 +305,10 @@
 > 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
 
 
+    
+![svg](epi_2_analyze_files/output_53_0.svg)
+    
+
 
 <br>
 
@@ -285,6 +317,10 @@
 #### <a id='toc1_5_14_1_'></a>[Verteilung der Variable TOD im verarbeiteten Datensatz](#toc0_)
 - **Filter: DJ = 2024, C44 und D-Diagnosen sind ausgeschlossen**
 
+
+    
+![svg](epi_2_analyze_files/output_57_0.svg)
+    
 
 
 <br>
@@ -331,7 +367,7 @@
 
 <br>
 
-### <a id='toc1_6_1_'></a>[ ⚠️ 01-SH](#toc0_)
+### <a id='toc1_6_1_'></a>[ℹ️ 01-SH](#toc0_)
 - `B_TOD_Ja_Aber_Kein_SJ`: 0 -> 4%
 - alle Fälle wurden korrigiert laut `C_TOD=1_korrigiert_aufgrund_Sterbeangaben`
 
@@ -423,7 +459,6 @@
 
 ### <a id='toc1_6_5_'></a>[⚠️ 05-NW](#toc0_)
 - unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
-- Fallzahl DJ=2024 geringer
 
 
     
@@ -534,8 +569,8 @@
 
 <div style="page-break-after: always;"></div>
 
-### <a id='toc1_6_10_'></a>[⚠️ 10-SL](#toc0_)
-- `A_Mehrfachmeldung` leicht erhöht mit 4%
+### <a id='toc1_6_10_'></a>[✅ 10-SL](#toc0_)
+- `A_Mehrfachmeldung` leicht erhöht mit ~4%
 
 
     
