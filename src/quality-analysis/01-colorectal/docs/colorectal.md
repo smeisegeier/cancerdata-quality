@@ -50,7 +50,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-04 19:31:11
+    document created:        2026-03-05 16:46:27
 
 
 ## <a id='toc1_2_'></a>[⚙️ Teildatensatz](#toc0_)
@@ -83,8 +83,9 @@ and z_icd10_3d in ('C18','C19','C20')
 </details>
 
 
-### <a id='toc1_3_2_'></a>[Fallzahlen C18-C20 in Verhältnis zu allen Diagnosen](#toc0_)
-- Filter: alle Diagnosen inkludiert (C,D)
+### <a id='toc1_3_3_'></a>[Fallzahlen C18-C20 nach Viersteller](#toc0_)
+- Filter: `C18-20`
+> 💡 `C19` darf eigentlich nicht verwendet werden, wird von Krebsgesellschaft nicht akzeptiert
 
 
     
@@ -92,19 +93,9 @@ and z_icd10_3d in ('C18','C19','C20')
     
 
 
-### <a id='toc1_3_3_'></a>[Fallzahlen C18-C20 nach Viersteller](#toc0_)
-- Filter: `C18-20`
-> 💡 `C19` darf eigentlich nicht verwendet werden, wird von Krebsgesellschaft nicht akzeptiert
-
 
     
-![svg](colorectal_files/output_19_0.svg)
-    
-
-
-
-    
-![svg](colorectal_files/output_19_1.svg)
+![svg](colorectal_files/output_17_1.svg)
     
 
 
@@ -141,7 +132,7 @@ and z_t_p_1 in ('1','2','3','4')
 
 
     
-![svg](colorectal_files/output_22_4.svg)
+![svg](colorectal_files/output_20_4.svg)
     
 
 
@@ -179,7 +170,7 @@ and z_t_p_1 in ('1','2','3','4')
 
 
     
-![svg](colorectal_files/output_24_4.svg)
+![svg](colorectal_files/output_22_4.svg)
     
 
 
@@ -239,13 +230,13 @@ and left(Code,3) in ('5-4')
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-![svg](colorectal_files/output_28_5.svg)
+![svg](colorectal_files/output_26_5.svg)
     
 
 
 
     
-![svg](colorectal_files/output_28_6.svg)
+![svg](colorectal_files/output_26_6.svg)
     
 
 
@@ -254,9 +245,9 @@ and left(Code,3) in ('5-4')
 ```python
     counts: distinct OPSId
     ---
-    n = 4_039_783
-    └ [DJ 2020-2024]:  n = 3_990_198 (100.0%) ██████████████████████████████
-    └ [ICD10 C18-C20]:   n = 499_943  (12.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
+    n = 4_039_783                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_990_198  (98.8%) ░█████████████████████████████
+    └ [ICD10 C18-C20]:   n = 499_943  (12.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
     └ [ICD10 C19]:         n = 4_223   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
     └ [OPS 5-4]:           n = 2_847   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
@@ -277,32 +268,32 @@ and left(Code,3) in ('5-4')
     Anzahl verschiedene ops_codes:  1489
 
 ```python
-    ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
-    │                                                               ops                                                               │ cnt_ops │
-    │                                                             varchar                                                             │  int32  │
-    ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
-    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                         │     427 │
-    │ 5-484.31 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Anastomose                      │     162 │
-    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                   │     140 │
-    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                     │     128 │
-    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                    │      97 │
-    │ 5-484.32 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Enterostoma und Blindverschluss │      93 │
-    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                           │      76 │
-    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                              │      74 │
-    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                 │      51 │
-    │ 5-484.51 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Offen chirurgisch mit Anastomose                │      44 │
-    ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
-    │ 10 rows                                                                                                                         2 columns │
-    └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
+    │                                                                ops                                                                 │ cnt_ops │
+    │                                                              varchar                                                               │  int32  │
+    ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
+    │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                            │     427 │
+    │ 5-484.31 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Anastomose                         │     162 │
+    │ 5-484.55 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion: Laparoskopisch mit Anastomose                      │     140 │
+    │ 5-462.1 - Anlegen eines Enterostomas (als protektive Maßnahme) im Rahmen eines anderen Eingriffs: Ileostoma                        │     128 │
+    │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                       │      97 │
+    │ 5-484.32 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Offen chirurgisch mit Enterostoma und Blindverschluss    │      93 │
+    │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                              │      76 │
+    │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                 │      74 │
+    │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                    │      51 │
+    │ 5-406.9 - Regionale Lymphadenektomie (Ausräumung mehrerer Lymphknoten einer Region) im Rahmen einer anderen Operation: Mesenterial │      44 │
+    ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
+    │ 10 rows                                                                                                                            2 columns │
+    └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-![svg](colorectal_files/output_29_5.svg)
+![svg](colorectal_files/output_27_5.svg)
     
 
 
 
     
-![svg](colorectal_files/output_29_6.svg)
+![svg](colorectal_files/output_27_6.svg)
     
 
 
@@ -353,13 +344,13 @@ and left(Code,3) in ('5-4')
     └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-![svg](colorectal_files/output_30_5.svg)
+![svg](colorectal_files/output_28_5.svg)
     
 
 
 
     
-![svg](colorectal_files/output_30_6.svg)
+![svg](colorectal_files/output_28_6.svg)
     
 
 
@@ -396,7 +387,7 @@ and z_m_pc_1 = '0'
 
 
     
-![svg](colorectal_files/output_32_4.svg)
+![svg](colorectal_files/output_30_4.svg)
     
 
 
@@ -432,7 +423,7 @@ and z_m_pc_1 = '0'
 
 
     
-![svg](colorectal_files/output_34_4.svg)
+![svg](colorectal_files/output_32_4.svg)
     
 
 
@@ -480,7 +471,7 @@ and
 
 
     
-![png](colorectal_files/output_36_5.png)
+![png](colorectal_files/output_34_5.png)
     
 
 
@@ -523,7 +514,7 @@ and (left(Code,8) in ('5-455.21', '5-455.25', '5-455.27') OR left(Code,5) in ('5
 
 
     
-![png](colorectal_files/output_38_5.png)
+![png](colorectal_files/output_36_5.png)
     
 
 
@@ -568,7 +559,7 @@ and
 
 
     
-![png](colorectal_files/output_40_5.png)
+![png](colorectal_files/output_38_5.png)
     
 
 
@@ -613,7 +604,7 @@ and
 
 
     
-![png](colorectal_files/output_42_5.png)
+![png](colorectal_files/output_40_5.png)
     
 
 
@@ -631,7 +622,7 @@ and
 
 
     
-![svg](colorectal_files/output_46_0.svg)
+![svg](colorectal_files/output_44_0.svg)
     
 
 
@@ -653,16 +644,20 @@ and
 ```python
     counts: all rows (no grouping)
     ---
-    n = 4_015_983              (100.0%) ██████████████████████████████
-    └ [DJ 2020]:   n = 749_493  (18.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
-    └ [nur C18]:    n = 39_315   (1.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 4_015_983
+    └ [DJ 2020-2024]:  n = 3_758_513
+    └ [ICD10 C18-C20]: n = 284_931 (100.0%) ██████████████████████████████
+    └ [DJ 2020]:        n = 57_998  (20.4%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [nur C18]:        n = 39_315  (13.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░████
 ```
 
 <details>
 <summary>filter-sql</summary>
 
 ```sql
-z_dy = 2020
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18','C19','C20')
+and z_dy = 2020
 and z_icd10_3d in ('C18')
 ```
 
@@ -671,7 +666,7 @@ and z_icd10_3d in ('C18')
 
 
     
-![svg](colorectal_files/output_49_4.svg)
+![svg](colorectal_files/output_47_4.svg)
     
 
 
@@ -682,13 +677,13 @@ and z_icd10_3d in ('C18')
 
 
     
-![svg](colorectal_files/output_51_0.svg)
+![svg](colorectal_files/output_49_0.svg)
     
 
 
 
     
-![png](colorectal_files/output_51_1.png)
+![png](colorectal_files/output_49_1.png)
     
 
 
@@ -714,6 +709,7 @@ and z_icd10_3d in ('C18')
   - `2_fo_relapse_tnm` - Tumore mit Rezidiv nach erweiterter Definition
   - `3_fo_no_relapse` - Tumore mit Folgeereignis ohne o.a. Rezidiv
   - `4_no_fo` - Tumore ohne Folgeereignis
+- ℹ️ kkr mit "leerem Balken" nicht nicht in der Grundmenge enthalten, da sie keine R0 ausweisen
 
 
 
@@ -740,13 +736,13 @@ and upper(left(Lokale_Beurteilung_Residualstatus,2)) = 'R0'
 
 
     
-![svg](colorectal_files/output_53_4.svg)
+![svg](colorectal_files/output_51_4.svg)
     
 
 
 
     
-![png](colorectal_files/output_53_5.png)
+![png](colorectal_files/output_51_5.png)
     
 
 
@@ -782,13 +778,13 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
     
-![svg](colorectal_files/output_55_4.svg)
+![svg](colorectal_files/output_53_4.svg)
     
 
 
 
     
-![svg](colorectal_files/output_55_5.svg)
+![svg](colorectal_files/output_53_5.svg)
     
 
 
@@ -800,7 +796,7 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
     
-![svg](colorectal_files/output_58_0.svg)
+![svg](colorectal_files/output_56_0.svg)
     
 
 
@@ -837,7 +833,7 @@ and
 
 
     
-![png](colorectal_files/output_60_4.png)
+![png](colorectal_files/output_58_4.png)
     
 
 
@@ -906,7 +902,7 @@ and
 
 
     
-![svg](colorectal_files/output_62_5.svg)
+![svg](colorectal_files/output_60_5.svg)
     
 
 
