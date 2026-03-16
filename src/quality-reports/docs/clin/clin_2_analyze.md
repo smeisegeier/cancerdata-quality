@@ -8,13 +8,22 @@
   - [Fallzahlen](#toc1_4_)    
     - [absolut](#toc1_4_1_)    
     - [relativ](#toc1_4_2_)    
+      - [nach KKR](#toc1_4_2_1_)    
+      - [nach System](#toc1_4_2_2_)    
   - [Fehlende Therapieangaben](#toc1_5_)    
+    - [alle Therapien](#toc1_5_1_)    
+    - [OP](#toc1_5_2_)    
+      - [OP wenn OP erwartet](#toc1_5_2_1_)    
+        - [C50](#toc1_5_2_1_1_)    
+        - [C18-C20](#toc1_5_2_1_2_)    
+    - [ST](#toc1_5_3_)    
+    - [SYST](#toc1_5_4_)    
   - [Fallzahlen epi vs clin](#toc1_6_)    
   - [Verteilung von Variablen](#toc1_7_)    
     - [UICC (p)](#toc1_7_1_)    
     - [Diagnosesicherung](#toc1_7_2_)    
     - [DCO](#toc1_7_3_)    
-    - [🚨 DCN](#toc1_7_4_)    
+    - [DCN](#toc1_7_4_)    
     - [Geschlecht](#toc1_7_5_)    
     - [🆕 Grading](#toc1_7_6_)    
     - [Diagnosejahr mit Altdaten](#toc1_7_7_)    
@@ -35,13 +44,10 @@
     - [OP](#toc1_9_1_)    
       - [nach ICD10](#toc1_9_1_1_)    
       - [nach Intention](#toc1_9_1_2_)    
-    - [OP wenn OP erwartet](#toc1_9_2_)    
-      - [C50](#toc1_9_2_1_)    
-      - [C18 - C20](#toc1_9_2_2_)    
-    - [OPS](#toc1_9_3_)    
-      - [nach OPS ICD Kapitel (Top 10)](#toc1_9_3_1_)    
-    - [SYST](#toc1_9_4_)    
-      - [nach Stellung_OP](#toc1_9_4_1_)    
+    - [OPS](#toc1_9_2_)    
+      - [nach OPS ICD Kapitel (Top 10)](#toc1_9_2_1_)    
+    - [SYST](#toc1_9_3_)    
+      - [nach Stellung_OP](#toc1_9_3_1_)    
   - [Missings- und Unbekannt-Kodierungen](#toc1_10_)    
     - [Verpflichtende Tumorvariablen](#toc1_10_1_)    
     - [Weitere Tumorangaben](#toc1_10_2_)    
@@ -58,8 +64,10 @@
       - [Darm](#toc1_10_7_3_)    
       - [Melanom](#toc1_10_7_4_)    
   - [🆕 Weitere Klassifikationen](#toc1_11_)    
-    - [Übersicht](#toc1_11_1_)    
-    - [PSA](#toc1_11_2_)    
+    - [nach Quelle](#toc1_11_1_)    
+    - [nach Jahren](#toc1_11_2_)    
+    - [PSA](#toc1_11_3_)    
+    - [UICC](#toc1_11_4_)    
   - [🆕 Freitexte](#toc1_12_)    
   - [Datum_Vitalstatus](#toc1_13_)    
     - [Verteilung Monat](#toc1_13_1_)    
@@ -92,7 +100,7 @@
 
 ## <a id='toc1_2_'></a>[Datenstand ⏱️](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.2.12 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.3.0 | 📦 connection-helper: 0.13.3
 
 
     
@@ -101,7 +109,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-04 19:28:28
+    document created:        2026-03-16 12:50:26
 
 
 <br>
@@ -166,15 +174,40 @@
   - nach einzelnen **Lieferregistern**
   - nach verwendeten **Tumordokumentationssystemen** (um systemische Effekte darstellen zu können)
 
+#### <a id='toc1_4_2_1_'></a>[nach KKR](#toc0_)
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_19_5.png" width="800">
     
-![png](clin_2_analyze_files/output_18_0.png)
-    
 
 
+#### <a id='toc1_4_2_2_'></a>[nach System](#toc0_)
 
-    
-![png](clin_2_analyze_files/output_19_0.png)
+
+<img src="clin_2_analyze_files/output_21_1.png" width="800">
     
 
 
@@ -191,17 +224,245 @@
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and 
-        z_icd10_3d not in ('C44')
-        and left(z_icd10_3d,1) = 'C'
-        and right(z_icd10_3d, 2)::int8 <= 75
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                        (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:      n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:         n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur solide Tumore]: n = 2_270_570  (56.5%) ░░░░░░░░░░░░░░████████████████
 ```
 
-![png](clin_2_analyze_files/output_21_3.png)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    z_icd10_3d not in ('C44')
+    and left(z_icd10_3d,1) = 'C'
+    and right(z_icd10_3d, 2)::int8 <= 75
+
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_23_5.png" width="800">
+    
+
+
+### <a id='toc1_5_1_'></a>[alle Therapien](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]: n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [keine DCO]:                   n = 3_318_557  (82.6%) ░░░░░░████████████████████████
+    └ [ICD10 nur C]:                 n = 2_773_478  (69.1%) ░░░░░░░░░░████████████████████
+    └ [keine C44,D04]:               n = 2_291_677  (57.1%) ░░░░░░░░░░░░░█████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum between '2020-01-01' and '2024-06-30'
+and not z_is_dco
+and left(z_icd10_3d,1) = 'C'
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_25_5.png" width="800">
+    
+
+
+### <a id='toc1_5_2_'></a>[OP](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]: n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [keine DCO]:                   n = 3_318_557  (82.6%) ░░░░░░████████████████████████
+    └ [nur solide Tumore]:           n = 2_065_352  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum between '2020-01-01' and '2024-06-30'
+and not z_is_dco
+and 
+    z_icd10_3d not in ('C44')
+    and left(z_icd10_3d,1) = 'C'
+    and right(z_icd10_3d, 2)::int8 <= 75
+
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_27_5.png" width="800">
+    
+
+
+#### <a id='toc1_5_2_1_'></a>[OP wenn OP erwartet](#toc0_)
+- kategorien
+  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
+  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
+  - `3_rest`: keine der zuvor genannten Merkmale trifft
+
+##### <a id='toc1_5_2_1_1_'></a>[C50](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [ICD10 C50]:                       n = 362_653   (9.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [nur M0]:                          n = 273_283   (6.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [keine Verstorbenen < 180 Tage]:   n = 270_004   (6.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum between '2020-01-01' and '2024-06-30'
+and z_icd10_3d = 'C50'
+and z_m_pc_1 = '0'
+and ifnull(z_period_diag_death_day,181) >= 180
+```
+
+</details>
+
+
+
+    
+![svg](clin_2_analyze_files/output_30_4.svg)
+    
+
+
+##### <a id='toc1_5_2_1_2_'></a>[C18-C20](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [ICD10 C18-C20]:                   n = 284_931   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [nur M0]:                          n = 167_650   (4.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine Verstorbenen < 180 Tage]:   n = 154_254   (3.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d in ('C18', 'C19', 'C20')
+and z_m_pc_1 = '0'
+and ifnull(z_period_diag_death_day,181) >= 180
+```
+
+</details>
+
+
+
+    
+![svg](clin_2_analyze_files/output_32_4.svg)
+    
+
+
+### <a id='toc1_5_3_'></a>[ST](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]: n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [keine DCO]:                   n = 3_318_557  (82.6%) ░░░░░░████████████████████████
+    └ [nur solide Tumore]:           n = 2_065_352  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum between '2020-01-01' and '2024-06-30'
+and not z_is_dco
+and 
+    z_icd10_3d not in ('C44')
+    and left(z_icd10_3d,1) = 'C'
+    and right(z_icd10_3d, 2)::int8 <= 75
+
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_35_1.png" width="600">
+    
+
+
+### <a id='toc1_5_4_'></a>[SYST](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]: n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [keine DCO]:                   n = 3_318_557  (82.6%) ░░░░░░████████████████████████
+    └ [kein M1]:                     n = 2_997_763  (74.6%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum between '2020-01-01' and '2024-06-30'
+and not z_is_dco
+and ifnull(z_m_pc_1,'') <> '1'
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_37_5.png" width="600">
     
 
 
@@ -218,15 +479,29 @@
 
 
 
-```python
-    -- filter-sql
-        z_icd10_3d not in ('C44','D04')
-        and not z_is_dco
-        and z_dy in (2024)
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2024]:         n = 691_248  (17.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    └ [keine DCO]:       n = 672_045  (16.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    └ [keine C44,D04]:   n = 568_242  (14.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░████
 ```
 
+<details>
+<summary>filter-sql</summary>
 
-```python
+```sql
+z_dy in (2024)
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
+```
     ┌──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     │   kkr    │  01-SH  │  02-HH  │  03-NI  │  04-HB  │  05-NW  │  06-HE  │  07-RP  │  08-BW  │  09-BY  │  10-SL  │  11-BE  │  12-BB  │  13-MV  │  14-SN  │  15-ST  │  16-TH  │
     │ varchar  │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │
@@ -255,14 +530,35 @@
 > 💡 `HH`: _"Komplett fehlende UICC-Stadien: Teilweise bei uns unter **weitere Klassifikationen** zu finden und erst ab 2023 in einem eigenen Feld. UICC nach TNM-8 ist noch nicht vollständig in unserer Datenbank berechnet."_
 
 
-    
-![svg](clin_2_analyze_files/output_27_0.svg)
-    
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                        (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:      n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:         n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur solide Tumore]: n = 2_270_570  (56.5%) ░░░░░░░░░░░░░░████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    z_icd10_3d not in ('C44')
+    and left(z_icd10_3d,1) = 'C'
+    and right(z_icd10_3d, 2)::int8 <= 75
+
+```
+
+</details>
 
 
 
     
-![svg](clin_2_analyze_files/output_27_1.svg)
+![svg](clin_2_analyze_files/output_43_4.svg)
     
 
 
@@ -276,8 +572,27 @@
 > 💡 `ZfKD`: _die Kodes `6` und `7` sind noch enthalten, allerdings on der aktuellen oBDS Referenz nicht mehr gültig_
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_29_0.svg)
+![svg](clin_2_analyze_files/output_45_4.svg)
     
 
 
@@ -285,14 +600,30 @@
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and z_icd10_3d not in ('C44','D04')
-        and left(z_icd10_3d,1) = 'C'
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine C44,D04]: n = 3_158_460  (78.6%) ░░░░░░░███████████████████████
+    └ [ICD10 nur C]:   n = 2_627_689  (65.4%) ░░░░░░░░░░░███████████████████
 ```
 
-![png](clin_2_analyze_files/output_31_3.png)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_icd10_3d not in ('C44','D04')
+and left(z_icd10_3d,1) = 'C'
+```
+
+</details>
+
+
+
+    
+![png](clin_2_analyze_files/output_47_4.png)
     
 
 
@@ -300,7 +631,7 @@
 
 
     
-![png](clin_2_analyze_files/output_33_0.png)
+![png](clin_2_analyze_files/output_49_0.png)
     
 
 
@@ -313,8 +644,27 @@
 > 💡 `ZfKD`: _Angaben zu Geschlecht ungleich `M` oder `W` sind sehr selten, diese Fälle werden nicht gesondert verarbeitet_
 
 
+
+```
+    counts: distinct z_pat_id
+    ---
+    n = 3_420_720                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_412_547  (99.8%) ░█████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_35_0.svg)
+![svg](clin_2_analyze_files/output_51_4.svg)
     
 
 
@@ -324,8 +674,27 @@
 ### <a id='toc1_7_6_'></a>[🆕 Grading](#toc0_)
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_37_0.svg)
+![svg](clin_2_analyze_files/output_53_4.svg)
     
 
 
@@ -335,12 +704,12 @@
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2025 Fälle: {'13-MV': 10, '09-BY': 3102, '06-HE': 443, '12-BB': 351, '11-BE': 322, '15-ST': 2769, '14-SN': 5}
+    Anzahl 2025 Fälle: {'13-MV': 10, '12-BB': 351, '15-ST': 2769, '14-SN': 5, '09-BY': 3102, '06-HE': 443, '11-BE': 322}
 
 
 
     
-![svg](clin_2_analyze_files/output_39_1.svg)
+![svg](clin_2_analyze_files/output_55_1.svg)
     
 
 
@@ -350,8 +719,27 @@
 - Filter: 2020 - 2024
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_41_0.svg)
+![svg](clin_2_analyze_files/output_57_4.svg)
     
 
 
@@ -365,7 +753,7 @@
 
 
     
-![png](clin_2_analyze_files/output_43_0.png)
+![png](clin_2_analyze_files/output_59_0.png)
     
 
 
@@ -377,8 +765,27 @@
 > 💡 `NI`: _"Für nicht-melanozytäre Hautkrebsarten bestimmter Histologien sowie fortgeschrittene Plattenepithelkarzinome gilt ab dem 20. September 2023 eine geänderte Meldepflicht. Erst seit diesem Zeitpunkt sind die prognostisch ungünstigen Hauttumore **(C44)** an das KKN zu melden und kommen daher im gelieferten Datensatz bisher nicht vor. In den nächsten Lieferungen werden diese Daten enthalten sein"_
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_45_0.svg)
+![svg](clin_2_analyze_files/output_61_4.svg)
     
 
 
@@ -390,8 +797,31 @@
 - gezählt sind **Personen**
 
 
+
+```
+    counts: distinct z_pat_id
+    ---
+    n = 3_420_720                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_412_547  (99.8%) ░█████████████████████████████
+    └ [keine DCO]:     n = 3_300_566  (96.5%) ░░████████████████████████████
+    └ [keine C44,D04]: n = 2_823_609  (82.5%) ░░░░░░████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_47_0.svg)
+![svg](clin_2_analyze_files/output_63_4.svg)
     
 
 
@@ -401,8 +831,42 @@
 - **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur solide Tumoren**
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                               (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:             n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur tnm-relevante Tumore]: n = 2_064_712  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_49_0.svg)
+![svg](clin_2_analyze_files/output_65_4.svg)
     
 
 
@@ -413,8 +877,42 @@
 
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                               (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:             n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur tnm-relevante Tumore]: n = 2_064_712  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_51_0.svg)
+![svg](clin_2_analyze_files/output_67_4.svg)
     
 
 
@@ -424,8 +922,42 @@
 - **Filter: `DJ` = 2020-2024, `DCO` = N, `ICD10` nur TNM relevante**
 
 
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                               (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:             n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur tnm-relevante Tumore]: n = 2_064_712  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
+```
+
+</details>
+
+
+
     
-![svg](clin_2_analyze_files/output_53_0.svg)
+![svg](clin_2_analyze_files/output_69_4.svg)
     
 
 
@@ -438,7 +970,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_56_0.svg)
+![svg](clin_2_analyze_files/output_72_0.svg)
     
 
 
@@ -455,13 +987,28 @@
 
 
 
-```python
-    -- filter-sql
-        year(Datum_Vitalstatus::date) between 2020 and 2024
-        and Verstorben='J'
+```
+    counts: distinct z_pat_id
+    ---
+    n = 3_420_720                      (100.0%) ██████████████████████████████
+    └ [SJ 2020-2024]:    n = 2_679_098  (78.3%) ░░░░░░░███████████████████████
+    └ [nur Verstorbene]:   n = 896_564  (26.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
 ```
 
-![svg](clin_2_analyze_files/output_58_3.svg)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+year(Datum_Vitalstatus::date) between 2020 and 2024
+and Verstorben='J'
+```
+
+</details>
+
+
+
+    
+![png](clin_2_analyze_files/output_74_4.png)
     
 
 
@@ -472,7 +1019,7 @@
 - **Filter: `Verstorben` = N**
 
 
-```python
+```
     ┌─────────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
     │   kkr   │ 01-SH │ 02-HH │ 03-NI │ 04-HB │ 05-NW │ 06-HE │ 07-RP │ 08-BW │ 09-BY │ 10-SL │ 11-BE │ 12-BB │ 13-MV │ 14-SN │ 15-ST │ 16-TH │ Total │
     │ varchar │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │
@@ -490,7 +1037,7 @@
 
 
     
-![png](clin_2_analyze_files/output_63_0.png)
+![png](clin_2_analyze_files/output_79_0.png)
     
 
 
@@ -501,7 +1048,7 @@
 
 
     
-![svg](clin_2_analyze_files/output_65_0.svg)
+![svg](clin_2_analyze_files/output_81_0.svg)
     
 
 
@@ -517,13 +1064,28 @@
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and z_op_order = 1
+```
+    counts: distinct OPId
+    ---
+    n = 2_090_962                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 2_059_981  (98.5%) ░█████████████████████████████
+    └ [nur erste OP]: n = 1_641_865  (78.5%) ░░░░░░░███████████████████████
 ```
 
-![svg](clin_2_analyze_files/output_69_3.svg)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and z_op_order = 1
+```
+
+</details>
+
+
+
+    
+![svg](clin_2_analyze_files/output_85_4.svg)
     
 
 
@@ -534,107 +1096,35 @@
 
 
     
-![svg](clin_2_analyze_files/output_71_0.svg)
-    
-
-
-### <a id='toc1_9_2_'></a>[OP wenn OP erwartet](#toc0_)
-- kategorien
-  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
-  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
-  - `3_rest`: keine der zuvor genannten Merkmale trifft
-
-#### <a id='toc1_9_2_1_'></a>[C50](#toc0_)
-
-
-
-```python
-    counts: all rows (no grouping)
-    ---
-    n = 4_015_983                                    (100.0%) ██████████████████████████████
-    └ [C50]:                             n = 426_166  (10.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
-    └ [2020-2024]:                       n = 399_946  (10.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [keine M1]:                        n = 372_214   (9.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [keine Verstorbenen < 180 Tage]:   n = 356_650   (8.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-z_icd10_3d = 'C50'
-and z_dy between 2020 and 2024
-and ifnull(z_m_pc_1,'') <> '1'
-and ifnull(z_period_diag_death_day,181) >= 180
-```
-
-</details>
-
-
-
-    
-![svg](clin_2_analyze_files/output_74_4.svg)
-    
-
-
-#### <a id='toc1_9_2_2_'></a>[C18 - C20](#toc0_)
-
-
-
-```python
-    counts: all rows (no grouping)
-    ---
-    n = 4_015_983                                    (100.0%) ██████████████████████████████
-    └ [C18-C20]:                         n = 302_132   (7.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [2020-2024]:                       n = 284_931   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [keine M1]:                        n = 235_730   (5.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine Verstorbenen < 180 Tage]:   n = 203_757   (5.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-z_icd10_3d in ('C18', 'C19', 'C20')
-and z_dy between 2020 and 2024
-and ifnull(z_m_pc_1,'') <> '1'
-and ifnull(z_period_diag_death_day,181) >= 180
-```
-
-</details>
-
-
-
-    
-![svg](clin_2_analyze_files/output_76_4.svg)
+![svg](clin_2_analyze_files/output_87_0.svg)
     
 
 
 <br>
 
-### <a id='toc1_9_3_'></a>[OPS](#toc0_)
+### <a id='toc1_9_2_'></a>[OPS](#toc0_)
 
 
-#### <a id='toc1_9_3_1_'></a>[nach OPS ICD Kapitel (Top 10)](#toc0_)
+#### <a id='toc1_9_2_1_'></a>[nach OPS ICD Kapitel (Top 10)](#toc0_)
 - Grundgesamtheit: **alle OPS Codes**
 
 > 💡 `ZfKD`: _Lediglich `02-HH` und `05-NW` übermitteln ausschliesslich Kapitel 5. Der Anteil von Meldungen <> Kapitel 5 sind wahrscheinlich diagnostische Massnahmen oder nicht-operative Therapien. Vorschlag: nur noch Kapitel 5 übermitteln_
 
 
     
-![svg](clin_2_analyze_files/output_79_0.svg)
+![svg](clin_2_analyze_files/output_90_0.svg)
     
 
 
-### <a id='toc1_9_4_'></a>[SYST](#toc0_)
+### <a id='toc1_9_3_'></a>[SYST](#toc0_)
 
-#### <a id='toc1_9_4_1_'></a>[nach Stellung_OP](#toc0_)
+#### <a id='toc1_9_3_1_'></a>[nach Stellung_OP](#toc0_)
 
 - Grundgesamtheit: **alle SYST Elemente**
 
 
     
-![svg](clin_2_analyze_files/output_82_0.svg)
+![svg](clin_2_analyze_files/output_93_0.svg)
     
 
 
@@ -672,17 +1162,29 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-    z_dy between 2020 and 2024
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_87_4.png)
+![png](clin_2_analyze_files/output_98_5.png)
     
 
 
@@ -691,7 +1193,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_87_6.png)
+![png](clin_2_analyze_files/output_98_7.png)
     
 
 
@@ -699,19 +1201,33 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and z_icd10_3d not in ('C44','D04')
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_89_4.png)
+![png](clin_2_analyze_files/output_100_5.png)
     
 
 
@@ -720,7 +1236,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_89_6.png)
+![png](clin_2_analyze_files/output_100_7.png)
     
 
 
@@ -733,30 +1249,44 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and 
-        (
-            left(z_icd10_3d, 1) ='C' and
-            (
-                right(z_icd10_3d, 2)::int8 between 00 and 43
-                or right(z_icd10_3d, 2)::int8 between 45 and 69
-                or right(z_icd10_3d, 2)::int8 between 73 and 74
-            )
-            and left(Morphologie_Code,4)::int between 8010 and 8790
-            and z_icd10_3d not in ('C26', 'C39', 'C55')
-            and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
-        )
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                               (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:             n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur tnm-relevante Tumore]: n = 2_064_712  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_91_4.png)
+![png](clin_2_analyze_files/output_102_5.png)
     
 
 
@@ -765,7 +1295,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_91_6.png)
+![png](clin_2_analyze_files/output_102_7.png)
     
 
 
@@ -781,12 +1311,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 > 💡 `ZfKD`: _Für überlieferte OP liegen `Datum_OP` und `Intention` komplett vollständig vor. Der Tagesabstand hat wenige Lücken, während `Lokale_Beurteilung_Residualstatus` auch ausserhalb von Tristan erkennbar häufiger fehlt._
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_94_1.png)
+![png](clin_2_analyze_files/output_105_5.png)
     
 
 
@@ -795,7 +1348,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_94_3.png)
+![png](clin_2_analyze_files/output_105_7.png)
     
 
 
@@ -805,12 +1358,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 > _`Anzahl_Tage_ST_Dauer` und `Stellung_OP` fehlen bei Tristan_  
 > _`Applikationsart` wird nicht von allen kkr übermittelt, davon abgesehen ist `Seite_Zielgebiet` zuverlässig angegeben, die CodeVersionen ergänzen sich, wobei `2014` deutlich häufiger angewendet wird als `2021`._
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_96_1.png)
+![png](clin_2_analyze_files/output_107_5.png)
     
 
 
@@ -819,7 +1395,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_96_3.png)
+![png](clin_2_analyze_files/output_107_7.png)
     
 
 
@@ -827,12 +1403,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 > 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_98_1.png)
+![png](clin_2_analyze_files/output_109_5.png)
     
 
 
@@ -841,7 +1440,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_98_3.png)
+![png](clin_2_analyze_files/output_109_7.png)
     
 
 
@@ -849,12 +1448,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 > 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_100_1.png)
+![png](clin_2_analyze_files/output_111_5.png)
     
 
 
@@ -863,7 +1485,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_100_3.png)
+![png](clin_2_analyze_files/output_111_7.png)
     
 
 
@@ -872,12 +1494,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 > 💡 `ZfKD`: _Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext. Bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen._
 
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_038_346  (75.7%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_102_1.png)
+![png](clin_2_analyze_files/output_113_5.png)
     
 
 
@@ -886,7 +1531,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_102_3.png)
+![png](clin_2_analyze_files/output_113_7.png)
     
 
 
@@ -903,19 +1548,33 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and z_icd10_3d = 'C50'
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:    n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [ICD10 C50]:      n = 391_652   (9.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d = 'C50'
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_105_4.png)
+![png](clin_2_analyze_files/output_116_5.png)
     
 
 
@@ -924,7 +1583,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_105_6.png)
+![png](clin_2_analyze_files/output_116_7.png)
     
 
 
@@ -937,19 +1596,33 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and z_icd10_3d = 'C61'
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:    n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [ICD C61]:        n = 375_506   (9.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d = 'C61'
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_107_4.png)
+![png](clin_2_analyze_files/output_118_5.png)
     
 
 
@@ -958,7 +1631,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_107_6.png)
+![png](clin_2_analyze_files/output_118_7.png)
     
 
 
@@ -969,19 +1642,33 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        z_dy between 2020 and 2024
-        and not z_is_dco
-        and z_icd10_3d in ('C18','C19','C20')
 ```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:    n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [ICD C18-20]:     n = 276_412   (6.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d in ('C18','C19','C20')
+```
+
+</details>
+
 
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_109_4.png)
+![png](clin_2_analyze_files/output_120_5.png)
     
 
 
@@ -990,7 +1677,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_109_6.png)
+![png](clin_2_analyze_files/output_120_7.png)
     
 
 
@@ -999,12 +1686,35 @@ and ifnull(z_period_diag_death_day,181) >= 180
 #### <a id='toc1_10_7_4_'></a>[Melanom](#toc0_)
 - **Filter: `DJ` 2020-2024, `DCO` = N, `ICD10` = C43**
 
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:    n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [ICD C43]:        n = 143_542   (3.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d = 'C43'
+```
+
+</details>
+
+
     🟠 missings
 
 
 
     
-![png](clin_2_analyze_files/output_111_1.png)
+![png](clin_2_analyze_files/output_122_5.png)
     
 
 
@@ -1013,7 +1723,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_111_3.png)
+![png](clin_2_analyze_files/output_122_7.png)
     
 
 
@@ -1021,34 +1731,141 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 - Freitexte werden per regex in diesem [sql script](../sql/check_if_class.sql) zugeordnet
 
-### <a id='toc1_11_1_'></a>[Übersicht](#toc0_)
+### <a id='toc1_11_1_'></a>[nach Quelle](#toc0_)
+- `source`
+  - `diag`: Klassifikation ist der Diagnose zugeordnet
+  - `fol`: Klassifikation ist einem Folgeereignis zugeordnet 
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 849_517                        (100.0%) ██████████████████████████████
+    └ [Stadium vorhanden]: n = 849_517 (100.0%) ██████████████████████████████
+    └ [z_dy < 2025]:       n = 848_904  (99.9%) ░█████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+Stadium is not null
+and z_dy < 2025
+```
+
+</details>
+
 
 
     
-![svg](clin_2_analyze_files/output_116_0.svg)
+![svg](clin_2_analyze_files/output_128_0.svg)
     
 
 
-
-    
-![png](clin_2_analyze_files/output_116_1.png)
-    
-
-
-### <a id='toc1_11_2_'></a>[PSA](#toc0_)
-
-
-    
-![svg](clin_2_analyze_files/output_118_0.svg)
-    
-
-
-    n = 375_506
+### <a id='toc1_11_2_'></a>[nach Jahren](#toc0_)
 
 
 
     
-![png](clin_2_analyze_files/output_118_2.png)
+![svg](clin_2_analyze_files/output_130_0.svg)
+    
+
+
+### <a id='toc1_11_3_'></a>[PSA](#toc0_)
+
+- Kategorien für die Kombination von PSA Werten zu jedem Tumor
+  - `1_all_null`: keine PSA Werte zum Tumor
+  - `2_tum_only`: PSA Wert nur vom Organmodul
+  - `3_class_only`: PSA Wert nur aus Weitere Klassifikationen (Diagnose oder Folgeereignis)
+  - `4_tum_and_class`: PSA Werte aus Organmodul und Weitere Klassifikationen
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                   (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:    n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [ICD C61]:        n = 375_506   (9.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d = 'C61'
+```
+
+</details>
+
+
+
+    
+![svg](clin_2_analyze_files/output_133_4.svg)
+    
+
+
+    n = 375_506 | n(true) = 245_759
+
+
+
+    
+![png](clin_2_analyze_files/output_133_6.png)
+    
+
+
+### <a id='toc1_11_4_'></a>[UICC](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                               (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:             n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur tnm-relevante Tumore]: n = 2_064_712  (51.4%) ░░░░░░░░░░░░░░░███████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
+```
+
+</details>
+
+
+
+    
+![svg](clin_2_analyze_files/output_135_4.svg)
+    
+
+
+    n = 2_064_712 | n(true) = 655_640
+
+
+
+    
+![png](clin_2_analyze_files/output_135_6.png)
     
 
 
@@ -1056,7 +1873,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](clin_2_analyze_files/output_121_0.svg)
+![svg](clin_2_analyze_files/output_138_0.svg)
     
 
 
@@ -1073,20 +1890,36 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-```python
-    -- filter-sql
-        Verstorben = 'N'
-        and year(cast(Datum_Vitalstatus as date)) >= 2020
-        and z_dy between 2020 and 2024
+```
+    counts: distinct z_pat_id
+    ---
+    n = 3_420_720                          (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:        n = 3_412_547  (99.8%) ░█████████████████████████████
+    └ [Verstorben = 'N']:    n = 2_431_448  (71.1%) ░░░░░░░░░█████████████████████
+    └ [Vitalstatus >= 2020]: n = 2_426_295  (70.9%) ░░░░░░░░░█████████████████████
 ```
 
-![png](clin_2_analyze_files/output_125_0.png)
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Verstorben = 'N'
+and year(Datum_Vitalstatus) >= 2020
+```
+
+</details>
+
+
+
+    
+![png](clin_2_analyze_files/output_142_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_126_0.png)
+![png](clin_2_analyze_files/output_143_0.png)
     
 
 
@@ -1094,7 +1927,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](clin_2_analyze_files/output_128_0.svg)
+![svg](clin_2_analyze_files/output_145_0.svg)
     
 
 
@@ -1113,13 +1946,13 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_132_0.png)
+![png](clin_2_analyze_files/output_149_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_132_1.png)
+![png](clin_2_analyze_files/output_149_1.png)
     
 
 
@@ -1159,13 +1992,13 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_134_0.png)
+![png](clin_2_analyze_files/output_151_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_134_1.png)
+![png](clin_2_analyze_files/output_151_1.png)
     
 
 
@@ -1202,7 +2035,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_136_0.png)
+![png](clin_2_analyze_files/output_153_0.png)
     
 
 
@@ -1215,7 +2048,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_136_2.png)
+![png](clin_2_analyze_files/output_153_2.png)
     
 
 
@@ -1223,7 +2056,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_138_0.png)
+![png](clin_2_analyze_files/output_155_0.png)
     
 
 
@@ -1236,7 +2069,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_138_2.png)
+![png](clin_2_analyze_files/output_155_2.png)
     
 
 
@@ -1244,7 +2077,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_140_0.png)
+![png](clin_2_analyze_files/output_157_0.png)
     
 
 
@@ -1257,7 +2090,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_140_2.png)
+![png](clin_2_analyze_files/output_157_2.png)
     
 
 
@@ -1265,7 +2098,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_142_0.png)
+![png](clin_2_analyze_files/output_159_0.png)
     
 
 
@@ -1278,7 +2111,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_142_2.png)
+![png](clin_2_analyze_files/output_159_2.png)
     
 
 
@@ -1286,7 +2119,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_144_0.png)
+![png](clin_2_analyze_files/output_161_0.png)
     
 
 
@@ -1299,7 +2132,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_144_2.png)
+![png](clin_2_analyze_files/output_161_2.png)
     
 
 
@@ -1307,7 +2140,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_146_0.png)
+![png](clin_2_analyze_files/output_163_0.png)
     
 
 
@@ -1320,6 +2153,6 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![png](clin_2_analyze_files/output_146_2.png)
+![png](clin_2_analyze_files/output_163_2.png)
     
 
