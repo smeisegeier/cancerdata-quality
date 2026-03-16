@@ -109,7 +109,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-16 12:50:26
+    document created:        2026-03-16 17:20:16
 
 
 <br>
@@ -622,16 +622,14 @@ and left(z_icd10_3d,1) = 'C'
 
 
 
-    
-![png](clin_2_analyze_files/output_47_4.png)
+<img src="clin_2_analyze_files/output_47_5.png" width="800">
     
 
 
 ### <a id='toc1_7_4_'></a>[DCN](#toc0_)
 
 
-    
-![png](clin_2_analyze_files/output_49_0.png)
+<img src="clin_2_analyze_files/output_49_1.png" width="800">
     
 
 
@@ -704,7 +702,7 @@ z_dy between 2020 and 2024
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2025 Fälle: {'13-MV': 10, '12-BB': 351, '15-ST': 2769, '14-SN': 5, '09-BY': 3102, '06-HE': 443, '11-BE': 322}
+    Anzahl 2025 Fälle: {'11-BE': 322, '12-BB': 351, '15-ST': 2769, '14-SN': 5, '06-HE': 443, '09-BY': 3102, '13-MV': 10}
 
 
 
@@ -1226,8 +1224,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-![png](clin_2_analyze_files/output_100_5.png)
+<img src="clin_2_analyze_files/output_100_6.png" width="60%">
     
 
 
@@ -1235,8 +1232,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-![png](clin_2_analyze_files/output_100_7.png)
+<img src="clin_2_analyze_files/output_100_9.png" width="60%">
     
 
 
@@ -1338,8 +1334,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-![png](clin_2_analyze_files/output_105_5.png)
+<img src="clin_2_analyze_files/output_105_6.png" width="80%">
     
 
 
@@ -1347,8 +1342,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-![png](clin_2_analyze_files/output_105_7.png)
+<img src="clin_2_analyze_files/output_105_9.png" width="80%">
     
 
 
@@ -1621,8 +1615,7 @@ and z_icd10_3d = 'C61'
 
 
 
-    
-![png](clin_2_analyze_files/output_118_5.png)
+<img src="clin_2_analyze_files/output_118_6.png" width="70%">
     
 
 
@@ -1630,8 +1623,7 @@ and z_icd10_3d = 'C61'
 
 
 
-    
-![png](clin_2_analyze_files/output_118_7.png)
+<img src="clin_2_analyze_files/output_118_9.png" width="70%">
     
 
 
@@ -1667,8 +1659,7 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 
-    
-![png](clin_2_analyze_files/output_120_5.png)
+<img src="clin_2_analyze_files/output_120_6.png" width="50%">
     
 
 
@@ -1676,8 +1667,7 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 
-    
-![png](clin_2_analyze_files/output_120_7.png)
+<img src="clin_2_analyze_files/output_120_9.png" width="50%">
     
 
 
@@ -1713,8 +1703,7 @@ and z_icd10_3d = 'C43'
 
 
 
-    
-![png](clin_2_analyze_files/output_122_5.png)
+<img src="clin_2_analyze_files/output_122_6.png" width="50%">
     
 
 
@@ -1722,8 +1711,7 @@ and z_icd10_3d = 'C43'
 
 
 
-    
-![png](clin_2_analyze_files/output_122_7.png)
+<img src="clin_2_analyze_files/output_122_9.png" width="50%">
     
 
 
