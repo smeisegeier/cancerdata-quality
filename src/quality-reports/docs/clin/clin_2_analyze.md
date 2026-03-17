@@ -25,7 +25,9 @@
     - [DCO](#toc1_7_3_)    
     - [DCN](#toc1_7_4_)    
     - [Geschlecht](#toc1_7_5_)    
-    - [🆕 Grading](#toc1_7_6_)    
+    - [Grading](#toc1_7_6_)    
+      - [Verteilung](#toc1_7_6_1_)    
+      - [Anteile](#toc1_7_6_2_)    
     - [Diagnosejahr mit Altdaten](#toc1_7_7_)    
     - [Diagnosejahr ohne Altdaten](#toc1_7_8_)    
     - [Inzidenzort vs Lieferregister](#toc1_7_9_)    
@@ -109,7 +111,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-16 17:20:16
+    document created:        2026-03-17 17:27:17
 
 
 <br>
@@ -261,12 +263,13 @@ and
 ```
     counts: all rows (no grouping)
     ---
-    n = 4_015_983                                  (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
-    └ [DJ 2020-2024 ohne letzte 6m]: n = 3_430_058  (85.4%) ░░░░░█████████████████████████
-    └ [keine DCO]:                   n = 3_318_557  (82.6%) ░░░░░░████████████████████████
-    └ [ICD10 nur C]:                 n = 2_773_478  (69.1%) ░░░░░░░░░░████████████████████
-    └ [keine C44,D04]:               n = 2_291_677  (57.1%) ░░░░░░░░░░░░░█████████████████
+    n = 4_015_983                                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                  n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_430_058  (85.4%) ░░░░░█████████████████████████
+    └ [keine DCO]:                     n = 3_318_557  (82.6%) ░░░░░░████████████████████████
+    └ [ICD10 nur C]:                   n = 2_773_478  (69.1%) ░░░░░░░░░░████████████████████
+    └ [keine C44,D04]:                 n = 2_291_677  (57.1%) ░░░░░░░░░░░░░█████████████████
+    └ [keine Verstorbenen < 180 Tage]: n = 1_959_965  (48.8%) ░░░░░░░░░░░░░░░░██████████████
 ```
 
 <details>
@@ -278,6 +281,7 @@ and Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
+and ifnull(z_period_diag_death_day,181) >= 180
 ```
 
 </details>
@@ -669,15 +673,19 @@ z_dy between 2020 and 2024
     Anzahl Ausprägungen <> M oder W im Gesamtdatensatz: {'D': 43, 'U': 246, 'X': 31}
 
 
-### <a id='toc1_7_6_'></a>[🆕 Grading](#toc0_)
+### <a id='toc1_7_6_'></a>[Grading](#toc0_)
+
+#### <a id='toc1_7_6_1_'></a>[Verteilung](#toc0_)
 
 
 
 ```
     counts: all rows (no grouping)
     ---
-    n = 4_015_983                   (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]: n = 3_758_513  (93.6%) ░░████████████████████████████
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                   n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur gradingrelevante Tumore]: n = 1_265_707  (31.5%) ░░░░░░░░░░░░░░░░░░░░░█████████
 ```
 
 <details>
@@ -685,6 +693,18 @@ z_dy between 2020 and 2024
 
 ```sql
 z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 33
+            or right(z_icd10_3d, 2)::int8 between 50 and 57
+            or right(z_icd10_3d, 2)::int8 between 63 and 68
+            or right(z_icd10_3d, 2)::int8 = 60
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8576
+    )
 ```
 
 </details>
@@ -692,7 +712,47 @@ z_dy between 2020 and 2024
 
 
     
-![svg](clin_2_analyze_files/output_53_4.svg)
+![svg](clin_2_analyze_files/output_54_4.svg)
+    
+
+
+#### <a id='toc1_7_6_2_'></a>[Anteile](#toc0_)
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 4_015_983                                  (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                n = 3_758_513  (93.6%) ░░████████████████████████████
+    └ [keine DCO]:                   n = 3_637_144  (90.6%) ░░░███████████████████████████
+    └ [nur gradingrelevante Tumore]: n = 1_265_707  (31.5%) ░░░░░░░░░░░░░░░░░░░░░█████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 33
+            or right(z_icd10_3d, 2)::int8 between 50 and 57
+            or right(z_icd10_3d, 2)::int8 between 63 and 68
+            or right(z_icd10_3d, 2)::int8 = 60
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8576
+    )
+```
+
+</details>
+
+
+
+<img src="clin_2_analyze_files/output_56_5.png" width="80%">
     
 
 
@@ -707,7 +767,7 @@ z_dy between 2020 and 2024
 
 
     
-![svg](clin_2_analyze_files/output_55_1.svg)
+![svg](clin_2_analyze_files/output_58_1.svg)
     
 
 
@@ -737,7 +797,7 @@ z_dy between 2020 and 2024
 
 
     
-![svg](clin_2_analyze_files/output_57_4.svg)
+![svg](clin_2_analyze_files/output_60_4.svg)
     
 
 
@@ -751,7 +811,7 @@ z_dy between 2020 and 2024
 
 
     
-![png](clin_2_analyze_files/output_59_0.png)
+![png](clin_2_analyze_files/output_62_0.png)
     
 
 
@@ -783,7 +843,7 @@ z_dy between 2020 and 2024
 
 
     
-![svg](clin_2_analyze_files/output_61_4.svg)
+![svg](clin_2_analyze_files/output_64_4.svg)
     
 
 
@@ -819,7 +879,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](clin_2_analyze_files/output_63_4.svg)
+![svg](clin_2_analyze_files/output_66_4.svg)
     
 
 
@@ -864,7 +924,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_65_4.svg)
+![svg](clin_2_analyze_files/output_68_4.svg)
     
 
 
@@ -910,7 +970,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_67_4.svg)
+![svg](clin_2_analyze_files/output_70_4.svg)
     
 
 
@@ -955,7 +1015,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_69_4.svg)
+![svg](clin_2_analyze_files/output_72_4.svg)
     
 
 
@@ -968,7 +1028,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_72_0.svg)
+![svg](clin_2_analyze_files/output_75_0.svg)
     
 
 
@@ -1006,7 +1066,7 @@ and Verstorben='J'
 
 
     
-![png](clin_2_analyze_files/output_74_4.png)
+![png](clin_2_analyze_files/output_77_4.png)
     
 
 
@@ -1034,8 +1094,7 @@ and Verstorben='J'
 > 💡 `ZfKD`: _Enthalten sind in einigen KKR auch `C79` (Metastasen), welche in offizieller Todesursachen-Statistik nicht kodiert sind_
 
 
-    
-![png](clin_2_analyze_files/output_79_0.png)
+<img src="clin_2_analyze_files/output_82_1.png" width="80%">
     
 
 
@@ -1046,7 +1105,7 @@ and Verstorben='J'
 
 
     
-![svg](clin_2_analyze_files/output_81_0.svg)
+![svg](clin_2_analyze_files/output_84_0.svg)
     
 
 
@@ -1083,7 +1142,7 @@ and z_op_order = 1
 
 
     
-![svg](clin_2_analyze_files/output_85_4.svg)
+![svg](clin_2_analyze_files/output_88_4.svg)
     
 
 
@@ -1094,7 +1153,7 @@ and z_op_order = 1
 
 
     
-![svg](clin_2_analyze_files/output_87_0.svg)
+![svg](clin_2_analyze_files/output_90_0.svg)
     
 
 
@@ -1110,7 +1169,7 @@ and z_op_order = 1
 
 
     
-![svg](clin_2_analyze_files/output_90_0.svg)
+![svg](clin_2_analyze_files/output_93_0.svg)
     
 
 
@@ -1122,7 +1181,7 @@ and z_op_order = 1
 
 
     
-![svg](clin_2_analyze_files/output_93_0.svg)
+![svg](clin_2_analyze_files/output_96_0.svg)
     
 
 
@@ -1182,7 +1241,7 @@ z_dy between 2020 and 2024
 
 
     
-![png](clin_2_analyze_files/output_98_5.png)
+![png](clin_2_analyze_files/output_101_5.png)
     
 
 
@@ -1191,7 +1250,7 @@ z_dy between 2020 and 2024
 
 
     
-![png](clin_2_analyze_files/output_98_7.png)
+![png](clin_2_analyze_files/output_101_7.png)
     
 
 
@@ -1224,7 +1283,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_2_analyze_files/output_100_6.png" width="60%">
+<img src="clin_2_analyze_files/output_103_6.png" width="60%">
     
 
 
@@ -1232,7 +1291,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_2_analyze_files/output_100_9.png" width="60%">
+<img src="clin_2_analyze_files/output_103_9.png" width="60%">
     
 
 
@@ -1282,7 +1341,7 @@ and
 
 
     
-![png](clin_2_analyze_files/output_102_5.png)
+![png](clin_2_analyze_files/output_105_5.png)
     
 
 
@@ -1291,7 +1350,7 @@ and
 
 
     
-![png](clin_2_analyze_files/output_102_7.png)
+![png](clin_2_analyze_files/output_105_7.png)
     
 
 
@@ -1334,7 +1393,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_2_analyze_files/output_105_6.png" width="80%">
+<img src="clin_2_analyze_files/output_108_6.png" width="80%">
     
 
 
@@ -1342,7 +1401,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_2_analyze_files/output_105_9.png" width="80%">
+<img src="clin_2_analyze_files/output_108_9.png" width="80%">
     
 
 
@@ -1380,7 +1439,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_107_5.png)
+![png](clin_2_analyze_files/output_110_5.png)
     
 
 
@@ -1389,7 +1448,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_107_7.png)
+![png](clin_2_analyze_files/output_110_7.png)
     
 
 
@@ -1425,7 +1484,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_109_5.png)
+![png](clin_2_analyze_files/output_112_5.png)
     
 
 
@@ -1434,7 +1493,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_109_7.png)
+![png](clin_2_analyze_files/output_112_7.png)
     
 
 
@@ -1470,7 +1529,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_111_5.png)
+![png](clin_2_analyze_files/output_114_5.png)
     
 
 
@@ -1479,7 +1538,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_111_7.png)
+![png](clin_2_analyze_files/output_114_7.png)
     
 
 
@@ -1516,7 +1575,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_113_5.png)
+![png](clin_2_analyze_files/output_116_5.png)
     
 
 
@@ -1525,7 +1584,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](clin_2_analyze_files/output_113_7.png)
+![png](clin_2_analyze_files/output_116_7.png)
     
 
 
@@ -1568,7 +1627,7 @@ and z_icd10_3d = 'C50'
 
 
     
-![png](clin_2_analyze_files/output_116_5.png)
+![png](clin_2_analyze_files/output_119_5.png)
     
 
 
@@ -1577,7 +1636,7 @@ and z_icd10_3d = 'C50'
 
 
     
-![png](clin_2_analyze_files/output_116_7.png)
+![png](clin_2_analyze_files/output_119_7.png)
     
 
 
@@ -1615,7 +1674,7 @@ and z_icd10_3d = 'C61'
 
 
 
-<img src="clin_2_analyze_files/output_118_6.png" width="70%">
+<img src="clin_2_analyze_files/output_121_6.png" width="70%">
     
 
 
@@ -1623,7 +1682,7 @@ and z_icd10_3d = 'C61'
 
 
 
-<img src="clin_2_analyze_files/output_118_9.png" width="70%">
+<img src="clin_2_analyze_files/output_121_9.png" width="70%">
     
 
 
@@ -1659,7 +1718,7 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 
-<img src="clin_2_analyze_files/output_120_6.png" width="50%">
+<img src="clin_2_analyze_files/output_123_6.png" width="50%">
     
 
 
@@ -1667,7 +1726,7 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 
-<img src="clin_2_analyze_files/output_120_9.png" width="50%">
+<img src="clin_2_analyze_files/output_123_9.png" width="50%">
     
 
 
@@ -1703,7 +1762,7 @@ and z_icd10_3d = 'C43'
 
 
 
-<img src="clin_2_analyze_files/output_122_6.png" width="50%">
+<img src="clin_2_analyze_files/output_125_6.png" width="50%">
     
 
 
@@ -1711,7 +1770,7 @@ and z_icd10_3d = 'C43'
 
 
 
-<img src="clin_2_analyze_files/output_122_9.png" width="50%">
+<img src="clin_2_analyze_files/output_125_9.png" width="50%">
     
 
 
@@ -1747,7 +1806,7 @@ and z_dy < 2025
 
 
     
-![svg](clin_2_analyze_files/output_128_0.svg)
+![svg](clin_2_analyze_files/output_131_0.svg)
     
 
 
@@ -1756,7 +1815,7 @@ and z_dy < 2025
 
 
     
-![svg](clin_2_analyze_files/output_130_0.svg)
+![svg](clin_2_analyze_files/output_133_0.svg)
     
 
 
@@ -1793,7 +1852,7 @@ and z_icd10_3d = 'C61'
 
 
     
-![svg](clin_2_analyze_files/output_133_4.svg)
+![svg](clin_2_analyze_files/output_136_4.svg)
     
 
 
@@ -1802,7 +1861,7 @@ and z_icd10_3d = 'C61'
 
 
     
-![png](clin_2_analyze_files/output_133_6.png)
+![png](clin_2_analyze_files/output_136_6.png)
     
 
 
@@ -1844,7 +1903,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_135_4.svg)
+![svg](clin_2_analyze_files/output_138_4.svg)
     
 
 
@@ -1853,7 +1912,7 @@ and
 
 
     
-![png](clin_2_analyze_files/output_135_6.png)
+![png](clin_2_analyze_files/output_138_6.png)
     
 
 
@@ -1861,7 +1920,7 @@ and
 
 
     
-![svg](clin_2_analyze_files/output_138_0.svg)
+![svg](clin_2_analyze_files/output_141_0.svg)
     
 
 
@@ -1901,13 +1960,13 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_142_0.png)
+![png](clin_2_analyze_files/output_145_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_143_0.png)
+![png](clin_2_analyze_files/output_146_0.png)
     
 
 
@@ -1915,7 +1974,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![svg](clin_2_analyze_files/output_145_0.svg)
+![svg](clin_2_analyze_files/output_148_0.svg)
     
 
 
@@ -1934,13 +1993,13 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_149_0.png)
+![png](clin_2_analyze_files/output_152_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_149_1.png)
+![png](clin_2_analyze_files/output_152_1.png)
     
 
 
@@ -1980,13 +2039,13 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_151_0.png)
+![png](clin_2_analyze_files/output_154_0.png)
     
 
 
 
     
-![png](clin_2_analyze_files/output_151_1.png)
+![png](clin_2_analyze_files/output_154_1.png)
     
 
 
@@ -2023,7 +2082,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_153_0.png)
+![png](clin_2_analyze_files/output_156_0.png)
     
 
 
@@ -2036,7 +2095,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_153_2.png)
+![png](clin_2_analyze_files/output_156_2.png)
     
 
 
@@ -2044,7 +2103,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_155_0.png)
+![png](clin_2_analyze_files/output_158_0.png)
     
 
 
@@ -2057,7 +2116,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_155_2.png)
+![png](clin_2_analyze_files/output_158_2.png)
     
 
 
@@ -2065,7 +2124,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_157_0.png)
+![png](clin_2_analyze_files/output_160_0.png)
     
 
 
@@ -2078,7 +2137,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_157_2.png)
+![png](clin_2_analyze_files/output_160_2.png)
     
 
 
@@ -2086,7 +2145,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_159_0.png)
+![png](clin_2_analyze_files/output_162_0.png)
     
 
 
@@ -2099,7 +2158,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_159_2.png)
+![png](clin_2_analyze_files/output_162_2.png)
     
 
 
@@ -2107,7 +2166,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_161_0.png)
+![png](clin_2_analyze_files/output_164_0.png)
     
 
 
@@ -2120,7 +2179,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_161_2.png)
+![png](clin_2_analyze_files/output_164_2.png)
     
 
 
@@ -2128,7 +2187,7 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_163_0.png)
+![png](clin_2_analyze_files/output_166_0.png)
     
 
 
@@ -2141,6 +2200,6 @@ and year(Datum_Vitalstatus) >= 2020
 
 
     
-![png](clin_2_analyze_files/output_163_2.png)
+![png](clin_2_analyze_files/output_166_2.png)
     
 

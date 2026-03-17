@@ -73,7 +73,7 @@
     data tag:                epi2025_beta
     sql table created:       2026-03-03 09:47:44
     doi:                     -
-    document created:        2026-03-17 09:07:16
+    document created:        2026-03-17 18:06:37
 
 
     
@@ -340,8 +340,8 @@ and z_dy between 2020 and 2024
     ├─────────┼────────────┼───────┤
     │ 11      │          0 │     1 │
     │ 03      │          1 │     4 │
-    │ 08      │          1 │  2226 │
     │ 11      │          1 │ 10084 │
+    │ 08      │          1 │  2226 │
     └─────────┴────────────┴───────┘
 ```
 
@@ -391,7 +391,7 @@ and
     
 
 
-### <a id='toc1_5_9_'></a>[🚧  Grading Anteil](#toc0_)
+### <a id='toc1_5_9_'></a>[Grading Anteil](#toc0_)
 - Metrik: Anteil GRAD missings
 
 
@@ -430,8 +430,7 @@ and
 
 
 
-    
-![png](epi_2_analyze_files/output_39_4.png)
+<img src="epi_2_analyze_files/output_39_5.png" width="80%">
     
 
 
@@ -475,8 +474,7 @@ and
 
 
 
-    
-![png](epi_2_analyze_files/output_41_4.png)
+<img src="epi_2_analyze_files/output_41_5.png" width="80%">
     
 
 
@@ -623,8 +621,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-![png](epi_2_analyze_files/output_50_4.png)
+<img src="epi_2_analyze_files/output_50_5.png" width="60%">
     
 
 
