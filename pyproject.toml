@@ -1,16 +1,16 @@
 [project]
 name = "cancerdata-quality"
 requires-python = ">= 3.11"
-version = "0.7.2"
+version = "0.7.3"
 description = "repo for cancerdata quality"
 readme = "README.md"
 dependencies = [
     "pip",
-    "pandas==2.3.3",
+    "pandas",
     "kaleido",
     "numpy",
     "duckdb>=1.4.4",
-    "pandas-plots>=1.2.12",
+    "pandas-plots>=1.4.1",
     "connection-helper",
     "pygwalker",
     "appnope",
@@ -26,3 +26,9 @@ dependencies = [
     "upsetplot>=0.9.0",
     "ipylab>=1.0.0",
 ]
+
+# [tool.setuptools.packages.find]
+# where = ["src"]
+
+[tool.uv]
+package = true

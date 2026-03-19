@@ -95,6 +95,9 @@
 
 <div style="page-break-after: always;"></div>
 
+
+<br>
+
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 - Neulieferung für Daten mit max DJ=2024
 
@@ -102,7 +105,7 @@
 
 ## <a id='toc1_2_'></a>[Datenstand ⏱️](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.3.0 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.4.1
 
 
     
@@ -111,7 +114,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-17 17:27:17
+    document created:        2026-03-19 18:40:38
 
 
 <br>
@@ -131,6 +134,9 @@
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ## <a id='toc1_4_'></a>[Fallzahlen](#toc0_)
 - in den Darstellungen sind keine Filter angewendet, solange nicht explizit angegeben
@@ -176,6 +182,9 @@
   - nach einzelnen **Lieferregistern**
   - nach verwendeten **Tumordokumentationssystemen** (um systemische Effekte darstellen zu können)
 
+
+<br>
+
 #### <a id='toc1_4_2_1_'></a>[nach KKR](#toc0_)
 
 
@@ -205,6 +214,9 @@ and z_icd10_3d not in ('C44','D04')
 <img src="clin_2_analyze_files/output_19_5.png" width="800">
     
 
+
+
+<br>
 
 #### <a id='toc1_4_2_2_'></a>[nach System](#toc0_)
 
@@ -256,6 +268,9 @@ and
     
 
 
+
+<br>
+
 ### <a id='toc1_5_1_'></a>[alle Therapien](#toc0_)
 
 
@@ -291,6 +306,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <img src="clin_2_analyze_files/output_25_5.png" width="800">
     
 
+
+
+<br>
 
 ### <a id='toc1_5_2_'></a>[OP](#toc0_)
 
@@ -328,11 +346,17 @@ and
     
 
 
+
+<br>
+
 #### <a id='toc1_5_2_1_'></a>[OP wenn OP erwartet](#toc0_)
 - kategorien
   - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
   - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
   - `3_rest`: keine der zuvor genannten Merkmale trifft
+
+
+<br>
 
 ##### <a id='toc1_5_2_1_1_'></a>[C50](#toc0_)
 
@@ -369,6 +393,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
     
 
 
+
+<br>
+
 ##### <a id='toc1_5_2_1_2_'></a>[C18-C20](#toc0_)
 
 
@@ -401,6 +428,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 ![svg](clin_2_analyze_files/output_32_4.svg)
     
 
+
+
+<br>
 
 ### <a id='toc1_5_3_'></a>[ST](#toc0_)
 
@@ -437,6 +467,9 @@ and
 <img src="clin_2_analyze_files/output_35_1.png" width="600">
     
 
+
+
+<br>
 
 ### <a id='toc1_5_4_'></a>[SYST](#toc0_)
 
@@ -508,7 +541,6 @@ and z_icd10_3d not in ('C44','D04')
 ```
     ┌──────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     │   kkr    │  01-SH  │  02-HH  │  03-NI  │  04-HB  │  05-NW  │  06-HE  │  07-RP  │  08-BW  │  09-BY  │  10-SL  │  11-BE  │  12-BB  │  13-MV  │  14-SN  │  15-ST  │  16-TH  │
-    │ varchar  │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │ varchar │
     ├──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │ clin_cnt │ 23_860  │ 12_999  │ 47_593  │ 4_541   │ 129_531 │ 29_173  │ 29_734  │ 80_888  │ 88_739  │ 8_774   │ 25_458  │ 20_371  │ 1_150   │ 33_715  │ 17_664  │ 14_045  │
     │ epi_cnt  │ 22_820  │ 12_347  │ 56_134  │ 4_371   │ 129_466 │ 27_955  │ 28_807  │ 74_961  │ 81_866  │ 8_349   │ 24_019  │ 19_266  │ 1_011   │ 32_952  │ 17_291  │ 13_473  │
@@ -517,6 +549,9 @@ and z_icd10_3d not in ('C44','D04')
 ```
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ## <a id='toc1_7_'></a>[Verteilung von Variablen](#toc0_)
 - in den Diagrammen gibt das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
@@ -600,6 +635,9 @@ z_dy between 2020 and 2024
     
 
 
+
+<br>
+
 ### <a id='toc1_7_3_'></a>[DCO](#toc0_)
 
 
@@ -629,6 +667,9 @@ and left(z_icd10_3d,1) = 'C'
 <img src="clin_2_analyze_files/output_47_5.png" width="800">
     
 
+
+
+<br>
 
 ### <a id='toc1_7_4_'></a>[DCN](#toc0_)
 
@@ -673,6 +714,9 @@ z_dy between 2020 and 2024
     Anzahl Ausprägungen <> M oder W im Gesamtdatensatz: {'D': 43, 'U': 246, 'X': 31}
 
 
+
+<br>
+
 ### <a id='toc1_7_6_'></a>[Grading](#toc0_)
 
 #### <a id='toc1_7_6_1_'></a>[Verteilung](#toc0_)
@@ -715,6 +759,9 @@ and
 ![svg](clin_2_analyze_files/output_54_4.svg)
     
 
+
+
+<br>
 
 #### <a id='toc1_7_6_2_'></a>[Anteile](#toc0_)
 
@@ -762,7 +809,7 @@ and
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
-    Anzahl 2025 Fälle: {'11-BE': 322, '12-BB': 351, '15-ST': 2769, '14-SN': 5, '06-HE': 443, '09-BY': 3102, '13-MV': 10}
+    Anzahl 2025 Fälle: {'06-HE': 443, '09-BY': 3102, '13-MV': 10, '12-BB': 351, '11-BE': 322, '15-ST': 2769, '14-SN': 5}
 
 
 
@@ -1032,6 +1079,9 @@ and
     
 
 
+
+<br>
+
 ### <a id='toc1_8_2_'></a>[nach Sterbejahr und Todesursachen](#toc0_)
 - gezählt werden **Personen**
 - **Filter: `SJ`= 2020-2024, `Verstorben` = J**
@@ -1080,7 +1130,6 @@ and Verstorben='J'
 ```
     ┌─────────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
     │   kkr   │ 01-SH │ 02-HH │ 03-NI │ 04-HB │ 05-NW │ 06-HE │ 07-RP │ 08-BW │ 09-BY │ 10-SL │ 11-BE │ 12-BB │ 13-MV │ 14-SN │ 15-ST │ 16-TH │ Total │
-    │ varchar │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │ int16 │
     ├─────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
     │ cnt_tu  │     1 │     0 │     0 │     0 │     0 │     0 │     0 │     0 │     2 │    15 │     1 │     3 │   472 │     0 │     0 │     2 │     0 │
     └─────────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
@@ -1108,6 +1157,9 @@ and Verstorben='J'
 ![svg](clin_2_analyze_files/output_84_0.svg)
     
 
+
+
+<br>
 
 ## <a id='toc1_9_'></a>[Therapien](#toc0_)
 
@@ -1173,6 +1225,9 @@ and z_op_order = 1
     
 
 
+
+<br>
+
 ### <a id='toc1_9_3_'></a>[SYST](#toc0_)
 
 #### <a id='toc1_9_3_1_'></a>[nach Stellung_OP](#toc0_)
@@ -1186,6 +1241,9 @@ and z_op_order = 1
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ## <a id='toc1_10_'></a>[Missings- und Unbekannt-Kodierungen](#toc0_)
 - es sind folgende Schwellwerte angezeigt:
@@ -1253,6 +1311,9 @@ z_dy between 2020 and 2024
 ![png](clin_2_analyze_files/output_101_7.png)
     
 
+
+
+<br>
 
 ### <a id='toc1_10_2_'></a>[Weitere Tumorangaben](#toc0_)
 
@@ -1362,6 +1423,9 @@ and
   - 5363 Bestrahlungen sind in den 01-SH Daten unter Beachtung des Filters (DCO/DJ/ICD10) für den zugeordneten Tumor
   - davon enthalten 302 ein leeres Feld `Anzahl_Tage_Diagnose_ST` -> ~ 6%
 
+
+<br>
+
 #### <a id='toc1_10_4_1_'></a>[OP](#toc0_)
 
 > 💡 `ZfKD`: _Für überlieferte OP liegen `Datum_OP` und `Intention` komplett vollständig vor. Der Tagesabstand hat wenige Lücken, während `Lokale_Beurteilung_Residualstatus` auch ausserhalb von Tristan erkennbar häufiger fehlt._
@@ -1404,6 +1468,9 @@ and z_icd10_3d not in ('C44','D04')
 <img src="clin_2_analyze_files/output_108_9.png" width="80%">
     
 
+
+
+<br>
 
 #### <a id='toc1_10_4_2_'></a>[ST](#toc0_)
 
@@ -1452,6 +1519,9 @@ and z_icd10_3d not in ('C44','D04')
     
 
 
+
+<br>
+
 #### <a id='toc1_10_4_3_'></a>[SYST](#toc0_)
 
 > 💡 `ZfKD`: _Die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte - wohingegen `08-BW` hier als einzige keine missings ausweisen._
@@ -1497,6 +1567,9 @@ and z_icd10_3d not in ('C44','D04')
     
 
 
+
+<br>
+
 ### <a id='toc1_10_5_'></a>[Folgeereignisse](#toc0_)
 
 > 💡 `ZfKD`: _`Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht. Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen. Die Erkennung von Rezidiven ist so deutlich erschwert._
@@ -1541,6 +1614,9 @@ and z_icd10_3d not in ('C44','D04')
 ![png](clin_2_analyze_files/output_114_7.png)
     
 
+
+
+<br>
 
 ### <a id='toc1_10_6_'></a>[Freitexte](#toc0_)
 
@@ -1774,9 +1850,15 @@ and z_icd10_3d = 'C43'
     
 
 
+
+<br>
+
 ## <a id='toc1_11_'></a>[🆕 Weitere Klassifikationen](#toc0_)
 
 - Freitexte werden per regex in diesem [sql script](../sql/check_if_class.sql) zugeordnet
+
+
+<br>
 
 ### <a id='toc1_11_1_'></a>[nach Quelle](#toc0_)
 - `source`
@@ -1810,6 +1892,9 @@ and z_dy < 2025
     
 
 
+
+<br>
+
 ### <a id='toc1_11_2_'></a>[nach Jahren](#toc0_)
 
 
@@ -1818,6 +1903,9 @@ and z_dy < 2025
 ![svg](clin_2_analyze_files/output_133_0.svg)
     
 
+
+
+<br>
 
 ### <a id='toc1_11_3_'></a>[PSA](#toc0_)
 
@@ -1864,6 +1952,9 @@ and z_icd10_3d = 'C61'
 ![png](clin_2_analyze_files/output_136_6.png)
     
 
+
+
+<br>
 
 ### <a id='toc1_11_4_'></a>[UICC](#toc0_)
 
@@ -1915,6 +2006,9 @@ and
 ![png](clin_2_analyze_files/output_138_6.png)
     
 
+
+
+<br>
 
 ## <a id='toc1_12_'></a>[🆕 Freitexte](#toc0_)
 
@@ -1970,6 +2064,9 @@ and year(Datum_Vitalstatus) >= 2020
     
 
 
+
+<br>
+
 ### <a id='toc1_13_2_'></a>[Vitalstatus Jahr](#toc0_)
 
 
@@ -1979,6 +2076,9 @@ and year(Datum_Vitalstatus) >= 2020
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ## <a id='toc1_14_'></a>[Numerische Variablen 🔢](#toc0_)
 
@@ -2099,6 +2199,9 @@ and year(Datum_Vitalstatus) >= 2020
     
 
 
+
+<br>
+
 ### <a id='toc1_14_4_'></a>[PSA](#toc0_)
 
 
@@ -2119,6 +2222,9 @@ and year(Datum_Vitalstatus) >= 2020
 ![png](clin_2_analyze_files/output_158_2.png)
     
 
+
+
+<br>
 
 ### <a id='toc1_14_5_'></a>[LK_befallen](#toc0_)
 
@@ -2141,6 +2247,9 @@ and year(Datum_Vitalstatus) >= 2020
     
 
 
+
+<br>
+
 ### <a id='toc1_14_6_'></a>[LK_untersucht](#toc0_)
 
 
@@ -2162,6 +2271,9 @@ and year(Datum_Vitalstatus) >= 2020
     
 
 
+
+<br>
+
 ### <a id='toc1_14_7_'></a>[RektumAbstandAnokutanlinie](#toc0_)
 
 
@@ -2182,6 +2294,9 @@ and year(Datum_Vitalstatus) >= 2020
 ![png](clin_2_analyze_files/output_164_2.png)
     
 
+
+
+<br>
 
 ### <a id='toc1_14_8_'></a>[LDH](#toc0_)
 
