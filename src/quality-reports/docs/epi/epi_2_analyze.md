@@ -6,19 +6,19 @@
   - [Hinweise](#toc1_2_)    
   - [Datenstand 🕥](#toc1_3_)    
   - [Fallzahlen im Verlauf der Jahreslieferungen](#toc1_4_)    
-    - [original geliefert](#toc1_4_1_)    
-    - [nach Abschluss der Prüfungen im ZfKD](#toc1_4_2_)    
+    - [original geliefert vor ZfKD Prüfungen](#toc1_4_1_)    
+    - [je aktuellstes DJ nach ZfKD  Prüfungen](#toc1_4_2_)    
   - [Variablenverteilung](#toc1_5_)    
     - [Diagnosejahr](#toc1_5_1_)    
     - [Diagnosegruppen](#toc1_5_2_)    
     - [Diagnosesicherung](#toc1_5_3_)    
     - [DCO Diagramm](#toc1_5_4_)    
     - [DCO](#toc1_5_5_)    
-    - [BL vs EKRNR](#toc1_5_6_)    
+    - [Angabe Register vs Bundesland](#toc1_5_6_)    
     - [Dignität](#toc1_5_7_)    
     - [Grading Verteilung](#toc1_5_8_)    
-    - [🚧  Grading Anteil](#toc1_5_9_)    
-    - [T Anteil (c oder p)](#toc1_5_10_)    
+    - [Grading Anteil](#toc1_5_9_)    
+    - [ ☣️ T Anteil (c oder p)](#toc1_5_10_)    
     - [Altersgruppen](#toc1_5_11_)    
     - [UICC](#toc1_5_12_)    
     - [TNM-Auflage](#toc1_5_13_)    
@@ -66,14 +66,14 @@
 
 ## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.3.0 | 📦 connection-helper: 0.13.3
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.2
 
 
     database file:           2026-03-03_data_epi.duckdb
-    data tag:                epi2025_beta
+    data tag:                epi2025_beta2
     sql table created:       2026-03-03 09:47:44
     doi:                     -
-    document created:        2026-03-17 18:06:37
+    document created:        2026-03-20 18:23:05
 
 
     
@@ -83,14 +83,19 @@
 
 <div style="page-break-after: always;"></div>
 
+
+<br>
+
 ## <a id='toc1_4_'></a>[Fallzahlen im Verlauf der Jahreslieferungen](#toc0_)
 - kein Filter
 - es werden Datenstände (_batch_) aus mehreren Lieferjahren dargestellt , welche über eine laufende Nummer sowie das Datum der Ausführung vergleichbar sind
 - in Abgrenzung zu den klinischen Daten ist jede einzelne EKR Lieferung für das gesamte Lieferjahr gültig
+- dargestellt sind die **letzten 5 veröffentlichten** Datenstände 
 
 <br>
 
-### <a id='toc1_4_1_'></a>[original geliefert](#toc0_)
+### <a id='toc1_4_1_'></a>[original geliefert vor ZfKD Prüfungen](#toc0_)
+- die Übersicht macht erkennbar, wie sich die Fallzahlen absolut und relativ im Laufe der letzten Lieferungen entwickelt haben
 - aufgeführt sind die Fallzahlen aus den überlieferten Dateien **vor** den ZfKD Anpassungen
 - `batch_label` markiert den jeweils letzten offiziellen Datenstand des Lieferjahres, sowie den aktuellen Datenstand
 
@@ -102,7 +107,7 @@
 
 <br>
 
-### <a id='toc1_4_2_'></a>[nach Abschluss der Prüfungen im ZfKD](#toc0_)
+### <a id='toc1_4_2_'></a>[jeweils letztes DJ nach ZfKD  Prüfungen](#toc0_)
 - Filter: jeweils das **letzte DJ** der einzelnen Jahreslieferung
 - aufgeführt sind die Fallzahlen aus den überlieferten Dateien **nach** den ZfKD Anpassungen
 
@@ -114,15 +119,18 @@
 
 <div style="page-break-after: always;"></div>
 
+
+<br>
+
 ## <a id='toc1_5_'></a>[Variablenverteilung](#toc0_)
 <!-- - **Filter:**
   - **🚨 sofern nicht anders angegeben ist der Zeitraum beschränkt auf das höchste Diagnosejahr (für `epi2024`: 2023) 🚨**
   - Diagnosen: ausgeschlossen sind `C44` und alle `D` -->
-- ab hier wird nur die aktuelle Datenlieferung dargestellt
-- als ungültig markierte Fälle (_A-Prüfungen_) sind in allen Fallzahlen ausgeschlossen
+- ab hier wird nur noch die **aktuelle Datenlieferung** dargestellt
+- als ungültig markierte Fälle (_A-Prüfungen_) sind in allen Fallzahlen **ausgeschlossen**
 - in den barplots sind die relativen Häufigkeiten von Variablen im Datensatz der Register aufgetragen
-- zusätzlich ist die Angabe für alle kkr enthalten (`Total`)
-- näherungsweise sind GKZ-Bundesländer verwendet anstatt Lieferregister, um 11-16 aufspannen zu können
+- zusätzlich ist die Angabe für alle Register enthalten (`Total`)
+- näherungsweise sind **GKZ-Bundesländer** verwendet anstatt Lieferregister, um 11-16 aufspannen zu können
 
 <br>
 
@@ -155,13 +163,28 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](epi_2_analyze_files/output_23_4.png)
+![png](epi_2_analyze_files/output_22_4.png)
     
 
 
+
+<br>
+
 ### <a id='toc1_5_2_'></a>[Diagnosegruppen](#toc0_)
 
-> 💡 `ZfKD`: _"Die Anteile für D-Diagnosen sind in etwa vergleichbar, die für C44 unterscheiden sich recht deutlich"_
+> 💡 **ZfKD**
+>
+> D-Diagnosen (Vorstufen & unsichere Befunde)
+> * Die Anteile sind in fast allen Bundesländern sehr ähnlich. 
+> * Das zeigt, dass die Meldungen aus der Pathologie deutschlandweit relativ einheitlich erfasst werden.
+> * Die Werte sind ein gutes Zeichen für eine vergleichbare Datenqualität.
+>
+> ---
+>
+> C44 (Heller Hautkrebs)
+> * Hier sind die Fallzahlen überall hoch, aber die Anteile in der Grafik schwanken stark. 
+> * Das liegt zum einen an der hohen Entdeckungsrate durch das Hautkrebs-Screening. 
+> * Der Hauptgrund für die Unterschiede sind jedoch die **Landesgesetze**: Je nach Bundesland werden einfache Fälle (wie Basaliome) unterschiedlich streng gemeldet oder vergütet. Während manche Länder noch fast alles erfassen, konzentrieren sich andere bereits auf die schweren, "prognostisch ungünstigen" Verläufe.
 
 
 
@@ -186,7 +209,7 @@ and z_dy = 2024
 
 
     
-![svg](epi_2_analyze_files/output_25_4.svg)
+![svg](epi_2_analyze_files/output_24_4.svg)
     
 
 
@@ -194,7 +217,16 @@ and z_dy = 2024
 
 ### <a id='toc1_5_3_'></a>[Diagnosesicherung](#toc0_)
 
-> 💡 `ZfKD`: _"auffällig ist der hohe Anteil an fehlenden Diagnosesicherungen in `08-BW`"_  
+> 💡 **ZfKD**
+> 
+> Fehlende Angabe
+> * `08-BW` hat einen hohen Anteil an fehlenden Diagnosesicherungen mit zuletzt stark ansteigendem Trend
+> ---
+> Histologie Primärtumor
+> * Der Großteil der Meldungen basiert auf einer soliden feingeweblichen Untersuchung.
+> ---
+> Zytologie
+> * In einigen Ländern ist dieser Anteil erkennbar breiter als in anderen. Da die Zytologie oft bei Lungen- oder Schilddrüsenuntersuchungen genutzt wird, könnte dies auf eine starke Vernetzung mit entsprechenden Fachkliniken hindeuten, die ihre Befunde sehr detailliert an das Register melden.
 
 
 
@@ -223,11 +255,45 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](epi_2_analyze_files/output_27_4.svg)
+![svg](epi_2_analyze_files/output_26_4.svg)
+    
+
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 17_569_016                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
+    └ [DJ ab 2010]:             n = 11_220_232  (63.9%) ░░░░░░░░░░░███████████████████
+    └ [ICD10 nur C]:             n = 9_692_961  (55.2%) ░░░░░░░░░░░░░░████████████████
+    └ [keine C44,D04]:           n = 7_646_321  (43.5%) ░░░░░░░░░░░░░░░░░█████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+is_deleted = 0
+and DJ >= 2010
+and left(z_icd10_3d,1) = 'C'
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
+    
+![png](epi_2_analyze_files/output_27_4.png)
     
 
 
 <!-- <br>
+
+
+<br>
 
 ### <a id='toc1_5_4_'></a>[DCO Diagramm](#toc0_)
 - **Filter: DJ = 2020-2024, C44 und D-Diagnosen sind ausgeschlossen, GKZbl 01-16**
@@ -235,10 +301,19 @@ and z_icd10_3d not in ('C44','D04')
   - 1 wenn Diagnosesicherung = 3
   - sonst 2 (auch für Diagnosesicherung missing)  -->
 
+
+<br>
+
 ### <a id='toc1_5_5_'></a>[DCO](#toc0_)
 - Metrik: Anteil DCO an Gesamtfallzahl in %
-<!-- > 💡 für 09-BY sind in dieser Lieferung erheblich weniger DCO Fälle festzustellen -->
-> 💡 `ZfKD`: _"kaum DCO Markierungen für Fälle aus `05-NW` in 2024"_
+
+> 💡 **ZfKD**
+> 
+> Fehlende DCO Fälle bzw Markierungen
+> * es ist nicht ersichtlich, ob DCO Fälle nicht übermittelt oder nicht markiert sind
+> * `05-NW` hat fast keine DCO Fälle im aktuelle Jahr
+> * `08-BW` keine / kaum DCO Fälle vor 2015
+> * `13-MV` `14-SN` `16-TH` haben kaum DCO Fälle seit Beginn der klinischen Lieferungen
 
 
 
@@ -272,8 +347,18 @@ and z_dy between 2010 and 2024
     
 
 
-### <a id='toc1_5_6_'></a>[BL vs EKRNR](#toc0_)
-- neue Bundesländer sind nicht aufgeführt, da Daten erst ab 2020 aus Länderregistern
+
+<br>
+
+### <a id='toc1_5_6_'></a>[Angabe Register vs Bundesland](#toc0_)
+- neue Bundesländer sind nicht aufgeführt, da Daten erst ab 2020 aus Länderregistern vorliegen
+- Fälle ausserhalb des Einzugsbereichs werden im ZfKD ausgeschlossen (`A_EKRNR_GKZ_unplausibel`)
+
+> 💡 **ZfKD**
+> 
+> Fallübermittlung außerhalb des Einzugsbereichs
+> * generell wird angestrebt, dass die Fallübermittlung ausschließlich innerhalb des Einzugsbereichs stattfindet
+> * `05-NW` übermittelt einen relativ hohen Anteil an Fällen aus anderen Bundesländern
 
 
 
@@ -331,20 +416,6 @@ and z_dy between 2020 and 2024
     
 
 
-    GRAD 6
-
-```
-    ┌─────────┬────────────┬───────┐
-    │  EKRNR  │ is_deleted │  cnt  │
-    │ varchar │    int8    │ int64 │
-    ├─────────┼────────────┼───────┤
-    │ 11      │          0 │     1 │
-    │ 03      │          1 │     4 │
-    │ 11      │          1 │ 10084 │
-    │ 08      │          1 │  2226 │
-    └─────────┴────────────┴───────┘
-```
-
 <br>
 
 ### <a id='toc1_5_8_'></a>[Grading Verteilung](#toc0_)
@@ -387,9 +458,12 @@ and
 
 
     
-![svg](epi_2_analyze_files/output_37_4.svg)
+![svg](epi_2_analyze_files/output_36_4.svg)
     
 
+
+
+<br>
 
 ### <a id='toc1_5_9_'></a>[Grading Anteil](#toc0_)
 - Metrik: Anteil GRAD missings
@@ -430,11 +504,14 @@ and
 
 
 
-<img src="epi_2_analyze_files/output_39_5.png" width="80%">
+<img src="epi_2_analyze_files/output_38_5.png" width="80%">
     
 
 
-### <a id='toc1_5_10_'></a>[T Anteil (c oder p)](#toc0_)
+
+<br>
+
+### <a id='toc1_5_10_'></a>[ ☣️ T Anteil (c oder p)](#toc0_)
 - Metrik: Anteil `TNMTKURZ` missings
 
 
@@ -474,7 +551,7 @@ and
 
 
 
-<img src="epi_2_analyze_files/output_41_5.png" width="80%">
+<img src="epi_2_analyze_files/output_40_5.png" width="80%">
     
 
 
@@ -509,7 +586,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](epi_2_analyze_files/output_43_4.svg)
+![svg](epi_2_analyze_files/output_42_4.svg)
     
 
 
@@ -545,16 +622,49 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](epi_2_analyze_files/output_45_4.svg)
+![svg](epi_2_analyze_files/output_44_4.svg)
+    
+
+
+
+
+```
+    counts: all rows (no grouping)
+    ---
+    n = 17_569_016                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
+    └ [DJ ab 2010]:             n = 11_220_232  (63.9%) ░░░░░░░░░░░███████████████████
+    └ [ICD10 nur C]:             n = 9_692_961  (55.2%) ░░░░░░░░░░░░░░████████████████
+    └ [keine C44,D04]:           n = 7_646_321  (43.5%) ░░░░░░░░░░░░░░░░░█████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+is_deleted = 0
+and DJ >= 2010
+and left(z_icd10_3d,1) = 'C'
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+
+    
+![png](epi_2_analyze_files/output_45_4.png)
     
 
 
 <br>
 
 ### <a id='toc1_5_13_'></a>[TNM-Auflage](#toc0_)
-- nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings
+- nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings im Datensatz
 
-> 💡 `ZfKD`: _"Auflage 7 nur noch von 03-NI in nennenswertem Umfang übermittelt"_
+> 💡 **ZfKD**
+> 
+> Auflage 7 wird nur noch von 03-NI in nennenswertem Umfang übermittelt
 
 
 
@@ -625,9 +735,20 @@ and z_icd10_3d not in ('C44','D04')
     
 
 
+
+<br>
+
 #### <a id='toc1_5_14_2_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
 - gezählt sind **Personen**
-- `icdt10_1d` gibt die erste Stelle der Todesursache an
+- `icdt10_1d` gibt die erste Stelle der Todesursache (TU) an
+
+
+> 💡 **ZfKD**
+> 
+> Fehlende Angabe
+> * `03-NI` hat für das aktuelle DJ nahezu keine TU mit nicht-tumorrelevanten TU übermittelt
+
+
 
 
 
@@ -658,7 +779,16 @@ and year(SDIMP) >= 2010
     
 
 
+
+<br>
+
 ## <a id='toc1_6_'></a>[Anteil Mehrfachtumore](#toc0_)
+- Metrik: Anteil Tumore mit `A_Mehrfachmeldung`
+- diese Tumore werden vom ZfKD ausgeschlossen
+
+> 💡 **ZfKD**
+> 
+> für `13-NI`,`14-SN` und `15-ST` ermittelt das ZfKD sichtbar erhöhte Anteile an Mehrfachtumoren für DJ seit Beginn der klin. Registrierung
 
 
 
@@ -689,19 +819,36 @@ and GKZbl::tinyint <= 16
 
 <div style="page-break-after: always;"></div>
 
+
+<br>
+
 ## <a id='toc1_7_'></a>[Plausibilitätsprüfungen](#toc0_)
-- **Filter**
-  - **es ist jeweils nur das aktuellste DJ berücksichtigt (aktuell: 2024, ins letzter Lieferung: 2023)**
-- Die Tabellen sind zur besseren Lesbarkeit nun aufgeteilt nach den Plausibilitätsprüfungen ([pdf](https://www.krebsregisterverbund.de/attachments/download/8743/Plausibilit%C3%A4tspr%C3%BCfungen_details.pdf))
-  - `A`: Fälle ausgeschlossen
-  - `B`: Fälle markiert
-  - `C`: Fälle korrigiert
-- Spalten
-  - `cnt_epi2024`: Absolute Fallzahl der checks für das in diesem Datensatz höchste DJ (2023)
-  - `cnt_now`: Absolute Fallzahl der checks für das im aktuellen Datensatz höchsten DJ (2024)
-  - `pct_epi2024`: Anteil Fallzahl der checks an allen Fällen für das in diesem Datensatz höchste DJ (2023)
-  - `pct_now`: Anteil Fallzahl der checks an allen Fällen für das im aktuellen Datensatz höchste DJ (2024)
-  - _(Absolute Fallzahlen = nach Abzug der A-Prüfungen)_
+**Filter**
+- **es ist jeweils nur das aktuellste DJ berücksichtigt (aktuell `epi2025`: 2024, zum Vergleich `epi2024`: 2023)**
+
+Die Tabellen sind zur besseren Lesbarkeit nun aufgeteilt nach den Plausibilitätsprüfungen ([pdf hier verfügbar](https://www.krebsregisterverbund.de/attachments/download/8743/Plausibilit%C3%A4tspr%C3%BCfungen_details.pdf))
+- `A`: Fälle ausgeschlossen
+- `B`: Fälle markiert
+- `C`: Fälle (auto) korrigiert
+
+Spalten
+- `cnt_epi2024`: Absolute Fallzahl der checks für das in diesem Datensatz höchste DJ (2023)
+- `cnt_now`: Absolute Fallzahl der checks für das im aktuellen Datensatz höchsten DJ (2024)
+- `pct_epi2024`: Anteil Fallzahl der checks an allen Fällen für das in diesem Datensatz höchste DJ (2023)
+- `pct_now`: Anteil Fallzahl der checks an allen Fällen für das im aktuellen Datensatz höchste DJ (2024)
+- _(Absolute Fallzahlen = nach Abzug der A-Prüfungen)_
+
+Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beispiel: 
+<details>
+    <summary>click</summary>
+
+```sql
+    select * 
+    from Tumor4 
+    where IARC like '%A_Mehrfach%'
+```
+
+</details>
 
 <br>
 
@@ -710,214 +857,247 @@ and GKZbl::tinyint <= 16
 - alle Fälle wurden korrigiert laut `C_TOD=1_korrigiert_aufgrund_Sterbeangaben`
 
 
-<img src="epi_2_analyze_files/output_58_1.png" width="60%">
+<img src="epi_2_analyze_files/output_58_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_58_3.png" width="60%">
+<img src="epi_2_analyze_files/output_58_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_58_5.png" width="60%">
+<img src="epi_2_analyze_files/output_58_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_2_'></a>[✅ 02-HH](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_60_1.png" width="60%">
+<img src="epi_2_analyze_files/output_60_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_60_3.png" width="60%">
+<img src="epi_2_analyze_files/output_60_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_60_5.png" width="60%">
+<img src="epi_2_analyze_files/output_60_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_3_'></a>[✅ 03-NI](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_62_1.png" width="60%">
+<img src="epi_2_analyze_files/output_62_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_62_3.png" width="60%">
+<img src="epi_2_analyze_files/output_62_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_62_5.png" width="60%">
+<img src="epi_2_analyze_files/output_62_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_4_'></a>[✅ 04-HB](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_64_1.png" width="60%">
+<img src="epi_2_analyze_files/output_64_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_64_3.png" width="60%">
+<img src="epi_2_analyze_files/output_64_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_64_5.png" width="60%">
+<img src="epi_2_analyze_files/output_64_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_5_'></a>[⚠️ 05-NW](#toc0_)
 - unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
 
 
-<img src="epi_2_analyze_files/output_67_1.png" width="60%">
+<img src="epi_2_analyze_files/output_67_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_67_3.png" width="60%">
+<img src="epi_2_analyze_files/output_67_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_67_5.png" width="60%">
+<img src="epi_2_analyze_files/output_67_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_6_'></a>[🚨 06-HE](#toc0_)
 - Fallzahl DJ=2024 deutlich geringer
 
 
-<img src="epi_2_analyze_files/output_69_1.png" width="60%">
+<img src="epi_2_analyze_files/output_69_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_69_3.png" width="60%">
+<img src="epi_2_analyze_files/output_69_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_69_5.png" width="60%">
+<img src="epi_2_analyze_files/output_69_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_7_'></a>[✅ 07-RP](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_71_1.png" width="60%">
+<img src="epi_2_analyze_files/output_71_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_71_3.png" width="60%">
+<img src="epi_2_analyze_files/output_71_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_71_5.png" width="60%">
+<img src="epi_2_analyze_files/output_71_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_8_'></a>[✅ 08-BW](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_73_1.png" width="60%">
+<img src="epi_2_analyze_files/output_73_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_73_3.png" width="60%">
+<img src="epi_2_analyze_files/output_73_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_73_5.png" width="60%">
+<img src="epi_2_analyze_files/output_73_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_9_'></a>[✅ 09-BY](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_75_1.png" width="60%">
+<img src="epi_2_analyze_files/output_75_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_75_3.png" width="60%">
+<img src="epi_2_analyze_files/output_75_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_75_5.png" width="60%">
+<img src="epi_2_analyze_files/output_75_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
+
+
+<br>
 
 ### <a id='toc1_7_10_'></a>[✅ 10-SL](#toc0_)
 - `A_Mehrfachmeldung` leicht erhöht mit ~4%
 
 
-<img src="epi_2_analyze_files/output_77_1.png" width="60%">
+<img src="epi_2_analyze_files/output_77_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_77_3.png" width="60%">
+<img src="epi_2_analyze_files/output_77_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_77_5.png" width="60%">
+<img src="epi_2_analyze_files/output_77_5.png" width="55%">
     
 
 
 <div style="page-break-after: always;"></div>
 
+
+<br>
+
 ### <a id='toc1_7_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
 
 
-<img src="epi_2_analyze_files/output_79_1.png" width="60%">
+<img src="epi_2_analyze_files/output_79_1.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_79_3.png" width="60%">
+<img src="epi_2_analyze_files/output_79_3.png" width="55%">
     
 
 
 
-<img src="epi_2_analyze_files/output_79_5.png" width="60%">
+<img src="epi_2_analyze_files/output_79_5.png" width="55%">
     
 
 
 <!-- <br>
+
+
+<br>
 
 #### <a id='toc1_7_11_1_'></a>[Verteilung der Variable TOD in den original gelieferten Daten](#toc0_)
 - Grundgesamtheit: alle Daten mit DJ > 1970

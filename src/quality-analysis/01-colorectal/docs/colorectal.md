@@ -45,7 +45,7 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.4.4 | 📦 pandas-plots: 1.4.1
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.2
 
 
 
@@ -58,7 +58,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-19 18:31:20
+    document created:        2026-03-20 19:36:36
 
 
 
@@ -234,21 +234,25 @@ and left(Code,3) in ('5-4')
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────┐
     │                                                                 ops                                                                 │ cnt_ops │
     ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼─────────┤
-    │ 5-455.41 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   30629 │
-    │ 5-455.45 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts…  │   21351 │
+    │ 5-455.41 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts]… │   30629 │
+    │ 5-455.45 - Partielle Resektion des Dickdarmes: Resektion des Colon ascendens mit Coecum und rechter Flexur [Hemikolektomie rechts]… │   21351 │
     │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │   10319 │
     │ 5-455.75 - Partielle Resektion des Dickdarmes: Sigmaresektion: Laparoskopisch mit Anastomose                                        │    9885 │
     │ 5-406.9 - Regionale Lymphadenektomie (Ausräumung mehrerer Lymphknoten einer Region) im Rahmen einer anderen Operation: Mesenterial  │    7681 │
     │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    5539 │
     │ 5-484.35 - Rektumresektion unter Sphinktererhaltung: Anteriore Resektion: Laparoskopisch mit Anastomose                             │    4779 │
     │ 5-455.71 - Partielle Resektion des Dickdarmes: Sigmaresektion: Offen chirurgisch mit Anastomose                                     │    4438 │
-    │ 5-455.65 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Laparosko…  │    4161 │
-    │ 5-455.61 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Offen chi…  │    4125 │
-    ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
-    │ 10 rows                                                                                                                             2 columns │
-    └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+    │ 5-455.65 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Laparoskop… │    4161 │
+    │ 5-455.61 - Partielle Resektion des Dickdarmes: Resektion des Colon descendens mit linker Flexur [Hemikolektomie links]: Offen chir… │    4125 │
+    └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┘
 ```
 
+      10 rows                                                                                                                             2 columns
+    
+
+
+
+    
 ![svg](colorectal_files/output_25_5.svg)
     
 
@@ -303,13 +307,17 @@ and left(Code,3) in ('5-4')
     │ 5-465.1 - Rückverlagerung eines doppelläufigen Enterostomas: Ileostoma                                                              │    3224 │
     │ 5-469.21 - Andere Operationen am Darm: Adhäsiolyse: Laparoskopisch                                                                  │    3133 │
     │ 5-469.20 - Andere Operationen am Darm: Adhäsiolyse: Offen chirurgisch                                                               │    3045 │
-    │ 5-484.65 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion mit peranaler Anastomose: Laparoskopisch mit Anast…  │    2852 │
+    │ 5-484.65 - Rektumresektion unter Sphinktererhaltung: Tiefe anteriore Resektion mit peranaler Anastomose: Laparoskopisch mit Anasto… │    2852 │
     │ 5-406.9 - Regionale Lymphadenektomie (Ausräumung mehrerer Lymphknoten einer Region) im Rahmen einer anderen Operation: Mesenterial  │    2508 │
-    ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┤
-    │ 10 rows                                                                                                                             2 columns │
-    └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+    └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────┘
 ```
 
+      10 rows                                                                                                                             2 columns
+    
+
+
+
+    
 ![svg](colorectal_files/output_27_5.svg)
     
 
