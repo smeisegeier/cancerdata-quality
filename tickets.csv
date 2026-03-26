@@ -1,0 +1,14 @@
+prio;data;topic;issue;reg
+2;clin;Mp;hoher anteil missings;2,5,10
+2;clin;icd10-grp;keine c44;3
+2;clin;verstorben;zu wenig fälle erfasst;16
+1;clin;epi-vs-clin;weniger klinische fälle;3
+2;clin;diagnosesicherung;alte codes noch enthalten;
+2;epi;diagnosesicherung;hoher anteil missings;8
+1;epi;dco;zu wenig fälle;5,8,13,14,16
+2;epi;reg-vs-bl;streufälle;5
+2;epi;tu;diverse;3,7,11-16
+2;clin;tu;3,6,7
+2;clin;missings;inzidenzort,icd10;13
+1;clin;missings;R0;1,3,4,10
+1;clin;organmodule;keine daten;2
