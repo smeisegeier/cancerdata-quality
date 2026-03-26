@@ -7,7 +7,7 @@
   - [Datenstand 🕥](#toc1_3_)    
   - [Fallzahlen im Verlauf der Jahreslieferungen](#toc1_4_)    
     - [original geliefert vor ZfKD Prüfungen](#toc1_4_1_)    
-    - [je aktuellstes DJ nach ZfKD  Prüfungen](#toc1_4_2_)    
+    - [jeweils letztes DJ nach ZfKD  Prüfungen](#toc1_4_2_)    
   - [Variablenverteilung](#toc1_5_)    
     - [Diagnosejahr](#toc1_5_1_)    
     - [Diagnosegruppen](#toc1_5_2_)    
@@ -18,13 +18,12 @@
     - [Dignität](#toc1_5_7_)    
     - [Grading Verteilung](#toc1_5_8_)    
     - [Grading Anteil](#toc1_5_9_)    
-    - [ ☣️ T Anteil (c oder p)](#toc1_5_10_)    
-    - [Altersgruppen](#toc1_5_11_)    
-    - [UICC](#toc1_5_12_)    
-    - [TNM-Auflage](#toc1_5_13_)    
-    - [Tod](#toc1_5_14_)    
-      - [Anteil Verstorbene](#toc1_5_14_1_)    
-      - [Verteilung Todesursachen nach ICDT10](#toc1_5_14_2_)    
+    - [Altersgruppen](#toc1_5_10_)    
+    - [UICC](#toc1_5_11_)    
+    - [TNM-Auflage](#toc1_5_12_)    
+    - [Tod](#toc1_5_13_)    
+      - [Anteil Verstorbene](#toc1_5_13_1_)    
+      - [Verteilung Todesursachen nach ICDT10](#toc1_5_13_2_)    
   - [Anteil Mehrfachtumore](#toc1_6_)    
   - [Plausibilitätsprüfungen](#toc1_7_)    
     - [⚠️ 01-SH](#toc1_7_1_)    
@@ -38,7 +37,6 @@
     - [✅ 09-BY](#toc1_7_9_)    
     - [✅ 10-SL](#toc1_7_10_)    
     - [✅ 11-GKR (ehemals)](#toc1_7_11_)    
-      - [Verteilung der Variable TOD in den original gelieferten Daten](#toc1_7_11_1_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -66,14 +64,14 @@
 
 ## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.2
+    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.5
 
 
     database file:           2026-03-03_data_epi.duckdb
     data tag:                epi2025_beta2
     sql table created:       2026-03-03 09:47:44
     doi:                     -
-    document created:        2026-03-20 18:23:05
+    document created:        2026-03-26 16:41:50
 
 
     
@@ -139,8 +137,6 @@
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2019-2025]:            n = 4_597_256  (26.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
@@ -161,9 +157,13 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_22_4.png)
+![png](epi_files/output_22_5.png)
     
 
 
@@ -189,8 +189,6 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -207,9 +205,13 @@ and z_dy = 2024
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_24_4.svg)
+![svg](epi_files/output_24_5.svg)
     
 
 
@@ -231,8 +233,6 @@ and z_dy = 2024
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -253,17 +253,19 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_26_4.svg)
+![svg](epi_files/output_26_5.svg)
     
 
 
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ ab 2010]:             n = 11_220_232  (63.9%) ░░░░░░░░░░░███████████████████
@@ -284,9 +286,13 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_27_4.png)
+![png](epi_files/output_27_5.png)
     
 
 
@@ -319,8 +325,6 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [ICD10 nur C]:            n = 14_973_906  (85.2%) ░░░░░█████████████████████████
@@ -341,9 +345,13 @@ and z_dy between 2010 and 2024
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_30_4.png)
+![png](epi_files/output_30_5.png)
     
 
 
@@ -363,8 +371,6 @@ and z_dy between 2010 and 2024
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                (100.0%) ██████████████████████████████
     └ [keine NBL]: n = 13_493_606  (76.8%) ░░░░░░░███████████████████████
 ```
@@ -379,9 +385,13 @@ z_kkr < 11
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_32_4.png)
+![png](epi_files/output_32_5.png)
     
 
 
@@ -392,8 +402,6 @@ z_kkr < 11
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2020-2024]:            n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
@@ -410,9 +418,13 @@ and z_dy between 2020 and 2024
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_34_4.png)
+![png](epi_files/output_34_5.png)
     
 
 
@@ -424,8 +436,6 @@ and z_dy between 2020 and 2024
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                                  (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]:      n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                        n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -456,9 +466,13 @@ and
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_36_4.svg)
+![svg](epi_files/output_36_5.svg)
     
 
 
@@ -471,8 +485,6 @@ and
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                                  (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]:      n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2020-2024]:                 n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
@@ -503,67 +515,22 @@ and
 </details>
 
 
-
-<img src="epi_files/output_38_5.png" width="80%">
+    
     
 
 
 
-<br>
-
-### <a id='toc1_5_10_'></a>[ ☣️ T Anteil (c oder p)](#toc0_)
-- Metrik: Anteil `TNMTKURZ` missings
-
-
-
-```
-    counts: all rows (no grouping)
-    ---
-    n = 17_569_016                               (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:   n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2020-2024]:              n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine DCO]:                 n = 3_643_458  (20.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [nur tnm-relevante Tumore]:  n = 2_029_346  (11.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░███
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-is_deleted = 0
-and z_dy between 2020 and 2024
-and not z_is_dco
-and 
-    (
-        left(z_icd10_3d, 1) ='C' and
-        (
-            right(z_icd10_3d, 2)::int8 between 00 and 43
-            or right(z_icd10_3d, 2)::int8 between 45 and 69
-            or right(z_icd10_3d, 2)::int8 between 73 and 74
-        )
-        and left(Morphologie_Code,4)::int between 8010 and 8790
-        and z_icd10_3d not in ('C26', 'C39', 'C55')
-        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
-    )
-```
-
-</details>
-
-
-
-<img src="epi_files/output_40_5.png" width="80%">
+<img src="epi_files/output_38_6.png" width="80%">
     
 
 
 <br>
 
-### <a id='toc1_5_11_'></a>[Altersgruppen](#toc0_)
+### <a id='toc1_5_10_'></a>[Altersgruppen](#toc0_)
 
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -584,22 +551,24 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_42_4.svg)
+![svg](epi_files/output_40_5.svg)
     
 
 
 <br>
 
-### <a id='toc1_5_12_'></a>[UICC](#toc0_)
+### <a id='toc1_5_11_'></a>[UICC](#toc0_)
 - die Variable `UICC` wird vom ZfKD gebildet
 
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -620,17 +589,19 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_44_4.svg)
+![svg](epi_files/output_42_5.svg)
     
 
 
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ ab 2010]:             n = 11_220_232  (63.9%) ░░░░░░░░░░░███████████████████
@@ -651,15 +622,19 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_45_4.png)
+![png](epi_files/output_43_5.png)
     
 
 
 <br>
 
-### <a id='toc1_5_13_'></a>[TNM-Auflage](#toc0_)
+### <a id='toc1_5_12_'></a>[TNM-Auflage](#toc0_)
 - nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings im Datensatz
 
 > 💡 **ZfKD**
@@ -669,8 +644,6 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
     └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -691,24 +664,28 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
+
+
 
     
-![svg](epi_files/output_47_4.svg)
+![svg](epi_files/output_45_5.svg)
     
 
 
 <br>
 
-### <a id='toc1_5_14_'></a>[Tod](#toc0_)
+### <a id='toc1_5_13_'></a>[Tod](#toc0_)
 
-#### <a id='toc1_5_14_1_'></a>[Anteil Verstorbene](#toc0_)
+#### <a id='toc1_5_13_1_'></a>[Anteil Verstorbene](#toc0_)
 - gezählt sind **Personen**
 - Metrik: Anteil Verstorbene
 
 
 
 ```
-    counts: distinct GLOBALPATID
+    count: distinct GLOBALPATID
     ---
     n = 14_998_886                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 14_585_410  (97.2%) ░█████████████████████████████
@@ -730,15 +707,19 @@ and z_icd10_3d not in ('C44','D04')
 </details>
 
 
+    
+    
 
-<img src="epi_files/output_50_5.png" width="60%">
+
+
+<img src="epi_files/output_48_6.png" width="60%">
     
 
 
 
 <br>
 
-#### <a id='toc1_5_14_2_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
+#### <a id='toc1_5_13_2_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
 - gezählt sind **Personen**
 - `icdt10_1d` gibt die erste Stelle der Todesursache (TU) an
 
@@ -753,7 +734,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    counts: distinct GLOBALPATID
+    count: distinct GLOBALPATID
     ---
     n = 14_998_886                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 14_585_410  (97.2%) ░█████████████████████████████
@@ -773,9 +754,13 @@ and year(SDIMP) >= 2010
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_52_4.png)
+![png](epi_files/output_50_5.png)
     
 
 
@@ -793,8 +778,6 @@ and year(SDIMP) >= 2010
 
 
 ```
-    counts: all rows (no grouping)
-    ---
     n = 17_569_016                     (100.0%) ██████████████████████████████
     └ [DJ 2010-2024]:   n = 11_641_922  (66.3%) ░░░░░░░░░░░███████████████████
     └ [nur gültige BL]: n = 11_632_852  (66.2%) ░░░░░░░░░░░███████████████████
@@ -811,9 +794,13 @@ and GKZbl::tinyint <= 16
 </details>
 
 
+    
+    
+
+
 
     
-![png](epi_files/output_54_4.png)
+![png](epi_files/output_52_5.png)
     
 
 
@@ -857,6 +844,28 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 - alle Fälle wurden korrigiert laut `C_TOD=1_korrigiert_aufgrund_Sterbeangaben`
 
 
+<img src="epi_files/output_56_1.png" width="55%">
+    
+
+
+
+<img src="epi_files/output_56_3.png" width="55%">
+    
+
+
+
+<img src="epi_files/output_56_5.png" width="55%">
+    
+
+
+<div style="page-break-after: always;"></div>
+
+
+<br>
+
+### <a id='toc1_7_2_'></a>[✅ 02-HH](#toc0_)
+
+
 <img src="epi_files/output_58_1.png" width="55%">
     
 
@@ -876,7 +885,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_2_'></a>[✅ 02-HH](#toc0_)
+### <a id='toc1_7_3_'></a>[✅ 03-NI](#toc0_)
 
 
 <img src="epi_files/output_60_1.png" width="55%">
@@ -898,7 +907,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_3_'></a>[✅ 03-NI](#toc0_)
+### <a id='toc1_7_4_'></a>[✅ 04-HB](#toc0_)
 
 
 <img src="epi_files/output_62_1.png" width="55%">
@@ -920,20 +929,21 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_4_'></a>[✅ 04-HB](#toc0_)
+### <a id='toc1_7_5_'></a>[⚠️ 05-NW](#toc0_)
+- unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
 
 
-<img src="epi_files/output_64_1.png" width="55%">
+<img src="epi_files/output_65_1.png" width="55%">
     
 
 
 
-<img src="epi_files/output_64_3.png" width="55%">
+<img src="epi_files/output_65_3.png" width="55%">
     
 
 
 
-<img src="epi_files/output_64_5.png" width="55%">
+<img src="epi_files/output_65_5.png" width="55%">
     
 
 
@@ -942,8 +952,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_5_'></a>[⚠️ 05-NW](#toc0_)
-- unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
+### <a id='toc1_7_6_'></a>[🚨 06-HE](#toc0_)
+- Fallzahl DJ=2024 deutlich geringer
 
 
 <img src="epi_files/output_67_1.png" width="55%">
@@ -965,8 +975,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_6_'></a>[🚨 06-HE](#toc0_)
-- Fallzahl DJ=2024 deutlich geringer
+### <a id='toc1_7_7_'></a>[✅ 07-RP](#toc0_)
 
 
 <img src="epi_files/output_69_1.png" width="55%">
@@ -988,7 +997,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_7_'></a>[✅ 07-RP](#toc0_)
+### <a id='toc1_7_8_'></a>[✅ 08-BW](#toc0_)
 
 
 <img src="epi_files/output_71_1.png" width="55%">
@@ -1010,7 +1019,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_8_'></a>[✅ 08-BW](#toc0_)
+### <a id='toc1_7_9_'></a>[✅ 09-BY](#toc0_)
 
 
 <img src="epi_files/output_73_1.png" width="55%">
@@ -1032,7 +1041,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_9_'></a>[✅ 09-BY](#toc0_)
+### <a id='toc1_7_10_'></a>[✅ 10-SL](#toc0_)
+- `A_Mehrfachmeldung` leicht erhöht mit ~4%
 
 
 <img src="epi_files/output_75_1.png" width="55%">
@@ -1054,8 +1064,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_7_10_'></a>[✅ 10-SL](#toc0_)
-- `A_Mehrfachmeldung` leicht erhöht mit ~4%
+### <a id='toc1_7_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
 
 
 <img src="epi_files/output_77_1.png" width="55%">
@@ -1071,36 +1080,3 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 <img src="epi_files/output_77_5.png" width="55%">
     
 
-
-<div style="page-break-after: always;"></div>
-
-
-<br>
-
-### <a id='toc1_7_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
-
-
-<img src="epi_files/output_79_1.png" width="55%">
-    
-
-
-
-<img src="epi_files/output_79_3.png" width="55%">
-    
-
-
-
-<img src="epi_files/output_79_5.png" width="55%">
-    
-
-
-<!-- <br>
-
-
-<br>
-
-#### <a id='toc1_7_11_1_'></a>[Verteilung der Variable TOD in den original gelieferten Daten](#toc0_)
-- Grundgesamtheit: alle Daten mit DJ > 1970
-- neben `J` und `N` sind diverse Formen von Leerkodierungen unterschieden (`NULL`, `''`, `' '` etc.)
-- die Daten den Registern ohne missings enthalten eine eindeutige Information zu `TOD`
-- bei allen sonstigen EKR wird angenommen: Todesangabe leer -> lebend -->

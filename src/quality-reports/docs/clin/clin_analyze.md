@@ -114,7 +114,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-03-26 11:10:42
+    document created:        2026-03-26 16:44:15
 
 
 <br>
