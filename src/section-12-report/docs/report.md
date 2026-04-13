@@ -45,13 +45,14 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-04-02 17:16:19
+    document created:        2026-04-13 17:26:45
 
 
 
 <br>
 
 ## <a id='toc1_1_'></a>[Einführung](#toc0_)
+
 ### <a id='toc1_1_1_'></a>[Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc0_)
 Mit dem Gesetz zur Zusammenführung von Krebsregisterdaten (2021) wurde auch das Bundeskrebsregisterdatengesetz (BKRG) novelliert. Unter anderem wurde der jährlich aus den Landeskrebsregistern an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut zu übermittelnde Datensatz um wesentliche Elemente der klinischen Krebsregistrierung (Angaben zur Therapie und Krankheitsverlauf) sowie zusätzliche diagnostische Variablen für ausgewählte Diagnosen erweitert. Diese werden in den Krebsregistern je nach Zeitpunkt der landesgesetzlichen Umsetzung des Krebsfrüherkennungs- und Registergesetzes (KFRG 2013) mindestens seit 2019 erfasst. DieDefinition der einzelnen Variablen im Onkologischen Basisdatensatz (oBDS) erfolgt durch die Arbeitsgemeinschaft Deutscher Tumorzentren und den Deutsche Krebsregister e.V. (vormals: Gesellschaft der epidemiologischen Krebsregister in Deutschland) und werden nach § 65c Abs. 1a S. 1 regelmäßig angepasst. 
 Um aus dem  für die Meldungen an die  Krebsregister maßgeblichen OBDS im Rahmen der Vorgaben des BKRG einen auswertefähigen Datensatz für die Übermittlung an das ZfKD zu erzeugen, wurde im Jahr 2022 entsprechend § 5 Abs. 3 BKRG in einer Arbeitsgruppe aus Vertretern des ZfKD und den Krebsregistern der „ZfKD-Lieferdatensatz“ vereinbart. 
@@ -137,7 +138,13 @@ Aus Schleswig-Holstein, Niedersachsen, Bremen und dem Saarland wurden dem ZfKD b
 Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die folgenden Auswertung beschränkt sich daher auf Karzinome (ICD-O-3: 81010/3 – 8576/3) und Tumorlokalisationen, bei denen im Falle einer histologischen Sicherung in der Regel eine Angabe zum Grading erwartet werden kann (C00-C33, C50-C57, C60, C62-C68). Prostatakarzinome (C61) wurden hier nicht berücksichtigt, da hier in der Regel der spezifischere Gleason-Score über das entsprechende Modul übermittelt wurde.  Der Anteil fehlender Werte zum Differenzierungsgrad bei den genannten Entiäten lag bundesweit (ohne Rheinland-Pfalz) bei 9%. Für Rheinland Pfalz führte ein Fehler beim Datenexport zu einer sehr hohen Anteil fehlender Werte, dieser Fehler wird bei der nächsten Datenlieferung korrigiert werden.
 
 
-**Lokalisationen C00-C33, C50-C57, C60-C68 und Morphologie: 8010-8576**
+> [!NOTE]
+> gradingrelevant: Lokalisationen C00-C33, C50-C57, C60-C68 und Morphologie: 8010-8576
+> 
+> Kategorien:
+>  - `1_null` - kein Wert vorhanden
+>  - `2_undefined` - Wert T oder U
+>  - `3_rest` - restliche Werte
 
 
 
@@ -188,13 +195,15 @@ and z_kkr <> 7
 #### <a id='toc1_3_4_2_'></a>[Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc0_)
 In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Regel definiert ist, liegt mindestens ein klinisches (cT) oder pathologisches (pT) T-Stadium vor (Bundesländer: 81%-92%), in 25% sind beide Angaben vorhanden. Aus Rheinland-Pfalz wurde grundsätzlich nur entweder ein pT oder cT übermittelt.
 
-- Kategorien
-  - `1_t_cp` - cT und pT sind vorhanden und nicht `X`
-  - `2_t_c`- cT ist vorhanden und nicht `X`, pT ist leer
-  - `3_t_p`- pT ist vorhanden und nicht `X`, cT ist leer
-  - `4_no_t`- beide leer
+> [!NOTE]
+> Lokalisationen C00-C43, C45-C69, C73-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und Morphologie: 8010-8790
+>
+> Kategorien
+>  - `1_t_cp` - cT und pT sind vorhanden und nicht `X`
+>  - `2_t_c`- cT ist vorhanden und nicht `X`, pT ist leer
+>  - `3_t_p`- pT ist vorhanden und nicht `X`, cT ist leer
+>  - `4_no_t`- beide leer
 
-**Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9  und Morphologie: 8010-8790**
 
 
 
@@ -246,9 +255,12 @@ and z_kkr <> 7
 #### <a id='toc1_3_4_3_'></a>[Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc0_)
 
 Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in 85% der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium vorhanden (Bundesländer: 74%-93%). Bei Vorhandensein des pT ist bundesweit in 88% auch ein gültiger pathologischer Lymphknotenstatus (pN, ohne pNX) dokumentiert (Bundesländer: 73%-99%, ohne Abbildung).
-
-**Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790**
-
+> [!NOTE]
+> Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
+>  - `1_null` - kein Wert vorhanden
+>  - `2_unknown` - Wert X
+>  - `3_rest` - restliche Werte
+ 
 
 
 
@@ -349,10 +361,13 @@ In den folgenden Auswertungen wurden zusätzlich zu den unter 3.1. genannten Fä
 Nach Brustkrebsdiagnose liegen bundesweit in 25% (nach Bundesländern: 9%-32%) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25% auf 23%.
 Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 angegeben (Bundesländer: 95%-99%), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
 
-- Kategorien
-  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
-  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
-  - `3_rest`: keine der zuvor genannten Merkmale trifft zu
+> [!NOTE]
+> UICC: I-III, blauer Balkenanteil
+>
+> Kategorien
+>  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
+>  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
+>  - `3_rest`: keine der zuvor genannten Merkmale trifft zu
 
 
 
@@ -582,6 +597,51 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54% (nach Bundesländern:42%-62%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie dokumentiert, nur in 11% der Fälle ist keine Therapie dokumentiert.
 
+> [!NOTE]
+> (Stadium III)
+>
+> Kategorien:
+>   - `1_sy` - systemische Therapie
+>   - `2_no_sy_but_other` - keine systemische Therapie, aber andere Therapie
+>   - `3_no_treat` - keine Therapie
+
+
+
+```
+    n = 3_241_401                                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) ░░░░░░████████████████████████
+    └ [ICD10 C18]:                       n = 135_471   (4.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine DCO]:                       n = 131_038   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [kein M1]:                         n = 107_658   (3.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [keine Verstorbenen < 180 Tage]:    n = 95_755   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [pN in (1,2)]:                      n = 23_730   (0.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+Diagnosedatum between '2020-01-01' and '2023-06-30'
+and z_icd10_3d in ('C18')
+and not z_is_dco
+and ifnull(z_m_pc_1,'') <> '1'
+and ifnull(z_period_diag_death_day,181) >= 180
+and left(z_n_p_1,1) in ('1','2')
+```
+
+</details>
+
+
+    
+    
+
+
+
+    
+![svg](report_files/output_30_5.svg)
+    
+
+
 
 <br>
 
@@ -654,6 +714,13 @@ and z_op_order = 1
 #### <a id='toc1_3_7_1_'></a>[Nach Brustkrebs](#toc0_)
 Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) aus  den Jahren 2020/2021 ist bis Ende 2023 in 5% der Fälle (nach Bundesländern: 2%-8%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.1.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
+> [!NOTE]
+> Zeitraum bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021
+> 
+> Kategorien:
+>   - `1_fo_relapse` - Rezidiven
+>   - `2_fo_relapse_tnm` - Rezidiven nach TNM
+>   - `3_no_relapse` - Kein Rezidiv
 
 
 
