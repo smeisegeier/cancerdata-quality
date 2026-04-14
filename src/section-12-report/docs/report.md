@@ -1,32 +1,33 @@
-# <a id='toc1_'></a>[Bericht §12](#toc0_)
+# <a id='toc1_'></a>[Bericht zur Datenqualität nach § 12 BKRG](#toc0_)
 
 **Table of contents**<a id='toc0_'></a>    
-- [Bericht §12](#toc1_)    
-  - [Einführung](#toc1_1_)    
-    - [Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc1_1_1_)    
-    - [Beschreibung der aktuell am ZfKD verfügbaren Datensätze](#toc1_1_2_)    
-      - [Epidemiologischer Datensatz](#toc1_1_2_1_)    
-      - [Klinischer Datensatz](#toc1_1_2_2_)    
-      - [Unterschiede zwischen ZfKD-Datensatz und oBDS](#toc1_1_2_3_)    
-  - [Zusammenarbeit mit den Krebsregistern](#toc1_2_)    
-  - [Angaben zur Datenqualität](#toc1_3_)    
-    - [Vorbemerkungen und methodische Aspekte](#toc1_3_1_)    
-    - [Vollzähligkeit der Erfassung von Krebsneuerkrankungen](#toc1_3_2_)    
-    - [Landesspezifische Besonderheiten im aktuellen Datensatz](#toc1_3_3_)    
-    - [Informationen zur Diagnose](#toc1_3_4_)    
-      - [Anteil fehlendes Grading (wenn Angaben zum Grading erwartet werden)](#toc1_3_4_1_)    
-      - [Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc1_3_4_2_)    
-      - [Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc1_3_4_3_)    
-    - [Informationen zur Therapie](#toc1_3_5_)    
-      - [Fälle ohne Therapieangaben](#toc1_3_5_1_)    
-      - [Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc1_3_5_2_)    
-    - [Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc1_3_6_)    
-      - [Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc1_3_6_1_)    
-      - [Abstand zwischen Diagnose und erster Operation](#toc1_3_6_2_)    
-    - [Informationen zum Krankheitsverlauf](#toc1_3_7_)    
-      - [Nach Brustkrebs](#toc1_3_7_1_)    
-      - [Nach Darmkrebs](#toc1_3_7_2_)    
-    - [Einordnung der Ergebnisse zur Datenqualität](#toc1_3_8_)    
+- [Bericht zur Datenqualität nach § 12 BKRG](#toc1_)    
+  - [Informationen zum Dokument](#toc1_1_)    
+  - [Einführung](#toc1_2_)    
+    - [Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc1_2_1_)    
+    - [Beschreibung der aktuell am ZfKD verfügbaren Datensätze](#toc1_2_2_)    
+      - [Epidemiologischer Datensatz](#toc1_2_2_1_)    
+      - [Klinischer Datensatz](#toc1_2_2_2_)    
+      - [Unterschiede zwischen ZfKD-Datensatz und oBDS](#toc1_2_2_3_)    
+  - [Zusammenarbeit mit den Krebsregistern](#toc1_3_)    
+  - [Angaben zur Datenqualität](#toc1_4_)    
+    - [Vorbemerkungen und methodische Aspekte](#toc1_4_1_)    
+    - [Vollzähligkeit der Erfassung von Krebsneuerkrankungen](#toc1_4_2_)    
+    - [Landesspezifische Besonderheiten im aktuellen Datensatz](#toc1_4_3_)    
+    - [Informationen zur Diagnose](#toc1_4_4_)    
+      - [Anteil fehlendes Grading (wenn Angaben zum Grading erwartet werden)](#toc1_4_4_1_)    
+      - [Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc1_4_4_2_)    
+      - [Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc1_4_4_3_)    
+    - [Informationen zur Therapie](#toc1_4_5_)    
+      - [Fälle ohne Therapieangaben](#toc1_4_5_1_)    
+      - [Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc1_4_5_2_)    
+      - [Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc1_4_5_3_)    
+    - [Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc1_4_6_)    
+    - [Abstand zwischen Diagnose und erster Operation](#toc1_4_7_)    
+    - [Informationen zum Krankheitsverlauf](#toc1_4_8_)    
+      - [Nach Brustkrebs](#toc1_4_8_1_)    
+      - [Nach Darmkrebs](#toc1_4_8_2_)    
+    - [Einordnung der Ergebnisse zur Datenqualität](#toc1_4_9_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -37,30 +38,39 @@
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.5
 
+<br>
+
+## <a id='toc1_1_'></a>[Informationen zum Dokument](#toc0_)
+
+dolor ipsum dolor sit amet, consectetur adipiscing elit, sed
+
+**Datenstand: Diagnosejahr 2023**
+
+> [!Tip]
+> Die angewendeten Filter sind für jede Darstellung ausklappbar
 
     database file:           2025-11-11_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-04-13 17:26:45
+    document created:        2026-04-14 08:53:41
 
 
 
 <br>
 
-## <a id='toc1_1_'></a>[Einführung](#toc0_)
+## <a id='toc1_2_'></a>[Einführung](#toc0_)
 
-### <a id='toc1_1_1_'></a>[Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc0_)
+### <a id='toc1_2_1_'></a>[Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc0_)
 Mit dem Gesetz zur Zusammenführung von Krebsregisterdaten (2021) wurde auch das Bundeskrebsregisterdatengesetz (BKRG) novelliert. Unter anderem wurde der jährlich aus den Landeskrebsregistern an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut zu übermittelnde Datensatz um wesentliche Elemente der klinischen Krebsregistrierung (Angaben zur Therapie und Krankheitsverlauf) sowie zusätzliche diagnostische Variablen für ausgewählte Diagnosen erweitert. Diese werden in den Krebsregistern je nach Zeitpunkt der landesgesetzlichen Umsetzung des Krebsfrüherkennungs- und Registergesetzes (KFRG 2013) mindestens seit 2019 erfasst. DieDefinition der einzelnen Variablen im Onkologischen Basisdatensatz (oBDS) erfolgt durch die Arbeitsgemeinschaft Deutscher Tumorzentren und den Deutsche Krebsregister e.V. (vormals: Gesellschaft der epidemiologischen Krebsregister in Deutschland) und werden nach § 65c Abs. 1a S. 1 regelmäßig angepasst. 
 Um aus dem  für die Meldungen an die  Krebsregister maßgeblichen OBDS im Rahmen der Vorgaben des BKRG einen auswertefähigen Datensatz für die Übermittlung an das ZfKD zu erzeugen, wurde im Jahr 2022 entsprechend § 5 Abs. 3 BKRG in einer Arbeitsgruppe aus Vertretern des ZfKD und den Krebsregistern der „ZfKD-Lieferdatensatz“ vereinbart. 
 Der vorliegende Bericht über die Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten nach §12 BKRG enthält Angaben zur Datenqualität, zur Zusammenarbeit des ZfKD mit den Krebsregistern und zur Bearbeitung externer Datennutzungsanträge.
 
 <br>
 
-### <a id='toc1_1_2_'></a>[Beschreibung der aktuell am ZfKD verfügbaren Datensätze](#toc0_)
+### <a id='toc1_2_2_'></a>[Beschreibung der aktuell am ZfKD verfügbaren Datensätze](#toc0_)
 Wegen der institutionellen Trennung der (flächendeckenden) epidemiologischen und klinischen Krebsregistrierung in Niedersachsen und Baden-Württemberg, der in den meisten Registern bereits etablierten Schnittstelle für die epidemiologischen Daten  und der unterschiedlich langen verfügbaren Zeitreihen wurde zunächst vereinbart, dass die Register jeweils einen epidemiologischen Datensatz im bisherigen csv-Format (ab erstem verfügbarem Diagnosejahr, je nach Bundesland also mindestens ab 2009) und einen „klinischen Datensatz“ als relationalen Datensatz im xml-Format (für Diagnosen ab 2020) übermitteln. Auf die früher aus einzelnen Bundesländern verfügbaren wenig detaillierten Angaben zur Primärtherapie (z.B. Operation ja/nein) wurde wegen der fehlenden Überführbarkeit in den aktuellen  klinischen Datensatz und der sehr heterogenen Verfügbarkeit und Vollständigkeit  verzichtet. Im ersten Quartal 2023 wurden neben den epidemiologischen Daten erstmals klinische Daten im neuen Datenformat für die Diagnosejahre 2020 und 2021 an das ZfKD übermittelt.
 
 Inhaltlich kann der epidemiologische Datensatz als Teilmenge der klinischen Daten angesehen werden. Unterschiede bestehen bezüglich der Falldefinition: Während für den epidemiologischen Datensatz die internationale gültige Regel gilt, nach der mehrere Tumoren in gleichen Organen oder Organsystemen unter bestimmten Bedingungen (gleicher histologischer Typ) nur einmal gezählt werden, weicht die klinische Falldefinition in einigen Fällen davon ab. So werden zwei Tumoren in paarigen Organen (z.B. Niere, Hoden, Brust) doppelt erfasst, wenn sie beidseitig auftreten, ebenso wird bei zeitlich nacheinander auftretenden in situ und invasiven Tumoren des gleichen Organs und in bestimmten Fällen bei mehreren Darm- und Hauttumoren unterschiedlicher Lokalisation vorgegangen.
@@ -68,26 +78,26 @@ Inhaltlich kann der epidemiologische Datensatz als Teilmenge der klinischen Date
 
 <br>
 
-#### <a id='toc1_1_2_1_'></a>[Epidemiologischer Datensatz](#toc0_)
+#### <a id='toc1_2_2_1_'></a>[Epidemiologischer Datensatz](#toc0_)
 
 Der epidemiologische Datensatz enthält alle Angaben, die in den meisten internationalen bevölkerungsbezogenen Krebsregistern erfasst werden: Angaben zur Diagnose (inkl. monatsgenauem Diagnosedatum, Topographie und Morphologie nach ICD-O, Tumorstadium nach TNM, Differenzierungsgrad sowie Art der Diagnosesicherung) sowie zum monatsgenauen Sterbedatum und zur Todesursache.
 
 
 <br>
 
-#### <a id='toc1_1_2_2_'></a>[Klinischer Datensatz](#toc0_)
+#### <a id='toc1_2_2_2_'></a>[Klinischer Datensatz](#toc0_)
 Der klinische Datensatz enthält darüber hinaus detaillierte Angaben zur Therapie (Operationen nach OPS-Klassifikation inklusive Residualstatus, Strahlentherapie inkl. Angaben zum Zielgebiet und systemische Therapie einschließlich der verwendeten Medikamente bzw. Protokolle, sowie jeweils monatsgenaue Datumsangaben und tagesgenaue zeitliche Abstände zwischen Diagnose und Therapiebeginn). Für die Strahlentherapie und systemische Therapie ist zudem die Stellung zur OP (adjuvant oder neoadjuvant) angegeben. Therapieangaben betreffen den gesamten Krankheitsverlauf und damit auch Informationen zu Zweit- oder Drittlinientherapien sowie Therapien nach Rezidiven und Progression. Daher handelt es sich technisch im Gegensatz zu den epidemiologischen Daten um einen relationalen Datensatz mit mehreren, auf Tumorebene verknüpfbaren Tabellen. Für ausgewählte Entitäten (bisher: Darm-, Prostata und Brustkrebs sowie malignes Melanom) sind ergänzende Angaben zur Diagnose aus den entsprechenden Modulen des oBDS übernommen worden (u.a. Gleason-Score und prätherapeutischer PSA-Wert beim Prostatakarzinom, Hormonrezeptor- und Her2neu-Status beim Brustkrebs).
 
 <br>
 
-#### <a id='toc1_1_2_3_'></a>[Unterschiede zwischen ZfKD-Datensatz und oBDS](#toc0_)
+#### <a id='toc1_2_2_3_'></a>[Unterschiede zwischen ZfKD-Datensatz und oBDS](#toc0_)
 
 Im Vergleich zum oBDS fehlen in den Daten des ZfKD vor allem Angaben zu den meldenden bzw. behandelnden Einrichtungen, Nebenwirkungen der Therapie, Tumorkonferenzen, zum allgemeinen Leistungszustand (ECOG oder Karnofsky), sowie Gründe für Beendigung einer systemischen Therapie und Strahlendosis. 
 
 
 <br>
 
-## <a id='toc1_2_'></a>[Zusammenarbeit mit den Krebsregistern](#toc0_)
+## <a id='toc1_3_'></a>[Zusammenarbeit mit den Krebsregistern](#toc0_)
 Die Datenlieferung für die klinischen Daten erfolgt nach dem vereinbarten xml-Schema, die epidemiologischen Daten werden nach dem früheren Schema als csv-Dateien übermittelt. Bei jeder Datenlieferung werden jeweils die Daten aus allen Diagnosejahren übermittelt, um Nachmeldungen und Änderungen des Vitalstatus und (bei den klinischen Daten) des Krankheitsverlaufs abbilden zu können. Die Register der ostdeutschen Bundesländer (Berlin/Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen) liefern bisher nur einen klinischen Datensatz ab dem Diagnosejahr 2020, aus dem das ZfKD nach Prüfung auf Mehrfachtumoren (nach epidemiologischer Zählweise) jeweils epidemiologische Datensätze erzeugt. Die aus diesen Ländern am ZfKD verfügbaren epidemiologischen Daten bis einschließlich 2019 stammen noch aus der letzten Datenlieferung des Gemeinsamen Krebsregisters der neuen Bundesländer und Berlins (GKR), das seit Ende 2022 nicht mehr besteht, weshalb der Vitalstatus für diese Fälle bisher noch nicht aktualisiert werden konnte.  Nach Einarbeitung der Daten aus dem Datenbestand des GKR und Aktualisierung des Vitalstatus dieser Fälle (nachträgliche Abgleiche mit den Sterbefällen und Wegzügen in den jeweiligen Bundesländern) werden diese Register voraussichtlich in absehbarer Zeit (mindestens Sachsen-Anhalt schon im kommenden Jahr) in der Lage sein, auch epidemiologische Daten über eine längere Zeitreihe bereitzustellen.
   
 Nach eigenem Ermessen und Rücksprache mit dem ZfKD liefern einige Register im Laufe des Jahres aktualisierte Datenstände, häufig mit einer deutlich höheren Fallzahl für das jeweils letzte Diagnosejahr, und tragen damit auch unterjährig zu einer Verbesserung der Datenbasis und Datenqualität bei.
@@ -99,8 +109,8 @@ Die Zusammenarbeit mit den Landeskrebsregistern kann seitens des ZfKD als sehr h
 
 <br>
 
-## <a id='toc1_3_'></a>[Angaben zur Datenqualität](#toc0_)
-### <a id='toc1_3_1_'></a>[Vorbemerkungen und methodische Aspekte](#toc0_)
+## <a id='toc1_4_'></a>[Angaben zur Datenqualität](#toc0_)
+### <a id='toc1_4_1_'></a>[Vorbemerkungen und methodische Aspekte](#toc0_)
 
 Die Prüfung der Qualität der von den Krebsregistern übermittelten Daten sowie entsprechende Rückmeldungen an die Register gehören zu den gesetzlichen Aufgaben des ZfKD. Im Folgenden werden erstmals ausgewählte Auswertungen zur Datenqualität öffentlich bereitgestellt, um auch potentiell Datennutzenden außerhalb der Krebsregistrierung einen ersten Überblick zur Vollständigkeit bestimmter Angaben im Datensatz zu verschaffen. Zukünftig ist mindestens alle zwei Jahre eine Aktualisierung, gegenenfalls mit Erweiterung der entsprechenden Auswertungen, geplant.
 
@@ -113,7 +123,7 @@ Für Auswertungen zur Vollständigkeit von Therapieangaben wurden Diagnosen aus 
 
 <br>
 
-### <a id='toc1_3_2_'></a>[Vollzähligkeit der Erfassung von Krebsneuerkrankungen](#toc0_)
+### <a id='toc1_4_2_'></a>[Vollzähligkeit der Erfassung von Krebsneuerkrankungen](#toc0_)
 
 Die Vollzähligkeit der Erfassung von Krebserkrankungen (ohne nicht-melanotischem Hautkrebs) wird vom ZfKD lediglich auf Basis des epidemiologischen Datensatzes regelmäßig geschätzt. Nicht berücksichtigt werden Fälle, die den Registern nur über eine Todesbescheinigung oder einen entsprechenden Datenabgleich bekannt werden (DCO-Fälle). Die Schätzung basiert im Kern auf der sogenannten „M/I“ Methode, die in ihrer ursprünglichen Form von einem konstanten Verhältnis der Mortalität zur Inzidenz (M/I), nach Geschlecht, Alter und Diagnose ausgeht. Die Methode der Vollzähligkeitsschätzung war ursprünglich vor allem als Orientierung für neue Register in deren Aufbaujahren konzipiert. Sie wurde im Laufe der Jahre weiterentwickelt und berücksichtigt inzwischen unter bestimmten Bedingungen regionale Abweichungen des Verhältnisses von M/I,  die nach den Ergebnissen aus internationalen und nationalen Studien z.B. in Abhängigkeit von sozioökonomischen Faktoren auf regionaler Ebene auch zu erwarten sind. Dennoch muss betont werden, dass es sich um eine Schätzung mit nicht unerheblichen Unsicherheiten handelt und die Methode mangels Goldstandards in Deutschland noch nicht validiert werden konnte.
 Die aktuellen Ergebnisse der Schätzung deuten darauf hin, dass seit mindestens 2020 alle Register eine ausreichende Vollzähligkeit der Erfassung bösartiger Tumorerkrankungen (ohne Berücksichtigung nicht-melanotischer Hautkrebsfälle) nach epidemiologischer Zählweise aufweisen, da jeweils mehr als 90% der aus dem Schätzmodell errechneten erwarteten Fälle erfasst wurden. Für einige Register konnte dieser Wert für das jeweils letzte Lieferdatenjahr erst durch Nachlieferungen im laufenden Jahr erreicht werden, eine ausreichende Vollzähligkeit war in diesen Fällen also erst einige Monate nach dem gesetzlich vorgesehen Lieferdatum gegeben. Wenn man berücksichtigt, dass sich die Frist für die Datenlieferung durch die Register ab 2023 von zwei Jahren auf ein Jahr verkürzt hat, ist dennoch festzustellen, dass sich die Aktualität der im ZfKD verfügbaren Daten in den letzten Jahren deutlich verbessert hat, was eine aktuellere Berichterstattung des ZfKD ermöglicht. 
@@ -123,7 +133,7 @@ Teilweise sehr aufwändige Nachrecherche z.B. nur über Sterbe- oder Pathologiem
 
 <br>
 
-### <a id='toc1_3_3_'></a>[Landesspezifische Besonderheiten im aktuellen Datensatz](#toc0_)
+### <a id='toc1_4_3_'></a>[Landesspezifische Besonderheiten im aktuellen Datensatz](#toc0_)
 In Thüringen, Sachsen-Anhalt und Bayern (Regierungsbezirk Oberbayern) ist davon auszugehen, dass Sterbefälle in den aktuellen Jahren (ab 2020 oder später) noch nicht vollständig eingegangen sind, da der entsprechende Datenabgleich zum Zeitpunkt der Datenlieferung noch nicht etabliert war oder sich (in Oberbayern) verzögerte. 
 Für Niedersachsen enthält der klinische Datensatz derzeit noch nicht alle Fälle, die im epidemiologischen Datensatz übermittelt wurden.
 In Thüringen fehlen im klinischen (und damit auch in den daraus abgeleiteten epidemiologischen Daten ab 2020) derzeit noch etwa 20 - 25% der Fälle, der zugrundeliegende  Fehler (beim Datenexport aus den regionalen Register) wurde inzwischen identifiziert und behoben. Eine probeweise Neulieferung aktueller Diagnosejahre ergab plausible Fallzahlen, so dass der 2026 verfügbare Datensatz (2020-2024) für Thüringen aller Voraussicht nach eine ausreichende Vollzähligkeit aufweisen wird. In Sachsen-Anhalt führte eine abweichende Kodierung der Dignität bei über eine Fernmetastase diagnostizierten Primärtumoren dazu, dass im aktuellen ZfKD-Datensatz knapp 5 Prozent der Fälle aus den aktuellen Jahren fehlen. Auch dies wird bei der kommenden Datenlieferung korrigiert werden. 
@@ -133,13 +143,13 @@ Aus Schleswig-Holstein, Niedersachsen, Bremen und dem Saarland wurden dem ZfKD b
 
 <br>
 
-### <a id='toc1_3_4_'></a>[Informationen zur Diagnose](#toc0_)
-#### <a id='toc1_3_4_1_'></a>[Anteil fehlendes Grading (wenn Angaben zum Grading erwartet werden)](#toc0_)
+### <a id='toc1_4_4_'></a>[Informationen zur Diagnose](#toc0_)
+#### <a id='toc1_4_4_1_'></a>[Anteil fehlendes Grading (wenn Angaben zum Grading erwartet werden)](#toc0_)
 Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die folgenden Auswertung beschränkt sich daher auf Karzinome (ICD-O-3: 81010/3 – 8576/3) und Tumorlokalisationen, bei denen im Falle einer histologischen Sicherung in der Regel eine Angabe zum Grading erwartet werden kann (C00-C33, C50-C57, C60, C62-C68). Prostatakarzinome (C61) wurden hier nicht berücksichtigt, da hier in der Regel der spezifischere Gleason-Score über das entsprechende Modul übermittelt wurde.  Der Anteil fehlender Werte zum Differenzierungsgrad bei den genannten Entiäten lag bundesweit (ohne Rheinland-Pfalz) bei 9%. Für Rheinland Pfalz führte ein Fehler beim Datenexport zu einer sehr hohen Anteil fehlender Werte, dieser Fehler wird bei der nächsten Datenlieferung korrigiert werden.
 
 
 > [!NOTE]
-> gradingrelevant: Lokalisationen C00-C33, C50-C57, C60-C68 und Morphologie: 8010-8576
+> _gradingrelevant_: Lokalisationen C00-C33, C50-C57, C60-C68 und Morphologie: 8010-8576
 > 
 > Kategorien:
 >  - `1_null` - kein Wert vorhanden
@@ -185,18 +195,18 @@ and z_kkr <> 7
 
 
     
-![svg](report_files/output_10_5.svg)
+![svg](report_files/output_11_5.svg)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_4_2_'></a>[Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc0_)
+#### <a id='toc1_4_4_2_'></a>[Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc0_)
 In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Regel definiert ist, liegt mindestens ein klinisches (cT) oder pathologisches (pT) T-Stadium vor (Bundesländer: 81%-92%), in 25% sind beide Angaben vorhanden. Aus Rheinland-Pfalz wurde grundsätzlich nur entweder ein pT oder cT übermittelt.
 
 > [!NOTE]
-> Lokalisationen C00-C43, C45-C69, C73-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und Morphologie: 8010-8790
+> _tnm-relevant_: Lokalisationen C00-C43, C45-C69, C73-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und Morphologie: 8010-8790
 >
 > Kategorien
 >  - `1_t_cp` - cT und pT sind vorhanden und nicht `X`
@@ -245,18 +255,19 @@ and z_kkr <> 7
 
 
     
-![svg](report_files/output_12_5.svg)
+![svg](report_files/output_13_5.svg)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_4_3_'></a>[Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc0_)
+#### <a id='toc1_4_4_3_'></a>[Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc0_)
 
 Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in 85% der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium vorhanden (Bundesländer: 74%-93%). Bei Vorhandensein des pT ist bundesweit in 88% auch ein gültiger pathologischer Lymphknotenstatus (pN, ohne pNX) dokumentiert (Bundesländer: 73%-99%, ohne Abbildung).
+
 > [!NOTE]
-> Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
+> _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
 >  - `1_null` - kein Wert vorhanden
 >  - `2_unknown` - Wert X
 >  - `3_rest` - restliche Werte
@@ -304,15 +315,15 @@ and z_tum_id in (select distinct z_tum_id from OPS where left(ops.Code,1) in ('5
 
 
     
-![svg](report_files/output_14_5.svg)
+![svg](report_files/output_15_5.svg)
     
 
 
 
 <br>
 
-### <a id='toc1_3_5_'></a>[Informationen zur Therapie](#toc0_)
-#### <a id='toc1_3_5_1_'></a>[Fälle ohne Therapieangaben](#toc0_)
+### <a id='toc1_4_5_'></a>[Informationen zur Therapie](#toc0_)
+#### <a id='toc1_4_5_1_'></a>[Fälle ohne Therapieangaben](#toc0_)
 
 Der Anteil von Fällen ohne Therapieangaben betrug bundesweit über alle bösartigen Tumorerkrankungen (C00-C97 ohne C44, mit den unter 3.1. genannten Ausschlusskriterien) 23 % (nach Bundesland: 10%-31%). Der Anteil lag in den neuen Bundesländern und Berlin fast durchgehend niedriger (10%-19%) als in den alten Bundesländern (17%-31%) und bei soliden Tumoren (22%) niedriger als bei systemischen Erkrankungen (Leukämien und Lymphome: 35%). Im Zeitverlauf ist zwischen 2020 und 2022 keine Tendenz zu beobachten. Trotz Ausschluss der Diagnosen im 2. Halbjahr 2023 liegt der Anteil von Fällen ohne Therapieangabenin 2023 noch etwas über dem Wert der Vorjahre, auch hier ist wahrscheinlich noch mit nachträglichen Ergänzungen zu rechnen.
 
@@ -348,21 +359,21 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_16_5.svg)
+![svg](report_files/output_17_5.svg)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_5_2_'></a>[Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc0_)
+#### <a id='toc1_4_5_2_'></a>[Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc0_)
 In den folgenden Auswertungen wurden zusätzlich zu den unter 3.1. genannten Fällen auch noch solche mit primärer Fernmetastasierung ausgeschlossen. Für Fälle ohne dokumentierte, das jeweilige Organ betreffende Operation (ohne Berücksichtigung diagnostischer Eingriffe) wurde zusätzlich ausgewertet, ob ein gültiges pathologisches T-Stadium (pT) vorlag, was als Hinweis auf eine fehlende oder unvollständige klinische Meldung interpretiert werden kann. 
 
 Nach Brustkrebsdiagnose liegen bundesweit in 25% (nach Bundesländern: 9%-32%) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25% auf 23%.
 Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 angegeben (Bundesländer: 95%-99%), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
 
-> [!NOTE]
-> UICC: I-III, blauer Balkenanteil
+> [!CAUTION]
+> berücksichtigt sind UICC I-III
 >
 > Kategorien
 >  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
@@ -398,7 +409,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_18_5.svg)
+![svg](report_files/output_19_5.svg)
     
 
 
@@ -433,7 +444,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_20_5.svg)
+![svg](report_files/output_21_5.svg)
     
 
 
@@ -469,7 +480,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_22_5.svg)
+![svg](report_files/output_23_5.svg)
     
 
 
@@ -505,16 +516,18 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_24_5.svg)
+![svg](report_files/output_25_5.svg)
     
 
 
 
 <br>
 
-### <a id='toc1_3_6_'></a>[Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc0_)
-Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb) liegen bundesweit in 23% (nach Bundesländern: 9%-55%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist auch keine andere Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
+#### <a id='toc1_4_5_3_'></a>[Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc0_)
+Nach brusterhaltender Operation eines bösartigen Tumors der Brust liegen bundesweit in 33% (nach Bundesländern: 13%-54%) keine Angaben zu einer Strahlentherapie vor. Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
 
+> [!NOTE]
+> Brusterhaltende Therapie (BET): ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
 
 
 
@@ -549,16 +562,26 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_26_5.svg)
+![svg](report_files/output_27_5.svg)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_6_1_'></a>[Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc0_)
-Nach brusterhaltender Operation eines bösartigen Tumors der Brust liegen bundesweit in 33% (nach Bundesländern: 13%-54%) keine Angaben zu einer Strahlentherapie vor. Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
+### <a id='toc1_4_6_'></a>[Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc0_)
+Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb) liegen bundesweit in 23% (nach Bundesländern: 9%-55%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist auch keine andere Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
 
+
+Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54% (nach Bundesländern:42%-62%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie dokumentiert, nur in 11% der Fälle ist keine Therapie dokumentiert.
+
+> [!NOTE]
+> (Stadium III)
+>
+> Kategorien:
+>   - `1_sy` - systemische Therapie
+>   - `2_no_sy_but_other` - keine systemische Therapie, aber andere Therapie
+>   - `3_no_treat` - keine Therapie
 
 
 
@@ -591,19 +614,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_28_5.svg)
+![svg](report_files/output_30_5.svg)
     
 
-
-Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54% (nach Bundesländern:42%-62%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie dokumentiert, nur in 11% der Fälle ist keine Therapie dokumentiert.
-
-> [!NOTE]
-> (Stadium III)
->
-> Kategorien:
->   - `1_sy` - systemische Therapie
->   - `2_no_sy_but_other` - keine systemische Therapie, aber andere Therapie
->   - `3_no_treat` - keine Therapie
 
 
 
@@ -638,14 +651,14 @@ and left(z_n_p_1,1) in ('1','2')
 
 
     
-![svg](report_files/output_30_5.svg)
+![svg](report_files/output_31_5.svg)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_6_2_'></a>[Abstand zwischen Diagnose und erster Operation](#toc0_)
+### <a id='toc1_4_7_'></a>[Abstand zwischen Diagnose und erster Operation](#toc0_)
 Der mediane Abstand zwischen Diagnose und erster Operation lag bei 26 Tagen (nach Bundesländern: 7-31 Tage).
 
 
@@ -676,7 +689,7 @@ and z_op_order = 1
 
 
     
-![png](report_files/output_32_5.png)
+![png](report_files/output_33_5.png)
     
 
 
@@ -710,8 +723,8 @@ and z_op_order = 1
 
 <br>
 
-### <a id='toc1_3_7_'></a>[Informationen zum Krankheitsverlauf](#toc0_)
-#### <a id='toc1_3_7_1_'></a>[Nach Brustkrebs](#toc0_)
+### <a id='toc1_4_8_'></a>[Informationen zum Krankheitsverlauf](#toc0_)
+#### <a id='toc1_4_8_1_'></a>[Nach Brustkrebs](#toc0_)
 Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) aus  den Jahren 2020/2021 ist bis Ende 2023 in 5% der Fälle (nach Bundesländern: 2%-8%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.1.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
 > [!NOTE]
@@ -755,7 +768,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_34_5.svg)
+![svg](report_files/output_35_5.svg)
     
 
 
@@ -766,14 +779,14 @@ Abb. 3.13b: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdiagn
 
 
     
-![png](report_files/output_36_1.png)
+![png](report_files/output_37_1.png)
     
 
 
 
 <br>
 
-#### <a id='toc1_3_7_2_'></a>[Nach Darmkrebs](#toc0_)
+#### <a id='toc1_4_8_2_'></a>[Nach Darmkrebs](#toc0_)
 Für Personen mit Darmkrebsdiagnosen und Operation ohne Residualtumor (R0) aus den Jahren 2020/2021 ist bis Ende 2023 in 10% der Fälle (nach Bundesländern: 3%-14%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.2.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
 
@@ -810,7 +823,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
     
-![svg](report_files/output_38_5.svg)
+![svg](report_files/output_39_5.svg)
     
 
 
@@ -821,14 +834,14 @@ Abb. 3.14b Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiagnos
 
 
     
-![png](report_files/output_40_1.png)
+![png](report_files/output_41_1.png)
     
 
 
 
 <br>
 
-### <a id='toc1_3_8_'></a>[Einordnung der Ergebnisse zur Datenqualität](#toc0_)
+### <a id='toc1_4_9_'></a>[Einordnung der Ergebnisse zur Datenqualität](#toc0_)
 
 Bei der Interpretation der Auswertungen sind folgende Aspekte zu berücksichtigen:
 
