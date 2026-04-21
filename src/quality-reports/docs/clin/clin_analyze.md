@@ -79,8 +79,8 @@
       - [nach KKR](#toc1_12_5_2_)    
   - [Freitextkodierung](#toc1_13_)    
     - [Substanzen](#toc1_13_1_)    
-  - [Datum_Vitalstatus](#toc1_14_)    
-    - [Verteilung Monat](#toc1_14_1_)    
+  - [Datum Vitalstatus](#toc1_14_)    
+    - [Zeitpunkt der Erhebung](#toc1_14_1_)    
   - [Numerische Variablen](#toc1_15_)    
     - [Diagnosealter](#toc1_15_1_)    
     - [Anzahl Tage zwischen Diagnose und Tod](#toc1_15_2_)    
@@ -109,7 +109,7 @@
 - die _relativen_ Barcharts enthalten ein `Total` item für den Gesamtvergleich
 - die Filter können exakt nachvollzogen werden mit Hilfe der **ausklappbaren SQL Abfragen**
 - in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
-- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../clin_analyze.ipynb)
+- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../../clin_analyze.ipynb)
 
 <div style="page-break-after: always;"></div>
 
@@ -129,7 +129,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-04-20 12:57:44
+    document created:        2026-04-21 13:50:38
 
 
 <br>
@@ -1995,6 +1995,7 @@ and z_icd10_3d = 'C43'
 
 ### <a id='toc1_12_1_'></a>[nach Quelle](#toc0_)
 - untersucht wird der Zusammenhang zwischen den Orten im Schema ("Quelle"), wo die Klassifikation übermittelt wird
+- gezeigt sind die 20 häufigsten Klassifikationen
 - Kategorie `source`
   - `diag`: Klassifikation ist der Diagnose zugeordnet
   - `fol`: Klassifikation ist einem Folgeereignis zugeordnet
@@ -2035,6 +2036,7 @@ Stadium is not null
 <br>
 
 ### <a id='toc1_12_2_'></a>[nach KKR](#toc0_)
+- gezeigt sind die 20 häufigsten Klassifikationen
 
 > [!NOTE]
 > **💡 ZfKD**
@@ -2044,8 +2046,7 @@ Stadium is not null
 >   - ebenfalls erwähnenswert: Anteile vor allem aus `05-NW` und `08-BH`, welche nicht zu den von der Plattform definierten Klassifikationen zugeordnet werden können (siehe Zeile `(NA)`) 
 
 
-    
-![png](clin_analyze_files/output_137_0.png)
+<img src="clin_analyze_files/output_137_1.png" width="100%">
     
 
 
@@ -2288,9 +2289,9 @@ and
 
 <br>
 
-## <a id='toc1_14_'></a>[Datum_Vitalstatus](#toc0_)
+## <a id='toc1_14_'></a>[Datum Vitalstatus](#toc0_)
 
-### <a id='toc1_14_1_'></a>[Verteilung Monat](#toc0_)
+### <a id='toc1_14_1_'></a>[Zeitpunkt der Erhebung](#toc0_)
 
 > [!NOTE]
 > 💡 **HH**: _"Das liegt an unserer Darstellung des Vitalstatus-Datum. Nach Abschluss der DC-Recherche, die nach Abschluss des 'Todesjahres' durchgeführt wird, wird bei allen Patienten bei denen wir keine weiteren Meldungen bzw Informationen zum Vitalstatus bekommen haben der 31.12. des abgeschlossenen 'Todesjahres' gesetzt. In diesem Fall ist dies das aktuelle Jahr - 2 -> 31.12.2022, da die DC-Recherche zum Zeitpunkt der Datenlieferung noch nicht abgeschlossen war. Wenn jetzt ein Patient die letzte Meldung mit einem Leistungsdatum in 2019 hatte, wir aber keine weiteren Informationen bekommen haben, gehen wir also nach Abschluss der Recherche davon aus, dass der Patient am 31.12.2022 noch gelebt hat. Dadurch 'verbessert' sich tatsächlich der Vitalstatus in unseren Daten, ansonsten wäre dieser nämlich irgendwann in 2019."_
