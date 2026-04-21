@@ -1,10 +1,10 @@
-# <a id='toc1_'></a>[Bericht zur Datenqualität (epi2025_beta) 📉](#toc0_)
+# <a id='toc1_'></a>[Bericht zur Datenqualität (epi2025_beta)](#toc0_)
 
 **Table of contents**<a id='toc0_'></a>    
-- [Bericht zur Datenqualität (epi2025_beta) 📉](#toc1_)    
+- [Bericht zur Datenqualität (epi2025_beta)](#toc1_)    
   - [Änderungen seit der letzten Version](#toc1_1_)    
   - [Hinweise](#toc1_2_)    
-  - [Datenstand 🕥](#toc1_3_)    
+  - [Datenstand](#toc1_3_)    
   - [Fallzahlen im Verlauf der Jahreslieferungen](#toc1_4_)    
     - [original geliefert vor ZfKD Prüfungen](#toc1_4_1_)    
     - [jeweils letztes DJ nach ZfKD  Prüfungen](#toc1_4_2_)    
@@ -24,19 +24,6 @@
     - [Tod](#toc1_5_13_)    
       - [Anteil Verstorbene](#toc1_5_13_1_)    
       - [Verteilung Todesursachen nach ICDT10](#toc1_5_13_2_)    
-  - [Anteil Mehrfachtumore](#toc1_6_)    
-  - [Plausibilitätsprüfungen](#toc1_7_)    
-    - [⚠️ 01-SH](#toc1_7_1_)    
-    - [✅ 02-HH](#toc1_7_2_)    
-    - [✅ 03-NI](#toc1_7_3_)    
-    - [✅ 04-HB](#toc1_7_4_)    
-    - [⚠️ 05-NW](#toc1_7_5_)    
-    - [🚨 06-HE](#toc1_7_6_)    
-    - [✅ 07-RP](#toc1_7_7_)    
-    - [✅ 08-BW](#toc1_7_8_)    
-    - [✅ 09-BY](#toc1_7_9_)    
-    - [✅ 10-SL](#toc1_7_10_)    
-    - [✅ 11-GKR (ehemals)](#toc1_7_11_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -62,16 +49,13 @@
 
 <br>
 
-## <a id='toc1_3_'></a>[Datenstand 🕥](#toc0_)
-
-    🐍 3.12.8 | 📦 pandas: 2.3.3 | 📦 numpy: 1.26.4 | 📦 duckdb: 1.5.0 | 📦 pandas-plots: 1.4.5
-
+## <a id='toc1_3_'></a>[Datenstand](#toc0_)
 
     database file:           2026-03-03_data_epi.duckdb
     data tag:                epi2025_beta2
     sql table created:       2026-03-03 09:47:44
     doi:                     -
-    document created:        2026-03-26 16:41:50
+    document created:        2026-04-21 10:44:43
 
 
     
@@ -221,14 +205,9 @@ and z_dy = 2024
 
 > 💡 **ZfKD**
 > 
-> Fehlende Angabe
-> * `08-BW` hat einen hohen Anteil an fehlenden Diagnosesicherungen mit zuletzt stark ansteigendem Trend
-> ---
-> Histologie Primärtumor
-> * Der Großteil der Meldungen basiert auf einer soliden feingeweblichen Untersuchung.
-> ---
-> Zytologie
-> * In einigen Ländern ist dieser Anteil erkennbar breiter als in anderen. Da die Zytologie oft bei Lungen- oder Schilddrüsenuntersuchungen genutzt wird, könnte dies auf eine starke Vernetzung mit entsprechenden Fachkliniken hindeuten, die ihre Befunde sehr detailliert an das Register melden.
+> - `08-BW` hat einen hohen Anteil an fehlenden Diagnosesicherungen mit zuletzt stark ansteigendem Trend
+> - der Großteil der Meldungen basiert auf einer soliden feingeweblichen Untersuchung
+> - in einigen LKR ist dieser Anteil erkennbar breiter als in anderen. Da die Zytologie oft bei Lungen- oder Schilddrüsenuntersuchungen genutzt wird, könnte dies auf eine starke Vernetzung mit entsprechenden Fachkliniken hindeuten, die ihre Befunde sehr detailliert an das Register melden.
 
 
 
