@@ -43,19 +43,21 @@
 
 ## <a id='toc1_1_'></a>[Informationen zum Dokument](#toc0_)
 
-dolor ipsum dolor sit amet, consectetur adipiscing elit, sed
+- Neben den Hinweisen zum Verständnis der Auswertungen sind auch häufig **Interpretationen** angefügt, diese sind optisch abgesetzt als **Notiz** erkennbar
+- die jeweils angewendeten **Filter** sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl der Entität in unserer Datenbank
+- die _relativen_ Barcharts enthalten ein `Total` item für den Gesamtvergleich
+- die Filter können exakt nachvollzogen werden mit Hilfe der **ausklappbaren SQL Abfragen**
+- in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
+- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../report.ipynb)
 
 **Datenstand: Diagnosejahr 2023**
-
-> [!Tip]
-> Die angewendeten Filter sind für jede Darstellung ausklappbar
 
     database file:           2025-11-11_data_clin.duckdb
     data tag:                v2.3
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-04-14 08:53:41
+    document created:        2026-04-24 17:14:34
 
 
 
@@ -154,7 +156,7 @@ Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die
 > Kategorien:
 >  - `1_null` - kein Wert vorhanden
 >  - `2_undefined` - Wert T oder U
->  - `3_rest` - restliche Werte
+>  - `3_valid` - restliche Werte
 
 
 
@@ -222,7 +224,6 @@ In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Reg
     └ [DJ 2020-2023]:             n = 2_989_092  (92.2%) ░░░███████████████████████████
     └ [keine DCO]:                n = 2_890_167  (89.2%) ░░░░██████████████████████████
     └ [nur tnm-relevante Tumore]: n = 1_610_344  (49.7%) ░░░░░░░░░░░░░░░░██████████████
-    └ [ohne 07-RP]:               n = 1_532_637  (47.3%) ░░░░░░░░░░░░░░░░██████████████
 ```
 
 <details>
@@ -243,7 +244,6 @@ and
         and z_icd10_3d not in ('C26', 'C39', 'C55')
         and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
     )
-and z_kkr <> 7
 ```
 
 </details>
@@ -270,7 +270,7 @@ Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monat
 > _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
 >  - `1_null` - kein Wert vorhanden
 >  - `2_unknown` - Wert X
->  - `3_rest` - restliche Werte
+>  - `3_valid` - restliche Werte
  
 
 
@@ -372,13 +372,13 @@ In den folgenden Auswertungen wurden zusätzlich zu den unter 3.1. genannten Fä
 Nach Brustkrebsdiagnose liegen bundesweit in 25% (nach Bundesländern: 9%-32%) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25% auf 23%.
 Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 angegeben (Bundesländer: 95%-99%), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
 
-> [!CAUTION]
+> [!NOTE]
 > berücksichtigt sind UICC I-III
 >
 > Kategorien
 >  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
 >  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
->  - `3_rest`: keine der zuvor genannten Merkmale trifft zu
+>  - `3_valid`: keine der zuvor genannten Merkmale trifft zu
 
 
 
