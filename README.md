@@ -42,8 +42,8 @@ Bericht an das Bundesministerium für Gesundheit
 
 | Bericht | Format |
 |---------|--------|
-| [📈 Datenqualität](./src/quality-reports/docs/clin/clin_analyze.md) | Markdown |
-| [⚙️ Technischer Bericht](./src/quality-reports/docs/clin/clin_tech.md) | Markdown |
+| [📈 Datenqualität](./src/quality-reports/docs/clin/clin.md) | Markdown |
+| [⚙️ Technischer Bericht](./src/quality-reports/docs/tech/tech.md) | Markdown |
 
 ---
 

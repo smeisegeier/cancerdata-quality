@@ -1,7 +1,7 @@
 [project]
 name = "cancerdata-quality"
 requires-python = ">= 3.11"
-version = "0.7.3"
+version = "0.8.0"
 description = "repo for cancerdata quality"
 readme = "README.md"
 dependencies = [
@@ -10,7 +10,7 @@ dependencies = [
     "kaleido",
     "numpy",
     "duckdb>=1.5.0",
-    "pandas-plots>=1.4.6",
+    "pandas-plots>=2.0.1",
     "connection-helper",
     "pygwalker",
     "appnope",

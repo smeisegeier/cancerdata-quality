@@ -1,6 +1,6 @@
 # <a id='toc1_'></a>[Bericht zur Datenqualität nach § 12 BKRG](#toc0_)
 
-**Table of contents**<a id='toc0_'></a>    
+**Inhalt**<a id='toc0_'></a>    
 - [Bericht zur Datenqualität nach § 12 BKRG](#toc1_)    
   - [Informationen zum Dokument](#toc1_1_)    
   - [Einführung](#toc1_2_)    
@@ -57,7 +57,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-04-24 17:14:34
+    document created:        2026-05-07 18:38:21
 
 
 
@@ -150,7 +150,6 @@ Aus Schleswig-Holstein, Niedersachsen, Bremen und dem Saarland wurden dem ZfKD b
 Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die folgenden Auswertung beschränkt sich daher auf Karzinome (ICD-O-3: 81010/3 – 8576/3) und Tumorlokalisationen, bei denen im Falle einer histologischen Sicherung in der Regel eine Angabe zum Grading erwartet werden kann (C00-C33, C50-C57, C60, C62-C68). Prostatakarzinome (C61) wurden hier nicht berücksichtigt, da hier in der Regel der spezifischere Gleason-Score über das entsprechende Modul übermittelt wurde.  Der Anteil fehlender Werte zum Differenzierungsgrad bei den genannten Entiäten lag bundesweit (ohne Rheinland-Pfalz) bei 9%. Für Rheinland Pfalz führte ein Fehler beim Datenexport zu einer sehr hohen Anteil fehlender Werte, dieser Fehler wird bei der nächsten Datenlieferung korrigiert werden.
 
 
-> [!NOTE]
 > _gradingrelevant_: Lokalisationen C00-C33, C50-C57, C60-C68 und Morphologie: 8010-8576
 > 
 > Kategorien:
@@ -158,15 +157,6 @@ Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die
 >  - `2_undefined` - Wert T oder U
 >  - `3_valid` - restliche Werte
 
-
-
-```
-    n = 3_241_401                                  (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [keine DCO]:                   n = 2_890_167  (89.2%) ░░░░██████████████████████████
-    └ [nur gradingrelevante Tumore]:   n = 997_299  (30.8%) ░░░░░░░░░░░░░░░░░░░░░█████████
-    └ [ohne 07-RP]:                    n = 949_525  (29.3%) ░░░░░░░░░░░░░░░░░░░░░░████████
-```
 
 <details>
 <summary>filter-sql</summary>
@@ -196,8 +186,12 @@ and z_kkr <> 7
 
 
 
+<!-- ALT_TEXT:Abb. 3.1 Fehlender Anteil zum Grading-->
+
+
+
     
-![svg](report_files/output_11_5.svg)
+![svg](report_files/output_11_3.svg)
     
 
 
@@ -207,7 +201,6 @@ and z_kkr <> 7
 #### <a id='toc1_4_4_2_'></a>[Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc0_)
 In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Regel definiert ist, liegt mindestens ein klinisches (cT) oder pathologisches (pT) T-Stadium vor (Bundesländer: 81%-92%), in 25% sind beide Angaben vorhanden. Aus Rheinland-Pfalz wurde grundsätzlich nur entweder ein pT oder cT übermittelt.
 
-> [!NOTE]
 > _tnm-relevant_: Lokalisationen C00-C43, C45-C69, C73-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und Morphologie: 8010-8790
 >
 > Kategorien
@@ -220,10 +213,10 @@ In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Reg
 
 
 ```
-    n = 3_241_401                               (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:             n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [keine DCO]:                n = 2_890_167  (89.2%) ░░░░██████████████████████████
-    └ [nur tnm-relevante Tumore]: n = 1_610_344  (49.7%) ░░░░░░░░░░░░░░░░██████████████
+    n = 3_241_401                               (100.0%) 
+    └ [DJ 2020-2023]:             n = 2_989_092  (92.2%) 
+    └ [keine DCO]:                n = 2_890_167  (89.2%) 
+    └ [nur tnm-relevante Tumore]: n = 1_610_344  (49.7%)
 ```
 
 <details>
@@ -254,8 +247,12 @@ and
 
 
 
+<!-- ALT_TEXT:Abb. 3.2 Anteile übermittelter pathologischer und klinischer T-Stadien-->
+
+
+
     
-![svg](report_files/output_13_5.svg)
+![svg](report_files/output_13_6.svg)
     
 
 
@@ -266,7 +263,6 @@ and
 
 Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in 85% der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium vorhanden (Bundesländer: 74%-93%). Bei Vorhandensein des pT ist bundesweit in 88% auch ein gültiger pathologischer Lymphknotenstatus (pN, ohne pNX) dokumentiert (Bundesländer: 73%-99%, ohne Abbildung).
 
-> [!NOTE]
 > _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
 >  - `1_null` - kein Wert vorhanden
 >  - `2_unknown` - Wert X
@@ -276,12 +272,12 @@ Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monat
 
 
 ```
-    n = 3_241_401                                        (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                      n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [keine DCO]:                         n = 2_890_167  (89.2%) ░░░░██████████████████████████
-    └ [nur tnm-relevante Tumore]:          n = 1_610_344  (49.7%) ░░░░░░░░░░░░░░░░██████████████
-    └ [Tumor hat OP < 180d nach Diagnose]:   n = 835_516  (25.8%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [nur Tumore mit OPS Kap. 5]:           n = 817_684  (25.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    n = 3_241_401                                        (100.0%) 
+    └ [DJ 2020-2023]:                      n = 2_989_092  (92.2%) 
+    └ [keine DCO]:                         n = 2_890_167  (89.2%) 
+    └ [nur tnm-relevante Tumore]:          n = 1_610_344  (49.7%) 
+    └ [Tumor hat OP < 180d nach Diagnose]:   n = 835_516  (25.8%) 
+    └ [nur Tumore mit OPS Kap. 5]:           n = 817_684  (25.2%)
 ```
 
 <details>
@@ -314,8 +310,12 @@ and z_tum_id in (select distinct z_tum_id from OPS where left(ops.Code,1) in ('5
 
 
 
+<!-- ALT_TEXT:Abb. 3.3 Anteile übermittelter pT-Stadien bei dokumentierter Operation-->
+
+
+
     
-![svg](report_files/output_15_5.svg)
+![svg](report_files/output_15_6.svg)
     
 
 
@@ -331,12 +331,12 @@ Der Anteil von Fällen ohne Therapieangaben betrug bundesweit über alle bösart
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) ░░░░░░████████████████████████
-    └ [ICD10 nur C]:                   n = 2_207_903  (68.1%) ░░░░░░░░░░████████████████████
-    └ [keine DCO]:                     n = 2_129_378  (65.7%) ░░░░░░░░░░░███████████████████
-    └ [keine C44,D04]:                 n = 1_736_942  (53.6%) ░░░░░░░░░░░░░░████████████████
-    └ [keine Verstorbenen < 180 Tage]: n = 1_486_572  (45.9%) ░░░░░░░░░░░░░░░░░█████████████
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) 
+    └ [ICD10 nur C]:                   n = 2_207_903  (68.1%) 
+    └ [keine DCO]:                     n = 2_129_378  (65.7%) 
+    └ [keine C44,D04]:                 n = 1_736_942  (53.6%) 
+    └ [keine Verstorbenen < 180 Tage]: n = 1_486_572  (45.9%)
 ```
 
 <details>
@@ -358,8 +358,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.4: Anteil der Fälle ohne Therapieangaben-->
+
+
+
     
-![svg](report_files/output_17_5.svg)
+![svg](report_files/output_17_6.svg)
     
 
 
@@ -372,7 +376,6 @@ In den folgenden Auswertungen wurden zusätzlich zu den unter 3.1. genannten Fä
 Nach Brustkrebsdiagnose liegen bundesweit in 25% (nach Bundesländern: 9%-32%) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25% auf 23%.
 Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 angegeben (Bundesländer: 95%-99%), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
 
-> [!NOTE]
 > berücksichtigt sind UICC I-III
 >
 > Kategorien
@@ -383,11 +386,11 @@ Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 ange
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [ICD10 C50]:                       n = 316_685   (9.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [kein M1]:                         n = 295_287   (9.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [keine Verstorbenen < 180 Tage]:   n = 283_195   (8.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) 
+    └ [ICD10 C50]:                       n = 316_685   (9.8%) 
+    └ [kein M1]:                         n = 295_287   (9.1%) 
+    └ [keine Verstorbenen < 180 Tage]:   n = 283_195   (8.7%)
 ```
 
 <details>
@@ -408,8 +411,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.5: Anteil Fälle mit dokumentierter Brust OP bei C50-->
+
+
+
     
-![svg](report_files/output_19_5.svg)
+![svg](report_files/output_19_6.svg)
     
 
 
@@ -418,11 +425,11 @@ Beim Darmkrebs (C18-C20) liegen bundesweit in 32% (nach Bundesländern: 10%-41%)
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [ICD10 C18-C20]:                   n = 226_382   (7.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [kein M1]:                         n = 187_563   (5.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine Verstorbenen < 180 Tage]:   n = 161_924   (5.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) 
+    └ [ICD10 C18-C20]:                   n = 226_382   (7.0%) 
+    └ [kein M1]:                         n = 187_563   (5.8%) 
+    └ [keine Verstorbenen < 180 Tage]:   n = 161_924   (5.0%)
 ```
 
 <details>
@@ -443,8 +450,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.6: Anteil Fälle mit dokumentierter OP bei Darmkrebs-->
+
+
+
     
-![svg](report_files/output_21_5.svg)
+![svg](report_files/output_21_6.svg)
     
 
 
@@ -454,11 +465,11 @@ Beim Malignen Hautmelanom (C43) liegen bundesweit in 42% (nach Bundesländern: 3
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [C43]:                             n = 110_067   (3.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [kein M1]:                         n = 107_527   (3.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:   n = 104_913   (3.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) 
+    └ [C43]:                             n = 110_067   (3.4%) 
+    └ [kein M1]:                         n = 107_527   (3.3%) 
+    └ [keine Verstorbenen < 180 Tage]:   n = 104_913   (3.2%)
 ```
 
 <details>
@@ -479,8 +490,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom-->
+
+
+
     
-![svg](report_files/output_23_5.svg)
+![svg](report_files/output_23_6.svg)
     
 
 
@@ -490,11 +505,11 @@ Beim Hodenkrebs (C62) liegen bundesweit in 30% (nach Bundesländern: 4%-46%) kei
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [ICD10 C62]:                        n = 16_882   (0.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [kein M1]:                          n = 15_892   (0.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:    n = 15_657   (0.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023]:                  n = 2_989_092  (92.2%) 
+    └ [ICD10 C62]:                        n = 16_882   (0.5%) 
+    └ [kein M1]:                          n = 15_892   (0.5%) 
+    └ [keine Verstorbenen < 180 Tage]:    n = 15_657   (0.5%)
 ```
 
 <details>
@@ -515,8 +530,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.8: Anteil Fälle mit dokumentierter OP beim Hodenkrebs-->
+
+
+
     
-![svg](report_files/output_25_5.svg)
+![svg](report_files/output_25_6.svg)
     
 
 
@@ -526,7 +545,6 @@ and ifnull(z_period_diag_death_day,181) >= 180
 #### <a id='toc1_4_5_3_'></a>[Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc0_)
 Nach brusterhaltender Operation eines bösartigen Tumors der Brust liegen bundesweit in 33% (nach Bundesländern: 13%-54%) keine Angaben zu einer Strahlentherapie vor. Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
 
-> [!NOTE]
 > Brusterhaltende Therapie (BET): ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
 
 
@@ -534,12 +552,12 @@ Nach brusterhaltender Operation eines bösartigen Tumors der Brust liegen bundes
 ```
     count: distinct z_tum_id
     ---
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) ░░░░░░████████████████████████
-    └ [ICD10 C50]:                       n = 278_699   (8.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [kein M1]:                         n = 259_569   (8.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-    └ [nur OPS für BET]:                 n = 144_136   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine Verstorbenen < 180 Tage]:   n = 143_832   (4.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) 
+    └ [ICD10 C50]:                       n = 278_699   (8.6%) 
+    └ [kein M1]:                         n = 259_569   (8.0%) 
+    └ [nur OPS für BET]:                 n = 144_136   (4.4%) 
+    └ [keine Verstorbenen < 180 Tage]:   n = 143_832   (4.4%)
 ```
 
 <details>
@@ -561,8 +579,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.9: Anteil Fälle mit Strahlentherapie und BET bei C50-->
+
+
+
     
-![svg](report_files/output_27_5.svg)
+![svg](report_files/output_27_6.svg)
     
 
 
@@ -575,7 +597,6 @@ Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische L
 
 Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54% (nach Bundesländern:42%-62%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie dokumentiert, nur in 11% der Fälle ist keine Therapie dokumentiert.
 
-> [!NOTE]
 > (Stadium III)
 >
 > Kategorien:
@@ -586,12 +607,12 @@ Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bun
 
 
 ```
-    n = 3_241_401                                                      (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023 ohne letzte 6m]:                     n = 2_633_644  (81.3%) ░░░░░░████████████████████████
-    └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 38_768   (1.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine DCO]:                                          n = 37_488   (1.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [kein M1]:                                            n = 37_461   (1.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:                      n = 27_653   (0.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                                      (100.0%) 
+    └ [DJ 2020-2023 ohne letzte 6m]:                     n = 2_633_644  (81.3%) 
+    └ [z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')]:    n = 38_768   (1.2%) 
+    └ [keine DCO]:                                          n = 37_488   (1.2%) 
+    └ [kein M1]:                                            n = 37_461   (1.2%) 
+    └ [keine Verstorbenen < 180 Tage]:                      n = 27_653   (0.9%)
 ```
 
 <details>
@@ -613,21 +634,25 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.10 Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen-->
+
+
+
     
-![svg](report_files/output_30_5.svg)
+![svg](report_files/output_30_6.svg)
     
 
 
 
 
 ```
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) ░░░░░░████████████████████████
-    └ [ICD10 C18]:                       n = 135_471   (4.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine DCO]:                       n = 131_038   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [kein M1]:                         n = 107_658   (3.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:    n = 95_755   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [pN in (1,2)]:                      n = 23_730   (0.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2023 ohne letzte 6m]:   n = 2_633_644  (81.3%) 
+    └ [ICD10 C18]:                       n = 135_471   (4.2%) 
+    └ [keine DCO]:                       n = 131_038   (4.0%) 
+    └ [kein M1]:                         n = 107_658   (3.3%) 
+    └ [keine Verstorbenen < 180 Tage]:    n = 95_755   (3.0%) 
+    └ [pN in (1,2)]:                      n = 23_730   (0.7%)
 ```
 
 <details>
@@ -650,8 +675,12 @@ and left(z_n_p_1,1) in ('1','2')
 
 
 
+<!-- ALT_TEXT:Abb. 3.11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons-->
+
+
+
     
-![svg](report_files/output_31_5.svg)
+![svg](report_files/output_31_6.svg)
     
 
 
@@ -667,9 +696,9 @@ Der mediane Abstand zwischen Diagnose und erster Operation lag bei 26 Tagen (nac
 ```
     count: distinct z_tum_id
     ---
-    n = 3_241_401                   (100.0%) ██████████████████████████████
-    └ [DJ 2020-2023]: n = 2_989_092  (92.2%) ░░░███████████████████████████
-    └ [nur erste OP]: n = 1_290_573  (39.8%) ░░░░░░░░░░░░░░░░░░░███████████
+    n = 3_241_401                   (100.0%) 
+    └ [DJ 2020-2023]: n = 2_989_092  (92.2%) 
+    └ [nur erste OP]: n = 1_290_573  (39.8%)
 ```
 
 <details>
@@ -688,35 +717,12 @@ and z_op_order = 1
 
 
 
-    
-![png](report_files/output_33_5.png)
-    
+<!-- ALT_TEXT:Abb. 3.12: Abstand in Tagen zwischen Diagnosedateum und erster Operation (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)-->
 
 
+
     
-    column (n = 1_290_573)  |     notnull     | min  | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
-    ------------------------+-----------------+------+-------+------+--------+-------+-------+-------+-------+-------+-----
-    Anzahl_Tage_Diagnose_OP | 1_271_631 (98%) | -304 |   -34 | 0.00 |  19.00 | 47.54 | 49.00 |   122 | 2_204 | 98.96 | 2.08
-    
-    
-    item (n = 1_290_573) |  count  | min  | lower | q25  | median | mean  |  q75  | upper |  max  |  std   |  cv 
-    ---------------------+---------+------+-------+------+--------+-------+-------+-------+-------+--------+-----
-    01-SH                |  44_153 |    0 |     0 | 0.00 |  20.00 | 39.21 | 46.00 |   115 | 1_498 |  59.89 | 1.53
-    02-HH                |  26_895 |    0 |     0 | 0.00 |  15.00 | 45.86 | 42.00 |   105 | 2_204 | 107.44 | 2.34
-    03-NI                |  92_380 |    0 |     0 | 0.00 |  22.00 | 47.08 | 55.00 |   137 | 1_635 |  76.37 | 1.62
-    04-HB                |   9_001 |    0 |     0 | 3.00 |  25.00 | 42.04 | 49.00 |   118 |   384 |  57.03 | 1.36
-    05-NW                | 257_291 |    0 |     0 | 1.00 |  23.00 | 58.11 | 54.00 |   133 | 1_812 | 124.40 | 2.14
-    06-HE                |  69_922 |    0 |     0 | 0.00 |  21.00 | 45.40 | 49.00 |   122 | 1_632 |  83.01 | 1.83
-    07-RP                |  48_914 |    0 |     0 | 0.00 |  20.00 | 43.81 | 45.00 |   112 | 1_649 |  88.96 | 2.03
-    08-BW                | 166_886 |    0 |     0 | 0.00 |  22.00 | 53.24 | 54.00 |   135 | 1_967 | 112.39 | 2.11
-    09-BY                | 179_760 |    0 |     0 | 0.00 |  16.00 | 44.65 | 48.00 |   120 | 1_671 |  89.88 | 2.01
-    10-SL                |  15_891 |    0 |     0 | 0.00 |  13.00 | 35.94 | 38.00 |    95 | 1_080 |  65.85 | 1.83
-    11-BE                |  56_246 |    0 |     0 | 0.00 |  21.00 | 47.61 | 52.00 |   130 | 1_599 |  90.79 | 1.91
-    12-BB                |  48_958 |    0 |     0 | 0.00 |  20.00 | 47.47 | 51.00 |   127 | 1_724 |  93.58 | 1.97
-    13-MV                |  51_567 | -304 |   -34 | 0.00 |   2.00 | 36.04 | 37.00 |    92 | 1_753 |  86.56 | 2.40
-    14-SN                |  95_890 |    0 |     0 | 0.00 |  16.00 | 46.77 | 50.00 |   125 | 1_680 |  96.66 | 2.07
-    15-ST                |  61_468 |    0 |     0 | 0.00 |   9.00 | 36.29 | 40.00 |   100 | 1_595 |  79.32 | 2.19
-    16-TH                |  46_409 |    0 |     0 | 0.00 |   1.00 | 30.89 | 29.00 |    72 | 1_569 |  81.09 | 2.62
+![png](report_files/output_33_6.png)
     
 
 
@@ -727,7 +733,6 @@ and z_op_order = 1
 #### <a id='toc1_4_8_1_'></a>[Nach Brustkrebs](#toc0_)
 Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) aus  den Jahren 2020/2021 ist bis Ende 2023 in 5% der Fälle (nach Bundesländern: 2%-8%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.1.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
-> [!NOTE]
 > Zeitraum bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021
 > 
 > Kategorien:
@@ -740,12 +745,12 @@ Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) 
 ```
     count: distinct z_tum_id
     ---
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2021]:                  n = 1_495_715  (46.1%) ░░░░░░░░░░░░░░░░░█████████████
-    └ [ICD10 C50]:                       n = 157_980   (4.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [kein M1]:                         n = 146_979   (4.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [Residualstatus R0]:                n = 89_812   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2021]:                  n = 1_495_715  (46.1%) 
+    └ [ICD10 C50]:                       n = 157_980   (4.9%) 
+    └ [kein M1]:                         n = 146_979   (4.5%) 
+    └ [Residualstatus R0]:                n = 89_812   (2.8%) 
+    └ [keine Verstorbenen < 180 Tage]:    n = 89_461   (2.8%)
 ```
 
 <details>
@@ -767,8 +772,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.13a: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)-->
+
+
+
     
-![svg](report_files/output_35_5.svg)
+![svg](report_files/output_35_6.svg)
     
 
 
@@ -795,12 +804,12 @@ Für Personen mit Darmkrebsdiagnosen und Operation ohne Residualtumor (R0) aus d
 ```
     count: distinct z_tum_id
     ---
-    n = 3_241_401                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2021]:                  n = 1_495_715  (46.1%) ░░░░░░░░░░░░░░░░░█████████████
-    └ [ICD10 C18-C20]:                   n = 114_553   (3.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [kein M1]:                          n = 94_460   (2.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [Residualstatus R0]:                n = 49_856   (1.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine Verstorbenen < 180 Tage]:    n = 46_861   (1.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 3_241_401                                    (100.0%) 
+    └ [DJ 2020-2021]:                  n = 1_495_715  (46.1%) 
+    └ [ICD10 C18-C20]:                   n = 114_553   (3.5%) 
+    └ [kein M1]:                          n = 94_460   (2.9%) 
+    └ [Residualstatus R0]:                n = 49_856   (1.5%) 
+    └ [keine Verstorbenen < 180 Tage]:    n = 46_861   (1.4%)
 ```
 
 <details>
@@ -822,8 +831,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
+<!-- ALT_TEXT:Abb. 3.14a Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)-->
+
+
+
     
-![svg](report_files/output_39_5.svg)
+![svg](report_files/output_39_6.svg)
     
 
 

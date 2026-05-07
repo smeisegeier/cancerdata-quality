@@ -1,0 +1,5 @@
+has_psa,has_diag,has_fol
+False,False,2918
+False,True,130
+True,False,0
+True,True,18724
