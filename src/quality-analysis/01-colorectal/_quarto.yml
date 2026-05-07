@@ -1,0 +1,8 @@
+project:
+  type: default
+  output-dir: docs2    # This puts all your final .md or .html files in one place
+
+format:
+  gfm:                # This ensures your output is Markdown
+    toc: false
+    code-block-bg: true
