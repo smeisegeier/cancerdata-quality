@@ -878,7 +878,7 @@ and z_first_treatment = 'op'
 ### <a id='toc1_7_1_'></a>[Verteilung OP in 2020](#toc0_)
 - Filter: `C18`-`C20`, 2020
 - gezählt sind Tumore
-- Einteilung der Verteilung in eine Kategorie Tabelle
+- Kategorien
   - `1_op_r0` - OP und R0 dokumentiert
   - `2_op_no_r0` - OP, kein R0
   - `3_no_op_but_pt` - keine OP, aber pT (Diagnose oder Verlauf)

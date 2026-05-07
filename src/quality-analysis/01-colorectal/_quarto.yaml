@@ -1,0 +1,91 @@
+project:
+  type: default
+  output-dir: quarto    # This puts all your final .md or .html files in one place
+  # preview:
+  #   port: 8000        # Port for preview server
+  #   watch: true       # Watch for changes
+  #   navigate: true    # Auto-navigate to updated content
+  # render:
+  #   - "*.qmd"        # Files to render
+  #   - "!_*.qmd"      # Files to exclude (prefix with _)
+  # resources:
+  #   - images/        # Additional resources to copy
+  # execute-dir: project  # Where to execute code (project|render|cwd)
+
+execute:
+  echo: false  # Hides all code by default
+
+format:
+  gfm:                # This ensures your output is Markdown
+    toc: true
+    code-block-bg: true
+    # Common GFM/Markdown options:
+    # toc-depth: 2            # Depth of table of contents
+    # number-sections: true   # Number section headings
+    # number-depth: 2         # Depth of section numbering
+    # code-overflow: scroll   # Code block overflow (scroll|wrap)
+    # highlight-style: default  # Syntax highlighting style
+    # theme: default          # Bootstrap theme (default|cosmo|flatly|etc.)
+    # fig-width: 7            # Default figure width in inches
+    # fig-height: 5           # Default figure height in inches
+    # fig-cap-location: margin  # Figure caption location
+    # tbl-cap-location: top   # Table caption location
+    # link-external-icon: false  # Show icon for external links
+    # link-external-newwindow: true  # Open external links in new window
+    # preserve-yaml: true     # Preserve YAML in output
+    # markdown-nested-headings: false  # Use ATX headings
+    # reference-location: document  # Footnote location
+    # anchor-sections: true   # Add anchor links to sections
+    # smooth-scroll: true     # Smooth scroll to anchors
+  
+  # Other available formats (commented out):
+  # html:
+  #   toc: true
+  #   toc-depth: 3
+  #   number-sections: true
+  #   code-fold: true       # Enable code folding
+  #   code-summary: "Code"  # Fold button text
+  #   code-overflow: scroll
+  #   theme: cosmo
+  #   css: styles.css       # Custom CSS file
+  #   include-after-body:   # Include custom HTML after body
+  #     - text: |
+  #         <script>console.log("loaded")</script>
+  # pdf:
+  #   toc: true
+  #   toc-depth: 2
+  #   number-sections: true
+  #   documentclass: article  # article|report|book
+  #   classoption:
+  #     - a4paper
+  #     - 12pt
+  #   geometry:
+  #     - margin=1in
+  #   fontfamily: helvetica
+  #   fontsize: 12pt
+  #   linestretch: 1.5
+  #   colorlinks: true
+  # epub:
+  #   toc: true
+  #   toc-depth: 2
+  #   number-sections: true
+  #   chapterdiv: false     # Use sections instead of chapters
+  # docx:
+  #   toc: true
+  #   reference-doc: template.docx  # Custom reference document
+  # typst:
+  #   toc: true
+  #   number-sections: true
+  # tex:
+  #   number-sections: true
+  # revealjs:
+  #   slide-level: 2        # Level at which slides break
+  #   transition: slide     # Transition effect
+  #   theme: blood          # Reveal.js theme
+  #   center: true          # Center content vertically
+  #   width: 960
+  #   height: 700
+  # beamer:
+  #   theme: Madrid         # Beamer theme
+  #   colortheme: beaver    # Beamer color theme
+  #   fonttheme: professionalfonts
