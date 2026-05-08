@@ -1,6 +1,6 @@
 # <a id='toc1_'></a>[Bericht zur Qualität der klinischen Daten](#toc0_)
 
-**Table of contents**<a id='toc0_'></a>    
+**Inhalt**<a id='toc0_'></a>    
 - [Bericht zur Qualität der klinischen Daten](#toc1_)    
   - [Informationen zum Dokument](#toc1_1_)    
   - [Änderungen seit der letzten Version](#toc1_2_)    
@@ -129,7 +129,7 @@
     last kkr data import:    2026-02-26
     sql table created:       2026-03-04 10:17:13
     doi:                     -
-    document created:        2026-05-07 15:03:21
+    document created:        2026-05-08 08:24:03
 
 
 <br>
@@ -255,7 +255,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_21_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_21_6.png">
-  <img alt="" src="clin_files/output_21_6.png" width="800">
+  <img alt="png" src="clin_files/output_21_6.png" width="800">
 </picture>
     
 
@@ -269,7 +269,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_23_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_23_1.png">
-  <img alt="" src="clin_files/output_23_1.png" width="800">
+  <img alt="png" src="clin_files/output_23_1.png" width="800">
 </picture>
     
 
@@ -332,7 +332,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_27_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_27_6.png">
-  <img alt="" src="clin_files/output_27_6.png" width="800">
+  <img alt="png" src="clin_files/output_27_6.png" width="800">
 </picture>
     
 
@@ -383,7 +383,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_29_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_29_6.png">
-  <img alt="" src="clin_files/output_29_6.png" width="800">
+  <img alt="png" src="clin_files/output_29_6.png" width="800">
 </picture>
     
 
@@ -538,7 +538,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_37_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_37_1.png">
-  <img alt="" src="clin_files/output_37_1.png" width="600">
+  <img alt="png" src="clin_files/output_37_1.png" width="600">
 </picture>
     
 
@@ -587,7 +587,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_39_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_39_6.png">
-  <img alt="" src="clin_files/output_39_6.png" width="600">
+  <img alt="png" src="clin_files/output_39_6.png" width="600">
 </picture>
     
 
@@ -783,7 +783,7 @@ and left(z_icd10_3d,1) = 'C'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_49_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_49_6.png">
-  <img alt="" src="clin_files/output_49_6.png" width="800">
+  <img alt="png" src="clin_files/output_49_6.png" width="800">
 </picture>
     
 
@@ -827,7 +827,7 @@ and left(z_icd10_3d,1) = 'C'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_51_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_51_6.png">
-  <img alt="" src="clin_files/output_51_6.png" width="800">
+  <img alt="png" src="clin_files/output_51_6.png" width="800">
 </picture>
     
 
@@ -929,7 +929,7 @@ and
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_56_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_56_6.png">
-  <img alt="" src="clin_files/output_56_6.png" width="80%">
+  <img alt="png" src="clin_files/output_56_6.png" width="80%">
 </picture>
     
 
@@ -1088,7 +1088,7 @@ and z_icd10_3d not in ('C44','D04')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_68_7.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_68_7.png">
-  <img alt="" src="clin_files/output_68_7.png" width="800">
+  <img alt="png" src="clin_files/output_68_7.png" width="800">
 </picture>
     
 
@@ -1137,9 +1137,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_70_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_70_6.svg">
-  <img alt="svg" src="clin_files/output_70_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_70_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_70_5.svg">
+  <img alt="svg" src="clin_files/output_70_5.svg">
 </picture>
     
 
@@ -1322,7 +1322,7 @@ and Verstorben='J'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_83_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_83_1.png">
-  <img alt="" src="clin_files/output_83_1.png" width="80%">
+  <img alt="png" src="clin_files/output_83_1.png" width="80%">
 </picture>
     
 
@@ -1565,7 +1565,7 @@ and z_icd10_3d not in ('C44','D04')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_6.png">
-  <img alt="" src="clin_files/output_104_6.png" width="60%">
+  <img alt="png" src="clin_files/output_104_6.png" width="60%">
 </picture>
     
 
@@ -1577,7 +1577,7 @@ and z_icd10_3d not in ('C44','D04')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_9.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_9.png">
-  <img alt="" src="clin_files/output_104_9.png" width="60%">
+  <img alt="png" src="clin_files/output_104_9.png" width="60%">
 </picture>
     
 
@@ -1688,7 +1688,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_files/output_109_7.png" width="80%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_109_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_109_7.png">
+  <img alt="png" src="clin_files/output_109_7.png" width="80%">
+</picture>
     
 
 
@@ -1696,7 +1700,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="clin_files/output_109_10.png" width="80%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_109_10.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_109_10.png">
+  <img alt="png" src="clin_files/output_109_10.png" width="80%">
+</picture>
     
 
 
@@ -2045,7 +2053,7 @@ and z_icd10_3d = 'C61'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_6.png">
-  <img alt="" src="clin_files/output_122_6.png" width="70%">
+  <img alt="png" src="clin_files/output_122_6.png" width="70%">
 </picture>
     
 
@@ -2057,7 +2065,7 @@ and z_icd10_3d = 'C61'
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_9.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_9.png">
-  <img alt="" src="clin_files/output_122_9.png" width="70%">
+  <img alt="png" src="clin_files/output_122_9.png" width="70%">
 </picture>
     
 
@@ -2097,7 +2105,7 @@ and z_icd10_3d in ('C18','C19','C20')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_6.png">
-  <img alt="" src="clin_files/output_124_6.png" width="50%">
+  <img alt="png" src="clin_files/output_124_6.png" width="50%">
 </picture>
     
 
@@ -2109,7 +2117,7 @@ and z_icd10_3d in ('C18','C19','C20')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_9.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_9.png">
-  <img alt="" src="clin_files/output_124_9.png" width="50%">
+  <img alt="png" src="clin_files/output_124_9.png" width="50%">
 </picture>
     
 
@@ -2144,11 +2152,17 @@ and z_icd10_3d = 'C43'
 
     
     
+
+
     🟠 missings
 
 
 
-<img src="clin_files/output_126_6.png" width="50%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_7.png">
+  <img alt="png" src="clin_files/output_126_7.png" width="50%">
+</picture>
     
 
 
@@ -2156,7 +2170,11 @@ and z_icd10_3d = 'C43'
 
 
 
-<img src="clin_files/output_126_9.png" width="50%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_10.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_10.png">
+  <img alt="png" src="clin_files/output_126_10.png" width="50%">
+</picture>
     
 
 
@@ -2232,7 +2250,7 @@ Stadium is not null
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_134_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_134_1.png">
-  <img alt="" src="clin_files/output_134_1.png" width="100%">
+  <img alt="png" src="clin_files/output_134_1.png" width="100%">
 </picture>
     
 
