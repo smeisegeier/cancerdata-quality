@@ -1,6 +1,6 @@
 # <a id='toc1_'></a>[Bericht zur Datenqualität (epi2025_beta)](#toc0_)
 
-**Table of contents**<a id='toc0_'></a>    
+**Inhalt**<a id='toc0_'></a>    
 - [Bericht zur Datenqualität (epi2025_beta)](#toc1_)    
   - [Änderungen seit der letzten Version](#toc1_1_)    
   - [Hinweise](#toc1_2_)    
@@ -51,15 +51,15 @@
 
 ## <a id='toc1_3_'></a>[Datenstand](#toc0_)
 
-    database file:           2026-03-03_data_epi.duckdb
-    data tag:                epi2025_beta2
-    sql table created:       2026-03-03 09:47:44
-    doi:                     -
-    document created:        2026-04-21 16:19:58
+    database file:           2026-05-13_data_epi.duckdb
+    data tag:                epi2025_1
+    sql table created:       2026-05-13 09:31:01
+    doi:                     10.18444/5.03.01.0005.0022.0001
+    document created:        2026-05-13 18:47:22
 
 
     
-    aktuellster batch               425
+    aktuellster batch               426
     aktuellstes Diagnosejahr 📆     (2024)
 
 
@@ -83,7 +83,11 @@
 
 
     
-![png](epi_files/output_16_0.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_16_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_16_0.png">
+  <img alt="png" src="epi_files/output_16_0.png">
+</picture>
     
 
 
@@ -95,7 +99,11 @@
 
 
     
-![png](epi_files/output_18_0.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_18_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_18_0.png">
+  <img alt="png" src="epi_files/output_18_0.png">
+</picture>
     
 
 
@@ -121,11 +129,11 @@
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2019-2025]:            n = 4_597_256  (26.2%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [ICD10 nur C]:             n = 3_886_792  (22.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine C44,D04]:           n = 3_143_607  (17.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2019-2025]:            n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [ICD10 nur C]:             n = 3_939_786  (22.2%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [keine C44,D04]:           n = 3_184_627  (17.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
 ```
 
 <details>
@@ -147,7 +155,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](epi_files/output_22_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_22_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_22_6.png">
+  <img alt="png" src="epi_files/output_22_6.png">
+</picture>
     
 
 
@@ -173,9 +185,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
 <details>
@@ -195,7 +207,11 @@ and z_dy = 2024
 
 
     
-![svg](epi_files/output_24_5.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_24_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_24_5.svg">
+  <img alt="svg" src="epi_files/output_24_5.svg">
+</picture>
     
 
 
@@ -212,11 +228,11 @@ and z_dy = 2024
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ ab 2015]:              n = 7_603_415  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
-    └ [ICD10 nur C]:             n = 6_499_552  (37.0%) ░░░░░░░░░░░░░░░░░░░███████████
-    └ [keine C44,D04]:           n = 5_194_820  (29.6%) ░░░░░░░░░░░░░░░░░░░░░░████████
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ ab 2015]:              n = 7_675_888  (43.2%) ░░░░░░░░░░░░░░░░░░████████████
+    └ [ICD10 nur C]:             n = 6_554_532  (36.9%) ░░░░░░░░░░░░░░░░░░░███████████
+    └ [keine C44,D04]:           n = 5_237_641  (29.5%) ░░░░░░░░░░░░░░░░░░░░░░████████
 ```
 
 <details>
@@ -238,7 +254,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](epi_files/output_27_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_27_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_27_5.svg">
+  <img alt="svg" src="epi_files/output_27_5.svg">
+</picture>
     
 
 
@@ -271,11 +291,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [ICD10 nur C]:            n = 14_973_906  (85.2%) ░░░░░█████████████████████████
-    └ [keine C44,D04]:          n = 12_161_317  (69.2%) ░░░░░░░░░░████████████████████
-    └ [DJ 2010-2024]:            n = 7_646_321  (43.5%) ░░░░░░░░░░░░░░░░░█████████████
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [ICD10 nur C]:            n = 15_030_686  (84.6%) ░░░░░█████████████████████████
+    └ [keine C44,D04]:          n = 12_205_943  (68.7%) ░░░░░░░░░░████████████████████
+    └ [DJ 2010-2024]:            n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
 ```
 
 <details>
@@ -297,7 +317,11 @@ and z_dy between 2010 and 2024
 
 
     
-![png](epi_files/output_30_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_30_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_30_5.png">
+  <img alt="png" src="epi_files/output_30_5.png">
+</picture>
     
 
 
@@ -317,8 +341,8 @@ and z_dy between 2010 and 2024
 
 
 ```
-    n = 17_569_016                (100.0%) ██████████████████████████████
-    └ [keine NBL]: n = 13_493_606  (76.8%) ░░░░░░░███████████████████████
+    n = 17_758_787                (100.0%) ██████████████████████████████
+    └ [keine NBL]: n = 13_654_942  (76.9%) ░░░░░░░███████████████████████
 ```
 
 <details>
@@ -337,7 +361,11 @@ z_kkr < 11
 
 
     
-![png](epi_files/output_32_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_32_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_32_5.png">
+  <img alt="png" src="epi_files/output_32_5.png">
+</picture>
     
 
 
@@ -348,9 +376,9 @@ z_kkr < 11
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2020-2024]:            n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2020-2024]:            n = 3_884_169  (21.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
 <details>
@@ -370,7 +398,11 @@ and z_dy between 2020 and 2024
 
 
     
-![svg](epi_files/output_34_5.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_34_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_34_5.svg">
+  <img alt="svg" src="epi_files/output_34_5.svg">
+</picture>
     
 
 
@@ -382,11 +414,11 @@ and z_dy between 2020 and 2024
 
 
 ```
-    n = 17_569_016                                  (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:      n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2020-2024]:                 n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine DCO]:                    n = 3_643_458  (20.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [nur gradingrelevante Tumore]:  n = 1_238_330   (7.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 17_758_787                                  (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]:      n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2020-2024]:                 n = 3_884_169  (21.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [keine DCO]:                    n = 3_704_055  (20.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [nur gradingrelevante Tumore]:  n = 1_252_563   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
 <details>
@@ -418,7 +450,11 @@ and
 
 
     
-![png](epi_files/output_36_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_36_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_36_5.svg">
+  <img alt="svg" src="epi_files/output_36_5.svg">
+</picture>
     
 
 
@@ -431,11 +467,11 @@ and
 
 
 ```
-    n = 17_569_016                                  (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:      n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2020-2024]:                 n = 3_814_755  (21.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine DCO]:                    n = 3_643_458  (20.7%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [nur gradingrelevante Tumore]:  n = 1_238_330   (7.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    n = 17_758_787                                  (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]:      n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2020-2024]:                 n = 3_884_169  (21.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [keine DCO]:                    n = 3_704_055  (20.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [nur gradingrelevante Tumore]:  n = 1_252_563   (7.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
 ```
 
 <details>
@@ -466,7 +502,11 @@ and
 
 
 
-<img src="epi_files/output_38_6.png" width="80%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_38_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_38_6.png">
+  <img alt="png" src="epi_files/output_38_6.png" width="80%">
+</picture>
     
 
 
@@ -477,11 +517,11 @@ and
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 582_254   (3.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [Alter <= 20]:                 n = 1_975   (0.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine C44,D04]:             n = 625_706   (3.5%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [Alter <= 20]:                 n = 2_185   (0.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 <details>
@@ -503,7 +543,11 @@ and z_age<=20
 
 
     
-![svg](epi_files/output_40_5.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_40_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_40_6.svg">
+  <img alt="svg" src="epi_files/output_40_6.svg">
+</picture>
     
 
 
@@ -515,11 +559,11 @@ and z_age<=20
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [ICD10 nur C]:               n = 599_876   (3.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 493_648   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [ICD10 nur C]:               n = 645_657   (3.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine C44,D04]:             n = 528_920   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 <details>
@@ -541,18 +585,22 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](epi_files/output_42_5.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_42_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_42_5.svg">
+  <img alt="svg" src="epi_files/output_42_5.svg">
+</picture>
     
 
 
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ ab 2010]:             n = 11_220_232  (63.9%) ░░░░░░░░░░░███████████████████
-    └ [ICD10 nur C]:             n = 9_692_961  (55.2%) ░░░░░░░░░░░░░░████████████████
-    └ [keine C44,D04]:           n = 7_646_321  (43.5%) ░░░░░░░░░░░░░░░░░█████████████
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ ab 2010]:             n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
+    └ [ICD10 nur C]:             n = 9_748_823  (54.9%) ░░░░░░░░░░░░░░████████████████
+    └ [keine C44,D04]:           n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
 ```
 
 <details>
@@ -574,7 +622,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![png](epi_files/output_43_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_43_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_43_5.svg">
+  <img alt="svg" src="epi_files/output_43_5.svg">
+</picture>
     
 
 
@@ -590,11 +642,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 ```
-    n = 17_569_016                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 16_964_151  (96.6%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 705_950   (4.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [ICD10 nur C]:               n = 599_876   (3.4%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 493_648   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [ICD10 nur C]:               n = 645_657   (3.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine C44,D04]:             n = 528_920   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 <details>
@@ -616,7 +668,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-![svg](epi_files/output_45_5.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_45_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_45_5.svg">
+  <img alt="svg" src="epi_files/output_45_5.svg">
+</picture>
     
 
 
@@ -633,11 +689,11 @@ and z_icd10_3d not in ('C44','D04')
 ```
     count: distinct GLOBALPATID
     ---
-    n = 14_998_886                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 14_585_410  (97.2%) ░█████████████████████████████
-    └ [DJ 2020-2024]:            n = 3_548_356  (23.7%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [ICD10 nur C]:             n = 3_021_090  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine C44,D04]:           n = 2_486_711  (16.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░████
+    n = 15_146_405                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
+    └ [DJ 2020-2024]:            n = 3_611_701  (23.8%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [ICD10 nur C]:             n = 3_070_106  (20.3%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [keine C44,D04]:           n = 2_525_437  (16.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
 ```
 
 <details>
@@ -658,7 +714,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img src="epi_files/output_48_6.png" width="60%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_48_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_48_8.png">
+  <img alt="png" src="epi_files/output_48_8.png" width="60%">
+</picture>
     
 
 
@@ -682,10 +742,10 @@ and z_icd10_3d not in ('C44','D04')
 ```
     count: distinct GLOBALPATID
     ---
-    n = 14_998_886                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 14_585_410  (97.2%) ░█████████████████████████████
-    └ [nur Verstorbene]:         n = 7_558_161  (50.4%) ░░░░░░░░░░░░░░░███████████████
-    └ [SJ ab 2010]:              n = 5_099_012  (34.0%) ░░░░░░░░░░░░░░░░░░░░██████████
+    n = 15_146_405                             (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
+    └ [nur Verstorbene]:         n = 7_576_084  (50.0%) ░░░░░░░░░░░░░░░███████████████
+    └ [SJ ab 2010]:              n = 5_116_941  (33.8%) ░░░░░░░░░░░░░░░░░░░░██████████
 ```
 
 <details>
@@ -706,6 +766,10 @@ and year(SDIMP) >= 2010
 
 
     
-![png](epi_files/output_50_5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_50_8.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_50_8.svg">
+  <img alt="svg" src="epi_files/output_50_8.svg">
+</picture>
     
 

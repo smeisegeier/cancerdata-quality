@@ -25,19 +25,17 @@
     - [Diagnosesicherung](#toc1_8_2_)    
     - [DCO](#toc1_8_3_)    
     - [DCN](#toc1_8_4_)    
-    - [Geschlecht](#toc1_8_5_)    
-    - [Grading](#toc1_8_6_)    
-      - [Verteilung](#toc1_8_6_1_)    
-      - [Anteile Unbekannt](#toc1_8_6_2_)    
-    - [Diagnosejahr mit Altdaten](#toc1_8_7_)    
-    - [Diagnosejahr ohne Altdaten](#toc1_8_8_)    
-    - [Inzidenzort vs Lieferregister](#toc1_8_9_)    
-    - [ICD10 Gruppen](#toc1_8_10_)    
-    - [Altersgruppen Kinder und Heranwachsende](#toc1_8_11_)    
-    - [Verstorben](#toc1_8_12_)    
-    - [TNM-T (p)](#toc1_8_13_)    
-    - [TNM-N (p)](#toc1_8_14_)    
-    - [TNM-M (p)](#toc1_8_15_)    
+    - [Grading](#toc1_8_5_)    
+      - [Verteilung](#toc1_8_5_1_)    
+      - [Anteile Unbekannt](#toc1_8_5_2_)    
+    - [Diagnosejahr mit Altdaten](#toc1_8_6_)    
+    - [Inzidenzort vs Lieferregister](#toc1_8_7_)    
+    - [ICD10 Gruppen](#toc1_8_8_)    
+    - [Altersgruppen Kinder und Heranwachsende](#toc1_8_9_)    
+    - [Verstorben](#toc1_8_10_)    
+    - [TNM-T (p)](#toc1_8_11_)    
+    - [TNM-N (p)](#toc1_8_12_)    
+    - [TNM-M (pc)](#toc1_8_13_)    
   - [Todesursachen (TU)](#toc1_9_)    
     - [nach ICD10 Einstellern](#toc1_9_1_)    
     - [nach Sterbejahr und Todesursachen](#toc1_9_2_)    
@@ -84,8 +82,8 @@
   - [Numerische Variablen](#toc1_15_)    
     - [Diagnosealter](#toc1_15_1_)    
     - [Anzahl Tage zwischen Diagnose und Tod](#toc1_15_2_)    
-    - [Tumordicke](#toc1_15_3_)    
-    - [PSA](#toc1_15_4_)    
+    - [PSA](#toc1_15_3_)    
+    - [Tumordicke](#toc1_15_4_)    
     - [LK_befallen](#toc1_15_5_)    
     - [LK_untersucht](#toc1_15_6_)    
     - [RektumAbstandAnokutanlinie](#toc1_15_7_)    
@@ -117,7 +115,7 @@
 <br>
 
 ## <a id='toc1_2_'></a>[Änderungen seit der letzten Version](#toc0_)
-- Neulieferung für Daten mit max DJ=2024
+- Neulieferung für Daten mit **Diagnosejahr 2024**
 
 > [!WARNING]
 > Ungetestet
@@ -125,14 +123,13 @@
 <br>
 
 ## <a id='toc1_3_'></a>[Datenstand](#toc0_)
-**Diagnosejahr 2024**
 
     database file:           2026-05-12_data_clin.duckdb
     data tag:                v2.4
     last kkr data import:    2026-04-18
     sql table created:       2026-05-12 16:38:32
     doi:                     -
-    document created:        2026-05-13 09:55:18
+    document created:        2026-05-13 18:43:24
 
 
 <br>
@@ -143,14 +140,15 @@
 - `Diagnosemonat` = letzter Diagnosemonat in den Daten
 
 
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_12_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_12_0.png">
-  <img alt="png" src="clin_files/output_12_0.png">
-</picture>
-    
-
+```
+    ┌─────────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
+    │   z_kkr_label   │   01-SH    │   02-HH    │   03-NI    │   04-HB    │   05-NW    │   06-HE    │   07-RP    │   08-BW    │   09-BY    │   10-SL    │   11-BE    │   12-BB    │   13-MV    │   14-SN    │   15-ST    │   16-TH    │
+    ├─────────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+    │ Diagnosemonat   │ 2024-12    │ 2024-12    │ 2024-12    │ 2024-12    │ 2024-12    │ 2026-01    │ 2024-12    │ 2024-12    │ 2026-01    │ 2024-12    │ 2025-10    │ 2025-10    │ 2026-01    │ 2025-09    │ 2025-12    │ 2024-12    │
+    │ Lieferdatum     │ 2026-02-10 │ 2026-01-22 │ 2026-02-15 │ 2026-02-11 │ 2026-01-22 │ 2026-03-30 │ 2026-04-18 │ 2026-01-26 │ 2026-01-25 │ 2026-02-26 │ 2026-01-05 │ 2026-01-06 │ 2026-02-04 │ 2026-02-24 │ 2026-01-30 │ 2026-01-28 │
+    │ Tumorfälle_2024 │ 37_898     │ 13_977     │ 48_119     │ 4_879      │ 191_865    │ 39_544     │ 30_923     │ 90_465     │ 95_762     │ 12_831     │ 27_792     │ 22_456     │ 24_785     │ 41_076     │ 27_291     │ 14_043     │
+    └─────────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┘
+```
 
     kkr ohne aktuelle Daten:  []
 
@@ -210,7 +208,7 @@
 
 ### <a id='toc1_5_2_'></a>[relativ](#toc0_)
 - der Filter ist gewählt, um eine bessere Vergleichbarkeit der Werte zu gewährleisten
-- die Metriken sind **einfache Verhältiszahlen**, z.B: `op_per_tum` = alle OP / alle Tumore (pro kkr)
+- die Metriken sind **einfache Verhältniszahlen**, z.B: `op_per_tum` = alle OP / alle Tumore (pro kkr)
 - es sind jeweils die kumulierten Werte aufgespannt:
   - nach einzelnen **Lieferregistern**
   - nach verwendeten **Tumordokumentationssystemen** (um systemische Effekte darstellen zu können)
@@ -282,7 +280,6 @@ and ifnull(z_m_pc_1,'') <> '1'
 ## <a id='toc1_6_'></a>[Fehlende Therapieangaben](#toc0_)
 
 - ein Wert von bspw. 0.68 ist zu interpretieren als: _"68% aller Tumorfälle im KKR haben keine zugeordneten OP Angaben, die restlichen 32% mindestens eine."_
-- `treat_missing_per_tum` stellt den Anteil Fälle dar, bei denen keinerlei Therapieangabe (OP, ST, SYST) vorliegt
 - in der Darstellung sind die Max/Min Werte pro Kennzahl mit 🟥/🟩 markiert (kleiner ist besser)
 
 
@@ -291,6 +288,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 ### <a id='toc1_6_1_'></a>[alle Therapien](#toc0_)
 - da hier alle Therapieangabe im Überblick dargestellt sind können keine therapiespezifischen Filter wie etwa "nur solide Tumoren" wirken
 - der Filter `DJ 2020-2024 ohne letzte 6m` soll gezielt Effekte des jüngsten Lieferjahres ausschliessen
+- Metrik: Anteil Tumore ohne jegliche Therapieangaben an Gesamt
 
 > [!NOTE]
 > 💡 **ZfKD**
@@ -345,6 +343,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 
 ### <a id='toc1_6_2_'></a>[OP](#toc0_)
 - **nur solide Tumoren**  schliesst folgende Diagnosen aus: C44, C76-C97, alle D
+- - Metrik: Anteil Tumore ohne OP an Gesamt
 
 
 
@@ -395,10 +394,11 @@ and ifnull(z_m_pc_1,'') <> '1'
 <br>
 
 #### <a id='toc1_6_2_1_'></a>[OP wenn OP erwartet](#toc0_)
-- kategorien
+- dargestellt ist die Verteilung von OP Kategorien bei Tumoren, für die eine OP erwartet werden kann
+- Kategorien
   - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
-  - `2_no_op_but_tp`: keine OPS, aber pT 1-4 ist dokumentiert
-  - `3_rest`: keine der zuvor genannten Merkmale trifft
+  - `2_no_op_but_tp`: keine OPS, aber T_p 1-4 ist dokumentiert
+  - `3_rest`: keine der zuvor genannten Merkmale trifft zu
 
 
 <br>
@@ -494,12 +494,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <br>
 
 ### <a id='toc1_6_3_'></a>[ST](#toc0_)
-- Metrik: Anteil Tumore **ohne** Strahlentherapie an Gesamt
+- Metrik: Anteil Tumore ohne Strahlentherapie an Gesamt
 - die experimentelle Darstellung verwendet eine heatmap, um Nuancen in diesem relativ homogenen Diagramm optisch hervorzuheben
 
 > [!NOTE]
 > 💡 **ZfKD**
-> - der Anteil Tumore ohne ST (~75%) entspricht grob der Annahme von 30% Anteil von Strahlentherapien an primären Diagnosen
+> - der Anteil Tumore ohne ST (~73%) entspricht grob der Annahme von 30% Anteil von Strahlentherapien an primären Diagnosen
 > - `05-NW` und `06-HE` weisen optisch relativ hohe Anteile auf
 > - in nahezu allen KKR nimmt der Anteil in jüngeren DJ zu
 
@@ -639,8 +639,8 @@ and z_icd10_3d not in ('C44','D04')
     │   kkr    │  01-SH  │  02-HH  │  03-NI  │  04-HB  │  05-NW  │  06-HE  │  07-RP  │  08-BW  │  09-BY  │  10-SL  │  11-BE  │  12-BB  │  13-MV  │  14-SN  │  15-ST  │  16-TH  │
     ├──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │ clin_cnt │ 23_860  │ 13_000  │ 47_622  │ 4_541   │ 129_531 │ 38_762  │ 30_424  │ 80_889  │ 88_739  │ 8_774   │ 25_458  │ 20_419  │ 15_070  │ 33_716  │ 17_665  │ 14_045  │
-    │ epi_cnt  │ 22_820  │ 12_347  │ 56_134  │ 4_371   │ 129_466 │ 27_955  │ 28_807  │ 74_961  │ 81_866  │ 8_349   │ 24_019  │ 19_266  │ 1_011   │ 32_952  │ 17_291  │ 13_473  │
-    │ quota    │ 105     │ 105     │ 85      │ 104     │ 100     │ 139     │ 106     │ 108     │ 108     │ 105     │ 106     │ 106     │ 1_491   │ 102     │ 102     │ 104     │
+    │ epi_cnt  │ 22_820  │ 12_347  │ 58_415  │ 4_371   │ 136_777 │ 37_958  │ 29_536  │ 74_961  │ 81_866  │ 8_349   │ 24_068  │ 19_314  │ 14_685  │ 32_958  │ 17_293  │ 13_475  │
+    │ quota    │ 105     │ 105     │ 82      │ 104     │ 95      │ 102     │ 103     │ 108     │ 108     │ 105     │ 106     │ 106     │ 103     │ 102     │ 102     │ 104     │
     └──────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 ```
 
@@ -838,9 +838,9 @@ and left(z_icd10_3d,1) = 'C'
 
 <br>
 
-### <a id='toc1_8_6_'></a>[Grading](#toc0_)
+### <a id='toc1_8_5_'></a>[Grading](#toc0_)
 
-#### <a id='toc1_8_6_1_'></a>[Verteilung](#toc0_)
+#### <a id='toc1_8_5_1_'></a>[Verteilung](#toc0_)
 
 
 
@@ -890,7 +890,7 @@ and
 
 <br>
 
-#### <a id='toc1_8_6_2_'></a>[Anteile Unbekannt](#toc0_)
+#### <a id='toc1_8_5_2_'></a>[Anteile Unbekannt](#toc0_)
 - Metrik: Anteil Codes (`U`,`T`) an Gesamt
 
 
@@ -939,7 +939,7 @@ and
 
 <br>
 
-### <a id='toc1_8_7_'></a>[Diagnosejahr mit Altdaten](#toc0_)
+### <a id='toc1_8_6_'></a>[Diagnosejahr mit Altdaten](#toc0_)
 - Filter: Top 5 Diagnosejahre
 - Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
 
@@ -954,7 +954,7 @@ and
 
 <br>
 
-### <a id='toc1_8_9_'></a>[Inzidenzort vs Lieferregister](#toc0_)
+### <a id='toc1_8_7_'></a>[Inzidenzort vs Lieferregister](#toc0_)
 - **Filter: keiner**
 - vertikal: `Inzidenzort` (Zeile `00` bündelt alle Fälle mit ungültiger Ortsangabe). horizontal: `Lieferregister`
 - Beispiel: `03-NI` liefert zu 100% Fälle aus dem Inzidenzort `03`, `13-MV` liefert 159 Fälle aus `03`
@@ -974,7 +974,7 @@ and
 
 <br>
 
-### <a id='toc1_8_10_'></a>[ICD10 Gruppen](#toc0_)
+### <a id='toc1_8_8_'></a>[ICD10 Gruppen](#toc0_)
 - die verwendete ICD10 Skala entspricht der Darstellung aus *"Krebs in Deutschland"*
 
 
@@ -1014,7 +1014,7 @@ and not z_is_dco
 
 <br>
 
-### <a id='toc1_8_11_'></a>[Altersgruppen Kinder und Heranwachsende](#toc0_)
+### <a id='toc1_8_9_'></a>[Altersgruppen Kinder und Heranwachsende](#toc0_)
 
 > [!NOTE]
 > 💡 **ZfKD**: Fälle von unter 18-jährigen Personen sind nicht flächendeckend vorhanden
@@ -1055,7 +1055,7 @@ and z_age <= 20
 
 <br>
 
-### <a id='toc1_8_12_'></a>[Verstorben](#toc0_)
+### <a id='toc1_8_10_'></a>[Verstorben](#toc0_)
 
 - gezählt sind **Personen**
 - Metrik: Anteil Verstorbener an Gesamtzahl Patienten pro erstes DJ der Person
@@ -1098,7 +1098,7 @@ and z_icd10_3d not in ('C44','D04')
 
 <br>
 
-### <a id='toc1_8_13_'></a>[TNM-T (p)](#toc0_)
+### <a id='toc1_8_11_'></a>[TNM-T (p)](#toc0_)
 
 
 
@@ -1149,7 +1149,7 @@ and
 
 <br>
 
-### <a id='toc1_8_14_'></a>[TNM-N (p)](#toc0_)
+### <a id='toc1_8_12_'></a>[TNM-N (p)](#toc0_)
 <!-- (_solide Tumoren_ schliesst folgende Diagnosen _aus_: C44, C70-C72, C76-C97, alle D) -->
 
 
@@ -1200,7 +1200,7 @@ and
 
 <br>
 
-### <a id='toc1_8_15_'></a>[TNM-M (pc)](#toc0_)
+### <a id='toc1_8_13_'></a>[TNM-M (pc)](#toc0_)
 
 - abweichend von den anderen TNM Angaben ist hier die Verbundvariable `z_m_pc_1` dargestellt
 - diese enthält den Wert aus `p`, wenn leer dann aus `c`
@@ -1568,7 +1568,7 @@ and z_icd10_3d not in ('C44','D04')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_6.png">
-  <img alt="png" src="clin_files/output_104_6.png" width="60%">
+  <img alt="png" src="clin_files/output_104_6.png" width="50%">
 </picture>
     
 
@@ -1580,7 +1580,7 @@ and z_icd10_3d not in ('C44','D04')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_9.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_9.png">
-  <img alt="png" src="clin_files/output_104_9.png" width="60%">
+  <img alt="png" src="clin_files/output_104_9.png" width="50%">
 </picture>
     
 
@@ -1716,7 +1716,7 @@ and z_icd10_3d not in ('C44','D04')
 
 > [!NOTE]
 > 💡 **ZfKD**
-> - `Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_Bestrahlung`._  
+> - `Datum_Beginn_Bestrahlung` und `Intention` sind nahezu komplett verfügbar in den dokumentierten ST / Bestrahlungen, mit Abstrichen auch `Anzahl_Tage_Diagnose_Bestrahlung`.
 > - `Anzahl_Tage_Bestrahlung_Dauer` und `Stellung_OP` fehlen bei Tristan
 > - `Applikationsart` wird nicht von allen kkr übermittelt, davon abgesehen ist `Seite_Zielgebiet` zuverlässig angegeben, die CodeVersionen ergänzen sich, wobei `2014` deutlich häufiger angewendet wird als `2021`
 
@@ -1932,7 +1932,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="clin_files/output_117_5.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_5.png">
+  <img alt="png" src="clin_files/output_117_5.png">
+</picture>
     
 
 
@@ -1941,7 +1945,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="clin_files/output_117_7.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_7.png">
+  <img alt="png" src="clin_files/output_117_7.png">
+</picture>
     
 
 
@@ -1949,8 +1957,6 @@ and z_icd10_3d not in ('C44','D04')
 
 ### <a id='toc1_11_7_'></a>[Organspezifische Variablen](#toc0_)
 
-> [!NOTE]
-> 💡 **HH**: "Fehlende Modul-Angaben (C50, C61) 2021. Sind bei uns noch nicht im xml enthalten."
 
 <br>
 
@@ -1989,7 +1995,11 @@ and z_icd10_3d = 'C50'
 
 
     
-<img alt="png" src="clin_files/output_120_5.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_120_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_120_5.png">
+  <img alt="png" src="clin_files/output_120_5.png">
+</picture>
     
 
 
@@ -1998,7 +2008,11 @@ and z_icd10_3d = 'C50'
 
 
     
-<img alt="png" src="clin_files/output_120_7.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_120_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_120_7.png">
+  <img alt="png" src="clin_files/output_120_7.png">
+</picture>
     
 
 
@@ -2035,7 +2049,11 @@ and z_icd10_3d = 'C61'
 
 
 
-<img alt="png" src="clin_files/output_122_6.png" width="70%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_6.png">
+  <img alt="png" src="clin_files/output_122_6.png" width="70%">
+</picture>
     
 
 
@@ -2043,7 +2061,11 @@ and z_icd10_3d = 'C61'
 
 
 
-<img alt="png" src="clin_files/output_122_9.png" width="70%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_9.png">
+  <img alt="png" src="clin_files/output_122_9.png" width="70%">
+</picture>
     
 
 
@@ -2082,7 +2104,7 @@ and z_icd10_3d in ('C18','C19','C20')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_6.png">
-  <img alt="png" src="clin_files/output_124_6.png" width="50%">
+  <img alt="png" src="clin_files/output_124_6.png" width="40%">
 </picture>
     
 
@@ -2094,7 +2116,7 @@ and z_icd10_3d in ('C18','C19','C20')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_9.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_9.png">
-  <img alt="png" src="clin_files/output_124_9.png" width="50%">
+  <img alt="png" src="clin_files/output_124_9.png" width="40%">
 </picture>
     
 
@@ -2135,11 +2157,7 @@ and z_icd10_3d = 'C43'
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_7.png">
-  <img alt="png" src="clin_files/output_126_7.png" width="50%">
-</picture>
+<img alt="png" src="clin_files/output_126_7.png" width="50%">
     
 
 
@@ -2147,11 +2165,7 @@ and z_icd10_3d = 'C43'
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_10.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_10.png">
-  <img alt="png" src="clin_files/output_126_10.png" width="50%">
-</picture>
+<img alt="png" src="clin_files/output_126_10.png" width="50%">
     
 
 
@@ -2548,19 +2562,48 @@ and year(Datum_Vitalstatus) >= 2020
 <br>
 
 ### <a id='toc1_15_1_'></a>[Diagnosealter](#toc0_)
-- berechnet aus `Diagnosejahr` - `Geburtsjahr`
+- berechnet aus `Diagnosedatum` - `Geburtsdatum`
 - negative Werte entstehen aus falscher Datumsreihenfolge von Ereignissen
-- die Datumsangaben sind **nicht bereinigt**, um strukturelle Effekte sichtbar zu machen
+- die Angaben sind 
+  - in der Tabelle unbereinigt, um strukturelle Effekte sichtbar zu machen
+  - in den Boxplots gefiltert nach `z_age between 0 and 130` um die Verteilung besser darstellen zu können
 
 > [!NOTE]
-> 💡 `HH`: _"Ja, das liegt an dem Geschätzt-Flag in den Datumsangaben. In unseren Daten haben wir noch die alte Ausprägung 'Jahr geschätzt', diese wird dann im ZFKD-Datensatz mit 'Vollständig geschätzt' übersetzt. Theoretisch könnten Sie statt 1900 auch das angegebene Jahr nutzen… Aber diese Schätz-Angabe ist uns auch ein Dorn im Auge. Wir werden es auch noch in unseren Daten bereinigen. Zumeist handelt es sich da bei uns um Dokumentations oder Verständnisfehler."_
+> 💡 **ZfKD**
+> - für die eingeschlossenen DJ liegen (nahezu) keine vollständig geschätzten Angaben vor
+> - wenige (aber extreme) Ausreisser in `13-MV`
+
+
+
+```
+    count: distinct z_tum_id
+    ---
+    n = 4_062_856                                      (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:                    n = 3_794_188  (93.4%) ░░████████████████████████████
+    └ [keine geschätzten Datumsangaben]: n = 3_793_405  (93.4%) ░░████████████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
+```
+
+</details>
+
+
+    
+    
+
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_161_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_161_0.png">
-  <img alt="png" src="clin_files/output_161_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_0.png">
+  <img alt="png" src="clin_files/output_162_0.png">
 </picture>
     
 
@@ -2568,57 +2611,55 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_161_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_161_1.png">
-  <img alt="png" src="clin_files/output_161_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_1.png">
+  <img alt="png" src="clin_files/output_162_1.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856) |     notnull      |   min   | lower |  q25  | median | mean  |  q75  | upper  |  max   |  std  |  cv 
-    -----------------------+------------------+---------+-------+-------+--------+-------+-------+--------+--------+-------+-----
-    z_age                  | 4_062_856 (100%) | -122.00 | 30.25 | 59.67 |  70.00 | 68.03 | 79.33 | 108.50 | 983.33 | 15.27 | 0.22
+    column (n = 3_793_405) |     notnull      |  min  | lower |  q25  | median | mean  |  q75  | upper  |  max   |  std  |  cv 
+    -----------------------+------------------+-------+-------+-------+--------+-------+-------+--------+--------+-------+-----
+    z_age                  | 3_793_405 (100%) | -4.17 | 29.92 | 59.75 |  70.17 | 68.29 | 79.67 | 109.17 | 983.33 | 14.74 | 0.22
     
 
 
     
-    item (n = 4_062_856) |   count   |   min   | lower |  q25  | median | mean  |  q75  | upper  |  max   |  std  |  cv 
-    ---------------------+-----------+---------+-------+-------+--------+-------+-------+--------+--------+-------+-----
-    01-SH                |   194_283 |  -86.25 | 32.58 | 61.58 |  72.50 | 70.09 | 80.92 | 106.67 | 112.50 | 14.37 | 0.21
-    02-HH                |    69_613 |  -95.17 | 22.83 | 56.42 |  68.58 | 66.06 | 78.83 | 104.83 | 104.83 | 16.54 | 0.25
-    03-NI                |   277_590 |  -93.33 | 30.58 | 58.92 |  68.75 | 67.02 | 77.83 | 105.33 | 105.33 | 14.50 | 0.22
-    04-HB                |    30_960 |  -85.83 | 32.08 | 61.08 |  71.58 | 69.41 | 80.42 | 107.33 | 107.33 | 14.72 | 0.21
-    05-NW                | 1_017_558 |    0.00 | 30.33 | 60.33 |  70.75 | 69.00 | 80.33 | 110.33 | 124.67 | 14.67 | 0.21
-    06-HE                |   218_646 |  -97.50 | 28.25 | 57.58 |  68.00 | 65.92 | 77.17 | 105.00 | 124.67 | 15.48 | 0.23
-    07-RP                |   163_533 |   18.00 | 30.33 | 58.83 |  68.67 | 67.03 | 77.83 | 102.75 | 124.67 | 14.34 | 0.21
-    08-BW                |   457_569 | -100.83 | 28.17 | 59.00 |  69.75 | 67.45 | 79.58 | 107.83 | 123.17 | 16.54 | 0.25
-    09-BY                |   572_135 | -122.00 | 29.00 | 58.42 |  68.75 | 66.79 | 78.08 | 106.67 | 124.67 | 15.87 | 0.24
-    10-SL                |    63_249 |  -76.17 | 32.50 | 61.25 |  70.83 | 69.37 | 80.42 | 103.92 | 103.92 | 14.41 | 0.21
-    11-BE                |   146_981 |  -96.50 | 24.50 | 57.00 |  68.75 | 65.78 | 78.67 | 106.75 | 123.92 | 17.95 | 0.27
-    12-BB                |   130_868 |  -99.92 | 29.25 | 58.50 |  68.17 | 66.63 | 78.00 | 105.00 | 108.50 | 15.23 | 0.23
-    13-MV                |   144_735 |  -96.58 | 34.50 | 61.58 |  70.67 | 69.24 | 79.67 | 106.25 | 983.33 | 14.11 | 0.20
-    14-SN                |   334_093 |  -76.25 | 36.25 | 62.58 |  72.08 | 70.02 | 80.17 | 105.00 | 122.00 | 13.77 | 0.20
-    15-ST                |   163_371 | -103.42 | 34.83 | 62.17 |  71.75 | 69.56 | 80.42 | 104.17 | 125.25 | 16.02 | 0.23
-    16-TH                |    77_672 |  -81.83 | 32.33 | 59.42 |  68.67 | 66.89 | 77.50 | 103.08 | 103.08 | 14.55 | 0.22
+    item (n = 3_793_405) |   count   |  min  | lower |  q25  | median | mean  |  q75  | upper  |  max   |  std  |  cv 
+    ---------------------+-----------+-------+-------+-------+--------+-------+-------+--------+--------+-------+-----
+    01-SH                |   194_238 |  0.00 | 32.58 | 61.58 |  72.58 | 70.12 | 80.92 | 106.67 | 112.50 | 14.26 | 0.20
+    02-HH                |    69_555 |  0.00 | 22.83 | 56.42 |  68.58 | 66.16 | 78.83 | 104.83 | 104.83 | 16.21 | 0.25
+    03-NI                |   277_364 | 13.08 | 30.58 | 58.92 |  68.83 | 67.12 | 77.83 | 105.33 | 105.33 | 14.10 | 0.21
+    04-HB                |    30_950 |  0.08 | 32.08 | 61.08 |  71.58 | 69.45 | 80.42 | 107.33 | 107.33 | 14.55 | 0.21
+    05-NW                | 1_016_867 |  0.00 | 30.50 | 60.33 |  70.75 | 68.97 | 80.25 | 110.08 | 123.67 | 14.61 | 0.21
+    06-HE                |   203_960 |  0.00 | 27.50 | 57.50 |  68.08 | 66.09 | 77.50 | 105.00 | 108.42 | 15.11 | 0.23
+    07-RP                |   163_498 | 18.00 | 30.33 | 58.83 |  68.67 | 67.02 | 77.83 | 102.75 | 109.83 | 14.32 | 0.21
+    08-BW                |   456_097 |  0.00 | 28.58 | 59.17 |  69.83 | 67.80 | 79.58 | 107.83 | 112.17 | 15.32 | 0.23
+    09-BY                |   489_901 |  0.00 | 28.58 | 58.83 |  69.42 | 67.50 | 79.00 | 109.17 | 109.17 | 15.06 | 0.22
+    10-SL                |    63_236 | -0.08 | 32.50 | 61.25 |  70.83 | 69.39 | 80.42 | 103.92 | 103.92 | 14.31 | 0.21
+    11-BE                |   138_301 |  0.00 | 24.33 | 57.08 |  68.92 | 66.42 | 78.92 | 106.75 | 106.75 | 15.86 | 0.24
+    12-BB                |   113_936 |  0.00 | 28.92 | 58.92 |  68.67 | 67.27 | 78.92 | 108.50 | 108.50 | 14.68 | 0.22
+    13-MV                |   111_005 | -4.17 | 33.42 | 61.75 |  71.17 | 69.66 | 80.67 | 106.25 | 983.33 | 14.18 | 0.20
+    14-SN                |   252_874 |  0.17 | 35.50 | 62.92 |  72.92 | 70.66 | 81.25 | 106.75 | 106.75 | 13.93 | 0.20
+    15-ST                |   134_072 |  0.00 | 35.08 | 62.67 |  72.42 | 70.60 | 81.08 | 107.92 | 112.67 | 13.63 | 0.19
+    16-TH                |    77_551 | 18.08 | 32.33 | 59.42 |  68.67 | 67.07 | 77.50 | 103.08 | 103.08 | 13.78 | 0.21
     
 
 
 <br>
 
 ### <a id='toc1_15_2_'></a>[Anzahl Tage zwischen Diagnose und Tod](#toc0_)
-
-> [!NOTE]
-> 💡 ZfKD
-> - es treten Extremwerte auf, weit ausserhalb des Interquartilsabstandes. Grund dafür sind mutmasslich fehlende Datumsangaben, die auf 1900 kodiert werden  
-> - in der KKR Verteilung sind die Extreme in den GTDS Ländern besonders ausgeprägt
+- die Angaben sind 
+  - in der Tabelle unbereinigt, um strukturelle Effekte sichtbar zu machen
+  - in den Boxplots gefiltert nach `Anzahl_Tage_Diagnose_Tod > 0` um die Verteilung besser darstellen zu können
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_0.png">
-  <img alt="png" src="clin_files/output_163_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_0.png">
+  <img alt="png" src="clin_files/output_164_0.png">
 </picture>
     
 
@@ -2626,102 +2667,92 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_1.png">
-  <img alt="png" src="clin_files/output_163_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_1.png">
+  <img alt="png" src="clin_files/output_164_1.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856)   |     notnull     |  min   | lower |  q25  | median |  mean  |  q75   | upper |  max   |   std    |  cv 
-    -------------------------+-----------------+--------+-------+-------+--------+--------+--------+-------+--------+----------+-----
-    Anzahl_Tage_Diagnose_Tod | 1_168_451 (28%) | -7_324 |  -347 | 53.00 | 262.00 | 660.85 | 714.00 | 1_705 | 30_590 | 1_280.21 | 1.94
+    column (n = 3_793_405)   |     notnull     |  min   | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv 
+    -------------------------+-----------------+--------+-------+-------+--------+--------+--------+-------+-------+--------+-----
+    Anzahl_Tage_Diagnose_Tod | 1_072_049 (28%) | -6_000 |  -212 | 45.00 | 217.00 | 372.15 | 567.00 | 1_350 | 2_210 | 418.21 | 1.12
     
 
 
     
-    item (n = 4_062_856) |  count  |  min   | lower |  q25   | median |   mean   |   q75    | upper |  max   |   std    |  cv 
-    ---------------------+---------+--------+-------+--------+--------+----------+----------+-------+--------+----------+-----
-    01-SH                |  55_342 |      0 |     0 |  31.00 | 217.00 |   391.41 |   611.00 | 1_481 |  2_185 |   450.63 | 1.15
-    02-HH                |  23_361 |      0 |     0 |  38.00 | 184.00 |   349.72 |   521.00 | 1_245 |  2_159 |   415.34 | 1.19
-    03-NI                |  85_931 |      0 |     0 |  81.00 | 273.00 |   420.74 |   625.00 | 1_441 |  2_187 |   431.13 | 1.02
-    04-HB                |  10_380 |      0 |     0 |  33.00 | 187.00 |   366.26 |   568.00 | 1_370 |  2_126 |   433.75 | 1.18
-    05-NW                | 279_472 |      0 |     0 |  39.00 | 215.00 |   375.82 |   582.00 | 1_396 |  2_064 |   426.00 | 1.13
-    06-HE                |  66_126 |      0 |     0 |  87.00 | 299.00 |   607.12 |   735.00 | 1_707 | 20_880 |   974.57 | 1.61
-    07-RP                |  33_818 |      0 |     0 |  65.00 | 228.00 |   368.01 |   544.00 | 1_262 |  2_181 |   392.79 | 1.07
-    08-BW                | 130_832 |      0 |     0 |  47.00 | 214.00 |   355.38 |   542.00 | 1_284 |  2_192 |   391.62 | 1.10
-    09-BY                | 181_562 |      0 |     0 |  39.00 | 296.00 | 1_055.89 |   980.00 | 2_391 | 30_590 | 1_954.06 | 1.85
-    10-SL                |   3_859 |      0 |     0 |   0.00 |   0.00 |    93.34 |    56.00 |   140 |  2_054 |   239.94 | 2.57
-    11-BE                |  49_512 |      0 |     0 |  29.00 | 184.00 |   452.70 |   583.00 | 1_414 | 12_262 |   769.67 | 1.70
-    12-BB                |  48_367 |      0 |     0 |  42.00 | 251.00 |   949.41 |   838.00 | 2_032 | 21_026 | 1_806.10 | 1.90
-    13-MV                |  35_836 | -7_324 |  -347 | 128.00 | 450.00 | 1_228.31 | 1_317.00 | 3_100 | 16_507 | 1_893.86 | 1.54
-    14-SN                |  98_743 |      0 |     0 | 154.00 | 558.00 | 1_405.87 | 1_610.00 | 3_793 | 25_923 | 2_062.48 | 1.47
-    15-ST                |  53_400 |      0 |     0 |  56.00 | 322.00 |   963.14 |   991.00 | 2_393 | 16_227 | 1_696.78 | 1.76
-    16-TH                |  11_910 |      0 |     0 |  45.00 | 165.00 |   301.56 |   427.75 | 1_001 |  2_112 |   354.96 | 1.18
-    
-
-
-<br>
-
-### <a id='toc1_15_3_'></a>[Tumordicke](#toc0_)
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_0.png">
-  <img alt="png" src="clin_files/output_165_0.png">
-</picture>
-    
-
-
-    
-    column (n = 4_062_856) |   notnull   |  min  | lower |  q25  | median | mean  |  q75  | upper |  max   |  std  |  cv  
-    -----------------------+-------------+-------+-------+-------+--------+-------+-------+-------+--------+-------+------
-    Tumordicke             | 59_055 (1%) | 0.010 | 0.010 | 0.400 |  0.900 | 1.950 | 2.200 | 4.900 | 99.000 | 3.516 | 1.804
-    
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_2.png">
-  <img alt="png" src="clin_files/output_165_2.png">
-</picture>
+    item (n = 3_793_405) |  count  |  min   | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv 
+    ---------------------+---------+--------+-------+-------+--------+--------+--------+-------+-------+--------+-----
+    01-SH                |  55_342 |      0 |     0 | 31.00 | 217.00 | 391.41 | 611.00 | 1_481 | 2_185 | 450.63 | 1.15
+    02-HH                |  23_311 |      0 |     0 | 37.00 | 184.00 | 348.89 | 520.00 | 1_244 | 2_159 | 414.58 | 1.19
+    03-NI                |  85_931 |      0 |     0 | 81.00 | 273.00 | 420.74 | 625.00 | 1_441 | 2_187 | 431.13 | 1.02
+    04-HB                |  10_380 |      0 |     0 | 33.00 | 187.00 | 366.26 | 568.00 | 1_370 | 2_126 | 433.75 | 1.18
+    05-NW                | 279_450 |      0 |     0 | 39.00 | 215.00 | 375.85 | 582.00 | 1_396 | 2_064 | 426.01 | 1.13
+    06-HE                |  60_119 |      0 |     0 | 77.00 | 254.00 | 394.42 | 586.00 | 1_349 | 2_132 | 405.13 | 1.03
+    07-RP                |  33_818 |      0 |     0 | 65.00 | 228.00 | 368.01 | 544.00 | 1_262 | 2_181 | 392.79 | 1.07
+    08-BW                | 130_832 |      0 |     0 | 47.00 | 214.00 | 355.38 | 542.00 | 1_284 | 2_192 | 391.62 | 1.10
+    09-BY                | 147_154 |      0 |     0 | 18.00 | 173.00 | 332.95 | 510.00 | 1_248 | 2_084 | 401.83 | 1.21
+    10-SL                |   3_859 |      0 |     0 |  0.00 |   0.00 |  93.34 |  56.00 |   140 | 2_054 | 239.94 | 2.57
+    11-BE                |  45_779 |      0 |     0 | 24.00 | 152.00 | 313.86 | 474.00 | 1_149 | 1_994 | 387.84 | 1.24
+    12-BB                |  40_566 |      0 |     0 | 28.00 | 162.00 | 320.88 | 475.00 | 1_145 | 2_078 | 391.88 | 1.22
+    13-MV                |  27_467 | -6_000 |  -212 | 87.00 | 281.00 | 426.10 | 633.00 | 1_452 | 2_194 | 432.55 | 1.02
+    14-SN                |  72_079 |      0 |     0 | 89.00 | 306.00 | 456.74 | 698.00 | 1_611 | 2_210 | 451.36 | 0.99
+    15-ST                |  44_083 |      0 |     0 | 35.00 | 210.00 | 376.51 | 579.00 | 1_395 | 2_105 | 434.36 | 1.15
+    16-TH                |  11_879 |      0 |     0 | 45.00 | 164.00 | 300.48 | 426.00 |   993 | 2_112 | 353.01 | 1.17
     
 
 
 
 <br>
 
-### <a id='toc1_15_4_'></a>[PSA](#toc0_)
+### <a id='toc1_15_3_'></a>[PSA](#toc0_)
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_0.png">
-  <img alt="png" src="clin_files/output_167_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_0.png">
+  <img alt="png" src="clin_files/output_166_0.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856) |   notnull    |  min  | lower |  q25  | median |  mean  |  q75   | upper  |    max     |   std   |  cv  
+    column (n = 3_793_405) |   notnull    |  min  | lower |  q25  | median |  mean  |  q75   | upper  |    max     |   std   |  cv  
     -----------------------+--------------+-------+-------+-------+--------+--------+--------+--------+------------+---------+------
-    PSA                    | 247_409 (6%) | 0.000 | 0.000 | 5.630 |  8.740 | 90.354 | 18.000 | 36.550 | 99_999.000 | 741.810 | 8.210
+    PSA                    | 245_159 (6%) | 0.000 | 0.000 | 5.630 |  8.740 | 90.673 | 18.000 | 36.550 | 99_999.000 | 743.875 | 8.204
     
 
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_2.png">
-  <img alt="png" src="clin_files/output_167_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_2.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_2.png">
+  <img alt="png" src="clin_files/output_166_2.png">
 </picture>
+    
+
+
+<br>
+
+### <a id='toc1_15_4_'></a>[Tumordicke](#toc0_)
+
+
+    
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_168_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_168_0.png">
+  <img alt="png" src="clin_files/output_168_0.png">
+</picture>
+    
+
+
+    
+    column (n = 3_793_405) |   notnull   |  min  | lower |  q25  | median | mean  |  q75  | upper |  max   |  std  |  cv  
+    -----------------------+-------------+-------+-------+-------+--------+-------+-------+-------+--------+-------+------
+    Tumordicke             | 59_053 (1%) | 0.010 | 0.010 | 0.400 |  0.900 | 1.950 | 2.200 | 4.900 | 99.000 | 3.516 | 1.803
     
 
 
@@ -2733,27 +2764,17 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_169_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_169_0.png">
-  <img alt="png" src="clin_files/output_169_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_170_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_170_0.png">
+  <img alt="png" src="clin_files/output_170_0.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856) |    notnull    | min | lower |  q25  | median | mean  |  q75  | upper | max |  std  |  cv  
+    column (n = 3_793_405) |    notnull    | min | lower |  q25  | median | mean  |  q75  | upper | max |  std  |  cv  
     -----------------------+---------------+-----+-------+-------+--------+-------+-------+-------+-----+-------+------
-    LK_befallen            | 800_119 (19%) |   0 |     0 | 0.000 |  0.000 | 0.918 | 0.000 |     0 | 722 | 3.078 | 3.354
-    
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_169_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_169_2.png">
-  <img alt="png" src="clin_files/output_169_2.png">
-</picture>
+    LK_befallen            | 792_920 (20%) |   0 |     0 | 0.000 |  0.000 | 0.918 | 0.000 |     0 | 722 | 3.082 | 3.357
     
 
 
@@ -2765,27 +2786,17 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_171_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_171_0.png">
-  <img alt="png" src="clin_files/output_171_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_172_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_172_0.png">
+  <img alt="png" src="clin_files/output_172_0.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856) |    notnull    | min | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv  
+    column (n = 3_793_405) |    notnull    | min | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv  
     -----------------------+---------------+-----+-------+-------+--------+--------+--------+-------+-------+--------+------
-    LK_untersucht          | 974_256 (23%) |   0 |     0 | 1.000 |  5.000 | 10.636 | 17.000 |    41 | 2_319 | 13.656 | 1.284
-    
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_171_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_171_2.png">
-  <img alt="png" src="clin_files/output_171_2.png">
-</picture>
+    LK_untersucht          | 947_076 (24%) |   0 |     0 | 1.000 |  5.000 | 10.498 | 17.000 |    41 | 2_319 | 13.578 | 1.293
     
 
 
@@ -2797,27 +2808,17 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_173_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_173_0.png">
-  <img alt="png" src="clin_files/output_173_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_174_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_174_0.png">
+  <img alt="png" src="clin_files/output_174_0.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856)     |   notnull   | min | lower |  q25  | median |  mean  |  q75   | upper | max |  std   |  cv  
+    column (n = 3_793_405)     |   notnull   | min | lower |  q25  | median |  mean  |  q75   | upper | max |  std   |  cv  
     ---------------------------+-------------+-----+-------+-------+--------+--------+--------+-------+-----+--------+------
-    RektumAbstandAnokutanlinie | 42_811 (1%) |   0 |     0 | 5.000 |  9.000 | 11.289 | 14.000 |    27 | 930 | 16.996 | 1.506
-    
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_173_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_173_2.png">
-  <img alt="png" src="clin_files/output_173_2.png">
-</picture>
+    RektumAbstandAnokutanlinie | 42_520 (1%) |   0 |     0 | 5.000 |  9.000 | 11.305 | 14.000 |    27 | 930 | 16.962 | 1.500
     
 
 
@@ -2829,26 +2830,16 @@ and year(Datum_Vitalstatus) >= 2020
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_175_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_175_0.png">
-  <img alt="png" src="clin_files/output_175_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_176_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_176_0.png">
+  <img alt="png" src="clin_files/output_176_0.png">
 </picture>
     
 
 
     
-    column (n = 4_062_856) |  notnull   | min | lower |   q25   | median  |  mean   |   q75   | upper |  max  |   std   |  cv  
+    column (n = 3_793_405) |  notnull   | min | lower |   q25   | median  |  mean   |   q75   | upper |  max  |   std   |  cv  
     -----------------------+------------+-----+-------+---------+---------+---------+---------+-------+-------+---------+------
     LDH                    | 8_083 (0%) |   1 |    85 | 173.000 | 198.000 | 223.739 | 232.000 |   320 | 5_756 | 207.009 | 0.925
-    
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_175_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_175_2.png">
-  <img alt="png" src="clin_files/output_175_2.png">
-</picture>
     
 
