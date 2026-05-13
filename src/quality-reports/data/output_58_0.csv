@@ -1,36 +1,97 @@
-tu_1d,cnt
-#,18
-0,2
-1,1
-2,1
-3,1
-4,4
-5,2
-7,1
-8,1
-A,27378
-B,4293
-C,824756
-D,36303
-E,35213
-F,21225
-G,16600
-H,327
-I,195324
-J,98243
-K,52274
-L,1912
-M,4395
-N,41857
-O,64
-P,172
-Q,380
-R,92303
-S,6716
-T,6343
-U,12025
-V,143
-W,2300
-X,1283
-Y,2720
-Z,10879
+z_kkr_label,label,cnt
+01-SH,D -  diagnostisch,1852
+01-SH,K -  kurativ,50688
+01-SH,P -  palliativ,2046
+01-SH,R -  Revision/Komplikation,47
+01-SH,S -  Sonstiges,612
+01-SH,X -  fehlende Angabe,1378
+02-HH,D -  diagnostisch,1525
+02-HH,K -  kurativ,36876
+02-HH,P -  palliativ,2045
+02-HH,R -  Revision/Komplikation,1337
+02-HH,S -  Sonstiges,621
+02-HH,X -  fehlende Angabe,242
+03-NI,D -  diagnostisch,12513
+03-NI,K -  kurativ,103493
+03-NI,P -  palliativ,3573
+03-NI,R -  Revision/Komplikation,117
+03-NI,S -  Sonstiges,3752
+03-NI,X -  fehlende Angabe,1483
+04-HB,D -  diagnostisch,506
+04-HB,K -  kurativ,10670
+04-HB,P -  palliativ,415
+04-HB,R -  Revision/Komplikation,3
+04-HB,S -  Sonstiges,112
+04-HB,X -  fehlende Angabe,186
+05-NW,D -  diagnostisch,50492
+05-NW,K -  kurativ,356772
+05-NW,P -  palliativ,15900
+05-NW,R -  Revision/Komplikation,6565
+05-NW,S -  Sonstiges,11590
+05-NW,X -  fehlende Angabe,14534
+06-HE,D -  diagnostisch,4483
+06-HE,K -  kurativ,98890
+06-HE,P -  palliativ,3643
+06-HE,R -  Revision/Komplikation,3772
+06-HE,S -  Sonstiges,2101
+06-HE,X -  fehlende Angabe,2271
+07-RP,D -  diagnostisch,5182
+07-RP,K -  kurativ,81406
+07-RP,P -  palliativ,3873
+07-RP,R -  Revision/Komplikation,402
+07-RP,S -  Sonstiges,1061
+07-RP,X -  fehlende Angabe,1135
+08-BW,D -  diagnostisch,18065
+08-BW,K -  kurativ,234266
+08-BW,P -  palliativ,11180
+08-BW,R -  Revision/Komplikation,6586
+08-BW,S -  Sonstiges,12281
+08-BW,X -  fehlende Angabe,4217
+09-BY,D -  diagnostisch,17254
+09-BY,K -  kurativ,231268
+09-BY,P -  palliativ,9520
+09-BY,R -  Revision/Komplikation,4107
+09-BY,S -  Sonstiges,3274
+09-BY,X -  fehlende Angabe,42966
+10-SL,D -  diagnostisch,1098
+10-SL,K -  kurativ,19362
+10-SL,P -  palliativ,524
+10-SL,R -  Revision/Komplikation,32
+10-SL,S -  Sonstiges,196
+10-SL,X -  fehlende Angabe,572
+11-BE,D -  diagnostisch,5465
+11-BE,K -  kurativ,78091
+11-BE,P -  palliativ,4590
+11-BE,R -  Revision/Komplikation,3681
+11-BE,S -  Sonstiges,2728
+11-BE,X -  fehlende Angabe,270
+12-BB,D -  diagnostisch,5074
+12-BB,K -  kurativ,64754
+12-BB,P -  palliativ,4023
+12-BB,R -  Revision/Komplikation,3094
+12-BB,S -  Sonstiges,2064
+12-BB,X -  fehlende Angabe,713
+13-MV,D -  diagnostisch,3304
+13-MV,K -  kurativ,87927
+13-MV,P -  palliativ,3378
+13-MV,R -  Revision/Komplikation,1667
+13-MV,S -  Sonstiges,451
+13-MV,X -  fehlende Angabe,849
+14-SN,D -  diagnostisch,6780
+14-SN,K -  kurativ,137049
+14-SN,P -  palliativ,5722
+14-SN,R -  Revision/Komplikation,3545
+14-SN,S -  Sonstiges,2886
+14-SN,X -  fehlende Angabe,1574
+15-ST,D -  diagnostisch,3439
+15-ST,K -  kurativ,99979
+15-ST,P -  palliativ,4267
+15-ST,R -  Revision/Komplikation,2902
+15-ST,S -  Sonstiges,3174
+15-ST,X -  fehlende Angabe,823
+16-TH,D -  diagnostisch,4677
+16-TH,K -  kurativ,47521
+16-TH,P -  palliativ,2697
+16-TH,R -  Revision/Komplikation,2126
+16-TH,S -  Sonstiges,1986
+16-TH,X -  fehlende Angabe,1176
