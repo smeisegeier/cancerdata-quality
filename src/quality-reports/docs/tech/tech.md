@@ -1,18 +1,20 @@
 # <a id='toc1_'></a>[Technische Prüfungen in klinischen und epi Daten](#toc0_)
 
-**Inhalt**<a id='toc0_'></a>    
+**Table of contents**<a id='toc0_'></a>    
 - [Technische Prüfungen in klinischen und epi Daten](#toc1_)    
   - [Hintergrund](#toc1_1_)    
   - [⚙️ settings](#toc1_2_)    
   - [Datenstand ⏱️](#toc1_3_)    
+    - [klinisch](#toc1_3_1_)    
+    - [epi](#toc1_3_2_)    
   - [Anteil Mehrfachtumore](#toc1_4_)    
   - [Plausibilitätsprüfungen](#toc1_5_)    
-    - [⚠️ 01-SH](#toc1_5_1_)    
+    - [✅ 01-SH](#toc1_5_1_)    
     - [✅ 02-HH](#toc1_5_2_)    
     - [✅ 03-NI](#toc1_5_3_)    
     - [✅ 04-HB](#toc1_5_4_)    
     - [⚠️ 05-NW](#toc1_5_5_)    
-    - [🚨 06-HE](#toc1_5_6_)    
+    - [✅ 06-HE](#toc1_5_6_)    
     - [✅ 07-RP](#toc1_5_7_)    
     - [✅ 08-BW](#toc1_5_8_)    
     - [✅ 09-BY](#toc1_5_9_)    
@@ -35,6 +37,8 @@
       - [Verteilung nach ICD10](#toc1_7_2_3_)    
       - [Verteilung der Gruppen mit gleichen Merkmalen](#toc1_7_2_4_)    
   - [Datensatz](#toc1_8_)    
+    - [epi](#toc1_8_1_)    
+    - [klin](#toc1_8_2_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -75,18 +79,26 @@
 
 ## <a id='toc1_3_'></a>[Datenstand ⏱️](#toc0_)
 
+### <a id='toc1_3_1_'></a>[klinisch](#toc0_)
+
     database file:           2026-05-12_data_clin.duckdb
     data tag:                v2.4
     last kkr data import:    2026-04-18
     sql table created:       2026-05-12 16:38:32
     doi:                     -
-    document created:        2026-05-13 18:53:02
-    
+    document created:        2026-05-15 12:18:46
+
+
+
+<br>
+
+### <a id='toc1_3_2_'></a>[epi](#toc0_)
+
     database file:           2026-05-13_data_epi.duckdb
     data tag:                epi2025_1
     sql table created:       2026-05-13 09:31:01
     doi:                     10.18444/5.03.01.0005.0022.0001
-    document created:        2026-05-13 18:53:02
+    document created:        2026-05-15 12:18:47
 
 
     
@@ -130,11 +142,7 @@ and GKZbl::tinyint <= 16
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_13_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_13_5.png">
-  <img alt="png" src="tech_files/output_13_5.png">
-</picture>
+<img alt="png" src="tech_files/output_16_5.png">
     
 
 
@@ -170,34 +178,22 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_5_1_'></a>[⚠️ 01-SH](#toc0_)
+### <a id='toc1_5_1_'></a>[✅ 01-SH](#toc0_)
 - `B_TOD_Ja_Aber_Kein_SJ`: 0 -> 4%
 - alle Fälle wurden korrigiert laut `C_TOD=1_korrigiert_aufgrund_Sterbeangaben`
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_17_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_17_1.png">
-  <img alt="png" src="tech_files/output_17_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_20_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_17_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_17_3.png">
-  <img alt="png" src="tech_files/output_17_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_20_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_17_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_17_5.png">
-  <img alt="png" src="tech_files/output_17_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_20_5.png" width="55%">
     
 
 
@@ -207,29 +203,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_2_'></a>[✅ 02-HH](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_19_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_19_1.png">
-  <img alt="png" src="tech_files/output_19_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_22_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_19_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_19_3.png">
-  <img alt="png" src="tech_files/output_19_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_22_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_19_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_19_5.png">
-  <img alt="png" src="tech_files/output_19_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_22_5.png" width="55%">
     
 
 
@@ -239,29 +223,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_3_'></a>[✅ 03-NI](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_21_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_21_1.png">
-  <img alt="png" src="tech_files/output_21_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_24_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_21_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_21_3.png">
-  <img alt="png" src="tech_files/output_21_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_24_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_21_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_21_5.png">
-  <img alt="png" src="tech_files/output_21_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_24_5.png" width="55%">
     
 
 
@@ -271,29 +243,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_4_'></a>[✅ 04-HB](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_23_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_23_1.png">
-  <img alt="png" src="tech_files/output_23_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_26_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_23_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_23_3.png">
-  <img alt="png" src="tech_files/output_23_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_26_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_23_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_23_5.png">
-  <img alt="png" src="tech_files/output_23_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_26_5.png" width="55%">
     
 
 
@@ -304,29 +264,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 - unverändert hohe werte bei `A_EKRNR_GKZ_unplausibel`
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_25_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_25_1.png">
-  <img alt="png" src="tech_files/output_25_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_28_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_25_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_25_3.png">
-  <img alt="png" src="tech_files/output_25_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_28_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_25_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_25_5.png">
-  <img alt="png" src="tech_files/output_25_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_28_5.png" width="55%">
     
 
 
@@ -334,33 +282,20 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 <br>
 
-### <a id='toc1_5_6_'></a>[🚨 06-HE](#toc0_)
-- Fallzahl DJ=2024 deutlich geringer
+### <a id='toc1_5_6_'></a>[✅ 06-HE](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_27_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_27_1.png">
-  <img alt="png" src="tech_files/output_27_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_30_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_27_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_27_3.png">
-  <img alt="png" src="tech_files/output_27_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_30_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_27_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_27_5.png">
-  <img alt="png" src="tech_files/output_27_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_30_5.png" width="55%">
     
 
 
@@ -371,29 +306,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_7_'></a>[✅ 07-RP](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_29_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_29_1.png">
-  <img alt="png" src="tech_files/output_29_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_32_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_29_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_29_3.png">
-  <img alt="png" src="tech_files/output_29_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_32_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_29_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_29_5.png">
-  <img alt="png" src="tech_files/output_29_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_32_5.png" width="55%">
     
 
 
@@ -403,29 +326,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_8_'></a>[✅ 08-BW](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_31_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_31_1.png">
-  <img alt="png" src="tech_files/output_31_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_34_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_31_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_31_3.png">
-  <img alt="png" src="tech_files/output_31_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_34_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_31_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_31_5.png">
-  <img alt="png" src="tech_files/output_31_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_34_5.png" width="55%">
     
 
 
@@ -435,29 +346,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_9_'></a>[✅ 09-BY](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_33_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_33_1.png">
-  <img alt="png" src="tech_files/output_33_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_36_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_33_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_33_3.png">
-  <img alt="png" src="tech_files/output_33_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_36_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_33_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_33_5.png">
-  <img alt="png" src="tech_files/output_33_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_36_5.png" width="55%">
     
 
 
@@ -469,29 +368,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 - `A_Mehrfachmeldung` leicht erhöht mit ~4%
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_35_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_35_1.png">
-  <img alt="png" src="tech_files/output_35_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_38_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_35_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_35_3.png">
-  <img alt="png" src="tech_files/output_35_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_38_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_35_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_35_5.png">
-  <img alt="png" src="tech_files/output_35_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_38_5.png" width="55%">
     
 
 
@@ -501,29 +388,17 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ### <a id='toc1_5_11_'></a>[✅ 11-GKR (ehemals)](#toc0_)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_37_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_37_1.png">
-  <img alt="png" src="tech_files/output_37_1.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_40_1.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_37_3.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_37_3.png">
-  <img alt="png" src="tech_files/output_37_3.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_40_3.png" width="55%">
     
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_37_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_37_5.png">
-  <img alt="png" src="tech_files/output_37_5.png" width="55%">
-</picture>
+<img alt="png" src="tech_files/output_40_5.png" width="55%">
     
 
 
@@ -535,17 +410,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 ## <a id='toc1_6_'></a>[Qualitätsprüfungen](#toc0_)
 - kein Filter, die Prüfungen wirken auf den gesamten Datenbestand
 - zur Darstellung wird eine heatmap verwendet, dem maximalen Wert je Prüfung wird die kräftigste Farbe zugewiesen. Aus diesem relativ gesetzten Farbton ist nicht ableitbar, wie schwerwiegend die Fallzahl ist
-
-
-```
-    ┌──────────────────────┐
-    │        z_hash        │
-    ├──────────────────────┤
-    │ 11187269956916151019 │
-    │  4272033462461306400 │
-    │ 11647736224215498133 │
-    └──────────────────────┘
-```
+- bei **epi** Daten: für die NBL wird nur `11-GKR_alt` ausgegeben, also der archivierte GKR Bestand vor DJ2020. Daten ab 2021 werden aus den klinischen Daten generiert
 
 <br>
 
@@ -557,11 +422,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_44_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_44_1.png">
-  <img alt="png" src="tech_files/output_44_1.png">
-</picture>
+<img alt="png" src="tech_files/output_48_1.png">
     
 
 
@@ -570,11 +431,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_45_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_45_1.png">
-  <img alt="png" src="tech_files/output_45_1.png">
-</picture>
+<img alt="png" src="tech_files/output_49_1.png">
     
 
 
@@ -590,11 +447,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_47_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_47_1.png">
-  <img alt="png" src="tech_files/output_47_1.png">
-</picture>
+<img alt="png" src="tech_files/output_51_1.png">
     
 
 
@@ -603,11 +456,7 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_48_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_48_1.png">
-  <img alt="png" src="tech_files/output_48_1.png">
-</picture>
+<img alt="png" src="tech_files/output_52_1.png">
     
 
 
@@ -624,20 +473,11 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
     🟧 🗄️ klin
 
-    
-
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_50_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_50_2.png">
-  <img alt="png" src="tech_files/output_50_2.png">
-</picture>
+<img alt="png" src="tech_files/output_54_1.png">
     
-
-
-    Verteilung icd10 ausserhalb [C,D]: {None: 482}
 
 
     🟧 🗄️ epi
@@ -645,15 +485,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_51_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_51_1.png">
-  <img alt="png" src="tech_files/output_51_1.png">
-</picture>
+<img alt="png" src="tech_files/output_55_1.png">
     
-
-
-    Verteilung icd10 ausserhalb [C,D]: {None: 37016}
 
 
 <br>
@@ -667,15 +500,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_53_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_53_1.png">
-  <img alt="png" src="tech_files/output_53_1.png">
-</picture>
+<img alt="png" src="tech_files/output_57_1.png">
     
-
-
-    Verteilung inzidenzort missing oder ungültig{'99999': 8, None: 183}
 
 
     🟧 🗄️ epi
@@ -683,15 +509,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_54_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_54_1.png">
-  <img alt="png" src="tech_files/output_54_1.png">
-</picture>
+<img alt="png" src="tech_files/output_58_1.png">
     
-
-
-    Verteilung inzidenzort missing oder ungültig{}
 
 
 <br>
@@ -706,15 +525,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_56_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_56_1.png">
-  <img alt="png" src="tech_files/output_56_1.png">
-</picture>
+<img alt="png" src="tech_files/output_60_1.png">
     
-
-
-    Kombination Geschlecht - ICD10 ungültig: {'C61-W': 29, 'C62-W': 6, 'C54-M': 5, 'C56-M': 3, 'C53-M': 2, 'C52-M': 2, 'C55-M': 1, 'C60-W': 1, 'C57-M': 1, 'C51-M': 1, 'C58-M': 1, 'C63-W': 1}
 
 
     🟧 🗄️ epi
@@ -722,15 +534,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_57_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_57_1.png">
-  <img alt="png" src="tech_files/output_57_1.png">
-</picture>
+<img alt="png" src="tech_files/output_61_1.png">
     
-
-
-    Kombination Geschlecht - ICD10 ungültig: {'C61-W': 6, 'C62-W': 3, 'C57-M': 1, 'C52-M': 1, 'C56-M': 1, 'C63-W': 1, 'C60-W': 1, 'C54-M': 1}
 
 
 <br>
@@ -745,15 +550,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_59_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_59_1.png">
-  <img alt="png" src="tech_files/output_59_1.png">
-</picture>
+<img alt="png" src="tech_files/output_63_1.png">
     
-
-
-    Verteilung top 3 (GebDat - DiagDat): {'1900-04-01-2023-07-15': 72, '1900-04-01-2024-01-15': 59, '1900-04-01-2024-03-15': 48}
 
 
     🟧 🗄️ epi
@@ -761,15 +559,8 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_60_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_60_1.png">
-  <img alt="png" src="tech_files/output_60_1.png">
-</picture>
+<img alt="png" src="tech_files/output_64_1.png">
     
-
-
-    Verteilung top 3 (GebDat - DiagDat): {'<NA>-': 172, '1900-09-15-1990-01-15': 7, '1939-10-15-1900-04-15': 7}
 
 
 <br>
@@ -783,54 +574,19 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_62_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_62_1.png">
-  <img alt="png" src="tech_files/output_62_1.png">
-</picture>
+<img alt="png" src="tech_files/output_66_1.png">
     
 
-
-    Verteilung datum_fehlerhaft top 5:
-
-```
-    ┌──────────────┬───────────────┬───────┐
-    │ Geburtsdatum │ Diagnosedatum │  cnt  │
-    ├──────────────┼───────────────┼───────┤
-    │ 2023-11-15   │ 2023-11-15    │     4 │
-    │ 2024-03-15   │ 2024-03-15    │     3 │
-    │ 2020-01-15   │ 2020-01-15    │     3 │
-    │ 2022-04-15   │ 2022-04-15    │     3 │
-    │ 2020-11-15   │ 2020-11-15    │     3 │
-    └──────────────┴───────────────┴───────┘
-```
 
     🟧 🗄️ epi
 
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_63_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_63_1.png">
-  <img alt="png" src="tech_files/output_63_1.png">
-</picture>
+<img alt="png" src="tech_files/output_67_1.png">
     
 
 
-    Verteilung datum_fehlerhaft top 5:
-
-```
-    ┌──────────────┬───────────────┬───────┐
-    │ Geburtsdatum │ Diagnosedatum │  cnt  │
-    ├──────────────┼───────────────┼───────┤
-    │ 2013-09-15   │ 2013-09-15    │    12 │
-    │ 2013-04-15   │ 2013-04-15    │    11 │
-    │ 2013-11-15   │ 2013-11-15    │    11 │
-    │ 2019-04-15   │ 2019-04-15    │    10 │
-    │ 2011-05-15   │ 2011-05-15    │    10 │
-    └──────────────┴───────────────┴───────┘
-```
 
 <br>
 
@@ -873,123 +629,232 @@ Die markierten Fälle können im übermittelten Datensatz geprüft werden, Beisp
 Tests:
 
     Für den hash-wert sind folgende Spalten herangezogen:
-    Diagnose_ICD10_Code, Morphologie_Code, Topographie_Code, Geburtsdatum, Diagnosedatum, Geschlecht, Verstorben, Inzidenzort, Seitenlokalisation, T_p, Grading, N_p, Diagnosesicherung, M_p
+    
+        z_icd10,
+        Morphologie_Code,
+        Topographie_Code,
+        Geburtsdatum,
+        Diagnosedatum,
+        z_sex,
+        Verstorben,
+        Inzidenzort,
+        Seitenlokalisation,
+        Grading,
+        Diagnosesicherung,
+        T_p,
+        N_p,
+        M_p
+    
 
 
     Echte Duplikate (gleiche Tumor_ID UND gleicher Inhalt/hash):
 
 
 
-```
-    ┌──────┬──────────┬───────────┬───────────┬───────────────────┬────────────────────────────────────────────┐
-    │ kkr  │ same_kkr │ same_file │ cnt_cases │ max_cases_in_dupl │              example_Tumor_ID              │
-    ├──────┼──────────┼───────────┼───────────┼───────────────────┼────────────────────────────────────────────┤
-    │    9 │ true     │ false     │         4 │                 2 │ 0C38B26E95677F0A15C56E8F238CFBFC4D94EB76_1 │
-    └──────┴──────────┴───────────┴───────────┴───────────────────┴────────────────────────────────────────────┘
-![png](tech_files/output_70_0.png)
+    
+<img alt="png" src="tech_files/output_73_1.png">
+    
+
+
+
+    
+<img alt="png" src="tech_files/output_74_0.png">
+    
+
+
 <br>
+
 ### <a id='toc1_7_2_'></a>[Duplikatverdacht](#toc0_)
 - die originale `Tumor_ID` wird hier ignoriert
 - es wird für alle Tumorfälle geprüft, ob es Fälle mit gleicher Kombination verschiedener Merkmale gibt
 - Verdachtsfälle mit gleicher Kombination aus verschiedenen Registern und Patienten sind möglich
 - die Übereinstimmungswahrscheinlichkeit steigt deutlich, wenn mehr Merkmale leer sind
-    Verwendete Merkmale: Diagnose_ICD10_Code, Morphologie_Code, Topographie_Code, Geburtsdatum, Diagnosedatum, Geschlecht, Verstorben, Inzidenzort, Seitenlokalisation, T_p, Grading, N_p, Diagnosesicherung, M_p
+
+    Verwendete Merkmale: 
+        z_icd10,
+        Morphologie_Code,
+        Topographie_Code,
+        Geburtsdatum,
+        Diagnosedatum,
+        z_sex,
+        Verstorben,
+        Inzidenzort,
+        Seitenlokalisation,
+        Grading,
+        Diagnosesicherung,
+        T_p,
+        N_p,
+        M_p
+    
+    
+
+
     🟧 🗄️ klin
-![png](tech_files/output_72_2.png)
+
+
+
+    
+<img alt="png" src="tech_files/output_76_2.png">
+    
+
+
     🟧 🗄️ epi
-![png](tech_files/output_73_1.png)
+
+
+
+    
+<img alt="png" src="tech_files/output_77_1.png">
+    
+
+
 <br>
+
 #### <a id='toc1_7_2_1_'></a>[Verteilung nach Inzidenzort](#toc0_)
+
     🟧 🗄️ klin
-![svg](tech_files/output_75_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_79_1.svg">
+    
+
+
     🟧 🗄️ epi
-![svg](tech_files/output_76_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_80_1.svg">
+    
+
+
 <br>
+
 #### <a id='toc1_7_2_2_'></a>[Verteilung nach Diagnosejahr](#toc0_)
+
     🟧 🗄️ klin
-![svg](tech_files/output_78_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_82_1.svg">
+    
+
+
     🟧 🗄️ epi
-![svg](tech_files/output_79_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_83_1.svg">
+    
+
+
 <br>
+
 #### <a id='toc1_7_2_3_'></a>[Verteilung nach ICD10](#toc0_)
+
     🟧 🗄️ klin
-![svg](tech_files/output_81_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_85_1.svg">
+    
+
+
     🟧 🗄️ epi
-![svg](tech_files/output_82_1.svg)
+
+
+
+    
+<img alt="svg" src="tech_files/output_86_1.svg">
+    
+
+
 <br>
+
 #### <a id='toc1_7_2_4_'></a>[Verteilung der Gruppen mit gleichen Merkmalen](#toc0_)
 - "_Gruppe_" = >1 Verdachtsfälle mit gleichen Merkmalen
 - verwendete Metriken (jeweils aufgetragen: `is_equal` = "alle Fälle in der Gruppe haben den gleichen Wert")
 > es gibt wenige Gruppen, in denen die Duplikate aus verschiedenen kkr stammen  
 > in den meisten Gruppen stammen die Duplikate nicht von einem einzelnen Patienten  
+
     🟧 🗄️ klin
-    10_150 Fälle verteilen sich auf 4_899 Gruppen mit max 14 Fällen in einer Gruppe
-    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: REGISTER {True: 4843, False: 56}
-    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: PATIENTID {False: 4440, True: 459}
+    10_170 Fälle verteilen sich auf 4_909 Gruppen mit max 14 Fällen in einer Gruppe
+    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: REGISTER {True: 4853, False: 56}
+    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: PATIENTID {False: 4445, True: 464}
+
+
     🟧 🗄️ epi
-    41_532 Fälle verteilen sich auf 20_385 Gruppen mit max 31 Fällen in einer Gruppe
-    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: REGISTER {True: 20385}
-    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: PATIENTID {False: 19061, True: 1324}
-    ┌──────────────────────┬─────────────────────┬──────────────────┬──────────────────┬────────────────┬────────────────┬────────────────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬───────────────────┬────────────────┬──────────┬──────────────┬─────────────┬─────────────┬────────────┬────────────┬──────────────┬──────────────────────────┬───────────────┬───────────────────────────┬───────────────────┬───────────────────────────────┬──────────────────────┬──────────────────────┬───────┬──────────┬──────────┐
-    │        hash2         │ Diagnose_ICD10_Code │ Morphologie_Code │ Topographie_Code │ UICC_Stadium_c │ UICC_Stadium_p │ Seitenlokalisation │   T_c   │   T_p   │ Grading │   N_p   │   N_c   │   M_c   │   M_p   │ Diagnosesicherung │ Lieferregister │ icd10_3d │ Diagnosejahr │ Inzidenzort │ Geburtsjahr │ Geschlecht │ Verstorben │ Geburtsdatum │ Geburtsdatum_Genauigkeit │ Diagnosedatum │ Diagnosedatum_Genauigkeit │ Datum_Vitalstatus │ Datum_Vitalstatus_Genauigkeit │       hash2_1        │      hash2_1_1       │  cnt  │ same_kkr │ same_pat │
-    ├──────────────────────┼─────────────────────┼──────────────────┼──────────────────┼────────────────┼────────────────┼────────────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────────────────┼────────────────┼──────────┼──────────────┼─────────────┼─────────────┼────────────┼────────────┼──────────────┼──────────────────────────┼───────────────┼───────────────────────────┼───────────────────┼───────────────────────────────┼──────────────────────┼──────────────────────┼───────┼──────────┼──────────┤
-    │ 12796173889271493815 │ C44.3               │ 8071/3           │ C44.3            │ NULL           │ I              │ R                  │ NULL    │ 1       │ 2       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2022 │ 13075       │        1939 │ W          │ N          │ 1939-07-15   │ T                        │ 2022-02-15    │ T                         │ 2022-06-15        │ T                             │ 12796173889271493815 │ 12796173889271493815 │     3 │ true     │ true     │
-    │ 12796173889271493815 │ C44.3               │ 8071/3           │ C44.3            │ NULL           │ I              │ R                  │ NULL    │ 1       │ 2       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2022 │ 13075       │        1939 │ W          │ N          │ 1939-07-15   │ T                        │ 2022-02-15    │ T                         │ 2022-06-15        │ T                             │ 12796173889271493815 │ 12796173889271493815 │     3 │ true     │ true     │
-    │ 12796173889271493815 │ C44.3               │ 8071/3           │ C44.3            │ NULL           │ I              │ R                  │ NULL    │ 1       │ 2       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2022 │ 13075       │        1939 │ W          │ N          │ 1939-07-15   │ T                        │ 2022-02-15    │ T                         │ 2022-06-15        │ T                             │ 12796173889271493815 │ 12796173889271493815 │     3 │ true     │ true     │
-    │ 10808291602251259537 │ C44.3               │ 8090/3           │ C44.31           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ X       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2015 │ 15089       │        1935 │ M          │ N          │ 1935-10-15   │ T                        │ 2015-06-15    │ T                         │ 2022-12-15        │ T                             │ 10808291602251259537 │ 10808291602251259537 │     2 │ true     │ true     │
-    │ 10808291602251259537 │ C44.3               │ 8090/3           │ C44.31           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ X       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2015 │ 15089       │        1935 │ M          │ N          │ 1935-10-15   │ T                        │ 2015-06-15    │ T                         │ 2022-12-15        │ T                             │ 10808291602251259537 │ 10808291602251259537 │     2 │ true     │ true     │
-    │ 17828479518542558588 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2019 │ 09376       │        1928 │ W          │ J          │ 1928-10-15   │ T                        │ 2019-05-15    │ T                         │ 2024-08-15        │ T                             │ 17828479518542558588 │ 17828479518542558588 │     2 │ true     │ true     │
-    │ 17828479518542558588 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2019 │ 09376       │        1928 │ W          │ J          │ 1928-10-15   │ T                        │ 2019-05-15    │ T                         │ 2024-08-15        │ T                             │ 17828479518542558588 │ 17828479518542558588 │     2 │ true     │ true     │
-    │  6955736735644645174 │ C18.7               │ 8140/3           │ C18.7            │ NULL           │ NULL           │ T                  │ X       │ 3       │ 2       │ 0       │ X       │ 0       │ 0       │ 7                 │              3 │ C18      │         2024 │ 03252       │        1963 │ M          │ N          │ 1963-10-15   │ T                        │ 2024-01-15    │ T                         │ 2025-09-15        │ T                             │  6955736735644645174 │  6955736735644645174 │     2 │ true     │ true     │
-    │  6955736735644645174 │ C18.7               │ 8140/3           │ C18.7            │ NULL           │ NULL           │ T                  │ X       │ 3       │ 2       │ 0       │ X       │ 0       │ 0       │ 7                 │              3 │ C18      │         2024 │ 03252       │        1963 │ M          │ N          │ 1963-10-15   │ T                        │ 2024-01-15    │ T                         │ 2025-09-15        │ T                             │  6955736735644645174 │  6955736735644645174 │     2 │ true     │ true     │
-    │ 16051131866897218622 │ C44.2               │ 8090/3           │ C44.21           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2022 │ 15002       │        1943 │ M          │ N          │ 1943-11-15   │ T                        │ 2022-07-15    │ T                         │ 2022-09-15        │ T                             │ 16051131866897218622 │ 16051131866897218622 │     2 │ true     │ true     │
-    │ 16051131866897218622 │ C44.2               │ 8090/3           │ C44.21           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2022 │ 15002       │        1943 │ M          │ N          │ 1943-11-15   │ T                        │ 2022-07-15    │ T                         │ 2022-09-15        │ T                             │ 16051131866897218622 │ 16051131866897218622 │     2 │ true     │ true     │
-    │  5470006345298220214 │ C44.59              │ 8091/3           │ C44.51           │ NULL           │ NULL           │ M                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2024 │ 15002       │        1954 │ W          │ N          │ 1954-06-15   │ T                        │ 2024-02-15    │ T                         │ 2024-02-15        │ T                             │  5470006345298220214 │  5470006345298220214 │     2 │ true     │ true     │
-    │  5470006345298220214 │ C44.59              │ 8091/3           │ C44.51           │ NULL           │ NULL           │ M                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2024 │ 15002       │        1954 │ W          │ N          │ 1954-06-15   │ T                        │ 2024-02-15    │ T                         │ 2024-02-15        │ T                             │  5470006345298220214 │  5470006345298220214 │     2 │ true     │ true     │
-    │  6878006408349744660 │ C44.6               │ 8090/3           │ C44.63           │ NULL           │ NULL           │ R                  │ NULL    │ 1       │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2019 │ 15003       │        1936 │ M          │ J          │ 1936-08-15   │ T                        │ 2019-01-15    │ T                         │ 2024-01-15        │ T                             │  6878006408349744660 │  6878006408349744660 │     2 │ true     │ true     │
-    │  6878006408349744660 │ C44.6               │ 8090/3           │ C44.63           │ NULL           │ NULL           │ R                  │ NULL    │ 1       │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2019 │ 15003       │        1936 │ M          │ J          │ 1936-08-15   │ T                        │ 2019-01-15    │ T                         │ 2024-01-15        │ T                             │  6878006408349744660 │  6878006408349744660 │     2 │ true     │ true     │
-    │ 16388838342108315683 │ C44.5               │ 8090/3           │ C44.53           │ NULL           │ I              │ L                  │ NULL    │ 1       │ X       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2015 │ 13073       │        1939 │ M          │ N          │ 1939-03-15   │ T                        │ 2015-02-15    │ T                         │ 2022-06-15        │ T                             │ 16388838342108315683 │ 16388838342108315683 │     2 │ true     │ true     │
-    │ 16388838342108315683 │ C44.5               │ 8090/3           │ C44.53           │ NULL           │ I              │ L                  │ NULL    │ 1       │ X       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2015 │ 13073       │        1939 │ M          │ N          │ 1939-03-15   │ T                        │ 2015-02-15    │ T                         │ 2022-06-15        │ T                             │ 16388838342108315683 │ 16388838342108315683 │     2 │ true     │ true     │
-    │  2210913079643294951 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2013 │ 09362       │        1934 │ W          │ N          │ 1934-10-15   │ T                        │ 2013-02-15    │ T                         │ 2021-10-15        │ T                             │  2210913079643294951 │  2210913079643294951 │     2 │ true     │ true     │
-    │  2210913079643294951 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2013 │ 09362       │        1934 │ W          │ N          │ 1934-10-15   │ T                        │ 2013-02-15    │ T                         │ 2021-10-15        │ T                             │  2210913079643294951 │  2210913079643294951 │     2 │ true     │ true     │
-    │   638802391294984625 │ C44.5               │ 8091/3           │ C44.51           │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ X       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2020 │ 15083       │        1936 │ W          │ N          │ 1936-08-15   │ T                        │ 2020-09-15    │ T                         │ 2020-09-15        │ T                             │   638802391294984625 │   638802391294984625 │     2 │ true     │ true     │
-    │   638802391294984625 │ C44.5               │ 8091/3           │ C44.51           │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ X       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2020 │ 15083       │        1936 │ W          │ N          │ 1936-08-15   │ T                        │ 2020-09-15    │ T                         │ 2020-09-15        │ T                             │   638802391294984625 │   638802391294984625 │     2 │ true     │ true     │
-    │ 14855949945120573835 │ C44.6               │ 8090/3           │ C44.6            │ NULL           │ I              │ L                  │ NULL    │ 1       │ T       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2021 │ 13075       │        1937 │ W          │ N          │ 1937-05-15   │ T                        │ 2021-03-15    │ T                         │ 2025-10-15        │ T                             │ 14855949945120573835 │ 14855949945120573835 │     2 │ true     │ true     │
-    │ 14855949945120573835 │ C44.6               │ 8090/3           │ C44.6            │ NULL           │ I              │ L                  │ NULL    │ 1       │ T       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2021 │ 13075       │        1937 │ W          │ N          │ 1937-05-15   │ T                        │ 2021-03-15    │ T                         │ 2025-10-15        │ T                             │ 14855949945120573835 │ 14855949945120573835 │     2 │ true     │ true     │
-    │ 15791116088353961633 │ C34.1               │ 8140/3           │ C34.1            │ NULL           │ NULL           │ R                  │ 4       │ NULL    │ 1       │ NULL    │ 0       │ 1c      │ NULL    │ 7                 │              3 │ C34      │         2023 │ 03252       │        1945 │ W          │ J          │ 1945-06-15   │ T                        │ 2023-11-15    │ T                         │ 2024-04-15        │ T                             │ 15791116088353961633 │ 15791116088353961633 │     2 │ true     │ true     │
-    │ 15791116088353961633 │ C34.1               │ 8140/3           │ C34.1            │ NULL           │ NULL           │ R                  │ 4       │ NULL    │ 1       │ NULL    │ 0       │ 1c      │ NULL    │ 7                 │              3 │ C34      │         2023 │ 03252       │        1945 │ W          │ J          │ 1945-06-15   │ T                        │ 2023-11-15    │ T                         │ 2024-04-15        │ T                             │ 15791116088353961633 │ 15791116088353961633 │     2 │ true     │ true     │
-    │           ·          │   ·                 │   ·              │   ·              │  ·             │ ·              │ ·                  │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·                 │              · │  ·       │           ·  │   ·         │          ·  │ ·          │ ·          │     ·        │ ·                        │     ·         │ ·                         │     ·             │ ·                             │           ·          │           ·          │     · │  ·       │  ·       │
-    │           ·          │   ·                 │   ·              │   ·              │  ·             │ ·              │ ·                  │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·                 │              · │  ·       │           ·  │   ·         │          ·  │ ·          │ ·          │     ·        │ ·                        │     ·         │ ·                         │     ·             │ ·                             │           ·          │           ·          │     · │  ·       │  ·       │
-    │           ·          │   ·                 │   ·              │   ·              │  ·             │ ·              │ ·                  │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·                 │              · │  ·       │           ·  │   ·         │          ·  │ ·          │ ·          │     ·        │ ·                        │     ·         │ ·                         │     ·             │ ·                             │           ·          │           ·          │     · │  ·       │  ·       │
-    │  7410274048203460807 │ C44.5               │ 8090/3           │ C44.53           │ NULL           │ I              │ M                  │ NULL    │ 1       │ X       │ 0       │ NULL    │ NULL    │ 0       │ 71                │             15 │ C44      │         2014 │ 15003       │        1942 │ W          │ J          │ 1942-04-15   │ T                        │ 2014-07-15    │ T                         │ 2022-04-15        │ T                             │  7410274048203460807 │  7410274048203460807 │     2 │ true     │ true     │
-    │  7410274048203460807 │ C44.5               │ 8090/3           │ C44.53           │ NULL           │ I              │ M                  │ NULL    │ 1       │ X       │ 0       │ NULL    │ NULL    │ 0       │ 71                │             15 │ C44      │         2014 │ 15003       │        1942 │ W          │ J          │ 1942-04-15   │ T                        │ 2014-07-15    │ T                         │ 2022-04-15        │ T                             │  7410274048203460807 │  7410274048203460807 │     2 │ true     │ true     │
-    │  5383236411603845656 │ C44.5               │ 8097/3           │ C44.5            │ NULL           │ NULL           │ U                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2020 │ 09278       │        1956 │ M          │ N          │ 1956-02-15   │ T                        │ 2020-06-15    │ T                         │ 2020-06-15        │ T                             │  5383236411603845656 │  5383236411603845656 │     2 │ true     │ true     │
-    │  5383236411603845656 │ C44.5               │ 8097/3           │ C44.5            │ NULL           │ NULL           │ U                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2020 │ 09278       │        1956 │ M          │ N          │ 1956-02-15   │ T                        │ 2020-06-15    │ T                         │ 2020-06-15        │ T                             │  5383236411603845656 │  5383236411603845656 │     2 │ true     │ true     │
-    │  6244108136172076728 │ C44.3               │ 8090/3           │ C44.33           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2022 │ 15088       │        1967 │ W          │ N          │ 1967-12-15   │ T                        │ 2022-08-15    │ T                         │ 2022-08-15        │ T                             │  6244108136172076728 │  6244108136172076728 │     2 │ true     │ true     │
-    │  6244108136172076728 │ C44.3               │ 8090/3           │ C44.33           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2022 │ 15088       │        1967 │ W          │ N          │ 1967-12-15   │ T                        │ 2022-08-15    │ T                         │ 2022-08-15        │ T                             │  6244108136172076728 │  6244108136172076728 │     2 │ true     │ true     │
-    │  6189689892157904563 │ C44.3               │ 8090/3           │ C44.33           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2023 │ 15082       │        1953 │ M          │ N          │ 1953-05-15   │ T                        │ 2023-08-15    │ T                         │ 2025-05-15        │ T                             │  6189689892157904563 │  6189689892157904563 │     2 │ true     │ true     │
-    │  6189689892157904563 │ C44.3               │ 8090/3           │ C44.33           │ NULL           │ NULL           │ R                  │ NULL    │ NULL    │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2023 │ 15082       │        1953 │ M          │ N          │ 1953-05-15   │ T                        │ 2023-08-15    │ T                         │ 2025-05-15        │ T                             │  6189689892157904563 │  6189689892157904563 │     2 │ true     │ true     │
-    │  9989574425369208017 │ C61                 │ 8140/3           │ C61.9            │ NULL           │ NULL           │ T                  │ 1c      │ 2c      │ T       │ 0       │ 0       │ 0       │ NULL    │ 7                 │              3 │ C61      │         2021 │ 03456       │        1954 │ M          │ N          │ 1954-02-15   │ T                        │ 2021-03-15    │ T                         │ 2025-09-15        │ T                             │  9989574425369208017 │  9989574425369208017 │     2 │ true     │ true     │
-    │  9989574425369208017 │ C61                 │ 8140/3           │ C61.9            │ NULL           │ NULL           │ T                  │ NULL    │ 2c      │ T       │ 0       │ NULL    │ NULL    │ NULL    │ 7                 │              3 │ C61      │         2021 │ 03456       │        1954 │ M          │ N          │ 1954-02-15   │ T                        │ 2021-03-15    │ T                         │ 2025-09-15        │ T                             │  9989574425369208017 │  9989574425369208017 │     2 │ true     │ true     │
-    │ 15276093509548498471 │ D03.5               │ 8720/2           │ C44.53           │ NULL           │ 0              │ L                  │ NULL    │ is      │ U       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ D03      │         2016 │ 13072       │        1941 │ M          │ N          │ 1941-11-15   │ T                        │ 2016-04-15    │ T                         │ 2022-10-15        │ T                             │ 15276093509548498471 │ 15276093509548498471 │     2 │ true     │ true     │
-    │ 15276093509548498471 │ D03.5               │ 8720/2           │ C44.53           │ NULL           │ 0              │ L                  │ NULL    │ is      │ U       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ D03      │         2016 │ 13072       │        1941 │ M          │ N          │ 1941-11-15   │ T                        │ 2016-04-15    │ T                         │ 2022-10-15        │ T                             │ 15276093509548498471 │ 15276093509548498471 │     2 │ true     │ true     │
-    │  5276238805415467735 │ C71.2               │ NULL             │ C71.2            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ 9                 │              7 │ C71      │         2020 │ 07312       │        1937 │ W          │ J          │ 1937-11-15   │ T                        │ 2020-11-15    │ T                         │ 2022-01-15        │ T                             │  5276238805415467735 │  5276238805415467735 │     2 │ true     │ true     │
-    │  5276238805415467735 │ C71.2               │ NULL             │ C71.2            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ 9                 │              7 │ C71      │         2020 │ 07312       │        1937 │ W          │ J          │ 1937-11-15   │ T                        │ 2020-11-15    │ T                         │ 2022-01-15        │ T                             │  5276238805415467735 │  5276238805415467735 │     2 │ true     │ true     │
-    │  8522843578315997121 │ C44.5               │ 8090/3           │ C44.5            │ NULL           │ I              │ R                  │ NULL    │ 1       │ T       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2023 │ 13073       │        1957 │ W          │ N          │ 1957-04-15   │ T                        │ 2023-07-15    │ T                         │ 2025-11-15        │ T                             │  8522843578315997121 │  8522843578315997121 │     3 │ true     │ true     │
-    │  8522843578315997121 │ C44.5               │ 8090/3           │ C44.5            │ NULL           │ I              │ R                  │ NULL    │ 1       │ T       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2023 │ 13073       │        1957 │ W          │ N          │ 1957-04-15   │ T                        │ 2023-07-15    │ T                         │ 2025-11-15        │ T                             │  8522843578315997121 │  8522843578315997121 │     3 │ true     │ true     │
-    │  8522843578315997121 │ C44.5               │ 8090/3           │ C44.5            │ NULL           │ I              │ R                  │ NULL    │ 1       │ T       │ 0       │ NULL    │ NULL    │ 0       │ 7                 │             13 │ C44      │         2023 │ 13073       │        1957 │ W          │ N          │ 1957-04-15   │ T                        │ 2023-07-15    │ T                         │ 2025-11-15        │ T                             │  8522843578315997121 │  8522843578315997121 │     3 │ true     │ true     │
-    │   961518092213708704 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2018 │ 09375       │        1943 │ M          │ N          │ 1943-01-15   │ T                        │ 2018-03-15    │ T                         │ 2025-08-15        │ T                             │   961518092213708704 │   961518092213708704 │     2 │ true     │ true     │
-    │   961518092213708704 │ C44.3               │ 8090/3           │ C44.3            │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │              9 │ C44      │         2018 │ 09375       │        1943 │ M          │ N          │ 1943-01-15   │ T                        │ 2018-03-15    │ T                         │ 2025-08-15        │ T                             │   961518092213708704 │   961518092213708704 │     2 │ true     │ true     │
-    │ 17786902993126224100 │ D03.5               │ 8742/2           │ C44.53           │ NULL           │ NULL           │ R                  │ NULL    │ is      │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             16 │ D03      │         2023 │ 16077       │        1959 │ W          │ N          │ 1959-06-15   │ T                        │ 2023-08-15    │ T                         │ 2023-08-15        │ T                             │ 17786902993126224100 │ 17786902993126224100 │     2 │ true     │ true     │
-    │ 17786902993126224100 │ D03.5               │ 8742/2           │ C44.53           │ NULL           │ NULL           │ R                  │ NULL    │ is      │ T       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             16 │ D03      │         2023 │ 16077       │        1959 │ W          │ N          │ 1959-06-15   │ T                        │ 2023-08-15    │ T                         │ 2023-08-15        │ T                             │ 17786902993126224100 │ 17786902993126224100 │     2 │ true     │ true     │
-    │ 10981937348121506341 │ C44.5               │ 8071/3           │ C44.5            │ NULL           │ I              │ M                  │ NULL    │ 1       │ 2       │ 0       │ NULL    │ NULL    │ 0       │ 71                │             15 │ C44      │         2017 │ 15086       │        1955 │ M          │ J          │ 1955-08-15   │ T                        │ 2017-07-15    │ T                         │ 2023-09-15        │ T                             │ 10981937348121506341 │ 10981937348121506341 │     2 │ true     │ true     │
-    │ 10981937348121506341 │ C44.5               │ 8071/3           │ C44.5            │ NULL           │ I              │ M                  │ NULL    │ 1       │ 2       │ 0       │ NULL    │ NULL    │ 0       │ 71                │             15 │ C44      │         2017 │ 15086       │        1955 │ M          │ J          │ 1955-08-15   │ T                        │ 2017-07-15    │ T                         │ 2023-09-15        │ T                             │ 10981937348121506341 │ 10981937348121506341 │     2 │ true     │ true     │
-    │  3865409901786418165 │ C44.6               │ 8090/3           │ C44.61           │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2014 │ 15091       │        1937 │ M          │ N          │ 1937-03-15   │ T                        │ 2014-07-15    │ T                         │ 2021-02-15        │ T                             │  3865409901786418165 │  3865409901786418165 │     2 │ true     │ true     │
-    │  3865409901786418165 │ C44.6               │ 8090/3           │ C44.61           │ NULL           │ NULL           │ L                  │ NULL    │ NULL    │ U       │ NULL    │ NULL    │ NULL    │ NULL    │ 71                │             15 │ C44      │         2014 │ 15091       │        1937 │ M          │ N          │ 1937-03-15   │ T                        │ 2014-07-15    │ T                         │ 2021-02-15        │ T                             │  3865409901786418165 │  3865409901786418165 │     2 │ true     │ true     │
-    └──────────────────────┴─────────────────────┴──────────────────┴──────────────────┴────────────────┴────────────────┴────────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴───────────────────┴────────────────┴──────────┴──────────────┴─────────────┴─────────────┴────────────┴────────────┴──────────────┴──────────────────────────┴───────────────┴───────────────────────────┴───────────────────┴───────────────────────────────┴──────────────────────┴──────────────────────┴───────┴──────────┴──────────┘
+    69_517 Fälle verteilen sich auf 34_202 Gruppen mit max 31 Fällen in einer Gruppe
+    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: REGISTER {True: 23536, False: 10666}
+    Anzahl Gruppen, in denen alle Fälle das gleiche Merkmal aufweisen: PATIENTID {False: 32773, True: 1429}
+
+
+
+```
+    ┌──────────────────────┬──────────────────────────────────────┬───────────────┬───────────────────────────┬─────────────┬─────────────────────┬────────────────────────┬──────────────────┬─────────────────────┬───────────────────┬───────────────┬────────────┬────────────┬────────────┬────────────┬───────────────────┬─────────┬───────────────────┬─────────┬───────────────────┬─────────┬─────────┬─────────┬─────────┬─────────┬────────────────┬───────────────┬────────────┬────────────┬────────────┬────────────┬───────────────────┬─────────┬───────────────────┬─────────┬───────────────────┬─────────┬─────────┬─────────┬─────────┬─────────┬────────────────┬─────────┬─────────────┬───────────────┬──────────────────┬─────────────────────┬──────────────────────────────────────┬────────────────────────────────┬──────────────────────────────────┬───────────────┬─────────────────────┬──────────────────┬─────────────┬────────────────────────────┬─────────────┬───────────────┬───────────────┬────────────────────┬───────┬──────────┬──────────────────────┬────────────┬───────┬────────────┬────────────────────┬─────────┬──────────────────────────┬──────────────────────────────────────┬───────┬──────────────────────────────────────┬─────────────┬───────┬────────┬─────────┬─────────┬────────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬──────────┬──────────┬──────────────────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬───────────────────┬──────────────────────────────┬───────────────┬──────────┬─────────────┬─────────────┬─────────┬─────────────────────────┬───────────────────────┬────────────┬──────────────┬──────────────────────────┬───────────────────┬───────────────────────────────┬──────────────────────┬──────────────────────┬───────┬──────────┬──────────┐
+    │        hash2         │        oBDS_RKIPatientTumorId        │ Diagnosedatum │ Diagnosedatum_Genauigkeit │ Inzidenzort │ Diagnose_ICD10_Code │ Diagnose_ICD10_Version │ Topographie_Code │ Topographie_Version │ Diagnosesicherung │ TNM_Auflage_c │ y_Symbol_c │ r_Symbol_c │ a_Symbol_c │ m_Symbol_c │ c_p_u_Praefix_T_c │   T_c   │ c_p_u_Praefix_N_c │   N_c   │ c_p_u_Praefix_M_c │   M_c   │   L_c   │   V_c   │  Pn_c   │   S_c   │ UICC_Stadium_c │ TNM_Auflage_p │ y_Symbol_p │ r_Symbol_p │ a_Symbol_p │ m_Symbol_p │ c_p_u_Praefix_T_p │   T_p   │ c_p_u_Praefix_N_p │   N_p   │ c_p_u_Praefix_M_p │   M_p   │   L_p   │   V_p   │  Pn_p   │   S_p   │ UICC_Stadium_p │ Grading │ LK_befallen │ LK_untersucht │ Morphologie_Code │ Morphologie_Version │ Praetherapeutischer_Menopausenstatus │ HormonrezeptorStatus_Oestrogen │ HormonrezeptorStatus_Progesteron │ Her2neuStatus │ TumorgroesseInvasiv │ TumorgroesseDCIS │ RASMutation │ RektumAbstandAnokutanlinie │ GradPrimaer │ GradSekundaer │ ScoreErgebnis │ AnlassGleasonScore │  PSA  │ DatumPSA │ DatumPSA_Genauigkeit │ Tumordicke │  LDH  │ Ulzeration │ Seitenlokalisation │   DCN   │ Anzahl_Tage_Diagnose_Tod │               z_tum_id               │ z_kkr │               z_pat_id               │ z_kkr_label │ z_dy  │ z_age  │ z_ag05  │ z_icd10 │ z_icd10_3d │ z_t_c_0 │ z_t_c_1 │ z_t_p_0 │ z_t_p_1 │ z_n_c_0 │ z_n_c_1 │ z_n_p_0 │ z_n_p_1 │ z_m_c_0 │ z_m_c_1 │ z_m_p_0 │ z_m_p_1 │ z_m_pc_1 │ z_is_dco │      z_last_tum_status       │ z_tum_op_count │ z_tum_st_count │ z_tum_sy_count │ z_tum_fo_count │ z_first_treatment │ z_first_treatment_after_days │ z_event_order │ z_events │ z_class_hpv │ z_tum_order │  z_sex  │ z_period_diag_death_day │ z_period_diag_psa_day │ Verstorben │ Geburtsdatum │ Geburtsdatum_Genauigkeit │ Datum_Vitalstatus │ Datum_Vitalstatus_Genauigkeit │       hash2_1        │      hash2_1_1       │  cnt  │ same_kkr │ same_pat │
+    ├──────────────────────┼──────────────────────────────────────┼───────────────┼───────────────────────────┼─────────────┼─────────────────────┼────────────────────────┼──────────────────┼─────────────────────┼───────────────────┼───────────────┼────────────┼────────────┼────────────┼────────────┼───────────────────┼─────────┼───────────────────┼─────────┼───────────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────────────┼───────────────┼────────────┼────────────┼────────────┼────────────┼───────────────────┼─────────┼───────────────────┼─────────┼───────────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────────────┼─────────┼─────────────┼───────────────┼──────────────────┼─────────────────────┼──────────────────────────────────────┼────────────────────────────────┼──────────────────────────────────┼───────────────┼─────────────────────┼──────────────────┼─────────────┼────────────────────────────┼─────────────┼───────────────┼───────────────┼────────────────────┼───────┼──────────┼──────────────────────┼────────────┼───────┼────────────┼────────────────────┼─────────┼──────────────────────────┼──────────────────────────────────────┼───────┼──────────────────────────────────────┼─────────────┼───────┼────────┼─────────┼─────────┼────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──────────┼──────────┼──────────────────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼───────────────────┼──────────────────────────────┼───────────────┼──────────┼─────────────┼─────────────┼─────────┼─────────────────────────┼───────────────────────┼────────────┼──────────────┼──────────────────────────┼───────────────────┼───────────────────────────────┼──────────────────────┼──────────────────────┼───────┼──────────┼──────────┤
+    │ 18058701358738449118 │ c0de4d5e-64a9-4de2-9401-329d1164b5da │ 2022-02-15    │ T                         │ 13075       │ C44.3               │ 10 2022 GM             │ C44.3            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ L0      │ V0      │ NULL    │ NULL    │ I              │ 2       │        NULL │          NULL │ 8071/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ c0de4d5e-64a9-4de2-9401-329d1164b5da │    13 │ 0064c83b-f3df-42ad-b65c-c4d6d13c2ddf │ 13-MV       │  2022 │  82.58 │ a80b84  │ C44.3   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           8 │ W       │                    NULL │                  NULL │ N          │ 1939-07-15   │ T                        │ 2022-06-15        │ T                             │ 18058701358738449118 │ 18058701358738449118 │     3 │ true     │ true     │
+    │ 18058701358738449118 │ 1313285f-5a11-4b4f-8f1f-057542aad594 │ 2022-02-15    │ T                         │ 13075       │ C44.3               │ 10 2022 GM             │ C44.3            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ L0      │ V0      │ NULL    │ NULL    │ I              │ 2       │        NULL │          NULL │ 8071/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 1313285f-5a11-4b4f-8f1f-057542aad594 │    13 │ 0064c83b-f3df-42ad-b65c-c4d6d13c2ddf │ 13-MV       │  2022 │  82.58 │ a80b84  │ C44.3   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           5 │ W       │                    NULL │                  NULL │ N          │ 1939-07-15   │ T                        │ 2022-06-15        │ T                             │ 18058701358738449118 │ 18058701358738449118 │     3 │ true     │ true     │
+    │ 18058701358738449118 │ abcc39b6-429f-4424-9d7d-39ad58d34f04 │ 2022-02-15    │ T                         │ 13075       │ C44.3               │ 10 2022 GM             │ C44.3            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ L0      │ V0      │ NULL    │ NULL    │ I              │ 2       │        NULL │          NULL │ 8071/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ abcc39b6-429f-4424-9d7d-39ad58d34f04 │    13 │ 0064c83b-f3df-42ad-b65c-c4d6d13c2ddf │ 13-MV       │  2022 │  82.58 │ a80b84  │ C44.3   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           3 │ W       │                    NULL │                  NULL │ N          │ 1939-07-15   │ T                        │ 2022-06-15        │ T                             │ 18058701358738449118 │ 18058701358738449118 │     3 │ true     │ true     │
+    │ 6031559507141416268  │ 0947985a-cca2-46b5-b7f2-9059bec6c402 │ 2015-06-15    │ T                         │ 15089       │ C44.3               │ 10 2015 GM             │ C44.31           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ X       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 0947985a-cca2-46b5-b7f2-9059bec6c402 │    15 │ 01e692c6-b4f8-4cf3-a3f2-043a063f3674 │ 15-ST       │  2015 │  79.67 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              2 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │          17 │ M       │                    NULL │                  NULL │ N          │ 1935-10-15   │ T                        │ 2022-12-15        │ T                             │ 6031559507141416268  │ 6031559507141416268  │     2 │ true     │ true     │
+    │ 6031559507141416268  │ d4d2f321-ff7b-4e20-b393-43cbf4937528 │ 2015-06-15    │ T                         │ 15089       │ C44.3               │ 10 2015 GM             │ C44.31           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ X       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ d4d2f321-ff7b-4e20-b393-43cbf4937528 │    15 │ 01e692c6-b4f8-4cf3-a3f2-043a063f3674 │ 15-ST       │  2015 │  79.67 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              2 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │          15 │ M       │                    NULL │                  NULL │ N          │ 1935-10-15   │ T                        │ 2022-12-15        │ T                             │ 6031559507141416268  │ 6031559507141416268  │     2 │ true     │ true     │
+    │ 16216090572157112263 │ c9de28e6-1ff9-4e2b-9290-3735f838531e │ 2019-05-15    │ T                         │ 09376       │ C44.3               │ 10 2019 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     1919 │ c9de28e6-1ff9-4e2b-9290-3735f838531e │     9 │ 023b38b1-956f-4811-b5c5-a879f57e289b │ 09-BY       │  2019 │  90.58 │ a85plus │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           4 │ W       │                    1919 │                  NULL │ J          │ 1928-10-15   │ T                        │ 2024-08-15        │ T                             │ 16216090572157112263 │ 16216090572157112263 │     2 │ true     │ true     │
+    │ 16216090572157112263 │ 830e4e6b-583c-4ede-add3-5b130a117aee │ 2019-05-15    │ T                         │ 09376       │ C44.3               │ 10 2019 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     1919 │ 830e4e6b-583c-4ede-add3-5b130a117aee │     9 │ 023b38b1-956f-4811-b5c5-a879f57e289b │ 09-BY       │  2019 │  90.58 │ a85plus │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           5 │ W       │                    1919 │                  NULL │ J          │ 1928-10-15   │ T                        │ 2024-08-15        │ T                             │ 16216090572157112263 │ 16216090572157112263 │     2 │ true     │ true     │
+    │ 17592985255821980408 │ f26cfb1d-ff9d-4369-a90b-62078af81e95 │ 2024-01-15    │ T                         │ 03252       │ C18.7               │ 10 2024 GM             │ C18.7            │ 33                  │ 7                 │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ c                 │ X       │ c                 │ X       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 3       │ p                 │ 0       │ c                 │ 0       │ L0      │ V0      │ Pn0     │ NULL    │ NULL           │ 2       │           0 │            24 │ 8140/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ N           │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ T                  │ N       │                     NULL │ f26cfb1d-ff9d-4369-a90b-62078af81e95 │     3 │ 029d73c0-0ff0-47f2-bd00-a8ef78efcf94 │ 03-NI       │  2024 │  60.25 │ a60b64  │ C18.7   │ C18        │ x       │ x       │ 3       │ 3       │ x       │ x       │ 0       │ 0       │ 0       │ 0       │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                           35 │ op            │ op       │ NULL        │           1 │ M       │                    NULL │                  NULL │ N          │ 1963-10-15   │ T                        │ 2025-09-15        │ T                             │ 17592985255821980408 │ 17592985255821980408 │     2 │ true     │ true     │
+    │ 17592985255821980408 │ aebd7cef-e156-4dc5-a834-e5858abbbd60 │ 2024-01-15    │ T                         │ 03252       │ C18.7               │ 10 2024 GM             │ C18.7            │ 33                  │ 7                 │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ c                 │ X       │ c                 │ X       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 3       │ p                 │ 0       │ c                 │ 0       │ L0      │ V0      │ Pn0     │ NULL    │ NULL           │ 2       │           0 │            24 │ 8140/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ N           │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ T                  │ N       │                     NULL │ aebd7cef-e156-4dc5-a834-e5858abbbd60 │     3 │ 029d73c0-0ff0-47f2-bd00-a8ef78efcf94 │ 03-NI       │  2024 │  60.25 │ a60b64  │ C18.7   │ C18        │ x       │ x       │ 3       │ 3       │ x       │ x       │ 0       │ 0       │ 0       │ 0       │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1963-10-15   │ T                        │ 2025-09-15        │ T                             │ 17592985255821980408 │ 17592985255821980408 │     2 │ true     │ true     │
+    │ 4854962428647927745  │ 71da909a-af8b-4a98-889b-c42170163337 │ 2022-07-15    │ T                         │ 15002       │ C44.2               │ 10 2022 GM             │ C44.21           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 71da909a-af8b-4a98-889b-c42170163337 │    15 │ 02ce249b-d658-4fd3-9c0e-c516ff45f8c3 │ 15-ST       │  2022 │  78.67 │ a75b79  │ C44.2   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              2 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           1 │ M       │                    NULL │                  NULL │ N          │ 1943-11-15   │ T                        │ 2022-09-15        │ T                             │ 4854962428647927745  │ 4854962428647927745  │     2 │ true     │ true     │
+    │ 4854962428647927745  │ 75f23246-8775-4dbc-b28a-2b3d939fe3dd │ 2022-07-15    │ T                         │ 15002       │ C44.2               │ 10 2022 GM             │ C44.21           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 75f23246-8775-4dbc-b28a-2b3d939fe3dd │    15 │ 02ce249b-d658-4fd3-9c0e-c516ff45f8c3 │ 15-ST       │  2022 │  78.67 │ a75b79  │ C44.2   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1943-11-15   │ T                        │ 2022-09-15        │ T                             │ 4854962428647927745  │ 4854962428647927745  │     2 │ true     │ true     │
+    │ 16825354491152546023 │ c629262a-a88c-4c79-9231-64c9ea432cc7 │ 2024-02-15    │ T                         │ 15002       │ C44.59              │ Sonstige               │ C44.51           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8091/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     NULL │ c629262a-a88c-4c79-9231-64c9ea432cc7 │    15 │ 02ddd2b9-ae49-4c0a-bd37-9f41b613be2c │ 15-ST       │  2024 │  69.67 │ a65b69  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ W       │                    NULL │                  NULL │ N          │ 1954-06-15   │ T                        │ 2024-02-15        │ T                             │ 16825354491152546023 │ 16825354491152546023 │     2 │ true     │ true     │
+    │ 16825354491152546023 │ a0264f73-0101-4619-9f7f-bdfe55038e7d │ 2024-02-15    │ T                         │ 15002       │ C44.59              │ Sonstige               │ C44.51           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8091/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     NULL │ a0264f73-0101-4619-9f7f-bdfe55038e7d │    15 │ 02ddd2b9-ae49-4c0a-bd37-9f41b613be2c │ 15-ST       │  2024 │  69.67 │ a65b69  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ W       │                    NULL │                  NULL │ N          │ 1954-06-15   │ T                        │ 2024-02-15        │ T                             │ 16825354491152546023 │ 16825354491152546023 │     2 │ true     │ true     │
+    │ 5805146495947743300  │ c7b601c1-c623-48e8-9105-cfb243b08762 │ 2019-01-15    │ T                         │ 15003       │ C44.6               │ 10 2019 GM             │ C44.63           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     1836 │ c7b601c1-c623-48e8-9105-cfb243b08762 │    15 │ 0346df89-5606-40b0-9426-d63be9a0170b │ 15-ST       │  2019 │  82.42 │ a80b84  │ C44.6   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           8 │ M       │                    1836 │                  NULL │ J          │ 1936-08-15   │ T                        │ 2024-01-15        │ T                             │ 5805146495947743300  │ 5805146495947743300  │     2 │ true     │ true     │
+    │ 5805146495947743300  │ d2f3d812-e9ec-4f5d-9145-39f643597950 │ 2019-01-15    │ T                         │ 15003       │ C44.6               │ 10 2019 GM             │ C44.63           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     1836 │ d2f3d812-e9ec-4f5d-9145-39f643597950 │    15 │ 0346df89-5606-40b0-9426-d63be9a0170b │ 15-ST       │  2019 │  82.42 │ a80b84  │ C44.6   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           9 │ M       │                    1836 │                  NULL │ J          │ 1936-08-15   │ T                        │ 2024-01-15        │ T                             │ 5805146495947743300  │ 5805146495947743300  │     2 │ true     │ true     │
+    │ 4345780778197566635  │ 33b9dff8-5288-49eb-be56-cc428650891c │ 2015-02-15    │ T                         │ 13073       │ C44.5               │ 10 2015 GM             │ C44.53           │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ NULL              │ 0       │ NULL              │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ X       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 33b9dff8-5288-49eb-be56-cc428650891c │    13 │ 0405cd5c-6eb4-4a71-9291-2c8199784a3f │ 13-MV       │  2015 │  75.92 │ a75b79  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           7 │ M       │                    NULL │                  NULL │ N          │ 1939-03-15   │ T                        │ 2022-06-15        │ T                             │ 4345780778197566635  │ 4345780778197566635  │     2 │ true     │ true     │
+    │ 4345780778197566635  │ fdd42b34-40f8-4847-a401-19f26eae2665 │ 2015-02-15    │ T                         │ 13073       │ C44.5               │ 10 2015 GM             │ C44.53           │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ NULL              │ 0       │ NULL              │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ X       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ fdd42b34-40f8-4847-a401-19f26eae2665 │    13 │ 0405cd5c-6eb4-4a71-9291-2c8199784a3f │ 13-MV       │  2015 │  75.92 │ a75b79  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           4 │ M       │                    NULL │                  NULL │ N          │ 1939-03-15   │ T                        │ 2022-06-15        │ T                             │ 4345780778197566635  │ 4345780778197566635  │     2 │ true     │ true     │
+    │ 10345788878633867272 │ d07c8ee5-5562-496a-afe7-233a7c66a618 │ 2013-02-15    │ T                         │ 09362       │ C44.3               │ 10 2013 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ d07c8ee5-5562-496a-afe7-233a7c66a618 │     9 │ 046a94f8-30d9-4b88-87eb-9a358c14d884 │ 09-BY       │  2013 │  78.33 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           6 │ W       │                    NULL │                  NULL │ N          │ 1934-10-15   │ T                        │ 2021-10-15        │ T                             │ 10345788878633867272 │ 10345788878633867272 │     2 │ true     │ true     │
+    │ 10345788878633867272 │ 82deb470-392c-427f-89ba-06a3bcd2858a │ 2013-02-15    │ T                         │ 09362       │ C44.3               │ 10 2013 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 82deb470-392c-427f-89ba-06a3bcd2858a │     9 │ 046a94f8-30d9-4b88-87eb-9a358c14d884 │ 09-BY       │  2013 │  78.33 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           4 │ W       │                    NULL │                  NULL │ N          │ 1934-10-15   │ T                        │ 2021-10-15        │ T                             │ 10345788878633867272 │ 10345788878633867272 │     2 │ true     │ true     │
+    │ 8887566252952331567  │ 53836672-1ea1-425c-99b4-5dcdfa3b45cf │ 2020-09-15    │ T                         │ 15083       │ C44.5               │ 10 2020 GM             │ C44.51           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ X       │        NULL │          NULL │ 8091/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 53836672-1ea1-425c-99b4-5dcdfa3b45cf │    15 │ 04a6a7f7-b508-4108-aeed-006795221c72 │ 15-ST       │  2020 │  84.08 │ a80b84  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ W       │                    NULL │                  NULL │ N          │ 1936-08-15   │ T                        │ 2020-09-15        │ T                             │ 8887566252952331567  │ 8887566252952331567  │     2 │ true     │ true     │
+    │ 8887566252952331567  │ c2558647-b1ca-45c3-a71f-a56a529d7bf4 │ 2020-09-15    │ T                         │ 15083       │ C44.5               │ 10 2020 GM             │ C44.51           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ X       │        NULL │          NULL │ 8091/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ c2558647-b1ca-45c3-a71f-a56a529d7bf4 │    15 │ 04a6a7f7-b508-4108-aeed-006795221c72 │ 15-ST       │  2020 │  84.08 │ a80b84  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           3 │ W       │                    NULL │                  NULL │ N          │ 1936-08-15   │ T                        │ 2020-09-15        │ T                             │ 8887566252952331567  │ 8887566252952331567  │     2 │ true     │ true     │
+    │ 9553275305414335328  │ 6648173c-80c4-4c6e-a83e-4e1b189ccb51 │ 2021-03-15    │ T                         │ 13075       │ C44.6               │ 10 2021 GM             │ C44.6            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ T       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 6648173c-80c4-4c6e-a83e-4e1b189ccb51 │    13 │ 04bd6e6e-cb9c-4217-a845-47f352c049e3 │ 13-MV       │  2021 │  83.83 │ a80b84  │ C44.6   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           3 │ W       │                    NULL │                  NULL │ N          │ 1937-05-15   │ T                        │ 2025-10-15        │ T                             │ 9553275305414335328  │ 9553275305414335328  │     2 │ true     │ true     │
+    │ 9553275305414335328  │ 73d98138-16fd-48b1-bdf3-a6f32f847739 │ 2021-03-15    │ T                         │ 13075       │ C44.6               │ 10 2021 GM             │ C44.6            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ T       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 73d98138-16fd-48b1-bdf3-a6f32f847739 │    13 │ 04bd6e6e-cb9c-4217-a845-47f352c049e3 │ 13-MV       │  2021 │  83.83 │ a80b84  │ C44.6   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              2 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           4 │ W       │                    NULL │                  NULL │ N          │ 1937-05-15   │ T                        │ 2025-10-15        │ T                             │ 9553275305414335328  │ 9553275305414335328  │     2 │ true     │ true     │
+    │ 13968581957418357119 │ f4c70965-1c2f-4c2c-8728-7fb7eb39606f │ 2023-11-15    │ T                         │ 03252       │ C34.1               │ Sonstige               │ C34.1            │ 33                  │ 7                 │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ c                 │ 4       │ c                 │ 0       │ c                 │ 1c      │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 1       │        NULL │          NULL │ 8140/3           │ 32                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                      152 │ f4c70965-1c2f-4c2c-8728-7fb7eb39606f │     3 │ 0509286e-035b-487d-82d6-59744ed97030 │ 03-NI       │  2023 │  78.42 │ a75b79  │ C34.1   │ C34        │ 4       │ 4       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 1c      │ 1       │ NULL    │ NULL    │ 1        │ false    │ NULL                         │              1 │              1 │              0 │              0 │ op                │                            6 │ op-st         │ op|st    │ NULL        │           2 │ W       │                     152 │                  NULL │ J          │ 1945-06-15   │ T                        │ 2024-04-15        │ T                             │ 13968581957418357119 │ 13968581957418357119 │     2 │ true     │ true     │
+    │ 13968581957418357119 │ f7e3c467-d1eb-4f37-9908-b6376f794b6f │ 2023-11-15    │ T                         │ 03252       │ C34.1               │ 10 2023 GM             │ C34.1            │ 33                  │ 7                 │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ c                 │ 4       │ c                 │ 0       │ c                 │ 1c      │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 1       │        NULL │          NULL │ 8140/3           │ 32                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                      152 │ f7e3c467-d1eb-4f37-9908-b6376f794b6f │     3 │ 0509286e-035b-487d-82d6-59744ed97030 │ 03-NI       │  2023 │  78.42 │ a75b79  │ C34.1   │ C34        │ 4       │ 4       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 1c      │ 1       │ NULL    │ NULL    │ 1        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ W       │                     152 │                  NULL │ J          │ 1945-06-15   │ T                        │ 2024-04-15        │ T                             │ 13968581957418357119 │ 13968581957418357119 │     2 │ true     │ true     │
+    │          ·           │                  ·                   │     ·         │ ·                         │   ·         │   ·                 │     ·                  │   ·              │ ·                   │ ·                 │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │  ·             │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │ ·              │ ·       │          ·  │            ·  │   ·              │ ·                   │  ·                                   │  ·                             │  ·                               │  ·            │                  ·  │               ·  │  ·          │                         ·  │  ·          │  ·            │  ·            │  ·                 │    ·  │  ·       │  ·                   │         ·  │    ·  │  ·         │ ·                  │ ·       │                       ·  │                  ·                   │     · │                  ·                   │   ·         │    ·  │    ·   │   ·     │   ·     │  ·         │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·        │   ·      │  ·                           │              · │              · │              · │              · │ ·                 │                            · │  ·            │ ·        │  ·          │           · │ ·       │                      ·  │                    ·  │ ·          │     ·        │ ·                        │     ·             │ ·                             │          ·           │          ·           │     · │  ·       │  ·       │
+    │          ·           │                  ·                   │     ·         │ ·                         │   ·         │   ·                 │     ·                  │   ·              │ ·                   │ ·                 │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │  ·             │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │ ·              │ ·       │          ·  │            ·  │   ·              │ ·                   │  ·                                   │  ·                             │  ·                               │  ·            │                  ·  │               ·  │  ·          │                         ·  │  ·          │  ·            │  ·            │  ·                 │    ·  │  ·       │  ·                   │         ·  │    ·  │  ·         │ ·                  │ ·       │                       ·  │                  ·                   │     · │                  ·                   │   ·         │    ·  │    ·   │   ·     │   ·     │  ·         │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·        │   ·      │  ·                           │              · │              · │              · │              · │ ·                 │                            · │  ·            │ ·        │  ·          │           · │ ·       │                      ·  │                    ·  │ ·          │     ·        │ ·                        │     ·             │ ·                             │          ·           │          ·           │     · │  ·       │  ·       │
+    │          ·           │                  ·                   │     ·         │ ·                         │   ·         │   ·                 │     ·                  │   ·              │ ·                   │ ·                 │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │  ·             │ ·             │  ·         │  ·         │  ·         │  ·         │ ·                 │ ·       │ ·                 │ ·       │ ·                 │ ·       │  ·      │  ·      │  ·      │  ·      │ ·              │ ·       │          ·  │            ·  │   ·              │ ·                   │  ·                                   │  ·                             │  ·                               │  ·            │                  ·  │               ·  │  ·          │                         ·  │  ·          │  ·            │  ·            │  ·                 │    ·  │  ·       │  ·                   │         ·  │    ·  │  ·         │ ·                  │ ·       │                       ·  │                  ·                   │     · │                  ·                   │   ·         │    ·  │    ·   │   ·     │   ·     │  ·         │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·       │ ·        │   ·      │  ·                           │              · │              · │              · │              · │ ·                 │                            · │  ·            │ ·        │  ·          │           · │ ·       │                      ·  │                    ·  │ ·          │     ·        │ ·                        │     ·             │ ·                             │          ·           │          ·           │     · │  ·       │  ·       │
+    │ 3754077658964679421  │ f404705d-a528-434f-892a-ff8fb38ef253 │ 2014-07-15    │ T                         │ 15003       │ C44.5               │ 10 2014 GM             │ C44.53           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ X       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     2839 │ f404705d-a528-434f-892a-ff8fb38ef253 │    15 │ f804964b-7ba7-45d6-84a6-c9524526abd6 │ 15-ST       │  2014 │  72.25 │ a70b74  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ V - Vollremission (complete) │              1 │              0 │              0 │              1 │ op                │                            0 │ op-fo         │ op|fo    │ NULL        │           5 │ W       │                    2839 │                  NULL │ J          │ 1942-04-15   │ T                        │ 2022-04-15        │ T                             │ 3754077658964679421  │ 3754077658964679421  │     2 │ true     │ true     │
+    │ 3754077658964679421  │ 9b82aa60-9baf-4da5-9991-2d8198c92951 │ 2014-07-15    │ T                         │ 15003       │ C44.5               │ 10 2014 GM             │ C44.53           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ X       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     2839 │ 9b82aa60-9baf-4da5-9991-2d8198c92951 │    15 │ f804964b-7ba7-45d6-84a6-c9524526abd6 │ 15-ST       │  2014 │  72.25 │ a70b74  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ V - Vollremission (complete) │              1 │              0 │              0 │              1 │ op                │                            0 │ op-fo         │ op|fo    │ NULL        │           6 │ W       │                    2839 │                  NULL │ J          │ 1942-04-15   │ T                        │ 2022-04-15        │ T                             │ 3754077658964679421  │ 3754077658964679421  │     2 │ true     │ true     │
+    │ 8987019460914795168  │ ec38b195-c703-40ef-98d8-10adb621573a │ 2020-06-15    │ T                         │ 09278       │ C44.5               │ 10 2020 GM             │ C44.5            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8097/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ U                  │ N       │                     NULL │ ec38b195-c703-40ef-98d8-10adb621573a │     9 │ f848a33e-dfbb-4693-b475-8f4676a16c4d │ 09-BY       │  2020 │  64.33 │ a60b64  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1956-02-15   │ T                        │ 2020-06-15        │ T                             │ 8987019460914795168  │ 8987019460914795168  │     2 │ true     │ true     │
+    │ 8987019460914795168  │ 75fd779c-1f77-4072-9b58-b113d8b6977a │ 2020-06-15    │ T                         │ 09278       │ C44.5               │ 10 2020 GM             │ C44.5            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8097/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ U                  │ N       │                     NULL │ 75fd779c-1f77-4072-9b58-b113d8b6977a │     9 │ f848a33e-dfbb-4693-b475-8f4676a16c4d │ 09-BY       │  2020 │  64.33 │ a60b64  │ C44.5   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ M       │                    NULL │                  NULL │ N          │ 1956-02-15   │ T                        │ 2020-06-15        │ T                             │ 8987019460914795168  │ 8987019460914795168  │     2 │ true     │ true     │
+    │ 17447450869118724369 │ b5d0e0f7-a17e-4026-838b-35adda37716c │ 2022-08-15    │ T                         │ 15088       │ C44.3               │ 10 2022 GM             │ C44.33           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ b5d0e0f7-a17e-4026-838b-35adda37716c │    15 │ f88594a7-882a-409d-98aa-a7d3451652db │ 15-ST       │  2022 │  54.67 │ a50b54  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           1 │ W       │                    NULL │                  NULL │ N          │ 1967-12-15   │ T                        │ 2022-08-15        │ T                             │ 17447450869118724369 │ 17447450869118724369 │     2 │ true     │ true     │
+    │ 17447450869118724369 │ 8d28bd61-d9a9-444d-8215-cb56da534acc │ 2022-08-15    │ T                         │ 15088       │ C44.3               │ 10 2022 GM             │ C44.33           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 8d28bd61-d9a9-444d-8215-cb56da534acc │    15 │ f88594a7-882a-409d-98aa-a7d3451652db │ 15-ST       │  2022 │  54.67 │ a50b54  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           2 │ W       │                    NULL │                  NULL │ N          │ 1967-12-15   │ T                        │ 2022-08-15        │ T                             │ 17447450869118724369 │ 17447450869118724369 │     2 │ true     │ true     │
+    │ 1507088643629477623  │ f39d2e67-8511-47a4-8c9c-65baddb2d888 │ 2023-08-15    │ T                         │ 15082       │ C44.3               │ 10 2023 GM             │ C44.33           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ f39d2e67-8511-47a4-8c9c-65baddb2d888 │    15 │ f9495549-7a01-4a0b-aaf9-5200e45a6712 │ 15-ST       │  2023 │  70.25 │ a70b74  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                           24 │ op            │ op       │ NULL        │           7 │ M       │                    NULL │                  NULL │ N          │ 1953-05-15   │ T                        │ 2025-05-15        │ T                             │ 1507088643629477623  │ 1507088643629477623  │     2 │ true     │ true     │
+    │ 1507088643629477623  │ f1ecdc62-8873-42d1-b400-9a4fb2fa513f │ 2023-08-15    │ T                         │ 15082       │ C44.3               │ 10 2023 GM             │ C44.33           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ f1ecdc62-8873-42d1-b400-9a4fb2fa513f │    15 │ f9495549-7a01-4a0b-aaf9-5200e45a6712 │ 15-ST       │  2023 │  70.25 │ a70b74  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                           24 │ op            │ op       │ NULL        │           6 │ M       │                    NULL │                  NULL │ N          │ 1953-05-15   │ T                        │ 2025-05-15        │ T                             │ 1507088643629477623  │ 1507088643629477623  │     2 │ true     │ true     │
+    │ 4914160411120285086  │ 0b7ca9cc-e203-4a05-bb59-48ded4fcf636 │ 2021-03-15    │ T                         │ 03456       │ C61                 │ NULL                   │ C61.9            │ NULL                │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ c                 │ 1c      │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 2c      │ p                 │ 0       │ NULL              │ NULL    │ L0      │ V0      │ Pn0     │ NULL    │ NULL           │ T       │           0 │            11 │ 8140/3           │ 32                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ 3           │ 4             │ 7a            │ O                  │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ T                  │ N       │                     NULL │ 0b7ca9cc-e203-4a05-bb59-48ded4fcf636 │     3 │ fa7a5e69-6c11-433c-af5d-61fccbbd0dde │ 03-NI       │  2021 │  67.08 │ a65b69  │ C61     │ C61        │ 1c      │ 1       │ 2c      │ 2       │ 0       │ 0       │ 0       │ 0       │ 0       │ 0       │ NULL    │ NULL    │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                          114 │ op            │ op       │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1954-02-15   │ T                        │ 2025-09-15        │ T                             │ 4914160411120285086  │ 4914160411120285086  │     2 │ true     │ true     │
+    │ 4914160411120285086  │ da9e5529-1485-4f7c-8cdb-860a10d7f30d │ 2021-03-15    │ T                         │ 03456       │ C61                 │ 10 2021 GM             │ C61.9            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 2c      │ p                 │ 0       │ NULL              │ NULL    │ L0      │ V0      │ Pn0     │ NULL    │ NULL           │ T       │           0 │            11 │ 8140/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ 3           │ 4             │ 7a            │ O                  │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ T                  │ N       │                     NULL │ da9e5529-1485-4f7c-8cdb-860a10d7f30d │     3 │ fa7a5e69-6c11-433c-af5d-61fccbbd0dde │ 03-NI       │  2021 │  67.08 │ a65b69  │ C61     │ C61        │ NULL    │ NULL    │ 2c      │ 2       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ M       │                    NULL │                  NULL │ N          │ 1954-02-15   │ T                        │ 2025-09-15        │ T                             │ 4914160411120285086  │ 4914160411120285086  │     2 │ true     │ true     │
+    │ 14864787870677404620 │ 0c2d0077-4ca8-4797-a74a-812b84c2fcac │ 2016-04-15    │ T                         │ 13072       │ D03.5               │ 10 2016 GM             │ C44.53           │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ is      │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ 0              │ U       │        NULL │          NULL │ 8720/2           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 0c2d0077-4ca8-4797-a74a-812b84c2fcac │    13 │ fadbae76-df86-4b03-80bc-a7fecdde2e61 │ 13-MV       │  2016 │  74.42 │ a70b74  │ D03.5   │ D03        │ NULL    │ NULL    │ is      │ is      │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1941-11-15   │ T                        │ 2022-10-15        │ T                             │ 14864787870677404620 │ 14864787870677404620 │     2 │ true     │ true     │
+    │ 14864787870677404620 │ 2d7a3fa4-c877-4019-b51c-fe1bfe5c7830 │ 2016-04-15    │ T                         │ 13072       │ D03.5               │ 10 2016 GM             │ C44.53           │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 7             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ is      │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ 0              │ U       │        NULL │          NULL │ 8720/2           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 2d7a3fa4-c877-4019-b51c-fe1bfe5c7830 │    13 │ fadbae76-df86-4b03-80bc-a7fecdde2e61 │ 13-MV       │  2016 │  74.42 │ a70b74  │ D03.5   │ D03        │ NULL    │ NULL    │ is      │ is      │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           3 │ M       │                    NULL │                  NULL │ N          │ 1941-11-15   │ T                        │ 2022-10-15        │ T                             │ 14864787870677404620 │ 14864787870677404620 │     2 │ true     │ true     │
+    │ 8777014480197860646  │ 4df5a994-16d4-4900-b180-5766f5072272 │ 2020-11-15    │ T                         │ 07312       │ C71.2               │ 10 2020 GM             │ C71.2            │ 32                  │ 9                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL    │        NULL │          NULL │ NULL             │ NULL                │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                      426 │ 4df5a994-16d4-4900-b180-5766f5072272 │     7 │ fd6b29e3-2d36-4a03-9791-a6c62150f854 │ 07-RP       │  2020 │   83.0 │ a80b84  │ C71.2   │ C71        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              1 │              0 │              0 │ st                │                           24 │ st            │ st       │ NULL        │           1 │ W       │                     426 │                  NULL │ J          │ 1937-11-15   │ T                        │ 2022-01-15        │ T                             │ 8777014480197860646  │ 8777014480197860646  │     2 │ true     │ true     │
+    │ 8777014480197860646  │ 8dd0e2b7-a22d-4eb6-8373-d7f776a25326 │ 2020-11-15    │ T                         │ 07312       │ C71.2               │ 10 2020 GM             │ C71.2            │ 32                  │ 9                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL    │        NULL │          NULL │ NULL             │ NULL                │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                      426 │ 8dd0e2b7-a22d-4eb6-8373-d7f776a25326 │     7 │ fd6b29e3-2d36-4a03-9791-a6c62150f854 │ 07-RP       │  2020 │   83.0 │ a80b84  │ C71.2   │ C71        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ V - Vollremission (complete) │              0 │              0 │              0 │              1 │ NULL              │                         NULL │ fo            │ fo       │ NULL        │           3 │ W       │                     426 │                  NULL │ J          │ 1937-11-15   │ T                        │ 2022-01-15        │ T                             │ 8777014480197860646  │ 8777014480197860646  │     2 │ true     │ true     │
+    │ 9801472740970861758  │ 9a2aeaa9-a9a9-49ad-ba12-38dbada51c00 │ 2023-07-15    │ T                         │ 13073       │ C44.5               │ 10 2023 GM             │ C44.5            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ T       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 9a2aeaa9-a9a9-49ad-ba12-38dbada51c00 │    13 │ fd894752-9e5c-40e1-bca5-4dd55217428a │ 13-MV       │  2023 │  66.25 │ a65b69  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           4 │ W       │                    NULL │                  NULL │ N          │ 1957-04-15   │ T                        │ 2025-11-15        │ T                             │ 9801472740970861758  │ 9801472740970861758  │     3 │ true     │ true     │
+    │ 9801472740970861758  │ 5c1b968f-fca4-46a8-94ca-d9cb42c196ce │ 2023-07-15    │ T                         │ 13073       │ C44.5               │ 10 2023 GM             │ C44.5            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ T       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 5c1b968f-fca4-46a8-94ca-d9cb42c196ce │    13 │ fd894752-9e5c-40e1-bca5-4dd55217428a │ 13-MV       │  2023 │  66.25 │ a65b69  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           2 │ W       │                    NULL │                  NULL │ N          │ 1957-04-15   │ T                        │ 2025-11-15        │ T                             │ 9801472740970861758  │ 9801472740970861758  │     3 │ true     │ true     │
+    │ 9801472740970861758  │ 3ae1531b-2508-4497-8a67-b6e481a482bb │ 2023-07-15    │ T                         │ 13073       │ C44.5               │ 10 2023 GM             │ C44.5            │ 33                  │ 7                 │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ T       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 3ae1531b-2508-4497-8a67-b6e481a482bb │    13 │ fd894752-9e5c-40e1-bca5-4dd55217428a │ 13-MV       │  2023 │  66.25 │ a65b69  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              1 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           1 │ W       │                    NULL │                  NULL │ N          │ 1957-04-15   │ T                        │ 2025-11-15        │ T                             │ 9801472740970861758  │ 9801472740970861758  │     3 │ true     │ true     │
+    │ 16065109344944387030 │ 7114bd2e-7b07-4693-896c-c3f73251b6dd │ 2018-03-15    │ T                         │ 09375       │ C44.3               │ 10 2018 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 7114bd2e-7b07-4693-896c-c3f73251b6dd │     9 │ fe6e0dac-7d24-4d31-8db1-332439e9381e │ 09-BY       │  2018 │  75.17 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           3 │ M       │                    NULL │                  NULL │ N          │ 1943-01-15   │ T                        │ 2025-08-15        │ T                             │ 16065109344944387030 │ 16065109344944387030 │     2 │ true     │ true     │
+    │ 16065109344944387030 │ 3670cde0-abc2-4aea-a70b-55a5af9720eb │ 2018-03-15    │ T                         │ 09375       │ C44.3               │ 10 2018 GM             │ C44.3            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 3670cde0-abc2-4aea-a70b-55a5af9720eb │     9 │ fe6e0dac-7d24-4d31-8db1-332439e9381e │ 09-BY       │  2018 │  75.17 │ a75b79  │ C44.3   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ M       │                    NULL │                  NULL │ N          │ 1943-01-15   │ T                        │ 2025-08-15        │ T                             │ 16065109344944387030 │ 16065109344944387030 │     2 │ true     │ true     │
+    │ 12545698873693664614 │ c4364a58-e916-4494-9c15-0c14adea8f3b │ 2023-08-15    │ T                         │ 16077       │ D03.5               │ 10 2023 GM             │ C44.53           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ is      │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8742/2           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ c4364a58-e916-4494-9c15-0c14adea8f3b │    16 │ ffb3caf7-c25d-4efc-bd43-76065d8e299e │ 16-TH       │  2023 │  64.17 │ a60b64  │ D03.5   │ D03        │ NULL    │ NULL    │ is      │ is      │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           2 │ W       │                    NULL │                  NULL │ N          │ 1959-06-15   │ T                        │ 2023-08-15        │ T                             │ 12545698873693664614 │ 12545698873693664614 │     2 │ true     │ true     │
+    │ 12545698873693664614 │ 7ea54802-f1a4-46e3-b5fa-9a3322b8e39f │ 2023-08-15    │ T                         │ 16077       │ D03.5               │ 10 2023 GM             │ C44.53           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ is      │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ T       │        NULL │          NULL │ 8742/2           │ 33                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ R                  │ N       │                     NULL │ 7ea54802-f1a4-46e3-b5fa-9a3322b8e39f │    16 │ ffb3caf7-c25d-4efc-bd43-76065d8e299e │ 16-TH       │  2023 │  64.17 │ a60b64  │ D03.5   │ D03        │ NULL    │ NULL    │ is      │ is      │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           1 │ W       │                    NULL │                  NULL │ N          │ 1959-06-15   │ T                        │ 2023-08-15        │ T                             │ 12545698873693664614 │ 12545698873693664614 │     2 │ true     │ true     │
+    │ 3101156069555501791  │ aeb50e57-709e-452f-bc70-a1a3355ec374 │ 2017-07-15    │ T                         │ 15086       │ C44.5               │ 10 2017 GM             │ C44.5            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ 2       │        NULL │          NULL │ 8071/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     2230 │ aeb50e57-709e-452f-bc70-a1a3355ec374 │    15 │ ffe646a2-1bc5-4aae-b59a-1de05bdbcf27 │ 15-ST       │  2017 │  61.92 │ a60b64  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ NULL                         │              0 │              0 │              0 │              0 │ NULL              │                         NULL │ NULL          │ -        │ NULL        │           3 │ M       │                    2230 │                  NULL │ J          │ 1955-08-15   │ T                        │ 2023-09-15        │ T                             │ 3101156069555501791  │ 3101156069555501791  │     2 │ true     │ true     │
+    │ 3101156069555501791  │ da840a88-ed4d-4bc1-86a7-868614198027 │ 2017-07-15    │ T                         │ 15086       │ C44.5               │ 10 2017 GM             │ C44.5            │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ 8             │ NULL       │ NULL       │ NULL       │ NULL       │ p                 │ 1       │ c                 │ 0       │ c                 │ 0       │ NULL    │ NULL    │ NULL    │ NULL    │ I              │ 2       │        NULL │          NULL │ 8071/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ M                  │ N       │                     2230 │ da840a88-ed4d-4bc1-86a7-868614198027 │    15 │ ffe646a2-1bc5-4aae-b59a-1de05bdbcf27 │ 15-ST       │  2017 │  61.92 │ a60b64  │ C44.5   │ C44        │ NULL    │ NULL    │ 1       │ 1       │ NULL    │ NULL    │ 0       │ 0       │ NULL    │ NULL    │ 0       │ 0       │ 0        │ false    │ V - Vollremission (complete) │              1 │              0 │              0 │              1 │ op                │                            0 │ fo-op         │ op|fo    │ NULL        │           2 │ M       │                    2230 │                  NULL │ J          │ 1955-08-15   │ T                        │ 2023-09-15        │ T                             │ 3101156069555501791  │ 3101156069555501791  │     2 │ true     │ true     │
+    │ 14976922600554885008 │ 6bcd0cee-6983-4c55-a092-9f4197d96fa2 │ 2014-07-15    │ T                         │ 15091       │ C44.6               │ 10 2014 GM             │ C44.61           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 6bcd0cee-6983-4c55-a092-9f4197d96fa2 │    15 │ fff14cbd-f533-4630-8d7f-2659624b37f6 │ 15-ST       │  2014 │  77.33 │ a75b79  │ C44.6   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ NULL                         │              2 │              0 │              0 │              0 │ op                │                            0 │ op            │ op       │ NULL        │           3 │ M       │                    NULL │                  NULL │ N          │ 1937-03-15   │ T                        │ 2021-02-15        │ T                             │ 14976922600554885008 │ 14976922600554885008 │     2 │ true     │ true     │
+    │ 14976922600554885008 │ 122c8fa4-413f-474b-947e-b633b7b0417c │ 2014-07-15    │ T                         │ 15091       │ C44.6               │ 10 2014 GM             │ C44.61           │ 33                  │ 71                │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ NULL          │ NULL       │ NULL       │ NULL       │ NULL       │ NULL              │ NULL    │ NULL              │ NULL    │ NULL              │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL           │ U       │        NULL │          NULL │ 8090/3           │ 31                  │ NULL                                 │ NULL                           │ NULL                             │ NULL          │                NULL │             NULL │ NULL        │                       NULL │ NULL        │ NULL          │ NULL          │ NULL               │  NULL │ NULL     │ NULL                 │       NULL │  NULL │ NULL       │ L                  │ N       │                     NULL │ 122c8fa4-413f-474b-947e-b633b7b0417c │    15 │ fff14cbd-f533-4630-8d7f-2659624b37f6 │ 15-ST       │  2014 │  77.33 │ a75b79  │ C44.6   │ C44        │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL    │ NULL     │ false    │ V - Vollremission (complete) │              2 │              0 │              0 │              1 │ op                │                            0 │ op-fo         │ op|fo    │ NULL        │           8 │ M       │                    NULL │                  NULL │ N          │ 1937-03-15   │ T                        │ 2021-02-15        │ T                             │ 14976922600554885008 │ 14976922600554885008 │     2 │ true     │ true     │
+    └──────────────────────┴──────────────────────────────────────┴───────────────┴───────────────────────────┴─────────────┴─────────────────────┴────────────────────────┴──────────────────┴─────────────────────┴───────────────────┴───────────────┴────────────┴────────────┴────────────┴────────────┴───────────────────┴─────────┴───────────────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┴────────────────┴───────────────┴────────────┴────────────┴────────────┴────────────┴───────────────────┴─────────┴───────────────────┴─────────┴───────────────────┴─────────┴─────────┴─────────┴─────────┴─────────┴────────────────┴─────────┴─────────────┴───────────────┴──────────────────┴─────────────────────┴──────────────────────────────────────┴────────────────────────────────┴──────────────────────────────────┴───────────────┴─────────────────────┴──────────────────┴─────────────┴────────────────────────────┴─────────────┴───────────────┴───────────────┴────────────────────┴───────┴──────────┴──────────────────────┴────────────┴───────┴────────────┴────────────────────┴─────────┴──────────────────────────┴──────────────────────────────────────┴───────┴──────────────────────────────────────┴─────────────┴───────┴────────┴─────────┴─────────┴────────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴──────────┴──────────┴──────────────────────────────┴────────────────┴────────────────┴────────────────┴────────────────┴───────────────────┴──────────────────────────────┴───────────────┴──────────┴─────────────┴─────────────┴─────────┴─────────────────────────┴───────────────────────┴────────────┴──────────────┴──────────────────────────┴───────────────────┴───────────────────────────────┴──────────────────────┴──────────────────────┴───────┴──────────┴──────────┘
 ```
 
-      943 rows (50 shown)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           33 columns
+      953 rows (50 shown)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              115 columns
     
 
 
@@ -998,275 +863,263 @@ Tests:
 
 ## <a id='toc1_8_'></a>[Datensatz](#toc0_)
 
+### <a id='toc1_8_1_'></a>[epi](#toc0_)
+
     🔵 *** df: Tumor (id excluded) ***  
-    🟣 shape: (4_062_856, 101)
-
-
-    🟣 duplicates: 871 (0%)  
+    🟣 shape: (1_000, 50)
+    🟣 duplicates: 0 (0%)  
     🟠 column stats all (dtype | uniques | missings) [values]  
     - index [0, 1, 2, 3, 4,]  
-    - Diagnosedatum (datetime64[us] | 723 | 0 (0%)) [1900-04-01 00:00:00, 1937-07-15 00:00:00, 1941-01-15 00:00:00, 1945-07-01 00:00:00,  
-    1948-03-15 00:00:00,]  
-    - Diagnosedatum_Genauigkeit (object | 3 | 0 (0%)) ['M', 'T', 'V',]  
-
-
-    - Inzidenzort (object | 495 | 183 (0%)) ['01001', '01002', '01003', '01004', '01051',]  
-    - Diagnose_ICD10_Code (object | 888 | 482 (0%)) ['<NA>', 'C00', 'C00.0', 'C00.1', 'C00.2',]  
-
-
-    - Diagnose_ICD10_Version (object | 27 | 85_396 (2%)) ['10 2004 GM', '10 2005 GM', '10 2006 GM', '10 2008 GM', '10 2009 GM',]  
-    - Topographie_Code (object | 709 | 29_133 (1%)) ['<NA>', 'C00.0', 'C00.1', 'C00.2', 'C00.3',]  
-
-
-    - Topographie_Version (object | 4 | 128_967 (3%)) ['31', '32', '33', '<NA>',]  
-    - Diagnosesicherung (object | 12 | 0 (0%)) ['0', '1', '2', '4', '5',]  
-
-
-    - TNM_Auflage_c (object | 5 | 1_777_523 (44%)) ['6', '7', '8', '9', '<NA>',]  
-
-
-    - y_Symbol_c (object | 2 | 4_061_170 (100%)) ['<NA>', 'y',]  
-
-
-    - r_Symbol_c (object | 2 | 4_062_840 (100%)) ['<NA>', 'r',]  
-
-
-    - a_Symbol_c (object | 2 | 4_062_381 (100%)) ['<NA>', 'a',]  
-
-
-    - m_Symbol_c (object | 44 | 3_983_927 (98%)) ['(m)', '0', '1', '10', '108',]  
-
-
-    - c_p_u_Praefix_T_c (object | 4 | 2_699_287 (66%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - T_c (object | 213 | 2_501_324 (62%)) ['0', '0(is)', '1', '1 (is)', '1 (m)',]  
-
-
-    - c_p_u_Praefix_N_c (object | 4 | 2_629_182 (65%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - N_c (object | 195 | 2_441_308 (60%)) ['+', '0', '0 (0/14)', '0 (0/16)', '0 (0/31)',]  
-
-
-    - c_p_u_Praefix_M_c (object | 4 | 2_551_763 (63%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - M_c (object | 45 | 2_369_803 (58%)) ['0', '0 (mind.)', '0(0)', '0(0/3sn)', '0(1)',]  
-
-
-    - L_c (object | 4 | 3_526_092 (87%)) ['<NA>', 'L0', 'L1', 'LX',]  
-
-
-    - V_c (object | 5 | 3_617_355 (89%)) ['<NA>', 'V0', 'V1', 'V2', 'VX',]  
-
-
-    - Pn_c (object | 4 | 3_614_373 (89%)) ['<NA>', 'Pn0', 'Pn1', 'PnX',]  
-
-
-    - S_c (object | 6 | 4_022_985 (99%)) ['<NA>', 'S0', 'S1', 'S2', 'S3',]  
-
-
-    - UICC_Stadium_c (object | 36 | 3_174_176 (78%)) ['0', '0a', '0is', '<NA>', 'I',]  
-    - TNM_Auflage_p (object | 5 | 1_555_895 (38%)) ['6', '7', '8', '9', '<NA>',]  
-
-
-    - y_Symbol_p (object | 2 | 3_964_175 (98%)) ['<NA>', 'y',]  
-
-
-    - r_Symbol_p (object | 2 | 4_062_813 (100%)) ['<NA>', 'r',]  
-
-
-    - a_Symbol_p (object | 2 | 4_062_480 (100%)) ['<NA>', 'a',]  
-
-
-    - m_Symbol_p (object | 53 | 4_005_552 (99%)) ['(2)', '(5)', '(m)', '0', '1',]  
-
-
-    - c_p_u_Praefix_T_p (object | 4 | 2_095_432 (52%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - T_p (object | 562 | 2_093_497 (52%)) ['0', '0 (bifokal)', '0 (is)', '0(DCIS)', '0(bizentrisch)',]  
-
-
-    - c_p_u_Praefix_N_p (object | 4 | 2_695_918 (66%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - N_p (object | 3_694 | 2_581_190 (64%)) ['0', '0  (sn)', '0  (sn))', '0  (sn, i-)', '0 (-i)',]  
-
-
-    - c_p_u_Praefix_M_p (object | 4 | 2_987_068 (74%)) ['<NA>', 'c', 'p', 'u',]  
-
-
-    - M_p (object | 52 | 2_826_246 (70%)) ['0', '0(0)', '0(0/20', '0(0/9)', '0(1)',]  
-
-
-    - L_p (object | 4 | 3_141_710 (77%)) ['<NA>', 'L0', 'L1', 'LX',]  
-
-
-    - V_p (object | 5 | 3_161_220 (78%)) ['<NA>', 'V0', 'V1', 'V2', 'VX',]  
-
-
-    - Pn_p (object | 4 | 3_360_612 (83%)) ['<NA>', 'Pn0', 'Pn1', 'PnX',]  
-
-
-    - S_p (object | 6 | 4_023_422 (99%)) ['<NA>', 'S0', 'S1', 'S2', 'S3',]  
-
-
-    - UICC_Stadium_p (object | 36 | 3_158_584 (78%)) ['0', '0a', '0is', '<NA>', 'I',]  
-    - Grading (object | 13 | 94_387 (2%)) ['0', '1', '2', '3', '4',]  
-    - LK_befallen (Int32 | 88 | 3_262_737 (80%)) [0, 1, 2, 3, 4,]  
-    - LK_untersucht (Int32 | 197 | 3_088_600 (76%)) [0, 1, 2, 3, 4,]  
-
-
-    - Morphologie_Code (object | 1_401 | 94_387 (2%)) ['0000/0', '5255/3', '7432/0', '8000/0', '8000/1',]  
-    - Morphologie_Version (object | 5 | 188_295 (5%)) ['31', '32', '33', '<NA>', 'bb',]  
-
-
-    - Praetherapeutischer_Menopausenstatus (object | 4 | 3_775_123 (93%)) ['1', '3', '<NA>', 'U',]  
-
-
-    - HormonrezeptorStatus_Oestrogen (object | 4 | 3_704_793 (91%)) ['<NA>', 'N', 'P', 'U',]  
-
-
-    - HormonrezeptorStatus_Progesteron (object | 4 | 3_707_736 (91%)) ['<NA>', 'N', 'P', 'U',]  
-
-
-    - Her2neuStatus (object | 4 | 3_695_913 (91%)) ['<NA>', 'N', 'P', 'U',]  
-    - TumorgroesseInvasiv (Int32 | 211 | 3_854_180 (95%)) [0, 1, 2, 3, 4,]  
-    - TumorgroesseDCIS (Int32 | 174 | 3_961_718 (98%)) [0, 1, 2, 3, 4,]  
-
-
-    - RASMutation (object | 5 | 3_987_833 (98%)) ['<NA>', 'M', 'N', 'U', 'W',]  
-    - RektumAbstandAnokutanlinie (Int32 | 101 | 4_020_045 (99%)) [0, 1, 2, 3, 4,]  
-
-
-    - GradPrimaer (object | 6 | 3_816_197 (94%)) ['1', '2', '3', '4', '5',]  
-
-
-    - GradSekundaer (object | 6 | 3_816_214 (94%)) ['1', '2', '3', '4', '5',]  
-
-
-    - ScoreErgebnis (object | 12 | 3_745_551 (92%)) ['10', '2', '3', '4', '5',]  
-
-
-    - AnlassGleasonScore (object | 4 | 3_818_355 (94%)) ['<NA>', 'O', 'S', 'U',]  
-    - PSA (float32 | 12_956 | 3_815_447 (94%)) [0.0, 0.009999999776482582, 0.019999999552965164, 0.029999999329447746, 0.03999999910593033,]  
-    - DatumPSA (datetime64[us] | 273 | 2_887_990 (71%)) [0002-07-15 00:00:00, 0202-06-15 00:00:00, 0202-12-15 00:00:00, 0210-08-15 00:00:00,  
-    0221-07-15 00:00:00,]  
-
-
-    - DatumPSA_Genauigkeit (object | 3 | 2_887_990 (71%)) ['<NA>', 'T', 'V',]  
-    - Tumordicke (float32 | 286 | 4_003_801 (99%)) [0.009999999776482582, 0.05000000074505806, 0.10000000149011612, 0.12999999523162842,  
-    0.14000000059604645,]  
-    - LDH (Int32 | 515 | 4_054_773 (100%)) [1, 2, 5, 7, 10,]  
-
-
-    - Ulzeration (object | 3 | 4_024_740 (99%)) ['<NA>', 'J', 'N',]  
-    - Seitenlokalisation (object | 6 | 0 (0%)) ['B', 'L', 'M', 'R', 'T',]  
-    - DCN (object | 2 | 0 (0%)) ['J', 'N',]  
-    - Anzahl_Tage_Diagnose_Tod (Int32 | 11_571 | 2_894_405 (71%)) [-7324, -6000, -2433, -2344, -347,]  
-    - z_kkr (int8 | 16 | 0 (0%)) [1, 2, 3, 4, 5,]  
-
-
-    - z_kkr_label (object | 16 | 0 (0%)) ['01-SH', '02-HH', '03-NI', '04-HB', '05-NW',]  
-    - z_dy (int16 | 77 | 0 (0%)) [1900, 1937, 1941, 1945, 1948,]  
-    - z_age (float64 | 2_178 | 0 (0%)) [-122.0, -121.0, -118.67, -118.25, -112.5,]  
-
-
-    - z_ag05 (object | 19 | 5_811 (0%)) ['<NA>', 'a00b04', 'a05b09', 'a10b14', 'a15b19',]  
-    - z_icd10 (object | 594 | 2_444 (0%)) ['<NA>', 'C00.0', 'C00.1', 'C00.2', 'C00.3',]  
-
-
-    - z_icd10_3d (object | 110 | 2_444 (0%)) ['<NA>', 'C00', 'C01', 'C02', 'C03',]  
-
-
-    - z_t_c_0 (object | 43 | 2_501_327 (62%)) ['0', '1', '1a', '1a1', '1a2',]  
-
-
-    - z_t_c_1 (object | 9 | 2_501_327 (62%)) ['0', '1', '2', '3', '4',]  
-
-
-    - z_t_p_0 (object | 43 | 2_093_499 (52%)) ['0', '1', '1a', '1a1', '1a2',]  
-
-
-    - z_t_p_1 (object | 9 | 2_093_499 (52%)) ['0', '1', '2', '3', '4',]  
-
-
-    - z_n_c_0 (object | 29 | 2_441_655 (60%)) ['0', '0(i+)', '0(i+)(sn)', '0(i-)', '0(i-)(sn)',]  
-
-
-    - z_n_c_1 (object | 6 | 2_441_655 (60%)) ['0', '1', '2', '3', '<NA>',]  
-
-
-    - z_n_p_0 (object | 29 | 2_581_195 (64%)) ['0', '0(i+)', '0(i+)(sn)', '0(i-)', '0(i-)(sn)',]  
-
-
-    - z_n_p_1 (object | 6 | 2_581_195 (64%)) ['0', '1', '2', '3', '<NA>',]  
-
-
-    - z_m_c_0 (object | 22 | 2_388_689 (59%)) ['0', '0(0)', '0(1)', '0(i+)', '0(i-)',]  
-
-
-    - z_m_c_1 (object | 3 | 2_388_689 (59%)) ['0', '1', '<NA>',]  
-
-
-    - z_m_p_0 (object | 22 | 2_861_041 (70%)) ['0', '0(0)', '0(1)', '0(i+)', '0(i-)',]  
-
-
-    - z_m_p_1 (object | 3 | 2_861_041 (70%)) ['0', '1', '<NA>',]  
-    - z_m_pc_1 (object | 3 | 1_666_315 (41%)) ['0', '1', '<NA>',]  
-    - z_is_dco (bool | 2 | 0 (0%)) [False, True,]  
-
-
-    - z_last_tum_status (object | 11 | 2_787_054 (69%)) ['<NA>', 'B - klinische Besserung des Zustandes', 'D - divergentes Geschehen',  
-    'K - keine Änderung', 'P - Progression',]  
-    - z_tum_op_count (int16 | 25 | 0 (0%)) [0, 1, 2, 3, 4,]  
-    - z_tum_st_count (int16 | 40 | 0 (0%)) [0, 1, 2, 3, 4,]  
-    - z_tum_sy_count (int16 | 27 | 0 (0%)) [0, 1, 2, 3, 4,]  
-    - z_tum_fo_count (int16 | 38 | 0 (0%)) [0, 1, 2, 3, 4,]  
-
-
-    - z_first_treatment (object | 4 | 1_785_043 (44%)) ['<NA>', 'op', 'st', 'sy',]  
-    - z_first_treatment_after_days (Int32 | 2_092 | 1_785_043 (44%)) [0, 1, 2, 3, 4,]  
-
-
-    - z_event_order (object | 17_695 | 1_542_034 (38%)) ['<NA>', 'fo', 'fo-op', 'fo-op-fo', 'fo-op-fo-op',]  
-    - z_events (object | 16 | 0 (0%)) ['-', 'fo', 'op', 'op|fo', 'op|st',]  
-
-
-    - z_class_hpv (object | 4 | 4_015_933 (99%)) ['<NA>', 'N', 'P', 'U',]  
-    - z_tum_order (int8 | 49 | 0 (0%)) [1, 2, 3, 4, 5,]  
-    - z_sex (object | 5 | 0 (0%)) ['D', 'M', 'U', 'W', 'X',]  
-    - z_period_diag_death_day (Int32 | 11_559 | 2_862_033 (70%)) [0, 1, 2, 3, 4,]  
-    - z_period_diag_psa_day (Int32 | 509 | 3_850_626 (95%)) [-3623, -3592, -3561, -3530, -3502,]  
+    - GLOBALPATID (object | 982 | 0 (0%)) ['010000002132', '010000004272', '010000007782', '010000018611', '010000018649',]  
+    - GLOBALID (object | 1_000 | 0 (0%)) ['010000000001', '010000000002', '010000000003', '010000000004', '010000000005',]  
+    - EKRNR (object | 1 | 0 (0%)) ['01',]  
+    - SEX (int8 | 2 | 0 (0%)) [1, 2,]  
+    - GDIMP (datetime64[us] | 471 | 0 (0%)) [1920-02-15 00:00:00, 1920-07-15 00:00:00, 1922-09-15 00:00:00, 1924-02-15 00:00:00,  
+    1924-12-15 00:00:00,]  
+    - GKZlk (object | 15 | 0 (0%)) ['01001', '01002', '01003', '01004', '01051',]  
+    - GKZrb (object | 1 | 0 (0%)) ['010',]  
+    - GKZbl (object | 1 | 0 (0%)) ['01',]  
+    - DALTIMP (float64 | 487 | 0 (0%)) [3.75, 5.83333, 20.75, 21.1667, 22.0833,]  
+    - ALTGRP (object | 16 | 0 (0%)) ['a00b04', 'a05b09', 'a20b24', 'a25b29', 'a30b34',]  
+    - ICDGM10 (object | 170 | 0 (0%)) ['C069', 'C098', 'C111', 'C158', 'C159',]  
+    - ICDGM10_02 (object | 174 | 0 (0%)) ['C06.9', 'C09.8', 'C11.1', 'C15.8', 'C15.9',]  
+    - ICDGM10_03 (object | 174 | 0 (0%)) ['C069', 'C098', 'C111', 'C158', 'C159',]  
+    - HISC (object | 122 | 0 (0%)) ['8000', '8004', '8010', '8013', '8020',]  
+    - HISC_02 (object | 133 | 0 (0%)) ['8000/1', '8000/3', '8004/3', '8010/2', '8010/3',]  
+    - HISC_03 (object | 122 | 0 (0%)) ['8000', '8004', '8010', '8013', '8020',]  
+    - DIG (int16 | 3 | 0 (0%)) [1, 2, 3,]  
+    - DIG_03 (int16 | 3 | 0 (0%)) [1, 2, 3,]  
+    - ICDO3 (object | 115 | 0 (0%)) ['C069', 'C079', 'C098', 'C111', 'C158',]  
+    - ICDO3_02 (object | 115 | 0 (0%)) ['C06.9', 'C07.9', 'C09.8', 'C11.1', 'C15.8',]  
+    - ICDO3_03 (object | 115 | 0 (0%)) ['C069', 'C079', 'C098', 'C111', 'C158',]  
+    - LOKS (object | 5 | 167 (17%)) ['1', '2', '3', '4', '<NA>',]  
+    - DDIMP (datetime64[us] | 59 | 0 (0%)) [1998-07-15 00:00:00, 1999-07-15 00:00:00, 2000-07-15 00:00:00, 2001-07-15 00:00:00,  
+    2004-07-15 00:00:00,]  
+    - DJ (int16 | 15 | 0 (0%)) [1998, 1999, 2000, 2001, 2004,]  
+    - TUMID (Int8 | 6 | 1 (0%)) [1, 2, 3, 4, 5,]  
+    - TUMID2 (Int8 | 5 | 473 (47%)) [1, 2, 3, 4, <NA>,]  
+    - TUMID3 (Int8 | 5 | 485 (48%)) [1, 2, 3, 4, <NA>,]  
+    - DSICH (Int32 | 8 | 119 (12%)) [1, 2, 3, 4, 5,]  
+    - DCO (int32 | 2 | 0 (0%)) [1, 2,]  
+    - TNMAUFL (int32 | 4 | 0 (0%)) [5, 6, 7, 8,]  
+    - TNMTKURZ (object | 21 | 306 (31%)) ['0', '1', '1a', '1b', '1b1',]  
+    - TNMNKURZ (object | 11 | 309 (31%)) ['0', '1', '1a', '1b', '2',]  
+    - TNMMKURZ (object | 6 | 554 (55%)) ['0', '1', '1a', '1b', '1c',]  
+    - UICC (object | 5 | 820 (82%)) ['<NA>', 'I', 'II', 'III', 'IV',]  
+    - TOD (int32 | 2 | 0 (0%)) [1, 2,]  
+    - SDIMP (datetime64[us] | 84 | 604 (60%)) [2010-02-15 00:00:00, 2017-01-15 00:00:00, 2018-02-15 00:00:00, 2018-03-15 00:00:00,  
+    2018-04-15 00:00:00,]  
+    - ICDT10 (object | 126 | 596 (60%)) ['<NA>', 'A411', 'A419', 'C049', 'C069',]  
+    - ICDTAUFL (object | 1 | 0 (0%)) ['10',]  
+    - GRAD (Int16 | 7 | 660 (66%)) [1, 2, 3, 4, 5,]  
+    - TNMTC (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - TNMNC (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - TNMMC (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - TNMPT (object | 3 | 354 (35%)) ['1', '2', '<NA>',]  
+    - TNMPN (object | 3 | 450 (45%)) ['1', '2', '<NA>',]  
+    - TNMPM (object | 3 | 736 (74%)) ['1', '2', '<NA>',]  
+    - AUT (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - IARC (object | 11 | 948 (95%)) [' | A_Mehrfachmeldung', ' | B_DALT_HISC_ICD10_unplausibel', ' | B_DSICH_HISC_unplausibel',  
+    ' | B_GRAD_HISC_unplausibel', ' | B_HISC_ICDO3_unplausibel',]  
+    - ZTYP (Int16 | 3 | 986 (99%)) [5, 6, <NA>,]  
+    - is_deleted (int8 | 2 | 0 (0%)) [0, 1,]  
+    - CREATED (datetime64[us] | 1 | 0 (0%)) [2026-05-13 09:31:01,]  
     
     🟠 column stats numeric  
+    
+    column (n = 1_000) |   notnull    |  min  | lower  |    q25    |  median   |   mean    |    q75    | upper  |  max   |  std   |   cv  
+    -------------------+--------------+-------+--------+-----------+-----------+-----------+-----------+--------+--------+--------+-------
+    SEX                | 1_000 (100%) |     1 |      1 |     1.000 |     1.000 |     1.466 |     2.000 |      2 |      2 |  0.499 |  0.340
+    DALTIMP            | 1_000 (100%) | 3.750 | 34.417 |    61.500 |    72.792 |    69.640 |    79.750 | 97.583 | 97.583 | 14.176 |  0.204
+    DIG                | 1_000 (100%) |     1 |      3 |     3.000 |     3.000 |     2.812 |     3.000 |      3 |      3 |  0.421 |  0.150
+    DIG_03             | 1_000 (100%) |     1 |      3 |     3.000 |     3.000 |     2.813 |     3.000 |      3 |      3 |  0.420 |  0.149
+    DJ                 | 1_000 (100%) |  1998 |   2015 | 2_018.000 | 2_018.000 | 2_018.551 | 2_020.000 |   2020 |   2020 |  1.691 |  0.001
+    TUMID              |    999 (99%) |     1 |      1 |     1.000 |     1.000 |     1.372 |     2.000 |      3 |      5 |  0.662 |  0.482
+    TUMID2             |    527 (52%) |     1 |      1 |     1.000 |     1.000 |     1.154 |     1.000 |      1 |      4 |  0.424 |  0.367
+    TUMID3             |    515 (51%) |     1 |      1 |     1.000 |     1.000 |     1.146 |     1.000 |      1 |      4 |  0.414 |  0.361
+    DSICH              |    881 (88%) |     1 |      7 |     7.000 |     7.000 |     6.856 |     7.000 |      7 |      7 |  0.738 |  0.108
+    DCO                | 1_000 (100%) |     1 |      2 |     2.000 |     2.000 |     1.998 |     2.000 |      2 |      2 |  0.045 |  0.022
+    TNMAUFL            | 1_000 (100%) |     5 |      8 |     8.000 |     8.000 |     7.937 |     8.000 |      8 |      8 |  0.292 |  0.037
+    TOD                | 1_000 (100%) |     1 |      1 |     1.000 |     2.000 |     1.596 |     2.000 |      2 |      2 |  0.491 |  0.308
+    GRAD               |    340 (34%) |     1 |      1 |     2.000 |     2.000 |     2.282 |     3.000 |      4 |      7 |  1.049 |  0.460
+    ZTYP               |      14 (1%) |     5 |      6 |     6.000 |     6.000 |     5.929 |     6.000 |      6 |      6 |  0.267 |  0.045
+    is_deleted         | 1_000 (100%) |     0 |      0 |     0.000 |     0.000 |     0.001 |     0.000 |      0 |      1 |  0.032 | 31.623
+    
+    
+    🟠 sample 3 rows  
+
+
+
+
+```
+
+```
+
+
+```
+    ┌──────────────┬──────────────┬─────────┬──────┬───┬─────────┬───────┬────────────┬─────────────────────┐
+    │ GLOBALPATID  │   GLOBALID   │  EKRNR  │ SEX  │ … │  IARC   │ ZTYP  │ is_deleted │       CREATED       │
+    ├──────────────┼──────────────┼─────────┼──────┼───┼─────────┼───────┼────────────┼─────────────────────┤
+    │ 010000571113 │ 010000000001 │ 01      │    1 │ … │ NULL    │  NULL │          0 │ 2026-05-13 09:31:01 │
+    │ 010000566613 │ 010000000002 │ 01      │    1 │ … │ NULL    │  NULL │          0 │ 2026-05-13 09:31:01 │
+    │ 010000297333 │ 010000000003 │ 01      │    1 │ … │ NULL    │  NULL │          0 │ 2026-05-13 09:31:01 │
+    └──────────────┴──────────────┴─────────┴──────┴───┴─────────┴───────┴────────────┴─────────────────────┘
+```
+
+      3 rows                                                                           50 columns (8 shown)
+    
+
 
 
     
-    column (n = 4_062_856)       |     notnull      |   min    | lower  |    q25    |  median   |   mean    |    q75    |  upper  |    max     |    std    |   cv   
-    -----------------------------+------------------+----------+--------+-----------+-----------+-----------+-----------+---------+------------+-----------+--------
-    LK_befallen                  |    800_119 (19%) |        0 |      0 |     0.000 |     0.000 |     0.918 |     0.000 |       0 |        722 |     3.078 |   3.354
-    LK_untersucht                |    974_256 (23%) |        0 |      0 |     1.000 |     5.000 |    10.636 |    17.000 |      41 |      2_319 |    13.656 |   1.284
-    TumorgroesseInvasiv          |     208_676 (5%) |        0 |      0 |     9.000 |    15.000 |    19.617 |    25.000 |      49 |        999 |    19.210 |   0.979
-    TumorgroesseDCIS             |     101_138 (2%) |        0 |      0 |     0.000 |     0.000 |    10.968 |    15.000 |      37 |        999 |    20.488 |   1.868
-    RektumAbstandAnokutanlinie   |      42_811 (1%) |        0 |      0 |     5.000 |     9.000 |    11.289 |    14.000 |      27 |        930 |    16.996 |   1.506
-    PSA                          |     247_409 (6%) |    0.000 |  0.000 |     5.630 |     8.740 |    90.354 |    18.000 |  36.550 | 99_999.000 |   741.810 |   8.210
-    Tumordicke                   |      59_055 (1%) |    0.010 |  0.010 |     0.400 |     0.900 |     1.950 |     2.200 |   4.900 |     99.000 |     3.516 |   1.804
-    LDH                          |       8_083 (0%) |        1 |     85 |   173.000 |   198.000 |   223.739 |   232.000 |     320 |      5_756 |   207.009 |   0.925
-    Anzahl_Tage_Diagnose_Tod     |  1_168_451 (28%) |   -7_324 |   -347 |    53.000 |   262.000 |   660.850 |   714.000 |   1_705 |     30_590 | 1_280.215 |   1.937
-    z_kkr                        | 4_062_856 (100%) |        1 |      1 |     5.000 |     8.000 |     7.806 |    10.000 |      16 |         16 |     3.918 |   0.502
-    z_dy                         | 4_062_856 (100%) |     1900 |   2018 | 2_021.000 | 2_022.000 | 2_021.201 | 2_023.000 |    2026 |       2026 |     5.614 |   0.003
-    z_age                        | 4_062_856 (100%) | -122.000 | 30.250 |    59.670 |    70.000 |    68.026 |    79.330 | 108.500 |    983.330 |    15.271 |   0.224
-    z_tum_op_count               | 4_062_856 (100%) |        0 |      0 |     0.000 |     0.000 |     0.522 |     1.000 |       2 |         43 |     0.747 |   1.431
-    z_tum_st_count               | 4_062_856 (100%) |        0 |      0 |     0.000 |     0.000 |     0.173 |     0.000 |       0 |        148 |     0.536 |   3.100
-    z_tum_sy_count               | 4_062_856 (100%) |        0 |      0 |     0.000 |     0.000 |     0.395 |     0.000 |       0 |         57 |     0.915 |   2.319
-    z_tum_fo_count               | 4_062_856 (100%) |        0 |      0 |     0.000 |     0.000 |     0.842 |     1.000 |       2 |         43 |     1.945 |   2.311
-    z_first_treatment_after_days |  2_277_813 (56%) |        0 |      0 |     0.000 |    22.000 |    47.588 |    48.000 |     120 |      3_554 |   114.987 |   2.416
-    z_tum_order                  | 4_062_856 (100%) |        1 |      1 |     1.000 |     1.000 |     1.220 |     1.000 |       1 |         49 |     0.740 |   0.606
-    z_period_diag_death_day      |  1_200_823 (29%) |        0 |      0 |    54.000 |   261.000 |   653.261 |   709.000 |   1_691 |     30_590 | 1_265.148 |   1.937
-    z_period_diag_psa_day        |     212_230 (5%) |   -3_623 |      0 |     0.000 |     0.000 |    -8.359 |     0.000 |       0 |      3_410 |   112.193 | -13.422
+<img alt="svg" src="tech_files/output_94_4.svg">
+    
+
+
+
+    
+<img alt="png" src="tech_files/output_94_5.png">
+    
+
+
+
+<br>
+
+### <a id='toc1_8_2_'></a>[klin](#toc0_)
+
+    🔵 *** df: Tumor (id excluded) ***  
+    🟣 shape: (1_000, 101)
+    🟣 duplicates: 0 (0%)  
+    🟠 column stats all (dtype | uniques | missings) [values]  
+    - index [0, 1, 2, 3, 4,]  
+    - Diagnosedatum (datetime64[us] | 147 | 0 (0%)) [1900-04-01 00:00:00, 1982-07-01 00:00:00, 1994-01-15 00:00:00, 1997-04-15 00:00:00,  
+    1998-05-15 00:00:00,]  
+    - Diagnosedatum_Genauigkeit (object | 3 | 0 (0%)) ['M', 'T', 'V',]  
+    - Inzidenzort (object | 280 | 0 (0%)) ['01001', '01002', '01003', '01051', '01053',]  
+    - Diagnose_ICD10_Code (object | 216 | 0 (0%)) ['C00.1', 'C01', 'C02.1', 'C02.2', 'C02.9',]  
+    - Diagnose_ICD10_Version (object | 15 | 21 (2%)) ['10 2013 GM', '10 2014 GM', '10 2015 GM', '10 2016 GM', '10 2017 GM',]  
+    - Topographie_Code (object | 187 | 0 (0%)) ['C00.1', 'C01.9', 'C02.0', 'C02.1', 'C02.2',]  
+    - Topographie_Version (object | 4 | 26 (3%)) ['31', '32', '33', '<NA>',]  
+    - Diagnosesicherung (object | 9 | 0 (0%)) ['0', '1', '2', '5', '6',]  
+    - TNM_Auflage_c (object | 4 | 618 (62%)) ['6', '7', '8', '<NA>',]  
+    - y_Symbol_c (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - r_Symbol_c (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - a_Symbol_c (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - m_Symbol_c (object | 3 | 994 (99%)) ['2', '<NA>', 'm',]  
+    - c_p_u_Praefix_T_c (object | 4 | 675 (68%)) ['<NA>', 'c', 'p', 'u',]  
+    - T_c (object | 27 | 619 (62%)) ['0', '1', '1B', '1C', '1a',]  
+    - c_p_u_Praefix_N_c (object | 4 | 696 (70%)) ['<NA>', 'c', 'p', 'u',]  
+    - N_c (object | 14 | 643 (64%)) ['0', '0(sn)', '1', '1a', '2',]  
+    - c_p_u_Praefix_M_c (object | 3 | 700 (70%)) ['<NA>', 'c', 'p',]  
+    - M_c (object | 9 | 646 (65%)) ['0', '1', '1A', '1C', '1a',]  
+    - L_c (object | 4 | 931 (93%)) ['<NA>', 'L0', 'L1', 'LX',]  
+    - V_c (object | 4 | 944 (94%)) ['<NA>', 'V0', 'V1', 'VX',]  
+    - Pn_c (object | 4 | 953 (95%)) ['<NA>', 'Pn0', 'Pn1', 'PnX',]  
+    - S_c (object | 2 | 994 (99%)) ['<NA>', 'SX',]  
+    - UICC_Stadium_c (object | 22 | 742 (74%)) ['0', '0a', '<NA>', 'I', 'IA',]  
+    - TNM_Auflage_p (object | 4 | 505 (50%)) ['6', '7', '8', '<NA>',]  
+    - y_Symbol_p (object | 2 | 964 (96%)) ['<NA>', 'y',]  
+    - r_Symbol_p (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - a_Symbol_p (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - m_Symbol_p (object | 6 | 986 (99%)) ['2', '3', '4', '5', '<NA>',]  
+    - c_p_u_Praefix_T_p (object | 2 | 497 (50%)) ['<NA>', 'p',]  
+    - T_p (object | 35 | 497 (50%)) ['0', '1', '1(is)', '1A1', '1a',]  
+    - c_p_u_Praefix_N_p (object | 3 | 623 (62%)) ['<NA>', 'c', 'p',]  
+    - N_p (object | 33 | 581 (58%)) ['0', '0 (0/3, sn, i-)', '0 (0/43)', '0 (0/6, sn, i-)', '0(0/16)',]  
+    - c_p_u_Praefix_M_p (object | 3 | 671 (67%)) ['<NA>', 'c', 'p',]  
+    - M_p (object | 7 | 614 (61%)) ['0', '1', '1a', '1b', '1c',]  
+    - L_p (object | 4 | 703 (70%)) ['<NA>', 'L0', 'L1', 'LX',]  
+    - V_p (object | 4 | 712 (71%)) ['<NA>', 'V0', 'V1', 'VX',]  
+    - Pn_p (object | 4 | 784 (78%)) ['<NA>', 'Pn0', 'Pn1', 'PnX',]  
+    - S_p (object | 4 | 980 (98%)) ['<NA>', 'S0', 'S1', 'SX',]  
+    - UICC_Stadium_p (object | 22 | 709 (71%)) ['0', '0a', '0is', '<NA>', 'I',]  
+    - Grading (object | 12 | 0 (0%)) ['0', '1', '2', '3', '4',]  
+    - LK_befallen (Int32 | 15 | 868 (87%)) [0, 1, 2, 3, 4,]  
+    - LK_untersucht (Int32 | 41 | 819 (82%)) [0, 1, 2, 3, 4,]  
+    - Morphologie_Code (object | 159 | 0 (0%)) ['8000/0', '8000/1', '8000/3', '8010/2', '8010/3',]  
+    - Morphologie_Version (object | 5 | 28 (3%)) ['31', '32', '33', '<NA>', 'bb',]  
+    - Praetherapeutischer_Menopausenstatus (object | 4 | 895 (90%)) ['1', '3', '<NA>', 'U',]  
+    - HormonrezeptorStatus_Oestrogen (object | 4 | 864 (86%)) ['<NA>', 'N', 'P', 'U',]  
+    - HormonrezeptorStatus_Progesteron (object | 4 | 865 (86%)) ['<NA>', 'N', 'P', 'U',]  
+    - Her2neuStatus (object | 4 | 853 (85%)) ['<NA>', 'N', 'P', 'U',]  
+    - TumorgroesseInvasiv (Int32 | 28 | 931 (93%)) [0, 6, 7, 8, 9,]  
+    - TumorgroesseDCIS (Int32 | 20 | 962 (96%)) [0, 5, 6, 10, 13,]  
+    - RASMutation (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - RektumAbstandAnokutanlinie (Int32 | 1 | 1_000 (100%)) [<NA>,]  
+    - GradPrimaer (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - GradSekundaer (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - ScoreErgebnis (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - AnlassGleasonScore (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - PSA (float32 | 1 | 1_000 (100%)) [nan,]  
+    - DatumPSA (datetime64[us] | 1 | 1_000 (100%)) [NaT,]  
+    - DatumPSA_Genauigkeit (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - Tumordicke (float32 | 1 | 1_000 (100%)) [nan,]  
+    - LDH (Int32 | 1 | 1_000 (100%)) [<NA>,]  
+    - Ulzeration (object | 1 | 1_000 (100%)) ['<NA>',]  
+    - Seitenlokalisation (object | 6 | 0 (0%)) ['B', 'L', 'M', 'R', 'T',]  
+    - DCN (object | 2 | 0 (0%)) ['J', 'N',]  
+    - Anzahl_Tage_Diagnose_Tod (Int32 | 252 | 699 (70%)) [0, 1, 2, 3, 4,]  
+    - z_kkr (int8 | 15 | 0 (0%)) [1, 2, 3, 4, 6,]  
+    - z_kkr_label (object | 15 | 0 (0%)) ['01-SH', '02-HH', '03-NI', '04-HB', '06-HE',]  
+    - z_dy (int16 | 31 | 0 (0%)) [1900, 1982, 1994, 1997, 1998,]  
+    - z_age (float64 | 522 | 0 (0%)) [-66.67, -37.92, 4.5, 5.08, 19.42,]  
+    - z_ag05 (object | 18 | 2 (0%)) ['<NA>', 'a00b04', 'a05b09', 'a15b19', 'a20b24',]  
+    - z_icd10 (object | 205 | 0 (0%)) ['C00.1', 'C01', 'C02.1', 'C02.2', 'C02.9',]  
+    - z_icd10_3d (object | 86 | 0 (0%)) ['C00', 'C01', 'C02', 'C03', 'C04',]  
+    - z_t_c_0 (object | 23 | 619 (62%)) ['0', '1', '1a', '1a1', '1b',]  
+    - z_t_c_1 (object | 9 | 619 (62%)) ['0', '1', '2', '3', '4',]  
+    - z_t_p_0 (object | 24 | 497 (50%)) ['0', '1', '1a', '1a1', '1b',]  
+    - z_t_p_1 (object | 9 | 497 (50%)) ['0', '1', '2', '3', '4',]  
+    - z_n_c_0 (object | 13 | 643 (64%)) ['0', '0(sn)', '1', '1a', '2',]  
+    - z_n_c_1 (object | 6 | 643 (64%)) ['0', '1', '2', '3', '<NA>',]  
+    - z_n_p_0 (object | 19 | 581 (58%)) ['0', '0(i-)', '0(i-)(sn)', '0(sn)', '1',]  
+    - z_n_p_1 (object | 6 | 581 (58%)) ['0', '1', '2', '3', '<NA>',]  
+    - z_m_c_0 (object | 6 | 651 (65%)) ['0', '1', '1a', '1b', '1c',]  
+    - z_m_c_1 (object | 3 | 651 (65%)) ['0', '1', '<NA>',]  
+    - z_m_p_0 (object | 6 | 618 (62%)) ['0', '1', '1a', '1b', '1c',]  
+    - z_m_p_1 (object | 3 | 618 (62%)) ['0', '1', '<NA>',]  
+    - z_m_pc_1 (object | 3 | 418 (42%)) ['0', '1', '<NA>',]  
+    - z_is_dco (bool | 2 | 0 (0%)) [False, True,]  
+    - z_last_tum_status (object | 11 | 682 (68%)) ['<NA>', 'B - klinische Besserung des Zustandes', 'D - divergentes Geschehen',  
+    'K - keine Änderung', 'P - Progression',]  
+    - z_tum_op_count (int16 | 9 | 0 (0%)) [0, 1, 2, 3, 4,]  
+    - z_tum_st_count (int16 | 4 | 0 (0%)) [0, 1, 2, 3,]  
+    - z_tum_sy_count (int16 | 9 | 0 (0%)) [0, 1, 2, 3, 4,]  
+    - z_tum_fo_count (int16 | 16 | 0 (0%)) [0, 1, 2, 3, 4,]  
+    - z_first_treatment (object | 4 | 410 (41%)) ['<NA>', 'op', 'st', 'sy',]  
+    - z_first_treatment_after_days (Int32 | 127 | 410 (41%)) [0, 1, 2, 3, 4,]  
+    - z_event_order (object | 115 | 355 (36%)) ['<NA>', 'fo', 'fo-op', 'fo-op-fo', 'fo-op-fo-op-fo',]  
+    - z_events (object | 16 | 0 (0%)) ['-', 'fo', 'op', 'op|fo', 'op|st',]  
+    - z_class_hpv (object | 4 | 985 (98%)) ['<NA>', 'N', 'P', 'U',]  
+    - z_tum_order (int8 | 14 | 0 (0%)) [1, 2, 3, 4, 5,]  
+    - z_sex (object | 2 | 0 (0%)) ['M', 'W',]  
+    - z_period_diag_death_day (Int32 | 253 | 695 (70%)) [0, 1, 2, 3, 4,]  
+    - z_period_diag_psa_day (Int32 | 1 | 1_000 (100%)) [<NA>,]  
+    
+    🟠 column stats numeric  
+    
+    column (n = 1_000)           |   notnull    |   min   | lower  |    q25    |  median   |   mean    |    q75    | upper  |  max   |    std    |  cv  
+    -----------------------------+--------------+---------+--------+-----------+-----------+-----------+-----------+--------+--------+-----------+------
+    LK_befallen                  |    132 (13%) |       0 |      0 |     0.000 |     0.000 |     1.326 |     1.000 |      2 |     28 |     3.403 | 2.567
+    LK_untersucht                |    181 (18%) |       0 |      0 |     2.000 |     7.000 |    12.232 |    19.000 |     42 |     72 |    12.806 | 1.047
+    TumorgroesseInvasiv          |      69 (6%) |       0 |      0 |     9.000 |    14.000 |    16.739 |    20.000 |     35 |     60 |    13.571 | 0.811
+    TumorgroesseDCIS             |      38 (3%) |       0 |      0 |     0.000 |     5.500 |    14.421 |    20.750 |     45 |     70 |    18.862 | 1.308
+    RektumAbstandAnokutanlinie   |       0 (0%) |     N/A |    N/A |       N/A |       N/A |       N/A |       N/A |    N/A |    N/A |       N/A |   N/A
+    PSA                          |       0 (0%) |     N/A |    N/A |       N/A |       N/A |       N/A |       N/A |    N/A |    N/A |       N/A |   N/A
+    Tumordicke                   |       0 (0%) |     N/A |    N/A |       N/A |       N/A |       N/A |       N/A |    N/A |    N/A |       N/A |   N/A
+    LDH                          |       0 (0%) |     N/A |    N/A |       N/A |       N/A |       N/A |       N/A |    N/A |    N/A |       N/A |   N/A
+    Anzahl_Tage_Diagnose_Tod     |    301 (30%) |       0 |      0 |    91.000 |   357.000 |   912.907 |   854.000 |  1_963 | 14_444 | 1_672.229 | 1.832
+    z_kkr                        | 1_000 (100%) |       1 |      1 |     6.000 |     9.000 |     8.737 |    12.000 |     16 |     16 |     4.236 | 0.485
+    z_dy                         | 1_000 (100%) |    1900 |   2016 | 2_020.000 | 2_022.000 | 2_020.746 | 2_023.000 |   2025 |   2025 |     6.628 | 0.003
+    z_age                        | 1_000 (100%) | -66.670 | 27.000 |    57.750 |    68.830 |    66.499 |    78.440 | 98.750 | 98.750 |    16.391 | 0.246
+    z_tum_op_count               | 1_000 (100%) |       0 |      0 |     0.000 |     0.000 |     0.577 |     1.000 |      2 |     12 |     0.863 | 1.496
+    z_tum_st_count               | 1_000 (100%) |       0 |      0 |     0.000 |     0.000 |     0.185 |     0.000 |      0 |      3 |     0.428 | 2.312
+    z_tum_sy_count               | 1_000 (100%) |       0 |      0 |     0.000 |     0.000 |     0.446 |     0.000 |      0 |      8 |     1.024 | 2.295
+    z_tum_fo_count               | 1_000 (100%) |       0 |      0 |     0.000 |     0.000 |     0.846 |     1.000 |      2 |     15 |     1.929 | 2.280
+    z_first_treatment_after_days |    590 (59%) |       0 |      0 |     0.000 |    19.500 |    41.768 |    38.750 |     96 |  1_524 |   112.497 | 2.693
+    z_tum_order                  | 1_000 (100%) |       1 |      1 |     1.000 |     1.000 |     1.339 |     1.000 |      1 |     20 |     1.372 | 1.025
+    z_period_diag_death_day      |    305 (30%) |       0 |      0 |    89.000 |   357.000 |   906.682 |   854.000 |  1_963 | 14_444 | 1_662.839 | 1.834
+    z_period_diag_psa_day        |       0 (0%) |     N/A |    N/A |       N/A |       N/A |       N/A |       N/A |    N/A |    N/A |       N/A |   N/A
     
     
     🟠 sample 3 rows  
@@ -1294,21 +1147,71 @@ Tests:
 
 
 
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_89_71.svg">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_89_71.svg">
-  <img alt="svg" src="tech_files/output_89_71.svg">
-</picture>
-    
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    Cell In[68], line 1
+    ----> 1 tbl.describe_df(
+          2     Tumor.project("* not similar to '(?i)(?:.*(id$|hash))'").limit(1000).to_df(),
+          3     "Tumor (id excluded)",
+          4     fig_cols=4,
+          5     top_n_chars_in_columns=20,
+          6     top_n_chars_in_index=10,
+          7     use_missing=True,
+          8 )
 
 
+    File ~/repos/github/cancerdata-quality/.venv/lib/python3.12/site-packages/pandas_plots/tbl/describe_df.py:259, in describe_df(df, caption, use_plot, use_columns, use_missing, renderer, fig_cols, fig_offset, fig_rowheight, fig_width, sort_mode, top_n_uniques, top_n_chars_in_index, top_n_chars_in_columns, missing_figsize, dupl_cols)
+        252         _cut = lambda s: (
+        253             s[:top_n_chars_in_index] + ".."
+        254             if len(s) > top_n_chars_in_index
+        255             else s[:top_n_chars_in_index]
+        256         )
+        257         x = [_cut(item) for item in x]
+    --> 259     figsub = px.bar(
+        260         x=x,
+        261         y=y,
+        262     )
+        263 # * grid position
+        264 _row = math.floor((i) / fig_cols) + 1
 
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="tech_files_dark/output_89_72.png">
-  <source media="(prefers-color-scheme: light)" srcset="tech_files/output_89_72.png">
-  <img alt="png" src="tech_files/output_89_72.png">
-</picture>
-    
+
+    File ~/repos/github/cancerdata-quality/.venv/lib/python3.12/site-packages/plotly/express/_chart_types.py:381, in bar(data_frame, x, y, color, pattern_shape, facet_row, facet_col, facet_col_wrap, facet_row_spacing, facet_col_spacing, hover_name, hover_data, custom_data, text, base, error_x, error_x_minus, error_y, error_y_minus, animation_frame, animation_group, category_orders, labels, color_discrete_sequence, color_discrete_map, color_continuous_scale, pattern_shape_sequence, pattern_shape_map, range_color, color_continuous_midpoint, opacity, orientation, barmode, log_x, log_y, range_x, range_y, text_auto, title, subtitle, template, width, height)
+        332 def bar(
+        333     data_frame=None,
+        334     x=None,
+       (...)    375     height=None,
+        376 ) -> go.Figure:
+        377     """
+        378     In a bar plot, each row of `data_frame` is represented as a rectangular
+        379     mark.
+        380     """
+    --> 381     return make_figure(
+        382         args=locals(),
+        383         constructor=go.Bar,
+        384         trace_patch=dict(textposition="auto"),
+        385         layout_patch=dict(barmode=barmode),
+        386     )
+
+
+    File ~/repos/github/cancerdata-quality/.venv/lib/python3.12/site-packages/plotly/express/_core.py:2511, in make_figure(args, constructor, trace_patch, layout_patch)
+       2508 layout_patch = layout_patch or {}
+       2509 apply_default_cascade(args, constructor=constructor)
+    -> 2511 args = build_dataframe(args, constructor)
+       2512 if constructor in [go.Treemap, go.Sunburst, go.Icicle] and args["path"] is not None:
+       2513     args = process_dataframe_hierarchy(args)
+
+
+    File ~/repos/github/cancerdata-quality/.venv/lib/python3.12/site-packages/plotly/express/_core.py:1639, in build_dataframe(args, constructor)
+       1637 if constructor in cartesians:
+       1638     if wide_x and wide_y:
+    -> 1639         raise ValueError(
+       1640             "Cannot accept list of column references or list of columns for both `x` and `y`."
+       1641         )
+       1642     if df_provided and no_x and no_y:
+       1643         wide_mode = True
+
+
+    ValueError: Cannot accept list of column references or list of columns for both `x` and `y`.
 
