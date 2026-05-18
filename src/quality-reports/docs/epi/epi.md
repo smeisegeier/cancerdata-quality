@@ -198,7 +198,7 @@ and z_dy = 2024
 
 
     
-<img alt="svg" src="epi_files/output_27_5.svg">
+<img alt="svg" src="epi_files/output_26_5.svg">
     
 
 
@@ -239,7 +239,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="svg" src="epi_files/output_30_5.svg">
+<img alt="svg" src="epi_files/output_29_5.svg">
     
 
 
@@ -297,7 +297,7 @@ and z_dy >= 2010
 
 
     
-<img alt="png" src="epi_files/output_33_5.png">
+<img alt="png" src="epi_files/output_32_5.png">
     
 
 
@@ -337,7 +337,7 @@ z_kkr < 11
 
 
     
-<img alt="png" src="epi_files/output_35_5.png">
+<img alt="png" src="epi_files/output_34_5.png">
     
 
 
@@ -372,7 +372,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="svg" src="epi_files/output_37_5.svg">
+<img alt="svg" src="epi_files/output_36_5.svg">
     
 
 
@@ -419,7 +419,7 @@ and
 
 
     
-<img alt="svg" src="epi_files/output_39_5.svg">
+<img alt="svg" src="epi_files/output_38_5.svg">
     
 
 
@@ -458,7 +458,7 @@ and z_age<=20
 
 
     
-<img alt="svg" src="epi_files/output_41_5.svg">
+<img alt="svg" src="epi_files/output_40_5.svg">
     
 
 
@@ -507,7 +507,7 @@ and
 
 
     
-<img alt="svg" src="epi_files/output_43_5.svg">
+<img alt="svg" src="epi_files/output_42_5.svg">
     
 
 
@@ -542,7 +542,7 @@ and not z_is_dco
 
 
     
-<img alt="svg" src="epi_files/output_44_5.svg">
+<img alt="svg" src="epi_files/output_43_5.svg">
     
 
 
@@ -595,7 +595,7 @@ and
 
 
     
-<img alt="svg" src="epi_files/output_46_5.svg">
+<img alt="svg" src="epi_files/output_45_5.svg">
     
 
 
@@ -635,7 +635,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img alt="png" src="epi_files/output_49_6.png" width="60%">
+<img alt="png" src="epi_files/output_48_6.png" width="60%">
     
 
 
@@ -683,6 +683,6 @@ and year(SDIMP) >= 2010
 
 
     
-<img alt="svg" src="epi_files/output_51_5.svg">
+<img alt="svg" src="epi_files/output_50_5.svg">
     
 
