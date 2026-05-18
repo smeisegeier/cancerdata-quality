@@ -54,7 +54,7 @@
     data tag:                epi2025_1
     sql table created:       2026-05-13 09:31:01
     doi:                     10.18444/5.03.01.0005.0022.0001
-    document created:        2026-05-18 12:12:16
+    document created:        2026-05-18 17:27:27
 
 
     
@@ -82,7 +82,7 @@
 
 
     
-<img alt="png" src="epi_files/output_16_0.png">
+<img alt="png" src="epi_files/output_17_0.png">
     
 
 
@@ -94,7 +94,13 @@
 
 
     
-<img alt="png" src="epi_files/output_18_0.png">
+<img alt="png" src="epi_files/output_19_0.png">
+    
+
+
+
+    
+<img alt="png" src="epi_files/output_20_0.png">
     
 
 
@@ -123,8 +129,8 @@
     n = 17_758_787                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [DJ 2019-2025]:            n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [ICD10 nur C]:             n = 3_939_786  (22.2%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine C44,D04]:           n = 3_184_627  (17.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    └ [keine DCO]:               n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine C44,D04]:           n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
 <details>
@@ -133,7 +139,7 @@
 ```sql
 is_deleted = 0
 and z_dy between 2019 and 2025
-and left(z_icd10_3d,1) = 'C'
+and not z_is_dco
 and z_icd10_3d not in ('C44','D04')
 ```
 
@@ -146,7 +152,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="epi_files/output_22_5.png">
+<img alt="png" src="epi_files/output_24_5.png">
     
 
 
@@ -165,8 +171,6 @@ and z_icd10_3d not in ('C44','D04')
 > ---
 >
 > C44 (Heller Hautkrebs)
-> * Hier sind die Fallzahlen überall hoch, aber die Anteile in der Grafik schwanken stark. 
-> * Das liegt zum einen an der hohen Entdeckungsrate durch das Hautkrebs-Screening. 
 > * Der Hauptgrund für die Unterschiede sind jedoch die **Landesgesetze**: Je nach Bundesland werden einfache Fälle (wie Basaliome) unterschiedlich streng gemeldet oder vergütet. Während manche Länder noch fast alles erfassen, konzentrieren sich andere bereits auf die schweren, "prognostisch ungünstigen" Verläufe.
 
 
@@ -194,7 +198,7 @@ and z_dy = 2024
 
 
     
-<img alt="svg" src="epi_files/output_24_5.svg">
+<img alt="svg" src="epi_files/output_27_5.svg">
     
 
 
@@ -214,8 +218,7 @@ and z_dy = 2024
     n = 17_758_787                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [DJ ab 2015]:              n = 7_675_888  (43.2%) ░░░░░░░░░░░░░░░░░░████████████
-    └ [ICD10 nur C]:             n = 6_554_532  (36.9%) ░░░░░░░░░░░░░░░░░░░███████████
-    └ [keine C44,D04]:           n = 5_237_641  (29.5%) ░░░░░░░░░░░░░░░░░░░░░░████████
+    └ [keine C44,D04]:           n = 6_156_522  (34.7%) ░░░░░░░░░░░░░░░░░░░░██████████
 ```
 
 <details>
@@ -224,7 +227,6 @@ and z_dy = 2024
 ```sql
 is_deleted = 0
 and DJ >= 2015
-and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
 ```
 
@@ -237,7 +239,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="svg" src="epi_files/output_27_5.svg">
+<img alt="svg" src="epi_files/output_30_5.svg">
     
 
 
@@ -273,7 +275,7 @@ and z_icd10_3d not in ('C44','D04')
     └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [ICD10 nur C]:            n = 15_030_686  (84.6%) ░░░░░█████████████████████████
     └ [keine C44,D04]:          n = 12_205_943  (68.7%) ░░░░░░░░░░████████████████████
-    └ [DJ 2010-2024]:            n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
+    └ [DJ ab 2010]:              n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
 ```
 
 <details>
@@ -283,7 +285,7 @@ and z_icd10_3d not in ('C44','D04')
 is_deleted = 0
 and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
-and z_dy between 2010 and 2024
+and z_dy >= 2010
 ```
 
 </details>
@@ -295,7 +297,7 @@ and z_dy between 2010 and 2024
 
 
     
-<img alt="png" src="epi_files/output_30_5.png">
+<img alt="png" src="epi_files/output_33_5.png">
     
 
 
@@ -335,7 +337,7 @@ z_kkr < 11
 
 
     
-<img alt="png" src="epi_files/output_32_5.png">
+<img alt="png" src="epi_files/output_35_5.png">
     
 
 
@@ -370,23 +372,21 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="svg" src="epi_files/output_34_5.svg">
+<img alt="svg" src="epi_files/output_37_5.svg">
     
 
 
 <br>
 
 ### <a id='toc1_5_8_'></a>[Grading Verteilung](#toc0_)
-❓filter
 
 
 
 ```
     n = 17_758_787                                  (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]:      n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2010-2024]:                n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
-    └ [keine C44,D04]:                n = 8_935_754  (50.3%) ░░░░░░░░░░░░░░░███████████████
-    └ [keine DCO]:                    n = 8_284_161  (46.6%) ░░░░░░░░░░░░░░░░░█████████████
+    └ [DJ ab 2010]:                  n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
+    └ [keine DCO]:                   n = 10_637_156  (59.9%) ░░░░░░░░░░░░░█████████████████
     └ [nur gradingrelevante Tumore]:  n = 3_693_956  (20.8%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
@@ -395,8 +395,7 @@ and z_icd10_3d not in ('C44','D04')
 
 ```sql
 is_deleted = 0
-and z_dy between 2010 and 2024
-and z_icd10_3d not in ('C44','D04')
+and z_dy >= 2010
 and not z_is_dco
 and 
     (
@@ -420,55 +419,7 @@ and
 
 
     
-<img alt="svg" src="epi_files/output_36_5.svg">
-    
-
-
-
-<br>
-
-### <a id='toc1_5_9_'></a>[Grading Anteil](#toc0_)
-- Metrik: Anteil `Grading` missings an Gesamt
-
-
-
-```
-    n = 17_758_787                                  (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:      n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2020-2024]:                 n = 3_884_169  (21.9%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine C44,D04]:                n = 3_163_789  (17.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
-    └ [nur gradingrelevante Tumore]:  n = 1_281_304   (7.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-is_deleted = 0
-and z_dy between 2020 and 2024
-and z_icd10_3d not in ('C44','D04')
-and 
-    (
-        left(z_icd10_3d, 1) ='C' and
-        (
-            right(z_icd10_3d, 2)::int8 between 00 and 33
-            or right(z_icd10_3d, 2)::int8 between 50 and 57
-            or right(z_icd10_3d, 2)::int8 between 63 and 68
-            or right(z_icd10_3d, 2)::int8 = 60
-        )
-        and left(Morphologie_Code,4)::int between 8010 and 8576
-    )
-```
-
-</details>
-
-
-    
-    
-
-
-
-<img alt="png" src="epi_files/output_38_6.png" width="80%">
+<img alt="svg" src="epi_files/output_39_5.svg">
     
 
 
@@ -481,10 +432,10 @@ and
 ```
     n = 17_758_787                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine DCO]:                 n = 727_906   (4.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 589_193   (3.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [Alter <= 20]:                 n = 2_108   (0.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [DJ 2019-2025]:            n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine DCO]:               n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine C44,D04]:           n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [Alter <= 20]:                n = 13_955   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 <details>
@@ -492,7 +443,7 @@ and
 
 ```sql
 is_deleted = 0
-and z_dy = 2024
+and z_dy between 2019 and 2025
 and not z_is_dco
 and z_icd10_3d not in ('C44','D04')
 and z_age<=20
@@ -507,7 +458,7 @@ and z_age<=20
 
 
     
-<img alt="svg" src="epi_files/output_40_5.svg">
+<img alt="svg" src="epi_files/output_41_5.svg">
     
 
 
@@ -519,12 +470,11 @@ and z_age<=20
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [ICD10 nur C]:               n = 645_657   (3.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 528_920   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    └ [keine DCO]:                 n = 495_482   (2.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                               (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]:   n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [keine C44,D04]:            n = 13_852_611  (78.0%) ░░░░░░░███████████████████████
+    └ [keine DCO]:                n = 12_415_391  (69.9%) ░░░░░░░░░░████████████████████
+    └ [nur tnm-relevante Tumore]:  n = 8_940_895  (50.3%) ░░░░░░░░░░░░░░░███████████████
 ```
 
 <details>
@@ -532,10 +482,20 @@ and z_age<=20
 
 ```sql
 is_deleted = 0
-and z_dy = 2024
-and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
 and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
 ```
 
 </details>
@@ -547,7 +507,7 @@ and not z_is_dco
 
 
     
-<img alt="svg" src="epi_files/output_42_5.svg">
+<img alt="svg" src="epi_files/output_43_5.svg">
     
 
 
@@ -582,7 +542,7 @@ and not z_is_dco
 
 
     
-<img alt="svg" src="epi_files/output_43_5.svg">
+<img alt="svg" src="epi_files/output_44_5.svg">
     
 
 
@@ -598,11 +558,11 @@ and not z_is_dco
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [ICD10 nur C]:               n = 645_657   (3.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
-    └ [keine C44,D04]:             n = 528_920   (3.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                               (100.0%) ██████████████████████████████
+    └ [keine gelöschten Fälle]:   n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ ab 2010]:               n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
+    └ [keine DCO]:                n = 10_637_156  (59.9%) ░░░░░░░░░░░░░█████████████████
+    └ [nur tnm-relevante Tumore]:  n = 5_862_472  (33.0%) ░░░░░░░░░░░░░░░░░░░░░█████████
 ```
 
 <details>
@@ -610,9 +570,20 @@ and not z_is_dco
 
 ```sql
 is_deleted = 0
-and z_dy = 2024
-and left(z_icd10_3d,1) = 'C'
-and z_icd10_3d not in ('C44','D04')
+and DJ >= 2010
+and not z_is_dco
+and 
+    (
+        left(z_icd10_3d, 1) ='C' and
+        (
+            right(z_icd10_3d, 2)::int8 between 00 and 43
+            or right(z_icd10_3d, 2)::int8 between 45 and 69
+            or right(z_icd10_3d, 2)::int8 between 73 and 74
+        )
+        and left(Morphologie_Code,4)::int between 8010 and 8790
+        and z_icd10_3d not in ('C26', 'C39', 'C55')
+        and z_icd10 not in ('C14.0', 'C57.9', 'C63.9')
+    )
 ```
 
 </details>
@@ -624,7 +595,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="svg" src="epi_files/output_45_5.svg">
+<img alt="svg" src="epi_files/output_46_5.svg">
     
 
 
@@ -644,8 +615,7 @@ and z_icd10_3d not in ('C44','D04')
     n = 15_146_405                             (100.0%) ██████████████████████████████
     └ [keine gelöschten Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
     └ [DJ 2020-2024]:            n = 3_611_701  (23.8%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [ICD10 nur C]:             n = 3_070_106  (20.3%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [keine C44,D04]:           n = 2_525_437  (16.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    └ [keine C44,D04]:           n = 2_999_925  (19.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
 ```
 
 <details>
@@ -654,7 +624,6 @@ and z_icd10_3d not in ('C44','D04')
 ```sql
 is_deleted = 0
 and z_dy between 2020 and 2024
-and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
 ```
 
@@ -666,7 +635,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img alt="png" src="epi_files/output_48_6.png" width="60%">
+<img alt="png" src="epi_files/output_49_6.png" width="60%">
     
 
 
@@ -714,6 +683,6 @@ and year(SDIMP) >= 2010
 
 
     
-<img alt="svg" src="epi_files/output_50_5.svg">
+<img alt="svg" src="epi_files/output_51_5.svg">
     
 
