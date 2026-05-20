@@ -18,7 +18,9 @@
         - [C50](#toc1_6_2_1_1_)    
         - [C18-C20](#toc1_6_2_1_2_)    
     - [ST](#toc1_6_3_)    
+      - [ST wenn ST erwartet](#toc1_6_3_1_)    
     - [SYST](#toc1_6_4_)    
+      - [SYST wenn SYST erwartet](#toc1_6_4_1_)    
   - [Fallzahlen epi vs clin](#toc1_7_)    
   - [Verteilung von Variablen](#toc1_8_)    
     - [UICC (p)](#toc1_8_1_)    
@@ -27,10 +29,9 @@
     - [DCN](#toc1_8_4_)    
     - [Grading](#toc1_8_5_)    
       - [Verteilung](#toc1_8_5_1_)    
-      - [Anteile Unbekannt](#toc1_8_5_2_)    
     - [Diagnosejahr mit Altdaten](#toc1_8_6_)    
     - [Inzidenzort vs Lieferregister](#toc1_8_7_)    
-    - [ICD10 Gruppen](#toc1_8_8_)    
+    - [Diagnosegruppen](#toc1_8_8_)    
     - [Altersgruppen Kinder und Heranwachsende](#toc1_8_9_)    
     - [Verstorben](#toc1_8_10_)    
     - [TNM-T (p)](#toc1_8_11_)    
@@ -67,14 +68,13 @@
   - [Weitere Klassifikationen](#toc1_12_)    
     - [nach Quelle](#toc1_12_1_)    
     - [nach KKR](#toc1_12_2_)    
-    - [nach Jahren](#toc1_12_3_)    
-    - [PSA](#toc1_12_4_)    
-      - [Angabe zu Diagnose vs Weitere Klassifikationen](#toc1_12_4_1_)    
-      - [Kombinationen der PSA Merkmale](#toc1_12_4_2_)    
-      - [Weitere Klassifikationen: Diagnose vs Folgeereignis](#toc1_12_4_3_)    
-    - [UICC](#toc1_12_5_)    
-      - [Kombinationen](#toc1_12_5_1_)    
-      - [nach KKR](#toc1_12_5_2_)    
+    - [PSA](#toc1_12_3_)    
+      - [Angabe zu Diagnose vs Weitere Klassifikationen](#toc1_12_3_1_)    
+      - [Kombinationen der PSA Merkmale](#toc1_12_3_2_)    
+      - [Weitere Klassifikationen: Diagnose vs Folgeereignis](#toc1_12_3_3_)    
+    - [UICC](#toc1_12_4_)    
+      - [Kombinationen](#toc1_12_4_1_)    
+      - [nach KKR](#toc1_12_4_2_)    
   - [Freitextkodierung](#toc1_13_)    
     - [Substanzen](#toc1_13_1_)    
   - [Datum Vitalstatus](#toc1_14_)    
@@ -83,11 +83,8 @@
     - [Diagnosealter](#toc1_15_1_)    
     - [Anzahl Tage zwischen Diagnose und Tod](#toc1_15_2_)    
     - [PSA](#toc1_15_3_)    
-    - [Tumordicke](#toc1_15_4_)    
+    - [LK_untersucht](#toc1_15_4_)    
     - [LK_befallen](#toc1_15_5_)    
-    - [LK_untersucht](#toc1_15_6_)    
-    - [RektumAbstandAnokutanlinie](#toc1_15_7_)    
-    - [LDH](#toc1_15_8_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -107,7 +104,7 @@
 - die _relativen_ Barcharts enthalten ein `Total` item für den Gesamtvergleich
 - die Filter können exakt nachvollzogen werden mit Hilfe der **ausklappbaren SQL Abfragen**
 - in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
-- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../../clin_analyze.ipynb)
+- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../../clin.ipynb)
 
 <div style="page-break-after: always;"></div>
 
@@ -117,9 +114,6 @@
 ## <a id='toc1_2_'></a>[Änderungen seit der letzten Version](#toc0_)
 - Neulieferung für Daten mit **Diagnosejahr 2024**
 
-> [!WARNING]
-> Ungetestet
-
 <br>
 
 ## <a id='toc1_3_'></a>[Datenstand](#toc0_)
@@ -128,8 +122,8 @@
     data tag:                v2.4
     last kkr data import:    2026-04-18
     sql table created:       2026-05-12 16:38:32
-    doi:                     -
-    document created:        2026-05-13 18:43:24
+    doi:                     10.18444/5.03.01.0005.0021.0003
+    document created:        2026-05-20 18:41:00
 
 
 <br>
@@ -149,9 +143,6 @@
     │ Tumorfälle_2024 │ 37_898     │ 13_977     │ 48_119     │ 4_879      │ 191_865    │ 39_544     │ 30_923     │ 90_465     │ 95_762     │ 12_831     │ 27_792     │ 22_456     │ 24_785     │ 41_076     │ 27_291     │ 14_043     │
     └─────────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┘
 ```
-
-    kkr ohne aktuelle Daten:  []
-
 
 <div style="page-break-after: always;"></div>
 
@@ -300,7 +291,6 @@ and ifnull(z_m_pc_1,'') <> '1'
 
 ```
     n = 4_062_856                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                  n = 3_794_188  (93.4%) ░░████████████████████████████
     └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
     └ [keine DCO]:                     n = 3_335_696  (82.1%) ░░░░░░████████████████████████
     └ [ICD10 nur C]:                   n = 2_787_382  (68.6%) ░░░░░░░░░░████████████████████
@@ -313,8 +303,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and Diagnosedatum between '2020-01-01' and '2024-06-30'
+Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and left(z_icd10_3d,1) = 'C'
 and z_icd10_3d not in ('C44','D04')
@@ -343,13 +332,12 @@ and ifnull(z_m_pc_1,'') <> '1'
 
 ### <a id='toc1_6_2_'></a>[OP](#toc0_)
 - **nur solide Tumoren**  schliesst folgende Diagnosen aus: C44, C76-C97, alle D
-- - Metrik: Anteil Tumore ohne OP an Gesamt
+  - Metrik: Anteil Tumore ohne OP an Gesamt
 
 
 
 ```
     n = 4_062_856                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                  n = 3_794_188  (93.4%) ░░████████████████████████████
     └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
     └ [keine DCO]:                     n = 3_335_696  (82.1%) ░░░░░░████████████████████████
     └ [keine C44,D04]:                 n = 2_781_485  (68.5%) ░░░░░░░░░░████████████████████
@@ -362,8 +350,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and Diagnosedatum between '2020-01-01' and '2024-06-30'
+Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and z_icd10_3d not in ('C44','D04')
 and 
@@ -409,7 +396,6 @@ and ifnull(z_m_pc_1,'') <> '1'
 
 ```
     n = 4_062_856                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                  n = 3_794_188  (93.4%) ░░████████████████████████████
     └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
     └ [keine DCO]:                     n = 3_335_696  (82.1%) ░░░░░░████████████████████████
     └ [ICD10 C50]:                       n = 356_237   (8.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
@@ -421,8 +407,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and Diagnosedatum between '2020-01-01' and '2024-06-30'
+Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and z_icd10_3d = 'C50'
 and ifnull(z_m_pc_1,'') <> '1'
@@ -454,7 +439,6 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 ```
     n = 4_062_856                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                  n = 3_794_188  (93.4%) ░░████████████████████████████
     └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
     └ [keine DCO]:                     n = 3_335_696  (82.1%) ░░░░░░████████████████████████
     └ [ICD10 C18-C20]:                   n = 252_341   (6.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
@@ -466,8 +450,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and Diagnosedatum between '2020-01-01' and '2024-06-30'
+Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and z_icd10_3d in ('C18', 'C19', 'C20')
 and ifnull(z_m_pc_1,'') <> '1'
@@ -507,7 +490,6 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 ```
     n = 4_062_856                                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                  n = 3_794_188  (93.4%) ░░████████████████████████████
     └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
     └ [keine DCO]:                     n = 3_335_696  (82.1%) ░░░░░░████████████████████████
     └ [nur solide Tumore]:             n = 2_073_984  (51.0%) ░░░░░░░░░░░░░░░███████████████
@@ -519,8 +501,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and Diagnosedatum between '2020-01-01' and '2024-06-30'
+Diagnosedatum between '2020-01-01' and '2024-06-30'
 and not z_is_dco
 and 
     z_icd10_3d not in ('C44')
@@ -542,6 +523,58 @@ and ifnull(z_period_diag_death_day,181) >= 180
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_37_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_37_1.png">
   <img alt="png" src="clin_files/output_37_1.png" width="600">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_6_3_1_'></a>[ST wenn ST erwartet](#toc0_)
+- Beispiel: Anteil ST bei C50 nach OP: brusterhaltender Therapie (BET)
+- BET: ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
+
+> Kategorien:
+>   - `1_op_st` - Strahlentherapie nach BET
+>   - `2_op_no_st_but_sy` - BET, keine Strahlentherapie aber systemische
+>   - `3_no_treat` - keine Therapie
+
+
+
+```
+    count: distinct z_tum_id
+    ---
+    n = 4_062_856                                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]:   n = 3_447_269  (84.8%) ░░░░░█████████████████████████
+    └ [ICD10 C50]:                       n = 363_831   (9.0%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [kein M1]:                         n = 338_236   (8.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+    └ [nur OPS für BET]:                 n = 190_253   (4.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    └ [keine Verstorbenen < 180 Tage]:   n = 189_842   (4.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+Diagnosedatum between '2020-01-01' and '2024-06-30'
+and z_icd10_3d = 'C50'
+and ifnull(z_m_pc_1,'') <> '1'
+and left(Code,5) in ('5-870')
+and ifnull(z_period_diag_death_day,181) >= 180
+```
+
+</details>
+
+
+    
+    
+
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_39_9.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_39_9.svg">
+  <img alt="Anteil ST nach OP mit BET bei C50" src="clin_files/output_39_9.svg">
 </picture>
     
 
@@ -588,9 +621,58 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_39_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_39_6.png">
-  <img alt="png" src="clin_files/output_39_6.png" width="600">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_41_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_41_6.png">
+  <img alt="png" src="clin_files/output_41_6.png" width="600">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_6_4_1_'></a>[SYST wenn SYST erwartet](#toc0_)
+- Beispiel: akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb)
+
+> Kategorien:
+>   - `1_sy` - systemische Therapie
+>   - `2_no_sy_but_other` - keine systemische Therapie, aber andere Therapie
+>   - `3_no_treat` - keine Therapie
+
+
+
+```
+    n = 4_062_856                                              (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024 ohne letzte 6m]:             n = 3_447_269  (84.8%) ░░░░░█████████████████████████
+    └ [akut verlaufende Leukämien und Lymphome]:    n = 51_375   (1.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [keine DCO]:                                  n = 49_776   (1.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [kein M1]:                                    n = 49_724   (1.2%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    └ [keine Verstorbenen < 180 Tage]:              n = 36_693   (0.9%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+Diagnosedatum between '2020-01-01' and '2024-06-30'
+and z_icd10 in ('C91.0', 'C92.0', 'C83.3', 'C82.4')
+and not z_is_dco
+and ifnull(z_m_pc_1,'') <> '1'
+and ifnull(z_period_diag_death_day,181) >= 180
+```
+
+</details>
+
+
+    
+    
+
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_43_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_43_6.svg">
+  <img alt="Anteil SYST bei akut verlaufenden Leukämien und Lymphomen" src="clin_files/output_43_6.svg">
 </picture>
     
 
@@ -698,9 +780,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_45_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_45_6.svg">
-  <img alt="UICC (p)" src="clin_files/output_45_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_49_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_49_6.svg">
+  <img alt="UICC (p)" src="clin_files/output_49_6.svg">
 </picture>
     
 
@@ -738,9 +820,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_47_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_47_5.svg">
-  <img alt="svg" src="clin_files/output_47_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_51_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_51_5.svg">
+  <img alt="svg" src="clin_files/output_51_5.svg">
 </picture>
     
 
@@ -784,9 +866,9 @@ and left(z_icd10_3d,1) = 'C'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_49_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_49_6.png">
-  <img alt="png" src="clin_files/output_49_6.png" width="800">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_53_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_53_6.png">
+  <img alt="png" src="clin_files/output_53_6.png" width="800">
 </picture>
     
 
@@ -828,9 +910,9 @@ and left(z_icd10_3d,1) = 'C'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_51_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_51_6.png">
-  <img alt="png" src="clin_files/output_51_6.png" width="800">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_55_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_55_6.png">
+  <img alt="png" src="clin_files/output_55_6.png" width="800">
 </picture>
     
 
@@ -880,45 +962,29 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_54_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_54_5.svg">
-  <img alt="svg" src="clin_files/output_54_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_58_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_58_5.svg">
+  <img alt="svg" src="clin_files/output_58_5.svg">
 </picture>
     
 
 
-
 <br>
 
-#### <a id='toc1_8_5_2_'></a>[Anteile Unbekannt](#toc0_)
-- Metrik: Anteil Codes (`U`,`T`) an Gesamt
+### <a id='toc1_8_6_'></a>[Diagnosejahr mit Altdaten](#toc0_)
 
 
 
 ```
-    n = 4_062_856                                  (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:                n = 3_794_188  (93.4%) ░░████████████████████████████
-    └ [keine DCO]:                   n = 3_672_629  (90.4%) ░░░███████████████████████████
-    └ [nur gradingrelevante Tumore]: n = 1_275_551  (31.4%) ░░░░░░░░░░░░░░░░░░░░░█████████
+    n = 4_062_856                (100.0%) ██████████████████████████████
+    └ [DJ < 2025]: n = 4_051_316  (99.7%) ░█████████████████████████████
 ```
 
 <details>
 <summary>filter-sql</summary>
 
 ```sql
-z_dy between 2020 and 2024
-and not z_is_dco
-and 
-    (
-        left(z_icd10_3d, 1) ='C' and
-        (
-            right(z_icd10_3d, 2)::int8 between 00 and 33
-            or right(z_icd10_3d, 2)::int8 between 50 and 57
-            or right(z_icd10_3d, 2)::int8 between 63 and 68
-            or right(z_icd10_3d, 2)::int8 = 60
-        )
-        and left(Morphologie_Code,4)::int between 8010 and 8576
-    )
+z_dy < 2025
 ```
 
 </details>
@@ -929,25 +995,11 @@ and
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_56_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_56_6.png">
-  <img alt="png" src="clin_files/output_56_6.png" width="80%">
-</picture>
     
-
-
-<br>
-
-### <a id='toc1_8_6_'></a>[Diagnosejahr mit Altdaten](#toc0_)
-- Filter: Top 5 Diagnosejahre
-- Legende ist **absteigend sortiert nach Fallzahl im DJ**, Restkategorie `<other>` ist aufgeführt
-
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_58_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_58_1.svg">
-  <img alt="Diagnosejahr mit Altdaten" src="clin_files/output_58_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_60_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_60_5.svg">
+  <img alt="svg" src="clin_files/output_60_5.svg">
 </picture>
     
 
@@ -965,16 +1017,16 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_60_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_60_0.png">
-  <img alt="png" src="clin_files/output_60_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_62_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_62_0.png">
+  <img alt="png" src="clin_files/output_62_0.png">
 </picture>
     
 
 
 <br>
 
-### <a id='toc1_8_8_'></a>[ICD10 Gruppen](#toc0_)
+### <a id='toc1_8_8_'></a>[Diagnosegruppen](#toc0_)
 - die verwendete ICD10 Skala entspricht der Darstellung aus *"Krebs in Deutschland"*
 
 
@@ -1002,11 +1054,10 @@ and not z_is_dco
 
 
 
-    
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_62_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_62_5.svg">
-  <img alt="svg" src="clin_files/output_62_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_64_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_64_6.svg">
+  <img alt="Diagnosegruppen" src="clin_files/output_64_6.svg">
 </picture>
     
 
@@ -1046,9 +1097,9 @@ and z_age <= 20
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_64_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_64_6.svg">
-  <img alt="Altersgruppen Kinder und Heranwachsende" src="clin_files/output_64_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_66_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_66_6.svg">
+  <img alt="Altersgruppen Kinder und Heranwachsende" src="clin_files/output_66_6.svg">
 </picture>
     
 
@@ -1059,6 +1110,9 @@ and z_age <= 20
 
 - gezählt sind **Personen**
 - Metrik: Anteil Verstorbener an Gesamtzahl Patienten pro erstes DJ der Person
+
+> [!NOTE]
+>  💡 **ZfKD**: Sterbefälle in TH sind noch nicht vollständig eingegangen
 
 
 
@@ -1089,9 +1143,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_68_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_68_7.png">
-  <img alt="png" src="clin_files/output_68_7.png" width="800">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_70_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_70_7.png">
+  <img alt="png" src="clin_files/output_70_7.png" width="800">
 </picture>
     
 
@@ -1140,9 +1194,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_70_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_70_6.svg">
-  <img alt="svg" src="clin_files/output_70_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_72_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_72_6.svg">
+  <img alt="svg" src="clin_files/output_72_6.svg">
 </picture>
     
 
@@ -1191,9 +1245,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_72_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_72_5.svg">
-  <img alt="svg" src="clin_files/output_72_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_74_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_74_5.svg">
+  <img alt="svg" src="clin_files/output_74_5.svg">
 </picture>
     
 
@@ -1244,9 +1298,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_75_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_75_5.svg">
-  <img alt="svg" src="clin_files/output_75_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_77_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_77_5.svg">
+  <img alt="svg" src="clin_files/output_77_5.svg">
 </picture>
     
 
@@ -1260,9 +1314,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_78_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_78_1.svg">
-  <img alt="nach ICD10 Einstellern" src="clin_files/output_78_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_80_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_80_1.svg">
+  <img alt="nach ICD10 Einstellern" src="clin_files/output_80_1.svg">
 </picture>
     
 
@@ -1307,9 +1361,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_80_7.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_80_7.svg">
-  <img alt="nach Sterbejahr und Todesursachen" src="clin_files/output_80_7.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_82_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_82_7.svg">
+  <img alt="nach Sterbejahr und Todesursachen" src="clin_files/output_82_7.svg">
 </picture>
     
 
@@ -1323,9 +1377,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_83_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_83_1.png">
-  <img alt="png" src="clin_files/output_83_1.png" width="80%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_85_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_85_1.png">
+  <img alt="png" src="clin_files/output_85_1.png" width="80%">
 </picture>
     
 
@@ -1338,9 +1392,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_85_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_85_1.svg">
-  <img alt="nach IsGrundleiden" src="clin_files/output_85_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_87_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_87_1.svg">
+  <img alt="nach IsGrundleiden" src="clin_files/output_87_1.svg">
 </picture>
     
 
@@ -1389,9 +1443,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_89_7.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_89_7.svg">
-  <img alt="OP-Meldungen nach ICD10" src="clin_files/output_89_7.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_91_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_91_7.svg">
+  <img alt="OP-Meldungen nach ICD10" src="clin_files/output_91_7.svg">
 </picture>
     
 
@@ -1403,9 +1457,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_91_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_91_1.svg">
-  <img alt="OP-Meldungen nach Intention" src="clin_files/output_91_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_93_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_93_1.svg">
+  <img alt="OP-Meldungen nach Intention" src="clin_files/output_93_1.svg">
 </picture>
     
 
@@ -1422,9 +1476,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_94_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_94_1.svg">
-  <img alt="OPS nach ICD-Kapitel (Top 10)" src="clin_files/output_94_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_96_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_96_1.svg">
+  <img alt="OPS nach ICD-Kapitel (Top 10)" src="clin_files/output_96_1.svg">
 </picture>
     
 
@@ -1440,9 +1494,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_97_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_97_1.svg">
-  <img alt="SYST nach Stellung_OP" src="clin_files/output_97_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_99_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_99_1.svg">
+  <img alt="SYST nach Stellung_OP" src="clin_files/output_99_1.svg">
 </picture>
     
 
@@ -1513,9 +1567,9 @@ z_dy between 2020 and 2024
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_102_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_102_6.png">
-  <img alt="png" src="clin_files/output_102_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_6.png">
+  <img alt="png" src="clin_files/output_104_6.png">
 </picture>
     
 
@@ -1526,9 +1580,9 @@ z_dy between 2020 and 2024
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_102_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_102_8.png">
-  <img alt="png" src="clin_files/output_102_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_8.png">
+  <img alt="png" src="clin_files/output_104_8.png">
 </picture>
     
 
@@ -1566,9 +1620,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_6.png">
-  <img alt="png" src="clin_files/output_104_6.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_6.png">
+  <img alt="png" src="clin_files/output_106_6.png" width="50%">
 </picture>
     
 
@@ -1578,9 +1632,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_9.png">
-  <img alt="png" src="clin_files/output_104_9.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_9.png">
+  <img alt="png" src="clin_files/output_106_9.png" width="50%">
 </picture>
     
 
@@ -1589,7 +1643,10 @@ and z_icd10_3d not in ('C44','D04')
 
 ### <a id='toc1_11_3_'></a>[Tumorstadien](#toc0_)
 
-> 💡 ZfKD: _"`05-NW` hat die Auflage als Konstante im Datensatz hinterlegt"_
+> [!NOTE]
+> 💡 **ZfKD** 
+> - die Auflage ist in `05-NW` als Konstante im Datensatz hinterlegt
+> - für `07-RP` liegen keine pathologischen Angaben vor
 
 
 
@@ -1633,9 +1690,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_6.png">
-  <img alt="png" src="clin_files/output_106_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_108_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_108_6.png">
+  <img alt="png" src="clin_files/output_108_6.png">
 </picture>
     
 
@@ -1646,9 +1703,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_8.png">
-  <img alt="png" src="clin_files/output_106_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_108_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_108_8.png">
+  <img alt="png" src="clin_files/output_108_8.png">
 </picture>
     
 
@@ -1689,11 +1746,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_109_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_109_6.png">
-  <img alt="png" src="clin_files/output_109_6.png" width="80%">
-</picture>
+<img alt="png" src="clin_files/output_111_6.png" width="80%">
     
 
 
@@ -1701,11 +1754,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_109_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_109_9.png">
-  <img alt="png" src="clin_files/output_109_9.png" width="80%">
-</picture>
+<img alt="png" src="clin_files/output_111_9.png" width="80%">
     
 
 
@@ -1750,11 +1799,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_111_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_111_6.png">
-  <img alt="png" src="clin_files/output_111_6.png">
-</picture>
+<img alt="png" src="clin_files/output_113_6.png">
     
 
 
@@ -1763,11 +1808,7 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_111_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_111_8.png">
-  <img alt="png" src="clin_files/output_111_8.png">
-</picture>
+<img alt="png" src="clin_files/output_113_8.png">
     
 
 
@@ -1778,71 +1819,6 @@ and z_icd10_3d not in ('C44','D04')
 
 > [!NOTE]
 > 💡 **ZfKD**: die meisten Angaben im SYST Element liegen komplett vor. `Anzahl_Tage_SYST_Dauer` fehlt häufig, was auch an noch nicht abgeschlossenen Therapien liegen könnte
-
-
-
-```
-    n = 4_062_856                    (100.0%) ██████████████████████████████
-    └ [DJ 2020-2024]:  n = 3_794_188  (93.4%) ░░████████████████████████████
-    └ [keine DCO]:     n = 3_672_629  (90.4%) ░░░███████████████████████████
-    └ [keine C44,D04]: n = 3_065_024  (75.4%) ░░░░░░░░██████████████████████
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-z_dy between 2020 and 2024
-and not z_is_dco
-and z_icd10_3d not in ('C44','D04')
-```
-
-</details>
-
-
-    
-    
-
-
-    🟠 missings
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_113_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_113_6.png">
-  <img alt="png" src="clin_files/output_113_6.png">
-</picture>
-    
-
-
-    🟠 unknowns
-
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_113_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_113_8.png">
-  <img alt="png" src="clin_files/output_113_8.png">
-</picture>
-    
-
-
-
-<br>
-
-### <a id='toc1_11_5_'></a>[Folgeereignisse](#toc0_)
-- die Variablen aus `Folgeereignis` und `Folgeereignis_TNM` sind hier zusammengefasst
-
-> [!NOTE]
-> 💡 **ZfKD**
-> - `Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht
-> - die Erkennung von Rezidiven ist so deutlich erschwert
-> - Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen
-> - Folgeereignisse aus `07-RP` und `08-BW` enthalten keine Missings, dafür allerdings erhöhte Anteile an Unbekannt Kodierungen
-> - T-Stadien zu Folgeereignissen weisen in `02-HH` einen ungewöhnlich niedrigen Missing Anteil auf, bei gleichzeitig fast Unbekannt-freien Kodierungen. Die Fallzahlen dieser Folgeereignisse sind in etwa im erwarteten Rahmen
 
 
 
@@ -1898,8 +1874,74 @@ and z_icd10_3d not in ('C44','D04')
 
 <br>
 
+### <a id='toc1_11_5_'></a>[Folgeereignisse](#toc0_)
+- die Variablen aus `Folgeereignis` und `Folgeereignis_TNM` sind hier zusammengefasst
+
+> [!NOTE]
+> 💡 **ZfKD**
+> - `Datum_Folgeereignis` und `Gesamtbeurteilung_Tumorstatus` liegen komplett vor, die anderen Angaben zum Tumorstatus allerdings nicht
+> - die Erkennung von Rezidiven ist so deutlich erschwert
+> - Angaben für `Folgeereignis_TNM` fehlen ganz überwiegend, auch wenn Folgereignisse keine TNM enthalten müssen
+> - Folgeereignisse aus `07-RP` und `08-BW` enthalten keine Missings, dafür allerdings erhöhte Anteile an Unbekannt Kodierungen
+> - T-Stadien zu Folgeereignissen weisen in `02-HH` einen ungewöhnlich niedrigen Missing Anteil auf, bei gleichzeitig fast Unbekannt-freien Kodierungen. Die Fallzahlen dieser Folgeereignisse sind in etwa im erwarteten Rahmen
+
+
+
+```
+    n = 4_062_856                    (100.0%) ██████████████████████████████
+    └ [DJ 2020-2024]:  n = 3_794_188  (93.4%) ░░████████████████████████████
+    └ [keine DCO]:     n = 3_672_629  (90.4%) ░░░███████████████████████████
+    └ [keine C44,D04]: n = 3_065_024  (75.4%) ░░░░░░░░██████████████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+z_dy between 2020 and 2024
+and not z_is_dco
+and z_icd10_3d not in ('C44','D04')
+```
+
+</details>
+
+
+    
+    
+
+
+    🟠 missings
+
+
+
+    
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_6.png">
+  <img alt="png" src="clin_files/output_117_6.png">
+</picture>
+    
+
+
+    🟠 unknowns
+
+
+
+    
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_8.png">
+  <img alt="png" src="clin_files/output_117_8.png">
+</picture>
+    
+
+
+
+<br>
+
 ### <a id='toc1_11_6_'></a>[Freitexte](#toc0_)
 
+> [!NOTE]
 > 💡 **ZfKD**: 
 > - Protokolle und Substanzen werden nach und nach in den Datensatz eingebunden. Protokolle bislang ausschliesslich als Freitext
 > - bei Substanzen komplementieren sich Freitexte und Kodierungen, bei vielen GTDS Ländern überwiegen inzwischen die Kodierungen
@@ -1933,9 +1975,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_5.png">
-  <img alt="png" src="clin_files/output_117_5.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_119_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_119_5.png">
+  <img alt="png" src="clin_files/output_119_5.png">
 </picture>
     
 
@@ -1946,9 +1988,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_7.png">
-  <img alt="png" src="clin_files/output_117_7.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_119_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_119_7.png">
+  <img alt="png" src="clin_files/output_119_7.png">
 </picture>
     
 
@@ -1996,9 +2038,9 @@ and z_icd10_3d = 'C50'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_120_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_120_5.png">
-  <img alt="png" src="clin_files/output_120_5.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_5.png">
+  <img alt="png" src="clin_files/output_122_5.png">
 </picture>
     
 
@@ -2009,9 +2051,9 @@ and z_icd10_3d = 'C50'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_120_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_120_7.png">
-  <img alt="png" src="clin_files/output_120_7.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_7.png">
+  <img alt="png" src="clin_files/output_122_7.png">
 </picture>
     
 
@@ -2020,6 +2062,7 @@ and z_icd10_3d = 'C50'
 
 #### <a id='toc1_11_7_2_'></a>[Prostata](#toc0_)
 
+> [!NOTE]
 > 💡 **ZfKD**: auch innerhalb eines KKR gibt es deutliche Varianzen zwischen Variablen des organspezifischen Moduls, z.B. in den NBL
 
 
@@ -2050,9 +2093,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_6.png">
-  <img alt="png" src="clin_files/output_122_6.png" width="70%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_6.png">
+  <img alt="png" src="clin_files/output_124_6.png" width="70%">
 </picture>
     
 
@@ -2062,9 +2105,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_9.png">
-  <img alt="png" src="clin_files/output_122_9.png" width="70%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_9.png">
+  <img alt="png" src="clin_files/output_124_9.png" width="70%">
 </picture>
     
 
@@ -2102,9 +2145,9 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_6.png">
-  <img alt="png" src="clin_files/output_124_6.png" width="40%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_6.png">
+  <img alt="png" src="clin_files/output_126_6.png" width="40%">
 </picture>
     
 
@@ -2114,9 +2157,9 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_9.png">
-  <img alt="png" src="clin_files/output_124_9.png" width="40%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_9.png">
+  <img alt="png" src="clin_files/output_126_9.png" width="40%">
 </picture>
     
 
@@ -2157,7 +2200,11 @@ and z_icd10_3d = 'C43'
 
 
 
-<img alt="png" src="clin_files/output_126_7.png" width="50%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_128_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_128_7.png">
+  <img alt="png" src="clin_files/output_128_7.png" width="50%">
+</picture>
     
 
 
@@ -2165,7 +2212,11 @@ and z_icd10_3d = 'C43'
 
 
 
-<img alt="png" src="clin_files/output_126_10.png" width="50%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_128_10.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_128_10.png">
+  <img alt="png" src="clin_files/output_128_10.png" width="50%">
+</picture>
     
 
 
@@ -2217,9 +2268,9 @@ Stadium is not null
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_132_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_132_1.svg">
-  <img alt="nach Quelle" src="clin_files/output_132_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_134_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_134_1.svg">
+  <img alt="Weitere Klassifikationen nach Quelle" src="clin_files/output_134_1.svg">
 </picture>
     
 
@@ -2239,9 +2290,9 @@ Stadium is not null
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_134_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_134_1.png">
-  <img alt="png" src="clin_files/output_134_1.png" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_136_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_136_1.png">
+  <img alt="png" src="clin_files/output_136_1.png" width="100%">
 </picture>
     
 
@@ -2249,25 +2300,7 @@ Stadium is not null
 
 <br>
 
-### <a id='toc1_12_3_'></a>[nach Jahren](#toc0_)
-
-> [!NOTE]
-> 💡 **ZfKD**
-> - keine nennenswerten Verschiebungen der meistkodierten Klassifikationen in den letzten DJ, die Zeitachse wird im folgenden nicht weiter berücksichtigt
-
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_136_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_136_1.svg">
-  <img alt="nach Jahren" src="clin_files/output_136_1.svg">
-</picture>
-    
-
-
-
-<br>
-
-### <a id='toc1_12_4_'></a>[PSA](#toc0_)
+### <a id='toc1_12_3_'></a>[PSA](#toc0_)
 
 
 
@@ -2297,7 +2330,7 @@ and z_icd10_3d = 'C61'
 
 <br>
 
-#### <a id='toc1_12_4_1_'></a>[Angabe zu Diagnose vs Weitere Klassifikationen](#toc0_)
+#### <a id='toc1_12_3_1_'></a>[Angabe zu Diagnose vs Weitere Klassifikationen](#toc0_)
 - untersucht wird, ob PSA Angaben jeweils Diagnosen zugeordnet sind (erwartete Quelle der Angabe), oder Weiteren Klassifikationen (aus Freitext isoliert)
 - Kategorien für die Kombination von PSA Werten zu jedem Tumor
   - `1_all_null`: keine PSA Werte zum Tumor
@@ -2313,9 +2346,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_141_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_141_1.svg">
-  <img alt="PSA: Angabe zu Diagnose vs Weitere Klassifikationen" src="clin_files/output_141_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_142_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_142_1.svg">
+  <img alt="PSA: Angabe zu Diagnose vs Weitere Klassifikationen" src="clin_files/output_142_1.svg">
 </picture>
     
 
@@ -2323,7 +2356,7 @@ and z_icd10_3d = 'C61'
 
 <br>
 
-#### <a id='toc1_12_4_2_'></a>[Kombinationen der PSA Merkmale](#toc0_)
+#### <a id='toc1_12_3_2_'></a>[Kombinationen der PSA Merkmale](#toc0_)
 - untersucht wird, in welchen Kombinationen folgende Merkmale auftreten (deutschlandweit):
   - `has_psa` - Tumor hat einen PSA Wert aus dem Organmodul
   - `has_diag` - Tumor hat einen PSA Wert aus Diagnose -> Weitere Klassifikationen
@@ -2343,9 +2376,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_143_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_143_2.png">
-  <img alt="Kombinationen der PSA Merkmale" src="clin_files/output_143_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_144_2.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_144_2.png">
+  <img alt="Kombinationen der PSA Merkmale" src="clin_files/output_144_2.png">
 </picture>
     
 
@@ -2353,7 +2386,7 @@ and z_icd10_3d = 'C61'
 
 <br>
 
-#### <a id='toc1_12_4_3_'></a>[Weitere Klassifikationen: Diagnose vs Folgeereignis](#toc0_)
+#### <a id='toc1_12_3_3_'></a>[Weitere Klassifikationen: Diagnose vs Folgeereignis](#toc0_)
 - untersucht wird pro KKR, ob sich PSA Angaben aus `Weitere Klassifikationen` überlappen
 - um Verlaufsangaben zu erkennen ist es relevant, ob Angaben in `Weitere Klassifikationen` jeweils zur Diagnose oder Folgeereignis gemacht werden
 - Kategorien für die Kombination von PSA Werten zu jedem Tumor:
@@ -2370,9 +2403,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_145_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_145_1.svg">
-  <img alt="PSA: Weitere Klassifikationen - Diagnose vs Folgeereignis" src="clin_files/output_145_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_146_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_146_1.svg">
+  <img alt="PSA: Weitere Klassifikationen - Diagnose vs Folgeereignis" src="clin_files/output_146_1.svg">
 </picture>
     
 
@@ -2380,7 +2413,7 @@ and z_icd10_3d = 'C61'
 
 <br>
 
-### <a id='toc1_12_5_'></a>[UICC](#toc0_)
+### <a id='toc1_12_4_'></a>[UICC](#toc0_)
 
 
 
@@ -2421,7 +2454,7 @@ and
 
 <br>
 
-#### <a id='toc1_12_5_1_'></a>[Kombinationen](#toc0_)
+#### <a id='toc1_12_4_1_'></a>[Kombinationen](#toc0_)
 
 - untersucht wird die Überlappung von UICC Angaben
 - UICC Angaben können an folgenden Orten im Schema überliefert sein:
@@ -2441,9 +2474,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_149_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_149_2.png">
-  <img alt="UICC: Kombinationen" src="clin_files/output_149_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_150_2.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_150_2.png">
+  <img alt="UICC: Kombinationen" src="clin_files/output_150_2.png">
 </picture>
     
 
@@ -2451,7 +2484,7 @@ and
 
 <br>
 
-#### <a id='toc1_12_5_2_'></a>[nach KKR](#toc0_)
+#### <a id='toc1_12_4_2_'></a>[nach KKR](#toc0_)
 - Folgeereignisse sind hier nicht betrachtet
 - Kategorien:
   - `1_no_diag`: keine UICC Angabe im Diagnose Element
@@ -2468,9 +2501,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_151_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_151_1.svg">
-  <img alt="UICC nach KKR" src="clin_files/output_151_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_152_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_152_1.svg">
+  <img alt="UICC nach KKR" src="clin_files/output_152_1.svg">
 </picture>
     
 
@@ -2497,9 +2530,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_153_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_153_1.svg">
-  <img alt="Freitextkodierung: Substanzen" src="clin_files/output_153_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_154_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_154_1.svg">
+  <img alt="Freitextkodierung: Substanzen" src="clin_files/output_154_1.svg">
 </picture>
     
 
@@ -2511,9 +2544,6 @@ and
 ### <a id='toc1_14_1_'></a>[Zeitpunkt der Erhebung](#toc0_)
 
 > [!NOTE]
-> 💡 **HH**: _"Das liegt an unserer Darstellung des Vitalstatus-Datum. Nach Abschluss der DC-Recherche, die nach Abschluss des 'Todesjahres' durchgeführt wird, wird bei allen Patienten bei denen wir keine weiteren Meldungen bzw Informationen zum Vitalstatus bekommen haben der 31.12. des abgeschlossenen 'Todesjahres' gesetzt. In diesem Fall ist dies das aktuelle Jahr - 2 -> 31.12.2022, da die DC-Recherche zum Zeitpunkt der Datenlieferung noch nicht abgeschlossen war. Wenn jetzt ein Patient die letzte Meldung mit einem Leistungsdatum in 2019 hatte, wir aber keine weiteren Informationen bekommen haben, gehen wir also nach Abschluss der Recherche davon aus, dass der Patient am 31.12.2022 noch gelebt hat. Dadurch 'verbessert' sich tatsächlich der Vitalstatus in unseren Daten, ansonsten wäre dieser nämlich irgendwann in 2019."_
->
-> ---
 > 💡 **ZfKD**: angestrebt ist die Verwendung eines einzelnen Erhebungszeitpunkts (z.B. Dezember)
 
 
@@ -2545,9 +2575,9 @@ and year(Datum_Vitalstatus) >= 2020
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_157_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_157_1.svg">
-  <img alt="Zeitpunkt der Erhebung" src="clin_files/output_157_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_158_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_158_1.svg">
+  <img alt="Zeitpunkt der Erhebung" src="clin_files/output_158_1.svg">
 </picture>
     
 
@@ -2601,9 +2631,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_0.png">
-  <img alt="png" src="clin_files/output_162_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_0.png">
+  <img alt="png" src="clin_files/output_163_0.png">
 </picture>
     
 
@@ -2611,9 +2641,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_1.png">
-  <img alt="png" src="clin_files/output_162_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_1.png">
+  <img alt="png" src="clin_files/output_163_1.png">
 </picture>
     
 
@@ -2657,9 +2687,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_0.png">
-  <img alt="png" src="clin_files/output_164_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_0.png">
+  <img alt="png" src="clin_files/output_165_0.png">
 </picture>
     
 
@@ -2667,9 +2697,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_1.png">
-  <img alt="png" src="clin_files/output_164_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_1.png">
+  <img alt="png" src="clin_files/output_165_1.png">
 </picture>
     
 
@@ -2711,48 +2741,92 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_0.png">
-  <img alt="png" src="clin_files/output_166_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_0.png">
+  <img alt="png" src="clin_files/output_167_0.png">
 </picture>
-    
-
-
-    
-    column (n = 3_793_405) |   notnull    |  min  | lower |  q25  | median |  mean  |  q75   | upper  |    max     |   std   |  cv  
-    -----------------------+--------------+-------+-------+-------+--------+--------+--------+--------+------------+---------+------
-    PSA                    | 245_159 (6%) | 0.000 | 0.000 | 5.630 |  8.740 | 90.673 | 18.000 | 36.550 | 99_999.000 | 743.875 | 8.204
     
 
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_2.png">
-  <img alt="png" src="clin_files/output_166_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_1.png">
+  <img alt="png" src="clin_files/output_167_1.png">
 </picture>
     
+
+
+    
+    column (n = 3_793_405) |   notnull    | min  | lower | q25  | median | mean  |  q75  | upper |    max    |  std   |  cv 
+    -----------------------+--------------+------+-------+------+--------+-------+-------+-------+-----------+--------+-----
+    PSA                    | 245_159 (6%) | 0.00 |  0.00 | 5.63 |   8.74 | 90.67 | 18.00 | 36.55 | 99_999.00 | 743.88 | 8.20
+    
+
+
+    
+    item (n = 3_793_405) | count  | min  | lower | q25  | median |  mean  |  q75  | upper |    max    |   std    |  cv  
+    ---------------------+--------+------+-------+------+--------+--------+-------+-------+-----------+----------+------
+    01-SH                |  8_181 | 0.00 |  0.00 | 5.86 |   9.32 | 175.20 | 21.00 | 43.70 | 52_060.00 | 1_225.13 |  6.99
+    03-NI                | 20_601 | 0.00 |  0.00 | 5.56 |   8.44 |  75.94 | 16.80 | 33.66 | 28_485.00 |   477.38 |  6.29
+    04-HB                |  1_668 | 0.00 |  0.00 | 5.80 |   9.10 |  93.68 | 20.58 | 42.60 |  9_000.00 |   449.20 |  4.79
+    05-NW                | 55_387 | 0.00 |  0.00 | 5.32 |   8.23 |  84.42 | 16.60 | 33.50 | 99_999.00 |   905.30 | 10.72
+    06-HE                | 13_980 | 0.00 |  0.00 | 5.79 |   8.90 |  93.00 | 18.00 | 36.30 | 52_910.00 |   728.49 |  7.83
+    07-RP                |  6_635 | 0.00 |  0.00 | 5.60 |   8.50 |  78.42 | 17.73 | 35.80 | 21_756.00 |   491.45 |  6.27
+    08-BW                | 35_673 | 0.00 |  0.00 | 5.60 |   8.50 |  79.51 | 16.09 | 31.80 | 54_310.00 |   736.54 |  9.26
+    09-BY                | 36_776 | 0.00 |  0.00 | 5.80 |   9.00 |  76.69 | 17.97 | 36.22 | 89_280.00 |   719.27 |  9.38
+    10-SL                |  3_878 | 0.00 |  0.00 | 6.13 |   9.77 |  90.24 | 21.39 | 44.20 | 10_000.00 |   451.86 |  5.01
+    11-BE                | 10_554 | 0.00 |  0.00 | 5.56 |   8.90 |  94.28 | 19.70 | 40.87 | 18_360.00 |   576.78 |  6.12
+    12-BB                |  9_994 | 0.00 |  0.00 | 5.62 |   9.00 | 106.85 | 22.09 | 46.70 | 25_000.00 |   644.33 |  6.03
+    13-MV                |  7_248 | 0.00 |  0.00 | 6.00 |   9.29 | 109.61 | 20.59 | 42.40 | 25_000.00 |   702.39 |  6.41
+    14-SN                | 19_026 | 0.00 |  0.00 | 5.94 |   9.30 | 100.82 | 22.00 | 46.00 | 24_096.00 |   527.83 |  5.24
+    15-ST                |  7_816 | 0.00 |  0.00 | 5.80 |   9.40 | 123.76 | 24.06 | 51.40 | 18_666.00 |   682.30 |  5.51
+    16-TH                |  7_742 | 0.02 |  0.02 | 5.90 |   9.13 | 107.21 | 21.47 | 44.83 | 40_000.00 |   762.27 |  7.11
+    
+
 
 
 <br>
 
-### <a id='toc1_15_4_'></a>[Tumordicke](#toc0_)
+### <a id='toc1_15_4_'></a>[LK_untersucht](#toc0_)
 
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_168_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_168_0.png">
-  <img alt="png" src="clin_files/output_168_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_169_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_169_0.png">
+  <img alt="png" src="clin_files/output_169_0.png">
 </picture>
     
 
 
     
-    column (n = 3_793_405) |   notnull   |  min  | lower |  q25  | median | mean  |  q75  | upper |  max   |  std  |  cv  
-    -----------------------+-------------+-------+-------+-------+--------+-------+-------+-------+--------+-------+------
-    Tumordicke             | 59_053 (1%) | 0.010 | 0.010 | 0.400 |  0.900 | 1.950 | 2.200 | 4.900 | 99.000 | 3.516 | 1.803
+    column (n = 3_793_405) |    notnull    | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
+    -----------------------+---------------+-----+-------+------+--------+-------+-------+-------+-------+-------+-----
+    LK_untersucht          | 947_076 (24%) |   0 |     0 | 1.00 |   5.00 | 10.50 | 17.00 |    41 | 2_319 | 13.58 | 1.29
+    
+
+
+    
+    item (n = 3_793_405) |  count  | min | lower | q25  | median | mean  |  q75  | upper |  max  |  std  |  cv 
+    ---------------------+---------+-----+-------+------+--------+-------+-------+-------+-------+-------+-----
+    01-SH                |  28_058 |   0 |     0 | 2.00 |  11.00 | 13.24 | 20.00 |    47 |   121 | 13.14 | 0.99
+    02-HH                |  16_589 |   0 |     0 | 2.00 |   8.00 | 13.04 | 20.00 |    47 |   168 | 14.72 | 1.13
+    03-NI                |  84_781 |   0 |     0 | 3.00 |  10.00 | 12.38 | 18.00 |    40 | 2_021 | 13.68 | 1.10
+    04-HB                |   7_991 |   0 |     0 | 2.00 |  10.00 | 14.25 | 22.00 |    52 |   147 | 14.58 | 1.02
+    05-NW                | 366_608 |   0 |     0 | 0.00 |   0.00 |  6.67 | 11.00 |    27 | 2_319 | 12.96 | 1.94
+    06-HE                |  58_584 |   0 |     0 | 3.00 |  11.00 | 13.19 | 20.00 |    45 |   190 | 12.39 | 0.94
+    07-RP                |  12_454 |   0 |     0 | 0.00 |   2.00 |  9.09 | 16.00 |    40 |   258 | 13.92 | 1.53
+    08-BW                | 106_186 |   0 |     0 | 2.00 |   9.00 | 12.64 | 19.00 |    44 |   999 | 13.81 | 1.09
+    09-BY                | 104_257 |   0 |     0 | 3.00 |  13.00 | 14.95 | 22.00 |    50 |   350 | 13.76 | 0.92
+    10-SL                |  11_971 |   0 |     0 | 3.00 |  10.00 | 13.33 | 19.00 |    43 |   317 | 13.04 | 0.98
+    11-BE                |  23_865 |   0 |     0 | 0.00 |   1.00 |  8.03 | 13.00 |    32 |   121 | 12.82 | 1.60
+    12-BB                |  14_690 |   0 |     0 | 1.00 |   7.00 | 11.14 | 17.00 |    41 |   142 | 12.96 | 1.16
+    13-MV                |  17_688 |   0 |     0 | 2.00 |   8.00 | 12.38 | 19.00 |    44 |   600 | 13.65 | 1.10
+    14-SN                |  47_658 |   0 |     0 | 3.00 |  12.00 | 12.76 | 19.00 |    43 |   344 | 11.91 | 0.93
+    15-ST                |  25_691 |   0 |     0 | 2.00 |  11.00 | 12.58 | 19.00 |    44 |   158 | 11.84 | 0.94
+    16-TH                |  20_005 |   0 |     0 | 4.00 |  13.00 | 14.59 | 21.00 |    46 |   214 | 13.13 | 0.90
     
 
 
@@ -2764,82 +2838,38 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_170_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_170_0.png">
-  <img alt="png" src="clin_files/output_170_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_171_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_171_0.png">
+  <img alt="png" src="clin_files/output_171_0.png">
 </picture>
     
 
 
     
-    column (n = 3_793_405) |    notnull    | min | lower |  q25  | median | mean  |  q75  | upper | max |  std  |  cv  
-    -----------------------+---------------+-----+-------+-------+--------+-------+-------+-------+-----+-------+------
-    LK_befallen            | 792_920 (20%) |   0 |     0 | 0.000 |  0.000 | 0.918 | 0.000 |     0 | 722 | 3.082 | 3.357
-    
-
-
-
-<br>
-
-### <a id='toc1_15_6_'></a>[LK_untersucht](#toc0_)
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_172_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_172_0.png">
-  <img alt="png" src="clin_files/output_172_0.png">
-</picture>
+    column (n = 3_793_405) |    notnull    | min | lower | q25  | median | mean | q75  | upper | max | std  |  cv 
+    -----------------------+---------------+-----+-------+------+--------+------+------+-------+-----+------+-----
+    LK_befallen            | 792_920 (20%) |   0 |     0 | 0.00 |   0.00 | 0.92 | 0.00 |     0 | 722 | 3.08 | 3.36
     
 
 
     
-    column (n = 3_793_405) |    notnull    | min | lower |  q25  | median |  mean  |  q75   | upper |  max  |  std   |  cv  
-    -----------------------+---------------+-----+-------+-------+--------+--------+--------+-------+-------+--------+------
-    LK_untersucht          | 947_076 (24%) |   0 |     0 | 1.000 |  5.000 | 10.498 | 17.000 |    41 | 2_319 | 13.578 | 1.293
-    
-
-
-
-<br>
-
-### <a id='toc1_15_7_'></a>[RektumAbstandAnokutanlinie](#toc0_)
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_174_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_174_0.png">
-  <img alt="png" src="clin_files/output_174_0.png">
-</picture>
-    
-
-
-    
-    column (n = 3_793_405)     |   notnull   | min | lower |  q25  | median |  mean  |  q75   | upper | max |  std   |  cv  
-    ---------------------------+-------------+-----+-------+-------+--------+--------+--------+-------+-----+--------+------
-    RektumAbstandAnokutanlinie | 42_520 (1%) |   0 |     0 | 5.000 |  9.000 | 11.305 | 14.000 |    27 | 930 | 16.962 | 1.500
-    
-
-
-
-<br>
-
-### <a id='toc1_15_8_'></a>[LDH](#toc0_)
-
-
-    
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_176_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_176_0.png">
-  <img alt="png" src="clin_files/output_176_0.png">
-</picture>
-    
-
-
-    
-    column (n = 3_793_405) |  notnull   | min | lower |   q25   | median  |  mean   |   q75   | upper |  max  |   std   |  cv  
-    -----------------------+------------+-----+-------+---------+---------+---------+---------+-------+-------+---------+------
-    LDH                    | 8_083 (0%) |   1 |    85 | 173.000 | 198.000 | 223.739 | 232.000 |   320 | 5_756 | 207.009 | 0.925
+    item (n = 3_793_405) |  count  | min | lower | q25  | median | mean | q75  | upper | max | std  |  cv 
+    ---------------------+---------+-----+-------+------+--------+------+------+-------+-----+------+-----
+    01-SH                |  27_920 |   0 |     0 | 0.00 |   0.00 | 1.28 | 1.00 |     2 |  67 | 3.48 | 2.72
+    02-HH                |  16_587 |   0 |     0 | 0.00 |   0.00 | 1.15 | 1.00 |     2 |  63 | 3.10 | 2.68
+    03-NI                |  84_524 |   0 |     0 | 0.00 |   0.00 | 1.16 | 1.00 |     2 |  89 | 3.20 | 2.75
+    04-HB                |   8_014 |   0 |     0 | 0.00 |   0.00 | 1.25 | 1.00 |     2 |  43 | 3.20 | 2.56
+    05-NW                | 366_533 |   0 |     0 | 0.00 |   0.00 | 0.57 | 0.00 |     0 | 722 | 2.69 | 4.68
+    06-HE                |  45_574 |   0 |     0 | 0.00 |   0.00 | 1.19 | 1.00 |     2 |  74 | 3.34 | 2.80
+    07-RP                |  12_438 |   0 |     0 | 0.00 |   0.00 | 0.91 | 0.00 |     0 |  95 | 3.04 | 3.34
+    08-BW                | 105_931 |   0 |     0 | 0.00 |   0.00 | 1.19 | 1.00 |     2 |  99 | 3.31 | 2.79
+    09-BY                |   8_630 |   0 |     0 | 0.00 |   0.00 | 1.28 | 1.00 |     2 |  58 | 3.54 | 2.76
+    10-SL                |  11_969 |   0 |     0 | 0.00 |   0.00 | 1.25 | 1.00 |     2 |  85 | 3.54 | 2.82
+    11-BE                |      84 |   0 |     0 | 0.00 |   0.00 | 1.45 | 2.00 |     5 |  22 | 3.32 | 2.29
+    12-BB                |     103 |   0 |     0 | 0.00 |   0.00 | 1.49 | 1.00 |     2 |  15 | 3.19 | 2.15
+    13-MV                |  15_361 |   0 |     0 | 0.00 |   0.00 | 1.45 | 1.00 |     2 |  68 | 3.78 | 2.60
+    14-SN                |  45_796 |   0 |     0 | 0.00 |   0.00 | 1.23 | 1.00 |     2 |  92 | 3.41 | 2.77
+    15-ST                |  24_103 |   0 |     0 | 0.00 |   0.00 | 1.37 | 1.00 |     2 | 104 | 3.68 | 2.70
+    16-TH                |  19_353 |   0 |     0 | 0.00 |   0.00 | 1.28 | 1.00 |     2 |  83 | 3.42 | 2.67
     
 

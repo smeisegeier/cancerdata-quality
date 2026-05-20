@@ -1,7 +1,7 @@
 # <a id='toc1_'></a>[Bericht zur Datenqualität (epi2025_1)](#toc0_)
 
 **Inhalt**<a id='toc0_'></a>    
-- [Bericht zur Datenqualität (epi2025_beta)](#toc1_)    
+- [Bericht zur Datenqualität (epi2025_1)](#toc1_)    
   - [Änderungen seit der letzten Version](#toc1_1_)    
   - [Hinweise](#toc1_2_)    
   - [Datenstand](#toc1_3_)    
@@ -15,15 +15,15 @@
     - [DCO Diagramm](#toc1_5_4_)    
     - [DCO](#toc1_5_5_)    
     - [Angabe Register vs Bundesland](#toc1_5_6_)    
-    - [Dignität](#toc1_5_7_)    
-    - [Grading Verteilung](#toc1_5_8_)    
-    - [Grading Anteil](#toc1_5_9_)    
-    - [Altersgruppen](#toc1_5_10_)    
-    - [UICC](#toc1_5_11_)    
-    - [TNM-Auflage](#toc1_5_12_)    
-    - [Tod](#toc1_5_13_)    
-      - [Anteil Verstorbene](#toc1_5_13_1_)    
-      - [Verteilung Todesursachen nach ICDT10](#toc1_5_13_2_)    
+  - [Histologien](#toc1_6_)    
+    - [Dignität](#toc1_6_1_)    
+    - [Grading](#toc1_6_2_)    
+    - [Altersgruppen Kinder und Heranwachsende](#toc1_6_3_)    
+    - [UICC](#toc1_6_4_)    
+    - [TNM-Auflage](#toc1_6_5_)    
+    - [Tod](#toc1_6_6_)    
+      - [Anteil Verstorbene](#toc1_6_6_1_)    
+      - [Verteilung Todesursachen nach ICDT10](#toc1_6_6_2_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -38,13 +38,17 @@
 
 ## <a id='toc1_1_'></a>[Änderungen seit der letzten Version](#toc0_)
 <!-- - bisher wurden folgende Angaben in einer umfangreichen Verarbeitung im workflow umkodiert: `ICDGM10`, `HISC`, `ICDO3`, `DIG`. Diese Umformung wurde deaktiviert, es finden nun nur noch punktuelle Korrekturen statt -->
-- Lieferung Daten mit DJ=2024
+- Lieferung Daten mit **Diagnosejahr 2024**
 
 <br>
 
 ## <a id='toc1_2_'></a>[Hinweise](#toc0_)
-- Bewertungen der Analysen sind mit 💡 markiert
-- bei den Plausibilitätsprüfungen weist ein ✅ darauf hin, dass keine Mängel erkennbar sind
+- Neben den Hinweisen zum Verständnis der Auswertungen sind auch häufig **Interpretationen** angefügt, diese sind optisch abgesetzt als **Notiz** erkennbar
+- die jeweils angewendeten **Filter** sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl der Entität in unserer Datenbank
+- die _relativen_ Barcharts enthalten ein `Total` item für den Gesamtvergleich
+- die Filter können exakt nachvollzogen werden mit Hilfe der **ausklappbaren SQL Abfragen**
+- in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
+- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../../epi.ipynb)
 
 <br>
 
@@ -54,7 +58,7 @@
     data tag:                epi2025_1
     sql table created:       2026-05-13 09:31:01
     doi:                     10.18444/5.03.01.0005.0022.0001
-    document created:        2026-05-18 17:27:27
+    document created:        2026-05-20 18:44:37
 
 
     
@@ -82,7 +86,11 @@
 
 
     
-<img alt="png" src="epi_files/output_17_0.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_17_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_17_0.png">
+  <img alt="png" src="epi_files/output_17_0.png">
+</picture>
     
 
 
@@ -94,13 +102,11 @@
 
 
     
-<img alt="png" src="epi_files/output_19_0.png">
-    
-
-
-
-    
-<img alt="png" src="epi_files/output_20_0.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_19_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_19_0.png">
+  <img alt="png" src="epi_files/output_19_0.png">
+</picture>
     
 
 
@@ -126,11 +132,11 @@
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2019-2025]:            n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [keine DCO]:               n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [keine C44,D04]:           n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2019-2025]:          n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine DCO]:             n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine C44,D04]:         n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
 ```
 
 <details>
@@ -152,7 +158,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="epi_files/output_24_5.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_24_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_24_5.png">
+  <img alt="png" src="epi_files/output_24_5.png">
+</picture>
     
 
 
@@ -161,24 +171,15 @@ and z_icd10_3d not in ('C44','D04')
 
 ### <a id='toc1_5_2_'></a>[Diagnosegruppen](#toc0_)
 
-> 💡 **ZfKD**
->
-> D-Diagnosen (Vorstufen & unsichere Befunde)
-> * Die Anteile sind in fast allen Bundesländern sehr ähnlich. 
-> * Das zeigt, dass die Meldungen aus der Pathologie deutschlandweit relativ einheitlich erfasst werden.
-> * Die Werte sind ein gutes Zeichen für eine vergleichbare Datenqualität.
->
-> ---
->
-> C44 (Heller Hautkrebs)
-> * Der Hauptgrund für die Unterschiede sind jedoch die **Landesgesetze**: Je nach Bundesland werden einfache Fälle (wie Basaliome) unterschiedlich streng gemeldet oder vergütet. Während manche Länder noch fast alles erfassen, konzentrieren sich andere bereits auf die schweren, "prognostisch ungünstigen" Verläufe.
+> [!NOTE]
+> 💡 **ZfKD**: Auffallend ist vor allem der unterschiedlich hohe Anteil von C44 aufgrund unterschiedlicher Landesgesetze: Je nach Bundesland werden nicht-melanotische Hautkrebsformen unterschiedlich gemeldet oder vergütet. Während manche Länder noch alle Hauttumoren erfassen, konzentrieren sich andere bereits auf die &quot;prognostisch ungünstigen&quot; Verläufe, deren Erfassung im Rahmen der klinischen Krebsregistrierung seit 2023 von der GKV finanziert wird
 
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2024]:                   n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2024]:                 n = 764_787   (4.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
 ```
 
 <details>
@@ -197,8 +198,11 @@ and z_dy = 2024
 
 
 
-    
-<img alt="svg" src="epi_files/output_26_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_26_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_26_6.svg">
+  <img alt="Diagnosegruppen" src="epi_files/output_26_6.svg">
+</picture>
     
 
 
@@ -206,19 +210,20 @@ and z_dy = 2024
 
 ### <a id='toc1_5_3_'></a>[Diagnosesicherung](#toc0_)
 
+> [!NOTE]
 > 💡 **ZfKD**
-> 
+> - der Großteil der Meldungen basiert auf einer histologischen Sicherung der Diagnose
+> - Der Anteil dieser Fälle hat in den ostdeutschen Registern zuletzt zugenommen
 > - `08-BW` hat einen hohen Anteil an fehlenden Diagnosesicherungen mit zuletzt stark ansteigendem Trend
-> - der Großteil der Meldungen basiert auf einer soliden feingeweblichen Untersuchung
-> - in einigen LKR ist dieser Anteil erkennbar breiter als in anderen. Da die Zytologie oft bei Lungen- oder Schilddrüsenuntersuchungen genutzt wird, könnte dies auf eine starke Vernetzung mit entsprechenden Fachkliniken hindeuten, die ihre Befunde sehr detailliert an das Register melden.
+> - Der Anteil einer histologischen Sicherung einer Metastase ist insgesamt gering, zeigt aber teilweise deutliche Unterschiede zwischen den Registern (ca. zwischen 0 und 5%)
 
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ ab 2015]:              n = 7_675_888  (43.2%) ░░░░░░░░░░░░░░░░░░████████████
-    └ [keine C44,D04]:           n = 6_156_522  (34.7%) ░░░░░░░░░░░░░░░░░░░░██████████
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ ab 2015]:            n = 7_675_888  (43.2%) ░░░░░░░░░░░░░░░░░░████████████
+    └ [keine C44,D04]:         n = 6_156_522  (34.7%) ░░░░░░░░░░░░░░░░░░░░██████████
 ```
 
 <details>
@@ -238,8 +243,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-<img alt="svg" src="epi_files/output_29_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_29_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_29_6.svg">
+  <img alt="Diagnosesicherung" src="epi_files/output_29_6.svg">
+</picture>
     
 
 
@@ -260,22 +268,21 @@ and z_icd10_3d not in ('C44','D04')
 ### <a id='toc1_5_5_'></a>[DCO](#toc0_)
 - Metrik: Anteil DCO an Gesamtfallzahl in %
 
+> [!NOTE]
 > 💡 **ZfKD**
-> 
-> Fehlende DCO Fälle bzw Markierungen
-> * es ist nicht ersichtlich, ob DCO Fälle nicht übermittelt oder nicht markiert sind
-> * `08-BW` keine / kaum DCO Fälle vor 2015
-> * `13-MV` `14-SN` `16-TH` haben kaum DCO Fälle seit Beginn der klinischen Lieferungen
+> - aus 08-BW sind in den ersten 6 Jahren nach Registerstart bewusst keine DCO-Fälle übermittelt worden
+> - `13-MV` `14-SN` `16-TH` haben seit Beginn der klinischen Lieferungen aus den LKR fast keine DCO Fälle übermittelt
+
 
 
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [ICD10 nur C]:            n = 15_030_686  (84.6%) ░░░░░█████████████████████████
-    └ [keine C44,D04]:          n = 12_205_943  (68.7%) ░░░░░░░░░░████████████████████
-    └ [DJ ab 2010]:              n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [ICD10 nur C]:          n = 15_030_686  (84.6%) ░░░░░█████████████████████████
+    └ [keine C44,D04]:        n = 12_205_943  (68.7%) ░░░░░░░░░░████████████████████
+    └ [DJ ab 2010]:            n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
 ```
 
 <details>
@@ -297,7 +304,11 @@ and z_dy >= 2010
 
 
     
-<img alt="png" src="epi_files/output_32_5.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_32_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_32_5.png">
+  <img alt="png" src="epi_files/output_32_5.png">
+</picture>
     
 
 
@@ -308,9 +319,8 @@ and z_dy >= 2010
 - neue Bundesländer sind nicht aufgeführt, da Daten erst ab 2020 aus Länderregistern vorliegen
 - Fälle ausserhalb des Einzugsbereichs werden im ZfKD ausgeschlossen (`A_EKRNR_GKZ_unplausibel`)
 
+> [!NOTE]
 > 💡 **ZfKD**
-> 
-> Fallübermittlung außerhalb des Einzugsbereichs
 > * generell wird angestrebt, dass die Fallübermittlung ausschließlich innerhalb des Einzugsbereichs stattfindet
 > * `05-NW` übermittelt einen relativ hohen Anteil an Fällen aus anderen Bundesländern
 
@@ -337,21 +347,71 @@ z_kkr < 11
 
 
     
-<img alt="png" src="epi_files/output_34_5.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_34_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_34_5.png">
+  <img alt="png" src="epi_files/output_34_5.png">
+</picture>
+    
+
+
+
+<br>
+
+## <a id='toc1_6_'></a>[Histologien](#toc0_)
+
+
+
+```
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ ab 2010]:           n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
+    └ [keine C44,D04]:         n = 8_935_754  (50.3%) ░░░░░░░░░░░░░░░███████████████
+    └ [keine DCO]:             n = 8_284_161  (46.6%) ░░░░░░░░░░░░░░░░░█████████████
+```
+
+<details>
+<summary>filter-sql</summary>
+
+```sql
+is_deleted = 0
+and z_dy >= 2010
+and z_icd10_3d not in ('C44','D04')
+and not z_is_dco
+```
+
+</details>
+
+
+    
+    
+
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_36_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_36_7.svg">
+  <img alt="Histologie Gruppen" src="epi_files/output_36_7.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_7_'></a>[Dignität](#toc0_)
+### <a id='toc1_6_1_'></a>[Dignität](#toc0_)
+
+> [!NOTE]
+> 💡 **ZfKD**
+> - keine gutartigen Fälle aus `01-SH`
+> - keine gutartigen und Fälle unsicheren Verhaltens aus `02-HH`
 
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [keine DCO]:              n = 15_591_317  (87.8%) ░░░░██████████████████████████
-    └ [keine C44,D04]:          n = 12_415_391  (69.9%) ░░░░░░░░░░████████████████████
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [keine DCO]:            n = 15_591_317  (87.8%) ░░░░██████████████████████████
+    └ [keine C44,D04]:        n = 12_415_391  (69.9%) ░░░░░░░░░░████████████████████
 ```
 
 <details>
@@ -371,20 +431,26 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-    
-<img alt="svg" src="epi_files/output_36_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_38_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_38_6.svg">
+  <img alt="Dignität" src="epi_files/output_38_6.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_8_'></a>[Grading Verteilung](#toc0_)
+### <a id='toc1_6_2_'></a>[Grading](#toc0_)
+
+> [!NOTE]
+> 💡 **ZfKD**: Es zeigen sich unterschiedlich hohe Anteile (0-20%) mit Verwendung des 3-stufigen Gradings (low-intermediate-high) je nach Bundesland
 
 
 
 ```
     n = 17_758_787                                  (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:      n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [ohne gelöschte Fälle]:        n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [DJ ab 2010]:                  n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
     └ [keine DCO]:                   n = 10_637_156  (59.9%) ░░░░░░░░░░░░░█████████████████
     └ [nur gradingrelevante Tumore]:  n = 3_693_956  (20.8%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
@@ -418,24 +484,30 @@ and
 
 
 
-    
-<img alt="svg" src="epi_files/output_38_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_40_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_40_6.svg">
+  <img alt="Grading" src="epi_files/output_40_6.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_10_'></a>[Altersgruppen Kinder und Heranwachsende](#toc0_)
+### <a id='toc1_6_3_'></a>[Altersgruppen Kinder und Heranwachsende](#toc0_)
+
+> [!NOTE]
+> 💡 **ZfKD**: Die Abbildung zeigt deutlich, dass einige Register aktuell (fast) keine Fälle bei Kindern mehr erfassen, andere dagegen wahrscheinlich noch relativ vollständig
 
 
 
 ```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ 2019-2025]:            n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [keine DCO]:               n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [keine C44,D04]:           n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
-    └ [Alter <= 20]:                n = 13_955   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    n = 17_758_787                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [DJ 2019-2025]:          n = 4_667_333  (26.3%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine DCO]:             n = 4_446_303  (25.0%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine C44,D04]:         n = 3_569_966  (20.1%) ░░░░░░░░░░░░░░░░░░░░░░░░██████
+    └ [Alter <= 20]:              n = 13_955   (0.1%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 <details>
@@ -458,20 +530,27 @@ and z_age<=20
 
 
     
-<img alt="svg" src="epi_files/output_40_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_42_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_42_5.svg">
+  <img alt="svg" src="epi_files/output_42_5.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_11_'></a>[UICC](#toc0_)
+### <a id='toc1_6_4_'></a>[UICC](#toc0_)
 - die Variable `UICC` wird vom ZfKD gebildet
+
+> [!NOTE]
+> 💡 **ZfKD**: Bei TNM-relevanten Tumoren sind TNM-Angaben je nach BL in 42%-76% ausreichend für die Bildung des UICC-Stadiums (MX bzw. unbekannt wird als M0 gewertet) Diese Anteile aben sich in einigen Registern in den letzten 10 Jahren erhöht, in wenigen verringert
 
 
 
 ```
     n = 17_758_787                               (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:   n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [ohne gelöschte Fälle]:     n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [keine C44,D04]:            n = 13_852_611  (78.0%) ░░░░░░░███████████████████████
     └ [keine DCO]:                n = 12_415_391  (69.9%) ░░░░░░░░░░████████████████████
     └ [nur tnm-relevante Tumore]:  n = 8_940_895  (50.3%) ░░░░░░░░░░░░░░░███████████████
@@ -506,60 +585,26 @@ and
 
 
 
-    
-<img alt="svg" src="epi_files/output_42_5.svg">
-    
-
-
-
-
-```
-    n = 17_758_787                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 17_038_328  (95.9%) ░░████████████████████████████
-    └ [DJ ab 2010]:             n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
-    └ [ICD10 nur C]:             n = 9_748_823  (54.9%) ░░░░░░░░░░░░░░████████████████
-    └ [keine C44,D04]:           n = 7_690_030  (43.3%) ░░░░░░░░░░░░░░░░░░████████████
-    └ [keine DCO]:               n = 7_098_177  (40.0%) ░░░░░░░░░░░░░░░░░░░███████████
-```
-
-<details>
-<summary>filter-sql</summary>
-
-```sql
-is_deleted = 0
-and DJ >= 2010
-and left(z_icd10_3d,1) = 'C'
-and z_icd10_3d not in ('C44','D04')
-and not z_is_dco
-```
-
-</details>
-
-
-    
-    
-
-
-
-    
-<img alt="svg" src="epi_files/output_43_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_44_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_44_7.svg">
+  <img alt="UICC" src="epi_files/output_44_7.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_12_'></a>[TNM-Auflage](#toc0_)
+### <a id='toc1_6_5_'></a>[TNM-Auflage](#toc0_)
 - nicht übermittelte Auflagen werden im ZfKD geschätzt und imputiert anhand des DJ, daher keine missings im Datensatz
 
-> 💡 **ZfKD**
-> 
-> Auflage 7 wird nur noch von 03-NI in nennenswertem Umfang übermittelt
+> 💡 **ZfKD**: Auflage 7 wird nur noch von 03-NI in nennenswertem Umfang übermittelt
 
 
 
 ```
     n = 17_758_787                               (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]:   n = 17_038_328  (95.9%) ░░████████████████████████████
+    └ [ohne gelöschte Fälle]:     n = 17_038_328  (95.9%) ░░████████████████████████████
     └ [DJ ab 2010]:               n = 11_293_487  (63.6%) ░░░░░░░░░░░███████████████████
     └ [keine DCO]:                n = 10_637_156  (59.9%) ░░░░░░░░░░░░░█████████████████
     └ [nur tnm-relevante Tumore]:  n = 5_862_472  (33.0%) ░░░░░░░░░░░░░░░░░░░░░█████████
@@ -594,28 +639,36 @@ and
 
 
 
-    
-<img alt="svg" src="epi_files/output_45_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_46_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_46_6.svg">
+  <img alt="TNM-Auflage" src="epi_files/output_46_6.svg">
+</picture>
     
 
 
 <br>
 
-### <a id='toc1_5_13_'></a>[Tod](#toc0_)
+### <a id='toc1_6_6_'></a>[Tod](#toc0_)
 
-#### <a id='toc1_5_13_1_'></a>[Anteil Verstorbene](#toc0_)
+#### <a id='toc1_6_6_1_'></a>[Anteil Verstorbene](#toc0_)
 - gezählt sind **Personen**
 - Metrik: Anteil Verstorbene
+
+> [!NOTE]
+> 💡 **ZfKD**: 
+> - auffallend (aber bekannt) ist hier der offensichtlich noch zu niedrige Anteil in TH
+> - auch in einem Bezirk in Bayern (Oberbayern) ist der Mortalitätsabgleich zumindest für 2024 noch unvollständig
 
 
 
 ```
     count: distinct GLOBALPATID
     ---
-    n = 15_146_405                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
-    └ [DJ 2020-2024]:            n = 3_611_701  (23.8%) ░░░░░░░░░░░░░░░░░░░░░░░███████
-    └ [keine C44,D04]:           n = 2_999_925  (19.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
+    n = 15_146_405                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
+    └ [DJ 2020-2024]:          n = 3_611_701  (23.8%) ░░░░░░░░░░░░░░░░░░░░░░░███████
+    └ [keine C44,D04]:         n = 2_999_925  (19.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░█████
 ```
 
 <details>
@@ -635,34 +688,36 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img alt="png" src="epi_files/output_48_6.png" width="60%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_49_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_49_7.png">
+  <img alt="png" src="epi_files/output_49_7.png" width="60%">
+</picture>
     
 
 
 
 <br>
 
-#### <a id='toc1_5_13_2_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
+#### <a id='toc1_6_6_2_'></a>[Verteilung Todesursachen nach ICDT10](#toc0_)
 - gezählt sind **Personen**
 - `icdt10_1d` gibt die erste Stelle der Todesursache (TU) an
 
-
+> [!NOTE]
 > 💡 **ZfKD**
-> 
-> Fehlende Angabe
-> * `03-NI` hat für das aktuelle DJ nahezu keine TU mit nicht-tumorrelevanten TU übermittelt
-
-
+> - mit steigender Beobachtungszeit steigt der Anteil von anderen Todesursachen natürlicherweise an
+> - auffallend ist allerdings der in 2024 geringe (und zuletzt stark gesunkene) Anteil krebsbedingter Todesfälle in `09-BY`
+> - in den westdeutschen Bundesländern sind zuletzt ganz überwiegend TU angegeben, aus den ostdeutschen Registern liegen aktuell keine Angaben vor.
 
 
 
 ```
     count: distinct GLOBALPATID
     ---
-    n = 15_146_405                             (100.0%) ██████████████████████████████
-    └ [keine gelöschten Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
-    └ [nur Verstorbene]:         n = 7_576_084  (50.0%) ░░░░░░░░░░░░░░░███████████████
-    └ [SJ ab 2010]:              n = 5_116_941  (33.8%) ░░░░░░░░░░░░░░░░░░░░██████████
+    n = 15_146_405                           (100.0%) ██████████████████████████████
+    └ [ohne gelöschte Fälle]: n = 14_648_040  (96.7%) ░█████████████████████████████
+    └ [nur Verstorbene]:       n = 7_576_084  (50.0%) ░░░░░░░░░░░░░░░███████████████
+    └ [SJ ab 2010]:            n = 5_116_941  (33.8%) ░░░░░░░░░░░░░░░░░░░░██████████
 ```
 
 <details>
@@ -682,7 +737,10 @@ and year(SDIMP) >= 2010
 
 
 
-    
-<img alt="svg" src="epi_files/output_50_5.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="epi_files_dark/output_51_9.svg">
+  <source media="(prefers-color-scheme: light)" srcset="epi_files/output_51_9.svg">
+  <img alt="Todesursachen nach Sterbejahr" src="epi_files/output_51_9.svg">
+</picture>
     
 
