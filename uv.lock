@@ -376,7 +376,7 @@ requires-dist = [
     { name = "numpy" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pandas" },
-    { name = "pandas-plots", specifier = ">=2.0.4" },
+    { name = "pandas-plots", specifier = ">=2.0.5" },
     { name = "pip" },
     { name = "pygwalker" },
     { name = "pyzmq" },
@@ -2388,7 +2388,7 @@ wheels = [
 
 [[package]]
 name = "pandas-plots"
-version = "2.0.4"
+version = "2.0.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
@@ -2416,9 +2416,9 @@ dependencies = [
     { name = "upsetplot" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/99/c6/c7bd2ed003afa548fb66983798ab218047d60b7cb7962435b4ba935559c2/pandas_plots-2.0.4.tar.gz", hash = "sha256:b22689e75dcfbcf54be417a121735506547a9090608761d0f506c2914efb44f9", size = 80770, upload-time = "2026-05-15T12:56:07.909Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2b/a2/50153d826fa73215db6f2271903ea296c5ea2166b564c138e581c3a8b1a2/pandas_plots-2.0.5.tar.gz", hash = "sha256:1bd52c9d9f19318258c3f19bed35c91de73ac6a3b67fa97af1c22b8c309bc7ad", size = 80842, upload-time = "2026-05-21T07:39:26.614Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/76/8c/ac167b82870aba38d1b1ac9231d1a969d897cc48bfba0a2b85abb42caea6/pandas_plots-2.0.4-py3-none-any.whl", hash = "sha256:578ad86f8d8f6351bc06e3ad299a79033ad5a368a523b391718bbc23e14437ae", size = 108358, upload-time = "2026-05-15T12:56:06.243Z" },
+    { url = "https://files.pythonhosted.org/packages/dc/4f/1133c2c0fd7d30832ad8cbf74e22cd83ba43c0ae318c888405d7d4f995cb/pandas_plots-2.0.5-py3-none-any.whl", hash = "sha256:d831eb022ddc23361d2bae0c5d056440882a04e2d5dde3a69a325d4cf0217951", size = 108452, upload-time = "2026-05-21T07:39:25.463Z" },
 ]
 
 [[package]]

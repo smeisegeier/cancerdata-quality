@@ -28,7 +28,6 @@
     - [DCO](#toc1_8_3_)    
     - [DCN](#toc1_8_4_)    
     - [Grading](#toc1_8_5_)    
-      - [Verteilung](#toc1_8_5_1_)    
     - [Diagnosejahr mit Altdaten](#toc1_8_6_)    
     - [Inzidenzort vs Lieferregister](#toc1_8_7_)    
     - [Diagnosegruppen](#toc1_8_8_)    
@@ -123,7 +122,7 @@
     last kkr data import:    2026-04-18
     sql table created:       2026-05-12 16:38:32
     doi:                     10.18444/5.03.01.0005.0021.0003
-    document created:        2026-05-20 18:41:00
+    document created:        2026-05-21 09:47:11
 
 
 <br>
@@ -332,7 +331,7 @@ and ifnull(z_m_pc_1,'') <> '1'
 
 ### <a id='toc1_6_2_'></a>[OP](#toc0_)
 - **nur solide Tumoren**  schliesst folgende Diagnosen aus: C44, C76-C97, alle D
-  - Metrik: Anteil Tumore ohne OP an Gesamt
+- Metrik: Anteil Tumore ohne OP an Gesamt
 
 
 
@@ -423,9 +422,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_32_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_32_6.svg">
-  <img alt="OP Kategorien nach KKR (C50)" src="clin_files/output_32_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_32_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_32_7.svg">
+  <img alt="OP Kategorien (C50)" src="clin_files/output_32_7.svg">
 </picture>
     
 
@@ -468,7 +467,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_34_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_34_6.svg">
-  <img alt="OP-Kategorien nach KKR (C18-C20)" src="clin_files/output_34_6.svg">
+  <img alt="OP-Kategorien (C18-C20)" src="clin_files/output_34_6.svg">
 </picture>
     
 
@@ -522,7 +521,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_37_1.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_37_1.png">
-  <img alt="png" src="clin_files/output_37_1.png" width="600">
+  <img alt="png" src="clin_files/output_37_1.png" width="500">
 </picture>
     
 
@@ -574,7 +573,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_39_9.svg">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_39_9.svg">
-  <img alt="Anteil ST nach OP mit BET bei C50" src="clin_files/output_39_9.svg">
+  <img alt="ST Kategorien nach OP mit BET bei C50" src="clin_files/output_39_9.svg">
 </picture>
     
 
@@ -623,7 +622,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_41_6.png">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_41_6.png">
-  <img alt="png" src="clin_files/output_41_6.png" width="600">
+  <img alt="png" src="clin_files/output_41_6.png" width="500">
 </picture>
     
 
@@ -672,7 +671,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_43_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="clin_files/output_43_6.svg">
-  <img alt="Anteil SYST bei akut verlaufenden Leukämien und Lymphomen" src="clin_files/output_43_6.svg">
+  <img alt="SYST Kategorien bei akut verlaufenden Leukämien und Lymphomen" src="clin_files/output_43_6.svg">
 </picture>
     
 
@@ -922,8 +921,6 @@ and left(z_icd10_3d,1) = 'C'
 
 ### <a id='toc1_8_5_'></a>[Grading](#toc0_)
 
-#### <a id='toc1_8_5_1_'></a>[Verteilung](#toc0_)
-
 
 
 ```
@@ -962,9 +959,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_58_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_58_5.svg">
-  <img alt="svg" src="clin_files/output_58_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_57_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_57_5.svg">
+  <img alt="svg" src="clin_files/output_57_5.svg">
 </picture>
     
 
@@ -997,9 +994,9 @@ z_dy < 2025
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_60_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_60_5.svg">
-  <img alt="svg" src="clin_files/output_60_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_59_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_59_5.svg">
+  <img alt="svg" src="clin_files/output_59_5.svg">
 </picture>
     
 
@@ -1017,9 +1014,9 @@ z_dy < 2025
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_62_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_62_0.png">
-  <img alt="png" src="clin_files/output_62_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_61_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_61_0.png">
+  <img alt="png" src="clin_files/output_61_0.png">
 </picture>
     
 
@@ -1055,9 +1052,9 @@ and not z_is_dco
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_64_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_64_6.svg">
-  <img alt="Diagnosegruppen" src="clin_files/output_64_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_63_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_63_6.svg">
+  <img alt="Diagnosegruppen" src="clin_files/output_63_6.svg">
 </picture>
     
 
@@ -1097,9 +1094,9 @@ and z_age <= 20
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_66_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_66_6.svg">
-  <img alt="Altersgruppen Kinder und Heranwachsende" src="clin_files/output_66_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_65_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_65_6.svg">
+  <img alt="Altersgruppen Kinder und Heranwachsende" src="clin_files/output_65_6.svg">
 </picture>
     
 
@@ -1143,9 +1140,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_70_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_70_7.png">
-  <img alt="png" src="clin_files/output_70_7.png" width="800">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_69_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_69_7.png">
+  <img alt="png" src="clin_files/output_69_7.png" width="800">
 </picture>
     
 
@@ -1194,9 +1191,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_72_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_72_6.svg">
-  <img alt="svg" src="clin_files/output_72_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_71_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_71_6.svg">
+  <img alt="svg" src="clin_files/output_71_6.svg">
 </picture>
     
 
@@ -1245,9 +1242,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_74_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_74_5.svg">
-  <img alt="svg" src="clin_files/output_74_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_73_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_73_5.svg">
+  <img alt="svg" src="clin_files/output_73_5.svg">
 </picture>
     
 
@@ -1298,9 +1295,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_77_5.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_77_5.svg">
-  <img alt="svg" src="clin_files/output_77_5.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_76_5.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_76_5.svg">
+  <img alt="svg" src="clin_files/output_76_5.svg">
 </picture>
     
 
@@ -1314,9 +1311,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_80_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_80_1.svg">
-  <img alt="nach ICD10 Einstellern" src="clin_files/output_80_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_79_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_79_1.svg">
+  <img alt="nach ICD10 Einstellern" src="clin_files/output_79_1.svg">
 </picture>
     
 
@@ -1361,9 +1358,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_82_7.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_82_7.svg">
-  <img alt="nach Sterbejahr und Todesursachen" src="clin_files/output_82_7.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_81_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_81_7.svg">
+  <img alt="nach Sterbejahr und Todesursachen" src="clin_files/output_81_7.svg">
 </picture>
     
 
@@ -1377,9 +1374,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_85_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_85_1.png">
-  <img alt="png" src="clin_files/output_85_1.png" width="80%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_84_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_84_1.png">
+  <img alt="png" src="clin_files/output_84_1.png" width="80%">
 </picture>
     
 
@@ -1392,9 +1389,9 @@ and Verstorben='J'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_87_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_87_1.svg">
-  <img alt="nach IsGrundleiden" src="clin_files/output_87_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_86_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_86_1.svg">
+  <img alt="nach IsGrundleiden" src="clin_files/output_86_1.svg">
 </picture>
     
 
@@ -1443,9 +1440,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_91_7.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_91_7.svg">
-  <img alt="OP-Meldungen nach ICD10" src="clin_files/output_91_7.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_90_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_90_7.svg">
+  <img alt="OP-Meldungen nach ICD10" src="clin_files/output_90_7.svg">
 </picture>
     
 
@@ -1457,9 +1454,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_93_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_93_1.svg">
-  <img alt="OP-Meldungen nach Intention" src="clin_files/output_93_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_92_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_92_1.svg">
+  <img alt="OP-Meldungen nach Intention" src="clin_files/output_92_1.svg">
 </picture>
     
 
@@ -1476,9 +1473,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_96_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_96_1.svg">
-  <img alt="OPS nach ICD-Kapitel (Top 10)" src="clin_files/output_96_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_95_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_95_1.svg">
+  <img alt="OPS nach ICD-Kapitel (Top 10)" src="clin_files/output_95_1.svg">
 </picture>
     
 
@@ -1494,9 +1491,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_99_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_99_1.svg">
-  <img alt="SYST nach Stellung_OP" src="clin_files/output_99_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_98_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_98_1.svg">
+  <img alt="SYST nach Stellung_OP" src="clin_files/output_98_1.svg">
 </picture>
     
 
@@ -1567,9 +1564,9 @@ z_dy between 2020 and 2024
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_6.png">
-  <img alt="png" src="clin_files/output_104_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_103_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_103_6.png">
+  <img alt="png" src="clin_files/output_103_6.png">
 </picture>
     
 
@@ -1580,9 +1577,9 @@ z_dy between 2020 and 2024
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_104_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_104_8.png">
-  <img alt="png" src="clin_files/output_104_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_103_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_103_8.png">
+  <img alt="png" src="clin_files/output_103_8.png">
 </picture>
     
 
@@ -1620,9 +1617,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_6.png">
-  <img alt="png" src="clin_files/output_106_6.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_105_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_105_6.png">
+  <img alt="png" src="clin_files/output_105_6.png" width="50%">
 </picture>
     
 
@@ -1632,9 +1629,9 @@ and z_icd10_3d not in ('C44','D04')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_106_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_106_9.png">
-  <img alt="png" src="clin_files/output_106_9.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_105_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_105_9.png">
+  <img alt="png" src="clin_files/output_105_9.png" width="50%">
 </picture>
     
 
@@ -1690,9 +1687,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_108_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_108_6.png">
-  <img alt="png" src="clin_files/output_108_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_107_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_107_6.png">
+  <img alt="png" src="clin_files/output_107_6.png">
 </picture>
     
 
@@ -1703,9 +1700,9 @@ and
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_108_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_108_8.png">
-  <img alt="png" src="clin_files/output_108_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_107_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_107_8.png">
+  <img alt="png" src="clin_files/output_107_8.png">
 </picture>
     
 
@@ -1746,7 +1743,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img alt="png" src="clin_files/output_111_6.png" width="80%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_110_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_110_6.png">
+  <img alt="png" src="clin_files/output_110_6.png" width="80%">
+</picture>
     
 
 
@@ -1754,7 +1755,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
 
-<img alt="png" src="clin_files/output_111_9.png" width="80%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_110_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_110_9.png">
+  <img alt="png" src="clin_files/output_110_9.png" width="80%">
+</picture>
     
 
 
@@ -1799,7 +1804,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="clin_files/output_113_6.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_112_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_112_6.png">
+  <img alt="png" src="clin_files/output_112_6.png">
+</picture>
     
 
 
@@ -1808,7 +1817,11 @@ and z_icd10_3d not in ('C44','D04')
 
 
     
-<img alt="png" src="clin_files/output_113_8.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_112_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_112_8.png">
+  <img alt="png" src="clin_files/output_112_8.png">
+</picture>
     
 
 
@@ -1851,9 +1864,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_115_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_115_6.png">
-  <img alt="png" src="clin_files/output_115_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_114_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_114_6.png">
+  <img alt="png" src="clin_files/output_114_6.png">
 </picture>
     
 
@@ -1864,9 +1877,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_115_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_115_8.png">
-  <img alt="png" src="clin_files/output_115_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_114_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_114_8.png">
+  <img alt="png" src="clin_files/output_114_8.png">
 </picture>
     
 
@@ -1916,9 +1929,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_6.png">
-  <img alt="png" src="clin_files/output_117_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_116_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_116_6.png">
+  <img alt="png" src="clin_files/output_116_6.png">
 </picture>
     
 
@@ -1929,9 +1942,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_117_8.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_117_8.png">
-  <img alt="png" src="clin_files/output_117_8.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_116_8.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_116_8.png">
+  <img alt="png" src="clin_files/output_116_8.png">
 </picture>
     
 
@@ -1975,9 +1988,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_119_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_119_5.png">
-  <img alt="png" src="clin_files/output_119_5.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_118_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_118_5.png">
+  <img alt="png" src="clin_files/output_118_5.png">
 </picture>
     
 
@@ -1988,9 +2001,9 @@ and z_icd10_3d not in ('C44','D04')
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_119_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_119_7.png">
-  <img alt="png" src="clin_files/output_119_7.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_118_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_118_7.png">
+  <img alt="png" src="clin_files/output_118_7.png">
 </picture>
     
 
@@ -2038,9 +2051,9 @@ and z_icd10_3d = 'C50'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_5.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_5.png">
-  <img alt="png" src="clin_files/output_122_5.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_121_5.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_121_5.png">
+  <img alt="png" src="clin_files/output_121_5.png">
 </picture>
     
 
@@ -2051,9 +2064,9 @@ and z_icd10_3d = 'C50'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_122_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_122_7.png">
-  <img alt="png" src="clin_files/output_122_7.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_121_7.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_121_7.png">
+  <img alt="png" src="clin_files/output_121_7.png">
 </picture>
     
 
@@ -2093,21 +2106,23 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_6.png">
-  <img alt="png" src="clin_files/output_124_6.png" width="70%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_123_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_123_6.png">
+  <img alt="png" src="clin_files/output_123_6.png" width="70%">
 </picture>
     
 
 
     🟠 unknowns
 
+    
+
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_124_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_124_9.png">
-  <img alt="png" src="clin_files/output_124_9.png" width="70%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_123_10.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_123_10.png">
+  <img alt="png" src="clin_files/output_123_10.png" width="70%">
 </picture>
     
 
@@ -2145,9 +2160,9 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_6.png">
-  <img alt="png" src="clin_files/output_126_6.png" width="40%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_125_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_125_6.png">
+  <img alt="png" src="clin_files/output_125_6.png" width="40%">
 </picture>
     
 
@@ -2157,9 +2172,9 @@ and z_icd10_3d in ('C18','C19','C20')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_126_9.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_126_9.png">
-  <img alt="png" src="clin_files/output_126_9.png" width="40%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_125_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_125_9.png">
+  <img alt="png" src="clin_files/output_125_9.png" width="40%">
 </picture>
     
 
@@ -2194,16 +2209,14 @@ and z_icd10_3d = 'C43'
 
     
     
-
-
     🟠 missings
 
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_128_7.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_128_7.png">
-  <img alt="png" src="clin_files/output_128_7.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_127_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_127_6.png">
+  <img alt="png" src="clin_files/output_127_6.png" width="50%">
 </picture>
     
 
@@ -2213,9 +2226,9 @@ and z_icd10_3d = 'C43'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_128_10.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_128_10.png">
-  <img alt="png" src="clin_files/output_128_10.png" width="50%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_127_9.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_127_9.png">
+  <img alt="png" src="clin_files/output_127_9.png" width="50%">
 </picture>
     
 
@@ -2268,9 +2281,9 @@ Stadium is not null
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_134_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_134_1.svg">
-  <img alt="Weitere Klassifikationen nach Quelle" src="clin_files/output_134_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_133_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_133_1.svg">
+  <img alt="Weitere Klassifikationen nach Quelle" src="clin_files/output_133_1.svg">
 </picture>
     
 
@@ -2290,9 +2303,9 @@ Stadium is not null
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_136_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_136_1.png">
-  <img alt="png" src="clin_files/output_136_1.png" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_135_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_135_1.png">
+  <img alt="png" src="clin_files/output_135_1.png" width="100%">
 </picture>
     
 
@@ -2346,9 +2359,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_142_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_142_1.svg">
-  <img alt="PSA: Angabe zu Diagnose vs Weitere Klassifikationen" src="clin_files/output_142_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_141_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_141_1.svg">
+  <img alt="PSA: Angabe zu Diagnose vs Weitere Klassifikationen" src="clin_files/output_141_1.svg">
 </picture>
     
 
@@ -2376,9 +2389,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_144_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_144_2.png">
-  <img alt="Kombinationen der PSA Merkmale" src="clin_files/output_144_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_143_2.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_143_2.png">
+  <img alt="Kombinationen der PSA Merkmale" src="clin_files/output_143_2.png">
 </picture>
     
 
@@ -2403,9 +2416,9 @@ and z_icd10_3d = 'C61'
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_146_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_146_1.svg">
-  <img alt="PSA: Weitere Klassifikationen - Diagnose vs Folgeereignis" src="clin_files/output_146_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_145_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_145_1.svg">
+  <img alt="PSA: Weitere Klassifikationen - Diagnose vs Folgeereignis" src="clin_files/output_145_1.svg">
 </picture>
     
 
@@ -2474,9 +2487,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_150_2.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_150_2.png">
-  <img alt="UICC: Kombinationen" src="clin_files/output_150_2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_149_2.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_149_2.png">
+  <img alt="UICC: Kombinationen" src="clin_files/output_149_2.png">
 </picture>
     
 
@@ -2501,9 +2514,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_152_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_152_1.svg">
-  <img alt="UICC nach KKR" src="clin_files/output_152_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_151_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_151_1.svg">
+  <img alt="UICC in Weitere Klassifikationen" src="clin_files/output_151_1.svg">
 </picture>
     
 
@@ -2530,9 +2543,9 @@ and
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_154_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_154_1.svg">
-  <img alt="Freitextkodierung: Substanzen" src="clin_files/output_154_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_153_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_153_1.svg">
+  <img alt="Freitextkodierung: Substanzen" src="clin_files/output_153_1.svg">
 </picture>
     
 
@@ -2575,9 +2588,9 @@ and year(Datum_Vitalstatus) >= 2020
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_158_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_158_1.svg">
-  <img alt="Zeitpunkt der Erhebung" src="clin_files/output_158_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_157_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_157_1.svg">
+  <img alt="Zeitpunkt der Erhebung" src="clin_files/output_157_1.svg">
 </picture>
     
 
@@ -2631,9 +2644,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_0.png">
-  <img alt="png" src="clin_files/output_163_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_0.png">
+  <img alt="png" src="clin_files/output_162_0.png">
 </picture>
     
 
@@ -2641,9 +2654,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_163_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_163_1.png">
-  <img alt="png" src="clin_files/output_163_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_162_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_162_1.png">
+  <img alt="png" src="clin_files/output_162_1.png">
 </picture>
     
 
@@ -2687,9 +2700,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_0.png">
-  <img alt="png" src="clin_files/output_165_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_0.png">
+  <img alt="png" src="clin_files/output_164_0.png">
 </picture>
     
 
@@ -2697,9 +2710,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_165_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_165_1.png">
-  <img alt="png" src="clin_files/output_165_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_164_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_164_1.png">
+  <img alt="png" src="clin_files/output_164_1.png">
 </picture>
     
 
@@ -2741,9 +2754,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_0.png">
-  <img alt="png" src="clin_files/output_167_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_0.png">
+  <img alt="png" src="clin_files/output_166_0.png">
 </picture>
     
 
@@ -2751,9 +2764,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_167_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_167_1.png">
-  <img alt="png" src="clin_files/output_167_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_166_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_166_1.png">
+  <img alt="png" src="clin_files/output_166_1.png">
 </picture>
     
 
@@ -2794,9 +2807,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_169_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_169_0.png">
-  <img alt="png" src="clin_files/output_169_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_168_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_168_0.png">
+  <img alt="png" src="clin_files/output_168_0.png">
 </picture>
     
 
@@ -2838,9 +2851,9 @@ and Diagnosedatum_Genauigkeit <> 'V' and Geburtsdatum_Genauigkeit <> 'V'
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_171_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_171_0.png">
-  <img alt="png" src="clin_files/output_171_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="clin_files_dark/output_170_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="clin_files/output_170_0.png">
+  <img alt="png" src="clin_files/output_170_0.png">
 </picture>
     
 

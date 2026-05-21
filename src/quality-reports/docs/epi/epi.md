@@ -58,7 +58,7 @@
     data tag:                epi2025_1
     sql table created:       2026-05-13 09:31:01
     doi:                     10.18444/5.03.01.0005.0022.0001
-    document created:        2026-05-20 18:44:37
+    document created:        2026-05-21 09:50:52
 
 
     
@@ -99,6 +99,7 @@
 ### <a id='toc1_4_2_'></a>[jeweils letztes DJ nach ZfKD  Prüfungen](#toc0_)
 - Filter: jeweils das **letzte DJ** der einzelnen Jahreslieferung
 - aufgeführt sind die Fallzahlen aus den überlieferten Dateien **nach** den ZfKD Anpassungen
+<!-- - eine Aufschlüsselung von `11-GKR` wäre hier sinnhaft, allerdings  -->
 
 
     
