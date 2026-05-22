@@ -22,7 +22,7 @@ FILTERS_NO_SOLID = (f"not ({FILTERS_SOLID[0]})", "nur nicht-solide Tumore")
 
 FILTERS_C50 = ("z_icd10_3d = 'C50'", "ICD10 C50")
 FILTERS_C18C20 = ("z_icd10_3d in ('C18', 'C19', 'C20')", "ICD10 C18-C20")
-FILTERS_VALID = ("is_deleted = 0", "ohne gelöschte Fälle")
+FILTERS_VALID = ("is_deleted = 0", "nur gültige Fälle")
 
 FILTERS_NO_M1 = ("ifnull(z_m_pc_1,'') <> '1'", "kein M1")
 FILTERS_M0 = ("z_m_pc_1 = '0'", "nur M0")
