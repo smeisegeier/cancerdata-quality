@@ -28,6 +28,19 @@
       - [Nach Brustkrebs](#toc1_4_8_1_)    
       - [Nach Darmkrebs](#toc1_4_8_2_)    
     - [Einordnung der Ergebnisse zur Datenqualität](#toc1_4_9_)    
+    - [Erfahrungen mit der Antragsbearbeitung und Datenübermittlung](#toc1_4_10_)    
+      - [Einleitung - Gesetzliche Vorgaben für die Bearbeitung von Datennutzungsanträgen](#toc1_4_10_1_)    
+      - [Eingang und Prüfung von Datennutzungsanträgen im ZfKD](#toc1_4_10_2_)    
+      - [Vorlage von Datennutzungsanträgen beim wissenschaftlichen Ausschuss](#toc1_4_10_3_)    
+      - [Aufgabenverwaltung](#toc1_4_10_4_)    
+    - [Statistiken zu Datenanträgen](#toc1_4_11_)    
+      - [Nach Datensatz und Datentyp](#toc1_4_11_1_)    
+      - [Nach Datentyp](#toc1_4_11_2_)    
+      - [Nach Entität](#toc1_4_11_3_)    
+      - [Nach Art der antragstellenden Einrichtung](#toc1_4_11_4_)    
+      - [Nach Auswertungszielen und Forschungszweck](#toc1_4_11_5_)    
+      - [Nach Gebührenpflichtigkeit](#toc1_4_11_6_)    
+      - [Fazit und Perspektiven](#toc1_4_11_7_)    
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -57,7 +70,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-05-08 08:08:59
+    document created:        2026-05-29 14:12:54
 
 
 
@@ -128,7 +141,7 @@ Für Auswertungen zur Vollständigkeit von Therapieangaben wurden Diagnosen aus 
 ### <a id='toc1_4_2_'></a>[Vollzähligkeit der Erfassung von Krebsneuerkrankungen](#toc0_)
 
 Die Vollzähligkeit der Erfassung von Krebserkrankungen (ohne nicht-melanotischem Hautkrebs) wird vom ZfKD lediglich auf Basis des epidemiologischen Datensatzes regelmäßig geschätzt. Nicht berücksichtigt werden Fälle, die den Registern nur über eine Todesbescheinigung oder einen entsprechenden Datenabgleich bekannt werden (DCO-Fälle). Die Schätzung basiert im Kern auf der sogenannten „M/I“ Methode, die in ihrer ursprünglichen Form von einem konstanten Verhältnis der Mortalität zur Inzidenz (M/I), nach Geschlecht, Alter und Diagnose ausgeht. Die Methode der Vollzähligkeitsschätzung war ursprünglich vor allem als Orientierung für neue Register in deren Aufbaujahren konzipiert. Sie wurde im Laufe der Jahre weiterentwickelt und berücksichtigt inzwischen unter bestimmten Bedingungen regionale Abweichungen des Verhältnisses von M/I,  die nach den Ergebnissen aus internationalen und nationalen Studien z.B. in Abhängigkeit von sozioökonomischen Faktoren auf regionaler Ebene auch zu erwarten sind. Dennoch muss betont werden, dass es sich um eine Schätzung mit nicht unerheblichen Unsicherheiten handelt und die Methode mangels Goldstandards in Deutschland noch nicht validiert werden konnte.
-Die aktuellen Ergebnisse der Schätzung deuten darauf hin, dass seit mindestens 2020 alle Register eine ausreichende Vollzähligkeit der Erfassung bösartiger Tumorerkrankungen (ohne Berücksichtigung nicht-melanotischer Hautkrebsfälle) nach epidemiologischer Zählweise aufweisen, da jeweils mehr als 90% der aus dem Schätzmodell errechneten erwarteten Fälle erfasst wurden. Für einige Register konnte dieser Wert für das jeweils letzte Lieferdatenjahr erst durch Nachlieferungen im laufenden Jahr erreicht werden, eine ausreichende Vollzähligkeit war in diesen Fällen also erst einige Monate nach dem gesetzlich vorgesehen Lieferdatum gegeben. Wenn man berücksichtigt, dass sich die Frist für die Datenlieferung durch die Register ab 2023 von zwei Jahren auf ein Jahr verkürzt hat, ist dennoch festzustellen, dass sich die Aktualität der im ZfKD verfügbaren Daten in den letzten Jahren deutlich verbessert hat, was eine aktuellere Berichterstattung des ZfKD ermöglicht. 
+Die aktuellen Ergebnisse der Schätzung deuten darauf hin, dass seit mindestens 2020 alle Register eine ausreichende Vollzähligkeit der Erfassung bösartiger Tumorerkrankungen (ohne Berücksichtigung nicht-melanotischer Hautkrebsfälle) nach epidemiologischer Zählweise aufweisen, da jeweils mehr als 90 % der aus dem Schätzmodell errechneten erwarteten Fälle erfasst wurden. Für einige Register konnte dieser Wert für das jeweils letzte Lieferdatenjahr erst durch Nachlieferungen im laufenden Jahr erreicht werden, eine ausreichende Vollzähligkeit war in diesen Fällen also erst einige Monate nach dem gesetzlich vorgesehen Lieferdatum gegeben. Wenn man berücksichtigt, dass sich die Frist für die Datenlieferung durch die Register ab 2023 von zwei Jahren auf ein Jahr verkürzt hat, ist dennoch festzustellen, dass sich die Aktualität der im ZfKD verfügbaren Daten in den letzten Jahren deutlich verbessert hat, was eine aktuellere Berichterstattung des ZfKD ermöglicht. 
 Teilweise sehr aufwändige Nachrecherche z.B. nur über Sterbe- oder Pathologiemeldungen bekannt gewordener Fälle führen in der Regel zu deutlich verzögert eingehenden Meldungen, die jedoch die Vollzähligkeit und Vollständigkeit der Erfassung verbessern. Daher ist auch in Zukunft damit zu rechnen, dass sich Ergebnisse aus zurückliegenden Jahren nachträglich noch leicht verändern können, was für bevölkerungsbezogene Krankheitsregister generell gilt (Prinzip der „lebenden Datenbanken“).
 
 
@@ -138,7 +151,7 @@ Teilweise sehr aufwändige Nachrecherche z.B. nur über Sterbe- oder Pathologiem
 ### <a id='toc1_4_3_'></a>[Landesspezifische Besonderheiten im aktuellen Datensatz](#toc0_)
 In Thüringen, Sachsen-Anhalt und Bayern (Regierungsbezirk Oberbayern) ist davon auszugehen, dass Sterbefälle in den aktuellen Jahren (ab 2020 oder später) noch nicht vollständig eingegangen sind, da der entsprechende Datenabgleich zum Zeitpunkt der Datenlieferung noch nicht etabliert war oder sich (in Oberbayern) verzögerte. 
 Für Niedersachsen enthält der klinische Datensatz derzeit noch nicht alle Fälle, die im epidemiologischen Datensatz übermittelt wurden.
-In Thüringen fehlen im klinischen (und damit auch in den daraus abgeleiteten epidemiologischen Daten ab 2020) derzeit noch etwa 20 - 25% der Fälle, der zugrundeliegende  Fehler (beim Datenexport aus den regionalen Register) wurde inzwischen identifiziert und behoben. Eine probeweise Neulieferung aktueller Diagnosejahre ergab plausible Fallzahlen, so dass der 2026 verfügbare Datensatz (2020-2024) für Thüringen aller Voraussicht nach eine ausreichende Vollzähligkeit aufweisen wird. In Sachsen-Anhalt führte eine abweichende Kodierung der Dignität bei über eine Fernmetastase diagnostizierten Primärtumoren dazu, dass im aktuellen ZfKD-Datensatz knapp 5 Prozent der Fälle aus den aktuellen Jahren fehlen. Auch dies wird bei der kommenden Datenlieferung korrigiert werden. 
+In Thüringen fehlen im klinischen (und damit auch in den daraus abgeleiteten epidemiologischen Daten ab 2020) derzeit noch etwa 20-25 % der Fälle, der zugrundeliegende  Fehler (beim Datenexport aus den regionalen Register) wurde inzwischen identifiziert und behoben. Eine probeweise Neulieferung aktueller Diagnosejahre ergab plausible Fallzahlen, so dass der 2026 verfügbare Datensatz (2020-2024) für Thüringen aller Voraussicht nach eine ausreichende Vollzähligkeit aufweisen wird. In Sachsen-Anhalt führte eine abweichende Kodierung der Dignität bei über eine Fernmetastase diagnostizierten Primärtumoren dazu, dass im aktuellen ZfKD-Datensatz knapp 5 Prozent der Fälle aus den aktuellen Jahren fehlen. Auch dies wird bei der kommenden Datenlieferung korrigiert werden. 
 Aus Schleswig-Holstein, Niedersachsen, Bremen und dem Saarland wurden dem ZfKD bisher keine Daten zu Verlaufsereignissen und zum Residualstatus übermittelt. Aus Hamburg fehlen Angaben aus allen Organmodulen, in Nordrhein-Westfalen aus dem Prostatamodul, und nur aus sechs Bundesländern liegen Angaben aus dem Modul zum malignen Melanom vor. Dies bedeutet nicht, dass in diesen Ländern keine entsprechenden Informationen vorliegen: in erster Linie liegt  der Grund für die noch bestehenden Lücken in noch nicht umgesetzten „Best-of“-Programmierungen zur Zusammenfassung von Informationen aus mehreren Meldungen entsprechend der ZfKD-Schnittstelle. Diese Lücken sollten sich aller Voraussicht nach in absehbarer Zeit (auch nachträglich für die bereits übermittelten Diagnosejahre) schließen lassen.
 
 
@@ -147,7 +160,7 @@ Aus Schleswig-Holstein, Niedersachsen, Bremen und dem Saarland wurden dem ZfKD b
 
 ### <a id='toc1_4_4_'></a>[Informationen zur Diagnose](#toc0_)
 #### <a id='toc1_4_4_1_'></a>[Anteil fehlendes Grading (wenn Angaben zum Grading erwartet werden)](#toc0_)
-Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die folgenden Auswertung beschränkt sich daher auf Karzinome (ICD-O-3: 81010/3 – 8576/3) und Tumorlokalisationen, bei denen im Falle einer histologischen Sicherung in der Regel eine Angabe zum Grading erwartet werden kann (C00-C33, C50-C57, C60, C62-C68). Prostatakarzinome (C61) wurden hier nicht berücksichtigt, da hier in der Regel der spezifischere Gleason-Score über das entsprechende Modul übermittelt wurde.  Der Anteil fehlender Werte zum Differenzierungsgrad bei den genannten Entiäten lag bundesweit (ohne Rheinland-Pfalz) bei 9%. Für Rheinland Pfalz führte ein Fehler beim Datenexport zu einer sehr hohen Anteil fehlender Werte, dieser Fehler wird bei der nächsten Datenlieferung korrigiert werden.
+Der Differenzierungsgrad (Grading)  ist nur für bestimmte Tumoren relevant, die folgenden Auswertung beschränkt sich daher auf Karzinome (ICD-O-3: 81010/3 – 8576/3) und Tumorlokalisationen, bei denen im Falle einer histologischen Sicherung in der Regel eine Angabe zum Grading erwartet werden kann (C00-C33, C50-C57, C60, C62-C68). Prostatakarzinome (C61) wurden hier nicht berücksichtigt, da hier in der Regel der spezifischere Gleason-Score über das entsprechende Modul übermittelt wurde.  Der Anteil fehlender Werte zum Differenzierungsgrad bei den genannten Entiäten lag bundesweit (ohne Rheinland-Pfalz) bei 9 %. Für Rheinland Pfalz führte ein Fehler beim Datenexport zu einer sehr hohen Anteil fehlender Werte, dieser Fehler wird bei der nächsten Datenlieferung korrigiert werden.
 
 
 > [!NOTE]
@@ -190,7 +203,7 @@ and z_kkr <> 7
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_11_3.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_11_3.svg">
-  <img alt="Abb. 3.1 Fehlender Anteil zum Grading" src="report_files/output_11_3.svg">
+  <img alt="Abbildung 1: Fehlender Anteil zum Grading" src="report_files/output_11_3.svg">
 </picture>
     
 
@@ -199,7 +212,7 @@ and z_kkr <> 7
 <br>
 
 #### <a id='toc1_4_4_2_'></a>[Vollständigkeit der Angaben zum klinischen und pathologischem T-Stadium](#toc0_)
-In bundesweit  84% der Fälle mit Diagnosen, für die ein TNM-Stadium in der Regel definiert ist, liegt mindestens ein klinisches (cT) oder pathologisches (pT) T-Stadium vor (Bundesländer: 81%-92%), in 25% sind beide Angaben vorhanden. Aus Rheinland-Pfalz wurde grundsätzlich nur entweder ein pT oder cT übermittelt.
+In bundesweit  84 % der Fälle mit Diagnosen, für die ein TNM-Stadium in der Regel definiert ist, liegt mindestens ein klinisches (cT) oder pathologisches (pT) T-Stadium vor (Bundesländer: 81-92 %), in 25 % sind beide Angaben vorhanden (Abbildung 2). Aus Rheinland-Pfalz wurde grundsätzlich nur entweder ein pT oder cT übermittelt.
 
 > [!NOTE]
 > _tnm-relevant_: Lokalisationen C00-C43, C45-C69, C73-C75 außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und Morphologie: 8010-8790
@@ -251,7 +264,7 @@ and
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_13_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_13_6.svg">
-  <img alt="Abb. 3.2 Anteile übermittelter pathologischer und klinischer T-Stadien" src="report_files/output_13_6.svg">
+  <img alt="Abbildung 2: Anteile übermittelter pathologischer und klinischer T-Stadien" src="report_files/output_13_6.svg">
 </picture>
     
 
@@ -261,7 +274,7 @@ and
 
 #### <a id='toc1_4_4_3_'></a>[Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc0_)
 
-Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in 85% der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium vorhanden (Bundesländer: 74%-93%). Bei Vorhandensein des pT ist bundesweit in 88% auch ein gültiger pathologischer Lymphknotenstatus (pN, ohne pNX) dokumentiert (Bundesländer: 73%-99%, ohne Abbildung).
+Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in 85 % der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium vorhanden (Bundesländer: 74-93 %, Abbildung 3). Bei Vorhandensein des pT ist bundesweit in 88 % auch ein gültiger pathologischer Lymphknotenstatus (pN, ohne pNX) dokumentiert (Bundesländer: 73-99 %, ohne Abbildung).
 
 > [!NOTE]
 > _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
@@ -314,7 +327,7 @@ and z_tum_id in (select distinct z_tum_id from OPS where left(ops.Code,1) in ('5
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_15_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_15_6.svg">
-  <img alt="Abb. 3.3 Anteile übermittelter pT-Stadien bei dokumentierter Operation" src="report_files/output_15_6.svg">
+  <img alt="Abbildung 3: Anteile übermittelter pT-Stadien bei dokumentierter Operation" src="report_files/output_15_6.svg">
 </picture>
     
 
@@ -325,7 +338,7 @@ and z_tum_id in (select distinct z_tum_id from OPS where left(ops.Code,1) in ('5
 ### <a id='toc1_4_5_'></a>[Informationen zur Therapie](#toc0_)
 #### <a id='toc1_4_5_1_'></a>[Fälle ohne Therapieangaben](#toc0_)
 
-Der Anteil von Fällen ohne Therapieangaben betrug bundesweit über alle bösartigen Tumorerkrankungen (C00-C97 ohne C44, mit den unter 3.1. genannten Ausschlusskriterien) 23 % (nach Bundesland: 10%-31%). Der Anteil lag in den neuen Bundesländern und Berlin fast durchgehend niedriger (10%-19%) als in den alten Bundesländern (17%-31%) und bei soliden Tumoren (22%) niedriger als bei systemischen Erkrankungen (Leukämien und Lymphome: 35%). Im Zeitverlauf ist zwischen 2020 und 2022 keine Tendenz zu beobachten. Trotz Ausschluss der Diagnosen im 2. Halbjahr 2023 liegt der Anteil von Fällen ohne Therapieangabenin 2023 noch etwas über dem Wert der Vorjahre, auch hier ist wahrscheinlich noch mit nachträglichen Ergänzungen zu rechnen.
+Der Anteil von Fällen ohne Therapieangaben betrug bundesweit über alle bösartigen Tumorerkrankungen (C00-C97 ohne C44, mit den unter 3.1. genannten Ausschlusskriterien) 23 % (nach Bundesland: 10-31 %). Der Anteil lag in den neuen Bundesländern und Berlin fast durchgehend niedriger (10-19 %) als in den alten Bundesländern (17-31 %) und bei soliden Tumoren (22 %) niedriger als bei systemischen Erkrankungen (Leukämien und Lymphome: 35 %). Im Zeitverlauf ist zwischen 2020 und 2022 keine Tendenz zu beobachten. Trotz Ausschluss der Diagnosen im 2. Halbjahr 2023 liegt der Anteil von Fällen ohne Therapieangaben in 2023 noch etwas über dem Wert der Vorjahre, auch hier ist wahrscheinlich noch mit nachträglich eingehenden Informationen zu rechnen.
 
 
 
@@ -361,7 +374,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_17_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_17_6.svg">
-  <img alt="Abb. 3.4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_17_6.svg">
+  <img alt="Abbildung 4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_17_6.svg">
 </picture>
     
 
@@ -372,8 +385,8 @@ and ifnull(z_period_diag_death_day,181) >= 180
 #### <a id='toc1_4_5_2_'></a>[Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc0_)
 In den folgenden Auswertungen wurden zusätzlich zu den unter 3.1. genannten Fällen auch noch solche mit primärer Fernmetastasierung ausgeschlossen. Für Fälle ohne dokumentierte, das jeweilige Organ betreffende Operation (ohne Berücksichtigung diagnostischer Eingriffe) wurde zusätzlich ausgewertet, ob ein gültiges pathologisches T-Stadium (pT) vorlag, was als Hinweis auf eine fehlende oder unvollständige klinische Meldung interpretiert werden kann. 
 
-Nach Brustkrebsdiagnose liegen bundesweit in 25% (nach Bundesländern: 9%-32%) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25% auf 23%.
-Nach dokumentierten Operationen war ein R-Status in 98% der Fälle mit R0-2 angegeben (Bundesländer: 95%-99%), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
+Nach Brustkrebsdiagnose liegen bundesweit in 25 % (nach Bundesländern: 9-32 %) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25 % auf 23 %.
+Nach dokumentierten Operationen war ein R-Status in 98 % der Fälle mit R0-2 angegeben (Bundesländer: 95-99 %), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (RX) eingerechnet (ohne Abbildung).
 
 > [!NOTE]
 > berücksichtigt sind UICC I-III
@@ -414,12 +427,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_19_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_19_6.svg">
-  <img alt="Abb. 3.5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_19_6.svg">
+  <img alt="Abbildung 5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_19_6.svg">
 </picture>
     
 
 
-Beim Darmkrebs (C18-C20) liegen bundesweit in 32% (nach Bundesländern: 10%-41%) keine Angaben zu einer Darmoperation vor. In rund der Hälfte dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen und Patienten (>80 Jahre) auf 31%. 
+Beim Darmkrebs (C18-C20) liegen bundesweit in 32 % (nach Bundesländern: 10-41 %) keine Angaben zu einer Darmoperation (Abbildung 6) vor. In rund der Hälfte dieser Fälle ist ein pT vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen und Patienten (>80 Jahre) auf 31 %. 
 
 
 
@@ -452,12 +465,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_21_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_21_6.svg">
-  <img alt="Abb. 3.6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_21_6.svg">
+  <img alt="Abbildung 6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_21_6.svg">
 </picture>
     
 
 
-Beim Malignen Hautmelanom (C43) liegen bundesweit in 42% (nach Bundesländern: 3%-77%) keine Angaben zu einer zur Diagnose passenden Operation vor. In rund 80% dieser Fälle ist ein pT vorhanden. Auch nach Ausschluss älterer am Melanom erkrankter Personen (>80 Jahre) liegt der Anteil von Fällen ohne dokumentierte Operationen bei 42%.
+Beim Malignen Hautmelanom (C43) liegen bundesweit in 42 % (nach Bundesländern: 3-77 %) keine Angaben zu einer zur Diagnose passenden Operation vor (Abbildung 7). In rund 80 % dieser Fälle ist ein pT vorhanden. Auch nach Ausschluss älterer am Melanom erkrankter Personen (>80 Jahre) liegt der Anteil von Fällen ohne dokumentierte Operationen bei 42 %.
 
 
 
@@ -491,12 +504,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_23_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_23_6.svg">
-  <img alt="Abb. 3.7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_23_6.svg">
+  <img alt="Abbildung 7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_23_6.svg">
 </picture>
     
 
 
-Beim Hodenkrebs (C62) liegen bundesweit in 30% (nach Bundesländern: 4%-46%) keine Angaben zu einer Hodenoperation vor. In rund 80% dieser Fälle ist ein pT vorhanden. Auch nach Ausschluss älterer Hodenkrebspatienten (>80 Jahre) liegt der Anteil von Fällen ohne dokumentierte Operationen bei 30%.
+Beim Hodenkrebs (C62) liegen bundesweit in 30 % (nach Bundesländern: 4-46 %) keine Angaben zu einer Hodenoperation vor (Abbildung 8). In rund 80 % dieser Fälle ist ein pT vorhanden. Auch nach Ausschluss älterer Hodenkrebspatienten (>80 Jahre) liegt der Anteil von Fällen ohne dokumentierte Operationen bei 30 %.
 
 
 
@@ -539,7 +552,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <br>
 
 #### <a id='toc1_4_5_3_'></a>[Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc0_)
-Nach brusterhaltender Operation eines bösartigen Tumors der Brust liegen bundesweit in 33% (nach Bundesländern: 13%-54%) keine Angaben zu einer Strahlentherapie vor. Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
+Nach brusterhaltender Operation eines bösartigen Tumors der Brust (BET) liegen bundesweit in 33 % (nach Bundesländern: 13-54 %) keine Angaben zu einer Strahlentherapie vor (Abbildung 9). Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18 % der Fälle. 
 
 > [!NOTE]
 > Brusterhaltende Therapie (BET): ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
@@ -579,7 +592,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_27_7.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_27_7.svg">
-  <img alt="Abb. 3.9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_27_7.svg">
+  <img alt="Abbildung 9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_27_7.svg">
 </picture>
     
 
@@ -588,10 +601,10 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <br>
 
 ### <a id='toc1_4_6_'></a>[Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc0_)
-Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb) liegen bundesweit in 23% (nach Bundesländern: 9%-55%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist auch keine andere Therapie dokumentiert, dies betrifft bundesweit insgesamt 18% der Fälle. 
+Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb) liegen bundesweit in 23 % (nach Bundesländern: 9-55 %) keine Angaben zu einer systemischen Therapie vor (Abbildung 10). In der überwiegenden Mehrzahl dieser Fälle ist auch keine andere Therapie dokumentiert, dies betrifft bundesweit insgesamt 18 % der Fälle. 
 
 
-Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54% (nach Bundesländern:42%-62%) keine Angaben zu einer systemischen Therapie vor. In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie dokumentiert, nur in 11% der Fälle ist keine Therapie dokumentiert.
+Beim Kolonkarzinom im Stadium III (regionäre Lymphknotenbeteiligung) liegen bundesweit in 54 % (nach Bundesländern: 42-62 %) keine Angaben zu einer systemischen Therapie vor (Abbildung 11). In der überwiegenden Mehrzahl dieser Fälle ist eine andere Therapie, nur in 11 % der Fälle ist keine Therapie dokumentiert.
 
 > [!NOTE]
 > (Stadium III)
@@ -634,7 +647,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_30_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_30_6.svg">
-  <img alt="Abb. 3.10 Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_30_6.svg">
+  <img alt="Abbildung 10: Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_30_6.svg">
 </picture>
     
 
@@ -674,7 +687,7 @@ and left(z_n_p_1,1) in ('1','2')
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_31_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_31_6.svg">
-  <img alt="Abb. 3.11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_31_6.svg">
+  <img alt="Abbildung 11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_31_6.svg">
 </picture>
     
 
@@ -683,7 +696,7 @@ and left(z_n_p_1,1) in ('1','2')
 <br>
 
 ### <a id='toc1_4_7_'></a>[Abstand zwischen Diagnose und erster Operation](#toc0_)
-Der mediane Abstand zwischen Diagnose und erster Operation lag bei 26 Tagen (nach Bundesländern: 7-31 Tage).
+Der mediane Abstand zwischen Diagnose und erster Operation lag bei 26 Tagen (nach Bundesländern: 7-31 Tage, Abbildung 12).
 
 
 
@@ -715,7 +728,7 @@ and z_op_order = 1
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_33_6.png">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_33_6.png">
-  <img alt="Abb. 3.12: Abstand in Tagen zwischen Diagnosedateum und erster Operation (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_33_6.png">
+  <img alt="Abbildung 12: Abstand in Tagen zwischen Diagnosedatum und erster OP (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_33_6.png">
 </picture>
     
 
@@ -754,7 +767,7 @@ and z_op_order = 1
 
 ### <a id='toc1_4_8_'></a>[Informationen zum Krankheitsverlauf](#toc0_)
 #### <a id='toc1_4_8_1_'></a>[Nach Brustkrebs](#toc0_)
-Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) aus  den Jahren 2020/2021 ist bis Ende 2023 in 5% der Fälle (nach Bundesländern: 2%-8%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.1.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
+Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (R0) aus den Jahren 2020/2021 ist bis Ende 2023 in 5 % der Fälle (nach Bundesländern: 2-8 %, 4 Bundesländer ohne Angaben, Abbildung 13) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 14 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
 > [!NOTE]
 > Zeitraum bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021
@@ -799,12 +812,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_35_6.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_35_6.svg">
-  <img alt="Abb. 3.13a: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_35_6.svg">
+  <img alt="Abbildung 13: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_35_6.svg">
 </picture>
     
 
 
-Abb. 3.13b: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021 (inkl. aller Kombinationen)
+Abbildung 14: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021 (inkl. aller Kombinationen)
 
     n = 89_461 | n(true) = 4_521
 
@@ -823,7 +836,7 @@ Abb. 3.13b: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdiagn
 <br>
 
 #### <a id='toc1_4_8_2_'></a>[Nach Darmkrebs](#toc0_)
-Für Personen mit Darmkrebsdiagnosen und Operation ohne Residualtumor (R0) aus den Jahren 2020/2021 ist bis Ende 2023 in 10% der Fälle (nach Bundesländern: 3%-14%, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 3.6.2.2 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
+Für Personen mit Darmkrebsdiagnosen und Operation ohne Residualtumor (R0) aus den Jahren 2020/2021 ist bis Ende 2023 in 10 % der Fälle (nach Bundesländern: 3-14 %, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert (Abbildung 15). In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 16 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
 
 
@@ -861,12 +874,12 @@ and ifnull(z_period_diag_death_day,181) >= 180
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_39_8.svg">
   <source media="(prefers-color-scheme: light)" srcset="report_files/output_39_8.svg">
-  <img alt="Abb. 3.14a Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_39_8.svg">
+  <img alt="Abbildung 15: Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_39_8.svg">
 </picture>
     
 
 
-Abb. 3.14b Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiagnose 2020/2021 (inkl. aller Kombinationen)
+Abbildung 16: Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiagnose 2020/2021 (inkl. aller Kombinationen)
 
     n = 46_861 | n(true) = 4_494
 
@@ -912,3 +925,484 @@ Eine gewisse Einschränkung bei der Beurteilung von Rezidiven ergibt sich aus de
 Im Datensatz des ZfKD kann Tumorfreiheit durch den R-Status nach Operation (R0), durch ein yT0 während oder nach multimodaler Therapie oder durch die Angabe einer Remission im Krankheitsverlauf abgebildet werden. Da eine Remission im Verlauf in vielen Bundesländern kein meldebegründendes Ereignis darstellt (im Gegensatz zum Lokalrezidiv, einer Metastasierung oder einer Änderung der Therapie) wird in einigen Fällen die Abgrenzung zwischen einem Fortschreiten der Erkrankung (Progression) und einem Rezidiv schwierig sein, vor allem wenn eine Tumorfreiheit nicht primär durch eine Operation erzielt wurde.  Dies gilt vor allem für Neubildungen der blutbildenden und lymphatischen Organe, für die in der Regel werder der R-Status noch das y-TNM zur Verfügung steht. Dazu kommt, dass auch bei operativ behandelten Tumoren nach den Erfahrungen aus den Landeskrebsregistern die Angaben zu  Rezidiven und Progressionen in den klinischen Verlaufsmeldungen häufig inkonsistent sind. 
 
 Mögliche Gründe für unterbliebene oder unvollständige (klinische) Meldungen an die Krebsregister können aus den Daten des ZfKD nicht abgeleitet werden. Bekannt ist, dass die Meldung für nicht auf Krebsbehandlungen spezialisierte Kliniken und vor allem für niedergelassene Ärztinnen und Ärzte um einiges aufwändiger ist als für zertifizierte Tumorzentren und Pathologische Institute. Gerade im Bereich der Niedergelassenen, aber auch in vielen Kliniken ist eine automatisierte Meldung über eine Schnittstelle aus der elektronischen Klinik- oder Praxisdokumentation noch nicht realisiert. Hier liegt es nahe, dass Meldungen an das Krebsregister wegen des hohen Aufwands trotz Meldepflicht im Praxis- oder Klinikalltag häufiger unterbleiben.
+
+
+<br>
+
+### <a id='toc1_4_10_'></a>[Erfahrungen mit der Antragsbearbeitung und Datenübermittlung](#toc0_)
+
+#### <a id='toc1_4_10_1_'></a>[Einleitung - Gesetzliche Vorgaben für die Bearbeitung von Datennutzungsanträgen](#toc0_)
+
+Die Bedingungen und Fristen für eine Bereitstellung oder Übermittlung von Daten des
+ZfKD zu Forschungszwecken sind in § BKRG geregelt. Danach ist jeder Datennutzungsantrag
+vom ZfKD zu prüfen und dem wissenschaftlichen Ausschuss beim ZfKD
+vorzulegen. Der wissenschaftliche Ausschuss hat die Möglichkeit zur Stellungnahme
+(§ { Abs. y BKRG). Diese kann, soweit „der Umfang und die Schwierigkeit der Prüfung“
+es erfordern, auch durch das ZfKD eingefordert werden. Die Prüfung eines Datennutzungsantrags
+betrifft unter anderem den beantragten Datenumfang und dessen Eignung
+und Erforderlichkeit für die geplanten Forschungszwecke (§ Abs. x BKRG).
+Die Zusammenarbeit zwischen dem ZfKD und dem wissenschaftlichen Ausschuss orientiert
+sich an der im Jahr y0yy verabschiedeten und im März y0y| überarbeiteten Geschäftsordnung
+des wissenschaftlichen Ausschusses und den dort festgelegten Abläufen
+und Fristen. Die ZfKD-internen Arbeitsabläufe bei der Antragsbearbeitung folgen einem
+standardisierten Vorgehen, das in einer Verfahrensanweisung, mehreren Kurzanleitungen
+und einem Leitfaden für die Bewertung des spezifischen Reidentifizierungsrisikos
+beschrieben ist.
+Datennutzungsanträge müssen in der Regel innerhalb von drei, bei erhöhtem Prüfungsaufwand
+nach spätestens vier Monaten ab Eingang des vollständigen Antrags beschieden
+werden (§ Abs. { BKRG).
+
+
+<br>
+
+#### <a id='toc1_4_10_2_'></a>[Eingang und Prüfung von Datennutzungsanträgen im ZfKD](#toc0_)
+
+Um einen Datennutzungsantrag einzureichen, müssen Interessierte die auf den Internetseiten
+des ZfKD als PDF-Dokument bereitstehenden Antragsformulare ausfüllen
+und als E-Mail-Anhang einsenden.
+Bei der Sichtung eingesandter Antragsformulare entstehen seitens des ZfKD häufig
+Rückfragen, die eine Überarbeitung des Antrags durch die Antragsteller erforderlich
+machen, beispielsweise weil der beantragte Datenumfang nicht ausreichend begründet
+ist oder weil Angaben zum Datenschutz fehlen. Das heißt, Antragsteller müssen ihren
+Antrag bzw. einzelne Formulare erneut, mitunter mehrfach, einsenden, bevor der Datennutzungsantrag
+dem ZfKD vollständig und widerspruchsfrei vorliegt. Jede Anpassung
+bzw. jeder erneute Eingang wird im ZfKD dokumentiert.
+Die inhaltliche Prüfung von Datennutzungsanträgen beschränkt sich im Wesentlichen
+auf die Frage, ob die beantragten Daten für die Beantwortung der Forschungsfragen notwendig
+und hinreichend sind. Inwieweit beispielsweise der aktuelle Wissensstand in Bezug
+auf die Forschungsfrage korrekt wiedergegeben ist oder ob die beschriebenen Auswertungsmethoden
+dem aktuellen Stand der Forschung entsprechen, ist nicht Gegenstand
+der Prüfung. Eine Stellungnahme des wissenschaftlichen Ausschusses wird vor
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten y|
+allem dann angefordert, wenn Zweifel an der Eignung der Daten für die Beantwortung
+der Forschungsfragen oder Hinweise für ein erhöhtes Reidentifikationsrisiko (unter Berücksichtigung
+dateninhärenter und kontextueller Faktoren) bestehen.
+Das ZfKD hat wiederholt Anpassungen der PDF-Formulare vorgenommen, um deren
+Verständlichkeit zu verbessern, um aktuelle Datenschutzanforderungen korrekt abzubilden
+oder um die Formulare sehbehinderten Nutzern zugänglich zu machen.
+Die PDF-Formulare werden nach ihrem Eingang im E-Mail-Funktionspostfach des
+ZfKD für die weitere Antragsbearbeitung an verschiedenen Orten gespeichert bzw. zugänglich
+gemacht: (i) im Dokumenten-Management-System des Robert Koch-Instituts
+zur Veraktung, (ii) auf dem Laufwerk des ZfKD für die inhaltliche Prüfung und (iii) auf
+dem BSCW-Server des Informationstechnikzentrums Bund, um die Unterlagen dem
+wissenschaftlichen Ausschuss bereitzustellen (Abschnitt 4.3).
+
+
+<br>
+
+#### <a id='toc1_4_10_3_'></a>[Vorlage von Datennutzungsanträgen beim wissenschaftlichen Ausschuss](#toc0_)
+
+Antragsformulare und begleitende Dokumente, insbesondere die Dokumentation über
+die Berechnung des dateninhärenten Verknüpfungspotenzials, werden den Mitgliedern
+des wissenschaftlichen Ausschusses über den BSCW-Server des Informationstechnikzentrums
+Bund zugänglich gemacht.
+Für die Mitglieder des wissenschaftlichen Ausschusses wurden durch das ZfKD Nutzerkonten
+auf dem BSCW-Server angelegt. Dessen intuitive Bedienbarkeit und Nutzungsmöglichkeiten
+sind begrenzt. Beispielsweise sind die direkte Kommentierung von Antragsunterlagen
+oder die gemeinsame Erarbeitung von Beschlussvorlagen auf dem
+BSCW-Server nicht möglich.
+
+
+<br>
+
+#### <a id='toc1_4_10_4_'></a>[Aufgabenverwaltung](#toc0_)
+
+Zur Nachverfolgung des Fortschritts bei der Bearbeitung von Datennutzungsanträgen
+nutzt das ZfKD die seit y0yx am Robert Koch-Institut für interne Zwecke verfügbare Anwendung
+Jira. Die Bearbeitung jedes Datennutzungsantrags ist dort in zwölf und mehr
+definierte Unteraufgaben mit zugewiesenen Zuständigkeiten gegliedert, darunter die
+Aufbereitung des dateninhärenten Reidentifizierungsrisikos (Details im Abschnitt {.|),
+die Erstellung des Kostenbescheids (Abschnitt {.~) oder das Anlegen eines Eintrags im
+öffentlichen Verzeichnis bewilligter Datennutzungsanträge (Abschnitt {.xx). In der Anwendung
+wird auch dokumentiert, ob für einen Datennutzungsantrag die Stellungnahme
+des wissenschaftlichen Ausschusses angefordert werden soll (Abschnitt {.}), ob
+der Antragsteller einen PGP-Schlüssel für die Datenverschlüsselung bereitgestellt hat
+(Abschnitt {. ) und ob der Datenempfänger das ZfKD über die Löschung der übermittelten
+Daten (Abschnitt {.x0) oder über eine Ergebnispublikation (Abschnitt {.xy) informiert
+hat. Der interne Austausch zu einzelnen Aufgaben ist über eine Kommentarfunktion
+möglich.
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten y}
+Über individuell konfigurierbare Jira-Assets können Befreiungstatbestände mit antragstellenden
+Einrichtungen und antragstellende Einrichtungen mit einzelnen Anträgen
+verknüpft werden. Ebenso können Kassenzeichen für die Rechnungslegung oder Berichterstatter
+elektronisch einzelnen Anträgen zugewiesen werden. Die Konfiguration
+von Assets und die Anpassung von Prozessen erfolgt im engen Austausch zwischen
+ZfKD und der Abteilung für Informationstechnologie des Robert Koch-Instituts.
+Im Jahr y0y| waren zu jedem Zeitpunkt zwischen x0 und x| Datennutzungsanträge
+beim ZfKD in Bearbeitung.
+{.| Bewertung des spezifischen Reidentifizierungsrisikos, Festlegung allgemeiner
+Vorgaben zur Risikobewertung, Berechnung des dateninhärenten
+Verknüpfungspotenzials, Maßnahmen zur Risikominimierung
+Vor jeder Datenübermittlung bewertet das ZfKD entsprechend § Abs. | Satz x BKRG
+das assoziierte spezifische Reidentifizierungsrisiko und minimiert dieses gegebenenfalls
+durch geeignete Maßnahmen, die die angestrebten Forschungsziele möglichst wenig beeinträchtigen.
+In seine Bewertung bezieht das ZfKD sowohl dateninhärente als auch
+kontextuelle Faktoren (z.B. Datensicherheit in der datenverarbeitenden Einrichtung) ein.
+Die allgemeinen Vorgaben, die der Risikobewertung des ZfKD zugrunde liegen, wurden
+entsprechend den Vorgaben des § Abs. | Satz y BKRG gemeinsam mit dem wissenschaftlichen
+Ausschuss erarbeitet. Hierzu wurde im Jahr y0yy eine Arbeitsgruppe aus
+Vertretern des ZfKD, Mitgliedern des wissenschaftlichen Ausschusses und externen Experten
+ins Leben gerufen, deren Arbeit in einen Leitfaden zur Bewertung des spezifischen
+Reidentifizierungsrisikos mündete, der im Oktober y0y{ einschließlich mehrerer
+Anlagen (inkl. Checklisten) auf der Internetseite des ZfKD veröffentlicht wurde. Für die
+Berechnung des dateninhärenten Verknüpfungspotenzials von Einzelfalldaten wurde
+am ZfKD ein R-Skript entwickelt, das individuell an die jeweilige Datenanforderung angepasst
+wird. Bei der Berechnung werden mehrere denkbare Szenarien einbezogen, die
+von unterschiedlich detailliertem Vorwissen eines potenziellen Angreifers ausgehen.
+Die Ergebnisse der Berechnung werden in einem HTML-Dokument abgebildet, das dem
+ZfKD und dem wissenschaftlichen Ausschuss als Grundlage für die Bewertung des spezifischen
+Reidentifizierungsrisikos und für die Ableitung geeigneter Maßnahmen für
+dessen Minimierung dient.
+Die Beurteilung kontextueller Risiko- bzw. Schutzfaktoren erfolgt anhand der Angaben
+der Antragsteller in den Antragsformularen, die zuletzt im Oktober y0y| in Zusammenarbeit
+mit der Datenschutzbeauftragten des Robert Koch-Instituts überarbeitet wurden.
+In den Antragsformularen werden u. a. die Rollen der an der Datenverarbeitung beteiligten
+Personen, deren regelmäßige Teilnahme an Schulungen zum datenschutzkonformen
+Umgang mit personenbezogenen Daten und das Vorliegen eines Datenschutzkonzepts
+an der antragstellenden Einrichtung abgefragt. Werden aggregierte Daten beantragt,
+müssen Antragsteller keine Angaben zu kontextuellen Risikofaktoren machen, da
+bei der Übermittlung aggregierter Daten in aller Regel von einer geringen dateninhärenten
+Verknüpfungswahrscheinlichkeit und einem sehr begrenzten Informationszugewinn
+(im Falle einer erfolgreichen Verknüpfung) ausgegangen werden kann. Sollte es
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten y~
+bei aggregierten Daten zur Einschätzung eines erhöhten spezifischen Reidentifizierungsrisikos
+kommen, werden diese Angaben nachträglich erhoben.
+Wird bei der Bewertung eines Datennutzungsantrags ein erhöhtes (spezifisches) Reidentifizierungsrisiko
+festgestellt, empfiehlt das ZfKD geeignete Maßnahmen zur Risikominimierung.
+Dabei berücksichtigt es die angestrebten Forschungsziele und bezieht, soweit
+möglich, die Antragsteller ein. Auch der wissenschaftliche Ausschuss kann im Rahmen
+der Antragsbegutachtung entsprechende Maßnahmen empfehlen. Zu den häufig
+umgesetzten spezifischen Risikominimierungsmaßnahmen gehören (i) die Vergröberung
+des monats- oder jahresgenauen Diagnosealters, z. B. zu Fünf-Jahres-Altersgruppen,
+(ii) der Verzicht auf die Übermittlung von Tumorfällen mit einem Diagnosealter
+unter x Jahren oder (iii) der Verzicht auf die Übermittlung monatsgenauer Datumsangaben
+(Geburt, Diagnose, Therapiebeginn, Tod), wenn dieser für die geplanten Auswertungen
+nicht zwingend benötigt wird. Dies betrifft z. B. das Geburtsdatum bei gleichzeitiger
+Beantragung des Diagnosealters. In der Regel werden stattdessen die zeitlichen Abstände
+zwischen den für die geplanten Auswertungen relevanten Ereignissen monats-
+oder (soweit vorliegend) tagesgenau übermittelt.
+{.} Abgabe von Stellungnahmen, Erstellung von Beschlussvorlagen, Beschlussfassung
+Mit steigender Zahl der Anträge und zunehmender Erfahrung bei der Antragsbearbeitung
+ist der Anteil der Anträge, bei denen das ZfKD den wissenschaftlichen Ausschuss
+nach § Abs. z BKRG zur Abgabe einer Stellungnahme aufgefordert und jeweils zwei
+Mitglieder des wissenschaftlichen Ausschusses als Berichterstatter angefragt hat, zurückgegangen.
+Im Jahr y0y| war dies noch bei x{ von insgesamt {x Datennutzungsanträgen
+der Fall.
+In bisherigen Stellungnahmen formulierten Berichterstatter fachliche Hinweise an die
+Datenempfänger, beispielsweise zu möglichen Verzerrungen oder Limitationen, sie
+stellten Rückfragen zu den im Antrag genannten Auswertungszielen oder sie forderten
+zusätzliche Angaben oder Dokumente zu Datenschutzaspekten ein, zum Beispiel präzisierende
+Angaben zum Datenverarbeitungsort oder eine Erklärung des Datenschutzbeauftragten.
+Fachliche Hinweise der Berichterstatter zur Datenauswertung und -interpretation
+werden vom ZfKD im Datennutzungsbescheid an den Datenempfänger weitergegeben.
+Das ZfKD unterstützt die Berichterstatter nach § { Abs. y der Geschäftsordnung bei der
+Erstellung ihrer Beschlussvorlagen, indem es für jeden Datennutzungsantrag eine entsprechende
+Vorlage erstellt. Die Abstimmung über Beschlussvorlagen erfolgt entweder
+elektronisch auf dem BSCW-Server oder im Rahmen von Präsenz- oder Online-Sitzungen
+des wissenschaftlichen Ausschusses.
+Alle im Jahr y0y| zur Abstimmung gestellten Beschlussvorlagen wurden von der erforderlichen
+Mehrheit angenommen. Der wissenschaftliche Ausschuss hat bisher noch
+nicht von seiner Möglichkeit Gebrauch gemacht, eigeninitiative Stellungnahmen abzugeben.
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten y
+Die Zusammenarbeit mit dem wissenschaftlichen Ausschuss ist konstruktiv und seine
+fachlichen Hinweise insbesondere für die spätere Datenauswertung sind aus Sicht des
+ZfKD sehr wertvoll.
+{.~ Prüfung von Bescheiden und Befreiungstatbeständen
+Das Rechtsreferat des Robert Koch-Instituts ist in die Bearbeitung von Datennutzungsanträgen
+eingebunden. Auf Anfrage des ZfKD prüft es ausgehende Datennutzungs-, Änderungs-
+und Ergänzungsbescheide, Zustimmungsschreiben und das Vorliegen der Bedingungen
+für eine Gebührenbefreiung. Außerdem prüft und zeichnet das Rechtsreferat
+jeden Kostenbescheid. Für die Prüfung von Bescheiden durch das Rechtsreferat ist
+seitens des ZfKD eine Frist von mindestens einem Monat einzuplanen, für die Prüfung
+von Befreiungstatbeständen mindestens acht Werktage.
+Das Rechtsreferat des Robert Koch-Instituts berät das ZfKD bei gesetzlichen Auslegungsfragen,
+zu Anpassungen der Antragsformulare oder bei der Überarbeitung der Geschäftsordnung
+des wissenschaftlichen Ausschusses, an dessen Sitzungen es regelmäßig
+teilnimmt.
+{. Datenübermittlung
+Für die Übermittlung bewilligter Daten nutzt das ZfKD die Austauschplattform Cryptshare:
+Der Datenempfänger erhält per E-Mail einen passwortgeschützten Link zum Herunterladen
+der bewilligten Daten. Das zugehörige Passwort erhält der Datenempfänger
+mit dem Datennutzungsbescheid auf dem Postweg.
+Für die Übermittlung von Einzelfalldaten nutzt das ZfKD seit Mitte y0y| zusätzlich zu
+Cryptshare eine Ende-zu-Ende-Verschlüsselung: Das ZfKD verschlüsselt die bewilligten
+Daten mit dem vom Datenempfänger bereitgestellten öffentlichen PGP-Schlüssel (pgp
+public key) und signiert diese, der Datenempfänger entschlüsselt die auf seinen Rechner
+heruntergeladenen Daten mit seinem geheimen PGP-Schlüssel (pgp private key). Die
+Schlüsselpaare sind im Gegensatz zu Cryptshare-Link und Cryptshare-Passwort personengebunden.
+Zusätzlich zeigt die Signatur der verschlüsselten Daten dem Datenempfänger
+an, dass die Daten tatsächlich vom ZfKD stammen (Authentizität des Absenders)
+und bei der Übermittlung nicht verändert wurden (Integrität des Inhalts).
+Für die Datenempfänger stellt das neu eingeführte Verschlüsselungsverfahren bzw. die
+hierfür erforderliche Generierung eines PGP-Schlüsselpaares in der Regel keine größere
+Hürde dar.
+{.¡ Bereitstellung von Daten in gesicherter physischer oder virtueller Umgebung
+unter Kontrolle des ZfKD
+§ Abs. } BKRG verlangt für die Bereitstellung von pseudonymisierten Einzeldatensätzen
+eine „gesicherte physische oder virtuelle Umgebung unter Kontrolle des Zentrums
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten y¡
+für Krebsregisterdaten“. Eine solche kontrollierte Umgebung steht dem ZfKD zum Zeitpunkt
+der Berichtslegung noch nicht zur Verfügung. Eine diesbezügliche Zusammenarbeit
+mit der Abteilung für Informationstechnologie des Robert Koch-Instituts (RKI), die
+im Jahr y0yy aufgenommen wurde und in deren Rahmen verschiedene Möglichkeiten
+für eine kontrollierte Datenbereitstellung diskutiert wurden, hat bisher kein geeignetes
+bzw. für das RKI finanzierbares Produkt oder Verfahren aufgezeigt. Bisher wurde bei allen
+Datennutzungsanträgen das spezifische Reidentifikationsrisiko als nicht erhöht eingeschätzt
+oder es wurden, im Einvernehmen mit den Antragstellenden, andere geeignete
+Maßnahmen getroffen, um das entsprechende Risiko zu minimieren. In allen anderen
+Fällen müssten derzeit die Auswertungen am ZfKD selbst erfolgen, soweit möglich
+unter Nutzung von durch die Antragstellenden auf Basis von Testdaten bereitgestellten
+Auswertungsskripten, z.B. in der Programmiersprache „R“. Je nach Komplexität
+solcher Auswertungen wäre die Kapazitäten am ZfKD für solche Projekte allerdings begrenzt.
+In Vorbereitung des Europäischen Gesundheitsdatenraums (EHDS) ist in den
+nächsten Jahren zu erwarten, dass, nach Veröffentlichung entsprechender EU-Vorgaben,
+technische Lösungen für kontrollierte Verarbeitungsumgebungen entwickelt werden, an
+denen sich das RKI beteiligen kann.
+{.x0 Löschanzeigen
+Datenempfänger sind dazu verpflichtet, die vom ZfKD übermittelten Daten nach Abschluss
+des Forschungsvorhabens, in dessen Rahmen die Datennutzung beantragt
+wurde, zu löschen und die Löschung gegenüber dem ZfKD anzuzeigen. Auf diese Verpflichtung
+werden Datenempfänger in einer Nebenbestimmung des Datennutzungsbescheids
+hingewiesen. Das ZfKD dokumentiert Löschanzeigen in der für das Aufgabenmanagement
+am Robert Koch-Institut genutzten Anwendung (Abschnitt {.{). Insgesamt
+gehen Löschanzeigen bisher nur selten am ZfKD ein. Es kann nicht nachvollzogen werden,
+ob das jeweilige Forschungsvorhaben noch andauert, oder ob die Datenlöschung
+und/oder die Löschanzeige versäumt wurde.
+{.xx Öffentliches Antragsverzeichnis
+Nach der Bewilligung eines Datennutzungsantrags wird für diesen entsprechend
+§ ¡ Abs. x BKRG durch das ZfKD ein Eintrag im Anfang y0yy eingerichteten öffentlichen
+Antragsverzeichnis erzeugt (Abbildung x~). Das Antragsverzeichnis liegt auf dem
+Publikationsserver des Robert Koch-Instituts und ist auf der Internetseite des ZfKD verlinkt.
+Es enthält zu jedem Antrag den Namen des Antragstellers sowie den Titel und die
+Kurzbeschreibung des Forschungsvorhabens, wie sie im Antragsformular angegeben
+wurden. Außerdem ist das Kalenderjahr der Entscheidung über den Antrag vermerkt
+(ausschließlich in der Langanzeige sichtbar).
+Weil der Publikationsserver primär der Bereitstellung von Dokumenten (u. a. Fachartikel,
+historische Schriften) dient, sind die verfügbaren Metadatenfelder und Publikationskategorien
+für ein Antragsverzeichnis nur bedingt geeignet. So wird beispielsweise jeder
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten z0
+Verzeichnis-Eintrag als „Studienarbeit“ erfasst, weil eine treffendere Kategorie nicht verfügbar
+ist. Außerdem fehlen Felder für die Erfassung der Anschrift des Antragstellers.
+Für jeden Verzeichnis-Eintrag wird ein Digitaler Objektbezeichner (engl. DOI, digital
+object identifier) händisch von den Mitarbeitern der Bibliothek des Robert Koch-Instituts
+erzeugt.
+Das öffentliche Antragsverzeichnis bietet einen Überblick über derzeit in Bearbeitung
+befindliche oder abgeschlossene Projekte mit Nutzung der am ZfKD verfügbaren Daten.
+Es wäre sinnvoll, die Einträge beispielsweise um strukturierte Angaben wie die beantragten
+Datenjahre, den beantragten Datensatz (epidemiologisch, klinisch) oder den beantragten
+Datentyp (Einzelfalldaten, aggregierte Daten) zu erweitern. Dies ist im aktuell
+genutzten System jedoch technisch nicht umsetzbar und setzt nach § ¡ Abs. y BKRG die
+Zustimmung des Datenempfängers voraus. Optimal wäre ein digitales Antragsportal,
+aus dem die gesetzlich vorgegebenen Angaben automatisiert in das öffentliche Verzeichnis
+übernommen werden.
+
+...
+
+
+<br>
+
+### <a id='toc1_4_11_'></a>[Statistiken zu Datenanträgen](#toc0_)
+
+#### <a id='toc1_4_11_1_'></a>[Nach Datensatz und Datentyp](#toc0_)
+Das jährliche Antragsvolumen hat sich über die letzten Jahren deutlich erhöht. Abbildung 18 veranschaulicht das wachsende Interesse an den bundesweiten klinischen Krebsregisterdaten, die erstmals 2023 beim ZfKD beantragt werden konnten.
+yx von insgesamt {x Datennutzungsanträgen im Jahr y0y| entfielen allein auf klinische
+Daten (Stand: x~.xy.y0y|). In z Fällen wurden klinische und epidemiologische Daten beantragt.
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_46_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_46_1.svg">
+  <img alt="Abbildung 18: Anzahl Anträge nach Datensatz" src="report_files/output_46_1.svg">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_4_11_2_'></a>[Nach Datentyp](#toc0_)
+
+Grundsätzlich können Einzelfalldaten oder zusammenfassende (aggregierte) Daten, beispielsweise
+Fallzahlen oder Überlebensraten, beantragt werden. Abbildung x¡ zeigt, dass
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten z~
+mehrheitlich Einzelfalldaten, seltener aggregierte Daten oder eine Kombination mehrerer
+Datentypen, beispielsweise klinischer und epidemiologischer Einzelfalldaten, beantragt
+wurden.
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_48_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_48_1.svg">
+  <img alt="Abbildung 18: Anzahl Anträge nach Datentyp" src="report_files/output_48_1.svg">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_4_11_3_'></a>[Nach Entität](#toc0_)
+
+Fasst man die im Zeitraum y0yy bis y0y| eingegangenen Datennutzungsanträge entsprechend
+der anatomischen Region (z. B. Zentrales Nervensystem, Verdauungstrakt)
+oder Histologie (z. B. Sarkom, neuroendokrine Tumore) zusammen, die im Fokus des
+jeweils geplanten Forschungsvorhabens stand, ergibt sich die Kopf-Hals-Region als „populärstes“
+Forschungsgebiet (y0 Anträge). Häufig wurden auch Krebsregisterdaten zu
+mehreren Entitäten (x| Anträge), zu Lungenkrebs (xx Anträge) und zu Krebs des Verdauungstrakts
+(xx Anträge) beantragt (Abbildung y0).
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_50_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_50_1.svg">
+  <img alt="Abbildung 20: Anzahl Anträge nach Entität" src="report_files/output_50_1.svg">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_4_11_4_'></a>[Nach Art der antragstellenden Einrichtung](#toc0_)
+
+Mit der Verfügbarkeit klinischer Krebsregisterdaten hat sich das Interesse von pharmazeutischen
+Unternehmen und Auftragsforschungsinstituten an den Daten des ZfKD erhöht.
+Knapp ein Drittel aller in y0y| eingegangenen Datennutzungsanträge wurde von
+pharmazeutischen Unternehmen oder Auftragsforschungsinstituten eingereicht (Abbildung
+yx). Universitäten bzw. Universitätskliniken stellten mit rund |0 % weiterhin die
+größte Gruppe der Antragsteller. Etwa jeder fünfte Datennutzungsantrag in y0y| entfiel
+auf außeruniversitäre Forschungseinrichtungen wie das Deutsche Krebsforschungszentrum
+oder das Leibniz-Institut für Präventionsforschung und Epidemiologie. Natürliche
+Personen haben im Zeitraum von y0yy bis y0y| nicht von der Möglichkeit zur Antragstellung
+Gebrauch gemacht.
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_52_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_52_1.svg">
+  <img alt="Abbildung 21: Anzahl Anträge nach Einrichtung" src="report_files/output_52_1.svg">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_4_11_5_'></a>[Nach Auswertungszielen und Forschungszweck](#toc0_)
+
+Eine systematische Auswertung der Forschungsthemen der vom ZfKD bearbeiteten Datennutzungsanträge
+findet nicht statt. An dieser Stelle können nur einige Tendenzen beschrieben
+werden, wie sie sich in der täglichen Beschäftigung mit eingehenden Datennutzungsanträgen
+darstellen:
+▸ Häufiges Ziel einer Beantragung aggregierter epidemiologischer Daten durch pharmazeutische
+Unternehmen oder Auftragsforschungsinstitute ist die Erstellung eines
+Dossiers für die Nutzenbewertung von Arzneimitteln nach § z|a SGB V.
+▸ Klinische Einzelfalldaten sollen zum einen als Grundlage deskriptiver Darstellungen
+von Patientenpopulationen und Tumoreigenschaften herangezogen werden, zum
+anderen in die Berechnung spezifischer, klinisch relevanter Endpunkte einfließen,
+darunter die Häufigkeit von Rezidiven, die metastasenfreie Überlebenszeit oder das
+Gesamtüberleben nach einem definierten Zeitraum ab Diagnose oder Behandlungsbeginn.
+▸ Einige Antragsteller möchten bundesweite Daten zur Zusammensetzung spezifischer
+Patientenpopulationen oder zu Behandlungsergebnissen mit anderen Datenquellen
+(Abrechnungsdaten, Studiendaten) vergleichen.
+▸ Häufig sollen Behandlungsregime und -abfolgen abgebildet und die Übereinstimmung
+mit Behandlungsleitlinien festgestellt werden. Einigen Antragstellerngeht es
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten {0
+um die Anwendungshäufigkeit eines spezifischen Wirkstoffes in einer bestimmten
+Indikation, nachdem er für diese zugelassen wurde.
+▸ Mitunter beantragen Universitätskliniken klinische Einzelfalldaten auf Landkreisebene,
+um die daraus errechneten Behandlungsergebnisse denen der eigenen Klinik
+gegenüberzustellen.
+▸ Mehrere Forschungsvorhaben auf Basis epidemiologischer Daten streben eine Berechnung
+der Korrelation von Krebshäufigkeiten mit Umweltdaten (z. B. Konzentration
+von Luftschadstoffen) oder mit industriellen Standortdaten auf Landkreisebene
+an.
+Die mit einem Datennutzungsantrag verfolgten Auswertungsziele sind oft sehr vielfältig
+und umfassen mehrere Endpunkte. Wenige Antragsteller planen eine Machbarkeitsanalyse
+ein, die klären soll, ob die vorliegenden Fallzahlen und Datenqualität ausreichend
+sind, um aus den späteren Auswertungen belastbare Aussagen ableiten zu können. In
+diesem Jahr haben uns allerdings einige Anfragen von Forschenden erreicht, die sich
+vor Antragstellung nach entsprechenden Fallzahlen zur Beurteilung der Machbarkeit bestimmter
+Analysen erkundigt haben.
+Die Auswertungsziele der Antragsteller und die mit ihren Forschungsvorhaben verfolgten
+Forschungszwecke können in diesem Bericht nicht vollständig abgebildet werden.
+Es sei daher auf das öffentliche Verzeichnis bewilligter Datennutzungsanträge verwiesen,
+das jedes geplante Forschungsvorhaben nach den Angaben der Antragsteller zusammenfasst
+und, soweit vorhanden, entsprechende Ergebnispublikationen verknüpft
+(Abschnitt {.xx und {.xy).
+
+
+<br>
+
+#### <a id='toc1_4_11_6_'></a>[Nach Gebührenpflichtigkeit](#toc0_)
+
+Öffentliche oder im Bereich Wissenschaft und Forschung gemeinnützige Einrichtungen
+können oft eine vollständige oder eingeschränkte Befreiung von Bearbeitungsgebühren
+geltend machen. Das Vorliegen sogenannter Befreiungstatbestände muss von den Antragstellern
+nachgewiesen werden.
+Im Jahr y0y| wurde für knapp ein Drittel aller in diesem Jahr eingegangenen Datennutzungsanträge
+ein Kostenbescheid versandt (Abbildung yy).
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_54_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_54_1.svg">
+  <img alt="Abbildung 22: Anzahl Anträge nach Gebührenbefreiung" src="report_files/output_54_1.svg">
+</picture>
+    
+
+
+
+<br>
+
+#### <a id='toc1_4_11_7_'></a>[Fazit und Perspektiven](#toc0_)
+
+Insgesamt ist hervorzuheben, dass in Deutschland in den Landeskrebsregistern und am
+ZfKD ein international wahrscheinlich einmaliger Datensatz entsteht, in der der gesamte
+Krankheits- und Therapieverlauf aller Krebserkrankungen in einer großen Bevölkerung
+dokumentiert wird. Durch den jährlichen Aufwuchs der Datenbasis und entsprechend
+länger werdenden Beobachtungszeiten wird das Potential dieser Daten für die
+Forschung weiter zunehmen, umso mehr, wenn es gelingt, die noch bestehenden Datenlücken
+nach und nach abzubauen.
+Die sich durch das Gesundheitsdatennutzungsgesetz (GDNG) und perspektivisch im
+Europäischen Gesundheitsdatenraum (EHDS) ergebenden Verknüpfungsmöglichkeiten
+mit anderen Datensätzen werden dieses Potential noch erhöhen: Alleine schon die
+durch die im GDNG ermöglichte (technisch aber derzeit noch nicht umgesetzte) Verknüpfung
+mit Abrechnungsdaten der gesetzlichen Krankenversicherung (GKV) ergeben
+sich vielfältige neue Möglichkeiten, da sich beide Datensätze sehr gut ergänzen: die
+Krebsregisterdaten mit ihrer Detailtiefe zu Krebsdiagnosen und Krankheitsverläufen,
+die GKV-Daten mit der Vollständigkeit abgerechneter Leistungen und der Dokumentation
+zu Diagnosen und Behandlungen auch außerhalb des Krebsregisterspektrums.
+Auf der anderen Seite enthalten Krebsregisterdaten Informationen, die sich bevölkerungsweit
+und außerhalb von Studien in dieser Qualität und Detailtiefe derzeit und
+auch absehbar nicht in anderen Datensätzen (z.B. Abrechnungs- oder Krankenhausdaten)
+finden. Dies betrifft unter anderem prognostisch und therapeutisch relevante Informationen
+zur Diagnose, aber auch bestimmte Aspekte der Therapie (z.B. stationär
+durchgeführte bzw. eingeleitete Chemotherapie) sowie den Angaben zum Krankheitsverlauf.
+Dies wird auch durch die zuletzt deutlich zunehmende Nachfrage nach den klinischen
+Daten-sätzen unterstrichen.
+Entgegen teilweise bei Einführung der bundesweiten klinischen Krebsregistrierung geäußerten
+Befürchtungen ist die Datenbasis für epidemiologische Auswertungen in
+Deutschland nicht schlechter geworden, sondern hat sich teilweise sogar verbessert: In
+einigen Bundesländern (z.B. Hessen und Berlin) hat sich die Vollzähligkeit der Erfassung
+deutlich erhöht, die Vollständigkeit und Spezifität von Angaben zur Diagnose
+konnte tendenziell gesteigert werden. Auch hat sich die Datenbasis zu nicht-invasiven
+Tumorerkrankungen wie in-situ Tumoren und gutartigen Hirntumoren deutlich verbessert,
+so dass diese Diagnosen erstmalig in die regelmäßige Berichterstattung bzw. der x|.
+Ausgabe von „Krebs in Deutschland“ aufgenommen werden konnten. Auch dies ist international
+nur in sehr wenigen Ländern der Fall. Sowohl epidemiologische Forschung
+als auch Gesundheitsberichterstattung profitieren zudem von zusätzlich in den Datensatz
+aufgenommen Items wie z.B. den Hormonrezeptoren beim Brustkrebs und der Dokumentation
+von Verlaufsereignissen, die eine genauere Beschreibung der Krankheitslast
+ermöglichen.
+Die Verknüpfung mit den Abrechnungsdaten wird auch die Beurteilung wichtiger Aspekte
+der Datenqualität erleichtern, dies gilt in beide Richtungen: In den Krebsregistern
+ist eine höhere Validität der Diagnosen zu erwarten, während in Abrechnungsdaten
+Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten {z
+Operationen, aber auch ambulante Therapien für GKV-Versicherte vollständiger abgebildet
+sein dürften.
+Der vorliegende Bericht kann nicht alle Aspekte der Datenqualität der Krebsregister umfassend
+behandeln, auch weil das ZfKD in seinen Ressourcen nicht mit seinen Aufgaben
+und der Komplexität der Daten mitgewachsen ist. Der weitere Auf- und Ausbau eines
+bundesweiten Datenqualitätsmonitorings ist jedoch für das ZfKD ein wichtiges Anliegen,
+von dem sowohl Krebsregister als auch Forschende profitieren sollen.
