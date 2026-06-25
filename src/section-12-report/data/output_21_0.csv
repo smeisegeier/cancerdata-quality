@@ -1,0 +1,9 @@
+has_gesamt;has_lokal;has_lymph;has_fm
+False;False;False;1865
+False;False;True;159
+False;True;False;236
+False;True;True;99
+True;False;False;485
+True;False;True;61
+True;True;False;126
+True;True;True;70
