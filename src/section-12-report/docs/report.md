@@ -70,7 +70,7 @@
 - die relativen Barcharts enthalten ein `Total` item für den Gesamtvergleich
 - die Filter können exakt nachvollzogen werden mit Hilfe der ausklappbaren SQL Abfragen
 - in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
-- die in den Diagrammen verwendeten aggregierten Daten sind in einem [Ordner](./data/) verfügbar
+- die in den Diagrammen verwendeten aggregierten Daten sind in einem [Ordner](https://github.com/smeisegeier/cancerdata-quality/tree/dev/src/section-12-report/data) verfügbar
 - der [Quellcode](../report.ipynb) dieses Berichtes ist ebenfalls aufrufbar
 
 **Datenstand: Diagnosejahr 2023**
