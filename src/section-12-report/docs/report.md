@@ -35,7 +35,7 @@
     - [5.4 Aufgabenverwaltung](#toc1_5_4_)    
     - [5.5 Bewertung des spezifischen Reidentifizierungsrisikos, Festlegung allgemeiner Vorgaben zur Risikobewertung, Berechnung des dateninhärenten Verknüpfungspotenzials, Maßnahmen zur Risikominimierung](#toc1_5_5_)    
     - [5.6 Abgabe von Stellungnahmen, Erstellung von Beschlussvorlagen, Beschlussfassung](#toc1_5_6_)    
-    - [5.7 Prüfung von Bescheiden und befreiungstatbeständen](#toc1_5_7_)    
+    - [5.7 Prüfung von Bescheiden und Befreiungstatbeständen](#toc1_5_7_)    
     - [5.8 Datenübermittlung](#toc1_5_8_)    
     - [5.9 Bereitstellung von Daten in gesicherter physischer oder virtueller Umgebung unter Kontrolle des ZfKD](#toc1_5_9_)    
     - [5.10 Löschanzeigen](#toc1_5_10_)    
@@ -66,11 +66,12 @@
 <br>
 
 ## <a id='toc1_1_'></a>[1 Informationen zum Dokument](#toc0_)
-- die jeweils angewendeten **Filter** sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl der Entität in unserer Datenbank
-- die _relativen_ Barcharts enthalten ein `Total` item für den Gesamtvergleich
-- die Filter können exakt nachvollzogen werden mit Hilfe der **ausklappbaren SQL Abfragen**
+- die jeweils angewendeten Filter sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl aller Krebsfälle
+- die relativen Barcharts enthalten ein `Total` item für den Gesamtvergleich
+- die Filter können exakt nachvollzogen werden mit Hilfe der ausklappbaren SQL Abfragen
 - in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
-- der komplette Quellcode dieses Dokumentes ist [hier abrufbar](../report.ipynb)
+- die in den Diagrammen verwendeten aggregierten Daten sind in einem [Ordner](./data/) verfügbar
+- der [Quellcode](../report.ipynb) dieses Berichtes ist ebenfalls aufrufbar
 
 **Datenstand: Diagnosejahr 2023**
 
@@ -79,7 +80,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-06-25 10:52:07
+    document created:        2026-06-26 12:26:11
 
 
 
@@ -226,7 +227,11 @@ and z_kkr <> 7
 
 
 
-<img alt="Abbildung 1: Fehlender Anteil zum Grading" src="report_files/output_22_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_22_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_22_6.svg">
+  <img alt="Abbildung 1: Fehlender Anteil zum Grading" src="report_files/output_22_6.svg">
+</picture>
     
 
 
@@ -284,7 +289,11 @@ and
 
 
 
-<img alt="Abbildung 2: Anteile übermittelter pathologischer und klinischer T-Stadien" src="report_files/output_24_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_24_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_24_6.svg">
+  <img alt="Abbildung 2: Anteile übermittelter pathologischer und klinischer T-Stadien" src="report_files/output_24_6.svg">
+</picture>
     
 
 
@@ -296,7 +305,7 @@ and
 Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in **85 %** der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium (`pT`) vorhanden (Bundesländer: 74-93 %, Abbildung 3). Bei Vorhandensein des `pT` ist bundesweit in **88 %** auch ein gültiger pathologischer Lymphknotenstatus (`pN`, ohne `pNX`) dokumentiert (Bundesländer: 73-99 %, ohne Abbildung).
 
 > [!NOTE]
-> _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
+> Filter _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
 > Kategorien:
 >  - `1_null` - kein Wert vorhanden
 >  - `2_unknown` - Wert X
@@ -344,7 +353,11 @@ and z_tum_id in (select distinct z_tum_id from OPS where left(ops.Code,1) in ('5
 
 
 
-<img alt="Abbildung 3: Anteile übermittelter pT-Stadien bei dokumentierter Operation" src="report_files/output_26_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_26_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_26_7.svg">
+  <img alt="Abbildung 3: Anteile übermittelter pT-Stadien bei dokumentierter Operation" src="report_files/output_26_7.svg">
+</picture>
     
 
 
@@ -387,7 +400,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_29_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_29_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_29_6.svg">
+  <img alt="Abbildung 4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_29_6.svg">
+</picture>
     
 
 
@@ -401,7 +418,7 @@ In den folgenden Auswertungen wurden zusätzlich zu den unter Abschnitt 4.1 gena
 Nach Brustkrebsdiagnose liegen bundesweit in **25 %** (nach Bundesländern: 9-32 %) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein `pT` vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25 % auf 23 %.
 Nach dokumentierten Operationen war ein R-Status in **98 %** der Fälle mit `R0`-`R2` angegeben (Bundesländer: 95-99 %), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (`RX`) eingerechnet (ohne Abbildung).
 
-> [!NOTE]
+> [!CAUTION]
 > berücksichtigt sind `UICC I-III`
 >
 > Kategorien
@@ -437,7 +454,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_31_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_31_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_31_6.svg">
+  <img alt="Abbildung 5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_31_6.svg">
+</picture>
     
 
 
@@ -471,7 +492,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_33_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_33_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_33_6.svg">
+  <img alt="Abbildung 6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_33_6.svg">
+</picture>
     
 
 
@@ -506,7 +531,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_35_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_35_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_35_6.svg">
+  <img alt="Abbildung 7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_35_6.svg">
+</picture>
     
 
 
@@ -541,7 +570,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 8: Anteil Fälle mit dokumentierter OP beim Hodenkrebs" src="report_files/output_37_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_37_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_37_6.svg">
+  <img alt="Abbildung 8: Anteil Fälle mit dokumentierter OP beim Hodenkrebs" src="report_files/output_37_6.svg">
+</picture>
     
 
 
@@ -553,7 +586,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 Nach brusterhaltender Operation (BET) eines bösartigen Tumors der Brust liegen bundesweit in 33 % (nach Bundesländern: 13-54 %) keine Angaben zu einer Strahlentherapie vor (Abbildung 9). Bei etwas mehr als der Hälfte dieser Fälle ist auch keine systemische Therapie dokumentiert, dies betrifft bundesweit insgesamt 18 % der Fälle.
 
 > [!NOTE]
-> Brusterhaltende Therapie (BET): ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
+> Filter Brusterhaltende Therapie (BET): ein OPS Code mit den ersten 5 Stellen `5-870` liegt vor
 
 
 
@@ -587,7 +620,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_39_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_39_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_39_7.svg">
+  <img alt="Abbildung 9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_39_7.svg">
+</picture>
     
 
 
@@ -637,7 +674,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 10: Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_41_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_41_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_41_6.svg">
+  <img alt="Abbildung 10: Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_41_6.svg">
+</picture>
     
 
 
@@ -675,7 +716,11 @@ and left(z_n_p_1,1) in ('1','2')
 
 
 
-<img alt="Abbildung 11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_43_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_43_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_43_6.svg">
+  <img alt="Abbildung 11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_43_6.svg">
+</picture>
     
 
 
@@ -712,7 +757,11 @@ and z_op_order = 1
 
 
 
-<img alt="Abbildung 12: Abstand in Tagen zwischen Diagnosedatum und erster OP (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_45_6.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_45_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_45_6.png">
+  <img alt="Abbildung 12: Abstand in Tagen zwischen Diagnosedatum und erster OP (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_45_6.png">
+</picture>
     
 
 
@@ -721,6 +770,8 @@ and z_op_order = 1
     ------------------------+-----------------+------+-------+------+--------+-------+-------+-------+-------+-------+-----
     Anzahl_Tage_Diagnose_OP | 1_271_631 (98%) | -304 |   -34 | 0.00 |  19.00 | 47.54 | 49.00 |   122 | 2_204 | 98.96 | 2.08
     
+
+
     
     item (n = 1_290_573) |  count  | min  | lower | q25  | median | mean  |  q75  | upper |  max  |  std   |  cv 
     ---------------------+---------+------+-------+------+--------+-------+-------+-------+-------+--------+-----
@@ -752,7 +803,7 @@ and z_op_order = 1
 
 Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (`R0`) aus den Jahren 2020/2021 ist bis Ende 2023 in **5 %** der Fälle (nach Bundesländern: 2-8 %, 4 Bundesländer ohne Angaben, Abbildung 13) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 14 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
-> [!NOTE]
+> [!CAUTION]
 > Zeitraum bis Ende 2023 nach Brustkrebsdiagnose in 2020/2021
 > 
 > Kategorien:
@@ -792,7 +843,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 13: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_48_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_48_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_48_6.svg">
+  <img alt="Abbildung 13: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_48_6.svg">
+</picture>
     
 
 
@@ -803,7 +858,11 @@ Abbildung 14: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdia
 
 
     
-<img alt="png" src="report_files/output_50_1.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_50_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_50_1.png">
+  <img alt="png" src="report_files/output_50_1.png">
+</picture>
     
 
 
@@ -847,7 +906,11 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 
-<img alt="Abbildung 15: Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_52_6.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_52_8.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_52_8.svg">
+  <img alt="Abbildung 15: Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_52_8.svg">
+</picture>
     
 
 
@@ -858,7 +921,11 @@ Abbildung 16: Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiag
 
 
     
-<img alt="png" src="report_files/output_54_1.png">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_54_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_54_1.png">
+  <img alt="png" src="report_files/output_54_1.png">
+</picture>
     
 
 
@@ -966,7 +1033,7 @@ Die Zusammenarbeit mit dem wissenschaftlichen Ausschuss ist konstruktiv und sein
 
 <br>
 
-### <a id='toc1_5_7_'></a>[5.7 Prüfung von Bescheiden und befreiungstatbeständen](#toc0_)
+### <a id='toc1_5_7_'></a>[5.7 Prüfung von Bescheiden und Befreiungstatbeständen](#toc0_)
 
 Das Rechtsreferat des Robert Koch-Instituts ist in die Bearbeitung von Datennutzungsanträgen eingebunden. Auf Anfrage des ZfKD prüft es ausgehende Datennutzungs-, Änderungs- und Ergänzungsbescheide, Zustimmungsschreiben und das Vorliegen der Bedingungen für eine Gebührenbefreiung. Außerdem prüft und zeichnet das Rechtsreferat jeden Kostenbescheid. Für die Prüfung von Bescheiden durch das Rechtsreferat ist seitens des ZfKD eine Frist von mindestens einem Monat einzuplanen, für die Prüfung von Befreiungstatbeständen mindestens acht Werktage.
 
@@ -1010,8 +1077,16 @@ Das öffentliche Antragsverzeichnis bietet einen Überblick über derzeit in Bea
 
 <br>
 
-<!-- <img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png"> -->
-<img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png" width="75%">
+<!-- <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_67_normal_image_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_67_normal_image_0.png">
+  <img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png">
+</picture> -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_67_normal_image_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_67_normal_image_0.png">
+  <img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png" width="75%">
+</picture>
 
 <br>
 
@@ -1085,7 +1160,11 @@ Das jährliche Antragsvolumen hat sich über die letzten Jahren deutlich erhöht
 21 von insgesamt 41 Datennutzungsanträgen im Jahr 2025 entfielen allein auf klinische Daten (Stand: 17.12.2025). In 3 Fällen wurden klinische und epidemiologische Daten beantragt.
 
 
-<img alt="Abbildung 18: Anzahl Anträge nach Datensatz" src="report_files/output_74_1.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_74_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_74_1.svg">
+  <img alt="Abbildung 18: Anzahl Anträge nach Datensatz" src="report_files/output_74_1.svg">
+</picture>
     
 
 
@@ -1097,7 +1176,11 @@ Das jährliche Antragsvolumen hat sich über die letzten Jahren deutlich erhöht
 Grundsätzlich können Einzelfalldaten oder zusammenfassende (aggregierte) Daten, beispielsweise Fallzahlen oder Überlebensraten, beantragt werden. Abbildung 19 zeigt, dass mehrheitlich Einzelfalldaten, seltener aggregierte Daten oder eine Kombination mehrerer Datentypen, beispielsweise klinischer und epidemiologischer Einzelfalldaten, beantragt wurden.
 
 
-<img alt="Abbildung 19: Anzahl Anträge nach Datentyp" src="report_files/output_76_1.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_76_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_76_1.svg">
+  <img alt="Abbildung 19: Anzahl Anträge nach Datentyp" src="report_files/output_76_1.svg">
+</picture>
     
 
 
@@ -1109,7 +1192,11 @@ Grundsätzlich können Einzelfalldaten oder zusammenfassende (aggregierte) Daten
 Fasst man die im Zeitraum 2022 bis 2025 eingegangenen Datennutzungsanträge entsprechend der anatomischen Region (z. B. Zentrales Nervensystem, Verdauungstrakt) oder Histologie (z. B. Sarkom, neuroendokrine Tumore) zusammen, die im Fokus des jeweils geplanten Forschungsvorhabens stand, ergibt sich die Kopf-Hals-Region als „populärstes“ Forschungsgebiet (20 Anträge). Häufig wurden auch Krebsregisterdaten zu mehreren Entitäten (15 Anträge), zu Lungenkrebs (11 Anträge) und zu Krebs des Verdauungstrakts (11 Anträge) beantragt (Abbildung 20).
 
 
-<img alt="Abbildung 20: Anzahl Anträge nach Entität" src="report_files/output_78_1.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_78_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_78_1.svg">
+  <img alt="Abbildung 20: Anzahl Anträge nach Entität" src="report_files/output_78_1.svg">
+</picture>
     
 
 
@@ -1121,7 +1208,11 @@ Fasst man die im Zeitraum 2022 bis 2025 eingegangenen Datennutzungsanträge ents
 Mit der Verfügbarkeit klinischer Krebsregisterdaten hat sich das Interesse von pharmazeutischen Unternehmen und Auftragsforschungsinstituten an den Daten des ZfKD erhöht. Knapp ein Drittel aller in 2025 eingegangenen Datennutzungsanträge wurde von pharmazeutischen Unternehmen oder Auftragsforschungsinstituten eingereicht (Abbildung 21). Universitäten bzw. Universitätskliniken stellten mit rund 50 % weiterhin die größte Gruppe der Antragsteller. Etwa jeder fünfte Datennutzungsantrag in 2025 entfiel auf außeruniversitäre Forschungseinrichtungen wie das Deutsche Krebsforschungszentrum oder das Leibniz-Institut für Präventionsforschung und Epidemiologie. Natürliche Personen haben im Zeitraum von 2022 bis 2025 nicht von der Möglichkeit zur Antragstellung Gebrauch gemacht.
 
 
-<img alt="Abbildung 21: Anzahl Anträge nach Einrichtung" src="report_files/output_80_1.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_80_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_80_1.svg">
+  <img alt="Abbildung 21: Anzahl Anträge nach Einrichtung" src="report_files/output_80_1.svg">
+</picture>
     
 
 
@@ -1153,7 +1244,11 @@ Die Auswertungsziele der Antragsteller und die mit ihren Forschungsvorhaben verf
 Im Jahr 2025 wurde für knapp ein Drittel aller in diesem Jahr eingegangenen Datennutzungsanträge ein Kostenbescheid versandt (Abbildung 22).
 
 
-<img alt="Abbildung 22: Anzahl Anträge nach Gebührenbefreiung" src="report_files/output_83_1.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_83_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_83_1.svg">
+  <img alt="Abbildung 22: Anzahl Anträge nach Gebührenbefreiung" src="report_files/output_83_1.svg">
+</picture>
     
 
 
