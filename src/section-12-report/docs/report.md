@@ -1,4 +1,4 @@
-# <a id='toc1_'></a>[Bericht zur Datenqualität nach § 12 BKRG](#toc0_)
+# <a id='toc1_'></a>[Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten](#toc0_)
 
 **Inhalt**<a id='toc0_'></a>    
 - [Bericht zur Datenqualität nach § 12 BKRG](#toc1_)    
@@ -66,6 +66,9 @@
 <br>
 
 ## <a id='toc1_1_'></a>[1 Informationen zum Dokument](#toc0_)
+
+Der vorliegende Bericht ...
+
 - die jeweils angewendeten Filter sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl aller Krebsfälle
 - die relativen Barcharts enthalten ein `Total` item für den Gesamtvergleich
 - die Filter können exakt nachvollzogen werden mit Hilfe der ausklappbaren SQL Abfragen
@@ -80,7 +83,7 @@
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-06-26 12:26:11
+    document created:        2026-06-29 12:32:46
 
 
 
