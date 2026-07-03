@@ -1,7 +1,7 @@
 # <a id='toc1_'></a>[Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten](#toc0_)
 
 **Inhalt**<a id='toc0_'></a>    
-- [Bericht zur Datenqualität nach § 12 BKRG](#toc1_)    
+- [Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten](#toc1_)    
   - [1 Informationen zum Dokument](#toc1_1_)    
   - [2 Einführung](#toc1_2_)    
     - [2.1 Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc1_2_1_)    
@@ -22,12 +22,12 @@
       - [4.5.1 Fälle ohne Therapieangaben](#toc1_4_5_1_)    
       - [4.5.2 Fehlende Angaben zur Operation bei erwartbarer Operation (Brust- Darm-, Hodenkrebs und Malignes Melanom)](#toc1_4_5_2_)    
       - [4.5.3 Fehlende Angaben zur Strahlentherapie bei erwarteter Strahlentherapie (nach brusterhaltender Operation bei Brustkrebs)](#toc1_4_5_3_)    
-    - [4.5.4 Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc1_4_6_)    
-    - [4.5.5 Abstand zwischen Diagnose und erster Operation](#toc1_4_7_)    
-    - [4.6 Informationen zum Krankheitsverlauf](#toc1_4_8_)    
-      - [4.6.1 Nach Brustkrebs](#toc1_4_8_1_)    
-      - [4.6.2 Nach Darmkrebs](#toc1_4_8_2_)    
-    - [4.7 Einordnung der Ergebnisse zur Datenqualität](#toc1_4_9_)    
+      - [4.5.4 Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc1_4_5_4_)    
+      - [4.5.5 Abstand zwischen Diagnose und erster Operation](#toc1_4_5_5_)    
+    - [4.6 Informationen zum Krankheitsverlauf](#toc1_4_6_)    
+      - [4.6.1 Nach Brustkrebs](#toc1_4_6_1_)    
+      - [4.6.2 Nach Darmkrebs](#toc1_4_6_2_)    
+    - [4.7 Einordnung der Ergebnisse zur Datenqualität](#toc1_4_7_)    
   - [5 Erfahrungen mit der Antragsbearbeitung und Datenübermittlung](#toc1_5_)    
     - [5.1 Einleitung - Gesetzliche Vorgaben für die Bearbeitung von Datennutzungsanträgen](#toc1_5_1_)    
     - [5.2 Eingang und Prüfung von Datennutzungsanträgen im ZfKD](#toc1_5_2_)    
@@ -67,14 +67,16 @@
 
 ## <a id='toc1_1_'></a>[1 Informationen zum Dokument](#toc0_)
 
-Der vorliegende Bericht ...
+Der vorliegende Bericht wird überarbeitet, sobald eine für die dargestellten Auswertungen relevante Aktualisierung der Datenlieferungen der Krebsregister vorliegt. Frühere Versionen des Berichts bleiben über die Versionshistorie des GitHub-Repositoriums weiterhin einsehbar und zitierfähig.
 
-- die jeweils angewendeten Filter sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil von der Gesamtzahl aller Krebsfälle
-- die relativen Barcharts enthalten ein `Total` item für den Gesamtvergleich
-- die Filter können exakt nachvollzogen werden mit Hilfe der ausklappbaren SQL Abfragen
-- in den Diagrammen gibt ebenfalls das angegebene _`n=`_ einen Hinweis auf die verwendete Grundgesamtheit
-- die in den Diagrammen verwendeten aggregierten Daten sind in einem [Ordner](https://github.com/smeisegeier/cancerdata-quality/tree/dev/src/section-12-report/data) verfügbar
-- der [Quellcode](../report.ipynb) dieses Berichtes ist ebenfalls aufrufbar
+Hinweise zum Lesen dieses Berichts:
+
+- Die jeweils angewendeten Filter sind für jede Auswertung dargestellt, jeweils zur besseren Einordnung als Anteil an der Gesamtzahl aller Krebsfälle.
+- Relative Balkendiagramme enthalten zum Gesamtvergleich ein zusätzliches Element `Total`.
+- Die verwendeten Filter lassen sich anhand der ausklappbaren SQL-Abfragen exakt nachvollziehen.
+- Die in den Diagrammen angegebene Fallzahl `n=` weist auf die zugrunde liegende Grundgesamtheit hin.
+- Die in den Diagrammen verwendeten aggregierten Daten sind in einem [Ordner](https://github.com/smeisegeier/cancerdata-quality/tree/dev/src/section-12-report/data) verfügbar.
+- Der [Quellcode](../report.ipynb) dieses Berichts ist ebenfalls einsehbar.
 
 **Datenstand: Diagnosejahr 2023**
 
@@ -83,7 +85,7 @@ Der vorliegende Bericht ...
     last kkr data import:    2025-09-30
     sql table created:       2025-11-11 11:52:01
     doi:                     10.18444/5.03.01.0005.0021.0002
-    document created:        2026-06-29 12:32:46
+    document created:        2026-07-03 13:49:25
 
 
 
@@ -93,9 +95,11 @@ Der vorliegende Bericht ...
 
 ### <a id='toc1_2_1_'></a>[2.1 Gesetzliche Grundlagen für den Datensatz des ZfKD und den vorliegenden Bericht](#toc0_)
 
-Mit dem Gesetz zur Zusammenführung von Krebsregisterdaten (2021) wurde auch das Bundeskrebsregisterdatengesetz (BKRG) novelliert. Unter anderem wurde der jährlich aus den Landeskrebsregistern an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut zu übermittelnde Datensatz um wesentliche Elemente der klinischen Krebsregistrierung (Angaben zur Therapie und Krankheitsverlauf) sowie zusätzliche diagnostische Variablen für ausgewählte Diagnosen erweitert. Diese werden in den Krebsregistern je nach Zeitpunkt der landesgesetzlichen Umsetzung des Krebsfrüherkennungs- und Registergesetzes (KFRG 2013) mindestens seit 2019 erfasst. DieDefinition der einzelnen Variablen im Onkologischen Basisdatensatz (oBDS) erfolgt durch die Arbeitsgemeinschaft Deutscher Tumorzentren und den Deutsche Krebsregister e.V. (vormals: Gesellschaft der epidemiologischen Krebsregister in Deutschland) und werden nach § 65c Abs. 1a S. 1 regelmäßig angepasst. 
-Um aus dem  für die Meldungen an die  Krebsregister maßgeblichen `oBDS` im Rahmen der Vorgaben des BKRG einen auswertefähigen Datensatz für die Übermittlung an das ZfKD zu erzeugen, wurde im Jahr 2022 entsprechend § 5 Abs. 3 BKRG in einer Arbeitsgruppe aus Vertretern des ZfKD und den Krebsregistern der _ZfKD-Lieferdatensatz_ vereinbart. 
-Der vorliegende Bericht über die Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten nach §12 BKRG enthält Angaben zur Datenqualität, zur Zusammenarbeit des ZfKD mit den Krebsregistern und zur Bearbeitung externer Datennutzungsanträge.
+Mit dem [Gesetz zur Zusammenführung von Krebsregisterdaten](https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gesetz-zur-zusammenfuehrung-von-krebsregisterdaten) (2021) wurde auch das [Bundeskrebsregisterdatengesetz](https://www.gesetze-im-internet.de/bkrg/) (BKRG) novelliert. Unter anderem wurde der jährlich aus den Landeskrebsregistern an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut (RKI) zu übermittelnde Datensatz um wesentliche Elemente der klinischen Krebsregistrierung (Angaben zur Therapie und Krankheitsverlauf) sowie zusätzliche diagnostische Variablen für ausgewählte Diagnosen erweitert. Diese werden in den Krebsregistern je nach Zeitpunkt der landesgesetzlichen Umsetzung des [Gesetzes zur Weiterentwicklung der Krebs-früherkennung und zur Qualitätssicherung durch klinische Krebsregister (Krebsfrüherkennungs- und -registergesetz – KFRG)](https://www.bgbl.de/xaver/bgbl/start.xav?start=%2F%2F*%5B%40attr_id%3D%27I_2013_16_inhaltsverz%27%5D#/text/bgbl113s0617.pdf?_ts=1774880870619) mindestens seit 2019 erfasst. Die Definition der einzelnen Variablen im Onkologischen Basisdatensatz (oBDS) erfolgt durch die Arbeitsgemeinschaft Deutscher Tumorzentren und den Deutsche Krebsregister e.V. (vormals: Gesellschaft der epidemiologischen Krebsregister in Deutschland) und werden [nach § 65c Abs. 1a S. 1 des Fünften Sozialgesetzbuches (SGB V)](https://www.gesetze-im-internet.de/sgb_5/__65c.html) regelmäßig angepasst.
+
+Um aus dem für die Meldungen an die Krebsregister maßgeblichen oBDS im Rahmen der Vorgaben des BKRG einen auswertefähigen Datensatz für die Übermittlung an das ZfKD zu erzeugen, wurde im Jahr 2022 entsprechend § 5 Abs. 3 BKRG in einer Arbeitsgruppe aus Vertretern des ZfKD und der Krebsregister der „ZfKD-Lieferdatensatz“ vereinbart.
+
+Der vorliegende Bericht über die Erfahrungen mit der bundesweiten Erfassung von Krebsregisterdaten nach § 12 BKRG enthält Angaben zur Datenqualität, zur Zusammenarbeit des ZfKD mit den Krebsregistern und zur Bearbeitung externer Datennutzungsanträge.
 
 
 <br>
@@ -148,7 +152,7 @@ Die Zusammenarbeit mit den Landeskrebsregistern kann seitens des ZfKD als sehr h
 
 Die Prüfung der Qualität der von den Krebsregistern übermittelten Daten sowie entsprechende Rückmeldungen an die Register gehören zu den gesetzlichen Aufgaben des ZfKD. Im Folgenden werden erstmals ausgewählte Auswertungen zur Datenqualität öffentlich bereitgestellt, um auch potentiell Datennutzenden außerhalb der Krebsregistrierung einen ersten Überblick zur Vollständigkeit bestimmter Angaben im Datensatz zu verschaffen. Zukünftig ist mindestens alle zwei Jahre eine Aktualisierung, gegebenenfalls mit Erweiterung der entsprechenden Auswertungen, geplant.
 
-Der Fokus der Auswertungen liegt dabei auf der Vollständigkeit von Angaben zur Diagnose (einschließlich Tumorstadien, Differenzierungsgrad) und Therapie, sowie ersten orientierenden Analysen zu Ereignissen im Krankheitsverlauf.  Die hier vorgelegten Auswertungen beziehen sich, mit Ausnahme der Aussagen zur geschätzten Vollzähligkeit der Erfassung, auf den klinischen Datensatz (Diagnosejahre 2020-2023). Nur auf Todesbescheinigungen beruhende Fälle (DCO (_death certificate only_)) sowie Fälle mit  nicht-melannotischem Hautkrebs sind ausgeschlossen. Auswertungen zum  epidemiologischen Datensatz, die auch Veränderungen über einen längeren Zeitraum abbilden und Aussagen zur Qualität der Sterbedaten/Angaben zum Vitalstatus beinhalten, werden zu einem späteren Zeitpinkt gesondert veröffentlicht. 
+Der Fokus der Auswertungen liegt dabei auf der Vollständigkeit von Angaben zur Diagnose (einschließlich Tumorstadien, Differenzierungsgrad) und Therapie, sowie ersten orientierenden Analysen zu Ereignissen im Krankheitsverlauf.  Die hier vorgelegten Auswertungen beziehen sich, mit Ausnahme der Aussagen zur geschätzten Vollzähligkeit der Erfassung, auf den klinischen Datensatz (Diagnosejahre 2020-2023). Nur auf Todesbescheinigungen beruhende Fälle (DCO (_death certificate only_)) sowie Fälle mit  nicht-melanotischem Hautkrebs sind ausgeschlossen. Auswertungen zum  epidemiologischen Datensatz, die auch Veränderungen über einen längeren Zeitraum abbilden und Aussagen zur Qualität der Sterbedaten/Angaben zum Vitalstatus beinhalten, werden zu einem späteren Zeitpinkt gesondert veröffentlicht. 
 
 Für Auswertungen zur Vollständigkeit von Therapieangaben wurden Diagnosen aus dem 2. Halbjahr 2023 ausgeschlossen, da Therapiemeldungen häufig deutlich später als Diagnosemeldungen im Krebsregister eingehen. Ausgeschlossen wurden außerdem Personen, die innerhalb von 6 Monaten nach Diagnose verstorben waren, da hier eine höhere Wahrscheinlichkeit von Kontraindikationen für eine tumorbezogene Therapie vermutet werden kann. Bei den Operationen wurden alle Prozeduren aus dem Kapitel 5 des OPS berücksichtigt, nur bei den organspezifischen Auswertungen (siehe 4.5.2) wurde überprüft, ob der OPS-Code mit einer tumorresektierenden Operation vereinbar war. Die jeweiligen Filterfunktionen zu den einzelnen Auswertungen sind als eigene Grafiken mit Nennung der Fallzahlen den eigentlichen Abbildungen vorangestellt.
 
@@ -305,7 +309,7 @@ and
 
 #### <a id='toc1_4_4_3_'></a>[4.4.3 Vollständigkeit pathologischer T-Stadien bei dokumentierter Operation](#toc0_)
 
-Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in **85 %** der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium (`pT`) vorhanden (Bundesländer: 74-93 %, Abbildung 3). Bei Vorhandensein des `pT` ist bundesweit in **88 %** auch ein gültiger pathologischer Lymphknotenstatus (`pN`, ohne `pNX`) dokumentiert (Bundesländer: 73-99 %, ohne Abbildung).
+Nach einer in den Krebsregistern dokumentierten Operation (innerhalb von 6 Monaten nach Diagnose)  ist in **87 %** der Fälle ein der Tumordiagnose zugeordnetes pathologisches T-Stadium (`pT`) vorhanden (Bundesländer: 80-91 %, Abbildung 3). Bei Vorhandensein des `pT` ist bundesweit in **87 %** auch ein gültiger pathologischer Lymphknotenstatus (`pN`, ohne `pNX`) dokumentiert (Bundesländer: 73-93 %, ohne Abbildung).
 
 > [!NOTE]
 > Filter _tnm-relevant:_ Lokalisationen C00-C43, C45-C69, C73-C75  außer: C26, C39, C55, C14.0, C57.9, C63.9, C75.9 und mit Morphologie: 8010-8790
@@ -404,9 +408,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_29_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_29_6.svg">
-  <img alt="Abbildung 4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_29_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_30_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_30_6.svg">
+  <img alt="Abbildung 4: Anteil der Fälle ohne Therapieangaben" src="report_files/output_30_6.svg">
 </picture>
     
 
@@ -421,8 +425,7 @@ In den folgenden Auswertungen wurden zusätzlich zu den unter Abschnitt 4.1 gena
 Nach Brustkrebsdiagnose liegen bundesweit in **25 %** (nach Bundesländern: 9-32 %) keine Angaben zu einer Operation an der Brust vor. Bei etwa einem Drittel dieser Fälle ist ein `pT` vorhanden. Der Anteil von Fällen ohne dokumentierte Operation sinkt bei Ausschluss älterer Patientinnen (über 80 Jahre) von 25 % auf 23 %.
 Nach dokumentierten Operationen war ein R-Status in **98 %** der Fälle mit `R0`-`R2` angegeben (Bundesländer: 95-99 %), unter den sonstigen Fällen sind fehlende Befunde aufgrund nicht beurteilbarer Präparate (`RX`) eingerechnet (ohne Abbildung).
 
-> [!CAUTION]
-> berücksichtigt sind `UICC I-III`
+> [!NOTE]
 >
 > Kategorien
 >  - `1_op`: mind. eine OPS im definierten Bereich (3Steller, organspezifisch) ist dokumentiert
@@ -458,9 +461,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_31_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_31_6.svg">
-  <img alt="Abbildung 5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_31_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_32_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_32_6.svg">
+  <img alt="Abbildung 5: Anteil Fälle mit dokumentierter Brust OP bei C50" src="report_files/output_32_6.svg">
 </picture>
     
 
@@ -496,9 +499,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_33_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_33_6.svg">
-  <img alt="Abbildung 6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_33_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_34_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_34_6.svg">
+  <img alt="Abbildung 6: Anteil Fälle mit dokumentierter OP bei Darmkrebs" src="report_files/output_34_6.svg">
 </picture>
     
 
@@ -535,9 +538,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_35_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_35_6.svg">
-  <img alt="Abbildung 7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_35_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_36_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_36_6.svg">
+  <img alt="Abbildung 7: Anteil Fälle mit dokumentierter OP beim Malignen Melanom" src="report_files/output_36_6.svg">
 </picture>
     
 
@@ -574,9 +577,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_37_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_37_6.svg">
-  <img alt="Abbildung 8: Anteil Fälle mit dokumentierter OP beim Hodenkrebs" src="report_files/output_37_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_38_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_38_6.svg">
+  <img alt="Abbildung 8: Anteil Fälle mit dokumentierter OP beim Hodenkrebs" src="report_files/output_38_6.svg">
 </picture>
     
 
@@ -624,9 +627,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_39_7.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_39_7.svg">
-  <img alt="Abbildung 9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_39_7.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_40_7.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_40_7.svg">
+  <img alt="Abbildung 9: Anteil Fälle mit Strahlentherapie und BET bei C50" src="report_files/output_40_7.svg">
 </picture>
     
 
@@ -634,7 +637,7 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 <br>
 
-### <a id='toc1_4_6_'></a>[4.5.4 Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc0_)
+#### <a id='toc1_4_5_4_'></a>[4.5.4 Fehlende Angaben zur systemischen Therapie bei erwarteter systemischer Therapie (akute Leukämien und hochmaligne Lymphome, Kolonkarzinom Stadium III)](#toc0_)
 
 Bei akut verlaufenden Leukämien und Lymphome (akute myeloide und lymphatische Leukämie, diffuses großzelliges B-Zell-Lymphom, follikuläres Lymphom Grad IIIb) liegen bundesweit in **23 %** (nach Bundesländern: 9-55 %) keine Angaben zu einer systemischen Therapie vor (Abbildung 10). In der überwiegenden Mehrzahl dieser Fälle ist auch keine andere Therapie dokumentiert, dies betrifft bundesweit insgesamt 18 % der Fälle. 
 
@@ -678,9 +681,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_41_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_41_6.svg">
-  <img alt="Abbildung 10: Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_41_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_42_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_42_6.svg">
+  <img alt="Abbildung 10: Anteil Fälle mit systemischer Therapie bei akut verlaufenden Leukämien und Lymphomen" src="report_files/output_42_6.svg">
 </picture>
     
 
@@ -720,9 +723,9 @@ and left(z_n_p_1,1) in ('1','2')
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_43_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_43_6.svg">
-  <img alt="Abbildung 11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_43_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_44_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_44_6.svg">
+  <img alt="Abbildung 11: Anteil Fälle mit systemischer Therapie bei bösartigen Tumoren des Kolons" src="report_files/output_44_6.svg">
 </picture>
     
 
@@ -730,7 +733,7 @@ and left(z_n_p_1,1) in ('1','2')
 
 <br>
 
-### <a id='toc1_4_7_'></a>[4.5.5 Abstand zwischen Diagnose und erster Operation](#toc0_)
+#### <a id='toc1_4_5_5_'></a>[4.5.5 Abstand zwischen Diagnose und erster Operation](#toc0_)
 Der mediane Abstand zwischen Diagnose und erster Operation lag bei **19 Tagen** (nach Bundesländern: 1-25 Tage, Abbildung 12).
 
 
@@ -761,9 +764,9 @@ and z_op_order = 1
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_45_6.png">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_45_6.png">
-  <img alt="Abbildung 12: Abstand in Tagen zwischen Diagnosedatum und erster OP (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_45_6.png">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_46_6.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_46_6.png">
+  <img alt="Abbildung 12: Abstand in Tagen zwischen Diagnosedatum und erster OP (alle Diagnosen), nach Bundesland (Box-Whisker-Plots, logarithmische Darstellung)" src="report_files/output_46_6.png">
 </picture>
     
 
@@ -800,9 +803,9 @@ and z_op_order = 1
 
 <br>
 
-### <a id='toc1_4_8_'></a>[4.6 Informationen zum Krankheitsverlauf](#toc0_)
+### <a id='toc1_4_6_'></a>[4.6 Informationen zum Krankheitsverlauf](#toc0_)
 
-#### <a id='toc1_4_8_1_'></a>[4.6.1 Nach Brustkrebs](#toc0_)
+#### <a id='toc1_4_6_1_'></a>[4.6.1 Nach Brustkrebs](#toc0_)
 
 Für Patientinnen mit Brustkrebsdiagnosen und Operation ohne Residualtumor (`R0`) aus den Jahren 2020/2021 ist bis Ende 2023 in **5 %** der Fälle (nach Bundesländern: 2-8 %, 4 Bundesländer ohne Angaben, Abbildung 13) ein Verlaufsereignis dokumentiert. In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Für diese Auswertungen wurden verschiedene Variablen genutzt, Abbildung 14 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
@@ -847,9 +850,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_48_6.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_48_6.svg">
-  <img alt="Abbildung 13: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_48_6.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_49_6.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_49_6.svg">
+  <img alt="Abbildung 13: Anteil von Frauen mit Verlaufsereignissen (Rezidiv oder Metastase)" src="report_files/output_49_6.svg">
 </picture>
     
 
@@ -862,9 +865,9 @@ Abbildung 14: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdia
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_50_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_50_1.png">
-  <img alt="png" src="report_files/output_50_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_51_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_51_1.png">
+  <img alt="png" src="report_files/output_51_1.png">
 </picture>
     
 
@@ -872,7 +875,7 @@ Abbildung 14: Verteilung der Verlaufsereignisse bis Ende 2023 nach Brustkrebsdia
 
 <br>
 
-#### <a id='toc1_4_8_2_'></a>[4.6.2 Nach Darmkrebs](#toc0_)
+#### <a id='toc1_4_6_2_'></a>[4.6.2 Nach Darmkrebs](#toc0_)
 
 Für Personen mit Darmkrebsdiagnosen und Operation ohne Residualtumor (`R0`) aus den Jahren 2020/2021 ist bis Ende 2023 in **10 %** der Fälle (nach Bundesländern: 3-14 %, 4 Bundesländer ohne Angaben) ein Verlaufsereignis dokumentiert (Abbildung 15). In gut zwei Drittel dieser Fälle betraf dies Fernmetastasen, teilweise in Kombination mit Lokalrezidiven und Lymphknotenmetastasen. Abbildung 16 zeigt alle Kombinationen der relevanten Ausprägungen. Es wurde kein Mindestabstand zum Diagnosedatum festgelegt. 
 
@@ -910,9 +913,9 @@ and ifnull(z_period_diag_death_day,181) >= 180
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_52_8.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_52_8.svg">
-  <img alt="Abbildung 15: Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_52_8.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_53_8.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_53_8.svg">
+  <img alt="Abbildung 15: Anteil von Personen mit Verlaufsereignissen (Rezidiven oder Metastasen)" src="report_files/output_53_8.svg">
 </picture>
     
 
@@ -925,9 +928,9 @@ Abbildung 16: Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiag
 
     
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_54_1.png">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_54_1.png">
-  <img alt="png" src="report_files/output_54_1.png">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_55_1.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_55_1.png">
+  <img alt="png" src="report_files/output_55_1.png">
 </picture>
     
 
@@ -935,7 +938,7 @@ Abbildung 16: Verteilung der Verlaufsereignisse bis Ende 2023 nach Darmkrebsdiag
 
 <br>
 
-### <a id='toc1_4_9_'></a>[4.7 Einordnung der Ergebnisse zur Datenqualität](#toc0_)
+### <a id='toc1_4_7_'></a>[4.7 Einordnung der Ergebnisse zur Datenqualität](#toc0_)
 
 Bei der Interpretation der Auswertungen sind folgende Aspekte zu berücksichtigen:
 
@@ -947,7 +950,7 @@ Bezüglich der Daten zur Therapie und zum Krankheitsverlauf kann in den Krebsreg
 
 In den obigen Auswertungen wurden exemplarische Fallkonstellationen ausgewählt, in denen (mangels gleichwertiger Alternativen) eine bestimmte Therapie in der Regel bzw. nach aktuellen Leitlinien zu erwarten wäre (z.B. Operationen bei Brustkrebs im Stadium I-III). Im klinischen Alltag ist aus den genannten Gründen (z.B. schwere Begleiterkrankungen) jedoch nicht davon auszugehen, dass diese Therapien in allen Fällen durchgeführt werden.  Es ist vielmehr damit zu rechnen, dass sich in einem gewissen Anteil der Fälle Behandelnde und/oder Betroffene begründet gegen eine bestimmte Behandlung entschieden haben. Die je nach Diagnose und Therapieart gefundenen Anteile und die teilweise große Heterogenität zwischen den Bundesländern spricht jedoch dafür, dass tumorbezogene Therapien derzeit noch nicht vollständig in den Krebsregistern erfasst werden. Der in allen Registern gefundene hohe Anteil von Patientinnen und Patienten ohne gemeldete bzw. dokumentierte systemische Therapie bei bösartigen Tumoren des Kolons im Stadium III (Lymphknotenbefall)  könnte aber auch darauf hindeuten, dass diese Therapie in einem relevanten Anteil der Fälle entgegen der Leitlinienempfehlungen nicht durchgeführt wird.
 
-Der Anteil nicht erfasster Therapien lässt sich aus den Ergebnissen aus den genannten gründen nicht direkt ableiten.  Es ist daher auch nicht auszuschließen, dass die gezeigten Unterschiede zwischen den Bundesländern bezüglich nicht gemeldeter (aber erwarteter) Therapien zum Teil auch reale Unterschiede in der Versorgung abbilden. Außerdem sind die hier gezeigten Ergebnisse für ausgewählte Diagnosen nicht ohne weiteres auf andere Entitäten übertragbar.
+Der Anteil nicht erfasster Therapien lässt sich aus den Ergebnissen aus den genannten Gründen nicht direkt ableiten.  Es ist daher auch nicht auszuschließen, dass die gezeigten Unterschiede zwischen den Bundesländern bezüglich nicht gemeldeter (aber erwarteter) Therapien zum Teil auch reale Unterschiede in der Versorgung abbilden. Außerdem sind die hier gezeigten Ergebnisse für ausgewählte Diagnosen nicht ohne weiteres auf andere Entitäten übertragbar.
 
 Insgesamt ist allerdings davon auszugehen, dass die Erfassung von inzidenter Krebsdiagnosen in den Krebsregistern derzeit noch vollständiger gelingt als die Erfassung der Therapien. Dies ist auch dadurch bedingt, dass pathologische Institute direkt an das Krebsregister melden, da sie zu den „Krebserkrankungen diagnostizierenden“ Einrichtungen gehören. Eine pathologische Befundmeldung reicht in vielen Fällen aus, um im Krebsregister Angaben zur Diagnose differenziert (nach Lokalisation, Histologie und Tumorstadium) zu dokumentieren, bei Fehlen einer klinischen Meldung wären dann allerdings keine Angaben zur Therapie vorhanden. Umgekehrt ist es bei Fehlen einer pathologischen Meldung und Vorhandensein einer klinischen Meldung in der Regel zu erwarten, dass die wesentlichen Informationen aus dem pathologischen Befund (z.B. zu Histologie und pathologischem Tumorstadium) über die klinische Meldung an das Register übermittelt werden. Da im Datensatz des ZfKD Informationen von verschiedenen meldenden Einrichtungen zusammengefasst sind („Best-of“), ist in den Daten nicht direkt erkennbar, welche Meldungstypen den Angaben zugrunde liegen. Ein Hinweis auf eine fehlende oder unvollständige klinische Meldung bei vorhandener pathologischer Meldung kann die relativ häufig vorhandene gültige Angabe zum pathologischem T-Stadium („pT“) bei fehlenden Angaben zu einer (zur Lokalisation des Tumors passenden) Operation sein. In Einzelfällen kann es allerdings zumindest beim Melanom und beim Darmkrebs vorkommen, dass der Tumor im Rahmen einer ursprünglich diagnostischen Prozedur im Ganzen entfernt werden kann und daher auch ohne Operation eine pathologisches T-Stadium bestimmbar ist, dies könnte einen Teil der Fälle mit pT ohne Operation erklären.
 
@@ -972,7 +975,7 @@ Mögliche Gründe für unterbliebene oder unvollständige (klinische) Meldungen 
 
 Die Bedingungen und Fristen für eine Bereitstellung oder Übermittlung von Daten des ZfKD zu Forschungszwecken sind in § BKRG geregelt. Danach ist jeder Datennutzungsantrag vom ZfKD zu prüfen und dem wissenschaftlichen Ausschuss beim ZfKD vorzulegen. Der wissenschaftliche Ausschuss hat die Möglichkeit zur Stellungnahme (§ 4 Abs. 2 BKRG). Diese kann, soweit „der Umfang und die Schwierigkeit der Prüfung“ es erfordern, auch durch das ZfKD eingefordert werden. Die Prüfung eines Datennutzungsantrags betrifft unter anderem den beantragten Datenumfang und dessen Eignung und Erforderlichkeit für die geplanten Forschungszwecke (§ 8 Abs. 1 BKRG). 
 
-Die Zusammenarbeit zwischen dem ZfKD und dem wissenschaftlichen Ausschuss orientiert sich an der im Jahr 2022 verabschiedeten und im März 2025 überarbeiteten Geschäftsordnung des wissenschaftlichen Ausschusses und den dort festgelegten Abläufen und Fristen. Die ZfKD-internen Arbeitsabläufe bei der Antragsbearbeitung folgen einem standardisierten Vorgehen, das in einer Verfahrensanweisung, mehreren Kurzanleitungen und einem Leitfaden für die Bewertung des spezifischen Reidentifizierungsrisikos beschrieben ist. 
+Die Zusammenarbeit zwischen dem ZfKD und dem wissenschaftlichen Ausschuss orientiert sich an der im Jahr 2022 verabschiedeten und im März 2025 überarbeiteten [Geschäftsordnung des wissenschaftlichen Ausschusses](https://www.krebsdaten.de/Krebs/DE/Content/ZfKD/Wissenschaftlicher_Ausschuss/Geschaeftsordnung/ausschuss_geschaeftsordnung.pdf?__blob=publicationFile) und den dort festgelegten Abläufen und Fristen. Die ZfKD-internen Arbeitsabläufe bei der Antragsbearbeitung folgen einem standardisierten Vorgehen, das in einer Verfahrensanweisung, mehreren Kurzanleitungen und einem Leitfaden für die Bewertung des spezifischen Reidentifizierungsrisikos beschrieben ist. 
 
 Datennutzungsanträge müssen in der Regel innerhalb von drei, bei erhöhtem Prüfungsaufwand nach spätestens vier Monaten ab Eingang des vollständigen Antrags beschieden werden (§ 8 Abs. 4 BKRG).
 
@@ -1081,14 +1084,14 @@ Das öffentliche Antragsverzeichnis bietet einen Überblick über derzeit in Bea
 <br>
 
 <!-- <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_67_normal_image_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_67_normal_image_0.png">
-  <img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_68_normal_image_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_68_normal_image_0.png">
+  <img alt="Abbildung 17" src="report_files/markdown_68_normal_image_0.png">
 </picture> -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_67_normal_image_0.png">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_67_normal_image_0.png">
-  <img alt="Abbildung 17" src="report_files/markdown_67_normal_image_0.png" width="75%">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/markdown_68_normal_image_0.png">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/markdown_68_normal_image_0.png">
+  <img alt="Abbildung 17" src="report_files/markdown_68_normal_image_0.png" width="75%">
 </picture>
 
 <br>
@@ -1164,9 +1167,9 @@ Das jährliche Antragsvolumen hat sich über die letzten Jahren deutlich erhöht
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_74_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_74_1.svg">
-  <img alt="Abbildung 18: Anzahl Anträge nach Datensatz" src="report_files/output_74_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_75_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_75_1.svg">
+  <img alt="Abbildung 18: Anzahl Anträge nach Datensatz" src="report_files/output_75_1.svg">
 </picture>
     
 
@@ -1180,9 +1183,9 @@ Grundsätzlich können Einzelfalldaten oder zusammenfassende (aggregierte) Daten
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_76_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_76_1.svg">
-  <img alt="Abbildung 19: Anzahl Anträge nach Datentyp" src="report_files/output_76_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_77_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_77_1.svg">
+  <img alt="Abbildung 19: Anzahl Anträge nach Datentyp" src="report_files/output_77_1.svg">
 </picture>
     
 
@@ -1196,9 +1199,9 @@ Fasst man die im Zeitraum 2022 bis 2025 eingegangenen Datennutzungsanträge ents
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_78_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_78_1.svg">
-  <img alt="Abbildung 20: Anzahl Anträge nach Entität" src="report_files/output_78_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_79_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_79_1.svg">
+  <img alt="Abbildung 20: Anzahl Anträge nach Entität" src="report_files/output_79_1.svg">
 </picture>
     
 
@@ -1212,9 +1215,9 @@ Mit der Verfügbarkeit klinischer Krebsregisterdaten hat sich das Interesse von 
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_80_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_80_1.svg">
-  <img alt="Abbildung 21: Anzahl Anträge nach Einrichtung" src="report_files/output_80_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_81_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_81_1.svg">
+  <img alt="Abbildung 21: Anzahl Anträge nach Einrichtung" src="report_files/output_81_1.svg">
 </picture>
     
 
@@ -1248,9 +1251,9 @@ Im Jahr 2025 wurde für knapp ein Drittel aller in diesem Jahr eingegangenen Dat
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_83_1.svg">
-  <source media="(prefers-color-scheme: light)" srcset="report_files/output_83_1.svg">
-  <img alt="Abbildung 22: Anzahl Anträge nach Gebührenbefreiung" src="report_files/output_83_1.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="report_files_dark/output_84_1.svg">
+  <source media="(prefers-color-scheme: light)" srcset="report_files/output_84_1.svg">
+  <img alt="Abbildung 22: Anzahl Anträge nach Gebührenbefreiung" src="report_files/output_84_1.svg">
 </picture>
     
 
@@ -1264,7 +1267,7 @@ Insgesamt ist hervorzuheben, dass in Deutschland in den Landeskrebsregistern und
 
 Die sich durch das Gesundheitsdatennutzungsgesetz (GDNG) und perspektivisch im Europäischen Gesundheitsdatenraum (EHDS) ergebenden Verknüpfungsmöglichkeiten mit anderen Datensätzen werden dieses Potential noch erhöhen: Alleine schon die durch die im GDNG ermöglichte (technisch aber derzeit noch nicht umgesetzte) Verknüpfung mit Abrechnungsdaten der gesetzlichen Krankenversicherung (GKV) ergeben sich vielfältige neue Möglichkeiten, da sich beide Datensätze sehr gut ergänzen: die Krebsregisterdaten mit ihrer Detailtiefe zu Krebsdiagnosen und Krankheitsverläufen, die GKV-Daten mit der Vollständigkeit abgerechneter Leistungen und der Dokumentation zu Diagnosen und Behandlungen auch außerhalb des Krebsregisterspektrums.
 
-Auf der anderen Seite enthalten Krebsregisterdaten Informationen, die sich bevölkerungsweit und außerhalb von Studien in dieser Qualität und Detailtiefe derzeit und auch absehbar nicht in anderen Datensätzen (z.B. Abrechnungs- oder Krankenhausdaten) finden. Dies betrifft unter anderem prognostisch und therapeutisch relevante Informationen zur Diagnose, aber auch bestimmte Aspekte der Therapie (z.B. stationär durchgeführte bzw. eingeleitete Chemotherapie) sowie den Angaben zum Krankheitsverlauf. Dies wird auch durch die zuletzt deutlich zunehmende Nachfrage nach den klinischen Daten-sätzen unterstrichen.
+Auf der anderen Seite enthalten Krebsregisterdaten Informationen, die sich bevölkerungsweit und außerhalb von Studien in dieser Qualität und Detailtiefe derzeit und auch absehbar nicht in anderen Datensätzen (z.B. Abrechnungs- oder Krankenhausdaten) finden. Dies betrifft unter anderem prognostisch und therapeutisch relevante Informationen zur Diagnose, aber auch bestimmte Aspekte der Therapie (z.B. stationär durchgeführte bzw. eingeleitete Chemotherapie) sowie den Angaben zum Krankheitsverlauf. Dies wird auch durch die zuletzt deutlich zunehmende Nachfrage nach den klinischen Datensätzen unterstrichen.
 
 Entgegen teilweise bei Einführung der bundesweiten klinischen Krebsregistrierung geäußerten Befürchtungen ist die Datenbasis für epidemiologische Auswertungen in Deutschland nicht schlechter geworden, sondern hat sich teilweise sogar verbessert: In einigen Bundesländern (z.B. Hessen und Berlin) hat sich die Vollzähligkeit der Erfassung deutlich erhöht, die Vollständigkeit und Spezifität von Angaben zur Diagnose konnte tendenziell gesteigert werden. Auch hat sich die Datenbasis zu nicht-invasiven Tumorerkrankungen wie in-situ Tumoren und gutartigen Hirntumoren deutlich verbessert, so dass diese Diagnosen erstmalig in die regelmäßige Berichterstattung bzw. der 15. Ausgabe von „Krebs in Deutschland“ aufgenommen werden konnten. Auch dies ist international nur in sehr wenigen Ländern der Fall. Sowohl epidemiologische Forschung als auch Gesundheitsberichterstattung profitieren zudem von zusätzlich in den Datensatz aufgenommen Items wie z.B. den Hormonrezeptoren beim Brustkrebs und der Dokumentation von Verlaufsereignissen, die eine genauere Beschreibung der Krankheitslast ermöglichen.
 
