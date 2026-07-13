@@ -42,8 +42,8 @@ Bericht an das Bundesministerium für Gesundheit
 
 | Bericht | Format |
 |---------|--------|
-| [📈 Datenqualität](./src/quality-reports/docs/clin/clin.md) | Markdown |
-| [⚙️ Technischer Bericht](./src/quality-reports/docs/tech/tech.md) | Markdown |
+| [📈 Datenqualität](./src/quality-reports/clin/docs/clin.md) | Markdown |
+| [⚙️ Technischer Bericht](./src/quality-reports/tech/docs/tech.md) | Markdown |
 
 ---
 
@@ -53,7 +53,7 @@ Bericht an das Bundesministerium für Gesundheit
 
 | Bericht | Format |
 |---------|--------|
-| [📈 Datenqualität](./src/quality-reports/docs/epi/epi.md) | Markdown |
+| [📈 Datenqualität](./src/quality-reports/epi/docs/epi.md) | Markdown |
 
 ---
 
