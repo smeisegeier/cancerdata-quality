@@ -2,20 +2,9 @@
 select
     *,
     case when op_cnt > 0 then 0 else 1 end as op_missing,
-    -- case when ops_cnt > 0 then 0 else 1 end as ops_missing,
     case when st_cnt > 0 then 0 else 1 end as st_missing,
     case when syst_cnt > 0 then 0 else 1 end as syst_missing,
     case when folge_cnt > 0 then 0 else 1 end as folge_missing,
-    -- case when bestr_cnt > 0 then 0 else 1 end as bestr_missing,
-    -- case when app_cnt > 0 then 0 else 1 end as app_missing,
-    -- case when subst_cnt > 0 then 0 else 1 end as subst_missing,
-    -- case when proto_cnt > 0 then 0 else 1 end as proto_missing,
-    -- case when diag_fm_cnt > 0 then 0 else 1 end as fm_diag_missing,
-    -- case when folge_fm_cnt > 0 then 0 else 1 end as fm_folge_missing,
-    -- case when diag_fm_cnt > 0 then 0 else 1 end as fm_diag_missing,
-    -- case when diag_weitere_cnt > 0 then 0 else 1 end as weitere_diag_missing,
-    -- case when folge_weitere_cnt > 0 then 0 else 1 end as weitere_folge_missing,
-    -- case when folge_tnm_cnt > 0 then 0 else 1 end as tnm_folge_missing,
     case when (op_cnt = 0 and st_cnt = 0 and syst_cnt = 0) then 1 else 0 end as thera_missing
 
     from
@@ -55,11 +44,7 @@ select
         join Patient p on p.oBDS_RKIPatientId = t.oBDS_RKIPatientId
         left join dim_lieferregister l on cast(l.code as int) = cast(t.z_kkr as int)
         left join dim_icd10_3d icd on icd.code = t.z_icd10_3d
-        -- left join (SELECT z_tum_id, count(*) as op_cnt FROM OP GROUP BY z_tum_id) op on op.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as ops_cnt FROM OPS GROUP BY z_tum_id) ops on ops.z_tum_id = t.oBDS_RKIPatientTumorId
-        -- left join (SELECT z_tum_id, count(*) as folge_cnt FROM Folgeereignis GROUP BY z_tum_id) folge on folge.z_tum_id = t.oBDS_RKIPatientTumorId
-        -- left join (SELECT z_tum_id, count(*) as st_cnt FROM ST GROUP BY z_tum_id) st on st.z_tum_id = t.oBDS_RKIPatientTumorId
-        -- left join (SELECT z_tum_id, count(*) as syst_cnt FROM SYST GROUP BY z_tum_id) syst on syst.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as bestr_cnt FROM Bestrahlung GROUP BY z_tum_id) bestr on bestr.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as app_cnt FROM Applikationsart GROUP BY z_tum_id) app on app.z_tum_id = t.oBDS_RKIPatientTumorId
         left join (SELECT z_tum_id, count(*) as subst_cnt FROM Substanz GROUP BY z_tum_id) subst on subst.z_tum_id = t.oBDS_RKIPatientTumorId
