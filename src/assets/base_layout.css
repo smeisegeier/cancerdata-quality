@@ -1,0 +1,142 @@
+/* layout.css — adds GitHub-like page framing and font stack
+   Target: yzane markdown-pdf. That extension drops the markdown-it HTML straight
+   into <body> with no .markdown-body wrapper, so selectors are written against
+   bare elements / `body`. */
+html, body {
+  background: #0d11170f; /* subtle gray like GitHub’s content bg */
+  margin-bottom: 50px;
+}
+body {
+  box-sizing: border-box;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+               "Apple Color Emoji", "Segoe UI Emoji";
+}
+/* Optional: code font similar to GitHub */
+code, pre, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* PDF/print-friendly override for GitHub markdown tables
+   (GitHub uses fixed blocks and horizontal scroll for HTML, which is bad for PDF). */
+body table {
+  display: table !important;      /* override GitHub's display:block */
+  width: 100% !important;         /* override width:max-content */
+  max-width: 100% !important;
+  overflow: visible !important;   /* override overflow:auto */
+  table-layout: auto !important;  /* size columns from visible cell content */
+  border-collapse: collapse;
+}
+
+/* Keep identifier/name columns readable when a table has a very narrow
+   first column. */
+body table th:first-child,
+body table td:first-child {
+  min-width: 10em !important;
+}
+
+/* Tables whose first data column contains inline code need more room: the
+   vaccine labels otherwise collapse into character-by-character chips. */
+body table:has(> tbody > tr > td:first-child > code) th:first-child,
+body table:has(> tbody > tr > td:first-child > code) td:first-child {
+  min-width: 14em !important;
+}
+
+/* The publication overview uses linked row numbers in its first column;
+   those numbers do not need the general name-column minimum. */
+body table:has(> tbody > tr > td:first-child > a) th:first-child,
+body table:has(> tbody > tr > td:first-child > a) td:first-child {
+  min-width: 0 !important;
+}
+
+/*
+  Do not allow character-level breaking in table headers.
+  PDF engines may collapse a column if the header can break "anywhere".
+*/
+body th {
+  min-width: 0 !important;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+}
+
+body table th,
+body table td {
+  min-width: 0 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto;
+}
+
+th, td {
+  vertical-align: top;
+  padding: 6px 8px;
+  hyphens: auto;         /* if language supports it */
+}
+
+/* Optional: keep header from breaking oddly */
+thead th {
+  font-weight: 600;
+}
+
+/* Blockquotes (used here for methodology notes): lighter than the default
+   5px blue bar + grey fill. `body blockquote` (0,0,2) beats the defaults (0,0,1). */
+body blockquote {
+  margin: 0.9em 0;
+  padding: 0.5em 0.9em;
+  border-left: 4px solid rgba(0, 122, 204, 0.6); /* keep the blue bar */
+  background: rgba(127, 127, 127, 0.1);          /* keep the original grey fill */
+  font-size: 0.9em;
+  break-inside: avoid;
+  page-break-inside: avoid; /* older Chromium alias */
+}
+body blockquote > :first-child { margin-top: 0; }
+body blockquote > :last-child { margin-bottom: 0; }
+
+/* Restore code block backgrounds for PDF rendering */
+body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  /* !important beats markdown-pdf.css `pre:not(.hljs) { padding: 23px }` (0,1,1) */
+  padding: 8px 12px !important;
+  overflow: auto;
+  break-inside: avoid;
+  page-break-inside: avoid; /* older Chromium alias */
+}
+
+/* Inline code: small grey chip.
+   font-size needs !important to beat markdown-pdf.css
+   `:not(pre):not(.hljs) > code { font-size: inherit }` (higher specificity). */
+body :not(pre) > code {
+  font-size: 0.82em !important;
+  background-color: #afb8c133 !important; /* solid-ish; avoids rgba issues */
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Code blocks: keep their own background/padding, and shrink the text.
+   `body pre > code` (0,0,3) beats markdown-pdf.css `code { font-size: 14px }` (0,0,1). */
+body pre > code {
+  background: transparent;
+  border-radius: 0;
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: pre;
+  font-size: 0.78em;
+  line-height: 1.45;
+}
+
+/* reduce size of table texts (make header slightly larger) */
+body th {
+  font-size: 0.9em;
+}
+body td {
+  font-size: 0.85em;
+}
