@@ -1,0 +1,24 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": [],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/CVS": true,
+        "**/__init__.py": true,
+        "**/__pycache__": true
+    },
+    "explorerExclude.backup": {},
+
+    "// markdown-pdf (yzane)": "custom stylesheet for Markdown -> PDF export; path is relative to workspace root",
+    // "markdown-pdf.styles": [],
+    "markdown-pdf.styles": [
+        "src/assets/base_layout.css"
+    ],
+    "markdown-pdf.stylesRelativePathFile": false,
+    "markdown-pdf.includeDefaultStyles": true,
+    "markdown-pdf.printBackground": true
+}
