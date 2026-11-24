@@ -24,11 +24,11 @@ z_kkr_label;label;cnt
 05-NW;N -  neoadjuvant;37875
 05-NW;O -  ohne Bezug zu einer operativen Therapie;161511
 05-NW;S -  Sonstiges;28279
-06-HE;A -  adjuvant;28053
-06-HE;I -  intraoperativ;140
-06-HE;N -  neoadjuvant;11743
-06-HE;O -  ohne Bezug zu einer operativen Therapie;50581
-06-HE;S -  Sonstiges;6115
+06-HE;A -  adjuvant;28962
+06-HE;I -  intraoperativ;142
+06-HE;N -  neoadjuvant;11824
+06-HE;O -  ohne Bezug zu einer operativen Therapie;52637
+06-HE;S -  Sonstiges;6265
 07-RP;A -  adjuvant;16073
 07-RP;I -  intraoperativ;345
 07-RP;N -  neoadjuvant;4887

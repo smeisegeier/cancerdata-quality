@@ -29,12 +29,12 @@ z_kkr_label;label;cnt
 05-NW;R -  Revision/Komplikation;6565
 05-NW;S -  Sonstiges;11590
 05-NW;X -  fehlende Angabe;14534
-06-HE;D -  diagnostisch;4483
-06-HE;K -  kurativ;98890
-06-HE;P -  palliativ;3643
-06-HE;R -  Revision/Komplikation;3772
-06-HE;S -  Sonstiges;2101
-06-HE;X -  fehlende Angabe;2271
+06-HE;D -  diagnostisch;4538
+06-HE;K -  kurativ;100260
+06-HE;P -  palliativ;3730
+06-HE;R -  Revision/Komplikation;3845
+06-HE;S -  Sonstiges;2093
+06-HE;X -  fehlende Angabe;2269
 07-RP;D -  diagnostisch;5182
 07-RP;K -  kurativ;81406
 07-RP;P -  palliativ;3873
